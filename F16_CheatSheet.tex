@@ -1,0 +1,114 @@
+%=================================================================
+% MIT LICENSE
+%=================================================================
+% Copyright (c) 2022 Techneatium
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%=================================================================
+
+%-----------------------------------------------------------------
+% BEGIN DOCUMENT
+%-----------------------------------------------------------------
+\documentclass[fontHelvetica]{TechCheck}
+\title{F16_Cheatsheet}
+\author{Techneatium}
+
+\setaircraftlong{F-16C BLOCK 50 AIRCRAFT} % sets long label for title page
+\setaircraftshort{F-16C} % sets short label for header
+\settabnumber{6} % sets number of tabs for document
+
+
+\begin{document}
+	\include{./sections/F16_00_titlepage}
+	\clearpage
+	\null\vspace{0cm}
+
+	\begin{tcolorbox}[
+		enhanced, colback=white, colframe=color1, colbacktitle=white, coltitle=color1, sharp corners, attach boxed title to top center={yshift=2mm},
+		boxed title style={
+			sharp corners,
+			drop shadow=color1!100
+		}, title=\LARGE\textbf{DISCLAIMER}
+	]
+		\textbf{This document represents a personal project and is intended for entertainment purposes only. Do not use for training purposes or in real life scenarios.}
+	\end{tcolorbox}
+
+	\cleardoublepage
+
+	\thumbnar
+	\dominitoc
+	\tableofcontents
+	\cleardoublepage
+
+	% restart page counter
+	\setcounter{page}{1}
+	% reactivate header and footer
+	\pagestyle{body}
+
+	\chapter{PROCEDURES}
+	\thumbtab{Procedures}{0}
+	\minitoc
+	\cleardoublepage
+
+	\cleardoublepage
+
+	\chapter{SYSTEMS}
+	\thumbtab{Systems}{1}
+	\minitoc
+	\cleardoublepage
+
+	\cleardoublepage
+
+	\chapter{APG-68 FIRE CONTROL RADAR}
+	\thumbtab{AWG-9}{2}
+	\minitoc
+	\cleardoublepage
+
+	\cleardoublepage
+
+	\chapter{LITENING TGP}
+	\thumbtab{TCS - LANTIRN}{3}
+	\minitoc
+	\cleardoublepage
+
+	\cleardoublepage
+
+	\chapter{A/G WEAPONS}
+	\thumbtab{A/G}{4}
+	\minitoc
+	\cleardoublepage
+
+	\cleardoublepage
+
+	\chapter{A/A WEAPONS}
+	\thumbtab{A/A}{5}
+	\minitoc
+	\cleardoublepage
+
+
+  %fills rest of page with blanks
+  \cleardoublepage
+
+\iftoggle{print}{
+	\pagestyle{empty}
+	\newpage \null
+	\thumbwide
+	\newpage \null
+}{}
+\end{document}

@@ -39,11 +39,10 @@
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units
-\RequirePackage{amsmath}  % math stuff
-\RequirePackage{amsfonts} % more math stuff
-\RequirePackage{mathtools} % even more math stuff
-\RequirePackage{breqn} % honestly I don't even remember
-\RequirePackage{empheq} % Fancy boxed equations
+% \RequirePackage{amsmath}  % math stuff
+% \RequirePackage{amsfonts} % more math stuff
+% \RequirePackage{mathtools} % even more math stuff
+% \RequirePackage{empheq} % Fancy boxed equations
 \RequirePackage{tikz} % shapes, figures
 \RequirePackage{tikzpagenodes} % points for tikz
 \usetikzlibrary{calc} % used for hyperlinked nodes
@@ -76,9 +75,11 @@
 \newtoggle{loadfontspec}
 \newtoggle{fontJost}
 \newtoggle{fontSpartan}
-\newtoggle{fontMontserrat}
 \newtoggle{fontMetropolis}
 \newtoggle{fontHelvetica}
+\newtoggle{fontInter}
+
+
 
 \DeclareOption{fontHelvet}{
   \toggletrue{fontHelvet}
@@ -87,26 +88,51 @@
 \DeclareOption{fontJost}{
   \toggletrue{loadfontspec}
   \toggletrue{fontJost}
+  % toggle other fonts false
+  \togglefalse{fontSpartan}
+  \togglefalse{fontMetropolis}
+  \togglefalse{fontHelvetica}
+  \togglefalse{fontInter}
 }
 
 \DeclareOption{fontSpartan}{
   \toggletrue{loadfontspec}
   \toggletrue{fontSpartan}
-}
-
-\DeclareOption{fontMontserrat}{
-  \toggletrue{loadfontspec}
-  \toggletrue{fontMontserrat}
+  % toggle other fonts false
+  \togglefalse{fontJost}
+  \togglefalse{fontMetropolis}
+  \togglefalse{fontHelvetica}
+  \togglefalse{fontInter}
 }
 
 \DeclareOption{fontMetropolis}{
   \toggletrue{loadfontspec}
   \toggletrue{fontMetropolis}
+  % toggle other fonts false
+  \togglefalse{fontJost}
+  \togglefalse{fontSpartan}
+  \togglefalse{fontHelvetica}
+  \togglefalse{fontInter}
 }
 
 \DeclareOption{fontHelvetica}{
   \toggletrue{loadfontspec}
   \toggletrue{fontHelvetica}
+  % toggle other fonts false
+  \togglefalse{fontJost}
+  \togglefalse{fontSpartan}
+  \togglefalse{fontMetropolis}
+  \togglefalse{fontInter}
+}
+
+\DeclareOption{fontInter}{
+  \toggletrue{loadfontspec}
+  \toggletrue{fontInter}
+  % toggle other fonts false
+  \togglefalse{fontJost}
+  \togglefalse{fontSpartan}
+  \togglefalse{fontMetropolis}
+  \togglefalse{fontHelvetica}
 }
 
 %-----------------------------------------------------------------
@@ -280,18 +306,6 @@
   \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
 }{}
 
-\iftoggle{fontMontserrat}{
-  \setmainfont[
-  	Ligatures=TeX,
-  	UprightFont=*-Regular,
-  	ItalicFont=*-Regular Italic,
-  	BoldFont=*-Semi Bold,
-  	BoldFeatures={LetterSpace=3.0}
-  ]{Montserrat}
-  \newfontfamily\tightfont{Montserrat}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Montserrat-Bold}[Ligatures=TeX, LetterSpace=4.0]
-}{}
-
 \iftoggle{fontMetropolis}{
   \setmainfont[
   	Ligatures=TeX,
@@ -308,7 +322,18 @@
   \setmainfont[
     Ligatures=TeX,
     BoldFont=*-Bold,
+    ItalicFont=*-Italic,
   ]{Helvetica Neue}
+  \newfontfamily\tightfont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=0.0] % used for `---` in page numbering
+  \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
+}
+
+\iftoggle{fontInter}{
+  \setmainfont[
+    Ligatures=TeX,
+    BoldFont=*-Bold,
+    ItalicFont=Jost-Italic,
+  ]{Inter}
   \newfontfamily\tightfont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=0.0] % used for `---` in page numbering
   \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
 }

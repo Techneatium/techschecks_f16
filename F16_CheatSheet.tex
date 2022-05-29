@@ -25,7 +25,7 @@
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
-\documentclass[fontHelvetica]{TechCheck}
+\documentclass[fontInter]{TechCheck}
 \title{F16_Cheatsheet}
 \author{Techneatium}
 
@@ -69,126 +69,235 @@
 	\section{START-UP}
 
 	\subsection{PRE-START}
-	\begin{center}
-		\begin{longtable}{l p{2cm} | p{6cm} p{2.5cm}}
-			\toprule
-			1. & \blue{FLCS Check} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{enumerate}
-					\item \textbf{Main PWR Switch} \dotfill \textbf{BATT}
-					\begin{itemize}
-						\item \textbf{FLCS RLY Light} \dotfill \textbf{ON}
-					\end{itemize}
-					\item \textbf{FLCS PWR TEST} \dotfill \textbf{TEST (hold)}
-					\item \textbf{Verify Lights}
-					\begin{itemize}
-						\item \textbf{ACFT BATT TO FLCS} \dotfill \textbf{ON}
-						\item \textbf{FLCS PMG} \dotfill \textbf{ON}
-						\item \textbf{FLCS PWR} \dotfill \textbf{ON}
-						\item \textbf{FLCS RLY} \dotfill \textbf{OFF}
-					\end{itemize}
-					\item \textbf{FLCS PWR TEST} \dotfill \textbf{Release}
-				\end{enumerate}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[
-					width = \linewidth,
-					page = {2},
-					trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
-					clip
-				]{F-16_Cockpit_v1.pdf}
-			\end{minipage} \\
-			\bottomrule
-		\end{longtable}
-	\end{center}
-
+	\begin{listlongtable}
+		1. & \blue{FLCS Check}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{Main PWR Switch} \dotfill \textbf{BATT}
+				\begin{itemize}
+					\item \textbf{FLCS RLY Light} \dotfill \textbf{ON}
+				\end{itemize}
+				\item \textbf{FLCS PWR TEST} \dotfill \textbf{TEST (hold)}
+				\item \textbf{Verify Lights}
+				\begin{itemize}
+					\item \textbf{ACFT BATT TO FLCS} \dotfill \textbf{ON}
+					\item \textbf{FLCS PMG} \dotfill \textbf{ON}
+					\item \textbf{FLCS PWR} \dotfill \textbf{ON}
+					\item \textbf{FLCS RLY} \dotfill \textbf{OFF}
+				\end{itemize}
+				\item \textbf{FLCS PWR TEST} \dotfill \textbf{Release}
+			\end{enumerate}
+		\end{minipage} \\
+		\midrule
+		2. & \blue{Main Power}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{Main PWR Switch} \dotfill \textbf{MAIN}
+				\item \textbf{Verify Lights}
+				\begin{itemize}
+					\item \textbf{ELEC SYS} \dotfill \textbf{ON}
+					\item \textbf{HYD/OIL PRESS} \dotfill \textbf{ON}
+					\item \textbf{FLCS RLY} \dotfill \textbf{ON}
+					\item \textbf{SEC} \dotfill \textbf{ON}
+					\item \textbf{ENGINE} \dotfill \textbf{ON}
+				\end{itemize}
+			\end{enumerate}
+		\end{minipage} \\
+		\midrule
+		3. & \blue{EPU Lights}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{EPU GEN Light} \dotfill Confirm \textbf{OFF}
+				\item \textbf{EPU PMG Light} \dotfill Confirm \textbf{OFF}
+			\end{enumerate}
+		\end{minipage} \\
+	\end{listlongtable}
 	\clearpage
 
-	\subsection{PRE-START}
-	\begin{center}
-		\begin{longtable}{l p{3cm} | p{8cm}}
-			\toprule
-			1. & \blue{FLCS Check}
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[
-					width = 2.5cm,
-					page = {2},
-					trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
-					clip
-				]{F-16_Cockpit_v1.pdf}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{enumerate}
-					\item \textbf{Main PWR Switch} \dotfill \textbf{BATT}
-					\begin{itemize}
-						\item \textbf{FLCS RLY Light} \dotfill \textbf{ON}
-					\end{itemize}
-					\item \textbf{FLCS PWR TEST} \dotfill \textbf{TEST (hold)}
-					\item \textbf{Verify Lights}
-					\begin{itemize}
-						\item \textbf{ACFT BATT TO FLCS} \dotfill \textbf{ON}
-						\item \textbf{FLCS PMG} \dotfill \textbf{ON}
-						\item \textbf{FLCS PWR} \dotfill \textbf{ON}
-						\item \textbf{FLCS RLY} \dotfill \textbf{OFF}
-					\end{itemize}
-					\item \textbf{FLCS PWR TEST} \dotfill \textbf{Release}
-				\end{enumerate}
-			\end{minipage} \\
-			\midrule
-			2. & \blue{Main Power}
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[
-					width = 2.5cm,
-					page = {2},
-					trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
-					clip
-				]{F-16_Cockpit_v1.pdf}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{enumerate}
-					\item \textbf{Main PWR Switch} \dotfill \textbf{MAIN}
-					\item \textbf{Verify Lights}
-					\begin{itemize}
-						\item \textbf{ELEC SYS} \dotfill \textbf{ON}
-						\item \textbf{HYD/OIL PRESS} \dotfill \textbf{ON}
-						\item \textbf{FLCS RLY} \dotfill \textbf{ON}
-						\item \textbf{SEC} \dotfill \textbf{ON}
-						\item \textbf{ENGINE} \dotfill \textbf{ON}
-					\end{itemize}
-				\end{enumerate}
-			\end{minipage} \\
-			\midrule
-			3. & \blue{EPU Lights}
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[
-					width = 2.5cm,
-					page = {2},
-					trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
-					clip
-				]{F-16_Cockpit_v1.pdf}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{enumerate}
-					\item \textbf{EPU GEN Light} \dotfill Confirm \textbf{OFF}
-					\item \textbf{EPU PMG Light} \dotfill Confirm \textbf{OFF}
-				\end{enumerate}
-			\end{minipage} \\
-			\bottomrule
-		\end{longtable}
-	\end{center}
-	\clearpage
+	\subsection{ENGINE START}
+	\begin{listlongtable}
+		1. & \blue{Engine Start}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{JFS Switch} \dotfill \textbf{START 2}
+				\item \textbf{Throttle} \dotfill \textbf{IDLE} \\
+				\hfill (\emph{once 20\% RPM reached})
+				\item \textbf{SEC Light} \dotfill \textbf{OFF} 
+				\item \textbf{ENGINE Warning Light} \dotfill \textbf{OFF} \\
+				\hfill (\emph{once 60\% RPM reached})
+				\item \textbf{JFS Switch} \dotfill \textbf{Confirm OFF}
+			\end{enumerate}
+		\end{minipage} \\
+		\midrule
+		2. & \blue{ENG Instruments}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{FUEL FLOW} -- 700-1700 PPH
+				\item \textbf{OIL Pressure} -- 15 PSI (minimum)
+				\item \textbf{NOZ POS} -- greater than 95\%
+				\item \textbf{RPM} -- 62-80\% 
+				\item \textbf{FTIT} -- 650C or less
+				\item \textbf{HYD PRES A \& B} -- 2850-3250 PSI
+			\end{enumerate}
+		\end{minipage} \\
+	\end{listlongtable}
+
+	\subsection{POST START}
+	\begin{listlongtable}
+		1. & \blue{TEST Panel}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{PROBE HEAT Switch} \dotfill \textbf{PROBE HEAT} \\
+				\hfill \emph{verify PROBE HEAT Caution Light -- off}
+				\item \textbf{PROBE HEAT Switch} \dotfill \textbf{TEST} \\
+				\hfill \emph{verify PROBE HEAT Caution Light -- flashing}
+				\item \textbf{PROBE HEAT Switch} \dotfill \textbf{OFF}
+				\item \textbf{FIRE \& OHEAT DETECT} \dotfill \textbf{TEST}
+				\item \textbf{OXY QTY Test Switch} \dotfill \textbf{TEST}
+				\item \textbf{MAL \& IND LTS Button} \dotfill \textbf{TEST}
+			\end{enumerate}
+		\end{minipage} \\
+		\midrule
+		2. & \blue{AVIONICS Panel}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{MMC Switch} \dotfill \textbf{MMC}
+				\item \textbf{ST STA Switch} \dotfill \textbf{ST STA}
+				\item \textbf{MFD Switch} \dotfill \textbf{MFD}
+				\item \textbf{UFC Switch} \dotfill \textbf{UFD}
+				\item \textbf{GPS Switch} \dotfill \textbf{GPS}
+				\item \textbf{DL Switch} \dotfill \textbf{DL}
+				\item \textbf{MIDS LVT Knob} \dotfill \textbf{ON}
+			\end{enumerate}
+		\end{minipage} \\
+		\midrule
+		3. & \blue{INS Alignment}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{EGI/INS} \dotfill \textbf{ALIGN} \\
+				EXPLAIN DIFFERENT MODES ETC
+			\end{enumerate}
+		\end{minipage} \\
+		\midrule
+		4. & \blue{SNSR PWR Panel}
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\centering
+			\includegraphics[
+				width = 2.5cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+		\end{minipage} &
+		\begin{minipage}[t]{\linewidth}
+			\vspace{-7pt}
+			\begin{enumerate}
+				\item \textbf{LEFT HDPT Switch} \dotfill \textbf{As Required} \\
+				\hfill \emph{if HTS Pod installed}
+				\item \textbf{RIGHT HDPT Switch} \dotfill \textbf{As Required} \\
+				\hfill \emph{if Targetting Pod installed}
+				\item \textbf{FCR Switch} \dotfill \textbf{FCR}
+				\item \textbf{RDR ALT Switch} \dotfill \textbf{RDR ALT} 
+			\end{enumerate}
+		\end{minipage} \\
+	\end{listlongtable}
+
+	\warningbox{
+		\begin{itemize}
+			\item \textbf{Aircraft Rearming can interrupt INS align}
+			\item \textbf{If interrupted recycle INS knob to off, then back to align}
+			\item \textbf{Recommend rearming either before or after INS align}
+		\end{itemize}
+	}
 
 	\cleardoublepage
 

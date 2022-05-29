@@ -1,12 +1,35 @@
-***
-### Changelog - 2022.03.05
-- Added test versions of PRE-START
-  - **Option 1:** Cockpit images in separate column on the right
-    - Makes checklist column smaller
-  - **Option 2:** Cockpit images in the left (blue) column
-    - Makes simple one item rows significantly taller (so does option 1)
-    - For more complicated rows would require more complicated cockpit diagrams with multiple, labeled circles
+# F-14 CHEATSHEET
+
+## WHAT IS THIS?
+
+- A kneeboard-style `cheatsheet` for the DCS F-16C
+- Intended to allow someone already knowledgeable about the tomcat's systems to quickly find necessary information
+- For ease of maintenance, only the PDF is available here. To convert this to a format directly suitable as an in-game kneeboard please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/).
+
+## HOW TO USE
+
+- Just download the PDF and use as desired
+- The remaining files are the LaTeX source code
 
 ***
-### Changelog - 2022.02.26
-- Initial Commit
+
+## WORK IN PROGRESS
+
+- **Guide is essentially in pre-alpha** - nothing is fixed, formatting is unclear, all is experimental
+  
+### TO-DO
+
+- All of it
+
+***
+
+## THANKS / SOURCES
+
+- A huge thanks to [Chuck's Guides](https://www.mudspike.com/chucks-guides-dcs/), this served as the original basis for this guide.
+- The Airforce Manual was also referenced as necessary
+
+***
+
+## REPOSITORY - `TECHS CHECKS`
+
+[**Check out my other Cheatsheets**](https://github.com/Techneatium/Techs-Checks) (Precompiled PDFs for various aircraft)

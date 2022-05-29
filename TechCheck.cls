@@ -25,11 +25,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[10pt,usenames,dvipsnames,twoside]{report}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2022/02/11]
+\ProvidesClass{TechCheck}[2022/05/29]
 
 %-----------------------------------------------------------------
 % GENERAL PACKAGES
 %-----------------------------------------------------------------
+\RequirePackage{geometry}
 \RequirePackage[yyyymmdd]{datetime} % change date format
 \renewcommand{\dateseparator}{} % select date separator character
 \RequirePackage[shortlabels]{enumitem} % pause/resume lists
@@ -39,10 +40,6 @@
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units
-% \RequirePackage{amsmath}  % math stuff
-% \RequirePackage{amsfonts} % more math stuff
-% \RequirePackage{mathtools} % even more math stuff
-% \RequirePackage{empheq} % Fancy boxed equations
 \RequirePackage{tikz} % shapes, figures
 \RequirePackage{tikzpagenodes} % points for tikz
 \usetikzlibrary{calc} % used for hyperlinked nodes
@@ -64,13 +61,14 @@
 \RequirePackage{luatex85} % required to make changebar work with lualatex
 \RequirePackage[pdftex, color, outerbars]{changebar} % what it says
 
-%=================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T
-%=================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-----------------------------------------------------------------
 % FONT OPTIONS
 %-----------------------------------------------------------------
+% Declare toggles for each font option
 \newtoggle{fontHelvet}
 \newtoggle{loadfontspec}
 \newtoggle{fontJost}
@@ -79,12 +77,12 @@
 \newtoggle{fontHelvetica}
 \newtoggle{fontInter}
 
-
-
+% Default pdflatex helvetica clone
 \DeclareOption{fontHelvet}{
   \toggletrue{fontHelvet}
 }
 
+% Futura Clone -- pointy 
 \DeclareOption{fontJost}{
   \toggletrue{loadfontspec}
   \toggletrue{fontJost}
@@ -95,6 +93,7 @@
   \togglefalse{fontInter}
 }
 
+% Futura DemiBold Clone -- Achtung requires resizing
 \DeclareOption{fontSpartan}{
   \toggletrue{loadfontspec}
   \toggletrue{fontSpartan}
@@ -125,6 +124,7 @@
   \togglefalse{fontInter}
 }
 
+% Helvetica clone
 \DeclareOption{fontInter}{
   \toggletrue{loadfontspec}
   \toggletrue{fontInter}
@@ -141,8 +141,10 @@
 % if print will add corner rounding and tabs
 \newtoggle{print}
 
+% Basic paper geometry
 \newlength{\paperh}
 \newlength{\paperw}
+
 % margins, input here as variable for ROUNDING
 \newlength{\inmar}
 \newlength{\outmar}
@@ -152,11 +154,14 @@
 \setlength\topmar{1.2cm}
 \setlength\botmar{0.8cm}
 \setlength\footmar{0.5cm}
+
 % indendtation for chevrons on front page
 \newlength{\chevin}
+
 % tab dimensions
 \newlength{\tabwidth}
 \newlength{\tabdepth}
+
 % Number of sections
 \newcounter{tabnumber}
 \setcounter{tabnumber}{6}
@@ -164,51 +169,57 @@
 % determines width of tab based on number of tabs
 \setlength\tabwidth{\textheight/\thetabnumber}
 
+% Nominal A5 paper size -- 210x148mm
 \DeclareOption{a5}{
-	\setlength\paperh{21cm}
-	\setlength\paperw{14.8cm}
-	\setlength\inmar{1cm}
-	\setlength\outmar{1cm}
-	\setlength{\chevin}{\outmar-3.3cm}
-	\setlength\tabdepth{0.8cm}
+	\setlength\paperh{210mm}
+	\setlength\paperw{148mm}
+	\setlength\inmar{10mm}
+	\setlength\outmar{10mm}
+	\setlength{\chevin}{\outmar-33mm}
+	\setlength\tabdepth{8mm}
 }
 
-\DeclareOption{a5print}{ % a5 paper with 8mm extra for tabs
-	\setlength\paperh{21cm}
-	\setlength\paperw{15.6cm}
-	\setlength\inmar{1.6cm}
-	\setlength\outmar{1.2cm}
-	\setlength\chevin{\outmar-3.5cm}
-	\setlength\tabdepth{0.8cm}
+% A5 paper with 8mm extra for tabs -- 210x(148+8)mm
+\DeclareOption{a5print}{ 
+	\setlength\paperh{210mm}
+	\setlength\paperw{156mm}
+	\setlength\inmar{16mm}
+	\setlength\outmar{12mm}
+	\setlength\chevin{\outmar-35mm}
+	\setlength\tabdepth{8mm}
 	\toggletrue{print}
 }
 
-\DeclareOption{4x3print}{ % a5 paper height with 9.5mm extra for 4x3 aspect
-	\setlength\paperh{21cm}
-	\setlength\paperw{15.75cm}
-	\setlength\inmar{1.6cm}
-	\setlength\outmar{1.35cm}
-	\setlength\chevin{\outmar-3.65cm}
-	\setlength\tabdepth{0.95cm}
+% A5 paper with 9.5mm extra for 4x3 aspect -- 210x(148+9.5)mm
+\DeclareOption{4x3print}{ 
+	\setlength\paperh{210mm}
+	\setlength\paperw{157.5mm}
+	\setlength\inmar{16mm}
+	\setlength\outmar{13.5mm}
+	\setlength\chevin{\outmar-36.5mm}
+	\setlength\tabdepth{9.5mm}
 	\toggletrue{print}
 }
 
+
+% Nominal A4 paper size -- 297x210mm
 \DeclareOption{a4}{
-	\setlength\paperh{29.7cm}
-	\setlength\paperw{21cm}
-	\setlength\inmar{1.4cm}
-	\setlength\outmar{1.4cm}
-	\setlength{\chevin}{\outmar-3.1cm}
-	\setlength\tabdepth{0.8cm}
+	\setlength\paperh{297mm}
+	\setlength\paperw{210mm}
+	\setlength\inmar{14mm}
+	\setlength\outmar{14mm}
+	\setlength{\chevin}{\outmar-31mm}
+	\setlength\tabdepth{8mm}
 }
 
+% A4 paper with offset margins for printing -- 297x210mm
 \DeclareOption{a4print}{
-	\setlength\paperh{29.7cm}
-	\setlength\paperw{21cm}
-	\setlength\inmar{1.6cm}
-	\setlength\outmar{1.2cm}
-	\setlength{\chevin}{\outmar-2.9cm}
-	\setlength\tabdepth{0.8cm}
+	\setlength\paperh{297mm}
+	\setlength\paperw{210mm}
+	\setlength\inmar{16mm}
+	\setlength\outmar{12mm}
+	\setlength{\chevin}{\outmar-29mm}
+	\setlength\tabdepth{8mm}
 	\toggletrue{print}
 }
 
@@ -237,11 +248,6 @@
 %-----------------------------------------------------------------
 % OTHER FORMATTING OPTIONS
 %-----------------------------------------------------------------
-% activates white-on-black subsections which span \textwidth
-\newtoggle{widesubsec}
-\DeclareOption{widesubsec}{
-  \toggletrue{widesubsec}
-}
 
 %-----------------------------------------------------------------
 % DEV OPTIONS
@@ -261,11 +267,33 @@
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
-\ExecuteOptions{fontSpartan, widesubsec, a5print, colorful}
+\ExecuteOptions{fontSpartan, a5print, colorful}
 \ProcessOptions\relax
-%=================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   E N D
-%=================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GLOBAL FORMATTING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------
+% APPLY PAGE GEOMETRY
+%-----------------------------------------------------------------
+\geometry{
+	paperheight=\paperh,
+	paperwidth=\paperw,
+	margin=1mm,
+	top=\topmar,
+	bottom=\botmar,
+	headsep=5mm,
+	headheight=5mm,
+	footskip=\footmar,
+	inner=\inmar,
+	outer=\outmar,
+	centering
+}
 
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
@@ -338,29 +366,15 @@
   \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
 }
 
-\RequirePackage[
-	paperheight=\paperh,
-	paperwidth=\paperw,
-	margin=0.1cm,
-	top=\topmar,
-	bottom=\botmar,
-	headsep=0.5cm,
-	headheight=0.5cm,
-	footskip=\footmar,
-	inner=\inmar,
-	outer=\outmar,
-	centering
-]{geometry}
-
 %-----------------------------------------------------------------
 % GLOBAL PARAMETER COMMANDS
 %-----------------------------------------------------------------
 
 % Set label for title page
-\newcommand*\aircraftlong{F-14A/B AIRCRAFT}
+\newcommand*\aircraftlong{FULL A/C NAME}
 \newcommand*{\setaircraftlong}[1]{\renewcommand*\aircraftlong{#1}}
 % Set label for header
-\newcommand*\aircraftshort{F-14A/B}
+\newcommand*\aircraftshort{F-XX}
 \newcommand*{\setaircraftshort}[1]{\renewcommand*\aircraftshort{#1}}
 
 % Set number of tabs in preable
@@ -372,6 +386,7 @@
 %-----------------------------------------------------------------
 % HATCHING
 %-----------------------------------------------------------------
+% NOTE -- MUST BE DEFINED BEFORE HEADER/FOOTER
 % creates node option to create hyperref
 \tikzset{
 	hyperref node/.style={
@@ -393,10 +408,10 @@
 % individual parallelogram
 \newcommand{\single}[1]{
 	\fill[color1]
-	([xshift=#1*2*0.5cm,yshift = 0.2cm]current page text area.north west) --
-	([xshift=#1*2*0.5cm+2cm,yshift=2cm+0.2cm]current page text area.north west) --
-	([xshift=#1*2*0.5cm+2.5cm,yshift=2cm+0.2cm]current page text area.north west) --
-	([xshift=#1*2*0.5cm+0.5cm,yshift=0.2cm]current page text area.north west) --
+	([xshift=#1*2*5mm,yshift=2mm]current page text area.north west) --
+	([xshift=#1*2*5mm+20mm,yshift=20mm+2mm]current page text area.north west) --
+	([xshift=#1*2*5mm+25mm,yshift=20mm+2mm]current page text area.north west) --
+	([xshift=#1*2*5mm+5mm,yshift=2mm]current page text area.north west) --
 	cycle;
 }
 % while loop to make many parallelograms
@@ -415,7 +430,7 @@
 		hyperref node=frontpage,
 		anchor=north,
 		minimum width=\paperwidth,
-		minimum height=1cm
+		minimum height=10mm
 	]()at ([yshift=\paperheight/2]current page.center) {};
 	\end{tikzpicture}
 }
@@ -477,6 +492,15 @@
 \pagestyle{body}
 
 %-----------------------------------------------------------------
+% ENUMITEM FORMATTING
+%-----------------------------------------------------------------
+% spacing within lists
+\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
+\setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
+\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
+\setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
+
+%-----------------------------------------------------------------
 % OTHER FORMATTING
 %-----------------------------------------------------------------
 % indent for paragraph
@@ -485,20 +509,109 @@
 \setlength{\parskip}{0.3em}
 
 % space between columns
-\setlength{\columnsep}{0.2cm}
+\setlength{\columnsep}{2mm}
 % create lines between columns and define color of columns
 \setlength{\columnseprule}{0pt} %set thickness default 1pt
 \def\columnseprulecolor{\color{color1}}
 
-% spacing within lists
-\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
-\setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
-\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
-\setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
+%-----------------------------------------------------------------
+% CHANGEBAR SETTINGS
+%-----------------------------------------------------------------
+\cbcolor{color1}
+\setlength{\changebarwidth}{2mm}
+
+%-----------------------------------------------------------------
+% TOCLOFT FORMATTING
+%-----------------------------------------------------------------
+% change distance between section number and title
+% default: 1.55em
+% required for Spartan font: 3.1em w/o chapters
+% required for Spartan font: 3.3em w/ chapters
+% \setlength{\cftsecnumwidth}{2.325em}
+% \setlength{\cftsubsecnumwidth}{3.50em}
+\tocloftpagestyle{empty}
+
+%-----------------------------------------------------------------
+% MINITOC FORMATTING
+%-----------------------------------------------------------------
+\mtcsetfont{minitoc}{section}{\normalfont\small}
+\mtcsetrules{minitoc}{off}
+
+%-----------------------------------------------------------------
+% TITLE FORMATTING
+%-----------------------------------------------------------------
+% \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
+
+% formatting of chapter
+\titleformat{\chapter}[display] % command
+  {\titlefont\huge\bfseries} % format
+  {\chaptertitlename\ \thechapter} % label
+  {20pt} % sep
+  {\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
+  [] % after code
+
+% formatting of section
+\titleformat{\section} % command
+  {\color{color1}\titlefont\large\bfseries} % format
+  {\color{color1}\thesection} % label
+  {1em} % sep
+  {#1} % before-code
+  [{\titlerule[1pt]}] % after-code
+
+% formatting of subsection [full width]
+\titleformat{\subsection} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
+
+\titleformat{name=\subsection,numberless} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+
+% 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titlespacing{\section}{0pt}{5pt}{2pt}
+\titlespacing{\subsection}{0pt}{2pt}{2pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CUSTOM COMMANDS / ENVIRONEMNTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------
+% CUSTOM ENVIRONMENTS
+%-----------------------------------------------------------------
+
+\newenvironment{listtabular}{
+	% begdef
+	\begin{center}
+		\begin{tabular}{l p{3cm} | p{8cm}}
+			\toprule
+}{
+	% enddef
+			\bottomrule
+		\end{tabular}
+	\end{center}
+}
+
+\newenvironment{listlongtable}{
+	% begdef
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+}{
+	% enddef
+			\bottomrule
+		\end{longtable}
+	\end{center}
+}
+
 
 
 %-----------------------------------------------------------------
-% COMMANDS
+% CUSTOM COMMANDS
 %-----------------------------------------------------------------
 % command to create blue, bold mini-titles
 \newcommand{\blue}[1]{
@@ -560,77 +673,9 @@
 	\end{tcolorbox}
 }
 
-%-----------------------------------------------------------------
-% CHANGEBAR SETTINGS
-%-----------------------------------------------------------------
-\cbcolor{color1}
-\setlength{\changebarwidth}{2mm}
-
-%-----------------------------------------------------------------
-% TOCLOFT FORMATTING
-%-----------------------------------------------------------------
-% change distance between section number and title
-% default: 1.55em
-% required for Spartan font: 3.1em w/o chapters
-% required for Spartan font: 3.3em w/ chapters
-% \setlength{\cftsecnumwidth}{2.325em}
-% \setlength{\cftsubsecnumwidth}{3.50em}
-\tocloftpagestyle{empty}
-
-%-----------------------------------------------------------------
-% MINITOC FORMATTING
-%-----------------------------------------------------------------
-\mtcsetfont{minitoc}{section}{\normalfont\small}
-\mtcsetrules{minitoc}{off}
-
-%-----------------------------------------------------------------
-% TITLE FORMATTING
-%-----------------------------------------------------------------
-% \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
-
-% formatting of chapter
-\titleformat{\chapter}[display] % command
-  {\titlefont\huge\bfseries} % format
-  {\chaptertitlename\ \thechapter} % label
-  {20pt} % sep
-  {\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
-  [] % after code
-
-% formatting of section
-\titleformat{\section} % command
-  {\color{color1}\titlefont\large\bfseries} % format
-  {\color{color1}\thesection} % label
-  {1em} % sep
-  {#1} % before-code
-  [{\titlerule[1pt]}] % after-code
-
-% formatting of subsection
-\titleformat{\subsection} % command
-  {\color{white}\titlefont\bfseries} % format
-  {\color{color1}\thesubsection} % label
-  {1em} % sep
-  {\colorbox{color1}{#1}} % before-code
-  [] % after-cocde
-
-% formatting of subsection [full width]
-\iftoggle{widesubsec}{
-  \titleformat{\subsection} % command
-    {\normalfont\bfseries} % format
-    {\color{color1}} % label
-    {0em} % sep
-    {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
-
-  \titleformat{name=\subsection,numberless} % command
-    {\normalfont\bfseries} % format
-    {\color{color1}} % label
-    {0em} % sep
-    {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
-}{}
-
-% 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
-\titlespacing*{\chapter}{0pt}{50pt}{40pt}
-\titlespacing{\section}{0pt}{5pt}{2pt}
-\titlespacing{\subsection}{0pt}{2pt}{2pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TIKZPICTURE COMMANDS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-----------------------------------------------------------------
 % ROUNDING
@@ -640,10 +685,10 @@
 \newlength{\neround}
 \newlength{\seround}
 \newlength{\swround}
-\setlength\nwround{1cm}
-\setlength\neround{1cm}
-\setlength\seround{1cm}
-\setlength\swround{1cm}
+\setlength\nwround{10mm}
+\setlength\neround{10mm}
+\setlength\seround{10mm}
+\setlength\swround{10mm}
 
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
@@ -652,22 +697,22 @@
 		% north west corner
 		\fill[white]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west)
+			([xshift=-\inmar, yshift=\topmar-10mm]current page text area.north west)
 			[rounded corners=\nwround] --
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
+			([xshift=-\inmar+10mm, yshift=\topmar]current page text area.north west)
 			[sharp corners] --
 			cycle;
 		% north east corner
 		\fill[white]
-			([xshift=\outmar, yshift=-#2*\tabwidth-0.5cm]current page text area.north east)
-			[rounded corners=0.4cm] --
+			([xshift=\outmar, yshift=-#2*\tabwidth-5mm]current page text area.north east)
+			[rounded corners=4mm] --
 			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=0.3cm] --
+			[rounded corners=3mm] --
 			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
 			[rounded corners=\neround] --
 			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar-\tabdepth-1cm, yshift=\topmar]current page text area.north east)
+			([xshift=\outmar-\tabdepth-10mm, yshift=\topmar]current page text area.north east)
 			[sharp corners]--
 			([xshift=\outmar, yshift=\topmar]current page text area.north east)--
 			cycle;
@@ -677,9 +722,9 @@
 			([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
       [rounded corners=\seround] --
 			([xshift=\outmar, yshift=-\botmar]current page text area.south east)
-			[rounded corners=0.4cm] --
+			[rounded corners=4mm] --
 			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=0.3cm] --
+			[rounded corners=3mm] --
 			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
 			[rounded corners=\neround] --
 			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east)
@@ -804,8 +849,8 @@
 
 \newlength{\chevout} % sets for right side of chevron
 \newlength{\chevpoint} % sets point of chevron
-\setlength\chevout{\outmar-1.2cm}
-\setlength\chevpoint{\outmar-0.5cm}
+\setlength\chevout{\outmar-12mm}
+\setlength\chevpoint{\outmar-5mm}
 % chevron height is set by tabwidth so it lines up
 
 % creates hyperlinked white chevron with section name
@@ -814,20 +859,20 @@
 	%white chevrons
 	\fill[white]
 		([xshift=\chevin,
-		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-0.25cm)
+		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-2.5mm)
 		]current page text area.north east) --
 		([xshift=\chevout,
-		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-0.25cm)
+		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-2.5mm)
 		]current page text area.north east) --
 		([xshift=\chevpoint,
 		yshift=-(#2+0.5)*\tabwidth
 		]current page text area.north east) --
 		([xshift=\chevout,
-		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-0.25cm)
+		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-2.5mm)
 		]current page text area.north east) --
 		([
 		xshift=\chevin,
-		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-0.25cm)
+		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-2.5mm)
 		]current page text area.north east) --
 		cycle;
 	% hyperlinked node for each section
@@ -836,8 +881,8 @@
 		rectangle,
 		anchor=west,
 		rotate=0,
-		minimum width=2cm,
-		minimum height=\tabwidth-0.5cm,
+		minimum width=20mm,
+		minimum height=\tabwidth-5mm,
 		hyperref node=thumbtab:#2
 	](Procedure) at ([xshift=\chevin, yshift=-(#2+0.5)*\tabwidth]current page text area.north east) {
 		\textbf{#1}

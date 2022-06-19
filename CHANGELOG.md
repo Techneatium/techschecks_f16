@@ -2,6 +2,18 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.19
+
+- `TechCheck.cls`
+  - Updated to latest version
+
+- `F16_CheatSheet.tex`
+  - Updated to use new `tablenumerate`, `tableitemize`, `checklistenumerate`, `checklistitemize` from updated `TechCheck.cls`
+  - Updated Frontpage, added `appendix`
+  - Finished `POST-START`
+
+- Added .pdf to `.gitignore`, pdfs can be added to releases
+
 ***
 
 ### Changelog - 2022.05.29

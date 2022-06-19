@@ -37,6 +37,7 @@
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
 \graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
+\RequirePackage{subcaption} % used for subfigures
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units
@@ -44,6 +45,7 @@
 \RequirePackage{tikzpagenodes} % points for tikz
 \usetikzlibrary{calc} % used for hyperlinked nodes
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
+\RequirePackage{cleveref} % better referencing
 \RequirePackage{lipsum} % lorem ipsum
 \RequirePackage[document]{ragged2e} % left ragged text
 \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
@@ -264,6 +266,13 @@
   \PassOptionsToClass{showframe}{geometry}
 }
 
+% Thumbnar on/off
+\newtoggle{autothumbnar}
+\toggletrue{autothumbnar}
+\DeclareOption{manthumbnar}{
+	\togglefalse{autothumbnar}
+}
+
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
@@ -384,58 +393,6 @@
 }
 
 %-----------------------------------------------------------------
-% HATCHING
-%-----------------------------------------------------------------
-% NOTE -- MUST BE DEFINED BEFORE HEADER/FOOTER
-% creates node option to create hyperref
-\tikzset{
-	hyperref node/.style={
-		alias=sourcenode,
-		append after command={
-			let     \p1 = (sourcenode.north west),
-			\p2=(sourcenode.south east),
-			\n1={\x2-\x1},
-			\n2={\y1-\y2} in
-			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperref[#1]{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
-			%xelatex needs \XeTeXLinkBox, won't create a link unless it
-			%finds text --- rules don't work without \XeTeXLinkBox.
-			%Still builds correctly with pdflatex and lualatex
-		}
-	}
-}
-% titlepage chevron indentation
-
-% individual parallelogram
-\newcommand{\single}[1]{
-	\fill[color1]
-	([xshift=#1*2*5mm,yshift=2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+20mm,yshift=20mm+2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+25mm,yshift=20mm+2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+5mm,yshift=2mm]current page text area.north west) --
-	cycle;
-}
-% while loop to make many parallelograms
-\newcommand\Hatch{
-	\begin{tikzpicture}[remember picture,overlay]
-	\newcount\foo
-	\foo=-3
-	\loop
-	\single{\the\foo}
-	\advance \foo +1
-	\ifnum \foo<21
-	\repeat
-	% makes hatched area hyperlink to front page
-	\node[
-		rectangle,
-		hyperref node=frontpage,
-		anchor=north,
-		minimum width=\paperwidth,
-		minimum height=10mm
-	]()at ([yshift=\paperheight/2]current page.center) {};
-	\end{tikzpicture}
-}
-
-%-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
 % remove header and foot
@@ -446,26 +403,40 @@
 	% code formatting section titles in header
 	\textcolor{white}{\Large\textbf{#1}}
 }}{}}
+\fancypagestyle{superempty}{
+	% clear defaults
+	\fancyhf{}
+	\fancyhead[LE,LO]{
+		\iftoggle{hatch}{
+		\Hatch
+		}{}
+	}
+}
 \fancypagestyle{empty}{
 	% clear defaults
 	\fancyhf{}
 	\fancyhead[LE,LO]{
-    \iftoggle{hatch}{
-      \Hatch
-    }{}
-  }
+		\iftoggle{hatch}{
+		\Hatch
+		}{}
+	}
+	\fancyhead[RO]{
+		\iftoggle{autothumbnar}{
+			\thumbnar
+		}{}
+	}
 }
 \fancypagestyle{plain}{
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
 	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
-	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
+	\fancyfoot[C]{{\tightfont\textbf{\thepage}}}% LE,RO
 	\fancyhead[LE,LO]{
-    \iftoggle{hatch}{
-      \Hatch
-    }{}
-  }
+		\iftoggle{hatch}{
+			\Hatch
+		}{}
+	}
 }
 \fancypagestyle{body}{
 	% clear defaults
@@ -474,19 +445,31 @@
 	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
 	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
 	% date in top right
-	\fancyhead[RE,RO]{\colorbox{color1}{
+	\fancyhead[RE]{
+		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
-	}}
+		}
+	}
+	\fancyhead[RO]{
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+		}
+		\iftoggle{autothumbnar}{
+			\thumbnar
+		}{}
+	}
 	% extra thing in middle
-	\fancyhead[C]{\colorbox{color1}{
+	\fancyhead[C]{
+		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
-	}}
+		}
+	}
 	\fancyhead[LE,LO]{
-    \iftoggle{hatch}{
-      \Hatch
-    }{}
-    \titlefont\textbf{\leftmark}
-  }
+		\iftoggle{hatch}{
+			\Hatch
+		}{}
+		\titlefont\textbf{\leftmark}
+  	}
 	\renewcommand{\headrulewidth}{0pt} % and the line
 }
 \pagestyle{body}
@@ -581,34 +564,292 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-----------------------------------------------------------------
-% CUSTOM ENVIRONMENTS
+% CUSTOM MINIPAGE ENVIRONMENTS
 %-----------------------------------------------------------------
+\newenvironment{tableminipage}{% begdef
+	\begin{minipage}[t]{\linewidth}
+	\vspace{-7pt}
+}{% enddef
+	\end{minipage}
+}
 
-\newenvironment{listtabular}{
-	% begdef
+%-----------------------------------------------------------------
+% CUSTOM TABLE ENVIRONMENTS
+%-----------------------------------------------------------------
+\newenvironment{listtable}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+		\begin{tableminipage}
+			\begin{enumerate}[##1]
+	}{% enddef
+			\end{enumerate}
+		\end{tableminipage}
+	}
+
+	\newenvironment{subitemize}[1][]{% begdef
+		\begin{tableminipage}
+			\begin{itemize}[##1]
+	}{% enddef
+			\end{itemize}
+		\end{tableminipage}
+	}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
-}{
-	% enddef
+}{% enddef
 			\bottomrule
 		\end{tabular}
 	\end{center}
 }
 
-\newenvironment{listlongtable}{
-	% begdef
+\newenvironment{listlongtable}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+		\begin{tableminipage}
+			\begin{enumerate}[##1]
+	}{% enddef
+			\end{enumerate}
+		\end{tableminipage}
+	}
+
+	\newenvironment{subitemize}[1][]{% begdef
+		\begin{tableminipage}
+			\begin{itemize}[##1]
+	}{% enddef
+			\end{itemize}
+		\end{tableminipage}
+	}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
-}{
-	% enddef
+}{% enddef
 			\bottomrule
 		\end{longtable}
 	\end{center}
 }
 
+%-----------------------------------------------------------------
+% TABLE ENVIRONMENTS WITH ENUMITEM-LIKE BEHAVIOR
+%-----------------------------------------------------------------
 
+% Counter for use in tablenumitems
+\newcounter{tablenumi}
+% tablenumerate -- creates table that behaves like enumerate
+\newenvironment{tablenumerate}[1][0]{% begdef
+	\setcounter{tablenumi}{1}
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \blue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \dblue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom longtable style
+	\begin{listlongtable}
+}{% enddef
+	\end{listlongtable}
+}
+
+% tableitemize -- creates table that behaves like itemize
+\newenvironment{tableitemize}{% begdef
+	\setcounter{tablenumi}{1}
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \blue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \dblue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom longtable style
+	\begin{listlongtable}
+}{% enddef
+	\end{listlongtable}
+}
+
+% SHORT VERSIONS
+
+% shortablenumerate -- creates table that behaves like enumerate
+\newenvironment{shortablenumerate}{% begdef
+	\setcounter{tablenumi}{1} 
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \blue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \dblue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom table style
+	\begin{listtable}
+}{% enddef
+	\end{listtable}
+}
+
+% shortableitemize -- creates table that behaves like itemize
+\newenvironment{shortableitemize}{% begdef
+	\setcounter{tablenumi}{1}
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \blue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \dblue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom table style
+	\begin{listtable}
+}{% enddef
+	\end{listtable}
+}
+
+%-----------------------------------------------------------------
+% LOW LEVEL CUSTOM ENUMITEM ENVIRONMENTS
+%-----------------------------------------------------------------
+\newenvironment{innerchecklistenumerate}[1][]{% begdef
+	\begin{enumerate}[itemsep=4pt, #1]
+}{% enddef
+	\end{enumerate}
+}
+
+\newenvironment{innerchecklistitemize}[1][]{% begdef
+	\begin{itemize}[#1]
+}{% enddef
+	\end{itemize}
+}
+
+\newenvironment{outerchecklistenumerate}{% begdef
+	\begin{enumerate}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}]
+}{% begdef
+	\end{enumerate}
+}
+
+\newenvironment{outerchecklistitemize}{% begdef
+	\begin{itemize}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\textbullet}]
+}{% begdef
+	\end{itemize}
+}
+
+%-----------------------------------------------------------------
+% HIGH-LEVEL CUSTOM ENUMITEM ENVIRONMENTS
+%-----------------------------------------------------------------
+% SHORT VERSIONS
+\newenvironment{checklistenumerate}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+		\begin{innerchecklistenumerate}[##1]
+	}{% enddef
+		\end{innerchecklistenumerate}
+	}
+	\newenvironment{subitemize}[1][]{% begdef
+		\begin{innerchecklistitemize}[##1]
+	}{% enddef
+		\end{innerchecklistitemize}
+	}
+	\newcommand{\blueitem}[2]{
+		\item \blue{##1} {##2}
+	}
+	\newcommand{\dblueitem}[2]{
+		\item \dblue{##1} {##2}
+	}
+	\begin{outerchecklistenumerate}
+}{% enddef
+	\end{outerchecklistenumerate}
+}
+
+\newenvironment{checklistitemize}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+		\begin{innerchecklistenumerate}[##1]
+	}{% enddef
+		\end{innerchecklistenumerate}
+	}
+	\newenvironment{subitemize}[1][]{% begdef
+		\begin{innerchecklistitemize}[##1]
+	}{% enddef
+		\end{innerchecklistitemize}
+	}
+	\newcommand{\blueitem}[2]{
+		\item \blue{##1} ##2
+	}
+	\newcommand{\dblueitem}[2]{
+		\item \dblue{##1} ##2
+	}
+	\begin{outerchecklistitemize}
+}{% enddef
+	\end{outerchecklistitemize}
+}
+
+% LONG VERSIONS -- No difference to short versions
+% Just to keep track if switching from longtablenumitem
+\newenvironment{longchecklistenumerate}{% begdef
+	\begin{checklistenumerate}
+}{% enddef
+	\end{checklistenumerate}
+}
+
+\newenvironment{longchecklistitemize}{% begdef
+	\begin{checklistitemize}
+}{% enddef
+	\end{checklistitemize}
+}
 
 %-----------------------------------------------------------------
 % CUSTOM COMMANDS
@@ -678,6 +919,57 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-----------------------------------------------------------------
+% HATCHING
+%-----------------------------------------------------------------
+% creates node option to create hyperref
+\tikzset{
+	hyperref node/.style={
+		alias=sourcenode,
+		append after command={
+			let     \p1 = (sourcenode.north west),
+			\p2=(sourcenode.south east),
+			\n1={\x2-\x1},
+			\n2={\y1-\y2} in
+			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperref[#1]{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
+			%xelatex needs \XeTeXLinkBox, won't create a link unless it
+			%finds text --- rules don't work without \XeTeXLinkBox.
+			%Still builds correctly with pdflatex and lualatex
+		}
+	}
+}
+% titlepage chevron indentation
+
+% individual parallelogram
+\newcommand{\single}[1]{
+	\fill[color1]
+	([xshift=#1*2*5mm,yshift=2mm]current page text area.north west) --
+	([xshift=#1*2*5mm+20mm,yshift=20mm+2mm]current page text area.north west) --
+	([xshift=#1*2*5mm+25mm,yshift=20mm+2mm]current page text area.north west) --
+	([xshift=#1*2*5mm+5mm,yshift=2mm]current page text area.north west) --
+	cycle;
+}
+% while loop to make many parallelograms
+\newcommand\Hatch{
+	\begin{tikzpicture}[remember picture,overlay]
+	\newcount\foo
+	\foo=-3
+	\loop
+	\single{\the\foo}
+	\advance \foo +1
+	\ifnum \foo<21
+	\repeat
+	% makes hatched area hyperlink to front page
+	\node[
+		rectangle,
+		hyperref node=frontpage,
+		anchor=north,
+		minimum width=\paperwidth,
+		minimum height=10mm
+	]()at ([yshift=\paperheight/2]current page.center) {};
+	\end{tikzpicture}
+}
+
+%-----------------------------------------------------------------
 % ROUNDING
 %-----------------------------------------------------------------
 % variables for controlling rounding diameters in each corner
@@ -737,7 +1029,7 @@
 			minimum height=\tabdepth,
 			minimum width=\tabwidth
 		]
-		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east) {
+		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
 			\small\textbf{#1}
 		};
 		\end{tikzpicture}

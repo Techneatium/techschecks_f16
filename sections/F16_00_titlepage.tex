@@ -2,9 +2,10 @@
 % TITLE PAGE
 %-----------------------------------------------------------------
 	% deactivate header and footer
-	\pagestyle{empty}
+	\pagestyle{superempty}
 	\newlength{\centeroffset}
 	\setlength\centeroffset{(\chevin-\outmar-0.5cm)/2}
+
 	\begin{tikzpicture}[overlay, remember picture]
 	\node[
 	]() at ([xshift=\centeroffset,yshift=8.5cm]current page.center) {
@@ -32,6 +33,7 @@
 		([xshift=\chevin-0.5cm, yshift=0.2cm]current page text area.north east) --
 		cycle;
 	\end{tikzpicture}
+	
 	% label for hyperrefs back to frontpage
 	\label{frontpage}
 	% make chevrons
@@ -42,4 +44,5 @@
 	\thumbfront{\begin{tabular}{c} LITENING \\ TGP \end{tabular}}{3}
 	\thumbfront{\begin{tabular}{c} A/G \\ Weapons \end{tabular}}{4}
 	\thumbfront{\begin{tabular}{c} A/A \\ Weapons \end{tabular}}{5}
+	\thumbfront{Appendix}{6}
 	\thumbwide

@@ -62,6 +62,7 @@
 \tcbuselibrary{skins, breakable}
 \RequirePackage{luatex85} % required to make changebar work with lualatex
 \RequirePackage[pdftex, color, outerbars]{changebar} % what it says
+\RequirePackage{xkeyval} % allows defining keys for macros
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T
@@ -632,15 +633,29 @@
 
 % Counter for use in tablenumitems
 \newcounter{tablenumi}
+\setcounter{tablenumi}{1} % set to one to prevent edge case error
+\newcounter{tablenumistart} % used to check if first line to prevent
+
+% Key to start an enumerate at a given number
+\define@key{tablenumitem}{start}{
+	\setcounter{tablenumi}{#1}
+	\setcounter{tablenumistart}{\value{tablenumi}}
+}
+
+% Key to resume an enumerate at previous number
+\define@key{tablenumitem}{resume}[]{
+	\setcounter{tablenumistart}{\value{tablenumi}}
+}
+
 % tablenumerate -- creates table that behaves like enumerate
-\newenvironment{tablenumerate}[1][0]{% begdef
-	\setcounter{tablenumi}{1}
+\newenvironment{tablenumerate}[1][start=1]{% begdef
+	\setkeys{tablenumitem}{#1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column
 	\newcommand{\blueitem}[2]{
 		% Create midrule unless first row
-		\ifnum\value{tablenumi}>1
+		\ifnum\value{tablenumi}>\value{tablenumistart}
 			\midrule
 		\else
 		\fi
@@ -700,13 +715,13 @@
 
 % shortablenumerate -- creates table that behaves like enumerate
 \newenvironment{shortablenumerate}{% begdef
-	\setcounter{tablenumi}{1} 
+	\setkeys{tablenumitem}{#1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column
 	\newcommand{\blueitem}[2]{
 		% Create midrule unless first row
-		\ifnum\value{tablenumi}>1
+		\ifnum\value{tablenumi}>\value{tablenumistart}
 			\midrule
 		\else
 		\fi

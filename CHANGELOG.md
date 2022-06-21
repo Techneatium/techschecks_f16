@@ -2,6 +2,12 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.21
+
+- `TechCheck.cls`
+  - Updated to latest version - adds keys `resume`, `start=num` to `tablenumerate`
+
+
 ### Changelog - 2022.06.19
 
 - `TechCheck.cls`

@@ -1,4 +1,4 @@
-# F-14 CHEATSHEET
+# F-16C CHEATSHEET
 
 ## WHAT IS THIS?
 
@@ -26,7 +26,7 @@
 ## THANKS / SOURCES
 
 - A huge thanks to [Chuck's Guides](https://www.mudspike.com/chucks-guides-dcs/), this served as the original basis for this guide.
-- The Airforce Manual was also referenced as necessary
+- The (publicly available) USAF Manual was also referenced as necessary
 
 ***
 

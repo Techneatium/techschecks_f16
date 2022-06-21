@@ -5,7 +5,7 @@
 ### Changelog - 2022.06.21
 
 - `TechCheck.cls`
-  - Updated to latest version - adds keys `resume`, `start=num` to `tablenumerate`
+  - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md) - adds keys `resume`, `start=num` to `tablenumerate`
 
 - `F16_CheatSheet.tex`
   - Added (temporary) breaks in tablenumerates using new keys
@@ -17,7 +17,7 @@
 ### Changelog - 2022.06.19
 
 - `TechCheck.cls`
-  - Updated to latest version
+  - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md).
 
 - `F16_CheatSheet.tex`
   - Updated to use new `tablenumerate`, `tableitemize`, `checklistenumerate`, `checklistitemize` from updated `TechCheck.cls`
@@ -30,7 +30,8 @@
 
 ### Changelog - 2022.05.29
 
-- Updated to latest version of `TechCheck.cls`
+- `TechCheck.cls`
+  - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md).
 - `F16_CheatSheet.tex`
   - Implemented new environments
   - Changed font to `Inter`

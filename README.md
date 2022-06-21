@@ -1,5 +1,13 @@
 # F-16C CHEATSHEET
 
+## HOW TO USE
+
+Check the [Releases](https://github.com/Techneatium/F16_CheatSheet/releases) and download the latest PDF, then use as desired. The remaining files are the LaTeX source code
+
+For ease of maintenance, no image file versions are maintained here. To convert this to a format directly suitable as an in-game kneeboard (e.g PNG) please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/)
+
+***
+
 ## WHAT IS THIS?
 
 - A kneeboard-style `cheatsheet` for the DCS F-16C
@@ -21,14 +29,6 @@ The front page chevrons and thumbtabs on the chapter pages are not just for show
 ### Styling
 
 While the styling of this document is in no ways completely representative of actual documentation, it was chosen to feel *inspired* by actual NATOPS and Emergency Checklists.
-
-***
-
-## HOW TO USE
-
-Just download the PDF and use as desired. The remaining files are the LaTeX source code
-
-For ease of maintenance, only the PDF and source files are available here. To convert this to a format directly suitable as an in-game kneeboard (e.g PNG) please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/)
 
 ***
 

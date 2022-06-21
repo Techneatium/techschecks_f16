@@ -12,6 +12,7 @@
   - Added more placeholder figures
     - Implemented `subfigure`s
     - experimented with using hyperlinks directly from checklist `blue`-part to relevant diagram in `PRE-START`
+  - Began initial `AIM-120` section
 
 ### Changelog - 2022.06.19
 

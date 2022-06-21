@@ -650,6 +650,125 @@
 
 	\section{AIM-120 AMRAAM}
 
+	\subsection{OVERVIEW}
+	\begin{tableitemize}
+		\blueitem{SMS Format}{}
+		\blueitem{HUD Symbology}{}
+		\blueitem{FCR Symbology}{}
+	\end{tableitemize}
+	
+	\clearpage
+
+	\subsection{SINGLE TARGET EMPLOYMENT}
+	\begin{tablenumerate}
+		\blueitem{Conditions}{
+		\begin{subitemize}
+			\item \textbf{FCR} \dotfill \textbf{ON}
+			\item \textbf{Master Arm} \dotfill \textbf{ARM}
+		\end{subitemize}}
+		\blueitem{Select AIM-120}{
+		\emph{Via MFD}
+		\begin{subenumerate}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
+			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
+		\end{subenumerate}
+
+		\emph{Via Missile Override}
+		\begin{subenumerate}
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
+			\item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+		\end{subenumerate}
+		
+		\emph{Via Dogfight}
+		\begin{subenumerate}
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
+			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
+		\end{subenumerate}}
+		\blueitem{Acquire Target}{
+		\begin{subenumerate}
+			\item \textbf{Target} \dotfill \textbf{Locked}
+			\begin{itemize}
+				\item \textbf{STT} -- from RWS, TWS, or ACM
+				\item \textbf{Bug} -- from TWS
+			\end{itemize}
+			\item \textbf{Line of Sight} \dotfill Verify \textbf{SLAVE}
+		\end{subenumerate}}
+		\blueitem{Symbology}{
+		\begin{subitemize}
+			\item \textbf{TLL} -- \textbf{T}arget \textbf{L}ocator \textbf{L}ine -- Extends from gun cross \& points towards target
+			\item \textbf{ASEC} -- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle \\
+			Changes size to reflect target state 
+			\item \textbf{ASC} -- \textbf{A}ttack \textbf{S}teering \textbf{C}ue -- appears
+			\item \textbf{Target Range} -- Displayed
+		\end{subitemize}}
+		\blueitem{Employment}{
+		\begin{subenumerate}
+			\item \textbf{Maneuver}
+			\begin{itemize}
+				\item Place \textbf{ASC} in \textbf{ASEC}
+				\item Monitor \textbf{Dynamic Launch Zone}
+			\end{itemize}
+			\item \textbf{Fire Missiles} \dotfill \textbf{Depress WPN REL}
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\clearpage
+
+	\subsection{MULTI TARGET EMPLOYMENT}
+	\begin{tablenumerate}
+		\blueitem{Conditions}{
+		\begin{subitemize}
+			\item \textbf{FCR} \dotfill \textbf{ON}
+			\item \textbf{Master Arm} \dotfill \textbf{ARM}
+		\end{subitemize}}
+		\blueitem{Select AIM-120}{
+		\emph{Via MFD}
+		\begin{subenumerate}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
+			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
+		\end{subenumerate}
+
+		\emph{Via Missile Override}
+		\begin{subenumerate}
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
+			\item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+		\end{subenumerate}
+		
+		\emph{Via Dogfight}
+		\begin{subenumerate}
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
+			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
+		\end{subenumerate}}
+		\blueitem{Acquire Targets}{
+		\emph{From RWS/DTT or TWS}
+		\begin{subenumerate}
+			\item \textbf{Designate} \dotfill \textbf{TMS Fwd}\\
+			\hfill (\emph{over each target})
+			\item \textbf{Line of Sight} \dotfill Verify \textbf{SLAVE}
+		\end{subenumerate}}
+		\blueitem{Symbology}{
+		\begin{subitemize}
+			\item \textbf{TLL} -- \textbf{T}arget \textbf{L}ocator \textbf{L}ine -- Extends from gun cross \& points towards target
+			\item \textbf{ASEC} -- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle \\
+			Changes size to reflect target state 
+			\item \textbf{ASC} -- \textbf{A}ttack \textbf{S}teering \textbf{C}ue -- appears
+			\item \textbf{Target Range} -- Displayed
+		\end{subitemize}}
+		\blueitem{Employment}{
+		\begin{subenumerate}
+			\item \textbf{Maneuver}
+			\begin{itemize}
+				\item Until all targets within \textbf{DLZ}
+			\end{itemize}
+			\item \textbf{Fire Missile} \dotfill \textbf{Depress WPN REL}
+			\item \textbf{Cycle Targets} \dotfill \textbf{TMS Left} 
+			\item \textbf{Fire Missiles} \dotfill \textbf{Depress WPN REL} \\
+			\hfill (\emph{Repeat until all desired targets engaged})
+		\end{subenumerate}}
+	\end{tablenumerate}
+
 	\chapter{APPENDIX}
 	\thumbtab{Appendix}{6}
 	\minitoc

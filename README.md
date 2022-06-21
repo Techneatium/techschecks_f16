@@ -19,7 +19,39 @@
   
 ### TO-DO
 
-- All of it
+- `PROCEDURES`
+  - `START-UP`
+    - Requires all diagrams (currently just placeholders)
+    - Current placeholder styling good
+    - Perhaps try out styling with individual panel outlines which can then be filled in to highlight?
+  - `TAKEOFF & LANDING`
+  - `INFLIGHT`
+  - `EMERGENCY PROCEDURES`
+
+- `SYSTEMS`
+  - all of it
+
+- `APG-68 FCR`
+  - all of it
+
+- `TGP & HTS`
+  - all of it
+
+- `A/G WEAPONS`
+  - all of it
+
+- `A/A WEAPONS`
+  - `M-61`
+  - `AIM-9`
+  - `AIM-120 AMRAAM`
+    - OVERVIEW
+      - Needs to be written
+      - Diagrams for HUD symbology with & without radar lock
+      - Diagrams for FCR symbology with & without radar lock (also different radar modes, bugged vs stt, etc.)
+      - Refer to official ED manual p.205 and following
+
+- `APPENDIX`
+  - all of it
 
 ***
 

@@ -714,7 +714,7 @@
 % SHORT VERSIONS
 
 % shortablenumerate -- creates table that behaves like enumerate
-\newenvironment{shortablenumerate}{% begdef
+\newenvironment{shortablenumerate}[1][start=1]{% begdef
 	\setkeys{tablenumitem}{#1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column

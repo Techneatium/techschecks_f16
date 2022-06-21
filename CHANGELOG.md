@@ -7,6 +7,9 @@
 - `TechCheck.cls`
   - Updated to latest version - adds keys `resume`, `start=num` to `tablenumerate`
 
+- `F16_CheatSheet.tex`
+  - Added (temporary) breaks in tablenumerates using new keys
+
 ### Changelog - 2022.06.19
 
 - `TechCheck.cls`

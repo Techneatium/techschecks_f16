@@ -9,6 +9,9 @@
 
 - `F16_CheatSheet.tex`
   - Added (temporary) breaks in tablenumerates using new keys
+  - Added more placeholder figures
+    - Implemented `subfigure`s
+    - experimented with using hyperlinks directly from checklist `blue`-part to relevant diagram in `PRE-START`
 
 ### Changelog - 2022.06.19
 

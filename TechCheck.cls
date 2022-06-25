@@ -25,7 +25,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[10pt,usenames,dvipsnames,twoside]{report}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2022/05/29]
+\ProvidesClass{TechCheck}[2022/06/24]
 
 %-----------------------------------------------------------------
 % GENERAL PACKAGES
@@ -77,7 +77,6 @@
 \newtoggle{fontJost}
 \newtoggle{fontSpartan}
 \newtoggle{fontMetropolis}
-\newtoggle{fontHelvetica}
 \newtoggle{fontInter}
 
 % Default pdflatex helvetica clone
@@ -92,38 +91,26 @@
   % toggle other fonts false
   \togglefalse{fontSpartan}
   \togglefalse{fontMetropolis}
-  \togglefalse{fontHelvetica}
   \togglefalse{fontInter}
 }
 
-% Futura DemiBold Clone -- Achtung requires resizing
+% Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
   \toggletrue{loadfontspec}
   \toggletrue{fontSpartan}
   % toggle other fonts false
   \togglefalse{fontJost}
   \togglefalse{fontMetropolis}
-  \togglefalse{fontHelvetica}
   \togglefalse{fontInter}
 }
 
+% Gotham Clone 
 \DeclareOption{fontMetropolis}{
   \toggletrue{loadfontspec}
   \toggletrue{fontMetropolis}
   % toggle other fonts false
   \togglefalse{fontJost}
   \togglefalse{fontSpartan}
-  \togglefalse{fontHelvetica}
-  \togglefalse{fontInter}
-}
-
-\DeclareOption{fontHelvetica}{
-  \toggletrue{loadfontspec}
-  \toggletrue{fontHelvetica}
-  % toggle other fonts false
-  \togglefalse{fontJost}
-  \togglefalse{fontSpartan}
-  \togglefalse{fontMetropolis}
   \togglefalse{fontInter}
 }
 
@@ -135,7 +122,6 @@
   \togglefalse{fontJost}
   \togglefalse{fontSpartan}
   \togglefalse{fontMetropolis}
-  \togglefalse{fontHelvetica}
 }
 
 %-----------------------------------------------------------------
@@ -320,61 +306,56 @@
 
 \iftoggle{fontJost}{
   \setmainfont[
+	Path=./fonts/,
   	Ligatures=TeX,
   	UprightFont=*-Regular,
   	ItalicFont=*-Italic,
   	BoldFont=*-Bold,
   	BoldFeatures={LetterSpace=2.5}
   ]{Jost}
-  \newfontfamily\tightfont{Jost}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Jost-Bold}[Ligatures=TeX, LetterSpace=4.0]
+  \newfontfamily\tightfont{Jost-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Jost-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontSpartan}{
   \setmainfont[
+	Path=./fonts/,
   	Ligatures=TeX,
-  	Scale=0.85,
   	UprightFont=*-Medium,
-  	ItalicFont=Jost-Italic,
+	LetterSpace=2.0,
+  	ItalicFont=*-Medium Italic,
   	ItalicFeatures={Scale=1.0},
   	BoldFont=*-Bold,
-  	BoldFeatures={LetterSpace=2.5}
-  ]{Spartan}
-  \newfontfamily\tightfont{Spartan}[Ligatures=TeX, Scale=0.85, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
+  	BoldFeatures={LetterSpace=5.0}
+  ]{Spartan MB}
+  \newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontMetropolis}{
   \setmainfont[
+	Path=./fonts/,
   	Ligatures=TeX,
   	UprightFont=*-Regular,
   	ItalicFont=*-Regular Italic,
   	BoldFont=*-Semi Bold,
   	BoldFeatures={LetterSpace=3.0}
   ]{Metropolis}
-  \newfontfamily\tightfont{Metropolis}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Metropolis-Bold}[Ligatures=TeX, LetterSpace=4.0]
+  \newfontfamily\tightfont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
-
-\iftoggle{fontHelvetica}{
-  \setmainfont[
-    Ligatures=TeX,
-    BoldFont=*-Bold,
-    ItalicFont=*-Italic,
-  ]{Helvetica Neue}
-  \newfontfamily\tightfont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=0.0] % used for `---` in page numbering
-  \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
-}
 
 \iftoggle{fontInter}{
   \setmainfont[
+	Path=./fonts/,
     Ligatures=TeX,
+	UprightFont=*-Regular,
     BoldFont=*-Bold,
     ItalicFont=Jost-Italic,
   ]{Inter}
-  \newfontfamily\tightfont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=0.0] % used for `---` in page numbering
-  \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
-}
+  \newfontfamily\tightfont{Spartan-Bold}[Path=./fonts/, Ligatures=TeX, Scale=0.85, LetterSpace=0.0] % used for `---` in page numbering
+  \newfontfamily\titlefont{Spartan-Bold}[Path=./fonts/, Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
+}{}
 
 %-----------------------------------------------------------------
 % GLOBAL PARAMETER COMMANDS

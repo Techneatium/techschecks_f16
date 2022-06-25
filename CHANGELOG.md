@@ -2,7 +2,16 @@
 
 ## CHANGELOG
 
-### Changelog - 2022.06.21
+### Changelog - 2022.06.25 `v0.0.3`
+
+- `TechCheck.cls`
+  - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md) - adds fonts to the repository
+
+- `F16_CheatSheet.tex`
+  - Continued `AIM-120` section
+  - Additional placeholder figures added to `START-UP`
+
+### Changelog - 2022.06.21 `v0.0.2`
 
 - `TechCheck.cls`
   - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md) - adds keys `resume`, `start=num` to `tablenumerate`
@@ -14,7 +23,7 @@
     - experimented with using hyperlinks directly from checklist `blue`-part to relevant diagram in `PRE-START`
   - Began initial `AIM-120` section
 
-### Changelog - 2022.06.19
+### Changelog - 2022.06.19 `v0.0.1`
 
 - `TechCheck.cls`
   - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md).

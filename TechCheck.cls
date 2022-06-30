@@ -353,8 +353,8 @@
     BoldFont=*-Bold,
     ItalicFont=Jost-Italic,
   ]{Inter}
-  \newfontfamily\tightfont{Spartan-Bold}[Path=./fonts/, Ligatures=TeX, Scale=0.85, LetterSpace=0.0] % used for `---` in page numbering
-  \newfontfamily\titlefont{Spartan-Bold}[Path=./fonts/, Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
+  \newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 %-----------------------------------------------------------------

@@ -2,6 +2,15 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.30 `v0.0.4`
+
+- `TechCheck.cls`
+  - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md)
+
+- `F16_CheatSheet.tex`
+  - Changed to evaluate new placeholder/test figures
+  - Added initial `M61 CANNON` section
+
 ### Changelog - 2022.06.25 `v0.0.3`
 
 - `TechCheck.cls`

@@ -67,6 +67,9 @@ While the styling of this document is in no ways completely representative of ac
 
 - `A/A WEAPONS`
   - `M-61`
+    - Need diagrams of EEGS symbology both in general, and (if possible) what a "firing solution" looks like.
+    - Refer to official ED manual / Chuck's guide for some example screenshots
+    - Diagram showing TMS functionality in ACM modes would be useful to reference here. These would be very useful for each sensor / sensor mode
   - `AIM-9`
   - `AIM-120 AMRAAM`
     - OVERVIEW

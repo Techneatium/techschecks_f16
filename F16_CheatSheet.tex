@@ -664,6 +664,227 @@
 	}
 
 	\clearpage
+	\subsection{POST-START TESTS \& CHECKS}
+	\begin{tablenumerate}
+		\blueitem{ENG SEC Mode}{
+		\begin{subenumerate}
+			\item \textbf{ENG CONT Switch} \dotfill \textbf{SEC}
+			\begin{itemize}
+				\item \textbf{SEC Caution Light} -- \textbf{ON}
+				\item \textbf{RPM} -- Stabilized
+				\item \textbf{Throttle} -- Snap to \textbf{MIL}, then to \textbf{IDLE} when RPM reaches 85\% 
+				\item \textbf{NOZ POS} -- < 10\% within 30s after \textbf{SEC} selection
+			\end{itemize}
+			\item \textbf{ENG CONT Switch} \dotfill \textbf{PRI}
+			\begin{itemize}
+				\item \textbf{SEC Caution Light} -- \textbf{OFF}
+				\item \textbf{NOZ POS} -- > 94\% 
+			\end{itemize}
+		\end{subenumerate}}
+		\blueitem{FLCS BIT}{
+		\begin{subenumerate}
+			\item \textbf{FLCS BIT Switch} \dotfill \textbf{BIT}
+			\begin{itemize}
+				\item \textbf{FLCP RUN Light} -- Illuminates
+			\end{itemize}
+			\item \textbf{BIT Completion}
+			\begin{itemize}
+				\item \textbf{Duration} -- Approx. 45s
+				\item \textbf{FLCP RUN Light} -- Extinguishes
+				\item \textbf{BIT Switch} -- Returns to \textbf{OFF}
+				\item \textbf{FAIL Light} -- Verify \textbf{OFF}
+				\item \textbf{FLCS Warning Light} -- Verify \textbf{OFF}
+			\end{itemize}
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}[t]{0.45\linewidth}
+			\centering
+			\includegraphics[
+				width = 3cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+			\caption*{\textbf{ENG SEC Mode}}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.45\linewidth}
+			\centering
+			\includegraphics[
+				width = 3cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+			\caption*{\textbf{FLCS BIT}}
+		\end{subfigure}
+		\caption{\textbf{Post-Start}}
+		\label{fig:proc:poststart2}
+	\end{figure}
+
+	\clearpage
+
+	\begin{tablenumerate}[resume]
+		\blueitem{FUEL QTY Check}{
+		\begin{subenumerate}
+			\item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{TEST}
+			\begin{itemize}
+				\item \textbf{FR/AL Pointers} -- 2000 $\pm$ 100 lbs
+				\item \textbf{Totalizer} -- 6000 $\pm$ 100 lbs
+			\end{itemize}
+			\item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{NORM}
+			\begin{itemize}
+				\item \textbf{AL Pointer} -- 2675/2810 lbs
+				\item \textbf{FR POINTER} -- 3100/3250 lbs
+			\end{itemize}
+			\item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{RSVR}
+			\begin{itemize}
+				\item Each indicator approx. 460/480 lbs
+			\end{itemize}
+			\item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{INT WING}
+			\begin{itemize}
+				\item Each indicator approx. 525/550 lbs
+			\end{itemize}
+			\item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{EXT WING}
+			\begin{itemize}
+				\item Each indicator approx. 2300/2420 lbs \\
+				\hfill (\emph{if loaded})
+			\end{itemize}
+			\item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{As Desired}
+		\end{subenumerate}}
+		\blueitem{DBU Check}{
+		\begin{subenumerate}
+			\item \textbf{DIGITAL BACKUP Switch} \dotfill \textbf{BACKUP}
+			\begin{itemize}
+				\item \textbf{DBU ON Light} -- \textbf{Illuminates}
+			\end{itemize}
+			\item Operate Controls -- check for normal control surface response
+			\item \textbf{DIGITAL BACKUP Switch} \dotfill \textbf{OFF}
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}[t]{0.45\linewidth}
+			\centering
+			\includegraphics[
+				width = 3cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+			\caption*{\textbf{FUEL QTY Check}}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.45\linewidth}
+			\centering
+			\includegraphics[
+				width = 3cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+			\caption*{\textbf{DBU Check}}
+		\end{subfigure}
+		\caption{\textbf{Post-Start}}
+		\label{fig:proc:poststart3}
+	\end{figure}
+
+	\clearpage
+
+	\begin{tablenumerate}[resume]
+		\blueitem{Trim Check}{
+		\begin{subenumerate}
+			\item \textbf{TRIM/AP DISC Swtich} \dotfill \textbf{DISC}
+			\item \textbf{Stick Trim} \dotfill Activate in Pitch \& Roll
+			\begin{itemize}
+				\item No control surface motion 
+				\item No TRIM wheel or indicator motion
+			\end{itemize} 
+			\item \textbf{TRIM/AP DISC Swtich} \dotfill \textbf{NORM}
+			\item \textbf{Stick Trim} \dotfill Check \& Center
+			\begin{itemize}
+				\item Control surface motion 
+				\item TRIM wheel motion
+			\end{itemize} 
+			\item \textbf{Yaw Trim Knob} \dotfill \textbf{Center}
+		\end{subenumerate}}
+		\blueitem{MPO Check}{
+		\begin{subenumerate}
+			\item \textbf{Stick} \dotfill \textbf{Full Forward \& Hold}
+			\item \textbf{MPO Switch} \dotfill \textbf{OVRD \& Hold}
+			\begin{itemize}
+				\item Horizontal Tail trailing edges move farther down
+			\end{itemize} 
+			\item \textbf{Stick \& MPO} \dotfill Release
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}[t]{0.3\linewidth}
+			\centering
+			\includegraphics[
+				width = 3cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+			\caption*{\textbf{Trim Check}}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.3\linewidth}
+			\centering
+			\includegraphics[
+				width = 3cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+			\caption*{\textbf{MPO Check}}
+		\end{subfigure}
+		\caption{\textbf{Post-Start}}
+		\label{fig:proc:poststart4}
+	\end{figure}
+
+	\clearpage
+
+	\begin{tablenumerate}[resume]
+		\blueitem{EPU FUEL Qty}{\textbf{95-102 Percent}}
+		\blueitem{EPU Check}{
+		\begin{subenumerate}
+			\item \textbf{OXYGEN} \dotfill \textbf{100\%}
+			\item \textbf{Throttle} \dotfill 10\% above \textbf{IDLE}
+			\item \textbf{EPU/GEN TEST Switch} \dotfill \textbf{EPU/GEN \& Hold}
+			\begin{itemize}
+				\item \textbf{EPU AIR Light} -- \textbf{ON}
+				\item \textbf{EPU GEN/PMG Lights} -- \textbf{OFF}
+				\item \textbf{FLCS PWR Lights} -- \textbf{ON}
+				\item \textbf{EPU Run Light} -- \textbf{ON} minimum 5s
+			\end{itemize} 
+			\item \textbf{EPU/GEN TEST Switch} \dotfill \textbf{OFF}
+			\item \textbf{Throttle} \dotfill \textbf{IDLE}
+			\item \textbf{OXYGEN} \dotfill \textbf{NORMAL}
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}[t]{0.45\linewidth}
+			\centering
+			\includegraphics[
+				width = 3cm,
+				page = {2},
+				trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
+				clip
+			]{F-16_Cockpit_v1.pdf}
+			\caption*{\textbf{EPU Check}}
+		\end{subfigure}
+		\caption{\textbf{Post-Start}}
+		\label{fig:proc:poststart5}
+	\end{figure}
+
+	\clearpage
 	
 	\section{TAKEOFF \& LANDING}
 

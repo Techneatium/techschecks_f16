@@ -2,6 +2,14 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.07.04 `v0.0.5`
+
+- `F16_CheatSheet.tex`
+  - Added initial `AIM-9 SIDEWINDER` section (very very WIP)
+  - Added `AGM-65 MAVERICK` subsections to `A-G`, just the titles / framework
+  - Move post-start `TESTS & CHECKS` into own subsection which is hyperlinked from main `POST-START`. This simplifies checklist for those who seek the minimal number of steps
+  - Testing new placeholder figure in `PRE-START`
+
 ### Changelog - 2022.06.30 `v0.0.4`
 
 - `TechCheck.cls`

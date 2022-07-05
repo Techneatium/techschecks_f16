@@ -1120,58 +1120,89 @@
 	
 	\subsection{OVERVIEW}
 	\begin{tableitemize}
-		\blueitem{SMS Format}{}
+		\blueitem{AIM-9}{}
+		\midrule
+		\multicolumn{3}{l}{\textbf{SMS Page}} \\
+		\blueitem{SPOT / SCAN}{
+		\begin{subitemize}
+			\item \textbf{Controls Seeker Field of View}
+			\item \textbf{SPOT} -- Narrow, increased detection range
+			\item \textbf{SCAN} -- Wide, decreased detection range
+		\end{subitemize}}
+		\blueitem{SLAVE / BORE}{
+		\begin{subitemize}
+			\item \textbf{Controls Seeker Line of Sight}
+			\item \textbf{SLAVE} -- Follows radar LOS 
+			\item \textbf{BORE} -- Boresighted \\ (Follows \textbf{HMD} boresight if powered)
+		\end{subitemize}}
+		\blueitem{WARM / COOL}{
+		\begin{subitemize}
+			\item \textbf{Controls Seeker Cooling Status}
+			\item \textbf{COOL} --  increases seeker sensitivity, should be set prior to engagement
+			\item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
+		\end{subitemize}}
+		\midrule
+		\multicolumn{3}{l}{\textbf{Symbology}} \\
 		\blueitem{HUD Symbology}{}
 	\end{tableitemize}
 
+	\notebox{
+		\begin{itemize}
+			\item \textbf{Behavior with SLAVE selected but no radar lock}
+		\end{itemize}
+	}
+
 	\clearpage
 
-	\subsection{NO RADAR}
+	\subsection{BORE - NO RADAR}
 	\begin{tablenumerate}
 		\blueitem{Conditions}{
 		\begin{subitemize}
-			\item \textbf{FCR} \dotfill \textbf{ON}
+			\item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
 			\item \textbf{Master Arm} \dotfill \textbf{ARM}
 		\end{subitemize}}
 		\blueitem{Select AIM-9}{
 		\emph{Via MFD}
 		\begin{subenumerate}
 			\item \textbf{Master Mode} \dotfill \textbf{A-A}
-			\item \textbf{Selected Weapon} \dotfill \textbf{9LM / 9X} \\
+			\item \textbf{Selected Weapon} \dotfill \textbf{9LM} or \textbf{9X} \\
 			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
 		\end{subenumerate}
 		
 		\emph{Via Dogfight}
 		\begin{subenumerate}
 			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-			\item \textbf{Selected Weapon} \dotfill \textbf{9LM / 9X} \\
+			\item \textbf{Selected Weapon} \dotfill \textbf{9LM} or \textbf{9X} \\
 			\hfill (\emph{AIM-9 \& GUN automatically selected})
+		\end{subenumerate}}
+		\blueitem{Bore \break Acquisition}{
+		\begin{subenumerate}
+			\item Maneuver to position target within AC or HMD boresight field
+			\item \textbf{Audio Tone} \dotfill Verify Good
+			\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress}
+			\item \textbf{MSL Diamond} \dotfill Verify latched to target
 		\end{subenumerate}}
 		\blueitem{Symbology}{
 		\begin{subitemize}
-			\item want symbology examples from p.197 of official manual
+			\item 
 		\end{subitemize}}
 		\blueitem{Employment}{
 		\begin{subenumerate}
-			\item \textbf{Maneuver}
-			\begin{itemize}
-				\item Place the EEGS Level V Pipper over the target
-			\end{itemize}
-			\item \textbf{Fire Gun} \dotfill \textbf{TRIGGER 2nd Detent}
+			\item \textbf{Maneuver} -- Place target within DLZ
+			\item \textbf{Audio Tone} \dotfill Verify Good
+			\item \textbf{WPN REL} \dotfill \textbf{Depress} \\
+			\hfill to launch missile
 		\end{subenumerate}}
-		\blueitem{Drafting Notes}{
-		\begin{subitemize}
-			\item FINISH ME
-		\end{subitemize}}
 	\end{tablenumerate}
 
 	\clearpage
 
-	\subsection{RADAR}
+	\subsection{SLAVE - RADAR}
 	\begin{tablenumerate}
 		\blueitem{Conditions}{
 		\begin{subitemize}
 			\item \textbf{FCR} \dotfill \textbf{ON}
+			\item \textbf{BORE/SLAVE} \dotfill \textbf{SLAVE} (default)
 			\item \textbf{Master Arm} \dotfill \textbf{ARM}
 		\end{subitemize}}
 		\blueitem{Select AIM-9}{
@@ -1189,32 +1220,30 @@
 			\hfill (\emph{AIM-9 \& GUN automatically selected})
 		\end{subenumerate}}
 		\blueitem{Radar \break Acquisition}{
-		\begin{subitemize}
-			\item \textbf{ACM Mode} \dotfill \textbf{As Desired}
+		\begin{subenumerate}
+			\item Acquire lock using desired \textbf{ACM Mode} 
 			\begin{itemize}
 				\item \textbf{Boresight} -- \textbf{TMS UP}
 				\item \textbf{HMCS} -- add me 
 				\item \textbf{Vertical} -- add me 
-				\item \textbf{the other ones} -- add me
 			\end{itemize}
-			\item Also possible from \textbf{CRM} radar modes
-		\end{subitemize}}
+			(Also possible from \textbf{CRM-STT} mode)
+			\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress} \\
+			% \hfill to uncage \& slave seeker to radar 
+			\item \textbf{MSL Diamond} \dotfill Verify latched to target
+			\item \textbf{Audio Tone} \dotfill Verify Good
+		\end{subenumerate}}
 		\blueitem{Symbology}{
 		\begin{subitemize}
-			\item want symbology examples from p.197/198 of official manual
+			\item 
 		\end{subitemize}}
 		\blueitem{Employment}{
 		\begin{subenumerate}
-			\item \textbf{Maneuver} -- Place target within launch Zone
-			\item \textbf{Tone} -- Verify good audio lock tone 
-			\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress} \\
-			\hfill (\emph{\textbf{Missile Diamond} latches to target})
-			\item \textbf{Fire} \dotfill \textbf{Depress WPN REL}
+			\item \textbf{Maneuver} -- Place target within DLZ
+			\item \textbf{Audio Tone} \dotfill Verify Good
+			\item \textbf{WPN REL} \dotfill \textbf{Depress} \\
+			\hfill to launch missile
 		\end{subenumerate}}
-		\blueitem{Drafting Notes}{
-		\begin{subitemize}
-			\item FINISH ME
-		\end{subitemize}}
 	\end{tablenumerate}
 
 	\clearpage 

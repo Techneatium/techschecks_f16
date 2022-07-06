@@ -772,9 +772,23 @@
 	
 	\subsection{OVERVIEW}
 	\begin{tableitemize}
-		\blueitem{AIM-9}{}
-		\midrule
-		\multicolumn{3}{l}{\textbf{SMS Page}} \\
+		\blueitem{AIM-9}{
+		\begin{subitemize}
+			\item \textbf{AIM-9M} -- IR-guided, short range, all-aspect missile 
+			\item \textbf{AIM-9X} -- Additional \textbf{H}igh \textbf{O}ff-\textbf{B}ore\textbf{S}ight capability
+		\end{subitemize}}
+		\blueitem{Acquisition / Cueing Modes}{
+		\begin{subitemize}
+			\item Seeker slaved to radar track \\
+			\hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
+			\item Acquisition with own missile seeker \\
+			\hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
+			\item Seeker cued with HMD \\
+			\textbf{Possible in either \hyperref[subsec:aim9slave]{\textbf{Slaved}} OR \hyperref[subsec:aim9bore]{\textbf{Bore}} mode}
+		\end{subitemize}}
+		\blueitem{SMS Page}{\textbf{See Figure X.XX} and below items}
+		% \midrule
+		% \multicolumn{3}{l}{\textbf{SMS Page} -- } \\
 		\blueitem{SPOT / SCAN}{
 		\begin{subitemize}
 			\item \textbf{Controls Seeker Field of View}
@@ -784,8 +798,18 @@
 		\blueitem{SLAVE / BORE}{
 		\begin{subitemize}
 			\item \textbf{Controls Seeker Line of Sight}
-			\item \textbf{SLAVE} -- Follows radar LOS 
-			\item \textbf{BORE} -- Boresighted \\ (Follows \textbf{HMD} boresight if powered)
+			\item \textbf{SLAVE} - \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
+			\begin{itemize}
+				\item Seeker slaved to radar track LOS \\
+				\item Typically via ACM Modes \\
+				(including HMD, if powered)
+			\end{itemize}
+			\item \textbf{BORE} - \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
+			\begin{itemize}
+				\item Acquisition with own missile seeker
+				\item Or cued with HMD (if powered)
+				\item \textbf{Does NOT require FCR}
+			\end{itemize}
 		\end{subitemize}}
 		\blueitem{WARM / COOL}{
 		\begin{subitemize}
@@ -793,9 +817,9 @@
 			\item \textbf{COOL} --  increases seeker sensitivity, should be set prior to engagement
 			\item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
 		\end{subitemize}}
-		\midrule
-		\multicolumn{3}{l}{\textbf{Symbology}} \\
-		\blueitem{HUD Symbology}{}
+		% \midrule
+		% \multicolumn{3}{l}{\textbf{Symbology}} \\
+		% \blueitem{HUD Symbology}{}
 	\end{tableitemize}
 
 	\notebox{
@@ -806,50 +830,15 @@
 
 	\clearpage
 
-	\subsection{BORE - NO RADAR}
-	\begin{tablenumerate}
-		\blueitem{Conditions}{
-		\begin{subitemize}
-			\item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
-			\item \textbf{Master Arm} \dotfill \textbf{ARM}
-		\end{subitemize}}
-		\blueitem{Select AIM-9}{
-		\emph{Via MFD}
-		\begin{subenumerate}
-			\item \textbf{Master Mode} \dotfill \textbf{A-A}
-			\item \textbf{Selected Weapon} \dotfill \textbf{9LM} or \textbf{9X} \\
-			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
-		\end{subenumerate}
-		
-		\emph{Via Dogfight}
-		\begin{subenumerate}
-			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-			\item \textbf{Selected Weapon} \dotfill \textbf{9LM} or \textbf{9X} \\
-			\hfill (\emph{AIM-9 \& GUN automatically selected})
-		\end{subenumerate}}
-		\blueitem{Bore \break Acquisition}{
-		\begin{subenumerate}
-			\item Maneuver to position target within AC or HMD boresight field
-			\item \textbf{Audio Tone} \dotfill Verify Good
-			\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress}
-			\item \textbf{MSL Diamond} \dotfill Verify latched to target
-		\end{subenumerate}}
-		\blueitem{Symbology}{
-		\begin{subitemize}
-			\item 
-		\end{subitemize}}
-		\blueitem{Employment}{
-		\begin{subenumerate}
-			\item \textbf{Maneuver} -- Place target within DLZ
-			\item \textbf{Audio Tone} \dotfill Verify Good
-			\item \textbf{WPN REL} \dotfill \textbf{Depress} \\
-			\hfill to launch missile
-		\end{subenumerate}}
-	\end{tablenumerate}
+	\subsection{SYMBOLOGY}
+	\begin{tableitemize}
+		\blueitem{HUD Symbology}{}
+	\end{tableitemize}
 
 	\clearpage
 
-	\subsection{SLAVE - RADAR}
+	\subsection{SLAVE (RADAR)}
+	\label{subsec:aim9slave}
 	\begin{tablenumerate}
 		\blueitem{Conditions}{
 		\begin{subitemize}
@@ -867,32 +856,85 @@
 		
 		\emph{Via Dogfight}
 		\begin{subenumerate}
-			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-			\item \textbf{Selected Weapon} \dotfill \textbf{9LM / 9X} \\
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT} \\
 			\hfill (\emph{AIM-9 \& GUN automatically selected})
+			\item \textbf{Selected Weapon} \dotfill \textbf{9LM / 9X} 
 		\end{subenumerate}}
 		\blueitem{Radar \break Acquisition}{
-		\begin{subenumerate}
-			\item Acquire lock using desired \textbf{ACM Mode} 
-			\begin{itemize}
-				\item \textbf{Boresight} -- \textbf{TMS UP}
-				\item \textbf{HMCS} -- add me 
-				\item \textbf{Vertical} -- add me 
-			\end{itemize}
-			(Also possible from \textbf{CRM-STT} mode)
-			\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress} \\
-			% \hfill to uncage \& slave seeker to radar 
-			\item \textbf{MSL Diamond} \dotfill Verify latched to target
-			\item \textbf{Audio Tone} \dotfill Verify Good
-		\end{subenumerate}}
+		\begin{subitemize}
+			\item Acquire lock using desired \textbf{ACM Mode}
+			\item Also possible from \textbf{CRM-STT} mode
+		\end{subitemize}}
 		\blueitem{Symbology}{
 		\begin{subitemize}
 			\item 
 		\end{subitemize}}
 		\blueitem{Employment}{
 		\begin{subenumerate}
+			\item \textbf{Radar} \dotfill Locked
+			\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress}
+			\begin{itemize}
+				\item \textbf{MSL Diamond} -- Latched to target
+				\item \textbf{Audio Tone} -- Verify Good
+			\end{itemize}
 			\item \textbf{Maneuver} -- Place target within DLZ
-			\item \textbf{Audio Tone} \dotfill Verify Good
+			\item \textbf{WPN REL} \dotfill \textbf{Depress} \\
+			\hfill to launch missile
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\clearpage
+
+	\subsection{BORE (NO RADAR)}
+	\label{subsec:aim9bore}
+	\begin{tablenumerate}
+		\blueitem{Conditions}{
+		\begin{subitemize}
+			\item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
+			\item \textbf{Master Arm} \dotfill \textbf{ARM}
+		\end{subitemize}}
+		\blueitem{Select AIM-9}{
+		\emph{Via MFD}
+		\begin{subenumerate}
+			\item \textbf{Master Mode} \dotfill \textbf{A-A}
+			\item \textbf{Selected Weapon} \dotfill \textbf{9LM} or \textbf{9X} \\
+			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
+		\end{subenumerate}
+		
+		\emph{Via Dogfight}
+		\begin{subenumerate}
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT} \\
+			\hfill (\emph{AIM-9 \& GUN automatically selected})
+			\item \textbf{Selected Weapon} \dotfill \textbf{9LM} or \textbf{9X} 
+		\end{subenumerate}}
+		% \blueitem{Bore \break Acquisition}{
+		% \begin{subenumerate}
+		% 	\item \textbf{Maneuver} -- Target in AC/HMD boresight
+		% 	\begin{itemize}
+		% 		\item \textbf{Audio Tone} -- Verify Good
+		% 	\end{itemize}
+		% 	\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress}
+		% 	\begin{itemize}
+		% 		\item \textbf{MSL Diamond} -- Latched to target
+		% 		\item \textbf{Audio Tone} -- Verify Good
+		% 	\end{itemize}
+		% \end{subenumerate}}
+		\blueitem{Symbology}{
+		\begin{subitemize}
+			\item 
+		\end{subitemize}}
+		\blueitem{Employment}{
+		\begin{subenumerate}
+			\item \textbf{Maneuver} -- Target in AC/HMD boresight
+			\begin{itemize}
+				\item \textbf{Audio Tone} -- Verify Good
+			\end{itemize}
+			\item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress}
+			\begin{itemize}
+				\item \textbf{MSL Diamond} -- Latched to target
+				\item \textbf{Audio Tone} -- Verify Good
+			\end{itemize}
+			\item \textbf{Maneuver} -- Place target within DLZ
 			\item \textbf{WPN REL} \dotfill \textbf{Depress} \\
 			\hfill to launch missile
 		\end{subenumerate}}

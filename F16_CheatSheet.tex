@@ -941,7 +941,57 @@
 
 	\subsection{OVERVIEW}
 	\begin{tableitemize}
-		\blueitem{SMS Page}{}
+		\blueitem{AIM-120}{
+		\begin{subitemize}
+			\item \textbf{MRM} -- \textbf{M}edium \textbf{R}ange \textbf{M}issile
+		\end{subitemize}}
+		\blueitem{Engagement \break Types}{
+		\begin{subitemize}
+			\item Single Target 
+			\begin{itemize}
+				\item From STT radar lock
+			\end{itemize}
+			\item Multi Target 
+			\begin{itemize}
+				\item For TWS tracks
+				\item Or DTT tracks
+			\end{itemize}
+		\end{subitemize}}
+		\blueitem{SMS Page}{\textbf{See Figure X.XX} and below items}
+		\blueitem{SLAVE / BORE}{}
+		\blueitem{Select AIM-120}{
+		\emph{Via MFD}
+
+		\begin{subenumerate}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+			\begin{itemize}
+				\item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
+			\end{itemize}
+		\end{subenumerate}
+
+		\emph{Via Missile Override}
+
+		\begin{subenumerate}
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
+			\item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+		\end{subenumerate}
+		
+		\emph{Via Dogfight}
+
+		\begin{subenumerate}
+			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+			\begin{itemize}
+				\item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
+			\end{itemize}
+		\end{subenumerate}}
+		\blueitem{Selected Station}{}
+	\end{tableitemize}
+
+	\clearpage
+
+	\subsection{SYMBOLOGY}
+	\begin{tableitemize}
 		\blueitem{HUD Symbology}{}
 		\blueitem{FCR Symbology}{}
 	\end{tableitemize}
@@ -954,28 +1004,37 @@
 		\begin{subitemize}
 			\item \textbf{FCR} \dotfill \textbf{ON}
 			\item \textbf{RF Switch} \dotfill \textbf{NORM}
-			\item \textbf{Master Mode} \dotfill \textbf{A-A}
+			% \item \textbf{Master Mode} \dotfill \textbf{A-A}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+			\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
 			\item \textbf{Master Arm} \dotfill \textbf{ARM}
 		\end{subitemize}}
-		\blueitem{Select AIM-120}{
-		\emph{Via MFD}
-		\begin{subenumerate}
-			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
-			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
-		\end{subenumerate}
+		% \blueitem{Select AIM-120}{
+		% \emph{Via MFD}
+		% \begin{subenumerate}
+		% 	\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+		% 	\begin{itemize}
+		% 		\item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
+		% 	\end{itemize}
+		% 	\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
+		% \end{subenumerate}
 
-		\emph{Via Missile Override}
-		\begin{subenumerate}
-			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
-			\item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
-		\end{subenumerate}
+		% \emph{Via Missile Override}
+		% \begin{subenumerate}
+		% 	\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
+		% 	\item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+		% 	\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
+		% \end{subenumerate}
 		
-		\emph{Via Dogfight}
-		\begin{subenumerate}
-			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
-			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
-		\end{subenumerate}}
+		% \emph{Via Dogfight}
+		% \begin{subenumerate}
+		% 	\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+		% 	\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+		% 	\begin{itemize}
+		% 		\item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
+		% 	\end{itemize}
+		% 	\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
+		% \end{subenumerate}}
 		\blueitem{Acquire Target}{
 		\begin{subenumerate}
 			\item \textbf{Target} \dotfill \textbf{Locked}
@@ -983,7 +1042,6 @@
 				\item \textbf{STT} -- from RWS, TWS, or ACM
 				\item \textbf{Bug} -- from TWS
 			\end{itemize}
-			\item \textbf{Line of Sight} \dotfill Verify \textbf{SLAVE}
 		\end{subenumerate}}
 		\blueitem{Symbology}{
 		\begin{subitemize}
@@ -995,12 +1053,9 @@
 		\end{subitemize}}
 		\blueitem{Employment}{
 		\begin{subenumerate}
-			\item \textbf{Maneuver}
-			\begin{itemize}
-				\item Place \textbf{ASC} in \textbf{ASEC}
-				\item Monitor \textbf{Dynamic Launch Zone}
-			\end{itemize}
-			\item \textbf{Fire Missiles} \dotfill \textbf{Depress WPN REL}
+			\item \textbf{Radar} \dotfill Locked
+			\item \textbf{Maneuver} -- Place tgt within \textbf{DLZ} \& \textbf{ASEC}
+			\item \textbf{WPN REL} \dotfill \textbf{Depress}
 		\end{subenumerate}}
 	\end{tablenumerate}
 
@@ -1012,33 +1067,45 @@
 		\begin{subitemize}
 			\item \textbf{FCR} \dotfill \textbf{ON}
 			\item \textbf{RF Switch} \dotfill \textbf{NORM}
+			% \item \textbf{Master Mode} \dotfill \textbf{A-A}
+			\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+			\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
 			\item \textbf{Master Arm} \dotfill \textbf{ARM}
 		\end{subitemize}}
-		\blueitem{Select AIM-120}{
-		\emph{Via MFD}
-		\begin{subenumerate}
-			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
-			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
-		\end{subenumerate}
+		% \blueitem{Select AIM-120}{
+		% \emph{Via MFD}
+		% \begin{subenumerate}
+		% 	\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+		% 	\begin{itemize}
+		% 		\item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
+		% 	\end{itemize}
+		% 	\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
+		% \end{subenumerate}
 
-		\emph{Via Missile Override}
-		\begin{subenumerate}
-			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
-			\item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
-		\end{subenumerate}
+		% \emph{Via Missile Override}
+		% \begin{subenumerate}
+		% 	\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
+		% 	\item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+		% 	\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
+		% \end{subenumerate}
 		
-		\emph{Via Dogfight}
-		\begin{subenumerate}
-			\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-			\item \textbf{Selected Weapon} \dotfill \textbf{120C} \\
-			\hfill (\emph{press \textbf{OSB 7} or long press \textbf{NWS} to cycle})
-		\end{subenumerate}}
+		% \emph{Via Dogfight}
+		% \begin{subenumerate}
+		% 	\item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+		% 	\item \textbf{Selected Weapon} \dotfill \textbf{120C}
+		% 	\begin{itemize}
+		% 		\item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
+		% 	\end{itemize}
+		% 	\item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
+		% \end{subenumerate}}
 		\blueitem{Acquire Targets}{
 		\emph{From RWS/DTT or TWS}
 		\begin{subenumerate}
-			\item \textbf{Designate} \dotfill \textbf{TMS Fwd}\\
-			\hfill (\emph{over each target})
-			\item \textbf{Line of Sight} \dotfill Verify \textbf{SLAVE}
+			\item \textbf{Designate} \dotfill \textbf{TMS Fwd}
+			\begin{itemize}
+				\item \textbf{TWS} -- Repeat for all desired targets 
+				\item \textbf{DTT} -- Repeat for second target
+			\end{itemize}
 		\end{subenumerate}}
 		\blueitem{Symbology}{
 		\begin{subitemize}
@@ -1050,16 +1117,21 @@
 		\end{subitemize}}
 		\blueitem{Employment}{
 		\begin{subenumerate}
-			\item \textbf{Maneuver}
-			\begin{itemize}
-				\item Until all targets within \textbf{DLZ}
-			\end{itemize}
-			\item \textbf{Fire Missile} \dotfill \textbf{Depress WPN REL}
-			\item \textbf{Cycle Targets} \dotfill \textbf{TMS Left} 
-			\item \textbf{Fire Missiles} \dotfill \textbf{Depress WPN REL} \\
-			\hfill (\emph{Repeat until all desired targets engaged})
-		\end{subenumerate}}
+			\item \textbf{Desired Targets} \dotfill Bugged / Locked
+			% \item \textbf{Maneuver} -- Place all targets within \textbf{DLZ}
+			\item \label{item:aim120:multitgt:steer}\textbf{Current Target} -- Place within \textbf{DLZ} \& \textbf{ASEC}
+			\item \label{item:aim120:multitgt:fire}\textbf{WPN REL} \dotfill \textbf{Depress}
+			\item \label{item:aim120:multitgt:cycle}\textbf{Target} \dotfill Cycle with \textbf{TMS Left} 
+		\end{subenumerate}
+
+		Repeat \ref{item:aim120:multitgt:steer}-\ref{item:aim120:multitgt:cycle} for all remaining targets}
 	\end{tablenumerate}
+
+	\notebox{
+			\begin{itemize}
+			\item \textbf{Single Target TWS Employment} -- special case of multi-target
+			\end{itemize}
+	}
 
 	\chapter{APPENDIX}
 	\thumbtab{Appendix}{6}

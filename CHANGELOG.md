@@ -2,6 +2,20 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.07.07 `v0.0.6`
+
+- `TechCheck.cls`
+  - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md)
+  - Changed dating format from `YYYYMMDD` to `YYMMDD`
+  - Fixed inconsistent indentation
+
+- `F16_CheatSheet.tex`
+  - Continued work on `A-A WEAPONS` chapter, added significant content to `M-61 CANNON`, `AIM-9 SIDEWINDER`, and `AIM-120 AMRAAM` sections
+    - Condensed the employment sections and moved the "how to select weapon" steps to the relevant `OVERVIEW` subsections
+    - Added image placeholders for eventual schematic diagrams of the individual weapon systems
+    - Currently blank sections awaiting symbology and explanations
+  - Added many subsection titles to `A-G WEAPONS` chapter
+
 ### Changelog - 2022.07.04 `v0.0.5`
 
 - `F16_CheatSheet.tex`

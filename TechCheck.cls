@@ -31,8 +31,14 @@
 % GENERAL PACKAGES
 %-----------------------------------------------------------------
 \RequirePackage{geometry}
-\RequirePackage[yyyymmdd]{datetime} % change date format
-\renewcommand{\dateseparator}{} % select date separator character
+\RequirePackage[]{datetime2} % change date format
+\DTMnewstyle{yymmdd}{ % create new date style
+	\renewcommand*\DTMdisplaydate[4]{%
+		\DTMtwodigits{##1}\DTMtwodigits{##2}\DTMtwodigits{##3}% 
+	}
+	\renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}%
+}{}{}{}
+\DTMsetstyle{yymmdd} % set new style as default
 \RequirePackage[shortlabels]{enumitem} % pause/resume lists
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
@@ -86,42 +92,42 @@
 
 % Futura Clone -- pointy 
 \DeclareOption{fontJost}{
-  \toggletrue{loadfontspec}
-  \toggletrue{fontJost}
-  % toggle other fonts false
-  \togglefalse{fontSpartan}
-  \togglefalse{fontMetropolis}
-  \togglefalse{fontInter}
+	\toggletrue{loadfontspec}
+	\toggletrue{fontJost}
+	% toggle other fonts false
+	\togglefalse{fontSpartan}
+	\togglefalse{fontMetropolis}
+	\togglefalse{fontInter}
 }
 
 % Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
-  \toggletrue{loadfontspec}
-  \toggletrue{fontSpartan}
-  % toggle other fonts false
-  \togglefalse{fontJost}
-  \togglefalse{fontMetropolis}
-  \togglefalse{fontInter}
+	\toggletrue{loadfontspec}
+	\toggletrue{fontSpartan}
+	% toggle other fonts false
+	\togglefalse{fontJost}
+	\togglefalse{fontMetropolis}
+	\togglefalse{fontInter}
 }
 
 % Gotham Clone 
 \DeclareOption{fontMetropolis}{
-  \toggletrue{loadfontspec}
-  \toggletrue{fontMetropolis}
-  % toggle other fonts false
-  \togglefalse{fontJost}
-  \togglefalse{fontSpartan}
-  \togglefalse{fontInter}
+	\toggletrue{loadfontspec}
+	\toggletrue{fontMetropolis}
+	% toggle other fonts false
+	\togglefalse{fontJost}
+	\togglefalse{fontSpartan}
+	\togglefalse{fontInter}
 }
 
 % Helvetica clone
 \DeclareOption{fontInter}{
-  \toggletrue{loadfontspec}
-  \toggletrue{fontInter}
-  % toggle other fonts false
-  \togglefalse{fontJost}
-  \togglefalse{fontSpartan}
-  \togglefalse{fontMetropolis}
+	\toggletrue{loadfontspec}
+	\toggletrue{fontInter}
+	% toggle other fonts false
+	\togglefalse{fontJost}
+	\togglefalse{fontSpartan}
+	\togglefalse{fontMetropolis}
 }
 
 %-----------------------------------------------------------------
@@ -295,66 +301,66 @@
 % OPTIONAL PACKAGES
 %-----------------------------------------------------------------
 \iftoggle{fontHelvet}{
-  \RequirePackage[T1]{fontenc}
-  \RequirePackage{helvet}
-  \renewcommand{\familydefault}{\sfdefault}
+	\RequirePackage[T1]{fontenc}
+	\RequirePackage{helvet}
+	\renewcommand{\familydefault}{\sfdefault}
 }{}
 
 \iftoggle{loadfontspec}{
-  \RequirePackage{fontspec}
+	\RequirePackage{fontspec}
 }{}
 
 \iftoggle{fontJost}{
-  \setmainfont[
-	Path=./fonts/,
-  	Ligatures=TeX,
-  	UprightFont=*-Regular,
-  	ItalicFont=*-Italic,
-  	BoldFont=*-Bold,
-  	BoldFeatures={LetterSpace=2.5}
-  ]{Jost}
-  \newfontfamily\tightfont{Jost-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Jost-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
+	\setmainfont[
+		Path=./fonts/,
+		Ligatures=TeX,
+		UprightFont=*-Regular,
+		ItalicFont=*-Italic,
+		BoldFont=*-Bold,
+		BoldFeatures={LetterSpace=2.5}
+	]{Jost}
+	\newfontfamily\tightfont{Jost-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+	\newfontfamily\titlefont{Jost-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontSpartan}{
-  \setmainfont[
-	Path=./fonts/,
-  	Ligatures=TeX,
-  	UprightFont=*-Medium,
-	LetterSpace=2.0,
-  	ItalicFont=*-Medium Italic,
-  	ItalicFeatures={Scale=1.0},
-  	BoldFont=*-Bold,
-  	BoldFeatures={LetterSpace=5.0}
-  ]{Spartan MB}
-  \newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
+	\setmainfont[
+		Path=./fonts/,
+		Ligatures=TeX,
+		UprightFont=*-Medium,
+		LetterSpace=2.0,
+		ItalicFont=*-Medium Italic,
+		ItalicFeatures={Scale=1.0},
+		BoldFont=*-Bold,
+		BoldFeatures={LetterSpace=5.0}
+	]{Spartan MB}
+	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontMetropolis}{
-  \setmainfont[
-	Path=./fonts/,
-  	Ligatures=TeX,
-  	UprightFont=*-Regular,
-  	ItalicFont=*-Regular Italic,
-  	BoldFont=*-Semi Bold,
-  	BoldFeatures={LetterSpace=3.0}
-  ]{Metropolis}
-  \newfontfamily\tightfont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
+	\setmainfont[
+		Path=./fonts/,
+		Ligatures=TeX,
+		UprightFont=*-Regular,
+		ItalicFont=*-Regular Italic,
+		BoldFont=*-Semi Bold,
+		BoldFeatures={LetterSpace=3.0}
+	]{Metropolis}
+	\newfontfamily\tightfont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+	\newfontfamily\titlefont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontInter}{
-  \setmainfont[
-	Path=./fonts/,
-    Ligatures=TeX,
-	UprightFont=*-Regular,
-    BoldFont=*-Bold,
-    ItalicFont=Jost-Italic,
-  ]{Inter}
-  \newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-  \newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
+	\setmainfont[
+		Path=./fonts/,
+		Ligatures=TeX,
+		UprightFont=*-Regular,
+		BoldFont=*-Bold,
+		ItalicFont=Jost-Italic,
+	]{Inter}
+	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 %-----------------------------------------------------------------
@@ -370,8 +376,8 @@
 
 % Set number of tabs in preable
 \newcommand{\settabnumber}[1]{
-  \setcounter{tabnumber}{#1}
-  \setlength\tabwidth{\textheight/\thetabnumber}
+	\setcounter{tabnumber}{#1}
+	\setlength\tabwidth{\textheight/\thetabnumber}
 }
 
 %-----------------------------------------------------------------
@@ -509,19 +515,19 @@
 
 % formatting of chapter
 \titleformat{\chapter}[display] % command
-  {\titlefont\huge\bfseries} % format
-  {\chaptertitlename\ \thechapter} % label
-  {20pt} % sep
-  {\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
-  [] % after code
+	{\titlefont\huge\bfseries} % format
+	{\chaptertitlename\ \thechapter} % label
+	{20pt} % sep
+	{\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
+	[] % after code
 
 % formatting of section
 \titleformat{\section} % command
-  {\color{color1}\titlefont\large\bfseries} % format
-  {\color{color1}\thesection} % label
-  {1em} % sep
-  {#1} % before-code
-  [{\titlerule[1pt]}] % after-code
+	{\color{color1}\titlefont\large\bfseries} % format
+	{\color{color1}\thesection} % label
+	{1em} % sep
+	{#1} % before-code
+	[{\titlerule[1pt]}] % after-code
 
 % formatting of subsection [full width]
 \titleformat{\subsection} % command
@@ -852,7 +858,7 @@
 %-----------------------------------------------------------------
 % command to create blue, bold mini-titles
 \newcommand{\blue}[1]{
-  \textbf{\textcolor{color2}{#1}}
+	\textbf{\textcolor{color2}{#1}}
 }
 
 % command to create bold, white-on-blue, mini titles

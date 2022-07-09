@@ -23,7 +23,7 @@
 %=================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[10pt,usenames,dvipsnames,twoside]{report}
+\LoadClass[10pt,usenames,dvipsnames,twoside]{book}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{TechCheck}[2022/06/24]
 
@@ -87,7 +87,7 @@
 
 % Default pdflatex helvetica clone
 \DeclareOption{fontHelvet}{
-  \toggletrue{fontHelvet}
+  	\toggletrue{fontHelvet}
 }
 
 % Futura Clone -- pointy 
@@ -226,18 +226,18 @@
 % color3 - alternate highlight color
 
 \DeclareOption{colorful}{
-  \colorlet{color1}{black}
-  % \definecolor{color1}{HTML}{222222}
-  \colorlet{color2}{NavyBlue}
-  \colorlet{color3}{NavyBlue}
-  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+	\colorlet{color1}{black}
+	% \definecolor{color1}{HTML}{222222}
+	\colorlet{color2}{NavyBlue}
+	\colorlet{color3}{NavyBlue}
+	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 \DeclareOption{b/w}{
-  \colorlet{color1}{black}
-  \colorlet{color2}{black}
-  \colorlet{color3}{black}
-  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+	\colorlet{color1}{black}
+	\colorlet{color2}{black}
+	\colorlet{color3}{black}
+	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 %-----------------------------------------------------------------
@@ -251,12 +251,12 @@
 \newtoggle{hatch}
 \toggletrue{hatch}
 \DeclareOption{nohatch}{
-  \togglefalse{hatch}
+  	\togglefalse{hatch}
 }
 
 % Geometry showframe
 \DeclareOption{showframe}{
-  \PassOptionsToClass{showframe}{geometry}
+  	\PassOptionsToClass{showframe}{geometry}
 }
 
 % Thumbnar on/off
@@ -387,10 +387,8 @@
 \pagestyle{empty}
 % fancy header with section title in hatching
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\colorbox{color1}{
-	% code formatting section titles in header
-	\textcolor{white}{\Large\textbf{#1}}
-}}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ -- #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ -- #1}{}}
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
@@ -403,6 +401,12 @@
 \fancypagestyle{empty}{
 	% clear defaults
 	\fancyhf{}
+	% page number in footer
+	\fancyfoot[LE, RO]{{\tightfont\quad\textbf{\thepage}\quad}}% LE,RO or C
+	% Version nbumber in footer
+	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
+	% Aircraft name in footer
+	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 		\Hatch
@@ -418,8 +422,11 @@
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
-	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
-	\fancyfoot[C]{{\tightfont\textbf{\thepage}}}% LE,RO
+	\fancyfoot[LE, RO]{{\tightfont\quad\textbf{\thepage}\quad}}% LE,RO or C
+	% Version nbumber in footer
+	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
+	% Aircraft name in footer
+	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 			\Hatch
@@ -430,35 +437,35 @@
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
-	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
-	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
-	% date in top right
-	\fancyhead[RE]{
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
-		}
-	}
+	\fancyfoot[LE, RO]{{\tightfont\quad\textbf{\thepage}\quad}}% LE,RO or C
+	% Version nbumber in footer
+	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
+	% Aircraft name in footer
+	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
+	% Header
 	\fancyhead[RO]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
 		\iftoggle{autothumbnar}{
 			\thumbnar
 		}{}
 	}
-	% extra thing in middle
-	\fancyhead[C]{
+	\fancyhead[RE]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
+			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-	}
+  	}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 			\Hatch
 		}{}
-		\titlefont\textbf{\leftmark}
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
+		}
   	}
-	\renewcommand{\headrulewidth}{0pt} % and the line
+	\renewcommand{\headrulewidth}{0pt} % header rule width
+	\renewcommand{\footrulewidth}{0pt} % footer rule width
 }
 \pagestyle{body}
 
@@ -490,6 +497,7 @@
 %-----------------------------------------------------------------
 \cbcolor{color1}
 \setlength{\changebarwidth}{2mm}
+\setlength{\changebarsep}{2mm}
 
 %-----------------------------------------------------------------
 % TOCLOFT FORMATTING

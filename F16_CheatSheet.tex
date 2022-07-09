@@ -48,13 +48,14 @@
 \begin{document}
 	\include{./sections/F16_titlepage}
 
+	\frontmatter
 	\pagestyle{empty}
 	\dominitoc
 	\tableofcontents
 	\cleardoublepage
-
-	% restart page counter
-	\setcounter{page}{1}
+	
+	% restart page counter, pagenumber styling
+	\mainmatter
 	% reactivate header and footer
 	\pagestyle{body}
 

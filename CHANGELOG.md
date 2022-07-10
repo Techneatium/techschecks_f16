@@ -2,7 +2,7 @@
 
 ## CHANGELOG
 
-### Changelog - 2022.07.10 `v0.1.0`
+### Changelog - 2022.07.10 `v0.0.7`
 
 - `TechCheck.cls`
   - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md)

@@ -387,7 +387,7 @@
 \pagestyle{empty}
 % fancy header with section title in hatching
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ -- #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ -- #1}{}}
 \fancypagestyle{superempty}{
 	% clear defaults

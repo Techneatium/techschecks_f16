@@ -2,6 +2,7 @@
 *.log
 *.out
 *.synctex.gz
+*.synctex(busy)
 *.toc
 *.DS_Store
 *.fls

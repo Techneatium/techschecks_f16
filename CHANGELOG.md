@@ -2,6 +2,35 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.07.10 `v0.1.0`
+
+- `TechCheck.cls`
+  - Updated to latest version. [See F-14 Cheatsheet for more details](https://github.com/Techneatium/F14_CheatSheet/blob/master/CHANGELOG.md)
+    - Changed base class from `report` to `book`
+      - This gives access to `\frontmatter`, `\mainmatter`, `\backmatter` which change chapter numbering styles and pagenumbering styles
+      - `\backmatter` does not play nice with `chappg` package, currently don't recommend using
+      - Should make `\cleardoublepage` unnecessary on chapter end, chapters automatically begin on odd pages and fill until that point.
+    - Reworked header and footer
+      - Header now contains `chapter` name on the left, `section` name on the right
+      - Footer now contains `pagenumber` on the outside, `\aircraftshort` in the center, and `versionnumber` on the inside
+
+- Externalized each of the chapters into a `./sections/F16_nameofchapter.tex` file
+  - Reduces file length, yields easier oversight
+  - Allows selective compilation of only certain files via `\includeonly{...}` command
+  - This can greatly accelerate compile times when iterating
+
+- Updated `.gitignore` to include `*.synctex(busy)`
+
+- `APG-68 FCR`
+  - Began very preliminary work
+
+- `A-A WEAPONS`
+  - continued work on `AIM-120` section
+
+- `APPENDIX`
+  - Changed to begin with `\appendix` to actually be styled as appendix
+    - Should split into various chapters to make use of appendix formatting/features
+
 ### Changelog - 2022.07.07 `v0.0.6`
 
 - `TechCheck.cls`

@@ -2,6 +2,23 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.08.30 `v0.1.0`
+
+- `images`
+  - Removed old test pdfs
+  - Added new, labeled figure on a "per-step" basis
+  
+- `PROCEDURES`
+  - Updated to use new figures mentioned above
+  - This necessitated moving moving some steps around to make space
+
+- `APG-68 FCR`
+  - Began CRM and RWS sections
+  - Added WIP tikz figure for both CRM and ACM overviews
+
+- `F16_CheatSheet`
+  - Added necessary tikz libraries for FCR figures (should be moved into class if permanent)
+
 ### Changelog - 2022.07.10 `v0.0.7`
 
 - `TechCheck.cls`

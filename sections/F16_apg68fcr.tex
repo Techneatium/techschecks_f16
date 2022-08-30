@@ -239,6 +239,100 @@
 
 \subsection{ACM}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[auto, node distance=1cm, 
+        % >={Stealth[length=6.75pt, width=4pt, inset=2pt]}
+        >={Latex[round]}
+        ]
+        
+        % Nodes
+        \node[
+            % hyperref node=subsec:rws,
+            diamond,
+            draw,
+            very thick,
+        ](acm){\textbf{ACM}};
+        \path
+            let
+                \p1 = (acm),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](bore)at(\x1,\y1+2cm){\textbf{BORE}}
+            let
+                \p1 = (acm),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](hud)at(\x1+3cm,\y1){\textbf{HUD}}
+            let
+                \p1 = (acm),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](vert)at(\x1,\y1-2cm){\textbf{Vertical}}
+
+
+            let
+                \p1 = (acm),
+                \p2 = (bore),
+            in
+                node[
+                    rectangle, 
+                    rounded corners,
+                    minimum width=8cm,
+                    minimum height=0.75cm,
+                    draw, 
+                    very thick,
+                ](stt)at(\x1, \y2+2cm){\textbf{STT}};
+        
+        % Lines
+        \draw [->]
+            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bore);
+        \draw [->]
+            (acm) -- node[pos=0.5, above]{\scriptsize\textbf{TMS}}node[pos=0.5, below]{\scriptsize\textbf{RIGHT}} (hud);
+        \draw [->]
+            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (vert);
+        \draw [dashed, ->]
+            let
+                \p1=(bore.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
+        \draw [dashed, ->]
+            let
+                \p1=(hud.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
+        \draw [dashed, rounded corners, ->]
+            let
+                \p1=(vert.west),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1-2cm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-2cm,\y2);
+                
+    \end{tikzpicture}
+    \caption{\textbf{ACM Radar Modes Overview}}
+    \label{fig:acmoverview}
+\end{figure}
+
 \clearpage 
 
 \section{AIR-TO-GROUND MODES}

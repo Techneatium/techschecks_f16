@@ -20,17 +20,347 @@
 
 \section{AIR-TO-AIR MODES}
 
+\subsection{CRM}
+\begin{tableitemize}
+    \blueitem{CRM}{
+    \begin{subitemize}
+        \item \textbf{C}ombined \textbf{R}adar \textbf{M}ode
+        \item Allows selection of A-A search submodes
+        \item Selected by default on start-up
+    \end{subitemize}}
+    \blueitem{Submodes}{
+    \begin{subitemize}
+        \item \textbf{RWS} -- \textbf{R}ange \textbf{W}hile \textbf{S}earch
+        \begin{itemize}
+            \item \textbf{SAM} -- \textbf{S}ituational \textbf{A}warness \textbf{M}ode
+            \item \textbf{DTT} -- \textbf{D}ual \textbf{T}arget \textbf{T}rack
+        \end{itemize}
+        \item \textbf{TWS} -- \textbf{T}rack \textbf{W}hile \textbf{S}can
+        \item \textbf{STT} -- \textbf{S}ingle \textbf{T}arget \textbf{T}rack 
+    \end{subitemize}}
+    \blueitem{Change \break Submode}{
+    \begin{subitemize}
+        \item \textbf{RWS/TWS} 
+        \begin{itemize}
+            \item \textbf{OSB 2} \dotfill \textbf{Press} \\
+            \item Or \textbf{TMS} \dotfill \textbf{Right Long}
+        \end{itemize}
+    \end{subitemize}}
+\end{tableitemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[auto, node distance=1cm,
+        >={Latex[round]}
+        ]
+        
+        % Nodes
+        \node[
+            hyperref node=subsec:rws,
+            diamond,
+            draw,
+            very thick,
+        ](rws){\textbf{RWS}};
+        \path
+            let
+                \p1 = (rws),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](sam)at(\x1,\y1+3.5cm){\textbf{SAM}}
+            let
+                \p1 = (sam),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](dtt)at(\x1-3cm,\y1+1.5cm){\textbf{DTT}}
+            let
+                \p1 = (rws),
+            in
+                node[
+                    diamond,
+                    minimum width=1.5cm,
+                    minimum height=1.5cm,
+                    draw,
+                    very thick,
+                ](tws)at(\x1+3cm,\y1){\textbf{TWS}}
+            let
+                \p1 = (tws),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](systgt)at(\x1,\y1+2cm){System Tgt}
+            let
+                \p1 = (systgt),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](bug)at(\x1,\y1+1.5cm){Bugged}
+            let
+                \p1 = (rws),
+                \p2 = (dtt),
+            in
+                node[
+                    rectangle, 
+                    rounded corners,
+                    minimum width=8cm,
+                    minimum height=0.75cm,
+                    draw, 
+                    very thick,
+                ](stt)at(\x1, \y2+1.5cm){\textbf{STT}};
+        
+        % Lines
+        \draw [->]
+            (rws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (sam);
+        \draw [->, rounded corners]
+            (sam) -| node[pos=0.25, above]{\scriptsize\textbf{TMS FWD}}node[pos=0.25, below]{\scriptsize\textbf{(2nd Tgt)}} (dtt);
+        \draw [->]
+            let
+                \p1=(dtt.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(sam.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}}node[pos=0.5, right]{\scriptsize\textbf{(1st Tgt)}} (\x1,\y2);
+
+        \draw [<->]
+            (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
+        \draw[->]
+            (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
+        \draw[->]
+            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
+        \draw [->]
+            let
+                \p1=(bug.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
+
+        % Brackets
+        \draw [decorate, decoration={brace}, thick] 
+            let
+                \p1 = (stt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+7mm,\y1) -- (\x2+7mm,\y3);
+        \path
+            let
+                \p1 = (stt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+8mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{Supports AIM-120C Launch}} (\x2+8mm,\y3);
+        
+        \draw [decorate, decoration={brace}, thick] 
+            let
+                \p1 = (dtt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+1mm,\y1) -- (\x2+1mm,\y3);
+        \path
+            let
+                \p1 = (dtt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+2mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{No Launch Warning}} (\x2+2mm,\y3);
+    \end{tikzpicture}
+    \caption{\textbf{CRM Radar Modes Overview}}
+    \label{fig:crmoverview}
+\end{figure}
+
+\clearpage
+
 \subsection{RWS}
+\label{subsec:rws}
+\begin{tableitemize}
+    \blueitem{RWS}{
+    \begin{subitemize}
+        \item \textbf{R}ange \textbf{W}hile \textbf{S}earch
+        \item \textbf{Fast, Long-Range Search}
+    \end{subitemize}}
+    \blueitem{SAM \break Submode}{
+    \begin{subitemize}
+        \item \textbf{S}ituational \textbf{A}warness \textbf{M}ode
+        \item \textbf{Target is ``Bugged''} (Pseudo-Track)
+        \begin{itemize}
+            \item Can guide AIM-120C (w/o STT Lock)
+        \end{itemize}
+    \end{subitemize}
 
-\subsection{RWS -- SAM}
+    SAM Acquisition
 
-\subsection{RWS -- DTT}
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
+        \begin{itemize}
+            \item \textbf{Scan Pattern} -- 4-bar, \pm 10$^\circ$ spotlight
+        \end{itemize}
+        \item \textbf{Target} \dotfill Verify \textbf{Bugged}
+        \begin{itemize}
+            \item Can guide AIM-120C (w/o STT Lock)
+            \item DLZ displayed if missile selected
+        \end{itemize}
+    \end{subenumerate}
+    
+    Exit SAM 
+
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Aft}
+    \end{subenumerate}}
+    \blueitem{DTT \break Submode}{
+    \begin{subitemize}
+        \item \textbf{D}ual \textbf{T}arget \textbf{T}rack
+        \item \textbf{2 Targets ``Bugged''} -- primary/secondary
+        \begin{itemize}
+            \item Can guide 120C on primary target
+        \end{itemize}
+    \end{subitemize}
+
+    DTT Acquisition
+
+    \begin{subenumerate}
+        \item \textbf{Target 1} \dotfill \textbf{Bugged} in SAM
+        \item \textbf{Target 2} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (hold)} to bug
+    \end{subenumerate}
+    
+    Exit SAM 
+    
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Aft}
+    \end{subenumerate}}
+\end{tableitemize}
+
+% \subsection{RWS -- SAM}
+
+% \subsection{RWS -- DTT}
 
 \subsection{TWS}
 
 \subsection{STT}
 
 \subsection{ACM}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[auto, node distance=1cm, 
+        % >={Stealth[length=6.75pt, width=4pt, inset=2pt]}
+        >={Latex[round]}
+        ]
+        
+        % Nodes
+        \node[
+            % hyperref node=subsec:rws,
+            diamond,
+            draw,
+            very thick,
+        ](acm){\textbf{ACM}};
+        \path
+            let
+                \p1 = (acm),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](bore)at(\x1,\y1+2cm){\textbf{BORE}}
+            let
+                \p1 = (acm),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](hud)at(\x1+3cm,\y1){\textbf{HUD}}
+            let
+                \p1 = (acm),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    very thick,
+                ](vert)at(\x1,\y1-2cm){\textbf{Vertical}}
+
+
+            let
+                \p1 = (acm),
+                \p2 = (bore),
+            in
+                node[
+                    rectangle, 
+                    rounded corners,
+                    minimum width=8cm,
+                    minimum height=0.75cm,
+                    draw, 
+                    very thick,
+                ](stt)at(\x1, \y2+2cm){\textbf{STT}};
+        
+        % Lines
+        \draw [->]
+            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bore);
+        \draw [->]
+            (acm) -- node[pos=0.5, above]{\scriptsize\textbf{TMS}}node[pos=0.5, below]{\scriptsize\textbf{RIGHT}} (hud);
+        \draw [->]
+            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (vert);
+        \draw [dashed, ->]
+            let
+                \p1=(bore.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
+        \draw [dashed, ->]
+            let
+                \p1=(hud.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
+        \draw [dashed, rounded corners, ->]
+            let
+                \p1=(vert.west),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1-2cm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-2cm,\y2);
+                
+    \end{tikzpicture}
+    \caption{\textbf{ACM Radar Modes Overview}}
+    \label{fig:acmoverview}
+\end{figure}
 
 \clearpage 
 

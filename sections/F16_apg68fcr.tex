@@ -197,6 +197,157 @@
 
 \clearpage
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[auto, node distance=1cm,
+        >={Latex[round]}
+        ]
+        
+        % Nodes
+        \node[
+            hyperref node=subsec:rws,
+            diamond,
+            draw,
+            ultra thick,
+        ](rws){\textbf{RWS}};
+        \path
+            let
+                \p1 = (rws),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    ultra thick,
+                ](sam)at(\x1,\y1+3.5cm){\textbf{SAM}}
+            let
+                \p1 = (sam),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    ultra thick,
+                ](dtt)at(\x1-3cm,\y1+1.5cm){\textbf{DTT}}
+            let
+                \p1 = (rws),
+            in
+                node[
+                    diamond,
+                    minimum width=1.5cm,
+                    minimum height=1.5cm,
+                    draw,
+                    ultra thick,
+                ](tws)at(\x1+3cm,\y1){\textbf{TWS}}
+            let
+                \p1 = (tws),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    dashed,
+                    ultra thick,
+                ](systgt)at(\x1,\y1+2cm){\textbf{System Tgt}}
+            let
+                \p1 = (systgt),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=2cm,
+                    minimum height=0.75cm,
+                    draw,
+                    dashed,
+                    ultra thick,
+                ](bug)at(\x1,\y1+1.5cm){\textbf{Bugged}}
+            let
+                \p1 = (rws),
+                \p2 = (dtt),
+            in
+                node[
+                    rectangle, 
+                    rounded corners,
+                    minimum width=8cm,
+                    minimum height=0.75cm,
+                    draw, 
+                    ultra thick,
+                ](stt)at(\x1, \y2+1.5cm){\textbf{STT}};
+        
+        % Lines
+        \draw [->]
+            (rws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (sam);
+        \draw [->, rounded corners]
+            (sam) -| node[pos=0.25, above]{\scriptsize\textbf{TMS FWD}}node[pos=0.25, below]{\scriptsize\textbf{(2nd Tgt)}} (dtt);
+        \draw [->]
+            let
+                \p1=(dtt.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(sam.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}}node[pos=0.5, right]{\scriptsize\textbf{(1st Tgt)}} (\x1,\y2);
+
+        \draw [<->]
+            (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
+        \draw[->]
+            (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
+        \draw[->]
+            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
+        \draw [->]
+            let
+                \p1=(bug.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
+
+        % Brackets
+        \draw [decorate, decoration={brace}, thick] 
+            let
+                \p1 = (stt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+7mm,\y1) -- (\x2+7mm,\y3);
+        \path
+            let
+                \p1 = (stt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+8mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{Supports AIM-120C Launch}} (\x2+8mm,\y3);
+        
+        \draw [decorate, decoration={brace}, thick] 
+            let
+                \p1 = (dtt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+1mm,\y1) -- (\x2+1mm,\y3);
+        \path
+            let
+                \p1 = (dtt.north),
+                \p2 = (stt.east),
+                \p3 = (sam.south),
+            in
+                (\x2+2mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{No Launch Warning}} (\x2+2mm,\y3);
+    \end{tikzpicture}
+    \caption{\textbf{CRM Radar Modes Overview}}
+    % \label{fig:crmoverview}
+\end{figure}
+
+\clearpage
+
 \subsection{RWS}
 \label{subsec:rws}
 \begin{tableitemize}

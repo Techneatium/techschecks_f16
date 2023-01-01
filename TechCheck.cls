@@ -54,7 +54,7 @@
 \RequirePackage{cleveref} % better referencing
 \RequirePackage{lipsum} % lorem ipsum
 \RequirePackage[document]{ragged2e} % left ragged text
-\RequirePackage{atbegshi}  % special commands that apply tikz to all pages
+% \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 \RequirePackage{fancyhdr} % custom header/footer
 \RequirePackage{etoolbox} % Boolean and if/else
 \RequirePackage{calc} % math inside other commands
@@ -538,7 +538,7 @@
 	{\color{color1}\thesection} % label
 	{1em} % sep
 	{#1} % before-code
-	[{\titlerule[1pt]}] % after-code
+	[{\titlerule[2pt]}] % after-code
 
 % formatting of subsection [full width]
 \titleformat{\subsection} % command

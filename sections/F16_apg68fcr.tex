@@ -420,7 +420,82 @@
 
 % \subsection{RWS -- DTT}
 
+\clearpage
+
 \subsection{TWS}
+\label{subsec:tws}
+\begin{tableitemize}
+    \blueitem{TWS}{
+    \begin{subitemize}
+        \item \textbf{T}rack \textbf{W}hile \textbf{S}can
+        \item \textbf{Multi-target tracking mode}
+        \item \textbf{FCR builds trackfiles for each target}
+        \item \textbf{Trackfiles can be in several states} --
+        Search / Track / System / Cursor / Bugged
+    \end{subitemize}}
+    \blueitem{Search Target}{
+    \begin{subitemize}
+        \item Initial state 
+        \item Not enough information to become track
+        \item Transition to track after 1-2 radar sweeps
+        \item \textbf{Display}
+        \begin{itemize}
+            \item like RWS radar brick
+        \end{itemize} 
+    \end{subitemize}}
+    \blueitem{Track Target}{
+    \begin{subitemize}
+        \item Once trackfile generated
+        \item Can be transitioned to higher fidelity modes by pilot
+        \item \textbf{Display}
+        \begin{itemize}
+            \item larger brick with velocity vector
+            \item numerical altitude to below brick
+            \item max 10 displayed
+        \end{itemize} 
+    \end{subitemize}}
+    \blueitem{System Target}{
+    \begin{subitemize}
+        \item \textbf{Upgrade:} 
+        \begin{itemize}
+            \item \textbf{TMS Fwd} with cursor over Track Target
+            \item \textbf{TMS Right} to upgrade all Track Targets to System Targets
+        \end{itemize}
+        \item \textbf{Scan} -- No additional radar energy
+        \item \textbf{Downgrade} -- \textbf{TMS Aft} to downgrade to Track Target
+    \end{subitemize}}
+    \blueitem{Cursor Target}{
+    \begin{subitemize}
+        \item \textbf{Upgrade} -- position cursor over System Target
+        \item \textbf{Cycle} -- slew to other System Target
+        \item \textbf{Scan}
+        \begin{itemize}
+            \item 3-bar, $\pm$25 deg pattern 
+            \item centered on Cursor Target
+        \end{itemize}
+        \item \textbf{Downgrade} -- slew away from all System Targets
+    \end{subitemize}}
+    \blueitem{Bugged Target}{
+    \begin{subitemize}
+        \item \textbf{Upgrade:} 
+        \begin{itemize}
+            \item \textbf{TMS Fwd} with cursor over system target to designate
+            \item \textbf{TMS Right} to select closest System Target 
+        \end{itemize}
+        \item \textbf{Cycle} -- \textbf{TMS Right} to cycle in range order
+        \item \textbf{Scan}
+        \begin{itemize}
+            \item 3-bar, $\pm$25 deg pattern 
+            \item centered on bugged target
+        \end{itemize}
+        \item \textbf{Weapons}
+        \begin{itemize}
+            \item Target selected for AIM-9 / -120 employment
+            \item DLZ information displayed on HUD/FCR
+        \end{itemize}
+        \item \textbf{Downgrade} -- \textbf{TMS Aft} to downgrade to System Target
+    \end{subitemize}}
+\end{tableitemize}
 
 \subsection{STT}
 

@@ -354,12 +354,14 @@
     top=0mm,
     bottom=0mm,
     boxsep=0mm,
+    middle=0.5mm,
     fonttitle=\titlefont\bfseries,
     lefttitle=2mm,
     righttitle=2mm,
     toptitle=1mm,
     bottomtitle=1mm,
     height fixed for=first and middle,
+    segmentation style={line width=0.25mm, solid},
 }
 
 \newtcolorbox{innertcolorenumitem}{
@@ -383,7 +385,7 @@
     sidebyside align=top,
     segmentation style={solid},
     bicolor,
-    colback=color2!10,
+    colback=color2!15,
     colbacklower=white,
 }
 
@@ -419,6 +421,10 @@
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column
 	\newcommand{\blueitem}[2]{
+        \ifnum\value{tablenumi}>\value{tablenumistart}
+            \tcbline
+		\else
+		\fi
         \begin{innertcolorenumitem}
 		    \textbf{\arabic{tablenumi}.}\blue{##1}
             \tcblower
@@ -438,6 +444,10 @@
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column
 	\newcommand{\blueitem}[2]{
+        \ifnum\value{tablenumi}>\value{tablenumistart}
+            \tcbline
+		\else
+		\fi
         \begin{innertcolorenumitem}
 		    \blue{##1}
             \tcblower

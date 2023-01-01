@@ -28,10 +28,28 @@
 \RequirePackage{tikzpagenodes} % points for tikz
 \usetikzlibrary{calc} % used for hyperlinked nodes
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
+\RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 
 
 % TODO hacky, relies on being loaded after lengths defined, 
 % maybe pass as options
+
+\tikzset{
+	thumbtabnode/.style={
+        rectangle,
+        anchor=south west,
+        rotate=270,
+        minimum height=\tabdepth,
+        minimum width=\tabwidth,
+	},
+    thumbbacknode/.style={
+        rectangle,
+        anchor=south east,
+        rotate=90,
+        minimum height=\tabdepth,
+        minimum width=\tabwidth,
+	},
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TIKZPICTURE COMMANDS 
@@ -142,11 +160,7 @@
       [rounded corners=\nwround]--
 			cycle;
 		\node[
-			rectangle,
-			anchor=south west,
-			rotate=270,
-			minimum height=\tabdepth,
-			minimum width=\tabwidth
+			thumbtabnode,
 		]
 		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
 			\small\textbf{#1}
@@ -163,11 +177,7 @@
 	\iftoggle{print}{
 		\begin{tikzpicture}[remember picture, overlay]
 		\node[
-			rectangle,
-			anchor=south east,
-			rotate=90,
-			minimum height=\tabdepth,
-			minimum width=\tabwidth
+			thumbbacknode,
 		]
 		(sectionnode) at ([xshift=-1\outmar+\tabdepth, yshift=-#2*\tabwidth]current page text area.north west) {
 			\small\textbf{#1}

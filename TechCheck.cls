@@ -862,6 +862,120 @@
 }
 
 %-----------------------------------------------------------------
+% TCOLORBOX ENVIRONMENTS WITH ENUMITEM-LIKE BEHAVIOR
+%-----------------------------------------------------------------
+
+\newtcolorbox{tcolorenumitem}{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=color1,
+    % sharp corners=north,
+    colbacktitle=color1,
+    coltitle=white,
+    left=0mm,
+    right=0mm,
+    top=0mm,
+    bottom=0mm,
+    boxsep=0mm,
+    fonttitle=\titlefont\bfseries,
+    lefttitle=2mm,
+    righttitle=2mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    height fixed for=first and middle,
+}
+
+\newtcolorbox{innertcolorenumitem}{
+    enhanced,
+    breakable,
+    frame hidden,
+    nobeforeafter,
+    colback=white,
+    colframe=color1,
+    % sharp corners,
+    boxrule=0.5mm,
+    colbacktitle=color1,
+    coltitle=white,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    fonttitle=\titlefont\bfseries,
+    sidebyside,
+    lefthand width=35mm,
+    sidebyside align=top,
+    segmentation style={solid},
+    bicolor,
+    colback=color2!10,
+    colbacklower=white,
+}
+
+\newenvironment{outertcolorenumitem}{% begdef
+    \newenvironment{subenumerate}[1][]{% begdef
+		\begin{tableminipage}
+			\begin{enumerate}[##1]
+	}{% enddef
+			\end{enumerate}
+		\end{tableminipage}
+	}
+
+    \newenvironment{subitemize}[1][]{% begdef
+		\begin{tableminipage}
+			\begin{itemize}[##1]
+	}{% enddef
+			\end{itemize}
+		\end{tableminipage}
+	}
+
+    \begin{tcolorenumitem}
+}{% enddef
+    \end{tcolorenumitem}
+}
+
+
+%-----------------------------------------------------------------
+% HIGH-LEVEL CUSTOM TCOLORBOX ENVIRONMENTS
+%-----------------------------------------------------------------
+\newenvironment{tcolorenumerate}[1][start=1]{% begdef
+	\setkeys{tablenumitem}{#1}
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+        \begin{innertcolorenumitem}
+		    \textbf{\arabic{tablenumi}.}\blue{##1}
+            \tcblower
+            ##2
+        \end{innertcolorenumitem}
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom tcolorbox style
+	\begin{outertcolorenumitem}
+}{% enddef
+	\end{outertcolorenumitem}
+}
+
+\newenvironment{tcoloritemize}[1][start=1]{% begdef
+	\setkeys{tablenumitem}{#1}
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+        \begin{innertcolorenumitem}
+		    \blue{##1}
+            \tcblower
+            ##2
+        \end{innertcolorenumitem}
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom tcolorbox style
+	\begin{outertcolorenumitem}
+}{% enddef
+	\end{outertcolorenumitem}
+}
+
+%-----------------------------------------------------------------
 % CUSTOM COMMANDS
 %-----------------------------------------------------------------
 % command to create blue, bold mini-titles

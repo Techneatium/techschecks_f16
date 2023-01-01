@@ -473,10 +473,10 @@
 % ENUMITEM FORMATTING
 %-----------------------------------------------------------------
 % spacing within lists
-\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
-\setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
-\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
-\setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
+\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, leftmargin=1em, label=(\alph*)}
+\setlist[enumerate, 2]{itemsep=1pt, parsep=0pt, leftmargin=1em,}
+\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, leftmargin=1em, label=\textbf{\textbullet}}
+\setlist[itemize, 2]{itemsep=1pt, parsep=0pt, leftmargin=1em,}
 
 %-----------------------------------------------------------------
 % OTHER FORMATTING

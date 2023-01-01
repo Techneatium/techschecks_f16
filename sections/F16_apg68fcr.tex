@@ -221,7 +221,7 @@
                     minimum height=0.75cm,
                     draw,
                     ultra thick,
-                ](sam)at(\x1,\y1+3.5cm){\textbf{SAM}}
+                ](sam)at(\x1,\y1+50mm){\textbf{SAM}}
             let
                 \p1 = (sam),
             in
@@ -232,31 +232,43 @@
                     minimum height=0.75cm,
                     draw,
                     ultra thick,
-                ](dtt)at(\x1-3cm,\y1+1.5cm){\textbf{DTT}}
+                ](dtt)at(\x1-3cm,\y1+15mm){\textbf{DTT}}
             let
                 \p1 = (rws),
             in
                 node[
                     diamond,
-                    minimum width=1.5cm,
-                    minimum height=1.5cm,
+                    minimum width=15mm,
+                    minimum height=15mm,
                     draw,
                     ultra thick,
-                ](tws)at(\x1+3cm,\y1){\textbf{TWS}}
+                ](tws)at(\x1+30mm,\y1){\textbf{TWS}}
             let
                 \p1 = (tws),
             in
                 node[
                     rectangle,
                     rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
                     draw,
                     dashed,
                     ultra thick,
                 ](systgt)at(\x1,\y1+2cm){\textbf{System Tgt}}
             let
                 \p1 = (systgt),
+            in
+                node[
+                    rectangle,
+                    rounded corners,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
+                    draw,
+                    dashed,
+                    ultra thick,
+                ](cursortgt)at(\x1,\y1+1.5cm){\textbf{Cursor Tgt}}
+            let
+                \p1 = (cursortgt),
             in
                 node[
                     rectangle,
@@ -303,7 +315,9 @@
         \draw[->]
             (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
         \draw[->]
-            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
+            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{Cursor Over}} (cursortgt);
+        \draw[->]
+            (cursortgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
         \draw [->]
             let
                 \p1=(bug.north),
@@ -312,35 +326,35 @@
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
 
         % Brackets
-        \draw [decorate, decoration={brace}, thick] 
+        \draw [decorate, decoration={brace}, ultra thick] 
             let
                 \p1 = (stt.north),
                 \p2 = (stt.east),
                 \p3 = (sam.south),
             in
-                (\x2+7mm,\y1) -- (\x2+7mm,\y3);
+                (\x2+12mm,\y1) -- (\x2+12mm,\y3);
         \path
             let
                 \p1 = (stt.north),
                 \p2 = (stt.east),
                 \p3 = (sam.south),
             in
-                (\x2+8mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{Supports AIM-120C Launch}} (\x2+8mm,\y3);
+                (\x2+14mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\small\textbf{Supports AIM-120C Launch}} (\x2+14mm,\y3);
         
-        \draw [decorate, decoration={brace}, thick] 
+        \draw [decorate, decoration={brace}, ultra thick] 
             let
                 \p1 = (dtt.north),
                 \p2 = (stt.east),
                 \p3 = (sam.south),
             in
-                (\x2+1mm,\y1) -- (\x2+1mm,\y3);
+                (\x2+3mm,\y1) -- (\x2+3mm,\y3);
         \path
             let
                 \p1 = (dtt.north),
                 \p2 = (stt.east),
                 \p3 = (sam.south),
             in
-                (\x2+2mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{No Launch Warning}} (\x2+2mm,\y3);
+                (\x2+5mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\small\textbf{No Launch Warning}} (\x2+5mm,\y3);
     \end{tikzpicture}
     \caption{\textbf{CRM Radar Modes Overview}}
     % \label{fig:crmoverview}

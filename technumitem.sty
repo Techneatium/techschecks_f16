@@ -381,6 +381,7 @@
     sidebyside,
     lefthand width=35mm,
     sidebyside align=top,
+    sidebyside gap=5mm,
     segmentation style={solid},
     bicolor,
     colback=color2!10,
@@ -390,7 +391,7 @@
 \newenvironment{outertcolorenumitem}{% begdef
     \newenvironment{subenumerate}[1][]{% begdef
 		\begin{tableminipage}
-            \begin{enumerate}[leftmargin=1em, ##1]
+            \begin{enumerate}[##1]
 	}{% enddef
             \end{enumerate}
 		\end{tableminipage}
@@ -398,7 +399,7 @@
 
     \newenvironment{subitemize}[1][]{% begdef
 		\begin{tableminipage}
-			\begin{itemize}[leftmargin=1em, ##1]
+			\begin{itemize}[##1]
 	}{% enddef
 			\end{itemize}
 		\end{tableminipage}

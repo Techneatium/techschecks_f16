@@ -473,10 +473,10 @@
 % ENUMITEM FORMATTING
 %-----------------------------------------------------------------
 % spacing within lists
-\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, leftmargin=1em, label=(\alph*)}
-\setlist[enumerate, 2]{itemsep=1pt, parsep=0pt, leftmargin=1em,}
-\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, leftmargin=1em, label=\textbf{\textbullet}}
-\setlist[itemize, 2]{itemsep=1pt, parsep=0pt, leftmargin=1em,}
+\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
+\setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
+\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
+\setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
 
 %-----------------------------------------------------------------
 % OTHER FORMATTING
@@ -914,15 +914,15 @@
 \newenvironment{outertcolorenumitem}{% begdef
     \newenvironment{subenumerate}[1][]{% begdef
 		\begin{tableminipage}
-			\begin{enumerate}[##1]
+            \begin{enumerate}[leftmargin=1em, ##1]
 	}{% enddef
-			\end{enumerate}
+            \end{enumerate}
 		\end{tableminipage}
 	}
 
     \newenvironment{subitemize}[1][]{% begdef
 		\begin{tableminipage}
-			\begin{itemize}[##1]
+			\begin{itemize}[leftmargin=1em, ##1]
 	}{% enddef
 			\end{itemize}
 		\end{tableminipage}

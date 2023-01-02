@@ -30,9 +30,16 @@
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 
+\RequirePackage{xkeyval} % allows defining keys for macros
+
 
 % TODO hacky, relies on being loaded after lengths defined, 
 % maybe pass as options
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TIKZ STYLES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tikzset{
 	thumbtabnode/.style={

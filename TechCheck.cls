@@ -363,7 +363,7 @@
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
-\RequirePackage{techhatch} % custom page hatching 
+\RequirePackage{techhatchtabs} % custom page hatching 
 \RequirePackage{technumitem} % custom enumitem like environments
 
 %-----------------------------------------------------------------

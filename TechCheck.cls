@@ -258,7 +258,7 @@
 
 % Geometry showframe
 \DeclareOption{showframe}{
-  	\PassOptionsToClass{showframe}{geometry}
+  	\PassOptionsToPackage{showframe}{geometry}
 }
 
 % Thumbnar on/off

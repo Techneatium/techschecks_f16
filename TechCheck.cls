@@ -172,6 +172,7 @@
 	\setlength\outmar{10mm}
 	\setlength{\chevin}{\outmar-33mm}
 	\setlength\tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A5 paper with 8mm extra for tabs -- 210x(148+8)mm
@@ -205,6 +206,7 @@
 	\setlength\outmar{14mm}
 	\setlength{\chevin}{\outmar-31mm}
 	\setlength\tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A4 paper with offset margins for printing -- 297x210mm

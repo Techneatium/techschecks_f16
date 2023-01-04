@@ -42,33 +42,33 @@
 % OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% WHY XKEYVAL?
+% else if default option sets toggle to true, no good way to
+% set value back to false
+
+% \define@boolkey{family}[mp]{key}[default][func]
+% produces a boolean \if<mp><key>
+% here <mp> is defined as <KV@hatchtabs@> to duplicate standard
+% boolean key naming where <family> = <hatchtabs>
+% we must define <family> = <packagename.sty> to get 
+% \ExecuteOptionsX to work, but still wanted default key names
+
 % if true then tabs are square and white text on black fill
-\newtoggle{@squaretabtoggle}
-\DeclareOption{squaretabs}{
-    \toggletrue{@squaretabtoggle}
-}
+% creates KV@hatchtabs@squaretabs
+\define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{squaretabs}[true]{}
 
 % if true then thumbtabs are 'indented'
 % i.e can be cut out from edge of page
-\newtoggle{@thumbtabindenttoggle}
-\DeclareOption{thumbtabindent}{
-    \toggletrue{@thumbtabindenttoggle}
-}
+\define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{thumbtabindent}[true]{}
 
 % if true then matching node on page after thumbtab is generated
-\newtoggle{@thumbbacktoggle}
-\DeclareOption{autothumbback}{
-    \toggletrue{@thumbbacktoggle}
-}
+\define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{autothumbback}[true]{}
 
 % if true activates all page rounding
-\newtoggle{@roundtoggle}
-\DeclareOption{round}{
-    \toggletrue{@roundtoggle}
-}
+\define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{round}[true]{}
 
-\ExecuteOptions{thumbtabindent, autothumbback, round}
-\ProcessOptions\relax
+\ExecuteOptionsX{thumbtabindent, autothumbback, round}
+\ProcessOptionsX\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROCESS OPTIONS / KEYS
@@ -96,7 +96,7 @@
     },
 }
 
-\iftoggle{@squaretabtoggle}{
+\ifKV@hatchtabs@squaretabs
     % filled in square tabs
     \tikzset{
         thumbtabnode/.style={
@@ -116,7 +116,7 @@
             fill=color1,
         },
     }
-}{}
+\fi 
 
 
 
@@ -195,29 +195,29 @@
 
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
-    \iftoggle{@roundtoggle}{
-        \iftoggle{@thumbtabindenttoggle}{
+    \ifKV@hatchtabs@round
+        \ifKV@hatchtabs@thumbtabindent
             % if indent then create cutline around tab
             \@RoundFillNW
             \@TabFillNE{\tabdepth}{#2}
             \@TabFrame{\tabdepth}{#2}
-        }{
+        \else
             % else thumbwide
             \@RoundFillNW
             \@RoundFillNE{0mm}
             \@RoundFrame{0mm}
-        }
-    }{}
+        \fi
+    \fi
     \begin{tikzpicture}[remember picture, overlay]
     \node[
         thumbtabnode,
     ]
     (sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
-        \iftoggle{@squaretabtoggle}{
+        \ifKV@hatchtabs@squaretabs
             \color{white}\small\titlefont\textbf{#1}
-        }{
+        \else
             \small\textbf{#1}
-        }
+        \fi
     };
     \end{tikzpicture}
 	% create label for hyperlinks on front page
@@ -228,40 +228,40 @@
 
 % node with section name without border
 \newcommand{\thumbback}[2]{
-	\iftoggle{@thumbbacktoggle}{
+	\ifKV@hatchtabs@autothumbback
 		\begin{tikzpicture}[remember picture, overlay]
 		\node[
 			thumbbacknode,
 		]
 		(sectionnode) at ([xshift=-1\outmar+\tabdepth, yshift=-#2*\tabwidth]current page text area.north west) {
-			\iftoggle{@squaretabtoggle}{
+        \ifKV@hatchtabs@squaretabs
             \color{white}\small\titlefont\textbf{#1}
-        }{
+        \else
             \small\textbf{#1}
-        }
+        \fi
 		};
 		\end{tikzpicture}
-	}{}
+	\fi
 }
 
 % rounds all 4 corners, for front page and back page
 \newcommand{\thumbwide}{
-	\iftoggle{@roundtoggle}{
+	\ifKV@hatchtabs@round
         \@RoundFillNW
         \@RoundFillNE{0mm}
         \@RoundFillSE
         \@RoundFrame{0mm}
-	}{}
+	\fi
 }
 
 % rounds all 4 corners, removes width from outer edge
 % for all pages that are not front-, back- or section-page
 \newcommand{\thumbnar}{
-	\iftoggle{@roundtoggle}{
+	\ifKV@hatchtabs@round
         \@RoundFillNW
         \@RoundFillNE{\tabdepth}
         \@RoundFrame{\tabdepth}
-	}{}
+	\fi
 }
 
 %-----------------------------------------------------------------

@@ -46,12 +46,12 @@
 % else if default option sets toggle to true, no good way to
 % set value back to false
 
-% \define@boolkey{family}[mp]{key}[default][func]
-% produces a boolean \if<mp><key>
-% here <mp> is defined as <KV@hatchtabs@> to duplicate standard
-% boolean key naming where <family> = <hatchtabs>
-% we must define <family> = <packagename.sty> to get 
-% \ExecuteOptionsX to work, but still wanted default key names
+% \define@boolkey{family}[mp]{key}[default][func] produces a 
+% boolean \if<mp><key>, here <mp> is defined as <KV@hatchtabs@> 
+% to duplicate standard boolean key naming where 
+% <family> = <hatchtabs>, we must define 
+% <family> = <packagename.sty> to get \ExecuteOptionsX to work, 
+% but still wanted default key names
 
 % if true then tabs are square and white text on black fill
 % creates KV@hatchtabs@squaretabs
@@ -61,13 +61,16 @@
 % i.e can be cut out from edge of page
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{thumbtabindent}[true]{}
 
+% if true then thumbnars are 'indented' by tabwidth
+\define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{thumbnarindent}[true]{}
+
 % if true then matching node on page after thumbtab is generated
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{autothumbback}[true]{}
 
 % if true activates all page rounding
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{round}[true]{}
 
-\ExecuteOptionsX{thumbtabindent, autothumbback, round}
+\ExecuteOptionsX{thumbtabindent, autothumbback, thumbnarindent, round}
 \ProcessOptionsX\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -258,9 +261,15 @@
 % for all pages that are not front-, back- or section-page
 \newcommand{\thumbnar}{
 	\ifKV@hatchtabs@round
-        \@RoundFillNW
-        \@RoundFillNE{\tabdepth}
-        \@RoundFrame{\tabdepth}
+        \ifKV@hatchtabs@thumbnarindent
+            \@RoundFillNW
+            \@RoundFillNE{\tabdepth}
+            \@RoundFrame{\tabdepth}
+        \else 
+            \@RoundFillNW
+            \@RoundFillNE{0mm}
+            \@RoundFrame{0mm}
+        \fi
 	\fi
 }
 

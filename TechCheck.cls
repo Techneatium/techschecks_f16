@@ -311,6 +311,10 @@
 % CUSTOM PACKAGES
 %-----------------------------------------------------------------
 
+\iftoggle{print}{
+    \PassOptionsToPackage{round}{techhatchtabs}
+}{}
+
 \RequirePackage{techhatchtabs} % custom page hatching 
 \RequirePackage{technumitem} % custom enumitem like environments
 

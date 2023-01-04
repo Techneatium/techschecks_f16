@@ -54,7 +54,7 @@
 \RequirePackage{cleveref} % better referencing
 \RequirePackage{lipsum} % lorem ipsum
 \RequirePackage[document]{ragged2e} % left ragged text
-\RequirePackage{atbegshi}  % special commands that apply tikz to all pages
+% \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 \RequirePackage{fancyhdr} % custom header/footer
 \RequirePackage{etoolbox} % Boolean and if/else
 \RequirePackage{calc} % math inside other commands
@@ -172,6 +172,7 @@
 	\setlength\outmar{10mm}
 	\setlength{\chevin}{\outmar-33mm}
 	\setlength\tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A5 paper with 8mm extra for tabs -- 210x(148+8)mm
@@ -205,6 +206,7 @@
 	\setlength\outmar{14mm}
 	\setlength{\chevin}{\outmar-31mm}
 	\setlength\tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A4 paper with offset margins for printing -- 297x210mm
@@ -244,6 +246,14 @@
 % OTHER FORMATTING OPTIONS
 %-----------------------------------------------------------------
 
+\DeclareOption{squaretabs}{
+    \PassOptionsToPackage{squaretabs}{techhatchtabs}
+}
+
+\DeclareOption{round}{
+    \PassOptionsToPackage{round}{techhatchtabs}
+}
+
 %-----------------------------------------------------------------
 % DEV OPTIONS
 %-----------------------------------------------------------------
@@ -256,7 +266,7 @@
 
 % Geometry showframe
 \DeclareOption{showframe}{
-  	\PassOptionsToClass{showframe}{geometry}
+  	\PassOptionsToPackage{showframe}{geometry}
 }
 
 % Thumbnar on/off
@@ -296,6 +306,18 @@
 	outer=\outmar,
 	centering
 }
+
+%-----------------------------------------------------------------
+% CUSTOM PACKAGES
+%-----------------------------------------------------------------
+
+\iftoggle{print}{
+    \PassOptionsToPackage{round}{techhatchtabs}
+}{}
+
+\RequirePackage{techhatchtabs} % custom page hatching 
+\RequirePackage{technumitem} % custom enumitem like environments
+
 
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
@@ -362,9 +384,6 @@
 	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
-
-\RequirePackage{techhatch} % custom page hatching 
-\RequirePackage{technumitem} % custom enumitem like environments
 
 %-----------------------------------------------------------------
 % GLOBAL PARAMETER COMMANDS
@@ -538,7 +557,7 @@
 	{\color{color1}\thesection} % label
 	{1em} % sep
 	{#1} % before-code
-	[{\titlerule[1pt]}] % after-code
+	[{\titlerule[2pt]}] % after-code
 
 % formatting of subsection [full width]
 \titleformat{\subsection} % command

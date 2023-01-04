@@ -48,31 +48,6 @@
 %-----------------------------------------------------------------
 % CUSTOM TABLE ENVIRONMENTS
 %-----------------------------------------------------------------
-\newenvironment{listtable}{% begdef
-	\newenvironment{subenumerate}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{enumerate}[##1]
-	}{% enddef
-			\end{enumerate}
-		\end{tableminipage}
-	}
-
-	\newenvironment{subitemize}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{itemize}[##1]
-	}{% enddef
-			\end{itemize}
-		\end{tableminipage}
-	}
-	\begin{center}
-		\begin{tabular}{l p{3cm} | p{8cm}}
-			\toprule
-}{% enddef
-			\bottomrule
-		\end{tabular}
-	\end{center}
-}
-
 \newenvironment{listlongtable}{% begdef
 	\newenvironment{subenumerate}[1][]{% begdef
 		\begin{tableminipage}
@@ -182,72 +157,6 @@
 	\end{listlongtable}
 }
 
-% SHORT VERSIONS
-
-% shortablenumerate -- creates table that behaves like enumerate
-\newenvironment{shortablenumerate}[1][start=1]{% begdef
-	\setkeys{tablenumitem}{#1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-		% Create midrule unless first row
-		\ifnum\value{tablenumi}>\value{tablenumistart}
-			\midrule
-		\else
-		\fi
-		\arabic{tablenumi}. & \blue{##1} & ##2 
-		\stepcounter{tablenumi} \\
-	}
-	% Define command equiv to `item`
-	% arg 1 - typeset in dblue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\dblueitem}[2]{
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\arabic{tablenumi}. & \dblue{##1} & ##2 
-		\stepcounter{tablenumi} \\
-	}
-	% Uses custom table style
-	\begin{listtable}
-}{% enddef
-	\end{listtable}
-}
-
-% shortableitemize -- creates table that behaves like itemize
-\newenvironment{shortableitemize}{% begdef
-	\setcounter{tablenumi}{1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-		% Create midrule unless first row
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\textbf{\textbullet} & \blue{##1} & ##2
-		\stepcounter{tablenumi} \\
-	}
-	% Define command equiv to `item`
-	% arg 1 - typeset in dblue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\dblueitem}[2]{
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\textbf{\textbullet} & \dblue{##1} & ##2
-		\stepcounter{tablenumi} \\
-	}
-	% Uses custom table style
-	\begin{listtable}
-}{% enddef
-	\end{listtable}
-}
-
 %-----------------------------------------------------------------
 % LOW LEVEL CUSTOM ENUMITEM ENVIRONMENTS
 %-----------------------------------------------------------------
@@ -323,24 +232,9 @@
 	\end{outerchecklistitemize}
 }
 
-% LONG VERSIONS -- No difference to short versions
-% Just to keep track if switching from longtablenumitem
-\newenvironment{longchecklistenumerate}{% begdef
-	\begin{checklistenumerate}
-}{% enddef
-	\end{checklistenumerate}
-}
-
-\newenvironment{longchecklistitemize}{% begdef
-	\begin{checklistitemize}
-}{% enddef
-	\end{checklistitemize}
-}
-
 %-----------------------------------------------------------------
 % TCOLORBOX ENVIRONMENTS WITH ENUMITEM-LIKE BEHAVIOR
 %-----------------------------------------------------------------
-
 \newtcolorbox{tcolorenumitem}{
     enhanced,
     breakable,
@@ -354,12 +248,14 @@
     top=0mm,
     bottom=0mm,
     boxsep=0mm,
+    middle=0.5mm,
     fonttitle=\titlefont\bfseries,
     lefttitle=2mm,
     righttitle=2mm,
     toptitle=1mm,
     bottomtitle=1mm,
     height fixed for=first and middle,
+    segmentation style={line width=0.25mm, solid},
 }
 
 \newtcolorbox{innertcolorenumitem}{
@@ -384,7 +280,7 @@
     sidebyside gap=5mm,
     segmentation style={solid},
     bicolor,
-    colback=color2!10,
+    colback=color2!15,
     colbacklower=white,
 }
 
@@ -414,18 +310,39 @@
 %-----------------------------------------------------------------
 % HIGH-LEVEL CUSTOM TCOLORBOX ENVIRONMENTS
 %-----------------------------------------------------------------
+
+% Counter for use in tcolornumitems
+\newcounter{tcolornumi}
+\setcounter{tcolornumi}{1} % set to one to prevent edge case error
+\newcounter{tcolornumistart} % used to check if first line to prevent
+
+% Key to start an enumerate at a given number
+\define@key{tcolornumitem}{start}{
+	\setcounter{tcolornumi}{#1}
+	\setcounter{tcolornumistart}{\value{tcolornumi}}
+}
+
+% Key to resume an enumerate at previous number
+\define@key{tcolornumitem}{resume}[]{
+	\setcounter{tcolornumistart}{\value{tcolornumi}}
+}
+
 \newenvironment{tcolorenumerate}[1][start=1]{% begdef
-	\setkeys{tablenumitem}{#1}
+	\setkeys{tcolornumitem}{#1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column
 	\newcommand{\blueitem}[2]{
+        \ifnum\value{tcolornumi}>\value{tcolornumistart}
+            \tcbline
+		\else
+		\fi
         \begin{innertcolorenumitem}
-		    \textbf{\arabic{tablenumi}.}\blue{##1}
+		    \textbf{\arabic{tcolornumi}.}\blue{##1}
             \tcblower
             ##2
         \end{innertcolorenumitem}
-		\stepcounter{tablenumi} \\
+		\stepcounter{tcolornumi} \\
 	}
 	% Uses custom tcolorbox style
 	\begin{outertcolorenumitem}
@@ -434,17 +351,21 @@
 }
 
 \newenvironment{tcoloritemize}[1][start=1]{% begdef
-	\setkeys{tablenumitem}{#1}
+	\setkeys{tcolornumitem}{#1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column
 	\newcommand{\blueitem}[2]{
+        \ifnum\value{tcolornumi}>\value{tcolornumistart}
+            \tcbline
+		\else
+		\fi
         \begin{innertcolorenumitem}
 		    \blue{##1}
             \tcblower
             ##2
         \end{innertcolorenumitem}
-		\stepcounter{tablenumi} \\
+		\stepcounter{tcolornumi} \\
 	}
 	% Uses custom tcolorbox style
 	\begin{outertcolorenumitem}

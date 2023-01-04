@@ -42,21 +42,26 @@
 % OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% if true then tabs are square and white text on black fill
 \newtoggle{@squaretabtoggle}
 \DeclareOption{squaretabs}{
     \toggletrue{@squaretabtoggle}
 }
 
+% if true then thumbtabs are 'indented'
+% i.e can be cut out from edge of page
 \newtoggle{@thumbtabindenttoggle}
 \DeclareOption{thumbtabindent}{
     \toggletrue{@thumbtabindenttoggle}
 }
 
+% if true then matching node on page after thumbtab is generated
 \newtoggle{@thumbbacktoggle}
 \DeclareOption{autothumbback}{
     \toggletrue{@thumbbacktoggle}
 }
 
+% if true activates all page rounding
 \newtoggle{@roundtoggle}
 \DeclareOption{round}{
     \toggletrue{@roundtoggle}
@@ -153,7 +158,7 @@
 }
 % titlepage chevron indentation
 
-% individual parallelogram
+% creates individual hatch line (parallelogram)
 \newcommand{\single}[1]{
 	\fill[color1]
 	([xshift=#1*2*5mm,yshift=2mm]current page text area.north west) --
@@ -162,6 +167,7 @@
 	([xshift=#1*2*5mm+5mm,yshift=2mm]current page text area.north west) --
 	cycle;
 }
+
 % while loop to make many parallelograms
 \newcommand\Hatch{
 	\begin{tikzpicture}[remember picture,overlay]
@@ -219,6 +225,7 @@
 	% create node on back of page
 	\AtBeginShipoutNext{\thumbback{#1}{#2}}
 }
+
 % node with section name without border
 \newcommand{\thumbback}[2]{
 	\iftoggle{@thumbbacktoggle}{
@@ -236,7 +243,8 @@
 		\end{tikzpicture}
 	}{}
 }
-% for front page and back page
+
+% rounds all 4 corners, for front page and back page
 \newcommand{\thumbwide}{
 	\iftoggle{@roundtoggle}{
         \@RoundFillNW
@@ -245,6 +253,8 @@
         \@RoundFrame{0mm}
 	}{}
 }
+
+% rounds all 4 corners, removes width from outer edge
 % for all pages that are not front-, back- or section-page
 \newcommand{\thumbnar}{
 	\iftoggle{@roundtoggle}{
@@ -258,6 +268,7 @@
 % ROUNDING - LOW LEVEL
 %-----------------------------------------------------------------
 
+% fills in outside of rounded NW corner with white
 \newcommand{\@RoundFillNW}{
     \begin{tikzpicture}[remember picture, overlay]
 		% north west corner
@@ -271,6 +282,8 @@
 			cycle;
     \end{tikzpicture}
 }
+
+% fills in ouside of rounded NE corner + indentation with white
 \newcommand{\@RoundFillNE}[1]{
     \begin{tikzpicture}[remember picture, overlay]
 		% arg is indentation, \tabdepth for thumbnar
@@ -286,6 +299,7 @@
     \end{tikzpicture}
 }
 
+% fills in ouside of rounded SE corner with white
 \newcommand{\@RoundFillSE}{
     \begin{tikzpicture}[remember picture, overlay]
 		\fill[white]
@@ -299,6 +313,7 @@
     \end{tikzpicture}
 }
 
+% draws rounded line around page with indentation on outer edge
 \newcommand{\@RoundFrame}[1]{
     \begin{tikzpicture}[remember picture, overlay]
 		% arg is indentation, \tabdepth for thumbnar
@@ -311,6 +326,7 @@
     \end{tikzpicture}
 }
 
+% fills area outside of NE corner for rounded thumbtabs
 \newcommand{\@TabFillNE}[2]{
     \begin{tikzpicture}[remember picture, overlay]
 		% 1st arg is indentation -> \tabdepth
@@ -330,6 +346,7 @@
     \end{tikzpicture}
 }
 
+% draws frame around page including indentation & thumbtab
 \newcommand{\@TabFrame}[2]{
     \begin{tikzpicture}[remember picture, overlay]
 		% 1st arg is indentation -> \tabdepth

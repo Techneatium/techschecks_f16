@@ -47,11 +47,17 @@
     \toggletrue{@squaretabtoggle}
 }
 
+\newtoggle{@thumbtabindent}
+\DeclareOption{thumbtabindent}{
+    \toggletrue{@thumbtabindent}
+}
+
 \newtoggle{@roundtoggle}
 \DeclareOption{round}{
     \toggletrue{@roundtoggle}
 }
 
+\ExecuteOptions{thumbtabindent, round}
 \ProcessOptions\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,9 +185,17 @@
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
     \iftoggle{@roundtoggle}{
-        \@RoundFillNW
-        \@TabFillNE{\tabdepth}{#2}
-        \@TabFrame{\tabdepth}{#2}
+        \iftoggle{@thumbtabindent}{
+            % if indent then create cutline around tab
+            \@RoundFillNW
+            \@TabFillNE{\tabdepth}{#2}
+            \@TabFrame{\tabdepth}{#2}
+        }{
+            % else thumbwide
+            \@RoundFillNW
+            \@RoundFillNE{0mm}
+            \@RoundFrame{0mm}
+        }
     }{}
     \begin{tikzpicture}[remember picture, overlay]
     \node[

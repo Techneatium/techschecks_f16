@@ -249,6 +249,11 @@
 \DeclareOption{squaretabs}{
     \PassOptionsToPackage{squaretabs}{techhatchtabs}
 }
+
+\DeclareOption{round}{
+    \PassOptionsToPackage{round}{techhatchtabs}
+}
+
 %-----------------------------------------------------------------
 % DEV OPTIONS
 %-----------------------------------------------------------------

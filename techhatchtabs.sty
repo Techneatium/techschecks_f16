@@ -46,6 +46,14 @@
 \DeclareOption{squaretabs}{
     \toggletrue{@squaretabtoggle}
 }
+
+\newtoggle{@roundtoggle}
+\DeclareOption{round}{
+    \toggletrue{@roundtoggle}
+}
+
+\ProcessOptions\relax
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROCESS OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -55,43 +63,43 @@
 %-----------------------------------------------------------------
 
 % 'normal' rounded thumbtabs
-    \tikzset{
-	thumbtabnode/.style={
+\tikzset{
+    thumbtabnode/.style={
         rectangle,
         anchor=south west,
         rotate=270,
         minimum height=\tabdepth,
         minimum width=\tabwidth,
-	},
+    },
     thumbbacknode/.style={
         rectangle,
         anchor=south east,
         rotate=90,
         minimum height=\tabdepth,
         minimum width=\tabwidth,
-	},
+    },
 }
 
 \iftoggle{@squaretabtoggle}{
     % filled in square tabs
     \tikzset{
-	thumbtabnode/.style={
-        rectangle,
-        anchor=south west,
-        rotate=270,
-        minimum height=\tabdepth,
+        thumbtabnode/.style={
+            rectangle,
+            anchor=south west,
+            rotate=270,
+            minimum height=\tabdepth,
             minimum width=0.98\tabwidth,
             fill=color1,
-	},
-    thumbbacknode/.style={
-        rectangle,
-        anchor=south east,
-        rotate=90,
-        minimum height=\tabdepth,
+        },
+        thumbbacknode/.style={
+            rectangle,
+            anchor=south east,
+            rotate=90,
+            minimum height=\tabdepth,
             minimum width=0.98\tabwidth,
             fill=color1,
-	},
-}
+        },
+    }
 }{}
 
 
@@ -99,12 +107,6 @@
 %-----------------------------------------------------------------
 % ROUNDING
 %-----------------------------------------------------------------
-\newtoggle{roundtoggle}
-\togglefalse{roundtoggle}
-\iftoggle{print}{
-    \toggletrue{roundtoggle}
-}{}
-
 % variables for controlling rounding diameters in each corner
 \newlength{\nwround}
 \newlength{\neround}
@@ -177,7 +179,7 @@
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
     \begin{tikzpicture}[remember picture, overlay]
-    \iftoggle{roundtoggle}{
+    \iftoggle{@roundtoggle}{
         % north west corner
         \fill[white]
             ([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
@@ -250,7 +252,7 @@
 }
 % for front page and back page
 \newcommand{\thumbwide}{
-	\iftoggle{roundtoggle}{
+	\iftoggle{@roundtoggle}{
 		\begin{tikzpicture}[remember picture, overlay]
 			% north west corner
 			\fill[white]
@@ -295,7 +297,7 @@
 }
 % for all pages that are not front-, back- or section-page
 \newcommand{\thumbnar}{
-	\iftoggle{roundtoggle}{
+	\iftoggle{@roundtoggle}{
 		\begin{tikzpicture}[remember picture, overlay]
 		% north west corner
 		\fill[white]

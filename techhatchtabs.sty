@@ -64,6 +64,12 @@
 %-----------------------------------------------------------------
 % ROUNDING
 %-----------------------------------------------------------------
+\newtoggle{roundtoggle}
+\togglefalse{roundtoggle}
+\iftoggle{print}{
+    \toggletrue{roundtoggle}
+}{}
+
 % variables for controlling rounding diameters in each corner
 \newlength{\nwround}
 \newlength{\neround}
@@ -132,20 +138,11 @@
 %-----------------------------------------------------------------
 % ROUNDING
 %-----------------------------------------------------------------
-% variables for controlling rounding diameters in each corner
-\newlength{\nwround}
-\newlength{\neround}
-\newlength{\seround}
-\newlength{\swround}
-\setlength\nwround{10mm}
-\setlength\neround{10mm}
-\setlength\seround{10mm}
-\setlength\swround{10mm}
 
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
-	\iftoggle{print}{
 		\begin{tikzpicture}[remember picture, overlay]
+    \iftoggle{roundtoggle}{
 		% north west corner
 		\fill[white]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
@@ -182,6 +179,7 @@
 			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east)
       [rounded corners=\nwround]--
 			cycle;
+    }{}
 		\node[
 			thumbtabnode,
 		]
@@ -189,7 +187,6 @@
 			\small\textbf{#1}
 		};
 		\end{tikzpicture}
-	}{}
 	% create label for hyperlinks on front page
 	\label{thumbtab:#2}
 	% create node on back of page
@@ -210,7 +207,7 @@
 }
 % for front page and back page
 \newcommand{\thumbwide}{
-	\iftoggle{print}{
+	\iftoggle{roundtoggle}{
 		\begin{tikzpicture}[remember picture, overlay]
 			% north west corner
 			\fill[white]
@@ -255,7 +252,7 @@
 }
 % for all pages that are not front-, back- or section-page
 \newcommand{\thumbnar}{
-	\iftoggle{print}{
+	\iftoggle{roundtoggle}{
 		\begin{tikzpicture}[remember picture, overlay]
 		% north west corner
 		\fill[white]

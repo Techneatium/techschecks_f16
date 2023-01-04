@@ -308,6 +308,14 @@
 }
 
 %-----------------------------------------------------------------
+% CUSTOM PACKAGES
+%-----------------------------------------------------------------
+
+\RequirePackage{techhatchtabs} % custom page hatching 
+\RequirePackage{technumitem} % custom enumitem like environments
+
+
+%-----------------------------------------------------------------
 % OPTIONAL PACKAGES
 %-----------------------------------------------------------------
 \iftoggle{fontHelvet}{
@@ -372,9 +380,6 @@
 	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
-
-\RequirePackage{techhatchtabs} % custom page hatching 
-\RequirePackage{technumitem} % custom enumitem like environments
 
 %-----------------------------------------------------------------
 % GLOBAL PARAMETER COMMANDS

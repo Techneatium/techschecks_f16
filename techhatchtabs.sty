@@ -42,13 +42,37 @@
 % OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newtoggle{@squaretabtoggle}
+\DeclareOption{squaretabs}{
+    \toggletrue{@squaretabtoggle}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROCESS OPTIONS / KEYS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %-----------------------------------------------------------------
-% NODES
+% TABBING
 %-----------------------------------------------------------------
 
-\newtoggle{squaretabtoggle}
+% 'normal' rounded thumbtabs
+    \tikzset{
+	thumbtabnode/.style={
+        rectangle,
+        anchor=south west,
+        rotate=270,
+        minimum height=\tabdepth,
+        minimum width=\tabwidth,
+	},
+    thumbbacknode/.style={
+        rectangle,
+        anchor=south east,
+        rotate=90,
+        minimum height=\tabdepth,
+        minimum width=\tabwidth,
+	},
+}
 
-\iftoggle{squaretabtoggle}{
+\iftoggle{@squaretabtoggle}{
     % filled in square tabs
     \tikzset{
 	thumbtabnode/.style={
@@ -56,37 +80,20 @@
         anchor=south west,
         rotate=270,
         minimum height=\tabdepth,
-        minimum width=0.98\tabwidth,
-        fill=color1,
+            minimum width=0.98\tabwidth,
+            fill=color1,
 	},
     thumbbacknode/.style={
         rectangle,
         anchor=south east,
         rotate=90,
         minimum height=\tabdepth,
-        minimum width=0.98\tabwidth,
-        fill=color1,
+            minimum width=0.98\tabwidth,
+            fill=color1,
 	},
 }
-}{
-    % 'normal' rounded thumbtabs
-    \tikzset{
-	thumbtabnode/.style={
-        rectangle,
-        anchor=south west,
-        rotate=270,
-        minimum height=\tabdepth,
-        minimum width=\tabwidth,
-	},
-    thumbbacknode/.style={
-        rectangle,
-        anchor=south east,
-        rotate=90,
-        minimum height=\tabdepth,
-        minimum width=\tabwidth,
-	},
-}
-}
+}{}
+
 
 
 %-----------------------------------------------------------------
@@ -212,7 +219,7 @@
         thumbtabnode,
     ]
     (sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
-        \iftoggle{squaretabtoggle}{
+        \iftoggle{@squaretabtoggle}{
             \color{white}\small\titlefont\textbf{#1}
         }{
             \small\textbf{#1}
@@ -232,7 +239,7 @@
 			thumbbacknode,
 		]
 		(sectionnode) at ([xshift=-1\outmar+\tabdepth, yshift=-#2*\tabwidth]current page text area.north west) {
-			\iftoggle{squaretabtoggle}{
+			\iftoggle{@squaretabtoggle}{
             \color{white}\small\titlefont\textbf{#1}
         }{
             \small\textbf{#1}

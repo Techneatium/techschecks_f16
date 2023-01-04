@@ -61,8 +61,8 @@
 % \RequirePackage{booktabs} % fancy tables
 % \RequirePackage{multirow} % more fancy tables
 % \RequirePackage{longtable} % multi page tables
-% \RequirePackage{tocloft} % TOC formatting
-% \RequirePackage{minitoc} % chapter tocs
+\RequirePackage{tocloft} % TOC formatting
+\RequirePackage{minitoc} % chapter tocs
 \RequirePackage[auto]{chappg}
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}

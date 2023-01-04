@@ -52,12 +52,17 @@
     \toggletrue{@thumbtabindenttoggle}
 }
 
+\newtoggle{@thumbbacktoggle}
+\DeclareOption{autothumbback}{
+    \toggletrue{@thumbbacktoggle}
+}
+
 \newtoggle{@roundtoggle}
 \DeclareOption{round}{
     \toggletrue{@roundtoggle}
 }
 
-\ExecuteOptions{thumbtabindent, round}
+\ExecuteOptions{thumbtabindent, autothumbback, round}
 \ProcessOptions\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,7 +221,7 @@
 }
 % node with section name without border
 \newcommand{\thumbback}[2]{
-	\iftoggle{print}{
+	\iftoggle{@thumbbacktoggle}{
 		\begin{tikzpicture}[remember picture, overlay]
 		\node[
 			thumbbacknode,

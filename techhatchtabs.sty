@@ -47,9 +47,9 @@
     \toggletrue{@squaretabtoggle}
 }
 
-\newtoggle{@thumbtabindent}
+\newtoggle{@thumbtabindenttoggle}
 \DeclareOption{thumbtabindent}{
-    \toggletrue{@thumbtabindent}
+    \toggletrue{@thumbtabindenttoggle}
 }
 
 \newtoggle{@roundtoggle}
@@ -185,7 +185,7 @@
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
     \iftoggle{@roundtoggle}{
-        \iftoggle{@thumbtabindent}{
+        \iftoggle{@thumbtabindenttoggle}{
             % if indent then create cutline around tab
             \@RoundFillNW
             \@TabFillNE{\tabdepth}{#2}

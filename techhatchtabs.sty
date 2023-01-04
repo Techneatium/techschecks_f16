@@ -38,12 +38,40 @@
 % TODO hacky, relies on being loaded after lengths defined, 
 % maybe pass as options
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TIKZ STYLES
+% OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\tikzset{
+%-----------------------------------------------------------------
+% NODES
+%-----------------------------------------------------------------
+
+\newtoggle{squaretabtoggle}
+\toggletrue{squaretabtoggle}
+
+\iftoggle{squaretabtoggle}{
+    % filled in square tabs
+    \tikzset{
+	thumbtabnode/.style={
+        rectangle,
+        anchor=south west,
+        rotate=270,
+        minimum height=\tabdepth,
+        minimum width=0.98\tabwidth,
+        fill=color1,
+	},
+    thumbbacknode/.style={
+        rectangle,
+        anchor=south east,
+        rotate=90,
+        minimum height=\tabdepth,
+        minimum width=0.98\tabwidth,
+        fill=color1,
+	},
+}
+}{
+    % 'normal' rounded thumbtabs
+    \tikzset{
 	thumbtabnode/.style={
         rectangle,
         anchor=south west,
@@ -58,6 +86,7 @@
         minimum height=\tabdepth,
         minimum width=\tabwidth,
 	},
+}
 }
 
 
@@ -141,52 +170,56 @@
 
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
-		\begin{tikzpicture}[remember picture, overlay]
+    \begin{tikzpicture}[remember picture, overlay]
     \iftoggle{roundtoggle}{
-		% north west corner
-		\fill[white]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=\topmar-10mm]current page text area.north west)
-			[rounded corners=\nwround] --
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar+10mm, yshift=\topmar]current page text area.north west)
-			[sharp corners] --
-			cycle;
-		% north east corner
-		\fill[white]
-			([xshift=\outmar, yshift=-#2*\tabwidth-5mm]current page text area.north east)
-			[rounded corners=4mm] --
-			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=3mm] --
-			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=\neround] --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar-\tabdepth-10mm, yshift=\topmar]current page text area.north east)
-			[sharp corners]--
-			([xshift=\outmar, yshift=\topmar]current page text area.north east)--
-			cycle;
-		\draw[color1]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west)
-      [rounded corners=\swround] --
-			([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
-      [rounded corners=\seround] --
-			([xshift=\outmar, yshift=-\botmar]current page text area.south east)
-			[rounded corners=4mm] --
-			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=3mm] --
-			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=\neround] --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east)
-      [rounded corners=\nwround]--
-			cycle;
+        % north west corner
+        \fill[white]
+            ([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
+            ([xshift=-\inmar, yshift=\topmar-10mm]current page text area.north west)
+            [rounded corners=\nwround] --
+            ([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
+            ([xshift=-\inmar+10mm, yshift=\topmar]current page text area.north west)
+            [sharp corners] --
+            cycle;
+        % north east corner
+        \fill[white]
+            ([xshift=\outmar, yshift=-#2*\tabwidth-5mm]current page text area.north east)
+            [rounded corners=4mm] --
+            ([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
+            [rounded corners=3mm] --
+            ([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
+            [rounded corners=\neround] --
+            ([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
+            ([xshift=\outmar-\tabdepth-10mm, yshift=\topmar]current page text area.north east)
+            [sharp corners]--
+            ([xshift=\outmar, yshift=\topmar]current page text area.north east)--
+            cycle;
+        \draw[color1]
+            ([xshift=-\inmar, yshift=\topmar]current page text area.north west)
+            [rounded corners=\swround] --
+            ([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
+            [rounded corners=\seround] --
+            ([xshift=\outmar, yshift=-\botmar]current page text area.south east)
+            [rounded corners=4mm] --
+            ([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
+            [rounded corners=3mm] --
+            ([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
+            [rounded corners=\neround] --
+            ([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east)
+            [rounded corners=\nwround]--
+            cycle;
     }{}
-		\node[
-			thumbtabnode,
-		]
-		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
-			\small\textbf{#1}
-		};
-		\end{tikzpicture}
+    \node[
+        thumbtabnode,
+    ]
+    (sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
+        \iftoggle{squaretabtoggle}{
+            \color{white}\small\titlefont\textbf{#1}
+        }{
+            \small\textbf{#1}
+        }
+    };
+    \end{tikzpicture}
 	% create label for hyperlinks on front page
 	\label{thumbtab:#2}
 	% create node on back of page
@@ -200,7 +233,11 @@
 			thumbbacknode,
 		]
 		(sectionnode) at ([xshift=-1\outmar+\tabdepth, yshift=-#2*\tabwidth]current page text area.north west) {
-			\small\textbf{#1}
+			\iftoggle{squaretabtoggle}{
+            \color{white}\small\titlefont\textbf{#1}
+        }{
+            \small\textbf{#1}
+        }
 		};
 		\end{tikzpicture}
 	}{}

@@ -263,10 +263,10 @@
 		% north west corner
 		\fill[white]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west)
+			([xshift=-\inmar, yshift=\topmar-10mm]current page text area.north west)
 			[rounded corners=\nwround] --
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
+			([xshift=-\inmar+10mm, yshift=\topmar]current page text area.north west)
 			[sharp corners] --
 			cycle;
     \end{tikzpicture}
@@ -276,11 +276,11 @@
 		% arg is indentation, \tabdepth for thumbnar
 		\fill[white]
 			([xshift=\outmar, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar, yshift=\topmar-1cm]current page text area.north east) --
-			([xshift=\outmar-#1, yshift=\topmar-1cm]current page text area.north east)
+			([xshift=\outmar, yshift=\topmar-10mm]current page text area.north east) --
+			([xshift=\outmar-#1, yshift=\topmar-10mm]current page text area.north east)
 			[rounded corners=\neround] --
 			([xshift=\outmar-#1, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar-#1-1cm, yshift=\topmar]current page text area.north east)
+			([xshift=\outmar-#1-10mm, yshift=\topmar]current page text area.north east)
 			[sharp corners] --
 			cycle;
     \end{tikzpicture}
@@ -290,10 +290,10 @@
     \begin{tikzpicture}[remember picture, overlay]
 		\fill[white]
             ([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
-            ([xshift=\outmar, yshift=-\botmar+1cm]current page text area.south east)
+            ([xshift=\outmar, yshift=-\botmar+10mm]current page text area.south east)
             [rounded corners=\seround] --
             ([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
-            ([xshift=\outmar-1cm, yshift=-\botmar]current page text area.south east)
+            ([xshift=\outmar-10mm, yshift=-\botmar]current page text area.south east)
             [sharp corners] --
             cycle;
     \end{tikzpicture}

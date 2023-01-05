@@ -324,8 +324,14 @@
 %-----------------------------------------------------------------
 
 \iftoggle{print}{
-    \PassOptionsToPackage{round}{techhatchtabs}
-}{}
+    % if true no action necessary, defaults to printable behavior
+}{
+    % if false turns of rounding completely
+    % leaves 'autothumbback' on!
+    \PassOptionsToPackage{
+        round=false,
+    }{techhatchtabs}
+}
 
 \RequirePackage{techhatchtabs} % custom page hatching 
 \RequirePackage{technumitem} % custom enumitem like environments

@@ -1,7 +1,7 @@
 %=================================================================
 % MIT LICENSE
 %=================================================================
-% Copyright (c) 2022 Techneatium
+% Copyright (c) 2023 Techneatium
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[10pt,usenames,dvipsnames,twoside]{book}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2022/06/24]
+\ProvidesClass{TechCheck}[2023/01/05]
 
 %-----------------------------------------------------------------
 % GENERAL PACKAGES
@@ -48,19 +48,18 @@
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units
 \RequirePackage{tikz} % shapes, figures
-% \RequirePackage{tikzpagenodes} % points for tikz
-% \usetikzlibrary{calc} % used for hyperlinked nodes
+\RequirePackage{tikzpagenodes} % points for tikz
+\usetikzlibrary{calc} % used for hyperlinked nodes
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{cleveref} % better referencing
-\RequirePackage{lipsum} % lorem ipsum
 \RequirePackage[document]{ragged2e} % left ragged text
 % \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 \RequirePackage{fancyhdr} % custom header/footer
 \RequirePackage{etoolbox} % Boolean and if/else
 \RequirePackage{calc} % math inside other commands
-% \RequirePackage{booktabs} % fancy tables
-% \RequirePackage{multirow} % more fancy tables
-% \RequirePackage{longtable} % multi page tables
+\RequirePackage{booktabs} % fancy tables
+\RequirePackage{multirow} % more fancy tables
+\RequirePackage{longtable} % multi page tables
 \RequirePackage{tocloft} % TOC formatting
 \RequirePackage{minitoc} % chapter tocs
 \RequirePackage[auto]{chappg}

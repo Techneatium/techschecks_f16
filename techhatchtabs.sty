@@ -24,19 +24,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{techhatchtabs}[2023/01/01]
 
-
-\RequirePackage{etoolbox} % Boolean and if/else
+\RequirePackage{xkeyval} % allows defining keys for macros
 \RequirePackage{tikz} % shapes, figures
 \RequirePackage{tikzpagenodes} % points for tikz
 \usetikzlibrary{calc} % used for hyperlinked nodes
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
-
-\RequirePackage{xkeyval} % allows defining keys for macros
-
-
-% TODO hacky, relies on being loaded after lengths defined, 
-% maybe pass as options
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OPTIONS / KEYS
@@ -45,6 +38,10 @@
 % WHY XKEYVAL?
 % else if default option sets toggle to true, no good way to
 % set value back to false
+
+%-----------------------------------------------------------------
+% BOOLS
+%-----------------------------------------------------------------
 
 % \define@boolkey{family}[mp]{key}[default][func] produces a 
 % boolean \if<mp><key>, here <mp> is defined as <KV@hatchtabs@> 
@@ -70,15 +67,91 @@
 % if true activates all page rounding
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{round}[true]{}
 
+%-----------------------------------------------------------------
+% LENGTHS
+%-----------------------------------------------------------------
+
+% margin lengths
+\newlength{\THT@topmar}
+\newlength{\THT@botmar}
+\newlength{\THT@inmar}
+\newlength{\THT@outmar}
+% tab dimensions
+\newlength{\THT@tabwidth}
+\newlength{\THT@tabdepth}
+% indendtation for chevrons on front page
+\newlength{\THT@chevin}
+
+% defaults
+\setlength\THT@topmar{12mm}
+\setlength\THT@botmar{8mm}
+\setlength\THT@inmar{10mm}
+\setlength\THT@outmar{10mm}
+\setlength\THT@tabwidth{20mm} % total guess
+\setlength\THT@tabdepth{12mm}
+\setlength\THT@chevin{\THT@outmar-33mm}
+
+% options
+\DeclareOptionX{top}{
+    \setlength\THT@topmar{#1}
+}
+\DeclareOptionX{bottom}{
+    \setlength\THT@botmar{#1}
+}
+\DeclareOptionX{inner}{
+    \setlength\THT@inmar{#1}
+}
+\DeclareOptionX{outer}{
+    \setlength\THT@outmar{#1}
+}
+\DeclareOptionX{tabwidth}{
+    \setlength\THT@tabwidth{#1}
+}
+\DeclareOptionX{tabdepth}{
+    \setlength\THT@tabdepth{#1}
+}
+\DeclareOptionX{chevin}{
+    \setlength\THT@chevin{#1}
+}
+
+%-----------------------------------------------------------------
+% ROUNDING
+%-----------------------------------------------------------------
+% variables for controlling rounding diameters in each corner
+\newlength{\THT@nwround}
+\newlength{\THT@neround}
+\newlength{\THT@seround}
+\newlength{\THT@swround}
+% defaults
+\setlength\THT@nwround{10mm}
+\setlength\THT@neround{10mm}
+\setlength\THT@seround{10mm}
+\setlength\THT@swround{10mm}
+
+\DeclareOptionX{nwround}{
+    \setlength\THT@nwround{#1}
+}
+\DeclareOptionX{neround}{
+    \setlength\THT@neround{#1}
+}
+\DeclareOptionX{seround}{
+    \setlength\THT@seround{#1}
+}
+\DeclareOptionX{swround}{
+    \setlength\THT@swround{#1}
+}
+
+%-----------------------------------------------------------------
+% ERROR HANDLING
+%-----------------------------------------------------------------
 % Error handling for unknown options
 \DeclareOptionX*{\PackageWarning{techhatchtabs}{‘\CurrentOption’ ignored}}
-
-\ExecuteOptionsX{thumbtabindent, autothumbback, thumbnarindent, round}
-\ProcessOptionsX\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROCESS OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ExecuteOptionsX{thumbtabindent, autothumbback, thumbnarindent, round}
+\ProcessOptionsX\relax
 
 %-----------------------------------------------------------------
 % TABBING
@@ -90,15 +163,15 @@
         rectangle,
         anchor=south west,
         rotate=270,
-        minimum height=\tabdepth,
-        minimum width=\tabwidth,
+        minimum height=\THT@tabdepth,
+        minimum width=\THT@tabwidth,
     },
     thumbbacknode/.style={
         rectangle,
         anchor=south east,
         rotate=90,
-        minimum height=\tabdepth,
-        minimum width=\tabwidth,
+        minimum height=\THT@tabdepth,
+        minimum width=\THT@tabwidth,
     },
 }
 
@@ -109,35 +182,20 @@
             rectangle,
             anchor=south west,
             rotate=270,
-            minimum height=\tabdepth,
-            minimum width=0.98\tabwidth,
+            minimum height=\THT@tabdepth,
+            minimum width=0.98\THT@tabwidth,
             fill=color1,
         },
         thumbbacknode/.style={
             rectangle,
             anchor=south east,
             rotate=90,
-            minimum height=\tabdepth,
-            minimum width=0.98\tabwidth,
+            minimum height=\THT@tabdepth,
+            minimum width=0.98\THT@tabwidth,
             fill=color1,
         },
     }
 \fi 
-
-
-
-%-----------------------------------------------------------------
-% ROUNDING
-%-----------------------------------------------------------------
-% variables for controlling rounding diameters in each corner
-\newlength{\nwround}
-\newlength{\neround}
-\newlength{\seround}
-\newlength{\swround}
-\setlength\nwround{10mm}
-\setlength\neround{10mm}
-\setlength\seround{10mm}
-\setlength\swround{10mm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TIKZPICTURE COMMANDS 
@@ -205,8 +263,8 @@
         \ifKV@hatchtabs@thumbtabindent
             % if indent then create cutline around tab
             \@RoundFillNW
-            \@TabFillNE{\tabdepth}{#2}
-            \@TabFrame{\tabdepth}{#2}
+            \@TabFillNE{\THT@tabdepth}{#2}
+            \@TabFrame{\THT@tabdepth}{#2}
         \else
             % else thumbwide
             \@RoundFillNW
@@ -218,7 +276,7 @@
     \node[
         thumbtabnode,
     ]
-    (sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
+    (sectionnode) at ([xshift=1\THT@outmar-\THT@tabdepth, yshift=-#2*\THT@tabwidth]current page text area.north east){
         \ifKV@hatchtabs@squaretabs
             \color{white}\small\titlefont\textbf{#1}
         \else
@@ -239,7 +297,7 @@
 		\node[
 			thumbbacknode,
 		]
-		(sectionnode) at ([xshift=-1\outmar+\tabdepth, yshift=-#2*\tabwidth]current page text area.north west) {
+		(sectionnode) at ([xshift=-1\THT@outmar+\THT@tabdepth, yshift=-#2*\THT@tabwidth]current page text area.north west) {
         \ifKV@hatchtabs@squaretabs
             \color{white}\small\titlefont\textbf{#1}
         \else
@@ -266,8 +324,8 @@
 	\ifKV@hatchtabs@round
         \ifKV@hatchtabs@thumbnarindent
             \@RoundFillNW
-            \@RoundFillNE{\tabdepth}
-            \@RoundFrame{\tabdepth}
+            \@RoundFillNE{\THT@tabdepth}
+            \@RoundFrame{\THT@tabdepth}
         \else 
             \@RoundFillNW
             \@RoundFillNE{0mm}
@@ -285,11 +343,11 @@
     \begin{tikzpicture}[remember picture, overlay]
 		% north west corner
 		\fill[white]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=\topmar-10mm]current page text area.north west)
-			[rounded corners=\nwround] --
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar+10mm, yshift=\topmar]current page text area.north west)
+			([xshift=-\THT@inmar, yshift=\THT@topmar]current page text area.north west) --
+			([xshift=-\THT@inmar, yshift=\THT@topmar-10mm]current page text area.north west)
+			[rounded corners=\THT@nwround] --
+			([xshift=-\THT@inmar, yshift=\THT@topmar]current page text area.north west) --
+			([xshift=-\THT@inmar+10mm, yshift=\THT@topmar]current page text area.north west)
 			[sharp corners] --
 			cycle;
     \end{tikzpicture}
@@ -298,14 +356,14 @@
 % fills in ouside of rounded NE corner + indentation with white
 \newcommand{\@RoundFillNE}[1]{
     \begin{tikzpicture}[remember picture, overlay]
-		% arg is indentation, \tabdepth for thumbnar
+		% arg is indentation, \THT@tabdepth for thumbnar
 		\fill[white]
-			([xshift=\outmar, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar, yshift=\topmar-10mm]current page text area.north east) --
-			([xshift=\outmar-#1, yshift=\topmar-10mm]current page text area.north east)
-			[rounded corners=\neround] --
-			([xshift=\outmar-#1, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar-#1-10mm, yshift=\topmar]current page text area.north east)
+			([xshift=\THT@outmar, yshift=\THT@topmar]current page text area.north east) --
+			([xshift=\THT@outmar, yshift=\THT@topmar-10mm]current page text area.north east) --
+			([xshift=\THT@outmar-#1, yshift=\THT@topmar-10mm]current page text area.north east)
+			[rounded corners=\THT@neround] --
+			([xshift=\THT@outmar-#1, yshift=\THT@topmar]current page text area.north east) --
+			([xshift=\THT@outmar-#1-10mm, yshift=\THT@topmar]current page text area.north east)
 			[sharp corners] --
 			cycle;
     \end{tikzpicture}
@@ -315,11 +373,11 @@
 \newcommand{\@RoundFillSE}{
     \begin{tikzpicture}[remember picture, overlay]
 		\fill[white]
-            ([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
-            ([xshift=\outmar, yshift=-\botmar+10mm]current page text area.south east)
-            [rounded corners=\seround] --
-            ([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
-            ([xshift=\outmar-10mm, yshift=-\botmar]current page text area.south east)
+            ([xshift=\THT@outmar, yshift=-\THT@botmar]current page text area.south east) --
+            ([xshift=\THT@outmar, yshift=-\THT@botmar+10mm]current page text area.south east)
+            [rounded corners=\THT@seround] --
+            ([xshift=\THT@outmar, yshift=-\THT@botmar]current page text area.south east) --
+            ([xshift=\THT@outmar-10mm, yshift=-\THT@botmar]current page text area.south east)
             [sharp corners] --
             cycle;
     \end{tikzpicture}
@@ -328,12 +386,12 @@
 % draws rounded line around page with indentation on outer edge
 \newcommand{\@RoundFrame}[1]{
     \begin{tikzpicture}[remember picture, overlay]
-		% arg is indentation, \tabdepth for thumbnar
+		% arg is indentation, \THT@tabdepth for thumbnar
 		\draw[color1]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) [rounded corners = \swround] --
-			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) [rounded corners = \seround] --
-			([xshift=\outmar-#1, yshift=-\botmar]current page text area.south east) [rounded corners = \neround] --
-			([xshift=\outmar-#1, yshift=\topmar]current page text area.north east) [rounded corners = \nwround]--
+			([xshift=-\THT@inmar, yshift=\THT@topmar]current page text area.north west) [rounded corners = \THT@swround] --
+			([xshift=-\THT@inmar, yshift=-\THT@botmar]current page text area.south west) [rounded corners = \THT@seround] --
+			([xshift=\THT@outmar-#1, yshift=-\THT@botmar]current page text area.south east) [rounded corners = \THT@neround] --
+			([xshift=\THT@outmar-#1, yshift=\THT@topmar]current page text area.north east) [rounded corners = \THT@nwround]--
 			cycle;
     \end{tikzpicture}
 }
@@ -341,19 +399,19 @@
 % fills area outside of NE corner for rounded thumbtabs
 \newcommand{\@TabFillNE}[2]{
     \begin{tikzpicture}[remember picture, overlay]
-		% 1st arg is indentation -> \tabdepth
+		% 1st arg is indentation -> \THT@tabdepth
         % 2nd arg is tab int
 		\fill[white]
-            ([xshift=\outmar, yshift=-#2*\tabwidth-5mm]current page text area.north east)
+            ([xshift=\THT@outmar, yshift=-#2*\THT@tabwidth-5mm]current page text area.north east)
             [rounded corners=4mm] --
-            ([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
+            ([xshift=\THT@outmar, yshift=-#2*\THT@tabwidth]current page text area.north east)
             [rounded corners=3mm] --
-            ([xshift=\outmar-#1, yshift=-#2*\tabwidth]current page text area.north east)
-            [rounded corners=\neround] --
-            ([xshift=\outmar-#1, yshift=\topmar]current page text area.north east) --
-            ([xshift=\outmar-#1-10mm, yshift=\topmar]current page text area.north east)
+            ([xshift=\THT@outmar-#1, yshift=-#2*\THT@tabwidth]current page text area.north east)
+            [rounded corners=\THT@neround] --
+            ([xshift=\THT@outmar-#1, yshift=\THT@topmar]current page text area.north east) --
+            ([xshift=\THT@outmar-#1-10mm, yshift=\THT@topmar]current page text area.north east)
             [sharp corners]--
-            ([xshift=\outmar, yshift=\topmar]current page text area.north east)--
+            ([xshift=\THT@outmar, yshift=\THT@topmar]current page text area.north east)--
             cycle;
     \end{tikzpicture}
 }
@@ -361,21 +419,21 @@
 % draws frame around page including indentation & thumbtab
 \newcommand{\@TabFrame}[2]{
     \begin{tikzpicture}[remember picture, overlay]
-		% 1st arg is indentation -> \tabdepth
+		% 1st arg is indentation -> \THT@tabdepth
         % 2nd arg is tab int
 		\draw[color1]
-            ([xshift=-\inmar, yshift=\topmar]current page text area.north west)
-            [rounded corners=\swround] --
-            ([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
-            [rounded corners=\seround] --
-            ([xshift=\outmar, yshift=-\botmar]current page text area.south east)
+            ([xshift=-\THT@inmar, yshift=\THT@topmar]current page text area.north west)
+            [rounded corners=\THT@swround] --
+            ([xshift=-\THT@inmar, yshift=-\THT@botmar]current page text area.south west)
+            [rounded corners=\THT@seround] --
+            ([xshift=\THT@outmar, yshift=-\THT@botmar]current page text area.south east)
             [rounded corners=4mm] --
-            ([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
+            ([xshift=\THT@outmar, yshift=-#2*\THT@tabwidth]current page text area.north east)
             [rounded corners=3mm] --
-            ([xshift=\outmar-#1, yshift=-#2*\tabwidth]current page text area.north east)
-            [rounded corners=\neround] --
-            ([xshift=\outmar-#1, yshift=\topmar]current page text area.north east)
-            [rounded corners=\nwround]--
+            ([xshift=\THT@outmar-#1, yshift=-#2*\THT@tabwidth]current page text area.north east)
+            [rounded corners=\THT@neround] --
+            ([xshift=\THT@outmar-#1, yshift=\THT@topmar]current page text area.north east)
+            [rounded corners=\THT@nwround]--
             cycle;
     \end{tikzpicture}
 }
@@ -384,10 +442,10 @@
 % FRONT PAGE
 %-----------------------------------------------------------------
 
-\newlength{\chevout} % sets for right side of chevron
-\newlength{\chevpoint} % sets point of chevron
-\setlength\chevout{\outmar-12mm}
-\setlength\chevpoint{\outmar-5mm}
+\newlength{\THT@chevout} % sets for right side of chevron
+\newlength{\THT@chevpoint} % sets point of chevron
+\setlength\THT@chevout{\THT@outmar-12mm}
+\setlength\THT@chevpoint{\THT@outmar-5mm}
 % chevron height is set by tabwidth so it lines up
 
 % creates hyperlinked white chevron with section name
@@ -395,21 +453,21 @@
 	\begin{tikzpicture}[remember picture,overlay]
 	%white chevrons
 	\fill[white]
-		([xshift=\chevin,
-		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-2.5mm)
+		([xshift=\THT@chevin,
+		yshift=-(#2+0.5)*\THT@tabwidth+(\THT@tabwidth/2-2.5mm)
 		]current page text area.north east) --
-		([xshift=\chevout,
-		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-2.5mm)
+		([xshift=\THT@chevout,
+		yshift=-(#2+0.5)*\THT@tabwidth+(\THT@tabwidth/2-2.5mm)
 		]current page text area.north east) --
-		([xshift=\chevpoint,
-		yshift=-(#2+0.5)*\tabwidth
+		([xshift=\THT@chevpoint,
+		yshift=-(#2+0.5)*\THT@tabwidth
 		]current page text area.north east) --
-		([xshift=\chevout,
-		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-2.5mm)
+		([xshift=\THT@chevout,
+		yshift=-(#2+0.5)*\THT@tabwidth-(\THT@tabwidth/2-2.5mm)
 		]current page text area.north east) --
 		([
-		xshift=\chevin,
-		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-2.5mm)
+		xshift=\THT@chevin,
+		yshift=-(#2+0.5)*\THT@tabwidth-(\THT@tabwidth/2-2.5mm)
 		]current page text area.north east) --
 		cycle;
 	% hyperlinked node for each section
@@ -419,9 +477,9 @@
 		anchor=west,
 		rotate=0,
 		minimum width=20mm,
-		minimum height=\tabwidth-5mm,
+		minimum height=\THT@tabwidth-5mm,
 		hyperref node=thumbtab:#2
-	](Procedure) at ([xshift=\chevin, yshift=-(#2+0.5)*\tabwidth]current page text area.north east) {
+	](Procedure) at ([xshift=\THT@chevin, yshift=-(#2+0.5)*\THT@tabwidth]current page text area.north east) {
 		\textbf{#1}
 	};
 	\end{tikzpicture}

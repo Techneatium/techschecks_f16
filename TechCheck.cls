@@ -242,9 +242,8 @@
 }
 
 %-----------------------------------------------------------------
-% OTHER FORMATTING OPTIONS
+% TECHHATCHTABS OPTIONS
 %-----------------------------------------------------------------
-
 \DeclareOption{squaretabs}{
     \PassOptionsToPackage{squaretabs}{techhatchtabs}
 }
@@ -294,10 +293,6 @@
 \ProcessOptions\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% O P T I O N S   E N D
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOBAL FORMATTING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -321,7 +316,6 @@
 %-----------------------------------------------------------------
 % CUSTOM PACKAGES
 %-----------------------------------------------------------------
-
 \iftoggle{print}{
     % if true no action necessary, defaults to printable behavior
 }{
@@ -343,7 +337,6 @@
 ]{techhatchtabs} % custom page hatching 
 
 \RequirePackage{technumitem} % custom enumitem like environments
-
 
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
@@ -414,7 +407,6 @@
 %-----------------------------------------------------------------
 % GLOBAL PARAMETER COMMANDS
 %-----------------------------------------------------------------
-
 % Set label for title page
 \newcommand*\aircraftlong{FULL A/C NAME}
 \newcommand*{\setaircraftlong}[1]{\renewcommand*\aircraftlong{#1}}
@@ -446,6 +438,7 @@
 		}{}
 	}
 }
+
 \fancypagestyle{empty}{
 	% clear defaults
 	\fancyhf{}
@@ -466,6 +459,7 @@
 		}{}
 	}
 }
+
 \fancypagestyle{plain}{
 	% clear defaults
 	\fancyhf{}
@@ -481,6 +475,7 @@
 		}{}
 	}
 }
+
 \fancypagestyle{body}{
 	% clear defaults
 	\fancyhf{}
@@ -552,10 +547,6 @@
 %-----------------------------------------------------------------
 % change distance between section number and title
 % default: 1.55em
-% required for Spartan font: 3.1em w/o chapters
-% required for Spartan font: 3.3em w/ chapters
-% \setlength{\cftsecnumwidth}{2.325em}
-% \setlength{\cftsubsecnumwidth}{3.50em}
 \tocloftpagestyle{empty}
 
 %-----------------------------------------------------------------

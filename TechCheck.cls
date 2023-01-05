@@ -250,6 +250,18 @@
     \PassOptionsToPackage{squaretabs}{techhatchtabs}
 }
 
+\DeclareOption{thumbtabindent}{
+    \PassOptionsToPackage{thumbtabindent}{techhatchtabs}
+}
+
+\DeclareOption{thumbnarindent}{
+    \PassOptionsToPackage{thumbnarindent}{techhatchtabs}
+}
+
+\DeclareOption{autothumbback}{
+    \PassOptionsToPackage{autothumbback}{techhatchtabs}
+}
+
 \DeclareOption{round}{
     \PassOptionsToPackage{round}{techhatchtabs}
 }

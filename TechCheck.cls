@@ -333,7 +333,16 @@
     }{techhatchtabs}
 }
 
-\RequirePackage{techhatchtabs} % custom page hatching 
+\RequirePackage[
+    top=\topmar,
+    bottom=\botmar,
+    inner=\inmar,
+    outer=\outmar,
+    tabwidth=\tabwidth,
+    tabdepth=\tabdepth,
+    chevin=\chevin,
+]{techhatchtabs} % custom page hatching 
+
 \RequirePackage{technumitem} % custom enumitem like environments
 
 

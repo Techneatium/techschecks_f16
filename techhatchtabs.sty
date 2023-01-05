@@ -70,6 +70,9 @@
 % if true activates all page rounding
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{round}[true]{}
 
+% Error handling for unknown options
+\DeclareOptionX*{\PackageWarning{techhatchtabs}{‘\CurrentOption’ ignored}}
+
 \ExecuteOptionsX{thumbtabindent, autothumbback, thumbnarindent, round}
 \ProcessOptionsX\relax
 

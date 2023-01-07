@@ -288,7 +288,7 @@
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
 \ExecuteOptions{fontSpartan, a5print, colorful}
-\ProcessOptions\relax
+\ProcessOptions*\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOBAL FORMATTING
@@ -371,7 +371,7 @@
 		ItalicFont=*-Medium Italic,
 		ItalicFeatures={Scale=1.0},
 		BoldFont=*-Bold,
-		BoldFeatures={LetterSpace=5.0}
+		BoldFeatures={LetterSpace=5.0},
 	]{Spartan MB}
 	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
@@ -384,7 +384,7 @@
 		UprightFont=*-Regular,
 		ItalicFont=*-Regular Italic,
 		BoldFont=*-Semi Bold,
-		BoldFeatures={LetterSpace=3.0}
+		BoldFeatures={LetterSpace=3.0},
 	]{Metropolis}
 	\newfontfamily\tightfont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
@@ -618,13 +618,13 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+        fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
 		% drop shadow=color1!100
 		},
-		title=\large NOTE
+		title=\large NOTE,
 	]
 		{#1}
 	\end{tcolorbox}
@@ -639,11 +639,11 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+        fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
-		drop shadow=color1!100
+		drop shadow=color1!100,
 		},
 		title=\large WARNING
 	]

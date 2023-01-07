@@ -264,15 +264,13 @@
     \PassOptionsToPackage{round}{techhatchtabs}
 }
 
+\DeclareOption{nohatch}{
+    \PassOptionsToPackage{hatch=false}{techhatchtabs}
+}
+
 %-----------------------------------------------------------------
 % DEV OPTIONS
 %-----------------------------------------------------------------
-% Turn hatching off
-\newtoggle{hatch}
-\toggletrue{hatch}
-\DeclareOption{nohatch}{
-  	\togglefalse{hatch}
-}
 
 % Geometry showframe
 \DeclareOption{showframe}{
@@ -433,10 +431,8 @@
 	% clear defaults
 	\fancyhf{}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-		\Hatch
-		}{}
-	}
+        \Hatch
+    }
 }
 
 \fancypagestyle{empty}{
@@ -449,9 +445,7 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
 		\Hatch
-		}{}
 	}
 	\fancyhead[RO]{
 		\iftoggle{autothumbnar}{
@@ -470,9 +464,7 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-			\Hatch
-		}{}
+        \Hatch
 	}
 }
 
@@ -500,9 +492,7 @@
 		}
   	}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-			\Hatch
-		}{}
+        \Hatch
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -565,7 +555,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
+	{\Hatch\Huge #1} % before-code
 	[] % after code
 
 % formatting of section

@@ -67,6 +67,9 @@
 % if true activates all page rounding
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{round}[true]{}
 
+% if true activates all hatching
+\define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{hatch}[true]{}
+
 %-----------------------------------------------------------------
 % LENGTHS
 %-----------------------------------------------------------------
@@ -150,7 +153,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROCESS OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ExecuteOptionsX{thumbtabindent, autothumbback, thumbnarindent, round}
+\ExecuteOptionsX{thumbtabindent, autothumbback, thumbnarindent, round, hatch}
 \ProcessOptionsX\relax
 
 %-----------------------------------------------------------------
@@ -234,23 +237,25 @@
 
 % while loop to make many parallelograms
 \newcommand\Hatch{
-	\begin{tikzpicture}[remember picture,overlay]
-	\newcount\foo
-	\foo=-3
-	\loop
-	\single{\the\foo}
-	\advance \foo +1
-	\ifnum \foo<21
-	\repeat
-	% makes hatched area hyperlink to front page
-	\node[
-		rectangle,
-		hyperref node=frontpage,
-		anchor=north,
-		minimum width=\paperwidth,
-		minimum height=10mm
-	]()at ([yshift=\paperheight/2]current page.center) {};
-	\end{tikzpicture}
+    \ifKV@hatchtabs@hatch
+        \begin{tikzpicture}[remember picture,overlay]
+        \newcount\foo
+        \foo=-3
+        \loop
+        \single{\the\foo}
+        \advance \foo +1
+        \ifnum \foo<21
+        \repeat
+        % makes hatched area hyperlink to front page
+        \node[
+            rectangle,
+            hyperref node=frontpage,
+            anchor=north,
+            minimum width=\paperwidth,
+            minimum height=10mm
+        ]()at ([yshift=\paperheight/2]current page.center) {};
+        \end{tikzpicture}
+    \fi
 }
 
 %-----------------------------------------------------------------

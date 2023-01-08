@@ -428,7 +428,7 @@
 	% clear defaults
 	\fancyhf{}
 	\fancyhead[LE,LO]{
-        \Hatch
+        \hatch
     }
 }
 
@@ -442,7 +442,7 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-		\Hatch
+		\hatch
 	}
 	\fancyhead[RO]{
         \thumbnar
@@ -459,7 +459,7 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-        \Hatch
+        \hatch
 	}
 }
 
@@ -485,7 +485,7 @@
 		}
   	}
 	\fancyhead[LE,LO]{
-        \Hatch
+        \hatch
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -548,7 +548,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\Hatch\Huge #1} % before-code
+	{\hatch\Huge #1} % before-code
 	[] % after code
 
 % formatting of section

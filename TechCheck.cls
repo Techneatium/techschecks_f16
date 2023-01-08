@@ -1,7 +1,7 @@
 %=================================================================
 % MIT LICENSE
 %=================================================================
-% Copyright (c) 2022 Techneatium
+% Copyright (c) 2023 Techneatium
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[10pt,usenames,dvipsnames,twoside]{book}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2022/06/24]
+\ProvidesClass{TechCheck}[2023/01/05]
 
 %-----------------------------------------------------------------
 % GENERAL PACKAGES
@@ -48,21 +48,20 @@
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units
 \RequirePackage{tikz} % shapes, figures
-% \RequirePackage{tikzpagenodes} % points for tikz
-% \usetikzlibrary{calc} % used for hyperlinked nodes
+\RequirePackage{tikzpagenodes} % points for tikz
+\usetikzlibrary{calc} % used for hyperlinked nodes
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{cleveref} % better referencing
-\RequirePackage{lipsum} % lorem ipsum
 \RequirePackage[document]{ragged2e} % left ragged text
-\RequirePackage{atbegshi}  % special commands that apply tikz to all pages
+% \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 \RequirePackage{fancyhdr} % custom header/footer
 \RequirePackage{etoolbox} % Boolean and if/else
 \RequirePackage{calc} % math inside other commands
-% \RequirePackage{booktabs} % fancy tables
-% \RequirePackage{multirow} % more fancy tables
-% \RequirePackage{longtable} % multi page tables
-% \RequirePackage{tocloft} % TOC formatting
-% \RequirePackage{minitoc} % chapter tocs
+\RequirePackage{booktabs} % fancy tables
+\RequirePackage{multirow} % more fancy tables
+\RequirePackage{longtable} % multi page tables
+\RequirePackage{tocloft} % TOC formatting
+\RequirePackage{minitoc} % chapter tocs
 \RequirePackage[auto]{chappg}
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}
@@ -172,6 +171,7 @@
 	\setlength\outmar{10mm}
 	\setlength{\chevin}{\outmar-33mm}
 	\setlength\tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A5 paper with 8mm extra for tabs -- 210x(148+8)mm
@@ -205,6 +205,7 @@
 	\setlength\outmar{14mm}
 	\setlength{\chevin}{\outmar-31mm}
 	\setlength\tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A4 paper with offset margins for printing -- 297x210mm
@@ -241,40 +242,50 @@
 }
 
 %-----------------------------------------------------------------
-% OTHER FORMATTING OPTIONS
+% TECHHATCHTABS OPTIONS
 %-----------------------------------------------------------------
+\DeclareOption{squaretabs}{
+    \PassOptionsToPackage{squaretabs}{techhatchtabs}
+}
+
+\DeclareOption{thumbtabindent}{
+    \PassOptionsToPackage{thumbtabindent}{techhatchtabs}
+}
+
+\DeclareOption{thumbnarindent}{
+    \PassOptionsToPackage{thumbnarindent}{techhatchtabs}
+}
+
+\DeclareOption{autothumbback}{
+    \PassOptionsToPackage{autothumbback}{techhatchtabs}
+}
+
+\DeclareOption{round}{
+    \PassOptionsToPackage{round}{techhatchtabs}
+}
+
+\DeclareOption{nohatch}{
+    \PassOptionsToPackage{hatch=false}{techhatchtabs}
+}
 
 %-----------------------------------------------------------------
 % DEV OPTIONS
 %-----------------------------------------------------------------
-% Turn hatching off
-\newtoggle{hatch}
-\toggletrue{hatch}
-\DeclareOption{nohatch}{
-  	\togglefalse{hatch}
-}
 
 % Geometry showframe
 \DeclareOption{showframe}{
-  	\PassOptionsToClass{showframe}{geometry}
+  	\PassOptionsToPackage{showframe}{geometry}
 }
 
-% Thumbnar on/off
-\newtoggle{autothumbnar}
-\toggletrue{autothumbnar}
 \DeclareOption{manthumbnar}{
-	\togglefalse{autothumbnar}
+  	\PassOptionsToPackage{autothumbnar=false}{techhatchtabs}
 }
 
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
 \ExecuteOptions{fontSpartan, a5print, colorful}
-\ProcessOptions\relax
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% O P T I O N S   E N D
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProcessOptions*\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOBAL FORMATTING
@@ -296,6 +307,31 @@
 	outer=\outmar,
 	centering
 }
+
+%-----------------------------------------------------------------
+% CUSTOM PACKAGES
+%-----------------------------------------------------------------
+\iftoggle{print}{
+    % if true no action necessary, defaults to printable behavior
+}{
+    % if false turns of rounding completely
+    % leaves 'autothumbback' on!
+    \PassOptionsToPackage{
+        round=false,
+    }{techhatchtabs}
+}
+
+\RequirePackage[
+    top=\topmar,
+    bottom=\botmar,
+    inner=\inmar,
+    outer=\outmar,
+    tabwidth=\tabwidth,
+    tabdepth=\tabdepth,
+    chevin=\chevin,
+]{techhatchtabs} % custom page hatching 
+
+\RequirePackage{technumitem} % custom enumitem like environments
 
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
@@ -332,7 +368,7 @@
 		ItalicFont=*-Medium Italic,
 		ItalicFeatures={Scale=1.0},
 		BoldFont=*-Bold,
-		BoldFeatures={LetterSpace=5.0}
+		BoldFeatures={LetterSpace=5.0},
 	]{Spartan MB}
 	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
@@ -345,7 +381,7 @@
 		UprightFont=*-Regular,
 		ItalicFont=*-Regular Italic,
 		BoldFont=*-Semi Bold,
-		BoldFeatures={LetterSpace=3.0}
+		BoldFeatures={LetterSpace=3.0},
 	]{Metropolis}
 	\newfontfamily\tightfont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
@@ -363,13 +399,9 @@
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
-\RequirePackage{techhatch} % custom page hatching 
-\RequirePackage{technumitem} % custom enumitem like environments
-
 %-----------------------------------------------------------------
 % GLOBAL PARAMETER COMMANDS
 %-----------------------------------------------------------------
-
 % Set label for title page
 \newcommand*\aircraftlong{FULL A/C NAME}
 \newcommand*{\setaircraftlong}[1]{\renewcommand*\aircraftlong{#1}}
@@ -396,11 +428,10 @@
 	% clear defaults
 	\fancyhf{}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-		\Hatch
-		}{}
-	}
+        \hatch
+    }
 }
+
 \fancypagestyle{empty}{
 	% clear defaults
 	\fancyhf{}
@@ -411,16 +442,13 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-		\Hatch
-		}{}
+		\hatch
 	}
 	\fancyhead[RO]{
-		\iftoggle{autothumbnar}{
-			\thumbnar
-		}{}
+        \thumbnar
 	}
 }
+
 \fancypagestyle{plain}{
 	% clear defaults
 	\fancyhf{}
@@ -431,11 +459,10 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-			\Hatch
-		}{}
+        \hatch
 	}
 }
+
 \fancypagestyle{body}{
 	% clear defaults
 	\fancyhf{}
@@ -450,9 +477,7 @@
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-		\iftoggle{autothumbnar}{
-			\thumbnar
-		}{}
+        \thumbnar
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{
@@ -460,9 +485,7 @@
 		}
   	}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-			\Hatch
-		}{}
+        \hatch
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -507,10 +530,6 @@
 %-----------------------------------------------------------------
 % change distance between section number and title
 % default: 1.55em
-% required for Spartan font: 3.1em w/o chapters
-% required for Spartan font: 3.3em w/ chapters
-% \setlength{\cftsecnumwidth}{2.325em}
-% \setlength{\cftsubsecnumwidth}{3.50em}
 \tocloftpagestyle{empty}
 
 %-----------------------------------------------------------------
@@ -529,7 +548,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
+	{\hatch\Huge #1} % before-code
 	[] % after code
 
 % formatting of section
@@ -538,7 +557,7 @@
 	{\color{color1}\thesection} % label
 	{1em} % sep
 	{#1} % before-code
-	[{\titlerule[1pt]}] % after-code
+	[{\titlerule[2pt]}] % after-code
 
 % formatting of subsection [full width]
 \titleformat{\subsection} % command
@@ -592,13 +611,13 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+        fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
 		% drop shadow=color1!100
 		},
-		title=\large NOTE
+		title=\large NOTE,
 	]
 		{#1}
 	\end{tcolorbox}
@@ -613,11 +632,11 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+        fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
-		drop shadow=color1!100
+		drop shadow=color1!100,
 		},
 		title=\large WARNING
 	]

@@ -61,6 +61,9 @@
 % if true then thumbnars are 'indented' by tabwidth
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{thumbnarindent}[true]{}
 
+% if true then non-special pages are thumbnar'd
+\define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{autothumbnar}[true]{}
+
 % if true then matching node on page after thumbtab is generated
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{autothumbback}[true]{}
 
@@ -153,7 +156,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROCESS OPTIONS / KEYS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ExecuteOptionsX{thumbtabindent, autothumbback, thumbnarindent, round, hatch}
+\ExecuteOptionsX{thumbtabindent, autothumbnar, autothumbback, thumbnarindent, round, hatch}
 \ProcessOptionsX\relax
 
 %-----------------------------------------------------------------
@@ -327,14 +330,16 @@
 % for all pages that are not front-, back- or section-page
 \newcommand{\thumbnar}{
 	\ifKV@hatchtabs@round
-        \ifKV@hatchtabs@thumbnarindent
-            \@RoundFillNW
-            \@RoundFillNE{\THT@tabdepth}
-            \@RoundFrame{\THT@tabdepth}
-        \else 
-            \@RoundFillNW
-            \@RoundFillNE{0mm}
-            \@RoundFrame{0mm}
+        \ifKV@hatchtabs@autothumbnar
+            \ifKV@hatchtabs@thumbnarindent
+                \@RoundFillNW
+                \@RoundFillNE{\THT@tabdepth}
+                \@RoundFrame{\THT@tabdepth}
+            \else 
+                \@RoundFillNW
+                \@RoundFillNE{0mm}
+                \@RoundFrame{0mm}
+            \fi
         \fi
 	\fi
 }

@@ -277,11 +277,8 @@
   	\PassOptionsToPackage{showframe}{geometry}
 }
 
-% Thumbnar on/off
-\newtoggle{autothumbnar}
-\toggletrue{autothumbnar}
 \DeclareOption{manthumbnar}{
-	\togglefalse{autothumbnar}
+  	\PassOptionsToPackage{autothumbnar=false}{techhatchtabs}
 }
 
 %-----------------------------------------------------------------
@@ -448,9 +445,7 @@
 		\Hatch
 	}
 	\fancyhead[RO]{
-		\iftoggle{autothumbnar}{
-			\thumbnar
-		}{}
+        \thumbnar
 	}
 }
 
@@ -482,9 +477,7 @@
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-		\iftoggle{autothumbnar}{
-			\thumbnar
-		}{}
+        \thumbnar
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{

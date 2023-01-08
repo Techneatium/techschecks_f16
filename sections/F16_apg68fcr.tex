@@ -50,156 +50,7 @@
 
 \begin{figure}[h]
     \centering
-    \begin{tikzpicture}[auto, node distance=1cm,
-        >={Latex[round]}
-        ]
-        
-        % Nodes
-        \node[
-            hyperref node=subsec:rws,
-            diamond,
-            draw,
-            very thick,
-        ](rws){\textbf{RWS}};
-        \path
-            let
-                \p1 = (rws),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
-                    draw,
-                    very thick,
-                ](sam)at(\x1,\y1+3.5cm){\textbf{SAM}}
-            let
-                \p1 = (sam),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
-                    draw,
-                    very thick,
-                ](dtt)at(\x1-3cm,\y1+1.5cm){\textbf{DTT}}
-            let
-                \p1 = (rws),
-            in
-                node[
-                    diamond,
-                    minimum width=1.5cm,
-                    minimum height=1.5cm,
-                    draw,
-                    very thick,
-                ](tws)at(\x1+3cm,\y1){\textbf{TWS}}
-            let
-                \p1 = (tws),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
-                    draw,
-                    very thick,
-                ](systgt)at(\x1,\y1+2cm){System Tgt}
-            let
-                \p1 = (systgt),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
-                    draw,
-                    very thick,
-                ](bug)at(\x1,\y1+1.5cm){Bugged}
-            let
-                \p1 = (rws),
-                \p2 = (dtt),
-            in
-                node[
-                    rectangle, 
-                    rounded corners,
-                    minimum width=8cm,
-                    minimum height=0.75cm,
-                    draw, 
-                    very thick,
-                ](stt)at(\x1, \y2+1.5cm){\textbf{STT}};
-        
-        % Lines
-        \draw [->]
-            (rws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (sam);
-        \draw [->, rounded corners]
-            (sam) -| node[pos=0.25, above]{\scriptsize\textbf{TMS FWD}}node[pos=0.25, below]{\scriptsize\textbf{(2nd Tgt)}} (dtt);
-        \draw [->]
-            let
-                \p1=(dtt.north),
-                \p2=(stt.south)
-            in
-                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
-        \draw [->]
-            let
-                \p1=(sam.north),
-                \p2=(stt.south)
-            in
-                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}}node[pos=0.5, right]{\scriptsize\textbf{(1st Tgt)}} (\x1,\y2);
-
-        \draw [<->]
-            (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
-        \draw[->]
-            (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
-        \draw[->]
-            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
-        \draw [->]
-            let
-                \p1=(bug.north),
-                \p2=(stt.south)
-            in
-                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
-
-        % Brackets
-        \draw [decorate, decoration={brace}, thick] 
-            let
-                \p1 = (stt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+7mm,\y1) -- (\x2+7mm,\y3);
-        \path
-            let
-                \p1 = (stt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+8mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{Supports AIM-120C Launch}} (\x2+8mm,\y3);
-        
-        \draw [decorate, decoration={brace}, thick] 
-            let
-                \p1 = (dtt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+1mm,\y1) -- (\x2+1mm,\y3);
-        \path
-            let
-                \p1 = (dtt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+2mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\scriptsize\textbf{No Launch Warning}} (\x2+2mm,\y3);
-    \end{tikzpicture}
-    \caption{\textbf{CRM Radar Modes Overview}}
-    \label{fig:crmoverview}
-\end{figure}
-
-\clearpage 
-
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}[auto, node distance=1cm,
+    \begin{tikzpicture}[auto, node distance=10mm,
         >={Latex[round]}
         ]
         
@@ -217,8 +68,8 @@
                 node[
                     rectangle,
                     rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
                     draw,
                     ultra thick,
                 ](sam)at(\x1,\y1+50mm){\textbf{SAM}}
@@ -228,11 +79,11 @@
                 node[
                     rectangle,
                     rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
                     draw,
                     ultra thick,
-                ](dtt)at(\x1-3cm,\y1+15mm){\textbf{DTT}}
+                ](dtt)at(\x1-30mm,\y1+15mm){\textbf{DTT}}
             let
                 \p1 = (rws),
             in
@@ -254,7 +105,7 @@
                     draw,
                     dashed,
                     ultra thick,
-                ](systgt)at(\x1,\y1+2cm){\textbf{System Tgt}}
+                ](systgt)at(\x1,\y1+20mm){\textbf{System Tgt}}
             let
                 \p1 = (systgt),
             in
@@ -266,19 +117,19 @@
                     draw,
                     dashed,
                     ultra thick,
-                ](cursortgt)at(\x1,\y1+1.5cm){\textbf{Cursor Tgt}}
+                ](cursortgt)at(\x1,\y1+15mm){\textbf{Cursor Tgt}}
             let
                 \p1 = (cursortgt),
             in
                 node[
                     rectangle,
                     rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
                     draw,
                     dashed,
                     ultra thick,
-                ](bug)at(\x1,\y1+1.5cm){\textbf{Bugged}}
+                ](bug)at(\x1,\y1+15mm){\textbf{Bugged}}
             let
                 \p1 = (rws),
                 \p2 = (dtt),
@@ -286,11 +137,11 @@
                 node[
                     rectangle, 
                     rounded corners,
-                    minimum width=8cm,
-                    minimum height=0.75cm,
+                    minimum width=80mm,
+                    minimum height=7.5mm,
                     draw, 
                     ultra thick,
-                ](stt)at(\x1, \y2+1.5cm){\textbf{STT}};
+                ](stt)at(\x1, \y2+15mm){\textbf{STT}};
         
         % Lines
         \draw [->]
@@ -357,7 +208,7 @@
                 (\x2+5mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\small\textbf{No Launch Warning}} (\x2+5mm,\y3);
     \end{tikzpicture}
     \caption{\textbf{CRM Radar Modes Overview}}
-    % \label{fig:crmoverview}
+    \label{fig:crmoverview}
 \end{figure}
 
 \clearpage
@@ -517,17 +368,17 @@
 
 \begin{figure}[h]
     \centering
-    \begin{tikzpicture}[auto, node distance=1cm, 
+    \begin{tikzpicture}[auto, node distance=10mm, 
         % >={Stealth[length=6.75pt, width=4pt, inset=2pt]}
         >={Latex[round]}
         ]
         
         % Nodes
         \node[
-            % hyperref node=subsec:rws,
+            hyperref node=subsec:acm,
             diamond,
             draw,
-            very thick,
+            ultra thick,
         ](acm){\textbf{ACM}};
         \path
             let
@@ -536,33 +387,33 @@
                 node[
                     rectangle,
                     rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
                     draw,
-                    very thick,
-                ](bore)at(\x1,\y1+2cm){\textbf{BORE}}
+                    ultra thick,
+                ](bore)at(\x1,\y1+20mm){\textbf{BORE}}
             let
                 \p1 = (acm),
             in
                 node[
                     rectangle,
                     rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
                     draw,
-                    very thick,
-                ](hud)at(\x1+3cm,\y1){\textbf{HUD}}
+                    ultra thick,
+                ](hud)at(\x1+30mm,\y1){\textbf{HUD}}
             let
                 \p1 = (acm),
             in
                 node[
                     rectangle,
                     rounded corners,
-                    minimum width=2cm,
-                    minimum height=0.75cm,
+                    minimum width=20mm,
+                    minimum height=7.5mm,
                     draw,
-                    very thick,
-                ](vert)at(\x1,\y1-2cm){\textbf{Vertical}}
+                    ultra thick,
+                ](vert)at(\x1,\y1-20mm){\textbf{Vertical}}
 
 
             let
@@ -572,11 +423,11 @@
                 node[
                     rectangle, 
                     rounded corners,
-                    minimum width=8cm,
-                    minimum height=0.75cm,
+                    minimum width=80mm,
+                    minimum height=7.5mm,
                     draw, 
-                    very thick,
-                ](stt)at(\x1, \y2+2cm){\textbf{STT}};
+                    ultra thick,
+                ](stt)at(\x1, \y2+20mm){\textbf{STT}};
         
         % Lines
         \draw [->]
@@ -602,7 +453,7 @@
                 \p1=(vert.west),
                 \p2=(stt.south),
             in
-                (\p1) -- (\x1-2cm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-2cm,\y2);
+                (\p1) -- (\x1-20mm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-20mm,\y2);
                 
     \end{tikzpicture}
     \caption{\textbf{ACM Radar Modes Overview}}

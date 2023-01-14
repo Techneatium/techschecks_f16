@@ -25,7 +25,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[10pt,usenames,dvipsnames,twoside]{book}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2023/01/05]
+\ProvidesClass{TechCheck}[2023/01/14]
 
 %-----------------------------------------------------------------
 % GENERAL PACKAGES

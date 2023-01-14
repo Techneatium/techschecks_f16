@@ -25,7 +25,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[10pt,usenames,dvipsnames,twoside]{book}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2023/01/05]
+\ProvidesClass{TechCheck}[2023/01/14]
 
 %-----------------------------------------------------------------
 % GENERAL PACKAGES
@@ -136,86 +136,86 @@
 \newtoggle{print}
 
 % Basic paper geometry
-\newlength{\paperh}
-\newlength{\paperw}
+\newlength{\TC@paperh}
+\newlength{\TC@paperw}
 
 % margins, input here as variable for ROUNDING
-\newlength{\inmar}
-\newlength{\outmar}
-\newlength{\topmar}
-\newlength{\botmar}
-\newlength{\footmar}
-\setlength\topmar{1.2cm}
-\setlength\botmar{0.8cm}
-\setlength\footmar{0.5cm}
+\newlength{\TC@inmar}
+\newlength{\TC@outmar}
+\newlength{\TC@topmar}
+\newlength{\TC@botmar}
+\newlength{\TC@footmar}
+\setlength\TC@topmar{1.2cm}
+\setlength\TC@botmar{0.8cm}
+\setlength\TC@footmar{0.5cm}
 
 % indendtation for chevrons on front page
-\newlength{\chevin}
+\newlength{\TC@chevin}
 
 % tab dimensions
-\newlength{\tabwidth}
-\newlength{\tabdepth}
+\newlength{\TC@tabwidth}
+\newlength{\TC@tabdepth}
 
 % Number of sections
 \newcounter{tabnumber}
 \setcounter{tabnumber}{6}
 
 % determines width of tab based on number of tabs
-\setlength\tabwidth{\textheight/\thetabnumber}
+\setlength\TC@tabwidth{\textheight/\thetabnumber}
 
 % Nominal A5 paper size -- 210x148mm
 \DeclareOption{a5}{
-	\setlength\paperh{210mm}
-	\setlength\paperw{148mm}
-	\setlength\inmar{10mm}
-	\setlength\outmar{10mm}
-	\setlength{\chevin}{\outmar-33mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{210mm}
+	\setlength\TC@paperw{148mm}
+	\setlength\TC@inmar{10mm}
+	\setlength\TC@outmar{10mm}
+	\setlength{\TC@chevin}{\TC@outmar-33mm}
+	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
 
 % A5 paper with 8mm extra for tabs -- 210x(148+8)mm
 \DeclareOption{a5print}{ 
-	\setlength\paperh{210mm}
-	\setlength\paperw{156mm}
-	\setlength\inmar{16mm}
-	\setlength\outmar{12mm}
-	\setlength\chevin{\outmar-35mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{210mm}
+	\setlength\TC@paperw{156mm}
+	\setlength\TC@inmar{16mm}
+	\setlength\TC@outmar{12mm}
+	\setlength\TC@chevin{\TC@outmar-35mm}
+	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
 
 % A5 paper with 9.5mm extra for 4x3 aspect -- 210x(148+9.5)mm
 \DeclareOption{4x3print}{ 
-	\setlength\paperh{210mm}
-	\setlength\paperw{157.5mm}
-	\setlength\inmar{16mm}
-	\setlength\outmar{13.5mm}
-	\setlength\chevin{\outmar-36.5mm}
-	\setlength\tabdepth{9.5mm}
+	\setlength\TC@paperh{210mm}
+	\setlength\TC@paperw{157.5mm}
+	\setlength\TC@inmar{16mm}
+	\setlength\TC@outmar{13.5mm}
+	\setlength\TC@chevin{\TC@outmar-36.5mm}
+	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
 
 
 % Nominal A4 paper size -- 297x210mm
 \DeclareOption{a4}{
-	\setlength\paperh{297mm}
-	\setlength\paperw{210mm}
-	\setlength\inmar{14mm}
-	\setlength\outmar{14mm}
-	\setlength{\chevin}{\outmar-31mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{297mm}
+	\setlength\TC@paperw{210mm}
+	\setlength\TC@inmar{14mm}
+	\setlength\TC@outmar{14mm}
+	\setlength{\TC@chevin}{\TC@outmar-31mm}
+	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
 
 % A4 paper with offset margins for printing -- 297x210mm
 \DeclareOption{a4print}{
-	\setlength\paperh{297mm}
-	\setlength\paperw{210mm}
-	\setlength\inmar{16mm}
-	\setlength\outmar{12mm}
-	\setlength{\chevin}{\outmar-29mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{297mm}
+	\setlength\TC@paperw{210mm}
+	\setlength\TC@inmar{16mm}
+	\setlength\TC@outmar{12mm}
+	\setlength{\TC@chevin}{\TC@outmar-29mm}
+	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
 
@@ -295,16 +295,16 @@
 % APPLY PAGE GEOMETRY
 %-----------------------------------------------------------------
 \geometry{
-	paperheight=\paperh,
-	paperwidth=\paperw,
+	paperheight=\TC@paperh,
+	paperwidth=\TC@paperw,
 	margin=1mm,
-	top=\topmar,
-	bottom=\botmar,
+	top=\TC@topmar,
+	bottom=\TC@botmar,
 	headsep=5mm,
 	headheight=5mm,
-	footskip=\footmar,
-	inner=\inmar,
-	outer=\outmar,
+	footskip=\TC@footmar,
+	inner=\TC@inmar,
+	outer=\TC@outmar,
 	centering
 }
 
@@ -322,13 +322,13 @@
 }
 
 \RequirePackage[
-    top=\topmar,
-    bottom=\botmar,
-    inner=\inmar,
-    outer=\outmar,
-    tabwidth=\tabwidth,
-    tabdepth=\tabdepth,
-    chevin=\chevin,
+    top=\TC@topmar,
+    bottom=\TC@botmar,
+    inner=\TC@inmar,
+    outer=\TC@outmar,
+    tabwidth=\TC@tabwidth,
+    tabdepth=\TC@tabdepth,
+    chevin=\TC@chevin,
 ]{techhatchtabs} % custom page hatching 
 
 \RequirePackage{technumitem} % custom enumitem like environments
@@ -412,7 +412,7 @@
 % Set number of tabs in preable
 \newcommand{\settabnumber}[1]{
 	\setcounter{tabnumber}{#1}
-	\setlength\tabwidth{\textheight/\thetabnumber}
+	\setlength\TC@tabwidth{\textheight/\thetabnumber}
 }
 
 %-----------------------------------------------------------------

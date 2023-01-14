@@ -22,7 +22,7 @@
 % SOFTWARE.
 %=================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{techhatchtabs}[2023/01/05]
+\ProvidesPackage{techhatchtabs}[2023/01/14]
 
 \RequirePackage{xkeyval} % allows defining keys for macros
 \RequirePackage{tikz} % shapes, figures
@@ -454,9 +454,33 @@
 
 \newlength{\THT@chevout} % sets for right side of chevron
 \newlength{\THT@chevpoint} % sets point of chevron
+\newlength{\THT@centeroffset} % center of whitespace next to chevrons
 \setlength\THT@chevout{\THT@outmar-12mm}
 \setlength\THT@chevpoint{\THT@outmar-5mm}
 % chevron height is set by tabwidth so it lines up
+\setlength\THT@centeroffset{(\THT@chevin-\THT@outmar-5mm)/2}
+
+\newcommand{\fronttitleprep}[2]{
+    \begin{tikzpicture}[overlay, remember picture]
+    \node[
+    ]() at ([xshift=\THT@centeroffset,yshift=85mm]current page.center) {
+        \Huge \titlefont\textbf{Pocket Checklist}
+    };
+    \node[
+    ]() at ([xshift=\THT@centeroffset,yshift=70mm]current page.center) {
+        #1
+    };
+    \node[
+    ]() at ([xshift=\THT@centeroffset,yshift=55mm]current page.center) {
+        \Large \titlefont\textbf{\colorbox{color1}{\textcolor{white}{REV: \today}}} \blue{}
+    };
+    \node[
+    ]() at ([xshift=\THT@centeroffset,yshift=-10mm]current page.center) {
+        #2
+    };
+    \end{tikzpicture}
+    \@FrontFill
+}
 
 % creates hyperlinked white chevron with section name
 \newcommand{\thumbfront}[2]{
@@ -493,4 +517,16 @@
 		\textbf{#1}
 	};
 	\end{tikzpicture}
+}
+
+\newcommand{\@FrontFill}{
+    \begin{tikzpicture}[remember picture, overlay]
+		% Black area for white chevrons
+        \fill[color1]
+        ([xshift=\THT@outmar, yshift=2mm]current page text area.north east) --
+        ([xshift=\THT@outmar, yshift=-\THT@botmar]current page text area.south east) --
+        ([xshift=\THT@chevin-5mm, yshift=-\THT@botmar]current page text area.south east) --
+        ([xshift=\THT@chevin-5mm, yshift=2mm]current page text area.north east) --
+        cycle;
+    \end{tikzpicture}
 }

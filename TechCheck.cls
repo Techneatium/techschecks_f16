@@ -248,22 +248,33 @@
     \PassOptionsToPackage{squaretabs}{techhatchtabs}
 }
 
-\DeclareOption{thumbtabindent}{
-    \PassOptionsToPackage{thumbtabindent}{techhatchtabs}
+% turns off thumbtab indentation (for cutting out)
+\DeclareOption{nothumbtabindent}{
+    \PassOptionsToPackage{thumbtabindent=false}{techhatchtabs}
 }
 
-\DeclareOption{thumbnarindent}{
-    \PassOptionsToPackage{thumbnarindent}{techhatchtabs}
+% turns off thumbnar 'indentation' by tabwidth
+\DeclareOption{nothumbnarindent}{
+    \PassOptionsToPackage{thumbnarindent=false}{techhatchtabs}
 }
 
-\DeclareOption{autothumbback}{
-    \PassOptionsToPackage{autothumbback}{techhatchtabs}
+% turns off automatic thumbnar'ing
+\DeclareOption{manthumbnar}{
+  	\PassOptionsToPackage{autothumbnar=false}{techhatchtabs}
 }
 
-\DeclareOption{round}{
-    \PassOptionsToPackage{round}{techhatchtabs}
+% turns off automatic generation of thumbback node on page
+% after thumbtab
+\DeclareOption{manthumbback}{
+    \PassOptionsToPackage{autothumbback=false}{techhatchtabs}
 }
 
+% deactivates all page rounding and indentation
+\DeclareOption{noround}{
+    \PassOptionsToPackage{round=false}{techhatchtabs}
+}
+
+% deactivates all hatching
 \DeclareOption{nohatch}{
     \PassOptionsToPackage{hatch=false}{techhatchtabs}
 }
@@ -275,10 +286,6 @@
 % Geometry showframe
 \DeclareOption{showframe}{
   	\PassOptionsToPackage{showframe}{geometry}
-}
-
-\DeclareOption{manthumbnar}{
-  	\PassOptionsToPackage{autothumbnar=false}{techhatchtabs}
 }
 
 %-----------------------------------------------------------------

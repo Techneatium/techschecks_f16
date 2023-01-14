@@ -1,7 +1,7 @@
 %=================================================================
 % MIT LICENSE
 %=================================================================
-% Copyright (c) 2022 Techneatium
+% Copyright (c) 2023 Techneatium
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[10pt,usenames,dvipsnames,twoside]{book}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2022/06/24]
+\ProvidesClass{TechCheck}[2023/01/14]
 
 %-----------------------------------------------------------------
 % GENERAL PACKAGES
@@ -52,9 +52,8 @@
 \usetikzlibrary{calc} % used for hyperlinked nodes
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{cleveref} % better referencing
-\RequirePackage{lipsum} % lorem ipsum
 \RequirePackage[document]{ragged2e} % left ragged text
-\RequirePackage{atbegshi}  % special commands that apply tikz to all pages
+% \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 \RequirePackage{fancyhdr} % custom header/footer
 \RequirePackage{etoolbox} % Boolean and if/else
 \RequirePackage{calc} % math inside other commands
@@ -137,84 +136,86 @@
 \newtoggle{print}
 
 % Basic paper geometry
-\newlength{\paperh}
-\newlength{\paperw}
+\newlength{\TC@paperh}
+\newlength{\TC@paperw}
 
 % margins, input here as variable for ROUNDING
-\newlength{\inmar}
-\newlength{\outmar}
-\newlength{\topmar}
-\newlength{\botmar}
-\newlength{\footmar}
-\setlength\topmar{1.2cm}
-\setlength\botmar{0.8cm}
-\setlength\footmar{0.5cm}
+\newlength{\TC@inmar}
+\newlength{\TC@outmar}
+\newlength{\TC@topmar}
+\newlength{\TC@botmar}
+\newlength{\TC@footmar}
+\setlength\TC@topmar{1.2cm}
+\setlength\TC@botmar{0.8cm}
+\setlength\TC@footmar{0.5cm}
 
 % indendtation for chevrons on front page
-\newlength{\chevin}
+\newlength{\TC@chevin}
 
 % tab dimensions
-\newlength{\tabwidth}
-\newlength{\tabdepth}
+\newlength{\TC@tabwidth}
+\newlength{\TC@tabdepth}
 
 % Number of sections
 \newcounter{tabnumber}
 \setcounter{tabnumber}{6}
 
 % determines width of tab based on number of tabs
-\setlength\tabwidth{\textheight/\thetabnumber}
+\setlength\TC@tabwidth{\textheight/\thetabnumber}
 
 % Nominal A5 paper size -- 210x148mm
 \DeclareOption{a5}{
-	\setlength\paperh{210mm}
-	\setlength\paperw{148mm}
-	\setlength\inmar{10mm}
-	\setlength\outmar{10mm}
-	\setlength{\chevin}{\outmar-33mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{210mm}
+	\setlength\TC@paperw{148mm}
+	\setlength\TC@inmar{10mm}
+	\setlength\TC@outmar{10mm}
+	\setlength{\TC@chevin}{\TC@outmar-33mm}
+	\setlength\TC@tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A5 paper with 8mm extra for tabs -- 210x(148+8)mm
 \DeclareOption{a5print}{ 
-	\setlength\paperh{210mm}
-	\setlength\paperw{156mm}
-	\setlength\inmar{16mm}
-	\setlength\outmar{12mm}
-	\setlength\chevin{\outmar-35mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{210mm}
+	\setlength\TC@paperw{156mm}
+	\setlength\TC@inmar{16mm}
+	\setlength\TC@outmar{12mm}
+	\setlength\TC@chevin{\TC@outmar-35mm}
+	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
 
 % A5 paper with 9.5mm extra for 4x3 aspect -- 210x(148+9.5)mm
 \DeclareOption{4x3print}{ 
-	\setlength\paperh{210mm}
-	\setlength\paperw{157.5mm}
-	\setlength\inmar{16mm}
-	\setlength\outmar{13.5mm}
-	\setlength\chevin{\outmar-36.5mm}
-	\setlength\tabdepth{9.5mm}
+	\setlength\TC@paperh{210mm}
+	\setlength\TC@paperw{157.5mm}
+	\setlength\TC@inmar{16mm}
+	\setlength\TC@outmar{13.5mm}
+	\setlength\TC@chevin{\TC@outmar-36.5mm}
+	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
 
 
 % Nominal A4 paper size -- 297x210mm
 \DeclareOption{a4}{
-	\setlength\paperh{297mm}
-	\setlength\paperw{210mm}
-	\setlength\inmar{14mm}
-	\setlength\outmar{14mm}
-	\setlength{\chevin}{\outmar-31mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{297mm}
+	\setlength\TC@paperw{210mm}
+	\setlength\TC@inmar{14mm}
+	\setlength\TC@outmar{14mm}
+	\setlength{\TC@chevin}{\TC@outmar-31mm}
+	\setlength\TC@tabdepth{8mm}
+    \togglefalse{print}
 }
 
 % A4 paper with offset margins for printing -- 297x210mm
 \DeclareOption{a4print}{
-	\setlength\paperh{297mm}
-	\setlength\paperw{210mm}
-	\setlength\inmar{16mm}
-	\setlength\outmar{12mm}
-	\setlength{\chevin}{\outmar-29mm}
-	\setlength\tabdepth{8mm}
+	\setlength\TC@paperh{297mm}
+	\setlength\TC@paperw{210mm}
+	\setlength\TC@inmar{16mm}
+	\setlength\TC@outmar{12mm}
+	\setlength{\TC@chevin}{\TC@outmar-29mm}
+	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
 
@@ -241,40 +242,57 @@
 }
 
 %-----------------------------------------------------------------
-% OTHER FORMATTING OPTIONS
+% TECHHATCHTABS OPTIONS
 %-----------------------------------------------------------------
+\DeclareOption{squaretabs}{
+    \PassOptionsToPackage{squaretabs}{techhatchtabs}
+}
+
+% turns off thumbtab indentation (for cutting out)
+\DeclareOption{nothumbtabindent}{
+    \PassOptionsToPackage{thumbtabindent=false}{techhatchtabs}
+}
+
+% turns off thumbnar 'indentation' by tabwidth
+\DeclareOption{nothumbnarindent}{
+    \PassOptionsToPackage{thumbnarindent=false}{techhatchtabs}
+}
+
+% turns off automatic thumbnar'ing
+\DeclareOption{manthumbnar}{
+  	\PassOptionsToPackage{autothumbnar=false}{techhatchtabs}
+}
+
+% turns off automatic generation of thumbback node on page
+% after thumbtab
+\DeclareOption{manthumbback}{
+    \PassOptionsToPackage{autothumbback=false}{techhatchtabs}
+}
+
+% deactivates all page rounding and indentation
+\DeclareOption{noround}{
+    \PassOptionsToPackage{round=false}{techhatchtabs}
+}
+
+% deactivates all hatching
+\DeclareOption{nohatch}{
+    \PassOptionsToPackage{hatch=false}{techhatchtabs}
+}
 
 %-----------------------------------------------------------------
 % DEV OPTIONS
 %-----------------------------------------------------------------
-% Turn hatching off
-\newtoggle{hatch}
-\toggletrue{hatch}
-\DeclareOption{nohatch}{
-  	\togglefalse{hatch}
-}
 
 % Geometry showframe
 \DeclareOption{showframe}{
-  	\PassOptionsToClass{showframe}{geometry}
-}
-
-% Thumbnar on/off
-\newtoggle{autothumbnar}
-\toggletrue{autothumbnar}
-\DeclareOption{manthumbnar}{
-	\togglefalse{autothumbnar}
+  	\PassOptionsToPackage{showframe}{geometry}
 }
 
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
 \ExecuteOptions{fontSpartan, a5print, colorful}
-\ProcessOptions\relax
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% O P T I O N S   E N D
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProcessOptions*\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOBAL FORMATTING
@@ -284,18 +302,43 @@
 % APPLY PAGE GEOMETRY
 %-----------------------------------------------------------------
 \geometry{
-	paperheight=\paperh,
-	paperwidth=\paperw,
+	paperheight=\TC@paperh,
+	paperwidth=\TC@paperw,
 	margin=1mm,
-	top=\topmar,
-	bottom=\botmar,
+	top=\TC@topmar,
+	bottom=\TC@botmar,
 	headsep=5mm,
 	headheight=5mm,
-	footskip=\footmar,
-	inner=\inmar,
-	outer=\outmar,
+	footskip=\TC@footmar,
+	inner=\TC@inmar,
+	outer=\TC@outmar,
 	centering
 }
+
+%-----------------------------------------------------------------
+% CUSTOM PACKAGES
+%-----------------------------------------------------------------
+\iftoggle{print}{
+    % if true no action necessary, defaults to printable behavior
+}{
+    % if false turns of rounding completely
+    % leaves 'autothumbback' on!
+    \PassOptionsToPackage{
+        round=false,
+    }{techhatchtabs}
+}
+
+\RequirePackage[
+    top=\TC@topmar,
+    bottom=\TC@botmar,
+    inner=\TC@inmar,
+    outer=\TC@outmar,
+    tabwidth=\TC@tabwidth,
+    tabdepth=\TC@tabdepth,
+    chevin=\TC@chevin,
+]{techhatchtabs} % custom page hatching 
+
+\RequirePackage{technumitem} % custom enumitem like environments
 
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
@@ -332,7 +375,7 @@
 		ItalicFont=*-Medium Italic,
 		ItalicFeatures={Scale=1.0},
 		BoldFont=*-Bold,
-		BoldFeatures={LetterSpace=5.0}
+		BoldFeatures={LetterSpace=5.0},
 	]{Spartan MB}
 	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
@@ -345,7 +388,7 @@
 		UprightFont=*-Regular,
 		ItalicFont=*-Regular Italic,
 		BoldFont=*-Semi Bold,
-		BoldFeatures={LetterSpace=3.0}
+		BoldFeatures={LetterSpace=3.0},
 	]{Metropolis}
 	\newfontfamily\tightfont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
@@ -366,7 +409,6 @@
 %-----------------------------------------------------------------
 % GLOBAL PARAMETER COMMANDS
 %-----------------------------------------------------------------
-
 % Set label for title page
 \newcommand*\aircraftlong{FULL A/C NAME}
 \newcommand*{\setaircraftlong}[1]{\renewcommand*\aircraftlong{#1}}
@@ -377,7 +419,7 @@
 % Set number of tabs in preable
 \newcommand{\settabnumber}[1]{
 	\setcounter{tabnumber}{#1}
-	\setlength\tabwidth{\textheight/\thetabnumber}
+	\setlength\TC@tabwidth{\textheight/\thetabnumber}
 }
 
 %-----------------------------------------------------------------
@@ -393,11 +435,10 @@
 	% clear defaults
 	\fancyhf{}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-		\Hatch
-		}{}
-	}
+        \hatch
+    }
 }
+
 \fancypagestyle{empty}{
 	% clear defaults
 	\fancyhf{}
@@ -408,16 +449,13 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-		\Hatch
-		}{}
+		\hatch
 	}
 	\fancyhead[RO]{
-		\iftoggle{autothumbnar}{
-			\thumbnar
-		}{}
+        \thumbnar
 	}
 }
+
 \fancypagestyle{plain}{
 	% clear defaults
 	\fancyhf{}
@@ -428,11 +466,10 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-			\Hatch
-		}{}
+        \hatch
 	}
 }
+
 \fancypagestyle{body}{
 	% clear defaults
 	\fancyhf{}
@@ -447,9 +484,7 @@
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-		\iftoggle{autothumbnar}{
-			\thumbnar
-		}{}
+        \thumbnar
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{
@@ -457,9 +492,7 @@
 		}
   	}
 	\fancyhead[LE,LO]{
-		\iftoggle{hatch}{
-			\Hatch
-		}{}
+        \hatch
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -504,10 +537,6 @@
 %-----------------------------------------------------------------
 % change distance between section number and title
 % default: 1.55em
-% required for Spartan font: 3.1em w/o chapters
-% required for Spartan font: 3.3em w/ chapters
-% \setlength{\cftsecnumwidth}{2.325em}
-% \setlength{\cftsubsecnumwidth}{3.50em}
 \tocloftpagestyle{empty}
 
 %-----------------------------------------------------------------
@@ -526,7 +555,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
+	{\hatch\Huge #1} % before-code
 	[] % after code
 
 % formatting of section
@@ -535,7 +564,7 @@
 	{\color{color1}\thesection} % label
 	{1em} % sep
 	{#1} % before-code
-	[{\titlerule[1pt]}] % after-code
+	[{\titlerule[2pt]}] % after-code
 
 % formatting of subsection [full width]
 \titleformat{\subsection} % command
@@ -558,308 +587,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOM COMMANDS / ENVIRONEMNTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-----------------------------------------------------------------
-% CUSTOM MINIPAGE ENVIRONMENTS
-%-----------------------------------------------------------------
-\newenvironment{tableminipage}{% begdef
-	\begin{minipage}[t]{\linewidth}
-	\vspace{-7pt}
-}{% enddef
-	\end{minipage}
-}
-
-%-----------------------------------------------------------------
-% CUSTOM TABLE ENVIRONMENTS
-%-----------------------------------------------------------------
-\newenvironment{listtable}{% begdef
-	\newenvironment{subenumerate}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{enumerate}[##1]
-	}{% enddef
-			\end{enumerate}
-		\end{tableminipage}
-	}
-
-	\newenvironment{subitemize}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{itemize}[##1]
-	}{% enddef
-			\end{itemize}
-		\end{tableminipage}
-	}
-	\begin{center}
-		\begin{tabular}{l p{3cm} | p{8cm}}
-			\toprule
-}{% enddef
-			\bottomrule
-		\end{tabular}
-	\end{center}
-}
-
-\newenvironment{listlongtable}{% begdef
-	\newenvironment{subenumerate}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{enumerate}[##1]
-	}{% enddef
-			\end{enumerate}
-		\end{tableminipage}
-	}
-
-	\newenvironment{subitemize}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{itemize}[##1]
-	}{% enddef
-			\end{itemize}
-		\end{tableminipage}
-	}
-	\begin{center}
-		\begin{longtable}{l p{3cm} | p{8cm}}
-			\toprule
-}{% enddef
-			\bottomrule
-		\end{longtable}
-	\end{center}
-}
-
-%-----------------------------------------------------------------
-% TABLE ENVIRONMENTS WITH ENUMITEM-LIKE BEHAVIOR
-%-----------------------------------------------------------------
-
-% Counter for use in tablenumitems
-\newcounter{tablenumi}
-\setcounter{tablenumi}{1} % set to one to prevent edge case error
-\newcounter{tablenumistart} % used to check if first line to prevent
-
-% Key to start an enumerate at a given number
-\define@key{tablenumitem}{start}{
-	\setcounter{tablenumi}{#1}
-	\setcounter{tablenumistart}{\value{tablenumi}}
-}
-
-% Key to resume an enumerate at previous number
-\define@key{tablenumitem}{resume}[]{
-	\setcounter{tablenumistart}{\value{tablenumi}}
-}
-
-% tablenumerate -- creates table that behaves like enumerate
-\newenvironment{tablenumerate}[1][start=1]{% begdef
-	\setkeys{tablenumitem}{#1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-		% Create midrule unless first row
-		\ifnum\value{tablenumi}>\value{tablenumistart}
-			\midrule
-		\else
-		\fi
-		\arabic{tablenumi}. & \blue{##1} & ##2 
-		\stepcounter{tablenumi} \\
-	}
-	% Define command equiv to `item`
-	% arg 1 - typeset in dblue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\dblueitem}[2]{
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\arabic{tablenumi}. & \dblue{##1} & ##2 
-		\stepcounter{tablenumi} \\
-	}
-	% Uses custom longtable style
-	\begin{listlongtable}
-}{% enddef
-	\end{listlongtable}
-}
-
-% tableitemize -- creates table that behaves like itemize
-\newenvironment{tableitemize}{% begdef
-	\setcounter{tablenumi}{1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-		% Create midrule unless first row
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\textbf{\textbullet} & \blue{##1} & ##2
-		\stepcounter{tablenumi} \\
-	}
-	% Define command equiv to `item`
-	% arg 1 - typeset in dblue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\dblueitem}[2]{
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\textbf{\textbullet} & \dblue{##1} & ##2
-		\stepcounter{tablenumi} \\
-	}
-	% Uses custom longtable style
-	\begin{listlongtable}
-}{% enddef
-	\end{listlongtable}
-}
-
-% SHORT VERSIONS
-
-% shortablenumerate -- creates table that behaves like enumerate
-\newenvironment{shortablenumerate}[1][start=1]{% begdef
-	\setkeys{tablenumitem}{#1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-		% Create midrule unless first row
-		\ifnum\value{tablenumi}>\value{tablenumistart}
-			\midrule
-		\else
-		\fi
-		\arabic{tablenumi}. & \blue{##1} & ##2 
-		\stepcounter{tablenumi} \\
-	}
-	% Define command equiv to `item`
-	% arg 1 - typeset in dblue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\dblueitem}[2]{
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\arabic{tablenumi}. & \dblue{##1} & ##2 
-		\stepcounter{tablenumi} \\
-	}
-	% Uses custom table style
-	\begin{listtable}
-}{% enddef
-	\end{listtable}
-}
-
-% shortableitemize -- creates table that behaves like itemize
-\newenvironment{shortableitemize}{% begdef
-	\setcounter{tablenumi}{1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-		% Create midrule unless first row
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\textbf{\textbullet} & \blue{##1} & ##2
-		\stepcounter{tablenumi} \\
-	}
-	% Define command equiv to `item`
-	% arg 1 - typeset in dblue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\dblueitem}[2]{
-		\ifnum\value{tablenumi}>1
-			\midrule
-		\else
-		\fi
-		\textbf{\textbullet} & \dblue{##1} & ##2
-		\stepcounter{tablenumi} \\
-	}
-	% Uses custom table style
-	\begin{listtable}
-}{% enddef
-	\end{listtable}
-}
-
-%-----------------------------------------------------------------
-% LOW LEVEL CUSTOM ENUMITEM ENVIRONMENTS
-%-----------------------------------------------------------------
-\newenvironment{innerchecklistenumerate}[1][]{% begdef
-	\begin{enumerate}[itemsep=4pt, #1]
-}{% enddef
-	\end{enumerate}
-}
-
-\newenvironment{innerchecklistitemize}[1][]{% begdef
-	\begin{itemize}[#1]
-}{% enddef
-	\end{itemize}
-}
-
-\newenvironment{outerchecklistenumerate}{% begdef
-	\begin{enumerate}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}]
-}{% begdef
-	\end{enumerate}
-}
-
-\newenvironment{outerchecklistitemize}{% begdef
-	\begin{itemize}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\textbullet}]
-}{% begdef
-	\end{itemize}
-}
-
-%-----------------------------------------------------------------
-% HIGH-LEVEL CUSTOM ENUMITEM ENVIRONMENTS
-%-----------------------------------------------------------------
-% SHORT VERSIONS
-\newenvironment{checklistenumerate}{% begdef
-	\newenvironment{subenumerate}[1][]{% begdef
-		\begin{innerchecklistenumerate}[##1]
-	}{% enddef
-		\end{innerchecklistenumerate}
-	}
-	\newenvironment{subitemize}[1][]{% begdef
-		\begin{innerchecklistitemize}[##1]
-	}{% enddef
-		\end{innerchecklistitemize}
-	}
-	\newcommand{\blueitem}[2]{
-		\item \blue{##1} {##2}
-	}
-	\newcommand{\dblueitem}[2]{
-		\item \dblue{##1} {##2}
-	}
-	\begin{outerchecklistenumerate}
-}{% enddef
-	\end{outerchecklistenumerate}
-}
-
-\newenvironment{checklistitemize}{% begdef
-	\newenvironment{subenumerate}[1][]{% begdef
-		\begin{innerchecklistenumerate}[##1]
-	}{% enddef
-		\end{innerchecklistenumerate}
-	}
-	\newenvironment{subitemize}[1][]{% begdef
-		\begin{innerchecklistitemize}[##1]
-	}{% enddef
-		\end{innerchecklistitemize}
-	}
-	\newcommand{\blueitem}[2]{
-		\item \blue{##1} ##2
-	}
-	\newcommand{\dblueitem}[2]{
-		\item \dblue{##1} ##2
-	}
-	\begin{outerchecklistitemize}
-}{% enddef
-	\end{outerchecklistitemize}
-}
-
-% LONG VERSIONS -- No difference to short versions
-% Just to keep track if switching from longtablenumitem
-\newenvironment{longchecklistenumerate}{% begdef
-	\begin{checklistenumerate}
-}{% enddef
-	\end{checklistenumerate}
-}
-
-\newenvironment{longchecklistitemize}{% begdef
-	\begin{checklistitemize}
-}{% enddef
-	\end{checklistitemize}
-}
 
 %-----------------------------------------------------------------
 % CUSTOM COMMANDS
@@ -891,13 +618,13 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+        fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
 		% drop shadow=color1!100
 		},
-		title=\large NOTE
+		title=\large NOTE,
 	]
 		{#1}
 	\end{tcolorbox}
@@ -912,282 +639,14 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+        fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
-		drop shadow=color1!100
+		drop shadow=color1!100,
 		},
 		title=\large WARNING
 	]
 		{#1}
 	\end{tcolorbox}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TIKZPICTURE COMMANDS 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-----------------------------------------------------------------
-% HATCHING
-%-----------------------------------------------------------------
-% creates node option to create hyperref
-\tikzset{
-	hyperref node/.style={
-		alias=sourcenode,
-		append after command={
-			let     \p1 = (sourcenode.north west),
-			\p2=(sourcenode.south east),
-			\n1={\x2-\x1},
-			\n2={\y1-\y2} in
-			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperref[#1]{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
-			%xelatex needs \XeTeXLinkBox, won't create a link unless it
-			%finds text --- rules don't work without \XeTeXLinkBox.
-			%Still builds correctly with pdflatex and lualatex
-		}
-	}
-}
-% titlepage chevron indentation
-
-% individual parallelogram
-\newcommand{\single}[1]{
-	\fill[color1]
-	([xshift=#1*2*5mm,yshift=2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+20mm,yshift=20mm+2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+25mm,yshift=20mm+2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+5mm,yshift=2mm]current page text area.north west) --
-	cycle;
-}
-% while loop to make many parallelograms
-\newcommand\Hatch{
-	\begin{tikzpicture}[remember picture,overlay]
-	\newcount\foo
-	\foo=-3
-	\loop
-	\single{\the\foo}
-	\advance \foo +1
-	\ifnum \foo<21
-	\repeat
-	% makes hatched area hyperlink to front page
-	\node[
-		rectangle,
-		hyperref node=frontpage,
-		anchor=north,
-		minimum width=\paperwidth,
-		minimum height=10mm
-	]()at ([yshift=\paperheight/2]current page.center) {};
-	\end{tikzpicture}
-}
-
-%-----------------------------------------------------------------
-% ROUNDING
-%-----------------------------------------------------------------
-% variables for controlling rounding diameters in each corner
-\newlength{\nwround}
-\newlength{\neround}
-\newlength{\seround}
-\newlength{\swround}
-\setlength\nwround{10mm}
-\setlength\neround{10mm}
-\setlength\seround{10mm}
-\setlength\swround{10mm}
-
-% thumbtab for Section page
-\newcommand{\thumbtab}[2]{
-	\iftoggle{print}{
-		\begin{tikzpicture}[remember picture, overlay]
-		% north west corner
-		\fill[white]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=\topmar-10mm]current page text area.north west)
-			[rounded corners=\nwround] --
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar+10mm, yshift=\topmar]current page text area.north west)
-			[sharp corners] --
-			cycle;
-		% north east corner
-		\fill[white]
-			([xshift=\outmar, yshift=-#2*\tabwidth-5mm]current page text area.north east)
-			[rounded corners=4mm] --
-			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=3mm] --
-			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=\neround] --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar-\tabdepth-10mm, yshift=\topmar]current page text area.north east)
-			[sharp corners]--
-			([xshift=\outmar, yshift=\topmar]current page text area.north east)--
-			cycle;
-		\draw[color1]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west)
-      [rounded corners=\swround] --
-			([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
-      [rounded corners=\seround] --
-			([xshift=\outmar, yshift=-\botmar]current page text area.south east)
-			[rounded corners=4mm] --
-			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=3mm] --
-			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=\neround] --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east)
-      [rounded corners=\nwround]--
-			cycle;
-		\node[
-			rectangle,
-			anchor=south west,
-			rotate=270,
-			minimum height=\tabdepth,
-			minimum width=\tabwidth
-		]
-		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
-			\small\textbf{#1}
-		};
-		\end{tikzpicture}
-	}{}
-	% create label for hyperlinks on front page
-	\label{thumbtab:#2}
-	% create node on back of page
-	\AtBeginShipoutNext{\thumbback{#1}{#2}}
-}
-% node with section name without border
-\newcommand{\thumbback}[2]{
-	\iftoggle{print}{
-		\begin{tikzpicture}[remember picture, overlay]
-		\node[
-			rectangle,
-			anchor=south east,
-			rotate=90,
-			minimum height=\tabdepth,
-			minimum width=\tabwidth
-		]
-		(sectionnode) at ([xshift=-1\outmar+\tabdepth, yshift=-#2*\tabwidth]current page text area.north west) {
-			\small\textbf{#1}
-		};
-		\end{tikzpicture}
-	}{}
-}
-% for front page and back page
-\newcommand{\thumbwide}{
-	\iftoggle{print}{
-		\begin{tikzpicture}[remember picture, overlay]
-			% north west corner
-			\fill[white]
-				([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-				([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west)
-				[rounded corners=\nwround] --
-				([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-				([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
-				[sharp corners] --
-				cycle;
-			% north east corner
-			\fill[white]
-				([xshift=\outmar, yshift=\topmar]current page text area.north east) --
-				([xshift=\outmar, yshift=\topmar-1cm]current page text area.north east)
-				[rounded corners=\neround] --
-				([xshift=\outmar, yshift=\topmar]current page text area.north east) --
-				([xshift=\outmar-1cm, yshift=\topmar]current page text area.north east)
-				[sharp corners] --
-				cycle;
-			% south east corner
-			\fill[white]
-				([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
-				([xshift=\outmar, yshift=-\botmar+1cm]current page text area.south east)
-				[rounded corners=\seround] --
-				([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
-				([xshift=\outmar-1cm, yshift=-\botmar]current page text area.south east)
-				[sharp corners] --
-				cycle;
-			% frame
-			\draw[color1]
-				([xshift=-\inmar, yshift=\topmar]current page text area.north west)
-        [rounded corners=\swround] --
-				([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
-        [rounded corners=\seround] --
-				([xshift=\outmar, yshift=-\botmar]current page text area.south east)
-        [rounded corners=\neround] --
-				([xshift=\outmar, yshift=\topmar]current page text area.north east)
-        [rounded corners=\nwround] --
-				cycle;
-		\end{tikzpicture}
-	}{}
-}
-% for all pages that are not front-, back- or section-page
-\newcommand{\thumbnar}{
-	\iftoggle{print}{
-		\begin{tikzpicture}[remember picture, overlay]
-		% north west corner
-		\fill[white]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west)
-			[rounded corners=\nwround] --
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
-			[sharp corners] --
-			cycle;
-		% north east corner
-		\fill[white]
-			([xshift=\outmar, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar, yshift=\topmar-1cm]current page text area.north east) --
-			([xshift=\outmar-\tabdepth, yshift=\topmar-1cm]current page text area.north east)
-			[rounded corners=\neround] --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
-			([xshift=\outmar-\tabdepth-1cm, yshift=\topmar]current page text area.north east)
-			[sharp corners] --
-			cycle;
-		 % frame
-		\draw[color1]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) [rounded corners = \swround] --
-			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) [rounded corners = \seround] --
-			([xshift=\outmar-\tabdepth, yshift=-\botmar]current page text area.south east) [rounded corners = \neround] --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) [rounded corners = \nwround]--
-			cycle;
-		\end{tikzpicture}
-	}{}
-}
-
-%-----------------------------------------------------------------
-% FRONT PAGE
-%-----------------------------------------------------------------
-
-\newlength{\chevout} % sets for right side of chevron
-\newlength{\chevpoint} % sets point of chevron
-\setlength\chevout{\outmar-12mm}
-\setlength\chevpoint{\outmar-5mm}
-% chevron height is set by tabwidth so it lines up
-
-% creates hyperlinked white chevron with section name
-\newcommand{\thumbfront}[2]{
-	\begin{tikzpicture}[remember picture,overlay]
-	%white chevrons
-	\fill[white]
-		([xshift=\chevin,
-		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([xshift=\chevout,
-		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([xshift=\chevpoint,
-		yshift=-(#2+0.5)*\tabwidth
-		]current page text area.north east) --
-		([xshift=\chevout,
-		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([
-		xshift=\chevin,
-		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		cycle;
-	% hyperlinked node for each section
-	% uses a number (thumbtab:#2) as label
-	\node[
-		rectangle,
-		anchor=west,
-		rotate=0,
-		minimum width=20mm,
-		minimum height=\tabwidth-5mm,
-		hyperref node=thumbtab:#2
-	](Procedure) at ([xshift=\chevin, yshift=-(#2+0.5)*\tabwidth]current page text area.north east) {
-		\textbf{#1}
-	};
-	\end{tikzpicture}
 }

@@ -3,11 +3,27 @@
 \minitoc
 \cleardoublepage
 
+\newgeometry{
+    inner = 10mm,
+    outer = 52mm,
+    bottom=8mm,
+    top=12mm,
+}
+
 \section{START-UP}
 
 \subsection{PRE-START}
-\begin{tcolorenumerate}
+\begin{checklistenumerate}
     \blueitem{\hyperref[fig:proc:prestart:flcscheck]{FLCS Check}}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_flcs-check_v01.pdf}
+        % \captionof*{figure}{\textbf{1. FLCS Check}}
+        \captionof{figure}{\blue{FLCS Check}}
+        \label{fig:proc:prestart:flcscheck}
+    }
     \begin{subenumerate}
         \item \textbf{Main PWR Switch}\cbstart \dotfill \textbf{BATT}\cbend
         \begin{itemize}
@@ -24,6 +40,14 @@
         \item \textbf{FLCS PWR TEST} \dotfill \textbf{Release}
     \end{subenumerate}}
     \blueitem{\hyperref[fig:proc:prestart:mainpower]{Main Power}}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_main-power_v01.pdf}
+        \captionof{figure}{\blue{Main Power}}
+        \label{fig:proc:prestart:mainpower}
+    }
     \begin{subenumerate}
         \item \textbf{Main PWR Switch}\cbstart \dotfill \textbf{MAIN}\cbend
         \item \textbf{Warning Lights} \dotfill \textbf{Check}
@@ -40,36 +64,20 @@
             \item \textbf{EPU PMG Light} -- \textbf{OFF}
         \end{itemize}
     \end{subenumerate}}
-\end{tcolorenumerate}
-
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_flcs-check_v01.pdf}
-        \caption*{\textbf{1. FLCS Check}}
-        \label{fig:proc:prestart:flcscheck}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_main-power_v01.pdf}
-        \caption*{\textbf{2. Main Power}}
-        \label{fig:proc:prestart:mainpower}
-    \end{subfigure}
-    \caption{\textbf{Pre-Start}}
-    \label{fig:proc:prestart}
-\end{figure}
+\end{checklistenumerate}
 
 \clearpage
 
 \subsection{ENGINE START}
-\begin{tcolorenumerate}
+\begin{checklistenumerate}
     \blueitem{Engine Start}{\cbstart
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_engine-start_v01.pdf}
+        \captionof{figure}{\textbf{Engine Start}}
+    }
     \begin{subenumerate}
         \item \textbf{JFS Switch} \dotfill \textbf{START 2}
         \item \textbf{Throttle} \dotfill \textbf{IDLE} \\
@@ -80,6 +88,13 @@
         \item \textbf{JFS Switch} \dotfill \textbf{Confirm OFF}
     \end{subenumerate}\cbend}
     \blueitem{ENG Instruments}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_engine-instruments_v01.pdf}
+        \captionof{figure}{\textbf{ENG Instruments}}
+    }
     \begin{subenumerate}
         \item \textbf{FUEL FLOW} -- 700-1700 PPH
         \item \textbf{OIL Pressure} -- 15 PSI (minimum)
@@ -88,27 +103,7 @@
         \item \textbf{FTIT} -- 650C or less
         \item \textbf{HYD PRES A \& B} -- 2850-3250 PSI
     \end{subenumerate}}
-\end{tcolorenumerate}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_engine-start_v01.pdf}
-        \caption*{\textbf{1. Engine Start}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_engine-instruments_v01.pdf}
-        \caption*{\textbf{2. ENG Instruments}}
-    \end{subfigure}
-    \caption{\textbf{Engine Start}}
-    \label{fig:proc:engstart}
-\end{figure}
+\end{checklistenumerate}
 
 \notebox{
     \begin{itemize}
@@ -119,8 +114,15 @@
 \clearpage
 
 \subsection{POST-START}
-\begin{tcolorenumerate}
+\begin{checklistenumerate}
     \blueitem{TEST Panel}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_test-panel_v01.pdf}
+        \captionof*{figure}{\textbf{1. TEST Panel}}
+    }
     \begin{subenumerate}
         \item \textbf{PROBE HEAT Switch} \dotfill \textbf{PROBE HEAT} \\
         \hfill \emph{verify PROBE HEAT Caution Light -- off}
@@ -132,6 +134,13 @@
         \item \textbf{MAL \& IND LTS Button} \dotfill \textbf{TEST}
     \end{subenumerate}}
     \blueitem{AVIONICS Panel}{\cbstart
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_avionics-ins_v01.pdf}
+        \captionof*{figure}{\textbf{2./3. Avionics \& INS}}
+    }
     \begin{subenumerate}
         \item \textbf{MMC Switch} \dotfill \textbf{MMC}
         \item \textbf{ST STA Switch} \dotfill \textbf{ST STA}
@@ -148,34 +157,15 @@
             \item \textbf{NORM} -- Full alignment, approx. 8 min
             \item \textbf{STOR HDG} -- Quick alignment, approx. 90 sec
         \end{itemize}
-    \end{subenumerate}\cbend}
-\end{tcolorenumerate}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
+    \end{subenumerate}}
+    \blueitem{SNSR PWR Panel}{
+    \marginpar{%
         \centering
         \includegraphics[
             width = \cockpitfigwidth,
-        ]{F16_proc_start-up_test-panel_v01.pdf}
-        \caption*{\textbf{1. TEST Panel}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_avionics-ins_v01.pdf}
-        \caption*{\textbf{2./3. Avionics \& INS}}
-    \end{subfigure}
-    
-    \caption{\textbf{Post-Start}}
-    \label{fig:proc:poststart1}
-\end{figure}
-
-\clearpage 
-
-\begin{tcolorenumerate}[resume]
-    \blueitem{SNSR PWR Panel}{\cbstart
+        ]{F16_proc_start-up_snsr-pwr_v01.pdf}
+        \captionof*{figure}{\textbf{4. SNSR PWR Panel}}
+    }
     \begin{subenumerate}
         \item \textbf{LEFT HDPT Switch} \dotfill \textbf{As Required} \\
         \hfill \emph{if HTS Pod installed}
@@ -183,8 +173,20 @@
         \hfill \emph{if Targetting Pod installed}
         \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{RDR ALT Switch} \dotfill \textbf{RDR ALT}
-    \end{subenumerate}}
-    \blueitem{HUD Setup}{
+    \end{subenumerate}\cbend}
+\end{checklistenumerate}
+
+\clearpage
+
+\begin{checklistenumerate}[resume]
+    \blueitem{HUD Setup}{\cbstart
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_hud-sai_v01.pdf}
+        \captionof*{figure}{\textbf{5.-10. HUD, C\&I, ECM, SPD BRK, WHEELS Down, SAI}}
+    }
     \begin{subenumerate}
         \item \textbf{HUD Control Panel} \dotfill \textbf{As Desired}
         \item \textbf{HUD Brightness} \dotfill \textbf{As Desired} 
@@ -195,53 +197,28 @@
     \blueitem{WHEELS Down Lights}{Verify \textbf{Three Green}}
     \blueitem{\cbstart  Standby Attitude Indicator\cbend}{\textbf{Set}}
     \blueitem{Tests \& Checks}{\hyperref[subsec:testschecks]{\textbf{See \Cref{subsec:testschecks} Tests \& Checks}}}
-\end{tcolorenumerate}
+% \end{checklistenumerate}
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.40\linewidth}
+% \clearpage
+
+% \begin{checklistenumerate}[resume]
+    \blueitem{Avionics Setup}{
+    \marginpar{%
         \centering
         \includegraphics[
             width = \cockpitfigwidth,
-        ]{F16_proc_start-up_snsr-pwr_v01.pdf}
-        \caption*{\textbf{4. SNSR PWR Panel}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.55\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_hud-sai_v01.pdf}
-        \caption*{\textbf{5.-10. HUD, C\&I, ECM, SPD BRK, WHEELS Down, SAI}}
-    \end{subfigure}
-    \caption{\textbf{Post-Start}}
-    \label{fig:proc:poststart2}
-\end{figure}
-
-\clearpage
-
-\begin{tcolorenumerate}[resume]
-    \blueitem{Avionics Setup}{\cbstart\textbf{Program As Required}}
+        ]{F16_proc_start-up_final-setup_v01.pdf}
+        \captionof*{figure}{\textbf{12.-16. Final Setup}}
+    }
+    \cbstart\textbf{Program As Required}}
     \blueitem{Canopy}{\textbf{Close and Lock}}
     \blueitem{Altimeter}{\textbf{Set and Check}}
     \blueitem{Exterior Lights}{\textbf{As Desired}}
     \blueitem{INS Knob}{\textbf{NAV}\cbend}
     \blueitem{NWS}{\textbf{Engage}}
     \blueitem{Throttle}{\textbf{Advance} (\emph{Check brakes \& NWS})}
-    \blueitem{Flight \break Instruments}{\textbf{Check}}
-\end{tcolorenumerate}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_final-setup_v01.pdf}
-        \caption*{\textbf{12.-16. Final Setup}}
-    \end{subfigure}
-    \caption{\textbf{Post-Start}}
-    \label{fig:proc:poststart2}
-\end{figure}
+    \blueitem{Flight Instruments}{\textbf{Check}}
+\end{checklistenumerate}
 
 % \clearpage
 
@@ -259,8 +236,15 @@
 
 \subsection{TESTS \& CHECKS}
 \label{subsec:testschecks}
-\begin{tcolorenumerate}
+\begin{checklistenumerate}
     \blueitem{ENG SEC Mode}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_check-eng-sec_v01.pdf}
+        \captionof*{figure}{\textbf{1. ENG SEC Mode}}
+    }
     \begin{subenumerate}
         \item \textbf{ENG CONT Switch} \dotfill \textbf{SEC}
         \begin{itemize}
@@ -276,6 +260,13 @@
         \end{itemize}
     \end{subenumerate}}
     \blueitem{FLCS BIT}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_check-flcs-bit_v01.pdf}
+        \captionof*{figure}{\textbf{2. FLCS BIT}}
+    }
     \begin{subenumerate}
         \item \textbf{FLCS BIT Switch} \dotfill \textbf{BIT}
         \begin{itemize}
@@ -290,32 +281,19 @@
             \item \textbf{FLCS Warning Light} -- Verify \textbf{OFF}
         \end{itemize}
     \end{subenumerate}}
-\end{tcolorenumerate}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_check-eng-sec_v01.pdf}
-        \caption*{\textbf{1. ENG SEC Mode}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_check-flcs-bit_v01.pdf}
-        \caption*{\textbf{2. FLCS BIT}}
-    \end{subfigure}
-    \caption{\textbf{Post-Start}}
-    \label{fig:proc:testschecks1}
-\end{figure}
+\end{checklistenumerate}
 
 \clearpage
 
-\begin{tcolorenumerate}[resume]
+\begin{checklistenumerate}[resume]
     \blueitem{FUEL QTY Check}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_check-fuel-qty_v01.pdf}
+        \captionof*{figure}{\textbf{3. FUEL QTY Check}}
+    }
     \begin{subenumerate}
         \item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{TEST}
         \begin{itemize}
@@ -337,12 +315,19 @@
         \end{itemize}
         \item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{EXT WING}
         \begin{itemize}
-            \item Each indicator approx. 2300/2420 lbs \\
+            \item Each indicator approx. 2300/2420 lbs
             \hfill (\emph{if loaded})
         \end{itemize}
         \item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{As Desired}
     \end{subenumerate}}
     \blueitem{DBU Check}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_check-dbu_v01.pdf}
+        \captionof*{figure}{\textbf{4. DBU Check}}
+    }
     \begin{subenumerate}
         \item \textbf{DIGITAL BACKUP Switch} \dotfill \textbf{BACKUP}
         \begin{itemize}
@@ -351,32 +336,14 @@
         \item Operate Controls -- check for normal control surface response
         \item \textbf{DIGITAL BACKUP Switch} \dotfill \textbf{OFF}
     \end{subenumerate}}
-\end{tcolorenumerate}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_check-fuel-qty_v01.pdf}
-        \caption*{\textbf{3. FUEL QTY Check}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_check-dbu_v01.pdf}
-        \caption*{\textbf{4. DBU Check}}
-    \end{subfigure}
-    \caption{\textbf{Post-Start}}
-    \label{fig:proc:testschecks2}
-\end{figure}
-
-\clearpage
-
-\begin{tcolorenumerate}[resume]
     \blueitem{Trim Check}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_check-trim_v01.pdf}
+        \captionof*{figure}{\textbf{5. Trim Check}}
+    }
     \begin{subenumerate}
         \item \textbf{TRIM/AP DISC Swtich} \dotfill \textbf{DISC}
         \item \textbf{Stick Trim} \dotfill Activate in Pitch \& Roll
@@ -392,7 +359,19 @@
         \end{itemize} 
         \item \textbf{Yaw Trim Knob} \dotfill \textbf{Center}
     \end{subenumerate}}
+\end{checklistenumerate}
+
+\clearpage
+
+\begin{checklistenumerate}[resume]
     \blueitem{MPO Check}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_check-mpo_v01.pdf}
+        \captionof*{figure}{\textbf{6. MPO Check}}
+    }
     \begin{subenumerate}
         \item \textbf{Stick} \dotfill \textbf{Full Forward \& Hold}
         \item \textbf{MPO Switch} \dotfill \textbf{OVRD \& Hold}
@@ -401,32 +380,14 @@
         \end{itemize} 
         \item \textbf{Stick \& MPO} \dotfill Release
     \end{subenumerate}}
-\end{tcolorenumerate}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_check-trim_v01.pdf}
-        \caption*{\textbf{5. Trim Check}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_check-mpo_v01.pdf}
-        \caption*{\textbf{6. MPO Check}}
-    \end{subfigure}
-    \caption{\textbf{Post-Start}}
-    \label{fig:proc:testschecks3}
-\end{figure}
-
-\clearpage
-
-\begin{tcolorenumerate}[resume]
     \blueitem{EPU Check}{
+    \marginpar{%
+        \centering
+        \includegraphics[
+            width = \cockpitfigwidth,
+        ]{F16_proc_start-up_check-epu_v01.pdf}
+        \captionof*{figure}{\textbf{7. EPU Check}}
+    }
     \begin{subenumerate}
         \item \textbf{EPU FUEL Qty} \dotfill \textbf{95-102 Percent}
         \item \textbf{OXYGEN} \dotfill \textbf{100\%}
@@ -442,20 +403,9 @@
         \item \textbf{Throttle} \dotfill \textbf{IDLE}
         \item \textbf{OXYGEN} \dotfill \textbf{NORMAL}
     \end{subenumerate}}
-\end{tcolorenumerate}
+\end{checklistenumerate}
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.45\linewidth}
-        \centering
-        \includegraphics[
-            width = \cockpitfigwidth,
-        ]{F16_proc_start-up_check-epu_v01.pdf}
-        \caption*{\textbf{7. EPU Check}}
-    \end{subfigure}
-    \caption{\textbf{Post-Start}}
-    \label{fig:proc:testschecks4}
-\end{figure}
+\restoregeometry
 
 \clearpage
 

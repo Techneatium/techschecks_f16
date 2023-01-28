@@ -268,6 +268,8 @@
 
 \section{AIM-120 AMRAAM}
 
+\subsection{OVERVIEW}
+
 \begin{figure}[h]
     \centering
     \includegraphics[
@@ -277,8 +279,6 @@
 \end{figure}
 
 \clearpage
-
-\subsection{OVERVIEW}
 
 \begin{tcoloritemize}
     \blueitem{AIM-120}{
@@ -366,28 +366,28 @@
         \item \textbf{D} -- Intercept
     \end{subitemize}}
     \blueitem{Launch}{
-    Radar Lock
+    \textbf{Radar Lock}
 
     \begin{subitemize}
         \item Only requires track to launch
         \item Target does \textbf{NOT} need to be in STT lock
     \end{subitemize}
 
-    Maximizing Range -- maximizing energy
+%    \textbf{Maximizing Range -- maximizing energy}
 
-    \begin{subitemize}
-        \item High velocity -- increases kinetic energy
-        \item High altitude -- increases potential energy, reduces drag
-    \end{subitemize}
+%     \begin{subitemize}
+%         \item High velocity -- increases kinetic energy
+%         \item High altitude -- increases potential energy, reduces drag
+%     \end{subitemize}
 
-    Lofting 
+    \textbf{Lofting} 
 
     \begin{subitemize}
         \item At longer ranges the missile will loft itself to optimize trajectory
         \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
     \end{subitemize}}
     \blueitem{Mid-Course Phase}{
-    Missile flies using internal IMU
+    \textbf{Missile flies using internal IMU}
 
     \begin{subitemize}
         \item Receives periodic datalink updates
@@ -402,18 +402,19 @@
     \blueitem{Terminal Phase \& Intercept}{
     Once missile has gone active
     \begin{subitemize}
-        \item Flies a PNG intercept trajectory to intercept the target locked by it's radar 
-        \item Requires no support from launching fighter which can now turn commpletely away from the bandit
+        \item Flies a PNG intercept trajectory towards the target locked by it's radar 
+        \item Requires no further DL support, fighter can now turn away from the bandit
     \end{subitemize}}
 \end{tcoloritemize}
 
 \notebox{
-    \textbf{Cranking}
+    \textbf{Post-Launch Maneuvers}
     \begin{itemize}
             \item For simplicity, \cref{fig:aa-weap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active 
-            \item Depending on the tactical situation, it can be beneficial to reduce closure by turning 30-60 deg away from the bandit while maintaing radar contact 
-            \item This can be combined with a dive into thicker air to further reduce bandit missile range and maintain a look-up angle for the radar
+            % \item Depending on the tactical situation, it can be beneficial to reduce closure by turning 30-60 deg away from the bandit while maintaing radar contact 
+            % \item This can be combined with a dive into thicker air to further reduce bandit missile range and maintain a look-up angle for the radar
     \end{itemize}
+
     \textbf{Flowing Cold}
     \begin{itemize}
         \item The fighter can turn cold prior to the missile going active
@@ -421,7 +422,9 @@
     \end{itemize}
 }
 
-\clearpage
+\warningbox{
+    \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} -- use caution near friendlies
+}
 
 % \clearpage
 

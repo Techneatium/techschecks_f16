@@ -423,11 +423,75 @@
 
 \clearpage
 
-\subsection{SYMBOLOGY}
+% \clearpage
+
+\subsection{TACTICAL CONSIDERATIONS}
+
 \begin{tcoloritemize}
-    \blueitem{HUD Symbology}{}
-    \blueitem{FCR Symbology}{}
+    \blueitem{Range}{
+    \textbf{Fighter-bandit distance} can be measured at different points during the timeline
+
+    \begin{subitemize}
+        \item \textbf{R\textsubscript{Launch}} -- distance at launch
+        \item \textbf{R\textsubscript{F-Pole}} -- distance at impact
+        \item \textbf{R\textsubscript{A-Pole}} -- distance when missile goes active
+    \end{subitemize}
+    
+    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aa-weap:aim120:profile}.
+    }
+    \blueitem{Maximizing Launch Range / Energy}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Ability to launch at longer ranges forces bandit defensive
+        \item Bandit may not be able to counter-launch
+        \item Higher launch energy increases P\textsubscript{intercept} %probability of intercept
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{High velocity} -- increases kinetic energy 
+        \item \textbf{High altitude} -- increases potential energy, reduces drag
+    \end{subitemize}}
+    \blueitem{Maximizing F-Pole Range}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Less likely to enter bandit launch envelope
+        \item More time/range to launch 2nd missile if necessary
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{Crank} -- turn 30-60 degrees away from bandit to reduce closure rate, maintain radar contact
+        \item \textbf{Dive} -- reduces threat missile envelope
+    \end{subitemize}}
+    \blueitem{Flowing Cold}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Missile requires no support once active
+        \item Defends against unknown missile launches
+        \item Further maximizes F-pole range
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{Turn} -- Away from bandit / threat
+        \item \textbf{Dive} -- if necessary, reduces threat missile envelope 
+    \end{subitemize}}
+    \blueitem{Effect of Bandit Maneuvers}{
+    As evident in \cref{fig:aa-weap:aim120:profile}, 
+    R\textsubscript{Launch} is significantly greater than the distance travelled by the missile
+    \begin{subitemize}
+        \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
+        \begin{itemize}
+            \item \textbf{Missile is relying on target to keep flying towards us}
+        \end{itemize}
+        \item Bandit can significantly change missile envelope by reducing closure rate / altitude
+        \item If done post-launch can result in missile not having energy to intercept
+    \end{subitemize}}
 \end{tcoloritemize}
+
+% \subsection{SYMBOLOGY}
+% \begin{tcoloritemize}
+%     \blueitem{HUD Symbology}{}
+%     \blueitem{FCR Symbology}{}
+% \end{tcoloritemize}
 
 \clearpage
 

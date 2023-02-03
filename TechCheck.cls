@@ -66,7 +66,11 @@
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}
 \RequirePackage{luatex85} % required to make changebar work with lualatex
-\RequirePackage[pdftex, color, outerbars]{changebar} % what it says
+\RequirePackage[
+    pdftex, 
+    color, 
+    % outerbars
+]{changebar} % what it says
 \RequirePackage{xkeyval} % allows defining keys for macros
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

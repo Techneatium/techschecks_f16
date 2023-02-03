@@ -318,7 +318,9 @@
 	footskip=\TC@footmar,
 	inner=\TC@inmar,
 	outer=\TC@outmar,
-	centering
+    marginparwidth=0mm,
+    marginparsep=0mm,
+	centering,
 }
 
 %-----------------------------------------------------------------

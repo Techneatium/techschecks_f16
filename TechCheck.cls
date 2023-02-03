@@ -509,6 +509,26 @@
 \pagestyle{body}
 
 %-----------------------------------------------------------------
+% MARGIN FORMATTING / COMMANDS
+%-----------------------------------------------------------------
+
+\newcommand{\marginfigeometry}{
+    \newgeometry{
+        includemp,
+        inner=\TC@inmar,
+        outer=\TC@outmar,
+        bottom=\TC@botmar,
+        top=\TC@topmar,
+        marginparwidth=35mm,
+        marginparsep=5mm
+    }
+}
+
+\newcommand{\marginfigrestore}{
+    \restoregeometry
+}
+
+%-----------------------------------------------------------------
 % ENUMITEM FORMATTING
 %-----------------------------------------------------------------
 % spacing within lists

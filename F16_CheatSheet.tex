@@ -38,6 +38,7 @@
 % Determine which files included in output
 \includeonly{
 	./sections/F16_titlepage,
+    ./sections/F16_tableofcontents,
 	./sections/F16_procedures,
 	./sections/F16_systems,
 	./sections/F16_apg68fcr,
@@ -52,9 +53,7 @@
 
 	\frontmatter
 	\pagestyle{empty}
-	\dominitoc
-	\tableofcontents
-	\cleardoublepage
+	\include{./sections/F16_tableofcontents}
 	
 	% restart page counter, pagenumber styling
 	\mainmatter

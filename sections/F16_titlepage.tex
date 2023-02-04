@@ -42,16 +42,35 @@
     
     \vspace{1cm}
 
-    \notebox{
-        \cbstart
-        \begin{description}
-            \item[Obligatory Steps] --
-            Solid bars along the page edge signify that the corresponding information is not optional. 
-            Procedural steps marked as such can not be skipped without impacting mission capability signficantly.
 
-            \item[Warning] -- this does \textbf{not} mean that all information which is not marked is therefore optional.
-        \end{description}
-        \cbend
+    \begin{tcolorbox}[
+		enhanced, 
+        frame hidden,
+        colback=white,
+        colframe=color1, 
+        colbacktitle=white, 
+        coltitle=color1, 
+        sharp corners, 
+        attach boxed title to top center={yshift=2mm},
+		boxed title style={
+			sharp corners,
+		}, title=\Large\textbf{BEFORE TAKEOFF READ THIS}
+	]
+    \cbstart
+    \textbf{Obligatory Steps} -- Procedural steps marked by solid bars long the page edge can not be skipped without impacting mission capability signficantly.
+    \textbf{Warning} -- this does \textbf{not} mean that all information which is not marked is therefore optional.
+    \cbend
+
+    \vspace{1cm}
+
+    \notebox{
+        Information to be emphasized, usually related but not necessary information regarding a system or procedure.
     }
+
+    \warningbox{
+        Additional information which much be adhered to for proper system operation without malfunction or damage.
+    }
+
+	\end{tcolorbox}
 
 	\cleardoublepage

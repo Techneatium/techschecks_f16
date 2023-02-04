@@ -2,6 +2,43 @@
 
 ## CHANGELOG
 
+### Changelog - 2023.01.14 `v0.2.0`
+
+- **Complete Rewrite OF `TechCheck` Class Architecture:** many commands/environments were moved into two new `.sty` files (packages)
+
+  - **`NEW`** `techhatchtabs.sty`
+    - Hatching command `\hatch` along with the internal `\single` command
+    - Thumbtab related commands `\thumbtab`, `\thumbback`, `\thumbwide`, `\thumbnar`
+    - Titlepage tab related commands `\thumbfront`, **`NEW`** `\fronttitleprep`
+    - Thumbtab related `tikz` commponents were moved into package internal commands for easier customization
+    - **`NEW`** Many boolean options available to customize rounding, indentation, thumbtabs etc.
+
+  - **`NEW`** `technumitem.sty`
+    - `tablenumitem` environments
+    - `checklistenumitem` environments
+    - **`NEW`** `tcolorenumitem` environments
+
+  - Updated content to better follow `TeX` class/package writing best practices, *i.e* using `@` symbol and capitalization for class / package internal commands and variables
+
+- `TechCheck.cls`
+  - Updated to use new packages
+  - Updated to better follow class best practices
+
+- `F16_CheatSheet`
+  - changed paper size to `a5`, this now also turns off rounding and indentation
+
+- `TITLEPAGE`
+  - Changed to use new package commands
+
+- `PROCEDURES`
+  - Changed to use **`NEW`** `tcolorenumitem` environments
+
+- `APG-68 FCR` completed first pass on a-a modes
+  - Changed to use **`NEW`** `tcolorenumitem` environments
+  - Updated flow diagrams for `CRM` and `ACM`
+  - Added `ACM` subsection
+  - Added `STT` subsection
+
 ### Changelog - 2022.08.30 `v0.1.0`
 
 - `images`

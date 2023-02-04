@@ -72,7 +72,7 @@
     % outerbars
 ]{changebar} % what it says
 \RequirePackage{xkeyval} % allows defining keys for macros
-\RequirePackage[hypcap=true]{caption} % allows proper captions for non-float figures
+\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
 \RequirePackage{marginfix} % patches marginpar to prevent page overflow
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

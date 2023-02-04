@@ -69,7 +69,6 @@
 \RequirePackage[
     pdftex, 
     color, 
-    % outerbars
 ]{changebar} % what it says
 \RequirePackage{xkeyval} % allows defining keys for macros
 \RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
@@ -513,7 +512,7 @@
 %-----------------------------------------------------------------
 % MARGIN FORMATTING / COMMANDS
 %-----------------------------------------------------------------
-
+% increases margin width to allow margin figures
 \newcommand{\marginfigeometry}{
     \newgeometry{
         includemp,
@@ -526,6 +525,7 @@
     }
 }
 
+% relaxes geometry back to global definition
 \newcommand{\marginfigrestore}{
     \restoregeometry
 }

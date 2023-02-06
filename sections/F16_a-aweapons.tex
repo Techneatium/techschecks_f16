@@ -12,7 +12,7 @@
         \LARGE\emph{IMAGE PLACEHOLDER}
     \end{minipage}
 }
-\begin{tableitemize}
+\begin{tcoloritemize}
     \blueitem{M-61}{
     \begin{subitemize}
         \item \textbf{Fire Rate} -- 6000rpm
@@ -46,14 +46,14 @@
             \item AIM-9 \& GUN automatically selected
         \end{itemize}
     \end{subenumerate}}
-\end{tableitemize}
+\end{tcoloritemize}
 
 \subsection{SYMBOLOGY}
 
 \clearpage
 
 \subsection{GUN EMPLOYMENT}
-\begin{tablenumerate}
+\begin{checklistenumerate}
     \blueitem{Conditions}{
     \begin{subitemize}
         \item \textbf{FCR} \dotfill \textbf{ON}
@@ -97,7 +97,7 @@
         \item Figure showing EEGS V ``mid-pull'' with target under pipper for this page
         \item Would be great to have separate diagrams for TMS functions for each sensor/mode, then can paste that here as well as reminder
     \end{subitemize}}
-\end{tablenumerate}
+\end{checklistenumerate}
 
 \clearpage
 
@@ -110,7 +110,7 @@
         \LARGE\emph{IMAGE PLACEHOLDER}
     \end{minipage}
 }
-\begin{tableitemize}
+\begin{tcoloritemize}
     \blueitem{AIM-9}{
     \begin{subitemize}
         \item \textbf{Guidance} -- IR-guided (\textbf{Fox 2})
@@ -180,7 +180,7 @@
         \item \textbf{Selected Weapon} \dotfill Verify \textbf{9LM / 9X}
     \end{subenumerate}}
     \blueitem{Selected Station}{}
-\end{tableitemize}
+\end{tcoloritemize}
 
 \notebox{
     \begin{itemize}
@@ -192,15 +192,15 @@
 \clearpage
 
 \subsection{SYMBOLOGY}
-\begin{tableitemize}
+\begin{tcoloritemize}
     \blueitem{HUD Symbology}{}
-\end{tableitemize}
+\end{tcoloritemize}
 
 \clearpage
 
 \subsection{9M/9X - SLAVE - RADAR}
 \label{subsec:aim9slave}
-\begin{tablenumerate}
+\begin{checklistenumerate}
     \blueitem{Conditions}{
     \begin{subitemize}
         \item \textbf{FCR} \dotfill \textbf{ON}
@@ -230,13 +230,13 @@
         \item \textbf{Maneuver} -- Place target within DLZ
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
-\end{tablenumerate}
+\end{checklistenumerate}
 
 \clearpage
 
 \subsection{9M/9X - BORE - NO RADAR}
 \label{subsec:aim9bore}
-\begin{tablenumerate}
+\begin{checklistenumerate}
     \blueitem{Conditions}{
     \begin{subitemize}
         \item \textbf{HMD SYMB. INT} \dotfill As desired
@@ -262,20 +262,25 @@
         \item \textbf{Maneuver} -- Place target within DLZ
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
-\end{tablenumerate}
+\end{checklistenumerate}
 
 \clearpage 
 
 \section{AIM-120 AMRAAM}
 
 \subsection{OVERVIEW}
-\mbox{
-    \begin{minipage}[t][25mm][c]{\textwidth}
-        \centering
-        \LARGE\emph{IMAGE PLACEHOLDER}
-    \end{minipage}
-}
-\begin{tableitemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[
+            width = 108mm,
+    ]{F16_aaweapons_amraam_overview_v01.pdf}
+    \caption{}
+\end{figure}
+
+\clearpage
+
+\begin{tcoloritemize}
     \blueitem{AIM-120}{
     \begin{subitemize}
         \item \textbf{Guidance} -- Active Radar-Guided (\textbf{Fox 3})
@@ -286,11 +291,11 @@
         \item \textbf{Single Target} -- \hyperref[subsec:aim120single]{\textbf{See \Cref{subsec:aim120single}}}
         \begin{itemize}
             \item From STT radar lock
+            \item Or radar TWS / DTT tracks
         \end{itemize}
         \item \textbf{Multi Target} -- \hyperref[subsec:aim120multi]{\textbf{See \Cref{subsec:aim120multi}}}
         \begin{itemize}
-            \item For TWS tracks
-            \item Or DTT tracks
+            \item For TWS / DTT tracks
         \end{itemize}
     \end{subitemize}}
     \blueitem{SMS Page}{\textbf{See Figure X.XX} and below items}
@@ -334,21 +339,168 @@
         \end{itemize}
     \end{subenumerate}}
     \blueitem{Selected Station}{}
-\end{tableitemize}
+\end{tcoloritemize}
 
 \clearpage
 
-\subsection{SYMBOLOGY}
-\begin{tableitemize}
-    \blueitem{HUD Symbology}{}
-    \blueitem{FCR Symbology}{}
-\end{tableitemize}
+\subsection{EMPLOYMENT PROFILE}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[
+            width = 128mm,
+    ]{F16_aaweapons_amraam_employment_v07.pdf}
+    \caption{Generic, simplified AIM-120 employment profile}
+    \label{fig:aa-weap:aim120:profile}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{Phases}{
+    \Cref{fig:aa-weap:aim120:profile} shows AIM-120 employment profile
+    including the following phases \& milestones
+
+    \begin{subitemize}
+        \item \textbf{A} -- Launch
+        \item \textbf{B} -- Mid-Course Phase
+        \item \textbf{C} -- Acquisition
+        \item \textbf{D} -- Intercept
+    \end{subitemize}}
+    \blueitem{Launch}{
+    \textbf{Radar Lock}
+
+    \begin{subitemize}
+        \item Only requires track to launch
+        \item Target does \textbf{NOT} need to be in STT lock
+    \end{subitemize}
+
+%    \textbf{Maximizing Range -- maximizing energy}
+
+%     \begin{subitemize}
+%         \item High velocity -- increases kinetic energy
+%         \item High altitude -- increases potential energy, reduces drag
+%     \end{subitemize}
+
+    \textbf{Lofting} 
+
+    \begin{subitemize}
+        \item At longer ranges the missile will loft itself to optimize trajectory
+        \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
+    \end{subitemize}}
+    \blueitem{Mid-Course Phase}{
+    \textbf{Missile flies using internal IMU}
+
+    \begin{subitemize}
+        \item Receives periodic datalink updates
+        \item Will fly to last updated target position if DL lost
+    \end{subitemize}}
+    \blueitem{Acquisition \& MPRF ``Active'' Phase}{
+    Once close to DL bandit location
+    \begin{subitemize}
+        \item AIM-120 radar turns on in MPRF (Medium Pulse Repetition Frequency) mode 
+        \item Locks on to closest / best target
+    \end{subitemize}}
+    \blueitem{Terminal Phase \& Intercept}{
+    Once missile has gone active
+    \begin{subitemize}
+        \item Flies a PNG intercept trajectory towards the target locked by it's radar 
+        \item Requires no further DL support, fighter can now turn away from the bandit
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\notebox{
+    \textbf{Post-Launch Maneuvers}
+    \begin{itemize}
+            \item For simplicity, \cref{fig:aa-weap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active 
+            % \item Depending on the tactical situation, it can be beneficial to reduce closure by turning 30-60 deg away from the bandit while maintaing radar contact 
+            % \item This can be combined with a dive into thicker air to further reduce bandit missile range and maintain a look-up angle for the radar
+    \end{itemize}
+
+    \textbf{Flowing Cold}
+    \begin{itemize}
+        \item The fighter can turn cold prior to the missile going active
+        \item Missile will fly to last DL target position, significantly reducing probability of intercept
+    \end{itemize}
+}
+
+\warningbox{
+    \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} -- use caution near friendlies
+}
+
+% \clearpage
+
+\subsection{TACTICAL CONSIDERATIONS}
+
+\begin{tcoloritemize}
+    \blueitem{Range}{
+    \textbf{Fighter-bandit distance} can be measured at different points during the timeline
+
+    \begin{subitemize}
+        \item \textbf{R\textsubscript{Launch}} -- distance at launch
+        \item \textbf{R\textsubscript{F-Pole}} -- distance at impact
+        \item \textbf{R\textsubscript{A-Pole}} -- distance when missile goes active
+    \end{subitemize}
+    
+    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aa-weap:aim120:profile}.
+    }
+    \blueitem{Maximizing Launch Range / Energy}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Ability to launch at longer ranges forces bandit defensive
+        \item Bandit may not be able to counter-launch
+        \item Higher launch energy increases P\textsubscript{intercept} %probability of intercept
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{High velocity} -- increases kinetic energy 
+        \item \textbf{High altitude} -- increases potential energy, reduces drag
+    \end{subitemize}}
+    \blueitem{Maximizing F-Pole Range}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Less likely to enter bandit launch envelope
+        \item More time/range to launch 2nd missile if necessary
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{Crank} -- turn 30-60 degrees away from bandit to reduce closure rate, maintain radar contact
+        \item \textbf{Dive} -- reduces threat missile envelope
+    \end{subitemize}}
+    \blueitem{Flowing Cold}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Missile requires no support once active
+        \item Defends against unknown missile launches
+        \item Further maximizes F-pole range
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{Turn} -- Away from bandit / threat
+        \item \textbf{Dive} -- if necessary, reduces threat missile envelope 
+    \end{subitemize}}
+    \blueitem{Effect of Bandit Maneuvers}{
+    As evident in \cref{fig:aa-weap:aim120:profile}, 
+    R\textsubscript{Launch} is significantly greater than the distance travelled by the missile
+    \begin{subitemize}
+        \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
+        \begin{itemize}
+            \item \textbf{Missile is relying on target to keep flying towards us}
+        \end{itemize}
+        \item Bandit can significantly change missile envelope by reducing closure rate / altitude
+        \item If done post-launch can result in missile not having energy to intercept
+    \end{subitemize}}
+\end{tcoloritemize}
+
+% \subsection{SYMBOLOGY}
+% \begin{tcoloritemize}
+%     \blueitem{HUD Symbology}{}
+%     \blueitem{FCR Symbology}{}
+% \end{tcoloritemize}
 
 \clearpage
 
 \subsection{SINGLE TARGET EMPLOYMENT}
 \label{subsec:aim120single}
-\begin{tablenumerate}
+\begin{checklistenumerate}
     \blueitem{Conditions}{
     \begin{subitemize}
         \item \textbf{FCR} \dotfill \textbf{ON}
@@ -380,13 +532,13 @@
         \item \textbf{Maneuver} -- Place tgt within \textbf{DLZ} \& \textbf{ASEC}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
-\end{tablenumerate}
+\end{checklistenumerate}
 
 \clearpage
 
 \subsection{MULTI TARGET EMPLOYMENT}
 \label{subsec:aim120multi}
-\begin{tablenumerate}
+\begin{checklistenumerate}
     \blueitem{Conditions}{
     \begin{subitemize}
         \item \textbf{FCR} \dotfill \textbf{ON}
@@ -418,11 +570,11 @@
         \item \textbf{Desired Targets} \dotfill Tracked
         \item \label{item:aim120:multitgt:steer}\textbf{Current Target} -- Place within \textbf{DLZ} \& \textbf{ASEC}
         \item \label{item:aim120:multitgt:fire}\textbf{WPN REL} \dotfill \textbf{Depress}
-        \item \label{item:aim120:multitgt:cycle}\textbf{Target} \dotfill Cycle with \textbf{TMS Left} 
+        \item \label{item:aim120:multitgt:cycle}\textbf{Target} \dotfill Cycle with \textbf{TMS Right} 
     \end{subenumerate}
 
     Repeat \ref{item:aim120:multitgt:steer}-\ref{item:aim120:multitgt:cycle} for all remaining targets}
-\end{tablenumerate}
+\end{checklistenumerate}
 
 \notebox{
     \begin{itemize}

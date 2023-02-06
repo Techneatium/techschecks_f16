@@ -66,8 +66,13 @@
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}
 \RequirePackage{luatex85} % required to make changebar work with lualatex
-\RequirePackage[pdftex, color, outerbars]{changebar} % what it says
+\RequirePackage[
+    pdftex, 
+    color, 
+]{changebar} % what it says
 \RequirePackage{xkeyval} % allows defining keys for macros
+\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
+\RequirePackage{marginfix} % patches marginpar to prevent page overflow
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T
@@ -312,7 +317,9 @@
 	footskip=\TC@footmar,
 	inner=\TC@inmar,
 	outer=\TC@outmar,
-	centering
+    marginparwidth=0mm,
+    marginparsep=0mm,
+	centering,
 }
 
 %-----------------------------------------------------------------
@@ -501,6 +508,27 @@
 	\renewcommand{\footrulewidth}{0pt} % footer rule width
 }
 \pagestyle{body}
+
+%-----------------------------------------------------------------
+% MARGIN FORMATTING / COMMANDS
+%-----------------------------------------------------------------
+% increases margin width to allow margin figures
+\newcommand{\marginfigeometry}{
+    \newgeometry{
+        includemp,
+        inner=\TC@inmar,
+        outer=\TC@outmar,
+        bottom=\TC@botmar,
+        top=\TC@topmar,
+        marginparwidth=35mm,
+        marginparsep=5mm
+    }
+}
+
+% relaxes geometry back to global definition
+\newcommand{\marginfigrestore}{
+    \restoregeometry
+}
 
 %-----------------------------------------------------------------
 % ENUMITEM FORMATTING

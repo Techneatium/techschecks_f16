@@ -1,7 +1,7 @@
 %=================================================================
 % MIT LICENSE
 %=================================================================
-% Copyright (c) 2022 Techneatium
+% Copyright (c) 2023 Techneatium
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -35,13 +35,10 @@
 
 \usetikzlibrary{calc, shapes, arrows, arrows.meta,  positioning, decorations.pathreplacing}
 
-
-\newlength{\cockpitfigwidth}
-\setlength{\cockpitfigwidth}{3.5cm}
-
 % Determine which files included in output
 \includeonly{
 	./sections/F16_titlepage,
+    ./sections/F16_tableofcontents,
 	./sections/F16_procedures,
 	./sections/F16_systems,
 	./sections/F16_apg68fcr,
@@ -56,9 +53,7 @@
 
 	\frontmatter
 	\pagestyle{empty}
-	\dominitoc
-	\tableofcontents
-	\cleardoublepage
+	\include{./sections/F16_tableofcontents}
 	
 	% restart page counter, pagenumber styling
 	\mainmatter

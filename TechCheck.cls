@@ -185,7 +185,7 @@
 	\setlength\TC@paperw{156mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength\TC@chevin{\TC@outmar-35mm}
+	\setlength\TC@chevin{\TC@outmar-36mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -196,7 +196,7 @@
 	\setlength\TC@paperw{157.5mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{13.5mm}
-	\setlength\TC@chevin{\TC@outmar-36.5mm}
+	\setlength\TC@chevin{\TC@outmar-32.5mm}
 	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
@@ -208,7 +208,7 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{14mm}
 	\setlength\TC@outmar{14mm}
-	\setlength{\TC@chevin}{\TC@outmar-31mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -219,7 +219,7 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength{\TC@chevin}{\TC@outmar-29mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -423,12 +423,6 @@
 \newcommand*\aircraftshort{F-XX}
 \newcommand*{\setaircraftshort}[1]{\renewcommand*\aircraftshort{#1}}
 
-% Set number of tabs in preable
-\newcommand{\settabnumber}[1]{
-	\setcounter{tabnumber}{#1}
-	\setlength\TC@tabwidth{\textheight/\thetabnumber}
-}
-
 %-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
@@ -441,8 +435,11 @@
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
-	\fancyhead[LE,LO]{
-        \hatch
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
     }
 }
 
@@ -455,9 +452,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-		\hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 	\fancyhead[RO]{
         \thumbnar
 	}
@@ -472,9 +472,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-        \hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 }
 
 \fancypagestyle{body}{
@@ -488,18 +491,24 @@
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	% Header
 	\fancyhead[RO]{
+        \thumbnar
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-        \thumbnar
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
   	}
-	\fancyhead[LE,LO]{
-        \hatch
+	\fancyhead[LO]{
+        \hatchodd
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
+		}
+  	}
+      \fancyhead[LE]{
+        \hatcheven
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -583,7 +592,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\hatch\Huge #1} % before-code
+	{\hatchodd\Huge #1} % before-code
 	[] % after code
 
 % formatting of section

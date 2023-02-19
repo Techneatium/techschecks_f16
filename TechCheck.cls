@@ -491,10 +491,10 @@
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	% Header
 	\fancyhead[RO]{
+        \thumbnar
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-        \thumbnar
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{

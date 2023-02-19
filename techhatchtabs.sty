@@ -258,7 +258,7 @@
             \newcount\foo
             \foo=0
             \loop
-            \singlehatchline{\the\foo*10mm-\THT@inmar-5mm}
+            \singlehatchline{\the\foo*10mm-\THT@inmar-10mm}
             \advance\foo+1
             \addtolength{\remainingpagewidth}{-10mm}
             \ifdim \remainingpagewidth>-10mm
@@ -282,7 +282,7 @@
             \newcount\foo
             \foo=0
             \loop
-            \singlehatchline{\the\foo*10mm-\marginparsep-\marginparwidth-\THT@outmar-5mm}
+            \singlehatchline{\the\foo*10mm-\marginparsep-\marginparwidth-\THT@outmar-10mm}
             \advance\foo+1
             \addtolength{\remainingpagewidth}{-10mm}
             \ifdim \remainingpagewidth>-10mm

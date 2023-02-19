@@ -185,7 +185,7 @@
 	\setlength\TC@paperw{156mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength\TC@chevin{\TC@outmar-35mm}
+	\setlength\TC@chevin{\TC@outmar-36mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -196,7 +196,7 @@
 	\setlength\TC@paperw{157.5mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{13.5mm}
-	\setlength\TC@chevin{\TC@outmar-36.5mm}
+	\setlength\TC@chevin{\TC@outmar-32.5mm}
 	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
@@ -208,7 +208,7 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{14mm}
 	\setlength\TC@outmar{14mm}
-	\setlength{\TC@chevin}{\TC@outmar-31mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -219,7 +219,7 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength{\TC@chevin}{\TC@outmar-29mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }

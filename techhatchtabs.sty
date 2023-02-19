@@ -229,34 +229,61 @@
 % titlepage chevron indentation
 
 % creates individual hatch line (parallelogram)
-\newcommand{\single}[1]{
+\newcommand{\singlehatchline}[1]{
 	\fill[color1]
-	([xshift=#1*2*5mm-\marginparsep-\marginparwidth,yshift=2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+20mm-\marginparsep-\marginparwidth,yshift=20mm+2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+25mm-\marginparsep-\marginparwidth,yshift=20mm+2mm]current page text area.north west) --
-	([xshift=#1*2*5mm+5mm-\marginparsep-\marginparwidth,yshift=2mm]current page text area.north west) --
+	([xshift=#1,yshift=2mm]current page text area.north west) --
+	([xshift=#1+20mm,yshift=20mm+2mm]current page text area.north west) --
+	([xshift=#1+25mm,yshift=20mm+2mm]current page text area.north west) --
+	([xshift=#1+5mm,yshift=2mm]current page text area.north west) --
 	cycle;
 }
 
-% while loop to make many parallelograms
-\newcommand\hatch{
+\newlength{\remainingpagewidth}
+% while loop to make many parallelograms for odd pages
+\newcommand\hatchodd{
     \ifKV@hatchtabs@hatch
         \begin{tikzpicture}[remember picture,overlay]
-        \newcount\foo
-        \foo=-3
-        \loop
-        \single{\the\foo}
-        \advance \foo +1
-        \ifnum \foo<21
-        \repeat
-        % makes hatched area hyperlink to front page
-        \node[
-            rectangle,
-            hyperref node=frontpage,
-            anchor=north,
-            minimum width=\paperwidth,
-            minimum height=10mm
-        ]()at ([yshift=\paperheight/2]current page.center) {};
+            \setlength{\remainingpagewidth}{\pagewidth}
+            \newcount\foo
+            \foo=0
+            \loop
+            \singlehatchline{\the\foo*10mm-\THT@inmar-5mm}
+            \advance\foo+1
+            \addtolength{\remainingpagewidth}{-10mm}
+            \ifdim \remainingpagewidth>-10mm
+            \repeat
+            % make hatched area hyperlink to front page
+            \node[
+                rectangle,
+                hyperref node=frontpage,
+                anchor=north,
+                minimum width=\paperwidth,
+                minimum height=10mm
+            ]()at ([yshift=\paperheight/2]current page.center) {};
+        \end{tikzpicture}
+    \fi
+}
+% while loop to make many parallelograms for even pages
+\newcommand\hatcheven{
+    \ifKV@hatchtabs@hatch
+        \begin{tikzpicture}[remember picture,overlay]
+            \setlength{\remainingpagewidth}{\pagewidth}
+            \newcount\foo
+            \foo=0
+            \loop
+            \singlehatchline{\the\foo*10mm-\marginparsep-\marginparwidth-\THT@outmar-5mm}
+            \advance\foo+1
+            \addtolength{\remainingpagewidth}{-10mm}
+            \ifdim \remainingpagewidth>-10mm
+            \repeat
+            % make hatched area hyperlink to front page
+            \node[
+                rectangle,
+                hyperref node=frontpage,
+                anchor=north,
+                minimum width=\paperwidth,
+                minimum height=10mm
+            ]()at ([yshift=\paperheight/2]current page.center) {};
         \end{tikzpicture}
     \fi
 }

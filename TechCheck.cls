@@ -441,8 +441,11 @@
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
-	\fancyhead[LE,LO]{
-        \hatch
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
     }
 }
 
@@ -455,9 +458,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-		\hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 	\fancyhead[RO]{
         \thumbnar
 	}
@@ -472,9 +478,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-        \hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 }
 
 \fancypagestyle{body}{
@@ -498,8 +507,14 @@
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
   	}
-	\fancyhead[LE,LO]{
-        \hatch
+	\fancyhead[LO]{
+        \hatchodd
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
+		}
+  	}
+      \fancyhead[LE]{
+        \hatcheven
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -583,7 +598,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\hatch\Huge #1} % before-code
+	{\hatchodd\Huge #1} % before-code
 	[] % after code
 
 % formatting of section

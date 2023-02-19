@@ -423,12 +423,6 @@
 \newcommand*\aircraftshort{F-XX}
 \newcommand*{\setaircraftshort}[1]{\renewcommand*\aircraftshort{#1}}
 
-% Set number of tabs in preable
-\newcommand{\settabnumber}[1]{
-	\setcounter{tabnumber}{#1}
-	\setlength\TC@tabwidth{\textheight/\thetabnumber}
-}
-
 %-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------

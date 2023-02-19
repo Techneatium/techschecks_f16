@@ -163,6 +163,17 @@
 % TABBING
 %-----------------------------------------------------------------
 
+% Number of sections
+\newcounter{THT@tabnumber}
+\setcounter{THT@tabnumber}{6}
+
+% Set number of tabs in preable
+\newcommand{\settabnumber}[1]{
+	\setcounter{THT@tabnumber}{#1}
+    % determine width based on number of tabs
+	\setlength\THT@tabwidth{\textheight/\theTHT@tabnumber}
+}
+
 % 'normal' rounded thumbtabs
 \tikzset{
     thumbtabnode/.style={

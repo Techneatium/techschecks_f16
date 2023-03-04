@@ -150,9 +150,9 @@
 \newlength{\TC@topmar}
 \newlength{\TC@botmar}
 \newlength{\TC@footmar}
-\setlength\TC@topmar{1.2cm}
-\setlength\TC@botmar{0.8cm}
-\setlength\TC@footmar{0.5cm}
+\setlength\TC@topmar{12mm}
+\setlength\TC@botmar{12mm}
+\setlength\TC@footmar{5mm}
 
 % indendtation for chevrons on front page
 \newlength{\TC@chevin}

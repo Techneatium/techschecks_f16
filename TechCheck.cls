@@ -529,7 +529,7 @@
         outer=\TC@outmar,
         bottom=\TC@botmar,
         top=\TC@topmar,
-        marginparwidth=35mm,
+        marginparwidth=40mm,
         marginparsep=5mm
     }
 }

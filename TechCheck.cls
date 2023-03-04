@@ -190,6 +190,19 @@
 	\toggletrue{print}
 }
 
+% Crown Quatro paper size -- 246x189mm
+\DeclareOption{crownquatro}{
+	\setlength\TC@paperh{246mm}
+	\setlength\TC@paperw{189mm}
+	\setlength\TC@inmar{10mm}
+	\setlength\TC@outmar{10mm}
+	\setlength{\TC@chevin}{\TC@outmar-33mm}
+	\setlength\TC@tabdepth{8mm}
+    \setlength\TC@botmar{20mm}
+    \setlength\TC@footmar{10mm}
+    \togglefalse{print}
+}
+
 % A5 paper with 9.5mm extra for 4x3 aspect -- 210x(148+9.5)mm
 \DeclareOption{4x3print}{ 
 	\setlength\TC@paperh{210mm}

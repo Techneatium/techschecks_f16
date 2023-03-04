@@ -98,7 +98,6 @@
 \DeclareOption{fontJost}{
 	\toggletrue{loadfontspec}
 	\toggletrue{fontJost}
-	% toggle other fonts false
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
@@ -107,9 +106,8 @@
 % Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontSpartan}
-	% toggle other fonts false
 	\togglefalse{fontJost}
+    \toggletrue{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
 }
@@ -117,21 +115,19 @@
 % Gotham Clone 
 \DeclareOption{fontMetropolis}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontMetropolis}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
+    \toggletrue{fontMetropolis}
 	\togglefalse{fontInter}
 }
 
 % Helvetica clone
 \DeclareOption{fontInter}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontInter}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
+    \toggletrue{fontInter}
 }
 
 %-----------------------------------------------------------------
@@ -150,9 +146,9 @@
 \newlength{\TC@topmar}
 \newlength{\TC@botmar}
 \newlength{\TC@footmar}
-\setlength\TC@topmar{1.2cm}
-\setlength\TC@botmar{0.8cm}
-\setlength\TC@footmar{0.5cm}
+\setlength\TC@topmar{12mm}
+\setlength\TC@botmar{12mm}
+\setlength\TC@footmar{5mm}
 
 % indendtation for chevrons on front page
 \newlength{\TC@chevin}
@@ -190,6 +186,19 @@
 	\toggletrue{print}
 }
 
+% Crown Quatro paper size -- 246x189mm
+\DeclareOption{crownquatro}{
+	\setlength\TC@paperh{246mm}
+	\setlength\TC@paperw{189mm}
+	\setlength\TC@inmar{10mm}
+	\setlength\TC@outmar{10mm}
+	\setlength{\TC@chevin}{\TC@outmar-33mm}
+	\setlength\TC@tabdepth{8mm}
+    \setlength\TC@botmar{20mm}
+    \setlength\TC@footmar{10mm}
+    \togglefalse{print}
+}
+
 % A5 paper with 9.5mm extra for 4x3 aspect -- 210x(148+9.5)mm
 \DeclareOption{4x3print}{ 
 	\setlength\TC@paperh{210mm}
@@ -200,7 +209,6 @@
 	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
-
 
 % Nominal A4 paper size -- 297x210mm
 \DeclareOption{a4}{
@@ -507,7 +515,7 @@
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
   	}
-      \fancyhead[LE]{
+    \fancyhead[LE]{
         \hatcheven
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
@@ -529,7 +537,7 @@
         outer=\TC@outmar,
         bottom=\TC@botmar,
         top=\TC@topmar,
-        marginparwidth=35mm,
+        marginparwidth=40mm,
         marginparsep=5mm
     }
 }

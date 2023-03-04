@@ -98,7 +98,6 @@
 \DeclareOption{fontJost}{
 	\toggletrue{loadfontspec}
 	\toggletrue{fontJost}
-	% toggle other fonts false
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
@@ -107,9 +106,8 @@
 % Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontSpartan}
-	% toggle other fonts false
 	\togglefalse{fontJost}
+    \toggletrue{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
 }
@@ -117,21 +115,19 @@
 % Gotham Clone 
 \DeclareOption{fontMetropolis}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontMetropolis}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
+    \toggletrue{fontMetropolis}
 	\togglefalse{fontInter}
 }
 
 % Helvetica clone
 \DeclareOption{fontInter}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontInter}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
+    \toggletrue{fontInter}
 }
 
 %-----------------------------------------------------------------

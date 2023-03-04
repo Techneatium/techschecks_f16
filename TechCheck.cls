@@ -98,7 +98,6 @@
 \DeclareOption{fontJost}{
 	\toggletrue{loadfontspec}
 	\toggletrue{fontJost}
-	% toggle other fonts false
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
@@ -107,9 +106,8 @@
 % Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontSpartan}
-	% toggle other fonts false
 	\togglefalse{fontJost}
+    \toggletrue{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
 }
@@ -117,21 +115,19 @@
 % Gotham Clone 
 \DeclareOption{fontMetropolis}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontMetropolis}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
+    \toggletrue{fontMetropolis}
 	\togglefalse{fontInter}
 }
 
 % Helvetica clone
 \DeclareOption{fontInter}{
 	\toggletrue{loadfontspec}
-	\toggletrue{fontInter}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
+    \toggletrue{fontInter}
 }
 
 %-----------------------------------------------------------------
@@ -150,9 +146,9 @@
 \newlength{\TC@topmar}
 \newlength{\TC@botmar}
 \newlength{\TC@footmar}
-\setlength\TC@topmar{1.2cm}
-\setlength\TC@botmar{0.8cm}
-\setlength\TC@footmar{0.5cm}
+\setlength\TC@topmar{12mm}
+\setlength\TC@botmar{12mm}
+\setlength\TC@footmar{5mm}
 
 % indendtation for chevrons on front page
 \newlength{\TC@chevin}
@@ -185,9 +181,22 @@
 	\setlength\TC@paperw{156mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength\TC@chevin{\TC@outmar-35mm}
+	\setlength\TC@chevin{\TC@outmar-36mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
+}
+
+% Crown Quatro paper size -- 246x189mm
+\DeclareOption{crownquatro}{
+	\setlength\TC@paperh{246mm}
+	\setlength\TC@paperw{189mm}
+	\setlength\TC@inmar{10mm}
+	\setlength\TC@outmar{10mm}
+	\setlength{\TC@chevin}{\TC@outmar-33mm}
+	\setlength\TC@tabdepth{8mm}
+    \setlength\TC@botmar{20mm}
+    \setlength\TC@footmar{10mm}
+    \togglefalse{print}
 }
 
 % A5 paper with 9.5mm extra for 4x3 aspect -- 210x(148+9.5)mm
@@ -196,11 +205,10 @@
 	\setlength\TC@paperw{157.5mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{13.5mm}
-	\setlength\TC@chevin{\TC@outmar-36.5mm}
+	\setlength\TC@chevin{\TC@outmar-32.5mm}
 	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
-
 
 % Nominal A4 paper size -- 297x210mm
 \DeclareOption{a4}{
@@ -208,7 +216,7 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{14mm}
 	\setlength\TC@outmar{14mm}
-	\setlength{\TC@chevin}{\TC@outmar-31mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -219,7 +227,7 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength{\TC@chevin}{\TC@outmar-29mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -423,12 +431,6 @@
 \newcommand*\aircraftshort{F-XX}
 \newcommand*{\setaircraftshort}[1]{\renewcommand*\aircraftshort{#1}}
 
-% Set number of tabs in preable
-\newcommand{\settabnumber}[1]{
-	\setcounter{tabnumber}{#1}
-	\setlength\TC@tabwidth{\textheight/\thetabnumber}
-}
-
 %-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
@@ -441,8 +443,11 @@
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
-	\fancyhead[LE,LO]{
-        \hatch
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
     }
 }
 
@@ -455,9 +460,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-		\hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 	\fancyhead[RO]{
         \thumbnar
 	}
@@ -472,9 +480,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-        \hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 }
 
 \fancypagestyle{body}{
@@ -488,18 +499,24 @@
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	% Header
 	\fancyhead[RO]{
+        \thumbnar
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-        \thumbnar
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
   	}
-	\fancyhead[LE,LO]{
-        \hatch
+	\fancyhead[LO]{
+        \hatchodd
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
+		}
+  	}
+    \fancyhead[LE]{
+        \hatcheven
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -520,7 +537,7 @@
         outer=\TC@outmar,
         bottom=\TC@botmar,
         top=\TC@topmar,
-        marginparwidth=35mm,
+        marginparwidth=40mm,
         marginparsep=5mm
     }
 }
@@ -583,7 +600,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\hatch\Huge #1} % before-code
+	{\hatchodd\Huge #1} % before-code
 	[] % after code
 
 % formatting of section

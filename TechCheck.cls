@@ -214,7 +214,6 @@
 	\toggletrue{print}
 }
 
-
 % Nominal A4 paper size -- 297x210mm
 \DeclareOption{a4}{
 	\setlength\TC@paperh{297mm}
@@ -520,7 +519,7 @@
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
   	}
-      \fancyhead[LE]{
+    \fancyhead[LE]{
         \hatcheven
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}

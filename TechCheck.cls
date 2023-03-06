@@ -52,21 +52,13 @@
 % FONT OPTIONS
 %-----------------------------------------------------------------
 % Declare toggles for each font option
-\newtoggle{fontHelvet}
-\newtoggle{loadfontspec}
 \newtoggle{fontJost}
 \newtoggle{fontSpartan}
 \newtoggle{fontMetropolis}
 \newtoggle{fontInter}
 
-% Default pdflatex helvetica clone
-\DeclareOption{fontHelvet}{
-  	\toggletrue{fontHelvet}
-}
-
 % Futura Clone -- pointy 
 \DeclareOption{fontJost}{
-	\toggletrue{loadfontspec}
 	\toggletrue{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
@@ -75,7 +67,6 @@
 
 % Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
-	\toggletrue{loadfontspec}
 	\togglefalse{fontJost}
     \toggletrue{fontSpartan}
 	\togglefalse{fontMetropolis}
@@ -84,7 +75,6 @@
 
 % Gotham Clone 
 \DeclareOption{fontMetropolis}{
-	\toggletrue{loadfontspec}
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
     \toggletrue{fontMetropolis}
@@ -93,7 +83,6 @@
 
 % Helvetica clone
 \DeclareOption{fontInter}{
-	\toggletrue{loadfontspec}
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
@@ -374,15 +363,7 @@
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
 %-----------------------------------------------------------------
-\iftoggle{fontHelvet}{
-	\RequirePackage[T1]{fontenc}
-	\RequirePackage{helvet}
-	\renewcommand{\familydefault}{\sfdefault}
-}{}
-
-\iftoggle{loadfontspec}{
-	\RequirePackage{fontspec}
-}{}
+\RequirePackage{fontspec}
 
 \iftoggle{fontJost}{
 	\setmainfont[

@@ -584,7 +584,9 @@
 %-----------------------------------------------------------------
 % MINITOC FORMATTING
 %-----------------------------------------------------------------
-\mtcsetfont{minitoc}{section}{\normalfont\small}
+\mtcsetfont{minitoc}{section}{\normalfont}
+\mtcsetfont{minitoc}{subsection}{\normalfont}
+\setlength{\mtcindent}{\smallskipamount}
 \mtcsetrules{minitoc}{off}
 
 %-----------------------------------------------------------------

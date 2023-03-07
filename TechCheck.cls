@@ -23,56 +23,26 @@
 %=================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[10pt,usenames,dvipsnames,twoside]{book}
-\NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{TechCheck}[2023/01/14]
 
-%-----------------------------------------------------------------
-% GENERAL PACKAGES
-%-----------------------------------------------------------------
-\RequirePackage{geometry}
-\RequirePackage[]{datetime2} % change date format
-\DTMnewstyle{yymmdd}{ % create new date style
-	\renewcommand*\DTMdisplaydate[4]{%
-		\DTMtwodigits{##1}\DTMtwodigits{##2}\DTMtwodigits{##3}% 
-	}
-	\renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}%
-}{}{}{}
-\DTMsetstyle{yymmdd} % set new style as default
-\RequirePackage[shortlabels]{enumitem} % pause/resume lists
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES -- UTILITY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
 \graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
-\RequirePackage{subcaption} % used for subfigures
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
-\RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units
 \RequirePackage{tikz} % shapes, figures
 \RequirePackage{tikzpagenodes} % points for tikz
 \usetikzlibrary{calc} % used for hyperlinked nodes
-\RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
-\RequirePackage{cleveref} % better referencing
-\RequirePackage[document]{ragged2e} % left ragged text
-% \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 \RequirePackage{fancyhdr} % custom header/footer
 \RequirePackage{etoolbox} % Boolean and if/else
 \RequirePackage{calc} % math inside other commands
-\RequirePackage{booktabs} % fancy tables
-\RequirePackage{multirow} % more fancy tables
-\RequirePackage{longtable} % multi page tables
-\RequirePackage{tocloft} % TOC formatting
-\RequirePackage{minitoc} % chapter tocs
-\RequirePackage[auto]{chappg}
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}
-\RequirePackage{luatex85} % required to make changebar work with lualatex
-\RequirePackage[
-    pdftex, 
-    color, 
-]{changebar} % what it says
 \RequirePackage{xkeyval} % allows defining keys for macros
-\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
-\RequirePackage{marginfix} % patches marginpar to prevent page overflow
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T
@@ -82,21 +52,13 @@
 % FONT OPTIONS
 %-----------------------------------------------------------------
 % Declare toggles for each font option
-\newtoggle{fontHelvet}
-\newtoggle{loadfontspec}
 \newtoggle{fontJost}
 \newtoggle{fontSpartan}
 \newtoggle{fontMetropolis}
 \newtoggle{fontInter}
 
-% Default pdflatex helvetica clone
-\DeclareOption{fontHelvet}{
-  	\toggletrue{fontHelvet}
-}
-
 % Futura Clone -- pointy 
 \DeclareOption{fontJost}{
-	\toggletrue{loadfontspec}
 	\toggletrue{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
@@ -105,7 +67,6 @@
 
 % Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
-	\toggletrue{loadfontspec}
 	\togglefalse{fontJost}
     \toggletrue{fontSpartan}
 	\togglefalse{fontMetropolis}
@@ -114,7 +75,6 @@
 
 % Gotham Clone 
 \DeclareOption{fontMetropolis}{
-	\toggletrue{loadfontspec}
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
     \toggletrue{fontMetropolis}
@@ -123,7 +83,6 @@
 
 % Helvetica clone
 \DeclareOption{fontInter}{
-	\toggletrue{loadfontspec}
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
@@ -232,6 +191,15 @@
 	\toggletrue{print}
 }
 
+\DeclareOption{oneside}{
+    \PassOptionsToClass{oneside}{book}
+    % book will get oneside option passed automatically but need  
+    % to turn off automatic thumbtab on next page after chapter
+    \PassOptionsToPackage{autothumbback=false}{techhatchtabs} 
+    % changebars are on wrong side otherwise? bug?
+    \PassOptionsToPackage{leftbars}{changebar}
+}
+
 %-----------------------------------------------------------------
 % COLOR OPTIONS
 %-----------------------------------------------------------------
@@ -304,8 +272,47 @@
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ExecuteOptions{fontSpartan, a5print, colorful}
 \ProcessOptions*\relax
+
+\LoadClass[10pt,usenames,dvipsnames]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES -- FORMATTING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{geometry}
+
+\RequirePackage[]{datetime2} % change date format
+\DTMnewstyle{yymmdd}{ % create new date style
+	\renewcommand*\DTMdisplaydate[4]{%
+		\DTMtwodigits{##1}\DTMtwodigits{##2}\DTMtwodigits{##3}% 
+	}
+	\renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}%
+}{}{}{}
+\DTMsetstyle{yymmdd} % set new style as default
+
+\RequirePackage[shortlabels]{enumitem} % pause/resume lists
+\RequirePackage[explicit]{titlesec} % formating of titles
+\RequirePackage[document]{ragged2e} % left ragged text
+
+\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
+\RequirePackage{subcaption} % used for subfigures
+\RequirePackage{marginfix} % patches marginpar to prevent page overflow
+
+\RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
+\RequirePackage{cleveref} % better referencing
+
+\RequirePackage{booktabs} % fancy tables
+\RequirePackage{multirow} % more fancy tables
+\RequirePackage{longtable} % multi page tables
+
+\RequirePackage{tocloft} % TOC formatting
+\RequirePackage{minitoc} % chapter tocs
+\RequirePackage[auto]{chappg}
+
+\RequirePackage{luatex85} % required to make changebar work with lualatex
+\RequirePackage[pdftex, color]{changebar} % what it says
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOBAL FORMATTING
@@ -358,15 +365,7 @@
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
 %-----------------------------------------------------------------
-\iftoggle{fontHelvet}{
-	\RequirePackage[T1]{fontenc}
-	\RequirePackage{helvet}
-	\renewcommand{\familydefault}{\sfdefault}
-}{}
-
-\iftoggle{loadfontspec}{
-	\RequirePackage{fontspec}
-}{}
+\RequirePackage{fontspec}
 
 \iftoggle{fontJost}{
 	\setmainfont[
@@ -587,7 +586,9 @@
 %-----------------------------------------------------------------
 % MINITOC FORMATTING
 %-----------------------------------------------------------------
-\mtcsetfont{minitoc}{section}{\normalfont\small}
+\mtcsetfont{minitoc}{section}{\normalfont}
+\mtcsetfont{minitoc}{subsection}{\normalfont}
+\setlength{\mtcindent}{\smallskipamount}
 \mtcsetrules{minitoc}{off}
 
 %-----------------------------------------------------------------

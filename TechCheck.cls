@@ -193,9 +193,11 @@
 
 \DeclareOption{oneside}{
     \PassOptionsToClass{oneside}{book}
-    \PassOptionsToPackage{autothumbback=false}{techhatchtabs} 
     % book will get oneside option passed automatically but need  
     % to turn off automatic thumbtab on next page after chapter
+    \PassOptionsToPackage{autothumbback=false}{techhatchtabs} 
+    % changebars are on wrong side otherwise? bug?
+    \PassOptionsToPackage{leftbars}{changebar}
 }
 
 %-----------------------------------------------------------------

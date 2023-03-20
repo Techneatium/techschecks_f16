@@ -294,6 +294,7 @@
 
 \RequirePackage[shortlabels]{enumitem} % pause/resume lists
 \RequirePackage[explicit]{titlesec} % formating of titles
+\RequirePackage{etoc} % formatting of chapter tocs
 \RequirePackage[document]{ragged2e} % left ragged text
 
 \RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
@@ -307,8 +308,6 @@
 \RequirePackage{multirow} % more fancy tables
 \RequirePackage{longtable} % multi page tables
 
-\RequirePackage{tocloft} % TOC formatting
-\RequirePackage{minitoc} % chapter tocs
 \RequirePackage[auto]{chappg}
 
 \RequirePackage{luatex85} % required to make changebar work with lualatex
@@ -577,19 +576,18 @@
 \setlength{\changebarsep}{2mm}
 
 %-----------------------------------------------------------------
-% TOCLOFT FORMATTING
+% TOC FORMATTING
 %-----------------------------------------------------------------
-% change distance between section number and title
-% default: 1.55em
-\tocloftpagestyle{empty}
 
-%-----------------------------------------------------------------
-% MINITOC FORMATTING
-%-----------------------------------------------------------------
-\mtcsetfont{minitoc}{section}{\normalfont}
-\mtcsetfont{minitoc}{subsection}{\normalfont}
-\setlength{\mtcindent}{\smallskipamount}
-\mtcsetrules{minitoc}{off}
+% For use with `titletoc` package, matches syntax of `etoc`
+% % \printcontents[<name>]{<prefix>}{<start-level>}[<toc-depth>]{<toc-code>]
+% \newcommand{\localtableofcontents}{
+%     \startcontents[chapters]
+%     \printcontents[chapters] % name
+%     {} % prefix
+%     {1} % start-level
+%     {} % toc-code
+% }
 
 %-----------------------------------------------------------------
 % TITLE FORMATTING
@@ -601,7 +599,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\hatchodd\Huge #1} % before-code
+	{\Huge #1\hatchodd} % before-code
 	[] % after code
 
 % formatting of section

@@ -599,7 +599,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\hatchodd\Huge #1} % before-code
+	{\Huge #1\hatchodd} % before-code
 	[] % after code
 
 % formatting of section

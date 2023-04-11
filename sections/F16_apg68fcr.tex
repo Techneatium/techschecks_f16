@@ -249,29 +249,76 @@
         \begin{itemize}
             \item Can guide 120C on primary target
         \end{itemize}
-    \end{subitemize}
 
-    DTT Acquisition
+\marginfigeometry
 
+\subsection[RWS -- SAM/DTT ACQUISITION]{RWS -- SAM / DTT ACQUISITION}
+
+\begin{checklistenumerate}
+    \blueitem{Locate Targets}{
+        \begin{subenumerate}
+            \item Correlate onboard/offboard sensors
+            \begin{itemize}
+                \item raw radar returns
+                \item AWACS calls
+                \item datalink
+            \end{itemize}
+            \item Place targets within radar scan volume
+        \end{subenumerate}
+    }
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][30mm][t]{\marginparwidth}
+                \center{\textbf{Bugged Target Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show bugged tgt 
+                    \item maybe also non-bugged target for reference?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{Bugged Target}
+    }
+    \blueitem{SAM Acquisition}{
     \begin{subenumerate}
-        \item \textbf{Target 1} \dotfill \textbf{Bugged} in SAM
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
+        \item \textbf{Target} \dotfill Verify \textbf{Bugged}
+    \end{subenumerate}
+    \begin{subitemize}
+        \item Can guide AIM-120C on Bugged target
+        \item DLZ displayed if missile selected
+        \item RWS search continues
+    \end{subitemize}}
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][30mm][t]{\marginparwidth}
+                \center{\textbf{DTT Target Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show both DTT target symbols
+                    \item maybe with cursor on one?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{DTT Target}
+    }
+    \blueitem{DTT Acquisition}{
+        (if desired)
+    \begin{subenumerate}
         \item \textbf{Target 2} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)} to bug
-    \end{subenumerate}
-    
-    Exit SAM 
-    
-    \begin{subenumerate}
-        \item \textbf{TMS} \dotfill \textbf{Aft}
     \end{subenumerate}}
-\end{tcoloritemize}
+    \blueitem{STT Lock}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}}
+\end{checklistenumerate}
 
-\notebox{
-    \begin{itemize}
-        \item \textbf{launch guidance behavior in dtt?}
-        \item \textbf{split dtt/sam acquisition into own row, dtt/sam explanation other row}
-    \end{itemize}
-}
+\subsection{RWS -- SPOTLIGHT ACQUISITION}
+
+\marginfigrestore
 
 % \subsection{RWS -- SAM}
 

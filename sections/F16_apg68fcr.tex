@@ -59,7 +59,6 @@
             hyperref node=subsec:rws,
             diamond,
             draw,
-            ultra thick,
         ](rws){\textbf{RWS}};
         \path
             let
@@ -71,7 +70,6 @@
                     minimum width=20mm,
                     minimum height=7.5mm,
                     draw,
-                    ultra thick,
                 ](sam)at(\x1,\y1+50mm){\textbf{SAM}}
             let
                 \p1 = (sam),
@@ -82,7 +80,6 @@
                     minimum width=20mm,
                     minimum height=7.5mm,
                     draw,
-                    ultra thick,
                 ](dtt)at(\x1-30mm,\y1+15mm){\textbf{DTT}}
             let
                 \p1 = (rws),
@@ -92,7 +89,6 @@
                     minimum width=15mm,
                     minimum height=15mm,
                     draw,
-                    ultra thick,
                 ](tws)at(\x1+30mm,\y1){\textbf{TWS}}
             let
                 \p1 = (tws),
@@ -104,7 +100,6 @@
                     minimum height=7.5mm,
                     draw,
                     dashed,
-                    ultra thick,
                 ](systgt)at(\x1,\y1+20mm){\textbf{System Tgt}}
             let
                 \p1 = (systgt),
@@ -116,7 +111,6 @@
                     minimum height=7.5mm,
                     draw,
                     dashed,
-                    ultra thick,
                 ](cursortgt)at(\x1,\y1+15mm){\textbf{Cursor Tgt}}
             let
                 \p1 = (cursortgt),
@@ -128,7 +122,6 @@
                     minimum height=7.5mm,
                     draw,
                     dashed,
-                    ultra thick,
                 ](bug)at(\x1,\y1+15mm){\textbf{Bugged}}
             let
                 \p1 = (rws),
@@ -140,36 +133,35 @@
                     minimum width=80mm,
                     minimum height=7.5mm,
                     draw, 
-                    ultra thick,
                 ](stt)at(\x1, \y2+15mm){\textbf{STT}};
         
         % Lines
-        \draw [->]
+        \draw [->, thick]
             (rws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (sam);
-        \draw [->, rounded corners]
+        \draw [->, rounded corners, thick]
             (sam) -| node[pos=0.25, above]{\scriptsize\textbf{TMS FWD}}node[pos=0.25, below]{\scriptsize\textbf{(2nd Tgt)}} (dtt);
-        \draw [->]
+        \draw [->, thick]
             let
                 \p1=(dtt.north),
                 \p2=(stt.south)
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
-        \draw [->]
+        \draw [->, thick]
             let
                 \p1=(sam.north),
                 \p2=(stt.south)
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}}node[pos=0.5, right]{\scriptsize\textbf{(1st Tgt)}} (\x1,\y2);
 
-        \draw [<->]
+        \draw [<->, thick]
             (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
-        \draw[->]
+        \draw[->, thick]
             (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
-        \draw[->]
+        \draw[->, thick]
             (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{Cursor Over}} (cursortgt);
-        \draw[->]
+        \draw[->, thick]
             (cursortgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
-        \draw [->]
+        \draw [->, thick]
             let
                 \p1=(bug.north),
                 \p2=(stt.south)

@@ -205,7 +205,7 @@
 
 \clearpage
 
-\subsection{RWS}
+\subsection{RWS -- OVERVIEW}
 \label{subsec:rws}
 \begin{tcoloritemize}
     \blueitem{RWS}{
@@ -213,6 +213,23 @@
         \item \textbf{R}ange \textbf{W}hile \textbf{S}earch
         \item \textbf{Fast, Long(er)-Range Search}
     \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{Vanilla  RWS Page}}
+        \begin{itemize}
+            \item Basic RWS options
+            \item Several RWS radar returns
+            \item Maybe steerpoint (wedding cake)
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{RWS MFD Symbology}
+\end{figure}
+\begin{tcoloritemize}
     \blueitem{SAM \break Submode}{
     \begin{subitemize}
         \item \textbf{S}ituational \textbf{A}warness \textbf{M}ode
@@ -220,28 +237,8 @@
         \begin{itemize}
             \item Can guide AIM-120C (w/o STT Lock)
         \end{itemize}
-    \end{subitemize}
-
-    SAM Acquisition
-
-    \begin{subenumerate}
-        \item \textbf{Target} \dotfill under Acquisition Cursor
-        \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
-        \begin{itemize}
             \item \textbf{Scan Pattern} -- 4-bar, \pm 10$^\circ$ spotlight
-        \end{itemize}
-        \item \textbf{Target} \dotfill Verify \textbf{Bugged}
-        \begin{itemize}
-            \item Can guide AIM-120C (w/o STT Lock)
-            \item DLZ displayed if missile selected
-        \end{itemize}
-    \end{subenumerate}
-    
-    Exit SAM 
-
-    \begin{subenumerate}
-        \item \textbf{TMS} \dotfill \textbf{Aft}
-    \end{subenumerate}}
+    \end{subitemize} }
     \blueitem{DTT \break Submode}{
     \begin{subitemize}
         \item \textbf{D}ual \textbf{T}arget \textbf{T}rack
@@ -249,6 +246,16 @@
         \begin{itemize}
             \item Can guide 120C on primary target
         \end{itemize}
+    \end{subitemize}}
+    \blueitem{Spotlight}{}
+\end{tcoloritemize}
+
+% \notebox{
+%     \begin{itemize}
+%         \item \textbf{launch guidance behavior in dtt?}
+%         \item \textbf{split dtt/sam acquisition into own row, dtt/sam explanation other row}
+%     \end{itemize}
+% }
 
 \marginfigeometry
 

@@ -579,6 +579,8 @@
 % TOC FORMATTING
 %-----------------------------------------------------------------
 
+\etocsettocdepth{3}
+
 % For use with `titletoc` package, matches syntax of `etoc`
 % % \printcontents[<name>]{<prefix>}{<start-level>}[<toc-depth>]{<toc-code>]
 % \newcommand{\localtableofcontents}{

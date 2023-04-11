@@ -579,6 +579,8 @@
 % TOC FORMATTING
 %-----------------------------------------------------------------
 
+\etocsettocdepth{3}
+
 % For use with `titletoc` package, matches syntax of `etoc`
 % % \printcontents[<name>]{<prefix>}{<start-level>}[<toc-depth>]{<toc-code>]
 % \newcommand{\localtableofcontents}{
@@ -623,10 +625,24 @@
 	{0em} % sep
 	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
+% formatting of subsubsection [full width]
+\titleformat{\subsubsection} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsubsection\quad#1}}}} % before-code
+
+\titleformat{name=\subsubsection,numberless} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing{\section}{0pt}{5pt}{2pt}
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
+\titlespacing{\subsubsection}{0pt}{2pt}{2pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOM COMMANDS / ENVIRONEMNTS

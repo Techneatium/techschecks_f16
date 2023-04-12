@@ -236,9 +236,21 @@
 \label{subsec:rws}
 \begin{tcoloritemize}
     \blueitem{RWS}{
+    \textbf{R}ange \textbf{W}hile \textbf{S}earch
+
     \begin{subitemize}
-        \item \textbf{R}ange \textbf{W}hile \textbf{S}earch
         \item \textbf{Fast, Long(er)-Range Search}
+        \begin{itemize}
+            \item Radar scans selectable search volume
+            \item Displays raw target position returns
+        \end{itemize}
+        \item \textbf{\underline{No} track data} 
+        \begin{itemize}
+            \item exact target range, velocity, angle, etc.
+            \item but can transition to advanced modes
+        \end{itemize}
+        % (exact target range, velocity, angle, etc.)
+        % -- but can transition to advanced modes
     \end{subitemize}}
 \end{tcoloritemize}
 
@@ -246,7 +258,7 @@
     \centering
     \fbox{
     \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{Vanilla  RWS Page}}
+        \center{\large\textbf{Vanilla RWS Page}}
         \begin{itemize}
             \item Basic RWS options
             \item Several RWS radar returns
@@ -258,23 +270,36 @@
 \end{figure}
 \begin{tcoloritemize}
     \blueitem{SAM \break Submode}{
+    \textbf{S}ituational \textbf{A}warness \textbf{M}ode
+
     \begin{subitemize}
-        \item \textbf{S}ituational \textbf{A}warness \textbf{M}ode
         \item \textbf{Target is ``Bugged''} (Pseudo-Track)
         \begin{itemize}
             \item Can guide AIM-120C (w/o STT Lock)
             \item DLZ displayed if missile selected
-            \item RWS search continues
         \end{itemize}
-        \item \textbf{Scan Pattern} -- 4-bar, \pm 10$^\circ$ spotlight
-    \end{subitemize} }
-    \blueitem{DTT \break Submode}{
-    \begin{subitemize}
-        \item \textbf{D}ual \textbf{T}arget \textbf{T}rack
-        \item \textbf{2 Targets ``Bugged''} -- primary/secondary
+        \item \textbf{RWS search  continues}
         \begin{itemize}
-            \item Can guide 120C on primary target
+            \item Scan pauses on SAM target
+            \item FCR manages scan volume
         \end{itemize}
+    \end{subitemize}}
+    \blueitem{DTT \break Submode}{
+    \textbf{D}ual \textbf{T}arget \textbf{T}rack
+
+    \begin{subitemize}
+        \item \textbf{2 Targets ``Bugged''} -- primary / secondary
+        \begin{itemize}
+            \item Can guide AIM-120C on \underline{primary target}
+            \item DLZ displayed if missile selected
+        \end{itemize}
+        \item \textbf{TMS Left -- swaps primary / secondary}
+        \item \textbf{RWS search  continues}
+        \begin{itemize}
+            \item Scan pauses on both primary / secondary
+            \item FCR manages scan volume
+        \end{itemize}
+        \item \textbf{Within 10nm search pattern inhibited} -- radar only scans primary/secondary targets
     \end{subitemize}}
     \blueitem{Spotlight}{}
 \end{tcoloritemize}
@@ -288,10 +313,7 @@
 
 \marginfigeometry
 
-% \subsection{RWS -- PROCEDURES}
-
-\subsubsection[SAM/DTT ACQUISITION]{SAM / DTT ACQUISITION}
-
+\subsubsection{SAM / DTT ACQUISITION}
 \begin{checklistenumerate}
     \blueitem{Locate Targets}{
         \begin{subenumerate}
@@ -357,10 +379,6 @@
 \subsubsection{SPOTLIGHT ACQUISITION}
 
 \marginfigrestore
-
-% \subsection{RWS -- SAM}
-
-% \subsection{RWS -- DTT}
 
 \clearpage
 

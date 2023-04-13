@@ -454,8 +454,9 @@
 \label{subsec:tws}
 \begin{tcoloritemize}
     \blueitem{TWS}{
+    \textbf{T}rack \textbf{W}hile \textbf{S}can
+
     \begin{subitemize}
-        \item \textbf{T}rack \textbf{W}hile \textbf{S}can
         \item \textbf{Multi-target tracking mode}
         \item \textbf{FCR builds trackfiles for each target}
         \item \textbf{Trackfiles can be in several states} --
@@ -463,18 +464,17 @@
     \end{subitemize}}
     \blueitem{Search Target}{
     \begin{subitemize}
-        \item Initial state 
-        \item Not enough information to become track
-        \item Transition to track after 1-2 radar sweeps
-        \item \textbf{Display}
+        \item \textbf{Initial state for radar returns}
         \begin{itemize}
-            \item like RWS radar brick
+        \item Not enough information to become track
+            \item Automatic transition to track after 1-2 radar sweeps
         \end{itemize} 
+        \item \textbf{Display} -- like RWS radar brick
     \end{subitemize}}
     \blueitem{Track Target}{
     \begin{subitemize}
-        \item Once trackfile generated
-        \item Can be transitioned to higher fidelity modes by pilot
+        \item \textbf{Once trackfile generated}
+        \item \textbf{Can be transitioned to higher fidelity modes by pilot}
         \item \textbf{Display}
         \begin{itemize}
             \item larger brick with velocity vector
@@ -484,32 +484,23 @@
     \end{subitemize}}
     \blueitem{System Target}{
     \begin{subitemize}
-        \item \textbf{Upgrade:} 
+        \item \textbf{Allows pilot to select targets of interest}
         \begin{itemize}
-            \item \textbf{TMS Fwd} with cursor over Track Target
-            \item \textbf{TMS Right} to upgrade all Track Targets to System Targets
+            \item To monitor
+            \item Or for future weapons employment
         \end{itemize}
         \item \textbf{Scan} -- No additional radar energy
-        \item \textbf{Downgrade} -- \textbf{TMS Aft} to downgrade to Track Target
     \end{subitemize}}
     \blueitem{Cursor Target}{
     \begin{subitemize}
-        \item \textbf{Upgrade} -- position cursor over System Target
-        \item \textbf{Cycle} -- slew to other System Target
         \item \textbf{Scan}
         \begin{itemize}
             \item 3-bar, $\pm$25 deg pattern 
             \item centered on Cursor Target
         \end{itemize}
-        \item \textbf{Downgrade} -- slew away from any System Targets
     \end{subitemize}}
     \blueitem{Bugged Target}{
     \begin{subitemize}
-        \item \textbf{Upgrade:} 
-        \begin{itemize}
-            \item \textbf{TMS Fwd} with cursor over system target to designate
-            \item \textbf{TMS Right} to select closest System Target 
-        \end{itemize}
         \item \textbf{Cycle} -- \textbf{TMS Right} to cycle in range order
         \item \textbf{Scan}
         \begin{itemize}
@@ -521,15 +512,76 @@
             \item Target selected for AIM-9 / -120 employment
             \item DLZ information displayed on HUD/FCR
         \end{itemize}
-        \item \textbf{Downgrade} -- \textbf{TMS Aft} to downgrade to System Target
     \end{subitemize}}
+    \blueitem{Spotlight}{}
 \end{tcoloritemize}
 
 \marginfigeometry
 
 \subsubsection{SELECT TWS MODE}
+\begin{checklistenumerate}
+    \blueitem{FCR Switch}{\textbf{FCR}}
+    \blueitem{Desired MFD}{\textbf{FCR Page}}
+    \blueitem{Radar Mode}{
+        \textbf{CRM} (default), verify
+
+        \begin{subitemize}
+            \item \textbf{Dogfight/Missile Override} -- \textbf{NORM}
+            \item \textbf{Radar Mode (OSB 1)} -- shows \textbf{CRM}
+        \end{subitemize}
+    }
+    \blueitem{CRM Submode}{
+        \textbf{TWS}, cycle via 
+
+        \begin{subitemize}
+            \item \textbf{TMS Right (long)}
+            \item \textbf{OSB 2} 
+        \end{subitemize}
+    }
+\end{checklistenumerate}
 
 \subsubsection{MULTI-TARGET ACQUISITION}
+\begin{checklistenumerate}
+    \blueitem{Locate Targets}{
+    \begin{subenumerate}
+        \item Correlate onboard/offboard sensors
+        \begin{itemize}
+            \item raw radar returns
+            \item AWACS calls
+            \item datalink
+        \end{itemize}
+        \item Place targets within radar scan volume
+    \end{subenumerate}}
+    \blueitem{Track Target Acquisition}{
+    FCR automatically upgrades Search Targets to Track Targets once sufficient information available
+    }
+    \blueitem{System Target Acquisition}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward} 
+    \end{subenumerate}
+    Repeat for all desired Track Targets,
+    or to upgrade all Track Targets:
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}}
+    \blueitem{Upgrade to Bugged Target}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}
+    To select closest System Target 
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}
+    Further depresses cycle through all System Targets in range order
+    }
+    \blueitem{STT Lock}{(if desired)
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}}
+\end{checklistenumerate}
 
 \marginfigrestore
 

@@ -484,52 +484,54 @@
     \begin{subitemize}
         \item \textbf{Initial state for radar returns}
         \begin{itemize}
-            \item Not enough information to become track
+            \item Not enough information to generate track
             \item Automatic transition to track after 1-2 radar sweeps
         \end{itemize}
         \item \textbf{Display} -- like RWS radar brick
     \end{subitemize}}
     \blueitem{Track Target}{
     \begin{subitemize}
-        \item \textbf{Once trackfile generated}
-        \item \textbf{Can be transitioned to higher fidelity modes by pilot}
-        \item \textbf{Display}
+        \item \textbf{FCR automatically correlates radar return data to form track files}
         \begin{itemize}
-            \item larger brick with velocity vector
-            \item numerical altitude to below brick
-            \item max 10 displayed
+            \item Tracks target velocity, angle, altitude etc.
+            \item \underline{Maximum of 10 trackfiles}, lowest priority dropped if exceeded
         \end{itemize} 
+        \item \textbf{Can be manually transitioned to higher modes by pilot to prioritize}
     \end{subitemize}}
     \blueitem{System Target}{
     \begin{subitemize}
-        \item \textbf{Allows pilot to select targets of interest}
+        \item \textbf{Allows pilot to designate targets of interest}
         \begin{itemize}
-            \item To monitor
-            \item Or for future weapons employment
+            \item For monitoring
+            \item For future weapons employment
         \end{itemize}
-        \item \textbf{Scan} -- No additional radar energy
+        \item \textbf{No additional radar energy allocated to System Targets}
     \end{subitemize}}
     \blueitem{Cursor Target}{
     \begin{subitemize}
-        \item \textbf{Scan}
+        \item \textbf{Acquisition Cursor ``snaps'' to nearby System Targets} -- therefore named Cursor Targets
+        \item \textbf{Scan centered on Cursor Target}
         \begin{itemize}
-            \item 3-bar, $\pm$25 deg pattern 
-            \item centered on Cursor Target
+            \item 3 bar elevation
+            \item $\pm$25 deg azimuth pattern 
+            \item Reduces chance of losing track
         \end{itemize}
     \end{subitemize}}
     \blueitem{Bugged Target}{
     \begin{subitemize}
-        \item \textbf{Cycle} -- \textbf{TMS Right} to cycle in range order
-        \item \textbf{Scan}
+        \item \textbf{Selected for weapons employment}
         \begin{itemize}
-            \item 3-bar, $\pm$25 deg pattern 
-            \item centered on bugged target
+            \item Can guide AIM-120C (w/o STT Lock)
+            \item DLZ displayed if missile selected
+            \item Launched AIM-120 will continue to guide even if another target is bugged -- \underline{allows for multi-target engagement}
         \end{itemize}
-        \item \textbf{Weapons}
+        \item \textbf{Scan Centered on Bugged Target}
         \begin{itemize}
-            \item Target selected for AIM-9 / -120 employment
-            \item DLZ information displayed on HUD/FCR
+            \item 3 bar elevation
+            \item $\pm$25 deg azimuth pattern 
+            \item Reduces chance of losing track
         \end{itemize}
+        \item \textbf{TMS Right -- Cycles through System Targets in range order} (bugs closest if none bugged)
     \end{subitemize}}
     \blueitem{Spotlight}{}
 \end{tcoloritemize}

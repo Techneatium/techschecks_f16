@@ -347,6 +347,7 @@
             \item FCR manages scan volume
         \end{itemize}
         \item \textbf{Within 10nm search pattern inhibited} -- radar only scans primary/secondary targets
+        \item \textbf{Once \underline{either} target within 3nm automatically transitions to STT}
     \end{subitemize}}
     \blueitem{Spotlight}{
     \begin{subitemize}
@@ -369,7 +370,7 @@
 \subsubsection{SELECT RWS MODE}
 \begin{checklistenumerate}
     \blueitem{FCR Switch}{\textbf{FCR}}
-    \blueitem{Desired MFD}{\textbf{FCR Page}}
+    \blueitem{Desired MFD}{\textbf{FCR Page}, verify \textbf{SOI}}
     \blueitem{Radar Mode}{
         \textbf{CRM} (default), verify
 
@@ -382,25 +383,24 @@
         \textbf{RWS} (default), cycle via 
 
         \begin{subitemize}
-            \item \textbf{TMS Right (long)}
-            \item \textbf{OSB 2} 
+            \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
         \end{subitemize}
     }
 \end{checklistenumerate}
 
 \subsubsection{SAM / DTT ACQUISITION}
 \begin{checklistenumerate}
-    \blueitem{Locate Targets}{
-        \begin{subenumerate}
-            \item Correlate onboard/offboard sensors
-            \begin{itemize}
-                \item raw radar returns
-                \item AWACS calls
-                \item datalink
-            \end{itemize}
-            \item Place targets within radar scan volume
-        \end{subenumerate}
-    }
+\blueitem{Locate Targets}{
+    \begin{subenumerate}
+        \item Correlate onboard/offboard sensors
+        \begin{itemize}
+            \item raw radar returns
+            \item AWACS calls
+            \item datalink target
+            \item RWR pings
+        \end{itemize}
+        \item Place targets within radar scan volume
+    \end{subenumerate}}
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -580,7 +580,7 @@
         \begin{itemize}
             \item Tracks target velocity, angle, altitude etc.
             \item \underline{Maximum of 10 trackfiles}, lowest priority dropped if exceeded
-        \end{itemize} 
+        \end{itemize}
         \item \textbf{Can be manually transitioned to higher modes by pilot to prioritize}
     \end{subitemize}}
     \blueitem{System Target}{
@@ -640,7 +640,7 @@
 \subsubsection{SELECT TWS MODE}
 \begin{checklistenumerate}
     \blueitem{FCR Switch}{\textbf{FCR}}
-    \blueitem{Desired MFD}{\textbf{FCR Page}}
+    \blueitem{Desired MFD}{\textbf{FCR Page}, verify \textbf{SOI}}
     \blueitem{Radar Mode}{
         \textbf{CRM} (default), verify
 
@@ -653,8 +653,7 @@
         \textbf{TWS}, cycle via 
 
         \begin{subitemize}
-            \item \textbf{TMS Right (long)}
-            \item \textbf{OSB 2} 
+            \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
         \end{subitemize}
     }
 \end{checklistenumerate}

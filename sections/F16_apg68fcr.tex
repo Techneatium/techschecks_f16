@@ -348,7 +348,20 @@
         \end{itemize}
         \item \textbf{Within 10nm search pattern inhibited} -- radar only scans primary/secondary targets
     \end{subitemize}}
-    \blueitem{Spotlight}{}
+    \blueitem{Spotlight}{
+    \begin{subitemize}
+        \item \textbf{Narrow scan centered on acquisition cursor}
+        \begin{itemize}
+            \item 4 bar elevation 
+            \item \pm10 deg azimuth
+        \end{itemize}
+        \item \textbf{Useful to rapidly acquire radar returns from target at known position}
+        \item \textbf{Activated by holding TMS Forward >1 sec}
+        \begin{itemize}
+            \item Enters SAM submode if target detected under Acquisition Cursor
+            \item Returns to previous search pattern if no target under Acquisition Cursor when released
+        \end{itemize}
+    \end{subitemize}}
 \end{tcoloritemize}
 
 \marginfigeometry
@@ -445,6 +458,55 @@
 \end{checklistenumerate}
 
 \subsubsection{SPOTLIGHT ACQUISITION}
+\begin{checklistenumerate}
+    \blueitem{Locate Targets}{
+        \begin{subenumerate}
+            \item Correlate onboard/offboard sensors
+            \begin{itemize}
+                \item AWACS BRA calls
+                \item datalink target
+            \end{itemize}
+            \item Place target within radar scan limits
+        \end{subenumerate}
+    }
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][60mm][t]{\marginparwidth}
+                \center{\textbf{Spotlight Scan Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show spotlight azimuth bars
+                    \item maybe show both with raw rws return and once acquired?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{Spotlight Search}
+    }
+    \blueitem{Spotlight Search}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill near Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
+        \begin{itemize}
+            \item FCR enters \pm10deg scan around acquisition cursor
+        \end{itemize}
+    \end{subenumerate}}
+    \blueitem{SAM Acquisition}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (release)}
+        \item \textbf{Target} \dotfill Verify \textbf{Bugged}
+    \end{subenumerate}
+    \begin{subitemize}
+        \item Can guide AIM-120C on Bugged target
+        \item DLZ displayed if missile selected
+        \item RWS search continues
+    \end{subitemize}}
+    \blueitem{STT Lock}{(if desired)
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}}
+\end{checklistenumerate}
 
 \marginfigrestore
 

@@ -458,9 +458,19 @@
 
     \begin{subitemize}
         \item \textbf{Multi-target tracking mode}
+        \begin{itemize}
+            \item Allows multi-target AIM-120 engagement
+            \item Targets not locked -- \underline{no RWR warning}
+        \end{itemize}
         \item \textbf{FCR builds trackfiles for each target}
-        \item \textbf{Trackfiles can be in several states} --
-        Search / Track / System / Cursor / Bugged
+        \begin{itemize}
+            \item Predicts target movement between scans
+            \item Slow update rate -- target maneuvers can cause radar to lose track
+        \end{itemize}
+        \item \textbf{Trackfiles can be in several states}
+        \begin{itemize}
+            \item Search / Track / System / Cursor / Bugged
+        \end{itemize}
     \end{subitemize}}
 \end{tcoloritemize}
 

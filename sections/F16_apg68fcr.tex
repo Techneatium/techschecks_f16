@@ -589,19 +589,18 @@
 
 \subsubsection{MULTI-TARGET ACQUISITION}
 \begin{checklistenumerate}
-    \blueitem{Locate Targets}{
+    \blueitem{Track Target Acquisition}{
     \begin{subenumerate}
-        \item Correlate onboard/offboard sensors
+        \item Correlate onboard/offboard sensors to locate targets
         \begin{itemize}
             \item raw radar returns
             \item AWACS calls
-            \item datalink
+            \item datalink targets
+            \item RWR pings
         \end{itemize}
         \item Place targets within radar scan volume
+        \item FCR automatically generates Track Targets once sufficient data available
     \end{subenumerate}}
-    \blueitem{Track Target Acquisition}{
-    FCR automatically upgrades Search Targets to Track Targets once sufficient information available
-    }
     \blueitem{System Target Acquisition}{
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
@@ -621,11 +620,13 @@
     \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
     \end{subenumerate}
-    Further depresses cycle through all System Targets in range order
-    }
+    To cycle through System Targets in range order
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}}
     \blueitem{STT Lock}{(if desired)
     \begin{subenumerate}
-        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{Bugged Target} \dotfill under Acq Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
     \end{subenumerate}}
 \end{checklistenumerate}

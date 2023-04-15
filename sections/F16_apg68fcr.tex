@@ -759,58 +759,9 @@
             \item \textbf{Slewable}
         \end{itemize}
     \end{subitemize}}
-    \blueitem{HUD Scan}{
-    \begin{subitemize}
-        \item \textbf{Activation}
-        \begin{itemize}
-            \item Entered by default upon \textbf{ACM} selection \textbf{in NO RAD}
-            \item Cycle to with \textbf{TMS Right}
-        \end{itemize}
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} -- displays \textbf{ACM 20}
-            \item \textbf{HUD} -- no special symbology
-        \end{itemize}
-        \item \textbf{Scan} -- slightly larger than HUD
-        \item \textbf{Lock Range} -- 10 nm
-    \end{subitemize}}
-    \blueitem{BORE Scan}{
-    \begin{subitemize}
-        \item \textbf{Activation} -- \textbf{TMS Up}
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} -- displays \textbf{ACM BORE}
-            \item \textbf{HUD} -- Boresight Cross at center of radar scan zone
-        \end{itemize}
-        \item \textbf{Scan} -- small, 1-beamwidth area 3 deg below gun cross
-        \item \textbf{Lock Range} -- 20 nm
-    \end{subitemize}}
-    \blueitem{Vertical Scan}{
-    \begin{subitemize}
-        \item \textbf{Activation} -- \textbf{TMS Down}
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} -- displays \textbf{ACM 60}
-            \item \textbf{HUD} -- Vertical line
-        \end{itemize}
-        \item \textbf{Scan} -- 10 deg wide, 60 deg vertical, centered 23 deg above gun cross
-        \item \textbf{Lock Range} -- 10 nm
-    \end{subitemize}}
-    \blueitem{Slewable}{
-    \begin{subitemize}
-        \item \textbf{Activation} -- \textbf{WIP}
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} -- displays \textbf{ACM SLEW}
-            \item \textbf{HUD} -- WIP
-        \end{itemize}
-        \item \textbf{Slew} -- \textbf{CURSOR/ENABLE Control}
-        \item \textbf{Scan} -- WIP
-        \item \textbf{Lock Range} -- WIP
-    \end{subitemize}}
 \end{tcoloritemize}
 
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[auto, node distance=10mm, 
         % >={Stealth[length=6.75pt, width=4pt, inset=2pt]}
@@ -903,6 +854,58 @@
     \caption{\textbf{ACM Radar Modes Overview}}
     \label{fig:acmoverview}
 \end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{HUD Scan}{
+    \begin{subitemize}
+        \item \textbf{Activation}
+        \begin{itemize}
+            \item Entered by default upon \textbf{ACM} selection \textbf{in NO RAD}
+            \item Cycle to with \textbf{TMS Right}
+        \end{itemize}
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} -- displays \textbf{ACM 20}
+            \item \textbf{HUD} -- no special symbology
+        \end{itemize}
+        \item \textbf{Scan} -- slightly larger than HUD
+        \item \textbf{Lock Range} -- 10 nm
+    \end{subitemize}}
+    \blueitem{BORE Scan}{
+    \begin{subitemize}
+        \item \textbf{Activation} -- \textbf{TMS Up}
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} -- displays \textbf{ACM BORE}
+            \item \textbf{HUD} -- Boresight Cross at center of radar scan zone
+        \end{itemize}
+        \item \textbf{Scan} -- small, 1-beamwidth area 3 deg below gun cross
+        \item \textbf{Lock Range} -- 20 nm
+    \end{subitemize}}
+    \blueitem{Vertical Scan}{
+    \begin{subitemize}
+        \item \textbf{Activation} -- \textbf{TMS Down}
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} -- displays \textbf{ACM 60}
+            \item \textbf{HUD} -- Vertical line
+        \end{itemize}
+        \item \textbf{Scan} -- 10 deg wide, 60 deg vertical, centered 23 deg above gun cross
+        \item \textbf{Lock Range} -- 10 nm
+    \end{subitemize}}
+    \blueitem{Slewable}{
+    \begin{subitemize}
+        \item \textbf{Activation} -- \textbf{WIP}
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} -- displays \textbf{ACM SLEW}
+            \item \textbf{HUD} -- WIP
+        \end{itemize}
+        \item \textbf{Slew} -- \textbf{CURSOR/ENABLE Control}
+        \item \textbf{Scan} -- WIP
+        \item \textbf{Lock Range} -- WIP
+    \end{subitemize}}
+\end{tcoloritemize}
 
 \marginfigeometry
 

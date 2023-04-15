@@ -822,7 +822,7 @@
         \draw [->]
             (acm) -- node[pos=0.5, above]{\scriptsize\textbf{TMS}}node[pos=0.5, below]{\scriptsize\textbf{RIGHT}} (hud);
         \draw [->]
-            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (vert);
+            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS AFT}} (vert);
         \draw [dashed, ->]
             let
                 \p1=(bore.north),
@@ -847,14 +847,33 @@
     \label{fig:acmoverview}
 \end{figure}
 
-\begin{tcoloritemize}
-    \blueitem{HUD Scan}{
-    \begin{subitemize}
-        \item \textbf{Activation}
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{MFD --- FCR --- ACM}}
         \begin{itemize}
-            \item Entered by default upon \textbf{ACM} selection \textbf{in NO RAD}
-            \item Cycle to with \textbf{TMS Right}
+            \item Show default ACM page
+            \item clearly mark what the ``FCR format'' is (referenced in text)
         \end{itemize}
+    \end{minipage}
+    }
+    \caption{MFD page for FCR ACM}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][40mm][t]{100mm}
+        \center{\large\textbf{ACM Scan Patterns}}
+        \begin{itemize}
+            \item Show different scan patterns?
+            \item Unsure if this figure is necessary
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{ACM Scan Patterns}
+\end{figure}
 
 \begin{tcoloritemize}
     \blueitem{HUD Submode}{

@@ -739,24 +739,16 @@
 \label{subsec:acm}
 \begin{tcoloritemize}
     \blueitem{ACM}{
+    \textbf{A}ir \textbf{C}ombat \textbf{M}ode
+
     \begin{subitemize}
-        \item \textbf{A}ir \textbf{C}ombat \textbf{M}ode
-        \item Used to automatically lock targets while maneuvering
-        \item \textbf{Enter ACM:}
-        \begin{itemize}
-            \item \textbf{Dogfight/Missile Override Switch} -- \textbf{DGFT}
-            \item \textbf{FCR MFD}
-            \begin{enumerate}
-                \item \textbf{Radar Mode OSB} -- Press 
-                \item \textbf{ACM Mode select OSB} -- Press
-            \end{enumerate}
-        \end{itemize}
+        \item \textbf{Used to automatically lock targets while maneuvering}
         \item \textbf{Sub-Modes}
         \begin{itemize}
-            \item \textbf{HUD Scan} -- 30 x 20 deg 
-            \item \textbf{BORE} -- Boresight
-            \item \textbf{Vertical Scan} -- 10 x 60 deg
-            \item \textbf{Slewable}
+            \item \textbf{HUD Scan} -- 30x20 deg 
+            \item \textbf{BORE} -- Boresight (3x3 deg)
+            \item \textbf{Vertical Scan} -- 10x60 deg
+            \item \textbf{Slewable} -- WIP
         \end{itemize}
     \end{subitemize}}
 \end{tcoloritemize}
@@ -863,57 +855,119 @@
             \item Entered by default upon \textbf{ACM} selection \textbf{in NO RAD}
             \item Cycle to with \textbf{TMS Right}
         \end{itemize}
+
+\begin{tcoloritemize}
+    \blueitem{HUD Submode}{
+    \begin{subitemize}
+        \item \textbf{30x20 deg scan} -- slightly larger than HUD
+        \item \textbf{Lock Range} -- 10 nm
+        \item \textbf{Selected with TMS Right} -- default mode upon ACM selection
         \item \textbf{Displays}
         \begin{itemize}
             \item \textbf{FCR Format} -- displays \textbf{ACM 20}
             \item \textbf{HUD} -- no special symbology
         \end{itemize}
-        \item \textbf{Scan} -- slightly larger than HUD
-        \item \textbf{Lock Range} -- 10 nm
     \end{subitemize}}
-    \blueitem{BORE Scan}{
+    \blueitem{BORE Submode}{
     \begin{subitemize}
-        \item \textbf{Activation} -- \textbf{TMS Up}
+        \item \textbf{Small, 1-beamwidth scan}
+        \begin{itemize}
+            \item centered 3 deg below gun cross
+            \item useful for precisely locking up target
+        \end{itemize}
+        \item \textbf{Lock Range} -- 20 nm
+        \item \textbf{Selected with TMS Forward}
+        \item \textbf{Scan slaves to HMD} (if equipped and powered)
         \item \textbf{Displays}
         \begin{itemize}
             \item \textbf{FCR Format} -- displays \textbf{ACM BORE}
             \item \textbf{HUD} -- Boresight Cross at center of radar scan zone
+            \item \textbf{HMD} -- Oval centered on HMD aiming cross
         \end{itemize}
-        \item \textbf{Scan} -- small, 1-beamwidth area 3 deg below gun cross
-        \item \textbf{Lock Range} -- 20 nm
     \end{subitemize}}
-    \blueitem{Vertical Scan}{
+    \blueitem{Vertical \break Submode}{
     \begin{subitemize}
-        \item \textbf{Activation} -- \textbf{TMS Down}
+        \item \textbf{10x60 deg scan}
+        \begin{itemize}
+            \item centered 23 deg above gun cross
+            \item useful during turning engagement to lock target ``across the circle''
+        \end{itemize}
+        \item \textbf{Lock Range} -- 10 nm
+        \item \textbf{Selected with TMS Aft}
         \item \textbf{Displays}
         \begin{itemize}
             \item \textbf{FCR Format} -- displays \textbf{ACM 60}
             \item \textbf{HUD} -- Vertical line
         \end{itemize}
-        \item \textbf{Scan} -- 10 deg wide, 60 deg vertical, centered 23 deg above gun cross
-        \item \textbf{Lock Range} -- 10 nm
     \end{subitemize}}
-    \blueitem{Slewable}{
+    \blueitem{Slewable \break Submode}{
+    \textbf{Work In Progress}
+    
     \begin{subitemize}
-        \item \textbf{Activation} -- \textbf{WIP}
+        \item \textbf{Scan} -- WIP
+        \item \textbf{Lock Range} -- WIP
+        \item \textbf{Slew} -- \textbf{CURSOR/ENABLE Control}
         \item \textbf{Displays}
         \begin{itemize}
             \item \textbf{FCR Format} -- displays \textbf{ACM SLEW}
             \item \textbf{HUD} -- WIP
         \end{itemize}
-        \item \textbf{Slew} -- \textbf{CURSOR/ENABLE Control}
-        \item \textbf{Scan} -- WIP
-        \item \textbf{Lock Range} -- WIP
     \end{subitemize}}
 \end{tcoloritemize}
 
 \marginfigeometry
 
-\subsubsection{VERTICAL / HUD / BORE ACQUISITION}
+\subsubsection{HUD / BORE / VERTICAL ACQUISITION}
+\begin{checklistenumerate}
+    \blueitem{FCR Setup}{
+    \begin{subenumerate}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
+    \end{subenumerate}}
+    \blueitem{Enter ACM}{
+    \begin{subenumerate}
+        \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
+        \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
+    \end{subenumerate}}
+    \blueitem{Select ACM Submode}{
+    \begin{subitemize}
+        \item \textbf{HUD} (default ACM mode) \dotfill \textbf{TMS Right}
+        \item \textbf{Bore} \dotfill \textbf{TMS Forward}
+        \item \textbf{Vertical} \dotfill \textbf{TMS Aft}
+    \end{subitemize}}
+    \blueitem{Target Acquisition}{
+    \begin{subenumerate}
+        \item Maneuver aircraft to place target within selected ACM scan volume 
+        \item Wait for automatic transition to STT 
+    \end{subenumerate}}
+\end{checklistenumerate}
 
 \subsubsection{HMD ACQUISITION}
+\begin{checklistenumerate}
+    \blueitem{FCR/MFD Setup}{
+    \begin{subenumerate}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
+        \item \textbf{HMD Brightness} \dotfill \textbf{On}
+    \end{subenumerate}}
+    \blueitem{Enter ACM}{
+    \begin{subenumerate}
+        \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
+        \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
+    \end{subenumerate}}
+    \blueitem{Select ACM Bore Submode}{
+    \begin{subitemize}
+        \item \textbf{Bore} \dotfill \textbf{TMS Forward}
+    \end{subitemize}}
+    \blueitem{Target Acquisition}{
+    \begin{subenumerate}
+        \item Maneuver aircraft to place target within 60 deg of nose 
+        \item Place target within HMD acquisition circle
+        \item Wait for automatic transition to STT 
+    \end{subenumerate}}
+\end{checklistenumerate}
 
-\subsubsection{SLEWABLE ACQUISITION}
+\subsubsection{SLEWABLE ACQUISITION -- WIP}
 
 \marginfigrestore
 

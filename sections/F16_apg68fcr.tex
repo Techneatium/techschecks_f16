@@ -375,6 +375,7 @@
         \end{itemize}
         \item Place targets within radar scan volume
     \end{subenumerate}}
+    \blueitem{SAM Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -388,7 +389,6 @@
         }
         \caption{Bugged Target}
     }
-    \blueitem{SAM Acquisition}{
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
@@ -399,6 +399,7 @@
         \item DLZ displayed if missile selected
         \item RWS search continues
     \end{subitemize}}
+    \blueitem{DTT Acquisition}{(if desired)
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -412,7 +413,6 @@
         }
         \caption{DTT Target}
     }
-    \blueitem{DTT Acquisition}{(if desired)
     \begin{subenumerate}
         \item \textbf{Target 2} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
@@ -442,6 +442,7 @@
         \end{itemize}
         \item Place target within radar scan limits
     \end{subenumerate}}
+    \blueitem{Spotlight Search}{
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -455,7 +456,6 @@
         }
         \caption{Spotlight Search}
     }
-    \blueitem{Spotlight Search}{
     \begin{subenumerate}
         \item \textbf{Target} \dotfill near Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
@@ -643,15 +643,6 @@
 \subsubsection{MULTI-TARGET ACQUISITION}
 \begin{checklistenumerate}
     \blueitem{Track Target Acquisition}{
-    \begin{subenumerate}
-        \item Correlate onboard/offboard sensors to locate targets
-        \begin{itemize}
-            \item raw radar returns, RWR pings
-            \item AWACS calls, datalink targets
-        \end{itemize}
-        \item Place targets within radar scan volume
-        \item FCR automatically generates Track Targets once sufficient data available
-    \end{subenumerate}}
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -665,6 +656,15 @@
         }
         \caption{Search / Track Target Symbology}
     }
+    \begin{subenumerate}
+        \item Correlate onboard/offboard sensors to locate targets
+        \begin{itemize}
+            \item raw radar returns, RWR pings
+            \item AWACS calls, datalink targets
+        \end{itemize}
+        \item Place targets within radar scan volume
+        \item FCR automatically generates Track Targets once sufficient data available
+    \end{subenumerate}}
     \blueitem{System Target Acquisition}{
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
@@ -675,6 +675,7 @@
     \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
     \end{subenumerate}}
+    \blueitem{Upgrade to Bugged Target}{
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -689,7 +690,6 @@
         }
         \caption{System / Cursor /  Bugged Target Symbology}
     }
-    \blueitem{Upgrade to Bugged Target}{
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}

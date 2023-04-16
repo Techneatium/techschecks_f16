@@ -951,12 +951,16 @@
     \blueitem{STT}{
     \textbf{S}ingle \textbf{T}arget \textbf{T}rack
     \begin{subitemize}
-        \item Entered by locking target from \textbf{CRM/ACM}
+        \item \textbf{FCR continually scans one target}
+        \begin{itemize}
+            \item high update frequency \& precision for weapon guidance
+            \item \underline{target RWR will detect STT lock}
+        \end{itemize}
+        \item \textbf{FCR search ceases during STT lock}
+        \item \textbf{Entered by locking target from CRM (TWS/RWS) or ACM}
     \end{subitemize}}
     \blueitem{Display}{
     \begin{subitemize}
-        \item \textbf{No other contacts detected}
-        \item Similar to \textbf{RWS}
         \item \textbf{Target state} shown at top of FCR page
         \begin{itemize}
             \item Aspect Angle 
@@ -965,8 +969,24 @@
             \item Closure Rate
         \end{itemize}
     \end{subitemize}}
-    \blueitem{NCTR}{}
+    \blueitem{NCTR}{
+    \textbf{N}on-\textbf{C}ooperative \textbf{T}arget \textbf{R}ecognition
+    \begin{subitemize}
+        \item \textbf{FCR attempts to identify locked target}
+        \begin{itemize}
+            \item measures turbine parameters to produce \underline{likely} contact aircraft type
+            \item NCTR is only available in STT
+        \end{itemize}
+        \item \textbf{NCTR imposes additional requirements}
+        \begin{itemize}
+            \item target must be within 20-25nm
+            \item Radar must ``see'' compressor/turbine blades
+        \end{itemize}
+        \item \textbf{Activated with IFF interrogation (TMS Left long)}
+        \item \textbf{Hostile NCTR identification counts towards ROE matrix} (combined with IFF return)
+    \end{subitemize}}
 \end{tcoloritemize}
+
 \clearpage 
 
 \section{AIR-TO-GROUND MODES --- WIP}

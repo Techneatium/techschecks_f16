@@ -61,90 +61,67 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, ultra thick,
+    \begin{tikzpicture}[auto, node distance=10mm,x=1mm, y=1mm, ultra thick,
         >={Latex[round]}
         ]
         
-        % Nodes
+        % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
         \node[
             hyperref node=subsec:rws,
             diamond,
             draw,
-        ](rws){\textbf{RWS}};
-        \path
-            let
-                \p1 = (rws),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                ](sam)at(\x1,\y1+50mm){\textbf{SAM}}
-            let
-                \p1 = (sam),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                ](dtt)at(\x1-30mm,\y1+15mm){\textbf{DTT}}
-            let
-                \p1 = (rws),
-            in
-                node[
-                    diamond,
-                    minimum width=15mm,
-                    minimum height=15mm,
-                    draw,
-                ](tws)at(\x1+30mm,\y1){\textbf{TWS}}
-            let
-                \p1 = (tws),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                    dashed,
-                ](systgt)at(\x1,\y1+20mm){\textbf{System Tgt}}
-            let
-                \p1 = (systgt),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                    dashed,
-                ](cursortgt)at(\x1,\y1+15mm){\textbf{Cursor Tgt}}
-            let
-                \p1 = (cursortgt),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                    dashed,
-                ](bug)at(\x1,\y1+15mm){\textbf{Bugged}}
-            let
-                \p1 = (rws),
-                \p2 = (dtt),
-            in
-                node[
-                    rectangle, 
-                    rounded corners,
-                    minimum width=80mm,
-                    minimum height=7.5mm,
-                    draw, 
-                ](stt)at(\x1, \y2+15mm){\textbf{STT}};
+        ](rws)at(0,0){\textbf{RWS}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](sam)at(0, 50){\textbf{SAM}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](dtt)at(-30,65){\textbf{DTT}};
+        \node[
+            diamond,
+            minimum width=15mm,
+            minimum height=15mm,
+            draw,
+        ](tws)at(30,0){\textbf{TWS}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+            dashed,
+        ](systgt)at(30,20){\textbf{System Tgt}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+            dashed,
+        ](cursortgt)at(30,35){\textbf{Cursor Tgt}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+            dashed,
+        ](bug)at(30,50){\textbf{Bugged}};
+        \node[
+            rectangle, 
+            rounded corners,
+            minimum width=80mm,
+            minimum height=7.5mm,
+            draw, 
+        ](stt)at(0,80){\textbf{STT}};
         
         % Lines
         \draw [->, thick]
@@ -163,7 +140,6 @@
                 \p2=(stt.south)
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}}node[pos=0.5, right]{\scriptsize\textbf{(1st Tgt)}} (\x1,\y2);
-
         \draw [<->, thick]
             (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
         \draw[->, thick]
@@ -755,87 +731,66 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, 
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, ultra thick,
         % >={Stealth[length=6.75pt, width=4pt, inset=2pt]}
         >={Latex[round]}
         ]
         
-        % Nodes
+        % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
         \node[
             hyperref node=subsec:acm,
             diamond,
             draw,
-            ultra thick,
-        ](acm){\textbf{ACM}};
-        \path
-            let
-                \p1 = (acm),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                    ultra thick,
-                ](bore)at(\x1,\y1+20mm){\textbf{BORE}}
-            let
-                \p1 = (acm),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                    ultra thick,
-                ](hud)at(\x1+30mm,\y1){\textbf{HUD}}
-            let
-                \p1 = (acm),
-            in
-                node[
-                    rectangle,
-                    rounded corners,
-                    minimum width=20mm,
-                    minimum height=7.5mm,
-                    draw,
-                    ultra thick,
-                ](vert)at(\x1,\y1-20mm){\textbf{Vertical}}
-
-
-            let
-                \p1 = (acm),
-                \p2 = (bore),
-            in
-                node[
-                    rectangle, 
-                    rounded corners,
-                    minimum width=80mm,
-                    minimum height=7.5mm,
-                    draw, 
-                    ultra thick,
-                ](stt)at(\x1, \y2+20mm){\textbf{STT}};
-        
+        ](acm)at(0,0){\textbf{ACM}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](bore)at(0,20){\textbf{BORE}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](hud)at(30,0){\textbf{HUD}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](vert)at(0,-20){\textbf{Vertical}};
+        \node[
+            rectangle, 
+            rounded corners,
+            minimum width=80mm,
+            minimum height=7.5mm,
+            draw, 
+        ](stt)at(0,40){\textbf{STT}};
+                
         % Lines
-        \draw [->]
+        \draw [->, thick]
             (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bore);
-        \draw [->]
+        \draw [->, thick]
             (acm) -- node[pos=0.5, above]{\scriptsize\textbf{TMS}}node[pos=0.5, below]{\scriptsize\textbf{RIGHT}} (hud);
-        \draw [->]
+        \draw [->, thick]
             (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS AFT}} (vert);
-        \draw [dashed, ->]
+        \draw [dashed, ->, thick]
             let
                 \p1=(bore.north),
                 \p2=(stt.south),
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
-        \draw [dashed, ->]
+        \draw [dashed, ->, thick]
             let
                 \p1=(hud.north),
                 \p2=(stt.south),
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
-        \draw [dashed, rounded corners, ->]
+        \draw [dashed, rounded corners, ->, thick]
             let
                 \p1=(vert.west),
                 \p2=(stt.south),

@@ -229,14 +229,55 @@
 \subsubsection{FCR MFD CONTROLS}
 
 \begin{tcoloritemize}
-    \blueitem{Radar Mode}{}
-    \blueitem{Field of View}{}
-    \blueitem{Declutter}{}
-    \blueitem{Format}{}
-    \blueitem{Display Swap}{}
-    \blueitem{Bar Select}{}
-    \blueitem{Azimuth Select}{}
-    \blueitem{Range Select}{}
+    \blueitem{Radar Mode}{
+    \textbf{OSB 1} opens page allowing selection of radar mode
+
+    \begin{subitemize}
+        \item \textbf{Left Side (OSB 19-20)} --- A-A Modes
+        \begin{itemize}
+            \item CRM --- see \cref{subsec:crm}
+            \item ACM --- see \cref{subsec:acm}
+        \end{itemize}
+        \item \textbf{Right Side (OSB 6-9)} --- A-G Modes
+        \begin{itemize}
+            \item See \cref{sec:fcr-ag}
+        \end{itemize}
+        \item \textbf{STBY (OSB 10)} --- places FCR in standby
+    \end{subitemize}}
+    \blueitem{Field of View}{
+    \textbf{OSB 3} cycles field of view
+
+    \begin{subitemize}
+        \item \textbf{EXP} --- expanded field of view
+        \item \textbf{NORM} --- normal field of view
+    \end{subitemize}
+
+    HOTAS \textbf{EXPAND/FOV} switch also cycles FOV}
+    \blueitem{Override}{Pressing \textbf{OVRD (OSB 4)}  places FCR in standby}
+    \blueitem{FCR Control}{\textbf{CNTL (OSB 5)} opens FCR Control page}
+    \blueitem{Datalink Mode}{\textbf{OSB 6} cycles datalink operating mode (WIP)}
+    \blueitem{Declutter}{\textbf{DCLT (OSB 11)} opens FCR Declutter page, allowing pilot to deselect symbology elements}
+    \blueitem{Elevation Bar \break Select}{\textbf{OSB 17} cycles elevation bar search pattern
+    
+    \begin{subitemize}
+        \item \textbf{4B} (4 bar, default),  \textbf{2B} (2 bar),  \textbf{1B} (1 bar)
+        \item \textbf{Depends on FCR mode}
+    \end{subitemize}}
+    \blueitem{Azimuth Select}{
+    \textbf{OSB 18} cycles azimuth search pattern
+
+    \begin{subitemize}
+        \item \textbf{A6} (\pm60 deg, default), \textbf{A3} (\pm30 deg)
+        \item \textbf{Can be cycled by ``walking'' cursor off side of display}
+    \end{subitemize}}
+    \blueitem{Range Select}{
+    \textbf{OSB 19-20} adjusts FCR display range scale
+    
+    \begin{subitemize}
+        \item \textbf{Default} --- 40 nm
+        \item \textbf{Can be cycled by ``walking'' cursor off top/bottom of display}
+    \end{subitemize}
+    }
 \end{tcoloritemize}
 
 \begin{figure}[htbp]

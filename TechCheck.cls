@@ -292,14 +292,14 @@
 }{}{}{}
 \DTMsetstyle{yymmdd} % set new style as default
 
+\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
+\RequirePackage{subcaption} % used for subfigures
+\RequirePackage{marginfix} % patches marginpar to prevent page overflow
+
 \RequirePackage[shortlabels]{enumitem} % pause/resume lists
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{etoc} % formatting of chapter tocs
 \RequirePackage[document]{ragged2e} % left ragged text
-
-\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
-\RequirePackage{subcaption} % used for subfigures
-\RequirePackage{marginfix} % patches marginpar to prevent page overflow
 
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{cleveref} % better referencing

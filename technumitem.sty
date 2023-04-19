@@ -303,19 +303,15 @@
 
 \newenvironment{outertcolorenumitem}{% begdef
     \newenvironment{subenumerate}[1][]{% begdef
-		\begin{tableminipage}
-            \begin{enumerate}[##1]
+		\begin{enumerate}[##1]
 	}{% enddef
-            \end{enumerate}
-		\end{tableminipage}
+		\end{enumerate}
 	}
 
     \newenvironment{subitemize}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{itemize}[##1]
+		\begin{itemize}[##1]
 	}{% enddef
-			\end{itemize}
-		\end{tableminipage}
+		\end{itemize}
 	}
 
     \begin{tcolorenumitem}

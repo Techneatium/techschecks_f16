@@ -1068,8 +1068,56 @@
     \caption{MFD page during STT lock}
 \end{figure}
 
+\clearpage 
+
 \subsection{IFF}
 
+\begin{tcoloritemize}
+    \blueitem{IFF}{
+    \textbf{I}dentify \textbf{F}riend or \textbf{F}oe
+    \begin{subitemize}
+        \item \textbf{Unknown contacts can be ``interrogated'' to determine if friendly}
+        \item \textbf{Works via transponder system}
+        \begin{itemize}
+            \item Interrogater sends coded pulse
+            \item Friendly transponder return matching coded pulse
+        \end{itemize}
+        \item \textbf{Controlled via dedicated IFF panel}
+        \begin{itemize}
+            \item Must be powered on separately from FCR to function
+        \end{itemize}
+        \item \textbf{Friendly IFF replies displayed as green circles on FCR MFD}
+    \end{subitemize}}
+    \blueitem{Manual \break Interrogation}{
+    Manual IFF interrogation can be initiated in 2 modes
+
+    \begin{subitemize}
+        \item \textbf{Scan}
+        \begin{itemize}
+            \item Interrogates entire radar scan volume
+            \item Activated by pressing \textbf{TMS Left (short)}
+            \item \textbf{SCAN} appears next to \textbf{OSB 16} on FCR page
+        \end{itemize}
+        \item \textbf{LOS} --- \textbf{L}ine \textbf{O}f \textbf{S}ight
+        \begin{itemize}
+            \item Interrogates locked target or scan volume around acquisition cursor
+            \item Actived by pressing \textbf{TMS Left (long)}
+            \item \textbf{LOS} appears next to \textbf{OSB 16} on FCR page
+        \end{itemize}
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\warningbox{
+    \textbf{Lack of IFF return does \underline{not} necessarily mean target is hostile} 
+    \begin{itemize}
+        \item system relies on active participation of interrogated target
+        \item depending on ROE, additional information may be required prior to weapon employment
+    \end{itemize}
+}
+
+\notebox{
+    \textbf{IFF has independent transponder, can function even when FCR is not radiating}
+}
 \clearpage 
 
 \section{AIR-TO-GROUND MODES --- WIP}

@@ -192,11 +192,42 @@
     \label{fig:crmoverview}
 \end{figure}
 
-\subsubsection{FCR SCAN \& LIMITS}
+\clearpage
+
+\subsubsection{A-A SEARCH SCAN PATTERN}
 
 \begin{tcoloritemize}
-    \blueitem{Radar Gimbal Limits}{}
-    \blueitem{Scan Pattern}{}
+    \blueitem{Radar Gimbal Limits}{
+    APG-68 is mechanically scanned on 2 axis gimbal
+
+    \begin{subitemize}
+        \item \textbf{Azimuth} --- \pm60 deg (120 deg coverage)
+        \item \textbf{Vertical} --- \pm60 deg (120 deg coverage)
+    \end{subitemize}}
+    \blueitem{Azimuth Scan Pattern}{
+    \begin{subitemize}
+        \item \textbf{Azimuth search patterns}
+        \begin{itemize}
+            \item \textbf{A6} --- \pm60 deg
+            \item \textbf{A3} --- \pm30 deg (centered on cursor)
+            \item \textbf{A1} --- \pm10 deg (centered on cursor)
+        \end{itemize}
+        \item \textbf{Cycled via}
+        \begin{itemize}
+            \item \textbf{OSB 18} cycles available azimuth patterns
+            \item Walking cursor off side of FCR display in RWS cycles A6/A3
+        \end{itemize}
+        \item \textbf{TWS \& DTT modes use a special \pm25 deg, 3 bar scan pattern}
+        \begin{itemize}
+            \item \textbf{A2} --- \pm25 deg (centered on cursor / target)
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{Bar Scan Pattern}{
+    Elevation scan volume controlled by selecting number of ``bars'' (horizontal sweeps)
+    \begin{subitemize}
+        \item \textbf{B4} / \textbf{B2} / \textbf{B1} --- cycled via \textbf{OSB 17}
+        \item \textbf{B3} --- selected by TWS \& DTT modes
+    \end{subitemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]

@@ -4,23 +4,23 @@
 \cleardoublepage
 
 \section{OVERVIEW}
-\begin{table}[h]
-    \centering
-    \caption{\textbf{Overview of APG-68 A-A Radar Modes}}
-    \label{tab:apg68overviewaa}
-    \begin{tabular}{c c | c | c | c | c | c}
-        \toprule
-        \multicolumn{3}{c |}{\blue{CRM}} & \multicolumn{4}{c}{\blue{ACM}} \\
-        \multicolumn{3}{c |}{\Cref{subsec:crm}} & \multicolumn{4}{c}{\Cref{subsec:acm}} \\
-        \midrule
-        \multicolumn{2}{c |}{\textbf{RWS}} & \textbf{TWS} & \textbf{BORE} & \textbf{Vertical} & \textbf{HUD} & \textbf{Slewable} \\
-        SAM & DTT & & & & & \\
-        \midrule
-        \multicolumn{7}{c}{\blue{STT}} \\
-        \multicolumn{7}{c}{\Cref{subsec:stt}} \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+% \begin{table}[h]
+%     \centering
+%     \caption{\textbf{Overview of APG-68 A-A Radar Modes}}
+%     \label{tab:apg68overviewaa}
+%     \begin{tabular}{c c | c | c | c | c | c}
+%         \toprule
+%         \multicolumn{3}{c |}{\blue{CRM}} & \multicolumn{4}{c}{\blue{ACM}} \\
+%         \multicolumn{3}{c |}{\Cref{subsec:crm}} & \multicolumn{4}{c}{\Cref{subsec:acm}} \\
+%         \midrule
+%         \multicolumn{2}{c |}{\textbf{RWS}} & \textbf{TWS} & \textbf{BORE} & \textbf{Vertical} & \textbf{HUD} & \textbf{Slewable} \\
+%         SAM & DTT & & & & & \\
+%         \midrule
+%         \multicolumn{7}{c}{\blue{STT}} \\
+%         \multicolumn{7}{c}{\Cref{subsec:stt}} \\
+%         \bottomrule
+%     \end{tabular}
+% \end{table}
 
 \begin{tcoloritemize}
     \blueitem{A-A Modes}{
@@ -39,6 +39,123 @@
         \item \textbf{GMT} --- \textbf{G}round \textbf{M}oving \textbf{T}arget
     \end{subitemize}}
 \end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm,x=1mm, y=1mm, very thick,
+        >={Latex[round]}
+        ]
+        
+        % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
+        \node[
+            hyperref node=subsec:stt,
+            rectangle, 
+            rounded corners,
+            minimum width=90mm,
+            minimum height=7.5mm,
+            draw,
+        ](stt)at(0,0){\blue{STT}--- \Cref{subsec:stt}};
+        \node[
+            hyperref node=subsec:crm,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](crm)at(0,30){\begin{tabular}{c}\blue{CRM}\\ \Cref{subsec:crm}\end{tabular}};
+        \node[
+            hyperref node=subsec:rws,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](rws)at(0,15){\begin{tabular}{c}\blue{RWS}\\ \Cref{subsec:rws}\end{tabular}};
+        \node[
+            hyperref node=subsec:tws,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](tws)at(32.5,15){\begin{tabular}{c}\blue{TWS}\\ \Cref{subsec:tws}\end{tabular}};
+        \node[
+            hyperref node=subsec:acm,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](acm)at(0,-30){\begin{tabular}{c}\blue{ACM}\\ \Cref{subsec:acm}\end{tabular}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](bore)at(0,-15){\textbf{BORE}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](hud)at(32.5,-30){\textbf{HUD}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](vert)at(0,-45){\textbf{Vertical}};
+
+        % Lines
+        \draw [->]
+            (crm) -- (rws);
+        \draw [->, rounded corners]
+            (crm) -| (tws);
+        \draw [->]
+            let
+                \p1=(rws.south),
+                \p2=(stt.north),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(tws.south),
+                \p2=(stt.north),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->]
+            (acm) -- (bore);
+        \draw [->]
+            (acm) -- (hud);
+        \draw [->]
+            (acm) -- (vert);
+        \draw [->]
+            let
+                \p1=(bore.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(hud.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->, rounded corners]
+            let
+                \p1=(vert.west),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1-22.5mm,\y1) -- (\x1-22.5mm,\y2);
+                
+    \end{tikzpicture}
+    \caption{\textbf{A-A Radar Modes Overview}}
+\end{figure}
+
+\clearpage
 
 \section{AIR-TO-AIR MODES}
 

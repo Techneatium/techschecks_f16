@@ -292,14 +292,14 @@
 }{}{}{}
 \DTMsetstyle{yymmdd} % set new style as default
 
+\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
+\RequirePackage{subcaption} % used for subfigures
+\RequirePackage{marginfix} % patches marginpar to prevent page overflow
+
 \RequirePackage[shortlabels]{enumitem} % pause/resume lists
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{etoc} % formatting of chapter tocs
 \RequirePackage[document]{ragged2e} % left ragged text
-
-\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
-\RequirePackage{subcaption} % used for subfigures
-\RequirePackage{marginfix} % patches marginpar to prevent page overflow
 
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{cleveref} % better referencing
@@ -549,9 +549,9 @@
 % ENUMITEM FORMATTING
 %-----------------------------------------------------------------
 % spacing within lists
-\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
+\setlist[enumerate, 1]{itemsep=4pt, parsep=0pt, label=(\alph*)}
 \setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
-\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
+\setlist[itemize, 1]{itemsep=4pt, parsep=0pt, label=\textbf{\textbullet}}
 \setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
 
 %-----------------------------------------------------------------
@@ -578,6 +578,8 @@
 %-----------------------------------------------------------------
 % TOC FORMATTING
 %-----------------------------------------------------------------
+
+\etocsettocdepth{3}
 
 % For use with `titletoc` package, matches syntax of `etoc`
 % % \printcontents[<name>]{<prefix>}{<start-level>}[<toc-depth>]{<toc-code>]
@@ -623,10 +625,24 @@
 	{0em} % sep
 	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
+% formatting of subsubsection [full width]
+\titleformat{\subsubsection} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsubsection\quad#1}}}} % before-code
+
+\titleformat{name=\subsubsection,numberless} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing{\section}{0pt}{5pt}{2pt}
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
+\titlespacing{\subsubsection}{0pt}{2pt}{2pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOM COMMANDS / ENVIRONEMNTS

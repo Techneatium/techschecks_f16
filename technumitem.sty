@@ -38,7 +38,6 @@
 %-----------------------------------------------------------------
 \newenvironment{tableminipage}{% begdef
 	\begin{minipage}[t]{\linewidth}
-	\vspace{-7pt}
 }{% enddef
 	\end{minipage}
 }
@@ -293,7 +292,7 @@
     right=1mm,
     fonttitle=\titlefont\bfseries,
     sidebyside,
-    lefthand width=35mm,
+    lefthand width=30mm,
     sidebyside align=top,
     sidebyside gap=5mm,
     segmentation style={solid},
@@ -304,19 +303,15 @@
 
 \newenvironment{outertcolorenumitem}{% begdef
     \newenvironment{subenumerate}[1][]{% begdef
-		\begin{tableminipage}
-            \begin{enumerate}[##1]
+		\begin{enumerate}[##1]
 	}{% enddef
-            \end{enumerate}
-		\end{tableminipage}
+		\end{enumerate}
 	}
 
     \newenvironment{subitemize}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{itemize}[##1]
+		\begin{itemize}[##1]
 	}{% enddef
-			\end{itemize}
-		\end{tableminipage}
+		\end{itemize}
 	}
 
     \begin{tcolorenumitem}

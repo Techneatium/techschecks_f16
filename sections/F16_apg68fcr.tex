@@ -1033,6 +1033,7 @@
         \item \textbf{30x20 deg scan} --- slightly larger than HUD
         \item \textbf{Lock Range} --- 10 nm
         \item \textbf{Selected with TMS Right} --- default mode upon ACM selection
+        \item \textbf{Default ACM mode} --- but in \textbf{NO RAD} (non-radiating) state
         \item \textbf{Displays}
         \begin{itemize}
             \item \textbf{FCR Format} --- displays \textbf{ACM 20}
@@ -1071,9 +1072,7 @@
             \item \textbf{HUD} --- Vertical line
         \end{itemize}
     \end{subitemize}}
-    \blueitem{Slewable \break Submode}{
-    \textbf{Work In Progress}
-
+    \blueitem{Slewable \break Submode --- WIP}{
     \begin{subitemize}
         \item \textbf{Scan} --- WIP
         \item \textbf{Lock Range} --- WIP
@@ -1084,6 +1083,7 @@
             \item \textbf{HUD} --- WIP
         \end{itemize}
     \end{subitemize}}
+    \blueitem{NO RAD}{Upon selection of \textbf{ACM} or dropping target lock the radar is placed in non-radiating state}
 \end{tcoloritemize}
 
 \marginfigeometry
@@ -1123,6 +1123,13 @@
         \item Maneuver aircraft to place target within selected ACM scan volume 
         \item Wait for automatic transition to STT 
     \end{subenumerate}}
+    \blueitem{Target Rejection}{%
+    To unlock target
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Aft}
+    \end{subenumerate}
+    Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
+    }
 \end{checklistenumerate}
 
 \subsubsection{HMD ACQUISITION}
@@ -1160,6 +1167,13 @@
         \item Place target within HMD acquisition circle
         \item Wait for automatic transition to STT 
     \end{subenumerate}}
+    \blueitem{Target Rejection}{%
+    To unlock target
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Aft}
+    \end{subenumerate}
+    Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
+    }
 \end{checklistenumerate}
 
 \subsubsection{SLEWABLE ACQUISITION --- WIP}

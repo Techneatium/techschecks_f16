@@ -1178,16 +1178,21 @@
             \item \underline{target RWR will detect STT lock}
         \end{itemize}
         \item \textbf{FCR search ceases during STT lock}
-        \item \textbf{Entered by locking target from CRM (TWS/RWS) or ACM}
+        \item \textbf{Entered by}
+        \begin{itemize}
+            \item locking bugged target from \textbf{TWS/RWS} with \textbf{TMS Forward}
+            \item placing target in search volume of \textbf{ACM} (lock occurs automatically)
+        \end{itemize}
+        \item \textbf{Exited with TMS Aft} --- returns to search mode
     \end{subitemize}}
     \blueitem{Display}{
     \begin{subitemize}
         \item \textbf{Target state} shown at top of FCR page
         \begin{itemize}
-            \item Aspect Angle 
-            \item Ground Track 
-            \item Airspeed 
-            \item Closure Rate
+            \item aspect angle 
+            \item ground track 
+            \item airspeed 
+            \item closure rate
         \end{itemize}
     \end{subitemize}}
     \blueitem{NCTR}{
@@ -1201,7 +1206,7 @@
         \item \textbf{NCTR imposes additional requirements}
         \begin{itemize}
             \item target must be within 20-25nm
-            \item Radar must ``see'' compressor/turbine blades
+            \item radar must ``see'' compressor/turbine blades
         \end{itemize}
         \item \textbf{Activated with IFF interrogation (TMS Left long)}
         \item \textbf{Hostile NCTR identification counts towards ROE matrix} (combined with IFF return)

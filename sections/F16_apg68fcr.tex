@@ -184,130 +184,122 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm,x=1mm, y=1mm, ultra thick,
+    \begin{tikzpicture}[auto, node distance=10mm,x=1mm, y=1mm, very thick,
         >={Latex[round]}
         ]
         
+        \path[
+            fill=color2!20,
+            rounded corners,
+        ] (-50,90) -- (50,90) -- (50,45) -- (-50,45) -- cycle;
+        \node[
+            anchor=north west,
+        ](mark)at(-50,90){\scriptsize \blue{Supports AIM-120 Launch}};
+        \path[
+            fill=color2!40,
+            rounded corners,
+        ] (-47.5,85) -- (0,85) -- (0,90) -- (50,90) -- (50,75) -- (-47.5,75) -- cycle;
+        \node[
+            anchor=north east,
+        ](mark)at(50,90){\scriptsize \blue{RWR Launch Warning}};
         % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
         \node[
             hyperref node=subsec:rws,
-            diamond,
-            draw,
-        ](rws)at(0,0){\textbf{RWS}};
-        \node[
             rectangle,
             rounded corners,
-            minimum width=20mm,
-            minimum height=7.5mm,
-            draw,
-        ](sam)at(0, 50){\textbf{SAM}};
-        \node[
-            rectangle,
-            rounded corners,
-            minimum width=20mm,
-            minimum height=7.5mm,
-            draw,
-        ](dtt)at(-30,65){\textbf{DTT}};
-        \node[
-            diamond,
             minimum width=15mm,
             minimum height=15mm,
             draw,
-        ](tws)at(30,0){\textbf{TWS}};
+        ](rws)at(0,0){\blue{RWS}};
         \node[
             rectangle,
             rounded corners,
-            minimum width=20mm,
+            minimum width=25mm,
             minimum height=7.5mm,
             draw,
-            dashed,
-        ](systgt)at(30,20){\textbf{System Tgt}};
+            fill=white,
+        ](sam)at(0,50){\textbf{SAM}};
         \node[
             rectangle,
             rounded corners,
-            minimum width=20mm,
+            minimum width=25mm,
             minimum height=7.5mm,
             draw,
-            dashed,
-        ](cursortgt)at(30,35){\textbf{Cursor Tgt}};
+            fill=white,
+        ](dtt)at(-32.5,65){\textbf{DTT}};
+        \node[
+            hyperref node=subsec:tws,
+            rectangle,
+            rounded corners,
+            minimum width=15mm,
+            minimum height=15mm,
+            draw,
+        ](tws)at(32.5,0){\blue{TWS}};
         \node[
             rectangle,
             rounded corners,
-            minimum width=20mm,
+            minimum width=25mm,
             minimum height=7.5mm,
             draw,
-            dashed,
-        ](bug)at(30,50){\textbf{Bugged}};
+            fill=white,
+        ](systgt)at(32.5,20){\textbf{System Tgt}};
         \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+            fill=white,
+        ](cursortgt)at(32.5,35){\textbf{Cursor Tgt}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+            fill=white,
+        ](bug)at(32.5,50){\textbf{Bugged}};
+        \node[
+            hyperref node=subsec:stt,
             rectangle, 
             rounded corners,
-            minimum width=80mm,
+            minimum width=90mm,
             minimum height=7.5mm,
             draw, 
-        ](stt)at(0,80){\textbf{STT}};
+            fill=white,
+        ](stt)at(0,80){\blue{STT}};
         
         % Lines
-        \draw [->, thick]
+        \draw [->]
             (rws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (sam);
-        \draw [->, rounded corners, thick]
+        \draw [<->]
+            (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
+        \draw [->, rounded corners]
             (sam) -| node[pos=0.25, above]{\scriptsize\textbf{TMS FWD}}node[pos=0.25, below]{\scriptsize\textbf{(2nd Tgt)}} (dtt);
-        \draw [->, thick]
+        \draw [->]
+            (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
+        \draw [->]
+            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{Cursor Over}} (cursortgt);
+        \draw [->]
+            (cursortgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
+        \draw [->]
             let
                 \p1=(dtt.north),
                 \p2=(stt.south)
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
-        \draw [->, thick]
+        \draw [->]
             let
                 \p1=(sam.north),
                 \p2=(stt.south)
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}}node[pos=0.5, right]{\scriptsize\textbf{(1st Tgt)}} (\x1,\y2);
-        \draw [<->, thick]
-            (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
-        \draw[->, thick]
-            (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
-        \draw[->, thick]
-            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{Cursor Over}} (cursortgt);
-        \draw[->, thick]
-            (cursortgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
-        \draw [->, thick]
+        \draw [->]
             let
                 \p1=(bug.north),
                 \p2=(stt.south)
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
-
-        % Brackets
-        \draw [decorate, decoration={brace}, ultra thick] 
-            let
-                \p1 = (stt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+12mm,\y1) -- (\x2+12mm,\y3);
-        \path
-            let
-                \p1 = (stt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+14mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\small\textbf{Supports AIM-120C Launch}} (\x2+14mm,\y3);
-        
-        \draw [decorate, decoration={brace}, ultra thick] 
-            let
-                \p1 = (dtt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+3mm,\y1) -- (\x2+3mm,\y3);
-        \path
-            let
-                \p1 = (dtt.north),
-                \p2 = (stt.east),
-                \p3 = (sam.south),
-            in
-                (\x2+5mm,\y1) -- node[pos=0.5, right, rotate=90, anchor=north]{\small\textbf{No Launch Warning}} (\x2+5mm,\y3);
     \end{tikzpicture}
     \caption{\textbf{CRM Radar Modes Overview}}
     \label{fig:crmoverview}
@@ -931,17 +923,19 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, ultra thick,
-        % >={Stealth[length=6.75pt, width=4pt, inset=2pt]}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick,
         >={Latex[round]}
         ]
         
         % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
         \node[
             hyperref node=subsec:acm,
-            diamond,
+            rectangle,
+            rounded corners,
+            minimum width=15mm,
+            minimum height=15mm,
             draw,
-        ](acm)at(0,0){\textbf{ACM}};
+        ](acm)at(0,0){\blue{ACM}};
         \node[
             rectangle,
             rounded corners,
@@ -955,7 +949,7 @@
             minimum width=20mm,
             minimum height=7.5mm,
             draw,
-        ](hud)at(30,0){\textbf{HUD}};
+        ](hud)at(32.5,0){\textbf{HUD}};
         \node[
             rectangle,
             rounded corners,
@@ -964,38 +958,39 @@
             draw,
         ](vert)at(0,-20){\textbf{Vertical}};
         \node[
+            hyperref node=subsec:stt,
             rectangle, 
             rounded corners,
-            minimum width=80mm,
+            minimum width=90mm,
             minimum height=7.5mm,
             draw, 
-        ](stt)at(0,40){\textbf{STT}};
+        ](stt)at(0,35){\blue{STT}};
                 
         % Lines
-        \draw [->, thick]
+        \draw [->]
             (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bore);
-        \draw [->, thick]
+        \draw [->]
             (acm) -- node[pos=0.5, above]{\scriptsize\textbf{TMS}}node[pos=0.5, below]{\scriptsize\textbf{RIGHT}} (hud);
-        \draw [->, thick]
+        \draw [->]
             (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS AFT}} (vert);
-        \draw [dashed, ->, thick]
+        \draw [->]
             let
                 \p1=(bore.north),
                 \p2=(stt.south),
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
-        \draw [dashed, ->, thick]
+        \draw [->]
             let
                 \p1=(hud.north),
                 \p2=(stt.south),
             in
                 (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
-        \draw [dashed, rounded corners, ->, thick]
+        \draw [->, rounded corners]
             let
                 \p1=(vert.west),
                 \p2=(stt.south),
             in
-                (\p1) -- (\x1-20mm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-20mm,\y2);
+                (\p1) -- (\x1-22.5mm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-22.5mm,\y2);
                 
     \end{tikzpicture}
     \caption{\textbf{ACM Radar Modes Overview}}

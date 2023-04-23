@@ -87,9 +87,63 @@
 \subsubsection{EEGS SYMBOLOGY}
 
 \begin{tcoloritemize}
-    \blueitem{EEGS}{}
-    \blueitem{EEGS LVL II}{}
-    \blueitem{EEGS LVL V}{}
+    \blueitem{EEGS}{\textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight
+    \begin{subitemize}
+        \item \textbf{Provides multiple levels of symbology depending on presence of radar lock}
+    \end{subitemize}}
+    \blueitem{Level I}{Backup mode displaying only boresight cross in event of INS failure}
+    \blueitem{Level II}{Operating mode prior to radar lock
+
+    \begin{subitemize}
+        \item \textbf{Boresight Cross} --- shows where gun / aircraft is pointed
+        \item \textbf{EEGS Funnel}
+        \begin{itemize}
+            \item displays path of rounds through space
+            \item funnel is of set width to judge distance --- adjust width to target wingspan, stabilize edges of funnel on wingtips and fire
+        \end{itemize}
+        \item \textbf{MGRS} --- \textbf{M}ultiple \textbf{R}eference \textbf{G}un\textbf{S}ight
+        \begin{itemize}
+            \item 5 line-segments pointing towards boresight
+            \item reference for high aspect snap shots (placeing target on MGRS line should have it fly through gun cross)
+        \end{itemize}
+    \end{subitemize}
+    
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl2} and \cref{fig:aaweap:m61:funnelpipper}
+    }
+    \blueitem{Level III / IV}{Intermediate modes during radar lock acquisition}
+    \blueitem{Level V}{Operating mode with radar lock. Level II symbology is retained with additional elements
+    
+    \begin{subitemize}
+        \item \textbf{Level V Pipper}
+        \begin{itemize}
+            \item gunfire solution --- stabilize pipper on target and fire
+            \item contains additional range/aspect cues
+        \end{itemize}
+        \item \textbf{Range Caret}
+        \begin{itemize}
+            \item displayed on \underline{inside} edge of level V pipper
+            \item unwinds from 12 o'clock at 12'000ft counter-clockwise
+        \end{itemize}
+        \item \textbf{Aspect Caret} 
+        \begin{itemize}
+            \item displayed on \underline{outside} edge of level V pipper
+        \end{itemize}
+        \item \textbf{T-Symbol}
+        \begin{itemize}
+            \item \textbf{``--- + ---'' 1G Pipper} --- lead angle for non-maneuvering target,
+            flanking horizontal lines indicate out-of-plane maneuver potential of target
+            \item \textbf{``---'' Max-G Pipper} --- lead angle for target pulling max-G towards you
+        \end{itemize}
+        \item \textbf{BATR} --- \textbf{B}ullets \textbf{A}t \textbf{T}arget \textbf{R}ange
+        \begin{itemize}
+            \item displayed once rounds have been fired
+            \item dissappears after last round has passed beyond target range
+            \item useful to evaluate shots (also for training)
+        \end{itemize}
+    \end{subitemize}
+    
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aaweap:m61:funnelpipper}
+    }
 \end{tcoloritemize}
 
 \begin{figure}[htbp]

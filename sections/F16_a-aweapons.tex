@@ -207,56 +207,130 @@
 
 \marginfigeometry
 
-\subsubsection{EEGS LVL II EMPLOYMENT --- NO RADAR}
+\subsubsection{GUN SELECTION}
 \begin{checklistenumerate}
-    \blueitem{Conditions}{
-    \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
-        \item \textbf{RF Switch} \dotfill \textbf{NORM} \\
-        \hfill (If radar use desired)
-        \item \textbf{Selected Weapon} \dotfill \textbf{GUN} \\
-        \hfill (or \textbf{DGFT} selected)
-        \item \textbf{Master Arm} \dotfill \textbf{ARM}
-    \end{subitemize}}
-    \blueitem{Radar Acquisition}{
-    \begin{subitemize}
-        \item Acquire lock using desired \textbf{ACM Mode}
-        \item Also possible from \textbf{CRM-STT} mode
-    \end{subitemize}}
-    \blueitem{Symbology}{
-    \begin{subitemize}
-        \item \textbf{EEGS LVL II} --- appears upon gun selection
-        \item \textbf{EEGS LVL V} --- appears on radar lock
-    \end{subitemize}}
-    \blueitem{Employment}{
-    
-    \smallskip
-    With Radar
-
+    \blueitem{Select Gun}{
     \begin{subenumerate}
-        \item \textbf{Radar} \dotfill Locked
-        \item \textbf{Maneuver} --- Place pipper over target
-        \item \textbf{Fire Gun} \dotfill \textbf{TRIGGER 2nd Detent}
+        \item \textbf{DGFT/Missile OVRD} \dotfill \textbf{DGFT}
     \end{subenumerate}
-    
-    Without Radar
+
+    or via SMS page
 
     \begin{subenumerate}
-        \item \textbf{Maneuver} --- Place target within funnel
-        \begin{itemize}
-            \item \textbf{Range} --- Tgt wingtips on funnel lines
-        \end{itemize}
-        \item \textbf{Fire Gun} \dotfill \textbf{TRIGGER 2nd Detent}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{SMS OSB 1} \dotfill \textbf{Cycle to GUN}
     \end{subenumerate}}
-    \blueitem{Drafting Notes}{
+    \blueitem{EEGS Symbology}{Verify
     \begin{subitemize}
-        \item Figure showing generic EEGS II with labels in the overview and one showing ``mid-pull'' with target in range here would be great
-        \item Figure showing EEGS V ``mid-pull'' with target under pipper for this page
-        \item Would be great to have separate diagrams for TMS functions for each sensor/mode, then can paste that here as well as reminder
+        \item \textbf{EEGS Level II} appears if no lock present
+        \item \textbf{EEGS Level V} appears if target locked
     \end{subitemize}}
 \end{checklistenumerate}
 
+\subsubsection{EEGS LVL II EMPLOYMENT --- NO RADAR}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
+        \hfill (if desired, completely silences radar)
+        \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+    \blueitem{Acquire Firing Solution}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{EEGS Funnel}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show funnel on target
+                    \item potentially reuse from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{EEGS Funnel}
+    }
+
+    \smallskip
+    Using EEGS funnel
+
+    \begin{subenumerate}
+        \item \textbf{EEGS Funnel} \dotfill \textbf{Stabilized On-Target}
+        \item \textbf{Funnel Lines} \dotfill \textbf{On target wingtips}
+    \end{subenumerate}
+    
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{MGRS Lines}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show MGRS line on target
+                    \item not sure if this fig is necessary
+                    \item maybe could modify fig from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{MGRS Lines}
+    }
+    Using MGRS lines
+    
+    \begin{subenumerate}
+        \item \textbf{MGRS Line} \dotfill \textbf{Aligned with target}
+    \end{subenumerate}}
+    \blueitem{Fire Gun}{
+    \begin{subenumerate}
+        \item \textbf{TRIGGER} \dotfill \textbf{2nd Detent}
+        \item Adjust lead to achieve desired effects
+    \end{subenumerate}}
+\end{checklistenumerate}
+
 \subsubsection{EEGS LVL V EMPLOYMENT --- RADAR}
+
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{RF Switch} \dotfill \textbf{NORM}
+        \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+\end{checklistenumerate}
+
+\clearpage
+
+\begin{checklistenumerate}[resume]
+    \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
+    
+    \begin{subenumerate}
+        \item \textbf{ACM Submode} \dotfill \textbf{As desired}
+        \item Maneuver to place target in radar scan volume
+    \end{subenumerate}}
+    \blueitem{Acquire Firing Solution}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{EEGS Level V Pipper}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show pipper on target
+                    \item potentially reuse from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{EEGS Level V Pipper}
+    }
+    \begin{subenumerate}
+        \item \textbf{Pipper} \dotfill \textbf{Stabilized On-Target}
+    \end{subenumerate}}
+    \blueitem{Fire Gun}{
+    \begin{subenumerate}
+        \item \textbf{TRIGGER} \dotfill \textbf{2nd Detent}
+        \item Adjust lead to achieve desired effects
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\subsubsection{ADJUST EEGS FUNNEL WIDTH}
 
 \marginfigrestore
 

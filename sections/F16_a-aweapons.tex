@@ -399,55 +399,40 @@
     \end{subenumerate}}
 \end{tcoloritemize}
     
+\subsubsection{SMS CONTROLS}
+
+\begin{tcoloritemize}
     \blueitem{SPOT / SCAN}{
+    \textbf{OSB 2} controls seeker field of view
     \begin{subitemize}
-        \item \textbf{Controls Seeker Field of View}
         \item \textbf{SPOT} --- Narrow, increased detection range
         \item \textbf{SCAN} --- Wide, decreased detection range
     \end{subitemize}}
-    \blueitem{SLAVE / BORE}{
+    \blueitem{Selected Weapon}{\textbf{OSB 7} cycles through available A-A weapon types}
+    \blueitem{WARM / COOL}{
+    \textbf{OSB 8} controls seeker cooling status
+
     \begin{subitemize}
-        \item \textbf{Controls Seeker Line of Sight}
-        \item \textbf{SLAVE} - \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
-        \begin{itemize}
-            \item Seeker slaved to radar track LOS \\
-            \item Typically via ACM Modes \\
-            (including HMD, if powered)
-        \end{itemize}
-        \item \textbf{BORE} - \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
+        \item \textbf{COOL} ---  increases seeker sensitivity, should be set prior to engagement
+        \item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
+    \end{subitemize}}
+    \blueitem{Selected Station}{\textbf{OSB 10 / 16} select/cycle availabel missile pylons}
+    \blueitem{SLAVE / BORE}{
+    \textbf{OSB 19} controls seeker line of sight
+
+    \begin{subitemize}
+        \item \textbf{BORE} --- \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
         \begin{itemize}
             \item Acquisition with own missile seeker
             \item Or cued with HMD (if powered)
             \item \textbf{Does NOT require FCR}
         \end{itemize}
-    \end{subitemize}}
-    \blueitem{WARM / COOL}{
-    \begin{subitemize}
-        \item \textbf{Controls Seeker Cooling Status}
-        \item \textbf{COOL} ---  increases seeker sensitivity, should be set prior to engagement
-        \item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
-    \end{subitemize}}
-    \blueitem{Select AIM-9}{
-    Via MFD
-
-    \begin{subenumerate}
-        \item \textbf{Master Mode} \dotfill \textbf{A-A}
-        \item \textbf{Selected Weapon} \dotfill \textbf{9LM / 9X}
+        \item \textbf{SLAVE} --- \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
         \begin{itemize}
-            \item \textbf{Cycle} --- \textbf{OSB 7} or long press \textbf{NWS}
+            \item Seeker slaved to radar track LOS
+            \item Typically via ACM Modes
         \end{itemize}
-    \end{subenumerate}
-    
-    Via Dogfight
-
-    \begin{subenumerate}
-        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-        \begin{itemize}
-            \item AIM-9 \& GUN automatically selected
-        \end{itemize}
-        \item \textbf{Selected Weapon} \dotfill Verify \textbf{9LM / 9X}
-    \end{subenumerate}}
-    \blueitem{Selected Station}{}
+    \end{subitemize}}
 \end{tcoloritemize}
 
 \notebox{

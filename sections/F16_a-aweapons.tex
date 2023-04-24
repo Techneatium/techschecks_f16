@@ -352,14 +352,24 @@
 
 \subsection{AIM-9 SIDEWINDER}
 
-\mbox{
-    \begin{minipage}[t][25mm][c]{\textwidth}
+\begin{figure}[htbp]
         \centering
-        \LARGE IMAGE PLACEHOLDER
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{AIM-9 OVERVIEW}}
+        \begin{itemize}
+            \item Some kind of overview figure
+            \item maybe showing side on profile of the weapon?
+        \end{itemize}
     \end{minipage}
 }
+    \caption{AIM-9 Sidewinder}
+\end{figure}
+
 \begin{tcoloritemize}
     \blueitem{AIM-9}{
+    Short-range, fire-and-forget ``dogfight'' missile. First entered service in 1956
+
     \begin{subitemize}
         \item \textbf{Guidance} --- IR-guided (\textbf{Fox 2})
         \item \textbf{Range} --- min: \textasciitilde3000ft, max: \textasciitilde10-20nm
@@ -371,14 +381,30 @@
     \end{subitemize}}
     \blueitem{Acquisition / Cueing Modes}{
     \begin{subitemize}
-        \item Seeker slaved to radar track LOS \\
-        \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
         \item Acquisition with own missile seeker \\
         \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
+        \item Seeker slaved to radar track LOS \\
+        \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
         \item Seeker cued with HMD LOS \\
         \textbf{Possible in either \hyperref[subsec:aim9slave]{\textbf{Slaved}} or \hyperref[subsec:aim9bore]{\textbf{Bore}} mode}
     \end{subitemize}}
-    \blueitem{SMS Page}{\textbf{See Figure X.XX} and below items}
+    \blueitem{Select AIM-9}{
+    Via Dogfight --- AIM-9 \& GUN automatically selected
+
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+        \item \textbf{Selected Weapon (OSB 7)} \dotfill Verify \textbf{9LM / 9X}
+    \end{subenumerate}
+
+    Via MFD
+
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{Operating Mode (SMS OSB 1)} \dotfill Verify \textbf{AAM}
+        \item \textbf{Selected Weapon (OSB 7)} \dotfill \textbf{9LM / 9X}
+    \end{subenumerate}}
+\end{tcoloritemize}
+    
     \blueitem{SPOT / SCAN}{
     \begin{subitemize}
         \item \textbf{Controls Seeker Field of View}

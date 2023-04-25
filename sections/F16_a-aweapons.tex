@@ -513,9 +513,9 @@
 
 \marginfigeometry
 
-\subsubsection{SELECT AIM-9}
+\subsubsection{AIM-9 SELECTION}
 \begin{checklistitemize}
-    \blueitem{Via DGFT}{AIM-9 selected automatically
+    \blueitem{Via DGFT}{(AIM-9 selected automatically)
     \begin{subenumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
     \end{subenumerate}}
@@ -540,7 +540,7 @@
     \end{subenumerate}}
 \end{checklistitemize}
 
-\subsubsection{BORE --- NO RADAR}
+\subsubsection{BORE EMPLOYMENT --- NO RADAR}
 \label{subsec:aim9bore}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
@@ -549,7 +549,7 @@
         \hfill (if desired, completely silences radar)
         \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
         \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
-        \item \textbf{WARM/COOL} verify \dotfill \textbf{COOL}
+        \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
     \blueitem{AIM-9 Track Acquisition}{
@@ -568,20 +568,21 @@
     }
     \begin{subenumerate}
         \item \textbf{Missile Reticle} \dotfill \textbf{On-Target}
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
         \item \textbf{Missile Diamond} \dotfill verify latched to target
-        \item Maneuver into firing position
     \end{subenumerate}}
     \blueitem{Fire Missile}{
     \begin{subenumerate}
-        \item \textbf{Sidewinder Audio} \dotfill \textbf{Good Tone}
+        \item Maneuver into firing position
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
 \end{checklistenumerate}
 
 \clearpage
 
-\subsubsection{HMCS BORE --- NO RADAR}
+\subsubsection{HMCS BORE EMPLOYMENT --- NO RADAR}
 \label{subsec:aim9hmcs}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
@@ -591,42 +592,110 @@
         \hfill (if desired, completely silences radar)
         \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
         \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
-        \item \textbf{WARM/COOL} \dotfill verify \textbf{COOL}
+        \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
     \blueitem{AIM-9 Track Acquisition}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{AIM-9 HMD Track}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show missile diamond \& dynamic aiming cross
+                    \item show diamond latched to symbolic target?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{AIM-9 HMD Track}
+    }
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{AIM-9 HMD LOS}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show missile diamond out of HMD limits
+                    \item can probably reuse from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{HMD beyond seeker limits}
+    }
     \begin{subenumerate}
         \item Maneuver to place target within AIM-9 seeker limits
-        \item \textbf{HMD Missile Reticle} \dotfill \textbf{On-Target}
+        \item \textbf{HMD Aiming Cross} \dotfill \textbf{On-Target}
+    \end{subenumerate}
+
+    Missile diamond follows aiming cross (within seeker limits)
+
+    \begin{subenumerate}[start=3]
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
         \item \textbf{Missile Diamond} \dotfill verify latched to target
-        \item Maneuver into firing position
     \end{subenumerate}}
     \blueitem{Fire Missile}{
     \begin{subenumerate}
-        \item \textbf{Sidewinder Audio} \dotfill \textbf{Good Tone}
+        \item Maneuver into firing position
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
 \end{checklistenumerate}
 
-\subsubsection{SLAVE --- RADAR}
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][40mm][t]{75mm}
+        \center{\large\textbf{AIM-9 Envelope}}
+        \begin{itemize}
+            \item show overhead missile envelope around symbolic target?
+            \item this is really a stretch goal \dots
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{AIM-9 Firing envelope}
+    \label{fig:aaweap:aim9:envelope}
+\end{figure}
+
+\clearpage
+
+\subsubsection{SLAVE EMPLOYMENT --- RADAR}
 \label{subsec:aim9slave}
 \begin{checklistenumerate}
-    \blueitem{Conditions}{
+    \blueitem{Prerequisites}{
     \begin{subitemize}
         \item \textbf{FCR} \dotfill \textbf{ON}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
         \item \textbf{HMD SYMB. INT} \dotfill As desired
         \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
-        \item \textbf{WARM/COOL} verify \dotfill \textbf{COOL}
+        \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
     \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{HMD BORE Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show HMD BORE circle
+                    \item show symbolic target (outline)
+                    \item can reuse from radar chapter
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{HMD BORE Symbology}
+    }
+    
+    \medskip
+    For demonstration we will use \textbf{ACM BORE Submode} with HMD
     
     \begin{subenumerate}
-        \item \textbf{ACM Submode} \dotfill \textbf{As desired}
-        \item Maneuver to place target in radar scan volume
+        \item \textbf{FCR Mode} \dotfill \textbf{ACM}
+        \item \textbf{TMS} \dotfill \textbf{FWD}
+        \item \textbf{Target} \dotfill \textbf{In HMD BORE Symbol}
+        \item \textbf{Radar} \dotfill wait for \textbf{STT Lock}
     \end{subenumerate}
     
     Can also lock from CRM, \textbf{see \Cref{subsec:crm}}
@@ -636,20 +705,19 @@
         \captionsetup{type=figure}
         \fbox{
             \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 Track}}
+                \center{\textbf{AIM-9 Radar Track}}
                 \begin{itemize}[leftmargin=1em]
-                    \item show missile reticle
-                    \item show diamond latched to symbolic target (outline)
+                    \item show radar target designator box
+                    \item show diamond latched to target designator box
                 \end{itemize}
             \end{minipage}
         }
-        \caption{AIM-9 Track}
+        \caption{AIM-9 Radar Track}
     }
     \begin{subenumerate}
-        \item \textbf{Missile Reticle} \dotfill \textbf{On-Target}
         \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{Missile Diamond} \dotfill verify latched to target
-        \item Maneuver into firing position
     \end{subenumerate}}
     \blueitem{Fire Missile}{
     \marginpar{
@@ -667,8 +735,9 @@
         \caption{In-range DLZ}
     }
     \begin{subenumerate}
+        \item Maneuver into firing position
         \item \textbf{DLZ} \dotfill \textbf{Indicates In-Range}
-        \item \textbf{Sidewinder Audio} \dotfill \textbf{Good Tone}
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
 \end{checklistenumerate}

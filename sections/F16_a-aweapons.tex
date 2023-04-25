@@ -1273,44 +1273,46 @@
     \blueitem{Prerequisites}{
     \begin{subitemize}
         \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page (SOI)}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
-        % \item \textbf{Master Mode} \dotfill \textbf{A-A}
         \item \textbf{Selected Weapon} \dotfill \textbf{120C}
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
-    \blueitem{Acquire Targets}{From RWS/DTT or TWS
+    \blueitem{Radar Acquisition}{Demonstrated for TWS mode, \textbf{see \Cref{subsec:tws}}
 
     \begin{subenumerate}
-        \item \textbf{Targets} \dotfill Designate with \textbf{TMS Fwd}
-        \begin{itemize}
-            \item \textbf{TWS} --- Repeat for all desired targets 
-            \item \textbf{DTT} --- Repeat for second target
-        \end{itemize}
-    \end{subenumerate}}
-    \blueitem{Symbology}{
-    \begin{subitemize}
-        \item \textbf{TLL} --- \textbf{T}arget \textbf{L}ocator \textbf{L}ine --- Extends from gun cross \& points towards target
-        \item \textbf{ASEC} --- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle \\
-        Changes size to reflect target state 
-        \item \textbf{ASC} --- \textbf{A}ttack \textbf{S}teering \textbf{C}ue --- appears
-        \item \textbf{Target Range} --- Displayed
-    \end{subitemize}}
-    \blueitem{Employment}{
-    \begin{subenumerate}
-        \item \textbf{Desired Targets} \dotfill Tracked
-        \item \label{item:aim120:multitgt:steer}\textbf{Current Target} --- Place within \textbf{DLZ} \& \textbf{ASEC}
-        \item \label{item:aim120:multitgt:fire}\textbf{WPN REL} \dotfill \textbf{Depress}
-        \item \label{item:aim120:multitgt:cycle}\textbf{Target} \dotfill Cycle with \textbf{TMS Right} 
+        \item \textbf{FCR Mode} \dotfill Verify \textbf{CRM-TWS}
     \end{subenumerate}
 
-    Repeat \ref{item:aim120:multitgt:steer}-\ref{item:aim120:multitgt:cycle} for all remaining targets}
-\end{checklistenumerate}
+    Upgrade desired tracks to \textbf{System Tracks}
 
-\notebox{
-    \begin{itemize}
-        \item \textbf{Single Target TWS Employment} --- special case of multi-target
-    \end{itemize}
-}
+    \begin{subenumerate}[start=2]
+        \item \textbf{Target} \dotfill under Acquisition cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}
+    
+    Or upgrade \underline{all} tracks to \textbf{System Tracks}
+
+    \begin{subenumerate}[start=2]
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}
+
+    Similar 2-target employment possible for RWS-DTT mode, \textbf{see \Cref{subsec:rws}}
+    }
+    \blueitem{Fire Missiles}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward} (bugged)
+        \item \textbf{ASC} \dotfill within \textbf{ASEC}
+        \item \textbf{DLZ} \dotfill \textbf{Indicates In-Range}
+        \item \textbf{WPN REL} \dotfill \textbf{Depress}
+    \end{subenumerate}
+
+    Repeat for all remaining targets
+
+    \medskip
+    Bugged target can be cycled in range order with \textbf{TMS Right}}
+\end{checklistenumerate}
 
 \marginfigrestore

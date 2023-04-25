@@ -1029,6 +1029,93 @@
     \end{subitemize}}
 \end{tcoloritemize}
 
+\clearpage
+
+\subsubsection{SYMBOLOGY}
+
+\begin{tcoloritemize}
+    \blueitem{Basic Radar Symbology}{For beyond-visual-range radar usage and symbology \textbf{reference \Crefrange{subsec:crm}{subsec:tws}}}
+    \blueitem{DLZ}{\textbf{D}ynamic \textbf{L}aunch \textbf{Z}one --- Displays target \& missile range information in HUD/FCR page
+    \begin{subitemize}
+        \item \textbf{Range Scale}
+        \item \textbf{Target Range \& Closure}
+        \begin{itemize}
+            \item slant range in \underline{nm}
+            \item closure rate in \underline{knots}
+        \end{itemize}
+        \item \textbf{R\textsubscript{aero}} --- Aerodynamic range 
+        \begin{itemize}
+            \item \underline{maximum kinetic range}
+            \item assumes non-maneuvering target
+        \end{itemize}
+        \item \textbf{R\textsubscript{TR}} --- Turn-and-run range
+        \begin{itemize}
+            \item maximum range assuming target turns cold at current velocity
+        \end{itemize}
+        \item \textbf{R\textsubscript{ACT}} --- Active range
+        \begin{itemize}
+            \item range at which AIM-120 will activate onboard radar
+        \end{itemize}
+        \item \textbf{R\textsubscript{MIN}} --- Minimum range
+        \item \textbf{Countdown}
+        \begin{itemize}
+            \item \textbf{A} --- seconds until missile goes active
+            \item \textbf{T} --- seconds until predicted impact
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{ASC \& ASEC}{Target lead cues for pilot to maximize missile performance
+    \begin{subitemize}
+        \item \textbf{ASC} --- \textbf{A}ttack \textbf{S}teering \textbf{C}ue
+        \begin{itemize}
+            \item Lead cue
+        \end{itemize}
+        \item \textbf{ASEC} --- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle
+        \begin{itemize}
+            \item Dynamically adjusts size based on target maneuvers
+            \item Pilot should place \textbf{ASC} inside \textbf{ASEC}
+        \end{itemize}
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][40mm][t]{100mm}
+        \center{\large\textbf{DLZ/ASEC/ASC}}
+        \begin{itemize}
+            \item show dlz with stuff from text labeled
+            \item show combined asc/asec symbology
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{Missile DLZ and ASC/ASEC Symbology}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{Target Locator Line}{}
+    \blueitem{Missile Diamond}{}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{HUD --- AIM-120 Symbology}}
+        \begin{itemize}
+            \item show hud in a-a mode, aim-120 selected
+            \item label each of the relevant symbology elements explained in text
+            \item probably makes sense to have one big figure with all the elements in it just to show what the hud looks like
+            \item label additional stuff not mentioned in text
+            \begin{itemize}
+                \item range/bearing information etc.
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{A-A AIM-120 HUD}
+\end{figure}
+
+
 \marginfigeometry
 
 \subsubsection{AIM-120 SELECTION}

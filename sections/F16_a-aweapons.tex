@@ -762,71 +762,78 @@
 \marginfigrestore 
 
 \subsection{AIM-120 AMRAAM}
-
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
     \includegraphics[
             width = 108mm,
     ]{F16_aaweapons_amraam_overview_v01.pdf}
-    \caption{}
+    \fbox{
+    \begin{minipage}[t][25mm][t]{100mm}
+        \center{\large\textbf{AIM-120 OVERVIEW}}
+        \begin{itemize}
+            \item Some kind of overview figure
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{AIM-120 AMRAAM}
 \end{figure}
 
-\clearpage
-
 \begin{tcoloritemize}
-    \blueitem{AIM-120}{
+    \blueitem{AIM-120 \break AMRAAM}{
+    \textbf{A}dvanced \textbf{M}edium \textbf{R}ange \textbf{A}ir-to-\textbf{A}ir \textbf{M}issile
+    --- long range, fire-and-forget, active-radar homing missile
+
     \begin{subitemize}
         \item \textbf{Guidance} --- Active Radar-Guided (\textbf{Fox 3})
         \item \textbf{Range} --- max:  \textasciitilde30-40nm (high mach, alt)
     \end{subitemize}}
     \blueitem{Engagement \break Types}{
     \begin{subitemize}
-        \item \textbf{Single Target} --- \hyperref[subsec:aim120single]{\textbf{See \Cref{subsec:aim120single}}}
+        \item \textbf{Single-Target} --- \hyperref[subsec:aim120:single]{\textbf{See \Cref{subsec:aim120:single}}}
         \begin{itemize}
             \item From STT radar lock
             \item Or radar TWS / DTT tracks
         \end{itemize}
-        \item \textbf{Multi Target} --- \hyperref[subsec:aim120multi]{\textbf{See \Cref{subsec:aim120multi}}}
+        \item \textbf{Multi-Target} --- \hyperref[subsec:aim120:multi]{\textbf{See \Cref{subsec:aim120:multi}}}
         \begin{itemize}
             \item For TWS / DTT tracks
         \end{itemize}
     \end{subitemize}}
-    \blueitem{SMS Page}{\textbf{See Figure X.XX} and below items}
-    \blueitem{SLAVE / BORE}{
+    \blueitem{Flight Profile}{Successful long-range weapon employment necessitates understanding of flight-profile and tactics
     \begin{subitemize}
-        \item \textbf{Controls Missile Radar Line of Sight}
-        \item \textbf{SLAVE}
-        \begin{itemize}
-            \item Missile LOS slaved to AC radar 
-            \item Receives DL updates until within own radar limits
-        \end{itemize}
-        \item \textbf{BORE}
-        \begin{itemize}
-            \item Missile scans straight ahead, tracks first detected target
-        \end{itemize}
-    \end{subitemize}}
+        \item \textbf{Mid-Course} --- Guided via \underline{datalink}, launching fighter should maintain radar contact with target
+        \item \textbf{Terminal Phase} --- Guided via \underline{internal radar}, launching fighter may break away
+    \end{subitemize}
+    
+    \textbf{See \Cref{subsec:aim120:employmentprofile} and \Cref{subsec:aim120:tactics}}
+    }
     \blueitem{Select AIM-120}{
-    Via MFD
+    Via A-A Master Mode
 
     \begin{subenumerate}
-        \item \textbf{Selected Weapon} \dotfill \textbf{120C}
-        \begin{itemize}
-            \item \textbf{Cycle} --- \textbf{OSB 7} or long press \textbf{NWS}
-        \end{itemize}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{Operating Mode (SMS OSB 1)} \dotfill Verify \textbf{AAM}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
     \end{subenumerate}
 
     Via Missile Override
 
     \begin{subenumerate}
-        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
-        \item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{OVRD}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C} 
     \end{subenumerate}
     
     Via Dogfight
 
     \begin{subenumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-        \item \textbf{Selected Weapon} \dotfill \textbf{120C}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
+    \end{subenumerate}
+    
+    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
+    }
+\end{tcoloritemize}
+
         \begin{itemize}
             \item \textbf{Cycle} --- \textbf{OSB 7} or long press \textbf{NWS}
         \end{itemize}

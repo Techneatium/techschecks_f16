@@ -467,8 +467,49 @@
 
 \subsubsection{SYMBOLOGY}
 \begin{tcoloritemize}
-    \blueitem{HUD Symbology}{}
+    \blueitem{MFD Symbology}{Reference \textbf{\underline{insert reference to aim-120 subsubsec}}}
+    \blueitem{HUD/HMD \break Symbology}{
+    \begin{subitemize}
+        \item \textbf{Missile Diamond} --- AIM-9 seeker line-of-sight
+        \begin{itemize}
+            \item displayed on HUD \& HMD
+            \item marked with \textbf{X} if beyond seeker limits
+        \end{itemize}
+        \item \textbf{Missile Reticle} --- AIM-9 seeker field-of-view
+        \begin{itemize}
+            \item displayed on HUD only
+            \item size reflects \textbf{SPOT/SCAN} setting 
+        \end{itemize}
+        \item \textbf{Dynamic Aiming Cross} --- HMD line-of-sight
+    \end{subitemize}
+
+    Reference symbology in \cref{fig:aaweap:aim9:hudhmdsymb}
+    }
 \end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
+        \begin{itemize}
+            \item show hud/hmd with aim-9 in use 
+            \item clearly indicate missile diamond/reticle and dynamic aiming cross
+            \item maybe show several versions?
+            \begin{itemize}
+                \item 1 with missile reticle from HUD?
+                \item 1 with missile diamond latchedon aiming cross?
+                \item 1 with diamond on target?
+                \item 1 with \textbf{X}?
+            \end{itemize}
+            or some subset of those?
+            \item can reuse these in marginfigs below?
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{HUD/HMD AIM-9 Symbology}
+    \label{fig:aaweap:aim9:hudhmdsymb}
+\end{figure}
 
 \marginfigeometry
 

@@ -834,13 +834,51 @@
     }
 \end{tcoloritemize}
 
+\clearpage
+
+\subsubsection{SMS CONTROLS}
+
+\begin{tcoloritemize}
+    \blueitem{Selected Weapon}{
+    \textbf{OSB 7} cycles through available A-A weapon types
+    
+    \medskip
+    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
+    }
+    \blueitem{Selected Station}{
+    \textbf{OSB 10 / 16} select/cycle availabel missile pylons
+    
+    \medskip
+    Selected station can also be cycled with \textbf{NWS/MSL Step depress (short)}
+    }
+    \blueitem{SLAVE / BORE}{\textbf{OSB 19} controls missile radar line of sight
+    \begin{subitemize}
+        \item \textbf{SLAVE} --- Missile LOS slaved to AC radar 
         \begin{itemize}
-            \item \textbf{Cycle} --- \textbf{OSB 7} or long press \textbf{NWS}
+            \item receives DL updates until within own radar limits
         \end{itemize}
-    \end{subenumerate}}
-    \blueitem{Selected Station}{}
+        \item \textbf{BORE} --- Missile scans straight ahead
+        \begin{itemize}
+            \item tracks first detected target
+        \end{itemize}
+    \end{subitemize}}
 \end{tcoloritemize}
 
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{MFD --- SMS --- AIM-120 CONTROLS}}
+        \begin{itemize}
+            \item show sms aim-120 page
+            \item label each of the relevant controls explained in text
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{MFD SMS AIM-120 Controls}
+\end{figure}
+
+\clearpage
 \clearpage
 
 \subsubsection{EMPLOYMENT PROFILE}

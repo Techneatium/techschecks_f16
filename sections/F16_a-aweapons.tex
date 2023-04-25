@@ -1184,32 +1184,82 @@
     \blueitem{Prerequisites}{
     \begin{subitemize}
         \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page (SOI)}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
-        % \item \textbf{Master Mode} \dotfill \textbf{A-A}
         \item \textbf{Selected Weapon} \dotfill \textbf{120C}
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
-    \blueitem{Acquire Target}{
+    \blueitem{Radar Acquisition}{%
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][50mm][t]{\marginparwidth}
+                \center{\textbf{Bugged/STT Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show bugged target symbol
+                    \item maybe also show stt symbol?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{Bugged/STT Symbology}
+    }%
+    Recommend RWS mode, \textbf{see \Cref{subsec:rws}}
+
     \begin{subenumerate}
-        \item \textbf{Target} \dotfill \textbf{Locked}
-        \begin{itemize}
-            \item \textbf{STT} --- from RWS, TWS, or ACM
-            \item \textbf{Bug} --- from TWS
+        \item \textbf{FCR Mode} \dotfill Verify \textbf{CRM-RWS}
+        \item \textbf{Target} \dotfill under Acquisition cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward} (bugged)
+    \end{subenumerate}
+
+    If desired can STT lock
+
+    \begin{subenumerate}[start=4]
+        \item \textbf{TMS} \dotfill \textbf{Forward} (locked)
+    \end{subenumerate}
+
+    Launch also possible for TWS Bugged Track, \textbf{see \Cref{subsec:tws}}
+    }
+    \blueitem{IFF}{%
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{IFF return}}
+                \begin{itemize}[leftmargin=1em]
+                    \item maybe show friendly IFF return?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{IFF return, do not shoot!}
+    }%
+    Prevent blue-on-blue, \textbf{see \underline{SECTION}},
+    less critical if \textbf{Link-16} is available
+
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Left (long)}
+        \item Check for IFF returns near target
+    \end{subenumerate}
+    
+    If STT locked, NCTR may be available, \textbf{see \Cref{subsec:stt}}
+    }
+    \blueitem{Fire Missile}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{AIM-120 DLZ}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show in-range dlz
+                    \item maybe also show asc inside asec?
         \end{itemize}
-    \end{subenumerate}}
-    \blueitem{Symbology}{
-    \begin{subitemize}
-        \item \textbf{TLL} --- \textbf{T}arget \textbf{L}ocator \textbf{L}ine --- Extends from gun cross \& points towards target
-        \item \textbf{ASEC} --- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle \\
-        Changes size to reflect target state 
-        \item \textbf{ASC} --- \textbf{A}ttack \textbf{S}teering \textbf{C}ue --- appears
-        \item \textbf{Target Range} --- Displayed
-    \end{subitemize}}
-    \blueitem{Employment}{
+            \end{minipage}
+        }
+        \caption{AIM-120 DLZ}
+    }
     \begin{subenumerate}
-        \item \textbf{Radar} \dotfill Locked
-        \item \textbf{Maneuver} --- Place tgt within \textbf{DLZ} \& \textbf{ASEC}
+        \item \textbf{ASC} \dotfill within \textbf{ASEC}
+        \item \textbf{DLZ} \dotfill \textbf{Indicates In-Range}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
 \end{checklistenumerate}

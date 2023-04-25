@@ -65,7 +65,7 @@
     
     \begin{subitemize}
         \item \textbf{EEGS} --- \textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight \\
-        \textbf{See \Cref{subsubsec:eegssymb}}
+        \textbf{See \Cref{subsec:eegssymb}}
     \end{subitemize}}
     \blueitem{Rounds \break Remaining}{Indicates number of rounds remaining in 10s}
 \end{tcoloritemize}
@@ -85,7 +85,7 @@
 \end{figure}
 
 \subsubsection{EEGS SYMBOLOGY}
-\label{subsubsec:eegssymb}
+\label{subsec:eegssymb}
 \begin{tcoloritemize}
     \blueitem{EEGS}{\textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight
     \begin{subitemize}
@@ -380,11 +380,11 @@
     \blueitem{Acquisition / Cueing Modes}{
     \begin{subitemize}
         \item Acquisition with own missile seeker (BORE)\\
-        \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
+        \hyperref[subsec:aim9:bore]{\textbf{See \Cref{subsec:aim9:bore}}}
         \item Seeker slaved to radar track LOS (SLAVE)\\
-        \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
+        \hyperref[subsec:aim9:slave]{\textbf{See \Cref{subsec:aim9:slave}}}
         \item Seeker cued with HMD LOS \\
-        \textbf{See\Cref{subsec:aim9hmcs} for BORE}
+        \textbf{See\Cref{subsec:aim9:hmcs} for BORE}
     \end{subitemize}}
     \blueitem{Select AIM-9}{
     Via Dogfight --- AIM-9 \& GUN automatically selected
@@ -445,13 +445,13 @@
     \textbf{OSB 19} controls seeker line of sight
 
     \begin{subitemize}
-        \item \textbf{BORE} --- \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
+        \item \textbf{BORE} --- \hyperref[subsec:aim9:bore]{\textbf{See \Cref{subsec:aim9:bore}}}
         \begin{itemize}
             \item Acquisition with own missile seeker
             \item Or cued with HMD (if powered)
             \item \textbf{Does NOT require FCR}
         \end{itemize}
-        \item \textbf{SLAVE} --- \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
+        \item \textbf{SLAVE} --- \hyperref[subsec:aim9:slave]{\textbf{See \Cref{subsec:aim9:slave}}}
         \begin{itemize}
             \item Seeker slaved to radar track LOS
             \item Typically via ACM Modes
@@ -558,7 +558,7 @@
 \end{checklistitemize}
 
 \subsubsection{BORE EMPLOYMENT --- NO RADAR}
-\label{subsec:aim9bore}
+\label{subsec:aim9:bore}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
@@ -600,7 +600,7 @@
 \clearpage
 
 \subsubsection{HMCS BORE EMPLOYMENT --- NO RADAR}
-\label{subsec:aim9hmcs}
+\label{subsec:aim9:hmcs}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
@@ -677,7 +677,7 @@
 \clearpage
 
 \subsubsection{SLAVE EMPLOYMENT --- RADAR}
-\label{subsec:aim9slave}
+\label{subsec:aim9:slave}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
@@ -889,12 +889,12 @@
             width = 128mm,
     ]{F16_aaweapons_amraam_employment_v07.pdf}
     \caption{Generic, simplified AIM-120 employment profile}
-    \label{fig:aa-weap:aim120:profile}
+    \label{fig:aaweap:aim120:profile}
 \end{figure}
 
 \begin{tcoloritemize}
     \blueitem{Phases}{
-    \Cref{fig:aa-weap:aim120:profile} shows AIM-120 employment profile
+    \Cref{fig:aaweap:aim120:profile} shows AIM-120 employment profile
     including the following phases \& milestones
 
     \begin{subitemize}
@@ -948,7 +948,7 @@
 \notebox{
     \textbf{Post-Launch Maneuvers}
     \begin{itemize}
-            \item For simplicity, \cref{fig:aa-weap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active 
+            \item For simplicity, \cref{fig:aaweap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active 
             % \item Depending on the tactical situation, it can be beneficial to reduce closure by turning 30-60 deg away from the bandit while maintaing radar contact 
             % \item This can be combined with a dive into thicker air to further reduce bandit missile range and maintain a look-up angle for the radar
     \end{itemize}
@@ -979,7 +979,7 @@
         \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
     \end{subitemize}
     
-    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aa-weap:aim120:profile}.
+    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aaweap:aim120:profile}.
     }
     \blueitem{Maximizing Launch Range / Energy}{
     \textbf{Why?}
@@ -1017,7 +1017,7 @@
         \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
     \end{subitemize}}
     \blueitem{Effect of Bandit Maneuvers}{
-    As evident in \cref{fig:aa-weap:aim120:profile}, 
+    As evident in \cref{fig:aaweap:aim120:profile}, 
     R\textsubscript{Launch} is significantly greater than the distance travelled by the missile
     \begin{subitemize}
         \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
@@ -1071,6 +1071,7 @@
         \item \textbf{ASEC} --- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle
         \begin{itemize}
             \item Dynamically adjusts size based on target maneuvers
+            \item Fixed size prior to target designation
         \end{itemize}
     \end{subitemize}
     Displayed on both FCR Page \& HUD
@@ -1092,8 +1093,8 @@
 \end{figure}
 
 \begin{tcoloritemize}
-    \blueitem{Target Locator Line}{}
-    \blueitem{Missile Diamond}{}
+    \blueitem{TLL}{\textbf{T}arget \textbf{L}ocator \textbf{L}ine --- extends from boresight cross towards target, relative angle displayed next to boresight cross}
+    \blueitem{Missile Diamond}{Indicates missile seeker line-of-sight}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -1252,7 +1253,7 @@
                 \begin{itemize}[leftmargin=1em]
                     \item show in-range dlz
                     \item maybe also show asc inside asec?
-        \end{itemize}
+                \end{itemize}
             \end{minipage}
         }
         \caption{AIM-120 DLZ}

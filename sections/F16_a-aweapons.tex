@@ -49,7 +49,7 @@
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
     \end{subenumerate}
 
-    Via MFD
+    Via A-A Master Mode
 
     \begin{subenumerate}
         \item \textbf{Master Mode} \dotfill \textbf{A-A}
@@ -85,7 +85,7 @@
 \end{figure}
 
 \subsubsection{EEGS SYMBOLOGY}
-
+\label{subsubsec:eegssymb}
 \begin{tcoloritemize}
     \blueitem{EEGS}{\textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight
     \begin{subitemize}
@@ -208,14 +208,12 @@
 \marginfigeometry
 
 \subsubsection{GUN SELECTION}
-\begin{checklistenumerate}
-    \blueitem{Select Gun}{
+\begin{checklistitemize}
+    \blueitem{Via Dogfight}{(GUN automatically selected)
     \begin{subenumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-    \end{subenumerate}
-
-    or via SMS page
-
+    \end{subenumerate}}
+    \blueitem{Via A-A Master Mode}{
     \begin{subenumerate}
         \item \textbf{Master Mode} \dotfill \textbf{A-A}
         \item \textbf{SMS OSB 1} \dotfill \textbf{Cycle to GUN}
@@ -225,7 +223,7 @@
         \item \textbf{EEGS Level II} appears if no lock present
         \item \textbf{EEGS Level V} appears if target locked
     \end{subitemize}}
-\end{checklistenumerate}
+\end{checklistitemize}
 
 \subsubsection{EEGS LVL II EMPLOYMENT --- NO RADAR}
 \begin{checklistenumerate}
@@ -381,12 +379,12 @@
     \end{subitemize}}
     \blueitem{Acquisition / Cueing Modes}{
     \begin{subitemize}
-        \item Acquisition with own missile seeker \\
+        \item Acquisition with own missile seeker (BORE)\\
         \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
-        \item Seeker slaved to radar track LOS \\
+        \item Seeker slaved to radar track LOS (SLAVE)\\
         \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
         \item Seeker cued with HMD LOS \\
-        \textbf{Possible in either \hyperref[subsec:aim9slave]{\textbf{Slaved}} or \hyperref[subsec:aim9bore]{\textbf{Bore}} mode}
+        \textbf{See\Cref{subsec:aim9hmcs} for BORE}
     \end{subitemize}}
     \blueitem{Select AIM-9}{
     Via Dogfight --- AIM-9 \& GUN automatically selected
@@ -496,6 +494,13 @@
     \end{subitemize}
 
     Reference symbology in \cref{fig:aaweap:aim9:hudhmdsymb}
+
+    \begin{subitemize}
+        \item \textbf{DLZ} --- \textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
+        \begin{itemize}
+            \item \textbf{\underline{insert reference to aim-120 subsubsec}}
+        \end{itemize}
+    \end{subitemize}
     }
 \end{tcoloritemize}
 

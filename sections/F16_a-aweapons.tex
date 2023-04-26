@@ -1205,19 +1205,10 @@
     \end{subitemize}}
     \blueitem{CRM Submode}{\textbf{As Desired}
     \begin{subitemize}
-        \item \textbf{RWS} --- \textbf{See \Cref{subsec:rws}}
-        \begin{itemize}
-            \item long-range, fast search
-        \end{itemize}
-        \item \textbf{TWS} --- \textbf{See \Cref{subsec:tws}}
-        \begin{itemize}
-            \item dedicated multi-target mode
-        \end{itemize}
-        \item \textbf{Cycle via}
-        \begin{itemize}
-            \item \textbf{FCR OSB 2} --- \textbf{Depress}
-            \item or \textbf{TMS} --- \textbf{Right (long)}
-        \end{itemize}
+        \item \textbf{RWS} --- fast, long-range search mode \\
+        \textbf{See \Cref{subsec:rws}}
+        \item \textbf{TWS} --- multi-target track mode \\
+        \textbf{See \Cref{subsec:tws}}
     \end{subitemize}}
     \blueitem{Radar Acquisition}{%
     \marginpar{
@@ -1233,17 +1224,19 @@
         }
         \caption{Bugged/STT Symbology}
     }%
-    (demonstrated for \underline{RWS})
+    For demonstration we will use \textbf{CRM-RWS Submode} 
 
     \begin{subenumerate}
-        \item \textbf{Target} \dotfill under Acquisition cursor
-        \item \textbf{TMS} \dotfill \textbf{Forward} (bugged)
+        \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \textbf{Target} \dotfill verify \textbf{Bugged}
     \end{subenumerate}
-
-    If desired can STT lock
+    
+    If desired can STT lock bugged target
 
     \begin{subenumerate}[start=4]
-        \item \textbf{TMS} \dotfill \textbf{Forward} (locked)
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \textbf{Target} \dotfill verify \textbf{Locked}
     \end{subenumerate}}
     \blueitem{LOS IFF}{%
     \marginpar{
@@ -1258,7 +1251,7 @@
         }
         \caption{IFF return, do not shoot!}
     }%
-    \textbf{see \underline{SECTION}}
+    \textbf{See \Cref{subsec:iff}}
 
     \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Left (long)}
@@ -1303,21 +1296,12 @@
     \end{subitemize}}
     \blueitem{CRM Submode}{\textbf{As Desired}
     \begin{subitemize}
-        \item \textbf{RWS} --- \textbf{See \Cref{subsec:rws}}
-        \begin{itemize}
-            \item max 2-target engagement (DTT)
-        \end{itemize}
-        \item \textbf{TWS} --- \textbf{See \Cref{subsec:tws}}
-        \begin{itemize}
-            \item dedicated multi-target mode
-        \end{itemize}
-        \item \textbf{Cycle via}
-        \begin{itemize}
-            \item \textbf{FCR OSB 2} --- \textbf{Depress}
-            \item or \textbf{TMS} --- \textbf{Right (long)}
-        \end{itemize}
+        \item \textbf{RWS} --- max 2-target engagement (DTT) \\
+        \textbf{See \Cref{subsec:rws}}
+        \item \textbf{TWS} --- true multi-target capability \\
+        \textbf{See \Cref{subsec:tws}}
     \end{subitemize}}
-    \blueitem{Radar Acquisition}{(demonstrated for \underline{TWS})
+    \blueitem{Track Acquisition}{For demonstration we will use \textbf{CRM-TWS Submode} 
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -1336,14 +1320,15 @@
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
         \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \textbf{Target} \dotfill verify \textbf{System target}
     \end{subenumerate}
     
-    Or upgrade \underline{all} tracks to system tracks
+    Or upgrade \underline{all} tracks to system targets
 
-    \begin{subenumerate}[start=2]
+    \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
     \end{subenumerate}}
-    \blueitem{SCAN IFF}{\textbf{see \underline{SECTION}}
+    \blueitem{SCAN IFF}{\textbf{See \Cref{subsec:iff}}
 
     \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Left (short)}
@@ -1351,9 +1336,12 @@
     \end{subenumerate}}
     \blueitem{Bug Acquisition}{
     \begin{subenumerate}
-        \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under Acquisition cursor
+        \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under \textbf{Acquisition cursor}
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}}
+        \item \textbf{Target} \dotfill verify \textbf{Bugged}
+    \end{subenumerate}
+    
+    Can cycle bugged target with \textbf{TMS Right}}
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
@@ -1369,21 +1357,12 @@
         \caption{AIM-120 DLZ}
     }
     \begin{subenumerate}
-        % \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under Acquisition cursor
-        % \item \textbf{TMS} \dotfill \textbf{Forward} (bugged)
         \item \textbf{ASC} \dotfill within \textbf{ASEC}
         \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
         \item \label{subsec:aim120:multi:wpnrel}\textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}
-    \textbf{Repeat \crefrange{subsec:aim120:multi:acq}{subsec:aim120:multi:wpnrel} for desired targets}
+    Repeat \crefrange{subsec:aim120:multi:acq}{subsec:aim120:multi:wpnrel} for desired targets
     }
 \end{checklistenumerate}
-
-% \notebox{
-%     \begin{itemize}
-%         \item Bugged target can be cycled in range order with \textbf{TMS Right}
-%         \item Similar 2-target employment possible for RWS-DTT mode, \textbf{see \Cref{subsec:rws}}
-%     \end{itemize}
-% }
 
 \marginfigrestore

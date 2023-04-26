@@ -1191,6 +1191,17 @@
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
+    \blueitem{Set CRM Submode}{
+    \begin{subitemize}
+        \item \textbf{RWS} --- \textbf{See \Cref{subsec:rws}}
+        \begin{itemize}
+            \item long-range, fast search
+        \end{itemize}
+        \item \textbf{TWS} --- \textbf{See \Cref{subsec:tws}}
+        \begin{itemize}
+            \item dedicated multi-target mode
+        \end{itemize}
+    \end{subitemize}}
     \blueitem{Radar Acquisition}{%
     \marginpar{
         \captionsetup{type=figure}
@@ -1205,10 +1216,9 @@
         }
         \caption{Bugged/STT Symbology}
     }%
-    Recommend RWS mode, \textbf{see \Cref{subsec:rws}}
+    (demonstrated for \underline{RWS})
 
     \begin{subenumerate}
-        \item \textbf{FCR Mode} \dotfill Verify \textbf{CRM-RWS}
         \item \textbf{Target} \dotfill under Acquisition cursor
         \item \textbf{TMS} \dotfill \textbf{Forward} (bugged)
     \end{subenumerate}
@@ -1217,10 +1227,7 @@
 
     \begin{subenumerate}[start=4]
         \item \textbf{TMS} \dotfill \textbf{Forward} (locked)
-    \end{subenumerate}
-
-    Launch also possible for TWS Bugged Track, \textbf{see \Cref{subsec:tws}}
-    }
+    \end{subenumerate}}
     \blueitem{LOS IFF}{%
     \marginpar{
         \captionsetup{type=figure}
@@ -1238,8 +1245,8 @@
 
     \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Left (long)}
-        \item Check for IFF returns near target
-        \item Check NCTR if available, \textbf{see \Cref{subsec:stt}}
+        \item \textbf{IFF Returns} \dotfill \textbf{None} (near target)
+        \item \textbf{NCTR ID} \dotfill \textbf{Hostile} (if available)
     \end{subenumerate}}
     \blueitem{Fire Missile}{
     \marginpar{
@@ -1277,7 +1284,19 @@
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
-    \blueitem{Radar Acquisition}{Demonstrated for TWS mode, \textbf{see \Cref{subsec:tws}}
+    \blueitem{Set CRM Submode}{
+    \begin{subitemize}
+        \item \textbf{RWS} --- \textbf{See \Cref{subsec:rws}}
+        \begin{itemize}
+            \item long-range, fast search
+            \item max 2-target engagement (DTT)
+        \end{itemize}
+        \item \textbf{TWS} --- \textbf{See \Cref{subsec:tws}}
+        \begin{itemize}
+            \item dedicated multi-target mode
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{Radar Acquisition}{(demonstrated for \underline{TWS})
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -1294,12 +1313,6 @@
         \caption{System / Bugged Target Symbology}
     }
     \begin{subenumerate}
-        \item \textbf{FCR Mode} \dotfill Verify \textbf{CRM-TWS}
-    % \end{subenumerate}
-
-    % Upgrade desired tracks to system tracks
-
-    % \begin{subenumerate}[start=2]
         \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
         \item \textbf{TMS} \dotfill \textbf{Forward}
     \end{subenumerate}
@@ -1313,7 +1326,7 @@
 
     \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Left (short)}
-        \item Check for IFF returns near tracks
+        \item \textbf{IFF Returns} \dotfill \textbf{None} (near tracks)
     \end{subenumerate}}
     \blueitem{Bug Acquisition}{
     \begin{subenumerate}

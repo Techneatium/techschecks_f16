@@ -288,7 +288,7 @@
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
         \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
@@ -681,7 +681,7 @@
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
         \item \textbf{HMD SYMB. INT} \dotfill As desired
         \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
@@ -753,7 +753,7 @@
     }
     \begin{subenumerate}
         \item Maneuver into firing position
-        \item \textbf{DLZ} \dotfill \textbf{Indicates In-Range}
+        \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
         \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
@@ -1184,7 +1184,7 @@
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{Desired MFD} \dotfill \textbf{FCR Page (SOI)}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
         \item \textbf{Selected Weapon} \dotfill \textbf{120C}
@@ -1221,7 +1221,7 @@
 
     Launch also possible for TWS Bugged Track, \textbf{see \Cref{subsec:tws}}
     }
-    \blueitem{IFF}{%
+    \blueitem{LOS IFF}{%
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
@@ -1234,21 +1234,18 @@
         }
         \caption{IFF return, do not shoot!}
     }%
-    Prevent blue-on-blue, \textbf{see \underline{SECTION}},
-    less critical if \textbf{Link-16} is available
+    \textbf{see \underline{SECTION}}
 
     \begin{subenumerate}
         \item \textbf{TMS} \dotfill \textbf{Left (long)}
         \item Check for IFF returns near target
-    \end{subenumerate}
-    
-    If STT locked, NCTR may be available, \textbf{see \Cref{subsec:stt}}
-    }
+        \item Check NCTR if available, \textbf{see \Cref{subsec:stt}}
+    \end{subenumerate}}
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
         \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
+            \begin{minipage}[t][50mm][t]{\marginparwidth}
                 \center{\textbf{AIM-120 DLZ}}
                 \begin{itemize}[leftmargin=1em]
                     \item show in-range dlz
@@ -1260,7 +1257,7 @@
     }
     \begin{subenumerate}
         \item \textbf{ASC} \dotfill within \textbf{ASEC}
-        \item \textbf{DLZ} \dotfill \textbf{Indicates In-Range}
+        \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
 \end{checklistenumerate}
@@ -1269,10 +1266,11 @@
 
 \subsubsection{MULTI-TARGET EMPLOYMENT}
 \label{subsec:aim120:multi}
+
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{Desired MFD} \dotfill \textbf{FCR Page (SOI)}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
         \item \textbf{Selected Weapon} \dotfill \textbf{120C}
@@ -1280,39 +1278,78 @@
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
     \blueitem{Radar Acquisition}{Demonstrated for TWS mode, \textbf{see \Cref{subsec:tws}}
-
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][60mm][t]{\marginparwidth}
+                \center{\textbf{System / Bugged Target Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show system / bugged target symbology
+                    \item maybe format as a diagram/flow chart?
+                    \item maybe combine into one fig wth search/track target fig?
+                    \item can reuse from apg68 chapter
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{System / Bugged Target Symbology}
+    }
     \begin{subenumerate}
         \item \textbf{FCR Mode} \dotfill Verify \textbf{CRM-TWS}
-    \end{subenumerate}
+    % \end{subenumerate}
 
-    Upgrade desired tracks to \textbf{System Tracks}
+    % Upgrade desired tracks to system tracks
 
-    \begin{subenumerate}[start=2]
-        \item \textbf{Target} \dotfill under Acquisition cursor
+    % \begin{subenumerate}[start=2]
+        \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
         \item \textbf{TMS} \dotfill \textbf{Forward}
     \end{subenumerate}
     
-    Or upgrade \underline{all} tracks to \textbf{System Tracks}
+    Or upgrade \underline{all} tracks to system tracks
 
     \begin{subenumerate}[start=2]
         \item \textbf{TMS} \dotfill \textbf{Right}
-    \end{subenumerate}
+    \end{subenumerate}}
+    \blueitem{SCAN IFF}{\textbf{see \underline{SECTION}}
 
-    Similar 2-target employment possible for RWS-DTT mode, \textbf{see \Cref{subsec:rws}}
-    }
-    \blueitem{Fire Missiles}{
     \begin{subenumerate}
-        \item \textbf{Target} \dotfill under Acquisition cursor
-        \item \textbf{TMS} \dotfill \textbf{Forward} (bugged)
+        \item \textbf{TMS} \dotfill \textbf{Left (short)}
+        \item Check for IFF returns near tracks
+    \end{subenumerate}}
+    \blueitem{Bug Acquisition}{
+    \begin{subenumerate}
+        \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under Acquisition cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}}
+    \blueitem{Fire Missile}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][50mm][t]{\marginparwidth}
+                \center{\textbf{AIM-120 DLZ}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show in-range dlz
+                    \item maybe also show asc inside asec?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{AIM-120 DLZ}
+    }
+    \begin{subenumerate}
+        % \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under Acquisition cursor
+        % \item \textbf{TMS} \dotfill \textbf{Forward} (bugged)
         \item \textbf{ASC} \dotfill within \textbf{ASEC}
-        \item \textbf{DLZ} \dotfill \textbf{Indicates In-Range}
-        \item \textbf{WPN REL} \dotfill \textbf{Depress}
+        \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
+        \item \label{subsec:aim120:multi:wpnrel}\textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}
-
-    Repeat for all remaining targets
-
-    \medskip
-    Bugged target can be cycled in range order with \textbf{TMS Right}}
+    \textbf{Repeat \crefrange{subsec:aim120:multi:acq}{subsec:aim120:multi:wpnrel} for desired targets}
+    }
 \end{checklistenumerate}
+
+% \notebox{
+%     \begin{itemize}
+%         \item Bugged target can be cycled in range order with \textbf{TMS Right}
+%         \item Similar 2-target employment possible for RWS-DTT mode, \textbf{see \Cref{subsec:rws}}
+%     \end{itemize}
+% }
 
 \marginfigrestore

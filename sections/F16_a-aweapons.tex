@@ -68,7 +68,7 @@
 \end{tcoloritemize}
 
 \subsubsection{SMS CONTROLS}
-
+\label{subsec:m61:sms}
 \begin{tcoloritemize}
     \blueitem{Operating Mode}{\textbf{OSB 1} cycles A-A modes, should display \textbf{GUN}}
     \blueitem{Sub-Mode}{\textbf{OSB 2} cycles gunsight modes
@@ -219,6 +219,7 @@
 \marginfigeometry
 
 \subsubsection{GUN SELECTION}
+\label{subsec:m61:selection}
 \begin{checklistitemize}
     \blueitem{Via Dogfight}{(GUN automatically selected)
     \begin{subenumerate}
@@ -341,7 +342,7 @@
 \end{checklistenumerate}
 
 \subsubsection{ADJUST EEGS FUNNEL WIDTH}
-
+\label{subsec:m61:eegsfunneladjust}
 \begin{checklistenumerate}
     \blueitem{Open DED MAN Page}{
     \begin{subenumerate}
@@ -361,7 +362,7 @@
 \section{AIR-TO-AIR MISSILES}
 
 \subsection{AIM-9 SIDEWINDER}
-
+\label{subsec:aim9}
 \begin{figure}[htbp]
     \centering
     \fbox{
@@ -459,14 +460,14 @@
     \begin{subitemize}
         \item \textbf{BORE} --- \hyperref[subsec:aim9:bore]{\textbf{See \Cref{subsec:aim9:bore}}}
         \begin{itemize}
-            \item Acquisition with own missile seeker
-            \item Or cued with HMD (if powered)
-            \item \textbf{Does NOT require FCR}
+            \item acquisition with own missile seeker
+            \item or cued with HMD (if powered)
+            \item \textbf{does NOT require FCR}
         \end{itemize}
         \item \textbf{SLAVE} --- \hyperref[subsec:aim9:slave]{\textbf{See \Cref{subsec:aim9:slave}}}
         \begin{itemize}
-            \item Seeker slaved to radar track LOS
-            \item Typically via ACM Modes
+            \item seeker slaved to radar track LOS
+            \item typically via ACM Modes
         \end{itemize}
     \end{subitemize}
     
@@ -777,6 +778,7 @@
 \marginfigrestore 
 
 \subsection{AIM-120 AMRAAM}
+\label{subsec:aim120}
 \begin{figure}[htbp]
     \centering
     \includegraphics[
@@ -849,7 +851,7 @@
 \clearpage
 
 \subsubsection{SMS CONTROLS}
-
+\label{subsec:aim120:sms}
 \begin{tcoloritemize}
     \blueitem{Selected Weapon}{
     \textbf{OSB 7} cycles through available A-A weapon types
@@ -925,13 +927,6 @@
         \item Target does \textbf{NOT} need to be in STT lock
     \end{subitemize}
 
-%    \textbf{Maximizing Range --- maximizing energy}
-
-%     \begin{subitemize}
-%         \item High velocity --- increases kinetic energy
-%         \item High altitude --- increases potential energy, reduces drag
-%     \end{subitemize}
-
     \textbf{Lofting} 
 
     \begin{subitemize}
@@ -962,9 +957,7 @@
 \notebox{
     \textbf{Post-Launch Maneuvers}
     \begin{itemize}
-            \item For simplicity, \cref{fig:aaweap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active 
-            % \item Depending on the tactical situation, it can be beneficial to reduce closure by turning 30-60 deg away from the bandit while maintaing radar contact 
-            % \item This can be combined with a dive into thicker air to further reduce bandit missile range and maintain a look-up angle for the radar
+            \item For simplicity, \cref{fig:aaweap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active
     \end{itemize}
 
     \textbf{Flowing Cold}
@@ -977,8 +970,6 @@
 \warningbox{
     \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} --- use caution near friendlies
 }
-
-% \clearpage
 
 \subsubsection{TACTICAL CONSIDERATIONS}
 \label{subsec:aim120:tactics}
@@ -1036,7 +1027,7 @@
     \begin{subitemize}
         \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
         \begin{itemize}
-            \item \textbf{Missile is relying on target to keep flying towards us}
+            \item \textbf{missile is relying on target to keep flying towards us}
         \end{itemize}
         \item Bandit can significantly change missile envelope by reducing closure rate / altitude
         \item If done post-launch can result in missile not having energy to intercept
@@ -1050,7 +1041,7 @@
 
 \begin{tcoloritemize}
     \blueitem{Basic Radar Symbology}{For beyond-visual-range radar usage and symbology \textbf{reference \Crefrange{subsec:crm}{subsec:tws}}}
-    \blueitem{DLZ}{\textbf{D}ynamic \textbf{L}aunch \textbf{Z}one% --- Displays target range \& missile performance information
+    \blueitem{DLZ}{\textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
     \begin{subitemize}
         \item \textbf{Displays target range \& missile performance information on HUD \& FCR Page with}
         \begin{itemize}
@@ -1068,7 +1059,7 @@
         \end{itemize}
         \item \textbf{R\textsubscript{ACT} --- Active range}
         \begin{itemize}
-            \item range at which AIM-120 will activate onboard radar
+            \item range at which AIM-120 will go active
         \end{itemize}
         \item \textbf{R\textsubscript{MIN} --- Minimum range}
         \item \textbf{Countdown}
@@ -1076,10 +1067,8 @@
             \item \textbf{A} --- seconds until missile goes active
             \item \textbf{T} --- seconds until predicted impact
         \end{itemize}
-    \end{subitemize}
-    % Displayed on both FCR Page \& HUD once missile selected and radar track acquired
-    }
-    \blueitem{ASC \& ASEC}{%Target lead cues to maximize missile performance%--- pilot should place \textbf{ASC} inside \textbf{ASEC}
+    \end{subitemize}}
+    \blueitem{ASC \& ASEC}{
     \begin{subitemize}
         \item \textbf{Displays target lead cues to maximize missile performance on HUD \& FCR Page with}
         \begin{itemize}
@@ -1093,9 +1082,7 @@
             \item dynamically adjusts size based on target maneuvers
             \item fixed size prior to target designation
         \end{itemize}
-    \end{subitemize}
-    % Displayed on both FCR Page \& HUD once AIM-120 selected and radar track acquired
-    }
+    \end{subitemize}}
 \end{tcoloritemize}
 
 \clearpage
@@ -1170,6 +1157,7 @@
 \marginfigeometry
 
 \subsubsection{AIM-120 SELECTION}
+\label{subsec:aim120:selection}
 \begin{checklistitemize}
     \blueitem{Via A-A Master Mode}{
     \begin{subenumerate}

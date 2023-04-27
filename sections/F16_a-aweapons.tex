@@ -3,347 +3,901 @@
 \localtableofcontents
 \cleardoublepage
 
-\section{M-61 CANNON}
+\section{AIR-TO-AIR GUNNERY}
 
-\subsection{OVERVIEW}
-\mbox{
-    \begin{minipage}[t][25mm][c]{\textwidth}
-        \centering
-        \LARGE\emph{IMAGE PLACEHOLDER}
-    \end{minipage}
-}
+\subsection{M-61 VULCAN}
+\label{subsec:m61}
+
 \begin{tcoloritemize}
-    \blueitem{M-61}{
+    \blueitem{M-61 Vulcan}{
+    Internally mounted, high fire-rate, 20mm rotary ``Gattling'' cannon.
+    In service since 1959
+
     \begin{subitemize}
-        \item \textbf{Fire Rate} -- 6000rpm
-        \item \textbf{Round Size} -- 20mm
-        \item \textbf{Ammo Capacity} -- 510 rounds
+        \item \textbf{Fire Rate} --- 6000rpm
+        \item \textbf{Round Size} --- 20mm
+        \item \textbf{Ammo Capacity} --- 510 rounds
     \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][40mm][t]{100mm}
+        \center{\large\textbf{M-61 OVERVIEW}}
+        \begin{itemize}
+            \item Some kind of overview figure
+            \item maybe showing side on profile of the weapon?
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{M-61 Vulcan}
+\end{figure}
+    
+\begin{tcoloritemize}
     \blueitem{Ammunition Types}{
     \begin{subitemize}
-        \item \textbf{HEI} -- \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary
-        \item \textbf{HEI-T} -- \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary-\textbf{T}racer
-        \item \textbf{AP} -- \textbf{A}rmor \textbf{P}iercing
-        \item \textbf{TP} -- \textbf{T}arget \textbf{P}ractice
-        \item \textbf{SAPHEI} -- \textbf{S}emi \textbf{A}rmor \textbf{P}iercing \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary
+        \item \textbf{HEI} --- \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary
+        \item \textbf{HEI-T} --- \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary-\textbf{T}racer
+        \item \textbf{AP} --- \textbf{A}rmor \textbf{P}iercing
+        \item \textbf{TP} --- \textbf{T}arget \textbf{P}ractice
+        \item \textbf{SAPHEI} --- \textbf{S}emi \textbf{A}rmor \textbf{P}iercing \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary
+    \end{subitemize}}
+    \blueitem{Gunsight / \break Cueing Modes}{
+    \begin{subitemize}
+        \item \textbf{EEGS} --- \textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight \\
+        \hyperref[subsec:m61:eegssymb]{See \Cref{subsec:m61:eegssymb}}
+        \item \textbf{Employment w/o radar track (EEGS level II)} \\
+        \hyperref[subsec:m61:eegslvl2]{See \Cref{subsec:m61:eegslvl2}}
+        \item \textbf{Employment with radar track (EEGS level V)} \\
+        \hyperref[subsec:m61:eegslvl5]{See \Cref{subsec:m61:eegslvl5}}
     \end{subitemize}}
     \blueitem{Select GUN}{
-    \emph{Via MFD}
-
-    \begin{subenumerate}
-        \item \textbf{Master Mode} \dotfill \textbf{A-A}
-        \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
-        \begin{itemize}
-            \item \textbf{Cycle} -- Press \textbf{OSB 7}
-        \end{itemize}
-    \end{subenumerate}
-    
-    \emph{Via Dogfight}
+    Via Dogfight --- AIM-9 \& GUN automatically selected
 
     \begin{subenumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-        \begin{itemize}
-            \item AIM-9 \& GUN automatically selected
-        \end{itemize}
+    \end{subenumerate}
+
+    Via A-A Master Mode
+
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{SMS OSB 1} \dotfill \textbf{Cycle to GUN}
     \end{subenumerate}}
 \end{tcoloritemize}
 
-\subsection{SYMBOLOGY}
-
-\clearpage
-
-\subsection{GUN EMPLOYMENT}
-\begin{checklistenumerate}
-    \blueitem{Conditions}{
+\subsubsection{SMS CONTROLS}
+\label{subsec:m61:sms}
+\begin{tcoloritemize}
+    \blueitem{Operating Mode}{\textbf{OSB 1} cycles A-A modes, should display \textbf{GUN}}
+    \blueitem{Sub-Mode}{\textbf{OSB 2} cycles gunsight modes
+    
     \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
-        \item \textbf{RF Switch} \dotfill \textbf{NORM} \\
-        \hfill (If radar use desired)
-        \item \textbf{Selected Weapon} \dotfill \textbf{GUN} \\
-        \hfill (or \textbf{DGFT} selected)
+        \item \textbf{EEGS} --- \textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight \\
+        \textbf{See \Cref{subsec:m61:eegssymb}}
+    \end{subitemize}}
+    \blueitem{Rounds \break Remaining}{Indicates number of rounds remaining in 10s}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{MFD --- SMS --- GUN CONTROLS}}
+        \begin{itemize}
+            \item show sms gun page
+            \item label each of the relevant controls explained in text
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{MFD SMS Gun Controls}
+\end{figure}
+
+\subsubsection{EEGS SYMBOLOGY}
+\label{subsec:m61:eegssymb}
+\begin{tcoloritemize}
+    \blueitem{EEGS}{\textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight
+
+    \begin{subitemize}
+        \item \textbf{Provides multiple levels of symbology depending on presence of radar lock}
+    \end{subitemize}}
+    \blueitem{Level I}{Backup mode displaying only boresight cross in event of INS failure}
+    \blueitem{Level II}{Operating mode prior to radar lock
+
+    \begin{subitemize}
+        \item \textbf{Boresight Cross} --- shows where gun / aircraft is pointed
+        \item \textbf{EEGS Funnel}
+        \begin{itemize}
+            \item displays path of rounds through space
+            \item funnel is of set width to judge distance --- adjust width to target wingspan, stabilize edges of funnel on wingtips and fire
+        \end{itemize}
+        \item \textbf{MGRS} --- \textbf{M}ultiple \textbf{R}eference \textbf{G}un\textbf{S}ight
+        \begin{itemize}
+            \item 5 line-segments pointing towards boresight
+            \item reference for high aspect snap shots (placeing target on MGRS line should have it fly through gun cross)
+        \end{itemize}
+    \end{subitemize}
+    
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl2} and \cref{fig:aaweap:m61:funnelpipper}
+    }
+    \blueitem{Level III / IV}{Intermediate modes during radar lock acquisition}
+    \blueitem{Level V}{Operating mode with radar lock. Level II symbology is retained with additional elements
+    
+    \begin{subitemize}
+        \item \textbf{Level V Pipper}
+        \begin{itemize}
+            \item gunfire solution --- stabilize pipper on target and fire
+            \item contains additional range/aspect cues
+        \end{itemize}
+        \item \textbf{Range Caret}
+        \begin{itemize}
+            \item displayed on \underline{inside} edge of level V pipper
+            \item unwinds from 12 o'clock at 12'000ft counter-clockwise
+        \end{itemize}
+        \item \textbf{Aspect Caret} 
+        \begin{itemize}
+            \item displayed on \underline{outside} edge of level V pipper
+        \end{itemize}
+        \item \textbf{T-Symbol}
+        \begin{itemize}
+            \item \textbf{``--- + ---'' 1G Pipper} --- lead angle for non-maneuvering target,
+            flanking horizontal lines indicate out-of-plane maneuver potential of target
+            \item \textbf{``---'' Max-G Pipper} --- lead angle for target pulling max-G towards you
+        \end{itemize}
+        \item \textbf{BATR} --- \textbf{B}ullets \textbf{A}t \textbf{T}arget \textbf{R}ange
+        \begin{itemize}
+            \item displayed once rounds have been fired
+            \item dissappears after last round has passed beyond target range
+            \item useful to evaluate shots (also for training)
+        \end{itemize}
+    \end{subitemize}
+    
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aaweap:m61:funnelpipper}
+    }
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{HUD --- EEGS LVL II}}
+        \begin{itemize}
+            \item show EEGS LVL II symbology of the HUD
+            \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+            \begin{itemize}
+                \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
+                \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{EEGS LVL II HUD Symbology}
+    \label{fig:aaweap:m61:eegslvl2}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{HUD --- EEGS LVL V}}
+        \begin{itemize}
+            \item show EEGS LVL V symbology of the HUD
+            \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+            \begin{itemize}
+                \item more necessary here since lvl V relies on having a lock
+                \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{EEGS LVL V HUD Symbology}
+    \label{fig:aaweap:m61:eegslvl5}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][50mm][t]{100mm}
+        \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
+        \begin{itemize}
+            \item show both funnel and pipper as subfigs
+            \item include target outline in firing position
+            \item clearly mark level 5 pipper symbology elements
+            \begin{itemize}
+                \item batr
+                \item range cue
+                \item aspect
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{EEGS Funnel \& Level V Pipper}
+    \label{fig:aaweap:m61:funnelpipper}
+\end{figure}
+
+\marginfigeometry
+
+\subsubsection{GUN SELECTION}
+\label{subsec:m61:selection}
+\begin{checklistitemize}
+    \blueitem{Via Dogfight}{(GUN automatically selected)
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+    \end{subenumerate}}
+    \blueitem{Via A-A Master Mode}{
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{SMS OSB 1} \dotfill \textbf{Cycle to GUN}
+    \end{subenumerate}}
+    \blueitem{EEGS Symbology}{Verify
+    \begin{subitemize}
+        \item \textbf{EEGS Level II} appears if no lock present
+        \item \textbf{EEGS Level V} appears if target locked
+    \end{subitemize}}
+\end{checklistitemize}
+
+\subsubsection{EEGS LVL II EMPLOYMENT --- NO RADAR}
+\label{subsec:m61:eegslvl2}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
+        \hfill (if desired, completely silences radar)
+        \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
-    \blueitem{Radar \break Acquisition}{
-    \begin{subitemize}
-        \item Acquire lock using desired \textbf{ACM Mode}
-        \item Also possible from \textbf{CRM-STT} mode
-    \end{subitemize}}
-    \blueitem{Symbology}{
-    \begin{subitemize}
-        \item \textbf{EEGS LVL II} -- appears upon gun selection
-        \item \textbf{EEGS LVL V} -- appears on radar lock
-    \end{subitemize}}
-    \blueitem{Employment}{
-    \emph{With Radar}
+    \blueitem{Acquire Firing Solution}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{EEGS Funnel}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show funnel on target
+                    \item potentially reuse from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{EEGS Funnel}
+    }
+
+    \smallskip
+    Using EEGS funnel
 
     \begin{subenumerate}
-        \item \textbf{Radar} \dotfill Locked
-        \item \textbf{Maneuver} -- Place pipper over target
-        \item \textbf{Fire Gun} \dotfill \textbf{TRIGGER 2nd Detent}
+        \item \textbf{EEGS Funnel} \dotfill \textbf{Stabilized On-Target}
+        \item \textbf{Funnel Lines} \dotfill \textbf{On target wingtips}
     \end{subenumerate}
     
-    \emph{Without Radar}
-
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{MGRS Lines}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show MGRS line on target
+                    \item not sure if this fig is necessary
+                    \item maybe could modify fig from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{MGRS Lines}
+    }
+    Using MGRS lines
+    
     \begin{subenumerate}
-        \item \textbf{Maneuver} -- Place target within funnel
-        \begin{itemize}
-            \item \textbf{Range} -- Tgt wingtips on funnel lines
-        \end{itemize}
-        \item \textbf{Fire Gun} \dotfill \textbf{TRIGGER 2nd Detent}
+        \item \textbf{MGRS Line} \dotfill \textbf{Aligned with target}
     \end{subenumerate}}
-    \blueitem{Drafting Notes}{
+    \blueitem{Fire Gun}{
+    \begin{subenumerate}
+        \item \textbf{TRIGGER} \dotfill \textbf{2nd Detent}
+        \item Adjust lead to achieve desired effects
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\subsubsection{EEGS LVL V EMPLOYMENT --- RADAR}
+\label{subsec:m61:eegslvl5}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
     \begin{subitemize}
-        \item Figure showing generic EEGS II with labels in the overview and one showing ``mid-pull'' with target in range here would be great
-        \item Figure showing EEGS V ``mid-pull'' with target under pipper for this page
-        \item Would be great to have separate diagrams for TMS functions for each sensor/mode, then can paste that here as well as reminder
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{RF Switch} \dotfill \textbf{NORM}
+        \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
 \end{checklistenumerate}
 
 \clearpage
 
-\section{AIM-9 SIDEWINDER}
+\begin{checklistenumerate}[resume]
+    \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
 
-\subsection{OVERVIEW}
-\mbox{
-    \begin{minipage}[t][25mm][c]{\textwidth}
-        \centering
-        \LARGE\emph{IMAGE PLACEHOLDER}
+    \begin{subenumerate}
+        \item \textbf{ACM Submode} \dotfill \textbf{As desired}
+        \item Maneuver to place target in radar scan volume
+    \end{subenumerate}}
+    \blueitem{Acquire Firing Solution}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{EEGS Level V Pipper}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show pipper on target
+                    \item potentially reuse from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{EEGS Level V Pipper}
+    }
+    \begin{subenumerate}
+        \item \textbf{Pipper} \dotfill \textbf{Stabilized On-Target}
+    \end{subenumerate}}
+    \blueitem{Fire Gun}{
+    \begin{subenumerate}
+        \item \textbf{TRIGGER} \dotfill \textbf{2nd Detent}
+        \item Adjust lead to achieve desired effects
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\subsubsection{ADJUST EEGS FUNNEL WIDTH}
+\label{subsec:m61:eegsfunneladjust}
+\begin{checklistenumerate}
+    \blueitem{Open DED MAN Page}{
+    \begin{subenumerate}
+        \item \textbf{ICP LIST Button} \dotfill \textbf{Press}
+        \item \textbf{DED MAN Page} \dotfill \textbf{Open (5)} 
+    \end{subenumerate}}
+    \blueitem{Adjust Wingspan}{
+    \begin{subenumerate}
+        \item \textbf{WSPAN} \dotfill \textbf{Selected}
+        \item \textbf{Desired Value} \dotfill Input on ICP, \textbf{ENTR}
+        \item \textbf{WSPAN} \dotfill Verify as desired
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\marginfigrestore
+
+\section{AIR-TO-AIR MISSILES}
+
+\subsection{AIM-9 SIDEWINDER}
+\label{subsec:aim9}
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{AIM-9 OVERVIEW}}
+        \begin{itemize}
+            \item Some kind of overview figure
+            \item maybe showing side on profile of the weapon?
+        \end{itemize}
     \end{minipage}
-}
+    }
+    \caption{AIM-9 Sidewinder}
+\end{figure}
+
 \begin{tcoloritemize}
-    \blueitem{AIM-9}{
+    \blueitem{AIM-9 \break Sidewinder}{
+    Short-range, fire-and-forget ``dogfight'' missile. First entered service in 1956
+
     \begin{subitemize}
-        \item \textbf{Guidance} -- IR-guided (\textbf{Fox 2})
-        \item \textbf{Range} -- min: \textasciitilde3000ft, max: \textasciitilde10-20nm
+        \item \textbf{Guidance} --- IR-guided (\textbf{Fox 2})
+        \item \textbf{Range} --- min: \textasciitilde3000ft, max: \textasciitilde10-20nm
     \end{subitemize}}
     \blueitem{Variants}{
     \begin{subitemize}
-        \item \textbf{9M} -- IR-guided, short range, all-aspect
-        \item \textbf{9X} -- HOBS (\textbf{H}igh \textbf{O}ff-\textbf{B}ore\textbf{S}ight) capable
+        \item \textbf{9M} --- IR-guided, short range, all-aspect
+        \item \textbf{9X} --- HOBS (\textbf{H}igh \textbf{O}ff-\textbf{B}ore\textbf{S}ight) capable, thrust-vectored, all-aspect
     \end{subitemize}}
     \blueitem{Acquisition / Cueing Modes}{
     \begin{subitemize}
-        \item Seeker slaved to radar track LOS \\
-        \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
-        \item Acquisition with own missile seeker \\
-        \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
-        \item Seeker cued with HMD LOS \\
-        \textbf{Possible in either \hyperref[subsec:aim9slave]{\textbf{Slaved}} or \hyperref[subsec:aim9bore]{\textbf{Bore}} mode}
-    \end{subitemize}}
-    \blueitem{SMS Page}{\textbf{See Figure X.XX} and below items}
-    \blueitem{SPOT / SCAN}{
-    \begin{subitemize}
-        \item \textbf{Controls Seeker Field of View}
-        \item \textbf{SPOT} -- Narrow, increased detection range
-        \item \textbf{SCAN} -- Wide, decreased detection range
-    \end{subitemize}}
-    \blueitem{SLAVE / BORE}{
-    \begin{subitemize}
-        \item \textbf{Controls Seeker Line of Sight}
-        \item \textbf{SLAVE} - \hyperref[subsec:aim9slave]{\textbf{See \Cref{subsec:aim9slave}}}
-        \begin{itemize}
-            \item Seeker slaved to radar track LOS \\
-            \item Typically via ACM Modes \\
-            (including HMD, if powered)
-        \end{itemize}
-        \item \textbf{BORE} - \hyperref[subsec:aim9bore]{\textbf{See \Cref{subsec:aim9bore}}}
-        \begin{itemize}
-            \item Acquisition with own missile seeker
-            \item Or cued with HMD (if powered)
-            \item \textbf{Does NOT require FCR}
-        \end{itemize}
-    \end{subitemize}}
-    \blueitem{WARM / COOL}{
-    \begin{subitemize}
-        \item \textbf{Controls Seeker Cooling Status}
-        \item \textbf{COOL} --  increases seeker sensitivity, should be set prior to engagement
-        \item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
+        \item \textbf{Acquisition with own missile seeker (BORE)} \\
+        \hyperref[subsec:aim9:bore]{See \Cref{subsec:aim9:bore}}
+        \item \textbf{Seeker cued with HMD LOS (BORE)} \\
+        {See \Cref{subsec:aim9:hmcs}}
+        \item \textbf{Seeker slaved to radar track LOS (SLAVE)} \\
+        \hyperref[subsec:aim9:slave]{See \Cref{subsec:aim9:slave}}
     \end{subitemize}}
     \blueitem{Select AIM-9}{
-    \emph{Via MFD}
-
-    \begin{subenumerate}
-        \item \textbf{Master Mode} \dotfill \textbf{A-A}
-        \item \textbf{Selected Weapon} \dotfill \textbf{9LM / 9X}
-        \begin{itemize}
-            \item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
-        \end{itemize}
-    \end{subenumerate}
-    
-    \emph{Via Dogfight}
+    Via Dogfight --- AIM-9 \& GUN automatically selected
 
     \begin{subenumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-        \begin{itemize}
-            \item AIM-9 \& GUN automatically selected
-        \end{itemize}
-        \item \textbf{Selected Weapon} \dotfill Verify \textbf{9LM / 9X}
-    \end{subenumerate}}
-    \blueitem{Selected Station}{}
+        \item \textbf{Selected Weapon (OSB 7)} \dotfill Verify \textbf{9LM / 9X}
+    \end{subenumerate}
+
+    Via Missile Override
+
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{OVRD}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{9LM / 9X}
+    \end{subenumerate}
+
+    Via A-A Master Mode
+
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{Operating Mode (SMS OSB 1)} \dotfill Verify \textbf{AAM}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{9LM / 9X}
+    \end{subenumerate}
+    
+    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
+    }
 \end{tcoloritemize}
+    
+\subsubsection{SMS CONTROLS}
 
-\notebox{
-    \begin{itemize}
-        \item \textbf{Behavior with SLAVE selected but no radar lock}
-        \item \textbf{Is HMD BORE cueing only possible with 9X?}
-    \end{itemize}
-}
-
-\clearpage
-
-\subsection{SYMBOLOGY}
 \begin{tcoloritemize}
-    \blueitem{HUD Symbology}{}
+    \blueitem{SPOT / SCAN}{
+    \textbf{OSB 2} controls seeker field of view
+    \begin{subitemize}
+        \item \textbf{SPOT} --- Narrow, increased detection range
+        \item \textbf{SCAN} --- Wide, decreased detection range
+    \end{subitemize}}
+    \blueitem{Selected Weapon}{
+    \textbf{OSB 7} cycles through available A-A weapon types
+    
+    \medskip
+    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
+    }
+    \blueitem{WARM / COOL}{
+    \textbf{OSB 8} controls seeker cooling status
+
+    \begin{subitemize}
+        \item \textbf{COOL} ---  increases seeker sensitivity, should be set prior to engagement
+        \item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
+    \end{subitemize}}
+    \blueitem{Selected Station}{
+    \textbf{OSB 10 / 16} select/cycle available missile pylons
+    
+    \medskip
+    Selected station can also be cycled with \textbf{NWS/MSL Step depress (short)}
+    }
+    \blueitem{SLAVE / BORE}{
+    \textbf{OSB 19} controls seeker line-of-sight
+
+    \begin{subitemize}
+        \item \textbf{BORE} --- \hyperref[subsec:aim9:bore]{\textbf{See \Cref{subsec:aim9:bore}}}
+        \begin{itemize}
+            \item acquisition with own missile seeker
+            \item or cued with HMD (if powered)
+            \item \textbf{does NOT require FCR}
+        \end{itemize}
+        \item \textbf{SLAVE} --- \hyperref[subsec:aim9:slave]{\textbf{See \Cref{subsec:aim9:slave}}}
+        \begin{itemize}
+            \item seeker slaved to radar track LOS
+            \item typically via ACM Modes
+        \end{itemize}
+    \end{subitemize}
+    
+    Line-of-sight mode can also be cycled with \textbf{Cursor Enable Depress}}
 \end{tcoloritemize}
 
-\clearpage
-
-\subsection{9M/9X - SLAVE - RADAR}
-\label{subsec:aim9slave}
-\begin{checklistenumerate}
-    \blueitem{Conditions}{
-    \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
-        \item \textbf{RF Switch} \dotfill \textbf{NORM}
-        \item \textbf{HMD SYMB. INT} \dotfill As desired
-        \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
-        \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
-        \item \textbf{Master Arm} \dotfill \textbf{ARM}
-    \end{subitemize}}
-    \blueitem{Radar \break Acquisition}{
-    \begin{subitemize}
-        \item Acquire lock using desired \textbf{ACM Mode}
-        \item Also possible from \textbf{CRM-STT} mode
-    \end{subitemize}}
-    \blueitem{Symbology}{
-    \begin{subitemize}
-        \item 
-    \end{subitemize}}
-    \blueitem{Employment}{
-    \begin{subenumerate}
-        \item \textbf{Radar} \dotfill Locked
-        \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress}
-        \begin{itemize}
-            \item \textbf{MSL Diamond} -- Latched to target
-            \item \textbf{Audio Tone} -- Verify Good
-        \end{itemize}
-        \item \textbf{Maneuver} -- Place target within DLZ
-        \item \textbf{WPN REL} \dotfill \textbf{Depress}
-    \end{subenumerate}}
-\end{checklistenumerate}
-
-\clearpage
-
-\subsection{9M/9X - BORE - NO RADAR}
-\label{subsec:aim9bore}
-\begin{checklistenumerate}
-    \blueitem{Conditions}{
-    \begin{subitemize}
-        \item \textbf{HMD SYMB. INT} \dotfill As desired
-        \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
-        \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
-        \item \textbf{Master Arm} \dotfill \textbf{ARM}
-    \end{subitemize}}
-    \blueitem{Symbology}{
-    \begin{subitemize}
-        \item 
-    \end{subitemize}}
-    \blueitem{Employment}{
-    \begin{subenumerate}
-        \item \textbf{Maneuver} -- Target in AC/HMD boresight
-        \begin{itemize}
-            \item \textbf{Audio Tone} -- Verify Good
-        \end{itemize}
-        \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Depress}
-        \begin{itemize}
-            \item \textbf{MSL Diamond} -- Latched to target
-            \item \textbf{Audio Tone} -- Verify Good
-        \end{itemize}
-        \item \textbf{Maneuver} -- Place target within DLZ
-        \item \textbf{WPN REL} \dotfill \textbf{Depress}
-    \end{subenumerate}}
-\end{checklistenumerate}
-
-\clearpage 
-
-\section{AIM-120 AMRAAM}
-
-\subsection{OVERVIEW}
-
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
-    \includegraphics[
-            width = 108mm,
-    ]{F16_aaweapons_amraam_overview_v01.pdf}
-    \caption{}
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{MFD --- SMS --- AIM-9 CONTROLS}}
+        \begin{itemize}
+            \item show sms aim-9 page
+            \item label each of the relevant controls explained in text
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{MFD SMS AIM-9 Controls}
 \end{figure}
 
 \clearpage
 
+\subsubsection{SYMBOLOGY}
 \begin{tcoloritemize}
-    \blueitem{AIM-120}{
+    \blueitem{MFD Symbology}{Reference \Cref{subsec:aim120:symb}}
+    \blueitem{HUD/HMD \break Symbology}{
     \begin{subitemize}
-        \item \textbf{Guidance} -- Active Radar-Guided (\textbf{Fox 3})
-        \item \textbf{Range} -- max:  \textasciitilde30-40nm (high mach, alt)
-    \end{subitemize}}
-    \blueitem{Engagement \break Types}{
-    \begin{subitemize}
-        \item \textbf{Single Target} -- \hyperref[subsec:aim120single]{\textbf{See \Cref{subsec:aim120single}}}
+        \item \textbf{Missile Diamond} --- AIM-9 seeker line-of-sight
         \begin{itemize}
-            \item From STT radar lock
-            \item Or radar TWS / DTT tracks
+            \item displayed on HUD \& HMD
+            \item marked with \textbf{X} if beyond seeker limits
         \end{itemize}
-        \item \textbf{Multi Target} -- \hyperref[subsec:aim120multi]{\textbf{See \Cref{subsec:aim120multi}}}
+        \item \textbf{Missile Reticle} --- AIM-9 seeker field-of-view
         \begin{itemize}
-            \item For TWS / DTT tracks
+            \item displayed on HUD only
+            \item size reflects \textbf{SPOT/SCAN} setting 
         \end{itemize}
-    \end{subitemize}}
-    \blueitem{SMS Page}{\textbf{See Figure X.XX} and below items}
-    \blueitem{SLAVE / BORE}{
-    \begin{subitemize}
-        \item \textbf{Controls Missile Radar Line of Sight}
-        \item \textbf{SLAVE}
-        \begin{itemize}
-            \item Missile LOS slaved to AC radar 
-            \item Receives DL updates until within own radar limits
-        \end{itemize}
-        \item \textbf{BORE}
-        \begin{itemize}
-            \item Missile scans straight ahead, tracks first detected target
-        \end{itemize}
-    \end{subitemize}}
-    \blueitem{Select AIM-120}{
-    \emph{Via MFD}
+        \item \textbf{Dynamic Aiming Cross} --- HMD line-of-sight
+    \end{subitemize}
 
+    Reference symbology in \cref{fig:aaweap:aim9:hudhmdsymb}
+
+    \begin{subitemize}
+        \item \textbf{DLZ} --- \textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
+        \begin{itemize}
+            \item displays missile/target range information
+            \item reference \Cref{subsec:aim120:symb}
+        \end{itemize}
+    \end{subitemize}
+    }
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
+        \begin{itemize}
+            \item show hud/hmd with aim-9 in use 
+            \item clearly indicate missile diamond/reticle and dynamic aiming cross
+            \item maybe show several versions?
+            \begin{itemize}
+                \item 1 with missile reticle from HUD?
+                \item 1 with missile diamond latchedon aiming cross?
+                \item 1 with diamond on target?
+                \item 1 with \textbf{X}?
+            \end{itemize}
+            or some subset of those?
+            \item can reuse these in marginfigs below?
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{HUD/HMD AIM-9 Symbology}
+    \label{fig:aaweap:aim9:hudhmdsymb}
+\end{figure}
+
+\marginfigeometry
+
+\subsubsection{AIM-9 SELECTION}
+\begin{checklistitemize}
+    \blueitem{Via DGFT}{(AIM-9 selected automatically)
     \begin{subenumerate}
-        \item \textbf{Selected Weapon} \dotfill \textbf{120C}
-        \begin{itemize}
-            \item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
-        \end{itemize}
-    \end{subenumerate}
-
-    \emph{Via Missile Override}
-
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+    \end{subenumerate}}
+    \blueitem{Via MSL OVRD}{
     \begin{subenumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
-        \item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+        \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
+        \begin{itemize}
+            \item \textbf{SMS OSB 7} --- \textbf{Press}
+            \item or \textbf{NWS/MSL STEP} --- \textbf{Press (long)}
+        \end{itemize}
+    \end{subenumerate}}
+    \blueitem{Via A-A Master Mode}{
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{SMS OSB 1} \dotfill \textbf{Verify AAM} (default)
+        \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
+        \begin{itemize}
+            \item \textbf{SMS OSB 7} --- \textbf{Press}
+            \item or \textbf{NWS/MSL STEP} --- \textbf{Press (long)}
+        \end{itemize}
+    \end{subenumerate}}
+\end{checklistitemize}
+
+\subsubsection{BORE EMPLOYMENT --- NO RADAR}
+\label{subsec:aim9:bore}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
+        \hfill (if desired, completely silences radar)
+        \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
+        \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
+        \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+    \blueitem{AIM-9 Track Acquisition}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{AIM-9 Track}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show missile reticle
+                    \item show diamond latched to symbolic target (outline)
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{AIM-9 Track}
+    }
+    \begin{subenumerate}
+        \item \textbf{Missile Reticle} \dotfill \textbf{On-Target}
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
+        \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
+        \item \textbf{Missile Diamond} \dotfill verify latched to target
+    \end{subenumerate}}
+    \blueitem{Fire Missile}{
+    \begin{subenumerate}
+        \item Maneuver into firing position
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
+        \item \textbf{WPN REL} \dotfill \textbf{Depress}
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\clearpage
+
+\subsubsection{HMCS BORE EMPLOYMENT --- NO RADAR}
+\label{subsec:aim9:hmcs}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{HMD SYMB. INT} \dotfill \textbf{INT}
+        \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
+        \hfill (if desired, completely silences radar)
+        \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
+        \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
+        \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+    \blueitem{AIM-9 Track Acquisition}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{AIM-9 HMD Track}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show missile diamond \& dynamic aiming cross
+                    \item show diamond latched to symbolic target?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{AIM-9 HMD Track}
+    }
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{AIM-9 HMD LOS}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show missile diamond out of HMD limits
+                    \item can probably reuse from above
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{HMD beyond seeker limits}
+    }
+    \begin{subenumerate}
+        \item Maneuver to place target within AIM-9 seeker limits
+        \item \textbf{HMD Aiming Cross} \dotfill \textbf{On-Target}
+    \end{subenumerate}
+
+    Missile diamond follows aiming cross (within seeker limits)
+
+    \begin{subenumerate}[start=3]
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
+        \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
+        \item \textbf{Missile Diamond} \dotfill verify latched to target
+    \end{subenumerate}}
+    \blueitem{Fire Missile}{
+    \begin{subenumerate}
+        \item Maneuver into firing position
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
+        \item \textbf{WPN REL} \dotfill \textbf{Depress}
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][40mm][t]{75mm}
+        \center{\large\textbf{AIM-9 Envelope}}
+        \begin{itemize}
+            \item show overhead missile envelope around symbolic target?
+            \item this is really a stretch goal \dots
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{AIM-9 Firing envelope}
+    \label{fig:aaweap:aim9:envelope}
+\end{figure}
+
+\clearpage
+
+\subsubsection{SLAVE EMPLOYMENT --- RADAR}
+\label{subsec:aim9:slave}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{RF Switch} \dotfill \textbf{NORM}
+        \item \textbf{HMD SYMB. INT} \dotfill As desired
+        \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
+        \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
+        \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+    \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{HMD BORE Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show HMD BORE circle
+                    \item show symbolic target (outline)
+                    \item can reuse from radar chapter
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{HMD BORE Symbology}
+    }
+    
+    \medskip
+    For demonstration we will use \textbf{ACM BORE Submode} with HMD
+    
+    \begin{subenumerate}
+        \item \textbf{FCR Mode} \dotfill \textbf{ACM}
+        \item \textbf{TMS} \dotfill \textbf{FWD}
+        \item \textbf{Target} \dotfill \textbf{In HMD BORE Symbol}
+        \item \textbf{Radar} \dotfill wait for \textbf{STT Lock}
     \end{subenumerate}
     
-    \emph{Via Dogfight}
+    Can also lock from CRM, \textbf{see \Cref{subsec:crm}}
+    }
+    \blueitem{AIM-9 Track Acquisition}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{AIM-9 Radar Track}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show radar target designator box
+                    \item show diamond latched to target designator box
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{AIM-9 Radar Track}
+    }
+    \begin{subenumerate}
+        \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
+        \item \textbf{Missile Diamond} \dotfill verify latched to target
+    \end{subenumerate}}
+    \blueitem{Fire Missile}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][60mm][t]{\marginparwidth}
+                \center{\textbf{AIM-9 DLZ}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show DLZ and indicate in-range symbology
+                    \item can probably just reuse from aim-120
+                    \item maybe link to explanation of dlz?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{In-range DLZ}
+    }
+    \begin{subenumerate}
+        \item Maneuver into firing position
+        \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
+        \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
+        \item \textbf{WPN REL} \dotfill \textbf{Depress}
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\marginfigrestore 
+
+\subsection{AIM-120 AMRAAM}
+\label{subsec:aim120}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[
+            width = 108mm,
+    ]{F16_aaweapons_amraam_overview_v01.pdf}
+    \fbox{
+    \begin{minipage}[t][25mm][t]{100mm}
+        \center{\large\textbf{AIM-120 OVERVIEW}}
+        \begin{itemize}
+            \item Some kind of overview figure
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{AIM-120 AMRAAM}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{AIM-120 \break AMRAAM}{
+    \textbf{A}dvanced \textbf{M}edium \textbf{R}ange \textbf{A}ir-to-\textbf{A}ir \textbf{M}issile
+    --- long range, fire-and-forget, active-radar homing missile
+
+    \begin{subitemize}
+        \item \textbf{Guidance} --- Active Radar-Guided (\textbf{Fox 3})
+        \item \textbf{Range} --- max:  \textasciitilde30-40nm (high mach, alt)
+    \end{subitemize}}
+    \blueitem{Employment \break Types}{
+    \begin{subitemize}
+        \item \textbf{Maddog / Active Launch  (no radar)} \\
+        \hyperref[subsec:aim120:maddog]{See \Cref{subsec:aim120:maddog}}
+        \item \textbf{Single-target employment (STT lock or TWS/DTT bug)}
+        \hyperref[subsec:aim120:single]{See \Cref{subsec:aim120:single}}
+        \item \textbf{Multi-target employment (TWS/DTT bug)} \\
+        \hyperref[subsec:aim120:multi]{See \Cref{subsec:aim120:multi}}
+    \end{subitemize}}
+    \blueitem{Flight Profile}{Successful long-range weapon employment necessitates understanding of flight-profile and tactics
+    \begin{subitemize}
+        \item \textbf{Mid-Course} --- Guided via \underline{datalink}, launching fighter should maintain radar contact with target
+        \item \textbf{Terminal Phase} --- Guided via \underline{internal radar}, launching fighter may break away
+    \end{subitemize}
+    
+    \textbf{See \Cref{subsec:aim120:employmentprofile} and \Cref{subsec:aim120:tactics}}
+    }
+    \blueitem{Select AIM-120}{
+    Via A-A Master Mode
+
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{Operating Mode (SMS OSB 1)} \dotfill Verify \textbf{AAM}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
+    \end{subenumerate}
+
+    Via Missile Override
+
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{OVRD}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C} 
+    \end{subenumerate}
+    
+    Via Dogfight
 
     \begin{subenumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-        \item \textbf{Selected Weapon} \dotfill \textbf{120C}
-        \begin{itemize}
-            \item \textbf{Cycle} -- \textbf{OSB 7} or long press \textbf{NWS}
-        \end{itemize}
-    \end{subenumerate}}
-    \blueitem{Selected Station}{}
+        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
+    \end{subenumerate}
+    
+    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
+    }
 \end{tcoloritemize}
 
 \clearpage
 
-\subsection{EMPLOYMENT PROFILE}
+\subsubsection{SMS CONTROLS}
+\label{subsec:aim120:sms}
+\begin{tcoloritemize}
+    \blueitem{Selected Weapon}{
+    \textbf{OSB 7} cycles through available A-A weapon types
+    
+    \medskip
+    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
+    }
+    \blueitem{Selected Station}{
+    \textbf{OSB 10 / 16} select/cycle availabel missile pylons
+    
+    \medskip
+    Selected station can also be cycled with \textbf{NWS/MSL Step depress (short)}
+    }
+    \blueitem{SLAVE / BORE}{\textbf{OSB 19} controls missile radar line-of-sight
+    \begin{subitemize}
+        \item \textbf{SLAVE} --- Missile LOS slaved to AC radar 
+        \begin{itemize}
+            \item receives DL updates until within own radar limits
+        \end{itemize}
+        \item \textbf{BORE} --- Missile scans straight ahead
+        \begin{itemize}
+            \item tracks first detected target
+        \end{itemize}
+    \end{subitemize}
+    
+    Line-of-sight mode can also be cycled with \textbf{Cursor Enable Depress}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{MFD --- SMS --- AIM-120 CONTROLS}}
+        \begin{itemize}
+            \item show sms aim-120 page
+            \item label each of the relevant controls explained in text
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{MFD SMS AIM-120 Controls}
+\end{figure}
+
+\clearpage
+
+\subsubsection{EMPLOYMENT PROFILE}
+\label{subsec:aim120:employmentprofile}
 
 \begin{figure}[h]
     \centering
@@ -351,19 +905,19 @@
             width = 128mm,
     ]{F16_aaweapons_amraam_employment_v07.pdf}
     \caption{Generic, simplified AIM-120 employment profile}
-    \label{fig:aa-weap:aim120:profile}
+    \label{fig:aaweap:aim120:profile}
 \end{figure}
 
 \begin{tcoloritemize}
     \blueitem{Phases}{
-    \Cref{fig:aa-weap:aim120:profile} shows AIM-120 employment profile
+    \Cref{fig:aaweap:aim120:profile} shows AIM-120 employment profile
     including the following phases \& milestones
 
     \begin{subitemize}
-        \item \textbf{A} -- Launch
-        \item \textbf{B} -- Mid-Course Phase
-        \item \textbf{C} -- Acquisition
-        \item \textbf{D} -- Intercept
+        \item \textbf{A} --- Launch
+        \item \textbf{B} --- Mid-Course Phase
+        \item \textbf{C} --- Acquisition
+        \item \textbf{D} --- Intercept
     \end{subitemize}}
     \blueitem{Launch}{
     \textbf{Radar Lock}
@@ -372,13 +926,6 @@
         \item Only requires track to launch
         \item Target does \textbf{NOT} need to be in STT lock
     \end{subitemize}
-
-%    \textbf{Maximizing Range -- maximizing energy}
-
-%     \begin{subitemize}
-%         \item High velocity -- increases kinetic energy
-%         \item High altitude -- increases potential energy, reduces drag
-%     \end{subitemize}
 
     \textbf{Lofting} 
 
@@ -410,9 +957,7 @@
 \notebox{
     \textbf{Post-Launch Maneuvers}
     \begin{itemize}
-            \item For simplicity, \cref{fig:aa-weap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active 
-            % \item Depending on the tactical situation, it can be beneficial to reduce closure by turning 30-60 deg away from the bandit while maintaing radar contact 
-            % \item This can be combined with a dive into thicker air to further reduce bandit missile range and maintain a look-up angle for the radar
+            \item For simplicity, \cref{fig:aaweap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active
     \end{itemize}
 
     \textbf{Flowing Cold}
@@ -423,24 +968,23 @@
 }
 
 \warningbox{
-    \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} -- use caution near friendlies
+    \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} --- use caution near friendlies
 }
 
-% \clearpage
-
-\subsection{TACTICAL CONSIDERATIONS}
+\subsubsection{TACTICAL CONSIDERATIONS}
+\label{subsec:aim120:tactics}
 
 \begin{tcoloritemize}
     \blueitem{Range}{
     \textbf{Fighter-bandit distance} can be measured at different points during the timeline
 
     \begin{subitemize}
-        \item \textbf{R\textsubscript{Launch}} -- distance at launch
-        \item \textbf{R\textsubscript{F-Pole}} -- distance at impact
-        \item \textbf{R\textsubscript{A-Pole}} -- distance when missile goes active
+        \item \textbf{R\textsubscript{Launch}} --- distance at launch
+        \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
+        \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
     \end{subitemize}
     
-    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aa-weap:aim120:profile}.
+    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aaweap:aim120:profile}.
     }
     \blueitem{Maximizing Launch Range / Energy}{
     \textbf{Why?}
@@ -451,8 +995,8 @@
     \end{subitemize}
     \textbf{How?}
     \begin{subitemize}
-        \item \textbf{High velocity} -- increases kinetic energy 
-        \item \textbf{High altitude} -- increases potential energy, reduces drag
+        \item \textbf{High velocity} --- increases kinetic energy 
+        \item \textbf{High altitude} --- increases potential energy, reduces drag
     \end{subitemize}}
     \blueitem{Maximizing F-Pole Range}{
     \textbf{Why?}
@@ -462,8 +1006,8 @@
     \end{subitemize}
     \textbf{How?}
     \begin{subitemize}
-        \item \textbf{Crank} -- turn 30-60 degrees away from bandit to reduce closure rate, maintain radar contact
-        \item \textbf{Dive} -- reduces threat missile envelope
+        \item \textbf{Crank} --- turn 30-60 degrees away from bandit to reduce closure rate, maintain radar contact
+        \item \textbf{Dive} --- reduces threat missile envelope
     \end{subitemize}}
     \blueitem{Flowing Cold}{
     \textbf{Why?}
@@ -474,110 +1018,382 @@
     \end{subitemize}
     \textbf{How?}
     \begin{subitemize}
-        \item \textbf{Turn} -- Away from bandit / threat
-        \item \textbf{Dive} -- if necessary, reduces threat missile envelope 
+        \item \textbf{Turn} --- Away from bandit / threat
+        \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
     \end{subitemize}}
     \blueitem{Effect of Bandit Maneuvers}{
-    As evident in \cref{fig:aa-weap:aim120:profile}, 
+    As evident in \cref{fig:aaweap:aim120:profile}, 
     R\textsubscript{Launch} is significantly greater than the distance travelled by the missile
     \begin{subitemize}
         \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
         \begin{itemize}
-            \item \textbf{Missile is relying on target to keep flying towards us}
+            \item \textbf{missile is relying on target to keep flying towards us}
         \end{itemize}
         \item Bandit can significantly change missile envelope by reducing closure rate / altitude
         \item If done post-launch can result in missile not having energy to intercept
     \end{subitemize}}
 \end{tcoloritemize}
 
-% \subsection{SYMBOLOGY}
-% \begin{tcoloritemize}
-%     \blueitem{HUD Symbology}{}
-%     \blueitem{FCR Symbology}{}
-% \end{tcoloritemize}
+\clearpage
+
+\subsubsection{SYMBOLOGY}
+\label{subsec:aim120:symb}
+
+\begin{tcoloritemize}
+    \blueitem{Basic Radar Symbology}{For beyond-visual-range radar usage and symbology \textbf{reference \Crefrange{subsec:crm}{subsec:tws}}}
+    \blueitem{DLZ}{\textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
+    \begin{subitemize}
+        \item \textbf{Displays target range \& missile performance information on HUD \& FCR Page with}
+        \begin{itemize}
+            \item missile selected
+            \item radar track acquired
+        \end{itemize}
+        \item \textbf{R\textsubscript{aero} --- Aerodynamic range}
+        \begin{itemize}
+            \item \underline{maximum kinetic range}
+            \item assumes non-maneuvering target
+        \end{itemize}
+        \item \textbf{R\textsubscript{TR} --- Turn-and-run range}
+        \begin{itemize}
+            \item maximum range assuming target turns cold at current velocity
+        \end{itemize}
+        \item \textbf{R\textsubscript{ACT} --- Active range}
+        \begin{itemize}
+            \item range at which AIM-120 will go active
+        \end{itemize}
+        \item \textbf{R\textsubscript{MIN} --- Minimum range}
+        \item \textbf{Countdown}
+        \begin{itemize}
+            \item \textbf{A} --- seconds until missile goes active
+            \item \textbf{T} --- seconds until predicted impact
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{ASC \& ASEC}{
+    \begin{subitemize}
+        \item \textbf{Displays target lead cues to maximize missile performance on HUD \& FCR Page with}
+        \begin{itemize}
+            \item AIM-120 selected
+            \item radar track acquired
+        \end{itemize}
+        \item \textbf{Pilot should place ASC inside ASEC}
+        \item \textbf{ASC} --- \textbf{A}ttack \textbf{S}teering \textbf{C}ue
+        \item \textbf{ASEC} --- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle
+        \begin{itemize}
+            \item dynamically adjusts size based on target maneuvers
+            \item fixed size prior to target designation
+        \end{itemize}
+    \end{subitemize}}
+\end{tcoloritemize}
 
 \clearpage
 
-\subsection{SINGLE TARGET EMPLOYMENT}
-\label{subsec:aim120single}
-\begin{checklistenumerate}
-    \blueitem{Conditions}{
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][50mm][t]{100mm}
+        \center{\large\textbf{DLZ/ASEC/ASC}}
+        \begin{itemize}
+            \item show dlz with stuff from text labeled
+            \item show combined asc/asec symbology
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{Missile DLZ and ASC/ASEC Symbology}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{Designator Box}{Box around target when within HUD view}
+    \blueitem{TLL}{\textbf{T}arget \textbf{L}ocator \textbf{L}ine
+    
     \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{Extends from boresight cross towards target}
+        \item \textbf{Relative angle displayed next to boresight cross}
+        \item \textbf{Displayed when target is not within HUD field-of-view}
+    \end{subitemize}}
+    \blueitem{Missile Diamond}{Indicates missile seeker line-of-sight}
+    \blueitem{Post-Launch Symbology}{Bugged track symbology is modified to reflect missile launch \& status
+
+    \begin{subitemize}
+        \item \textbf{Post-launch} --- Thick ``tail'' is added
+        \item \textbf{Post-active} --- Tail begins to flash
+        \item \textbf{Post predicted impact} --- Red cross flashes over track
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][75mm][t]{100mm}
+        \center{\large\textbf{HUD --- AIM-120 Symbology}}
+        \begin{itemize}
+            \item show hud in a-a mode, aim-120 selected
+            \item label each of the relevant symbology elements explained in text
+            \item probably makes sense to have one big figure with all the elements in it just to show what the hud looks like
+            \item label additional stuff not mentioned in text
+            \begin{itemize}
+                \item range/bearing information etc.
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{A-A AIM-120 HUD}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][30mm][t]{100mm}
+        \center{\large\textbf{MFD --- Post-Launch Symbology}}
+        \begin{itemize}
+            \item show symbology elements side-by-side
+            \item \url{https://forum.dcs.world/topic/279555-purple-fcr-symbology/}
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{Post-Launch Symbology}
+\end{figure}
+
+
+\marginfigeometry
+
+\subsubsection{AIM-120 SELECTION}
+\label{subsec:aim120:selection}
+\begin{checklistitemize}
+    \blueitem{Via A-A Master Mode}{
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{SMS OSB 1} \dotfill Verify \textbf{AAM}
+        \item \textbf{Selected Weapon} \dotfill Verify \textbf{120C}
+        \begin{itemize}
+            \item \textbf{SMS OSB 7} --- \textbf{Press}
+            \item or \textbf{NWS/MSL STEP} --- \textbf{Press (long)}
+        \end{itemize}
+    \end{subenumerate}}
+    \blueitem{Via MSL OVRD}{
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{OVRD}
+        \item \textbf{Selected Weapon} \dotfill Verify \textbf{120C} 
+        \begin{itemize}
+            \item \textbf{SMS OSB 7} --- \textbf{Press}
+            \item or \textbf{NWS/MSL STEP} --- \textbf{Press (long)}
+        \end{itemize}
+    \end{subenumerate}}
+    \blueitem{Via DGFT}{
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+        \item \textbf{Selected Weapon} \dotfill \textbf{120C}
+        \begin{itemize}
+            \item \textbf{SMS OSB 7} --- \textbf{Press}
+            \item or \textbf{NWS/MSL STEP} --- \textbf{Press (long)}
+        \end{itemize}
+    \end{subenumerate}}
+\end{checklistitemize}
+
+\subsubsection{MADDOG EMPLOYMENT --- NO RADAR}
+\label{subsec:aim120:maddog}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
+        \hfill (if desired, completely silences radar)
+        \item \textbf{Selected Weapon} \dotfill \textbf{120C}
+        \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
+        \begin{itemize}
+            \item \textbf{SMS OSB 19} --- \textbf{Press}
+            \item or \textbf{Cursor Enable} --- \textbf{Press}
+        \end{itemize}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+    \blueitem{Target Acquisition}{ 
+    \begin{subenumerate}
+        \item Maneuver to place target within ASEC
+    \end{subenumerate}}
+    \blueitem{Fire Missile}{
+    \begin{subenumerate}
+        \item Verify area clear of friendly aircraft
+        \item \textbf{WPN REL} \dotfill \textbf{Depress}
+        \item Observe missile and prepare to delete HUD tape in case of court martial
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\clearpage
+
+\subsubsection{SINGLE-TARGET EMPLOYMENT}
+\label{subsec:aim120:single}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page (SOI)}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
-        % \item \textbf{Master Mode} \dotfill \textbf{A-A}
         \item \textbf{Selected Weapon} \dotfill \textbf{120C}
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
-    \blueitem{Acquire Target}{
-    \begin{subenumerate}
-        \item \textbf{Target} \dotfill \textbf{Locked}
-        \begin{itemize}
-            \item \textbf{STT} -- from RWS, TWS, or ACM
-            \item \textbf{Bug} -- from TWS
-        \end{itemize}
-    \end{subenumerate}}
-    \blueitem{Symbology}{
+    \blueitem{CRM Submode}{\textbf{As Desired}
     \begin{subitemize}
-        \item \textbf{TLL} -- \textbf{T}arget \textbf{L}ocator \textbf{L}ine -- Extends from gun cross \& points towards target
-        \item \textbf{ASEC} -- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle \\
-        Changes size to reflect target state 
-        \item \textbf{ASC} -- \textbf{A}ttack \textbf{S}teering \textbf{C}ue -- appears
-        \item \textbf{Target Range} -- Displayed
+        \item \textbf{RWS} --- fast, long-range search mode \\
+        \textbf{See \Cref{subsec:rws}}
+        \item \textbf{TWS} --- multi-target track mode \\
+        \textbf{See \Cref{subsec:tws}}
     \end{subitemize}}
-    \blueitem{Employment}{
+    \blueitem{Radar Acquisition}{%
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][50mm][t]{\marginparwidth}
+                \center{\textbf{Bugged/STT Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show bugged target symbol
+                    \item maybe also show stt symbol?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{Bugged/STT Symbology}
+    }%
+    For demonstration we will use \textbf{CRM-RWS Submode} 
+
     \begin{subenumerate}
-        \item \textbf{Radar} \dotfill Locked
-        \item \textbf{Maneuver} -- Place tgt within \textbf{DLZ} \& \textbf{ASEC}
+        \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \textbf{Target} \dotfill verify \textbf{Bugged}
+    \end{subenumerate}
+    
+    If desired can STT lock bugged target
+
+    \begin{subenumerate}[start=4]
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \textbf{Target} \dotfill verify \textbf{Locked}
+    \end{subenumerate}}
+    \blueitem{LOS IFF}{%
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][40mm][t]{\marginparwidth}
+                \center{\textbf{IFF return}}
+                \begin{itemize}[leftmargin=1em]
+                    \item maybe show friendly IFF return?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{IFF return, do not shoot!}
+    }%
+    \textbf{See \Cref{subsec:iff}}
+
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Left (long)}
+        \item \textbf{IFF Returns} \dotfill \textbf{None} (near target)
+        \item \textbf{NCTR ID} \dotfill \textbf{Hostile} (if available)
+    \end{subenumerate}}
+    \blueitem{Fire Missile}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][50mm][t]{\marginparwidth}
+                \center{\textbf{AIM-120 DLZ}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show in-range dlz
+                    \item maybe also show asc inside asec?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{AIM-120 DLZ}
+    }
+    \begin{subenumerate}
+        \item \textbf{ASC} \dotfill within \textbf{ASEC}
+        \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
     \end{subenumerate}}
 \end{checklistenumerate}
 
 \clearpage
 
-\subsection{MULTI TARGET EMPLOYMENT}
-\label{subsec:aim120multi}
+\subsubsection{MULTI-TARGET EMPLOYMENT}
+\label{subsec:aim120:multi}
+
 \begin{checklistenumerate}
-    \blueitem{Conditions}{
+    \blueitem{Prerequisites}{
     \begin{subitemize}
-        \item \textbf{FCR} \dotfill \textbf{ON}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page (SOI)}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
-        % \item \textbf{Master Mode} \dotfill \textbf{A-A}
         \item \textbf{Selected Weapon} \dotfill \textbf{120C}
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
-    \blueitem{Acquire Targets}{
-    \emph{From RWS/DTT or TWS}
-    \begin{subenumerate}
-        \item \textbf{Targets} \dotfill Designate with \textbf{TMS Fwd}
-        \begin{itemize}
-            \item \textbf{TWS} -- Repeat for all desired targets 
-            \item \textbf{DTT} -- Repeat for second target
-        \end{itemize}
-    \end{subenumerate}}
-    \blueitem{Symbology}{
+    \blueitem{CRM Submode}{\textbf{As Desired}
     \begin{subitemize}
-        \item \textbf{TLL} -- \textbf{T}arget \textbf{L}ocator \textbf{L}ine -- Extends from gun cross \& points towards target
-        \item \textbf{ASEC} -- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle \\
-        Changes size to reflect target state 
-        \item \textbf{ASC} -- \textbf{A}ttack \textbf{S}teering \textbf{C}ue -- appears
-        \item \textbf{Target Range} -- Displayed
+        \item \textbf{RWS} --- max 2-target engagement (DTT) \\
+        \textbf{See \Cref{subsec:rws}}
+        \item \textbf{TWS} --- true multi-target capability \\
+        \textbf{See \Cref{subsec:tws}}
     \end{subitemize}}
-    \blueitem{Employment}{
+    \blueitem{Track Acquisition}{For demonstration we will use \textbf{CRM-TWS Submode} 
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][60mm][t]{\marginparwidth}
+                \center{\textbf{System / Bugged Target Symbology}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show system / bugged target symbology
+                    \item maybe format as a diagram/flow chart?
+                    \item maybe combine into one fig wth search/track target fig?
+                    \item can reuse from apg68 chapter
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{System / Bugged Target Symbology}
+    }
     \begin{subenumerate}
-        \item \textbf{Desired Targets} \dotfill Tracked
-        \item \label{item:aim120:multitgt:steer}\textbf{Current Target} -- Place within \textbf{DLZ} \& \textbf{ASEC}
-        \item \label{item:aim120:multitgt:fire}\textbf{WPN REL} \dotfill \textbf{Depress}
-        \item \label{item:aim120:multitgt:cycle}\textbf{Target} \dotfill Cycle with \textbf{TMS Right} 
+        \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \textbf{Target} \dotfill verify \textbf{System target}
     \end{subenumerate}
+    
+    Or upgrade \underline{all} tracks to system targets
 
-    Repeat \ref{item:aim120:multitgt:steer}-\ref{item:aim120:multitgt:cycle} for all remaining targets}
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}}
+    \blueitem{SCAN IFF}{\textbf{See \Cref{subsec:iff}}
+
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Left (short)}
+        \item \textbf{IFF Returns} \dotfill \textbf{None} (near tracks)
+    \end{subenumerate}}
+    \blueitem{Bug Acquisition}{
+    \begin{subenumerate}
+        \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under \textbf{Acquisition cursor}
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \textbf{Target} \dotfill verify \textbf{Bugged}
+    \end{subenumerate}
+    
+    Can cycle bugged target with \textbf{TMS Right}}
+    \blueitem{Fire Missile}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \fbox{
+            \begin{minipage}[t][50mm][t]{\marginparwidth}
+                \center{\textbf{AIM-120 DLZ}}
+                \begin{itemize}[leftmargin=1em]
+                    \item show in-range dlz
+                    \item maybe also show asc inside asec?
+                \end{itemize}
+            \end{minipage}
+        }
+        \caption{AIM-120 DLZ}
+    }
+    \begin{subenumerate}
+        \item \textbf{ASC} \dotfill within \textbf{ASEC}
+        \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
+        \item \label{subsec:aim120:multi:wpnrel}\textbf{WPN REL} \dotfill \textbf{Depress}
+    \end{subenumerate}
+    Repeat \crefrange{subsec:aim120:multi:acq}{subsec:aim120:multi:wpnrel} for desired targets
+    }
 \end{checklistenumerate}
 
-\notebox{
-    \begin{itemize}
-        \item \textbf{Single Target TWS Employment} -- special case of multi-target
-    \end{itemize}
-}
+\clearpage
+
+\subsubsection{BVR TIMELINE --- WIP}
+
+\marginfigrestore

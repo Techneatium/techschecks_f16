@@ -5,10 +5,11 @@
 
 \section{AIR-TO-AIR GUNNERY}
 
-\subsection{M-61 CANNON}
+\subsection{M-61 VULCAN}
+\label{subsec:m61}
 
 \begin{tcoloritemize}
-    \blueitem{M-61}{
+    \blueitem{M-61 Vulcan}{
     Internally mounted, high fire-rate, 20mm rotary ``Gattling'' cannon.
     In service since 1959
 
@@ -22,7 +23,7 @@
 \begin{figure}[htbp]
     \centering
     \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
+    \begin{minipage}[t][40mm][t]{100mm}
         \center{\large\textbf{M-61 OVERVIEW}}
         \begin{itemize}
             \item Some kind of overview figure
@@ -30,7 +31,7 @@
         \end{itemize}
     \end{minipage}
     }
-    \caption{M-61 Cannon}
+    \caption{M-61 Vulcan}
 \end{figure}
     
 \begin{tcoloritemize}
@@ -74,7 +75,7 @@
     
     \begin{subitemize}
         \item \textbf{EEGS} --- \textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight \\
-        \textbf{See \Cref{subsec:eegssymb}}
+        \textbf{See \Cref{subsec:m61:eegssymb}}
     \end{subitemize}}
     \blueitem{Rounds \break Remaining}{Indicates number of rounds remaining in 10s}
 \end{tcoloritemize}
@@ -94,9 +95,10 @@
 \end{figure}
 
 \subsubsection{EEGS SYMBOLOGY}
-\label{subsec:eegssymb}
+\label{subsec:m61:eegssymb}
 \begin{tcoloritemize}
     \blueitem{EEGS}{\textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight
+
     \begin{subitemize}
         \item \textbf{Provides multiple levels of symbology depending on presence of radar lock}
     \end{subitemize}}
@@ -235,6 +237,7 @@
 \end{checklistitemize}
 
 \subsubsection{EEGS LVL II EMPLOYMENT --- NO RADAR}
+\label{subsec:m61:eegslvl2}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
@@ -293,7 +296,7 @@
 \end{checklistenumerate}
 
 \subsubsection{EEGS LVL V EMPLOYMENT --- RADAR}
-
+\label{subsec:m61:eegslvl5}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
     \begin{subitemize}
@@ -308,7 +311,7 @@
 
 \begin{checklistenumerate}[resume]
     \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
-    
+
     \begin{subenumerate}
         \item \textbf{ACM Submode} \dotfill \textbf{As desired}
         \item Maneuver to place target in radar scan volume
@@ -445,7 +448,7 @@
         \item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
     \end{subitemize}}
     \blueitem{Selected Station}{
-    \textbf{OSB 10 / 16} select/cycle availabel missile pylons
+    \textbf{OSB 10 / 16} select/cycle available missile pylons
     
     \medskip
     Selected station can also be cycled with \textbf{NWS/MSL Step depress (short)}
@@ -465,7 +468,9 @@
             \item Seeker slaved to radar track LOS
             \item Typically via ACM Modes
         \end{itemize}
-    \end{subitemize}}
+    \end{subitemize}
+    
+    Line-of-sight mode can also be cycled with \textbf{Cursor Enable Depress}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -797,8 +802,9 @@
         \item \textbf{Guidance} --- Active Radar-Guided (\textbf{Fox 3})
         \item \textbf{Range} --- max:  \textasciitilde30-40nm (high mach, alt)
     \end{subitemize}}
-    \blueitem{Engagement \break Types}{
+    \blueitem{Employment \break Types}{
     \begin{subitemize}
+        \item \textbf{Maddog} --- \textbf{See \Cref{subsec:aim120:maddog}}
         \item \textbf{Single-Target} --- \hyperref[subsec:aim120:single]{\textbf{See \Cref{subsec:aim120:single}}}
         \begin{itemize}
             \item From STT radar lock
@@ -871,7 +877,9 @@
         \begin{itemize}
             \item tracks first detected target
         \end{itemize}
-    \end{subitemize}}
+    \end{subitemize}
+    
+    Line-of-sight mode can also be cycled with \textbf{Cursor Enable Depress}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]

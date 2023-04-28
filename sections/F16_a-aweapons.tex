@@ -819,7 +819,7 @@
         \item \textbf{Terminal Phase} --- Guided via \underline{internal radar}, launching fighter may break away
     \end{subitemize}
     
-    \textbf{See \Cref{subsec:aim120:employmentprofile} and \Cref{subsec:aim120:tactics}}
+    \textbf{See \Cref{subsec:bvr} and \Cref{subsec:bvr:tacticalconsideration}}
     }
     \blueitem{Select AIM-120}{
     Via A-A Master Mode
@@ -893,146 +893,6 @@
     }
     \caption{MFD SMS AIM-120 Controls}
 \end{figure}
-
-\clearpage
-
-\subsubsection{EMPLOYMENT PROFILE}
-\label{subsec:aim120:employmentprofile}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[
-            width = 128mm,
-    ]{F16_aaweapons_amraam_employment_v07.pdf}
-    \caption{Generic, simplified AIM-120 employment profile}
-    \label{fig:aaweap:aim120:profile}
-\end{figure}
-
-\begin{tcoloritemize}
-    \blueitem{Phases}{
-    \Cref{fig:aaweap:aim120:profile} shows AIM-120 employment profile
-    including the following phases \& milestones
-
-    \begin{subitemize}
-        \item \textbf{A} --- Launch
-        \item \textbf{B} --- Mid-Course Phase
-        \item \textbf{C} --- Acquisition
-        \item \textbf{D} --- Intercept
-    \end{subitemize}}
-    \blueitem{Launch}{
-    \textbf{Radar Lock}
-
-    \begin{subitemize}
-        \item Only requires track to launch
-        \item Target does \textbf{NOT} need to be in STT lock
-    \end{subitemize}
-
-    \textbf{Lofting} 
-
-    \begin{subitemize}
-        \item At longer ranges the missile will loft itself to optimize trajectory
-        \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
-    \end{subitemize}}
-    \blueitem{Mid-Course Phase}{
-    \textbf{Missile flies using internal IMU}
-
-    \begin{subitemize}
-        \item Receives periodic datalink updates
-        \item Will fly to last updated target position if DL lost
-    \end{subitemize}}
-    \blueitem{Acquisition \& MPRF ``Active'' Phase}{
-    Once close to DL bandit location
-    \begin{subitemize}
-        \item AIM-120 radar turns on in MPRF (Medium Pulse Repetition Frequency) mode 
-        \item Locks on to closest / best target
-    \end{subitemize}}
-    \blueitem{Terminal Phase \& Intercept}{
-    Once missile has gone active
-    \begin{subitemize}
-        \item Flies a PNG intercept trajectory towards the target locked by it's radar 
-        \item Requires no further DL support, fighter can now turn away from the bandit
-    \end{subitemize}}
-\end{tcoloritemize}
-
-\notebox{
-    \textbf{Post-Launch Maneuvers}
-    \begin{itemize}
-            \item For simplicity, \cref{fig:aaweap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active
-    \end{itemize}
-
-    \textbf{Flowing Cold}
-    \begin{itemize}
-        \item The fighter can turn cold prior to the missile going active
-        \item Missile will fly to last DL target position, significantly reducing probability of intercept
-    \end{itemize}
-}
-
-\warningbox{
-    \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} --- use caution near friendlies
-}
-
-\subsubsection{TACTICAL CONSIDERATIONS}
-\label{subsec:aim120:tactics}
-
-\begin{tcoloritemize}
-    \blueitem{Range}{
-    \textbf{Fighter-bandit distance} can be measured at different points during the timeline
-
-    \begin{subitemize}
-        \item \textbf{R\textsubscript{Launch}} --- distance at launch
-        \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
-        \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
-    \end{subitemize}
-    
-    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aaweap:aim120:profile}.
-    }
-    \blueitem{Maximizing Launch Range / Energy}{
-    \textbf{Why?}
-    \begin{subitemize}
-        \item Ability to launch at longer ranges forces bandit defensive
-        \item Bandit may not be able to counter-launch
-        \item Higher launch energy increases P\textsubscript{intercept} %probability of intercept
-    \end{subitemize}
-    \textbf{How?}
-    \begin{subitemize}
-        \item \textbf{High velocity} --- increases kinetic energy 
-        \item \textbf{High altitude} --- increases potential energy, reduces drag
-    \end{subitemize}}
-    \blueitem{Maximizing F-Pole Range}{
-    \textbf{Why?}
-    \begin{subitemize}
-        \item Less likely to enter bandit launch envelope
-        \item More time/range to launch 2nd missile if necessary
-    \end{subitemize}
-    \textbf{How?}
-    \begin{subitemize}
-        \item \textbf{Crank} --- turn 30-60 degrees away from bandit to reduce closure rate, maintain radar contact
-        \item \textbf{Dive} --- reduces threat missile envelope
-    \end{subitemize}}
-    \blueitem{Flowing Cold}{
-    \textbf{Why?}
-    \begin{subitemize}
-        \item Missile requires no support once active
-        \item Defends against unknown missile launches
-        \item Further maximizes F-pole range
-    \end{subitemize}
-    \textbf{How?}
-    \begin{subitemize}
-        \item \textbf{Turn} --- Away from bandit / threat
-        \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
-    \end{subitemize}}
-    \blueitem{Effect of Bandit Maneuvers}{
-    As evident in \cref{fig:aaweap:aim120:profile}, 
-    R\textsubscript{Launch} is significantly greater than the distance travelled by the missile
-    \begin{subitemize}
-        \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
-        \begin{itemize}
-            \item \textbf{missile is relying on target to keep flying towards us}
-        \end{itemize}
-        \item Bandit can significantly change missile envelope by reducing closure rate / altitude
-        \item If done post-launch can result in missile not having energy to intercept
-    \end{subitemize}}
-\end{tcoloritemize}
 
 \clearpage
 
@@ -1392,7 +1252,148 @@
     }
 \end{checklistenumerate}
 
-\clearpage
+\marginfigrestore
+
+\subsection{BEYOND VISUAL RANGE TACTICS}
+\label{subsec:bvr}
+% \subsubsection{EMPLOYMENT PROFILE}
+% \label{subsec:aim120:employmentprofile}
+\begin{figure}[h]
+    \centering
+    \includegraphics[
+            width = 128mm,
+    ]{F16_aaweapons_amraam_employment_v07.pdf}
+    \caption{Generic, simplified AIM-120 employment profile}
+    \label{fig:aaweap:aim120:profile}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{Phases}{
+    \Cref{fig:aaweap:aim120:profile} shows AIM-120 employment profile
+    including the following phases \& milestones
+
+    \begin{subitemize}
+        \item \textbf{A} --- Launch
+        \item \textbf{B} --- Mid-Course Phase
+        \item \textbf{C} --- Acquisition
+        \item \textbf{D} --- Intercept
+    \end{subitemize}}
+    \blueitem{Launch}{
+    \textbf{Radar Lock}
+
+    \begin{subitemize}
+        \item Only requires track to launch
+        \item Target does \textbf{NOT} need to be in STT lock
+    \end{subitemize}
+
+    \textbf{Lofting} 
+
+    \begin{subitemize}
+        \item At longer ranges the missile will loft itself to optimize trajectory
+        \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
+    \end{subitemize}}
+    \blueitem{Mid-Course Phase}{
+    \textbf{Missile flies using internal IMU}
+
+    \begin{subitemize}
+        \item Receives periodic datalink updates
+        \item Will fly to last updated target position if DL lost
+    \end{subitemize}}
+    \blueitem{Acquisition \& MPRF ``Active'' Phase}{
+    Once close to DL bandit location
+    \begin{subitemize}
+        \item AIM-120 radar turns on in MPRF (Medium Pulse Repetition Frequency) mode 
+        \item Locks on to closest / best target
+    \end{subitemize}}
+    \blueitem{Terminal Phase \& Intercept}{
+    Once missile has gone active
+    \begin{subitemize}
+        \item Flies a PNG intercept trajectory towards the target locked by it's radar 
+        \item Requires no further DL support, fighter can now turn away from the bandit
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\notebox{
+    \textbf{Post-Launch Maneuvers}
+    \begin{itemize}
+            \item For simplicity, \cref{fig:aaweap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active
+    \end{itemize}
+
+    \textbf{Flowing Cold}
+    \begin{itemize}
+        \item The fighter can turn cold prior to the missile going active
+        \item Missile will fly to last DL target position, significantly reducing probability of intercept
+    \end{itemize}
+}
+
+\warningbox{
+    \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} --- use caution near friendlies
+}
+
+\subsubsection{TACTICAL CONSIDERATIONS}
+\label{subsec:bvr:tacticalconsideration}
+% \label{subsec:aim120:tactics}
+\begin{tcoloritemize}
+    \blueitem{Range}{
+    \textbf{Fighter-bandit distance} can be measured at different points during the timeline
+
+    \begin{subitemize}
+        \item \textbf{R\textsubscript{Launch}} --- distance at launch
+        \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
+        \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
+    \end{subitemize}
+    
+    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aaweap:aim120:profile}.
+    }
+    \blueitem{Maximizing Launch Range / Energy}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Ability to launch at longer ranges forces bandit defensive
+        \item Bandit may not be able to counter-launch
+        \item Higher launch energy increases P\textsubscript{intercept} %probability of intercept
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{High velocity} --- increases kinetic energy 
+        \item \textbf{High altitude} --- increases potential energy, reduces drag
+    \end{subitemize}}
+    \blueitem{Maximizing F-Pole Range}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Less likely to enter bandit launch envelope
+        \item More time/range to launch 2nd missile if necessary
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{Crank} --- turn 30-60 degrees away from bandit to reduce closure rate, maintain radar contact
+        \item \textbf{Dive} --- reduces threat missile envelope
+    \end{subitemize}}
+    \blueitem{Flowing Cold}{
+    \textbf{Why?}
+    \begin{subitemize}
+        \item Missile requires no support once active
+        \item Defends against unknown missile launches
+        \item Further maximizes F-pole range
+    \end{subitemize}
+    \textbf{How?}
+    \begin{subitemize}
+        \item \textbf{Turn} --- Away from bandit / threat
+        \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
+    \end{subitemize}}
+    \blueitem{Effect of Bandit Maneuvers}{
+    As evident in \cref{fig:aaweap:aim120:profile}, 
+    R\textsubscript{Launch} is significantly greater than the distance travelled by the missile
+    \begin{subitemize}
+        \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
+        \begin{itemize}
+            \item \textbf{missile is relying on target to keep flying towards us}
+        \end{itemize}
+        \item Bandit can significantly change missile envelope by reducing closure rate / altitude
+        \item If done post-launch can result in missile not having energy to intercept
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\marginfigeometry
 
 \subsubsection{BVR TIMELINE --- WIP}
 

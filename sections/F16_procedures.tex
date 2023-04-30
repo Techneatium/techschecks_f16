@@ -397,9 +397,9 @@
 \subsection{TAKEOFF}
 
 \begin{checklistenumerate}
-    \blueitem{Runup}{
+    \blueitem{Runup}{\cbstart
     \begin{subenumerate}
-        \item \textbf{Brake}\cbstart \dotfill \textbf{Hold}
+        \item \textbf{Brake} \dotfill \textbf{Hold}
         \item \textbf{Throttle} \dotfill \textbf{90\%}\cbend
     \end{subenumerate}}
     \blueitem{Runup Check}{
@@ -413,7 +413,12 @@
             \item \textbf{HYD PRESS A \& B} --- \textbf{2850-3250psi}
         \end{itemize}
     \end{subenumerate}}
-    \blueitem{Takeoff Roll}{
+\end{checklistenumerate}
+
+\clearpage
+
+\begin{checklistenumerate}[resume]
+    \blueitem{Takeoff Roll}{\cbstart
     \marginpar{
         \captionsetup{type=table}
         \centering
@@ -441,7 +446,7 @@
         \end{tabular}
     }
     \begin{subenumerate}
-        \item \textbf{Brake}\cbstart \dotfill \textbf{Release}
+        \item \textbf{Brake} \dotfill \textbf{Release}
         \item \textbf{Throttle} \dotfill \textbf{As Desired}\cbend
         \begin{itemize}
             \item \textbf{NOZ POS} --- \textbf{< 15\%} after 5 sec at \textbf{MIL/AB}
@@ -453,10 +458,16 @@
     \begin{subenumerate}[start=3]
         \item \textbf{NWS} \dotfill \textbf{Disengaged}
     \end{subenumerate}}
-    \blueitem{Rotation}{At 10-15kts below takeoff speed, reference \cref{tab:proc:takeoff:speed}
+    \blueitem{Rotation}{\cbstart At 10-15kts below takeoff speed, reference \cref{tab:proc:takeoff:speed}
 
     \begin{subenumerate}
-        \item \textbf{Attitude}\cbstart \dotfill \textbf{8-12 deg nose high}\cbend
+        \item \textbf{Attitude} \dotfill \textbf{8-12 deg nose high}
+    \end{subenumerate}
+
+    Once positive rate has been achieved
+    
+    \begin{subenumerate}[start=2]
+        \item \textbf{Gear} \dotfill \textbf{UP}\cbend
     \end{subenumerate}}
 \end{checklistenumerate}
 

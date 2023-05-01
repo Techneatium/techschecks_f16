@@ -1267,6 +1267,63 @@
     \label{fig:aaweap:aim120:profile}
 \end{figure}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        % help lines
+        % \draw[help lines] (0,-10) grid (100,10);
+
+        % MISSILE
+        \coordinate (A_missile) at (0,0);
+        \coordinate (B_missile) at (30,10);
+        \coordinate (C_missile) at (60,3);
+        \coordinate (D_missile) at (80,0);
+
+        \draw[thick, ->]
+        (A_missile) .. controls ($(A_missile)+(20,0)$) and ($(B_missile)+(-10,0)$) .. 
+        (B_missile) .. controls ($(B_missile)+(5,0)$) and ($(C_missile)+(-10,2.5)$) ..
+        (C_missile);
+        \draw[dotted, thick, ->] 
+        (C_missile) .. controls ($(C_missile)+(10,-2.5)$) and ($(D_missile)+(-5,0)$) ..
+        (D_missile);
+
+        \node[above] at (A_missile) {\titlefont A};
+        \node[above] at (B_missile) {\titlefont B};
+        \node[above] at (C_missile) {\titlefont C};
+        \node[above] at (D_missile) {\titlefont D};
+
+        % FIGHTER
+        \coordinate (A_fighter) at (A_missile);
+        \coordinate (C_fighter) at ($(A_fighter)+(20,0)$);
+        \coordinate (D_fighter) at ($(C_fighter)+(-5,-5)$);
+
+        \draw[ultra thick, ->] 
+        (A_fighter) -- 
+        (C_fighter) .. controls ($(C_fighter)+(5,0)$) and ($(C_fighter)+(10,-5)$) .. 
+        ($(C_fighter)+(0,-5)$) --
+        (D_fighter);
+
+        \node[above right] at (C_fighter) {\titlefont C};
+        \node[left] at (D_fighter) {\titlefont D};
+
+        % BANDIT
+        \coordinate (A_bandit) at (100,0);
+        \coordinate (D_bandit) at (D_missile);
+
+        \draw[ultra thick, ->] 
+        (A_bandit) -- 
+        (D_bandit);
+
+        \node[above] at (A_bandit) {\titlefont A};
+
+        \filldraw[red] (D_bandit) circle (2pt);
+
+    \end{tikzpicture}
+    \caption{Generic, simplified AIM-120 employment profile}
+\end{figure}
+
 \begin{tcoloritemize}
     \blueitem{Phases}{
     \Cref{fig:aaweap:aim120:profile} shows AIM-120 employment profile

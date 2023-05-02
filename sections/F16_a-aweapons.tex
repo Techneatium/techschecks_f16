@@ -1301,7 +1301,7 @@
 
         \draw[ultra thick, ->] 
         (A_fighter) -- 
-        (C_fighter) .. controls ($(C_fighter)+(5,0)$) and ($(C_fighter)+(10,-5)$) .. 
+        (C_fighter) .. controls ($(C_fighter)+(5,0)$) and ($(C_fighter)+(5,-5)$) .. 
         ($(C_fighter)+(0,-5)$) --
         (D_fighter);
 
@@ -1320,8 +1320,27 @@
 
         \filldraw[red] (D_bandit) circle (2pt);
 
+        % Distance lines
+        \draw[thin, <->]
+        ($(C_fighter)+(0,-12.5)$) -- node[pos=0.5, above]{\small\titlefont R\textsubscript{A-POLE}}
+        (60,-12.5);
+        \draw[thin, <->]
+        (15,-20) -- node[pos=0.5, above]{\small\titlefont R\textsubscript{F-POLE}}
+        ($(D_missile)+(0,-20)$);
+        \draw[thin, <->]
+        ($(A_missile)+(0,-27.5)$) -- node[pos=0.5, above]{\small\titlefont R\textsubscript{LAUNCH}}
+        ($(A_bandit)+(0,-27.5)$);
+
+        \draw[thin]
+        ($(C_fighter)+(0,-2.5)$) -- ($(C_fighter)+(0,-15)$)
+        ($(C_missile)+(0,-2.5)$) -- (60,-15)
+        ($(D_fighter)+(0,-2.5)$) -- (15,-22.5)
+        ($(D_missile)+(0,-2.5)$) -- ($(D_missile)+(0,-22.5)$)
+        ($(A_missile)+(0,-2.5)$) -- ($(A_missile)+(0,-30)$)
+        ($(A_bandit)+(0,-2.5)$) -- ($(A_bandit)+(0,-30)$);
+
     \end{tikzpicture}
-    \caption{Generic, simplified AIM-120 employment profile}
+    \caption{Top-down view of a generic AIM-120 employment profile}
 \end{figure}
 
 \begin{tcoloritemize}

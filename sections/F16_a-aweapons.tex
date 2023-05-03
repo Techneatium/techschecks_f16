@@ -1258,16 +1258,16 @@
 \label{subsec:bvr}
 % \subsubsection{EMPLOYMENT PROFILE}
 % \label{subsec:aim120:employmentprofile}
-\begin{figure}[h]
-    \centering
-    \includegraphics[
-            width = 128mm,
-    ]{F16_aaweapons_amraam_employment_v07.pdf}
-    \caption{Generic, simplified AIM-120 employment profile}
-    \label{fig:aaweap:aim120:profile}
-\end{figure}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[
+%             width = 128mm,
+%     ]{F16_aaweapons_amraam_employment_v07.pdf}
+%     \caption{Generic, simplified AIM-120 employment profile}
+%     \label{fig:aaweap:aim120:profile}
+% \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
         >={Latex[round]}
@@ -1310,6 +1310,7 @@
 
         % BANDIT
         \coordinate (A_bandit) at (100,0);
+        \coordinate (C_bandit) at (85,0);
         \coordinate (D_bandit) at (D_missile);
 
         \draw[ultra thick, ->] 
@@ -1317,13 +1318,14 @@
         (D_bandit);
 
         \node[above] at (A_bandit) {\titlefont A};
+        \node[above] at (C_bandit) {\titlefont C};
 
         \filldraw[red] (D_bandit) circle (2pt);
 
         % Distance lines
         \draw[thin, <->]
         ($(C_fighter)+(0,-12.5)$) -- node[pos=0.5, above]{\small\titlefont R\textsubscript{A-POLE}}
-        (60,-12.5);
+        ($(C_bandit)+(0,-12.5)$);
         \draw[thin, <->]
         (15,-20) -- node[pos=0.5, above]{\small\titlefont R\textsubscript{F-POLE}}
         ($(D_missile)+(0,-20)$);
@@ -1333,7 +1335,7 @@
 
         \draw[thin]
         ($(C_fighter)+(0,-2.5)$) -- ($(C_fighter)+(0,-15)$)
-        ($(C_missile)+(0,-2.5)$) -- (60,-15)
+        ($(C_bandit)+(0,-2.5)$) -- ($(C_bandit)+(0,-15)$)
         ($(D_fighter)+(0,-2.5)$) -- (15,-22.5)
         ($(D_missile)+(0,-2.5)$) -- ($(D_missile)+(0,-22.5)$)
         ($(A_missile)+(0,-2.5)$) -- ($(A_missile)+(0,-30)$)
@@ -1341,6 +1343,7 @@
 
     \end{tikzpicture}
     \caption{Side-on view of a generic AIM-120 employment profile}
+    \label{fig:aaweap:aim120:profile}
 \end{figure}
 
 \begin{tcoloritemize}

@@ -1410,7 +1410,7 @@
         \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
     \end{subitemize}
     
-    \textbf{R\textsubscript{Launch}}, \textbf{R\textsubscript{F-Pole}} are the most relevant and should be maximized. These are visible in \cref{fig:aaweap:aim120:profile}.
+    These are illustrated in \cref{fig:aaweap:aim120:profile}.
     }
     \blueitem{Maximizing Launch Range / Energy}{
     \textbf{Why?}
@@ -1465,18 +1465,19 @@
 \subsubsection{FIGHTER MANEUVERS}
 
 \begin{tcoloritemize}
-    \blueitem{Crank}{Fighter turns 45-60 deg away from bandit 
+    \blueitem{Crank}{Fighter turns \textbf{45-60 deg} away from bandit 
 
     \begin{subitemize}
         \item reduces closure while maintaining radar track
         \item typically used post-launch
     \end{subitemize}}
-    \blueitem{Notch}{Fighter turns 70-110 deg away from bandit
+    \blueitem{Notch}{Fighter turns \textbf{70-110 deg} away from bandit
 
     \begin{subitemize}
         \item minimizes relative velocity to break hostile pulse-doppler radar track
+        \item increases angular motion relative to bandit missile, forcing missile to maneuver and expend energy
     \end{subitemize}}
-    \blueitem{Go Cold}{Fighter turns away from threat
+    \blueitem{Go Cold}{Fighter turns \textbf{away} from threat
 
     \begin{subitemize}
         \item used to kinematically defeat threat missiles
@@ -1556,6 +1557,10 @@
     \caption{Top-down view of basic BVR fighter maneuvers}
     % \label{fig:aaweap:aim120:profile}
 \end{figure}
+
+\warningbox{
+    \textbf{Turning back in after going cold can place fighter within bandit launch envelope}
+}
 
 \clearpage
 

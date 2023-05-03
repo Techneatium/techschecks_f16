@@ -1347,30 +1347,31 @@
 \end{figure}
 
 \begin{tcoloritemize}
-    \blueitem{Phases}{
-    \Cref{fig:aaweap:aim120:profile} shows AIM-120 employment profile
-    including the following phases \& milestones
+    \blueitem{AIM-120 \break Employment \break Profile}{
+    \Cref{fig:aaweap:aim120:profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
+    including the following phases
 
     \begin{subitemize}
-        \item \textbf{A} --- Launch
-        \item \textbf{B} --- Mid-Course Phase
+        \item \textbf{A} --- Launch/Boost
+        \item \textbf{B} --- Mid-Course
         \item \textbf{C} --- Acquisition
         \item \textbf{D} --- Intercept
     \end{subitemize}}
-    \blueitem{Launch}{
-    \textbf{Radar Lock}
+    \blueitem{Launch/Boost}{
+    \textbf{Boost}
 
     \begin{subitemize}
-        \item Only requires track to launch
-        \item Target does \textbf{NOT} need to be in STT lock
+        \item Motor only fires for initial seconds of flight 
+        \item After burnout missile \underline{cannot gain energy}
     \end{subitemize}
 
     \textbf{Lofting} 
 
     \begin{subitemize}
-        \item At longer ranges the missile will loft itself to optimize trajectory
+        \item At longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
         \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
-    \end{subitemize}}
+    \end{subitemize}
+    }
     \blueitem{Mid-Course Phase}{
     \textbf{Missile flies using internal IMU}
 
@@ -1379,16 +1380,16 @@
         \item Will fly to last updated target position if DL lost
     \end{subitemize}}
     \blueitem{Acquisition \& MPRF ``Active'' Phase}{
-    Once close to DL bandit location
+    Missile radar turns on once close to bandit location
     \begin{subitemize}
-        \item AIM-120 radar turns on in MPRF (Medium Pulse Repetition Frequency) mode 
+        \item Seeker in MPRF (Medium Pulse Repetition Frequency) mode 
         \item Locks on to closest / best target
     \end{subitemize}}
     \blueitem{Terminal Phase \& Intercept}{
-    Once missile has gone active
+    Once missile seeker has locked a target
     \begin{subitemize}
-        \item Flies a PNG intercept trajectory towards the target locked by it's radar 
-        \item Requires no further DL support, fighter can now turn away from the bandit
+        \item Flies PNG intercept trajectory
+        \item Requires no further DL support, fighter can turn away from the bandit
     \end{subitemize}}
 \end{tcoloritemize}
 

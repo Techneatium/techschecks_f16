@@ -1393,19 +1393,6 @@
     \end{subitemize}}
 \end{tcoloritemize}
 
-\notebox{
-    \textbf{Post-Launch Maneuvers}
-    \begin{itemize}
-            \item For simplicity, \cref{fig:aaweap:aim120:profile} does not show any post-launch maneuvers until point \textbf{C}, where the missile goes active
-    \end{itemize}
-
-    \textbf{Flowing Cold}
-    \begin{itemize}
-        \item The fighter can turn cold prior to the missile going active
-        \item Missile will fly to last DL target position, significantly reducing probability of intercept
-    \end{itemize}
-}
-
 \warningbox{
     \textbf{AIM-120 HAS \underline{NO} IFF FUNCTIONALITY} --- use caution near friendlies
 }
@@ -1473,6 +1460,100 @@
     \end{subitemize}}
 \end{tcoloritemize}
 
+\subsubsection{FIGHTER MANEUVERS}
+
+\begin{tcoloritemize}
+    \blueitem{Crank}{Fighter turns 45-60 deg away from bandit 
+
+    \begin{subitemize}
+        \item reduces closure while maintaining radar track
+        \item typically used post-launch
+    \end{subitemize}}
+    \blueitem{Notch}{Fighter turns 70-110 deg away from bandit
+
+    \begin{subitemize}
+        \item minimizes relative velocity to break hostile pulse-doppler radar track
+    \end{subitemize}}
+    \blueitem{Go Cold}{Fighter turns away from threat
+
+    \begin{subitemize}
+        \item used to kinematically defeat threat missiles
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            % FIGHTER
+            \draw[ultra thick, rounded corners, ->] 
+            (0,0) -- (0,5) -- (13,12.5);
+    
+            % BANDIT
+            \draw[ultra thick, rounded corners, ->] 
+            (0,35) -- (0,25);
+    
+            % help line
+            \draw[thin, dashed] 
+            (0,25) -- (0,5);
+    
+            \draw[thin]
+            (0,15) arc (90:30:10) node[pos=0.25, above right]{\small\titlefont 45-60$^\circ$};
+    
+        \end{tikzpicture}
+        \caption{Crank}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            % FIGHTER
+            \draw[ultra thick, rounded corners, ->] 
+            (0,0) -- (0,5) -- (15,5);
+    
+            % BANDIT
+            \draw[ultra thick, rounded corners, ->] 
+            (0,35) -- (0,25);
+    
+            % help line
+            \draw[thin, dashed] 
+            (0,25) -- (0,5);
+    
+            \draw[thin]
+            (0,15) arc (90:0:10) node[pos=0.5, above right]{\small\titlefont 70-110$^\circ$};
+    
+        \end{tikzpicture}
+        \caption{Notch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            % FIGHTER
+            \draw[ultra thick, ->] 
+            (0,0) -- 
+            (0,5) arc (180:0:5) --
+            (10,0);
+    
+            % BANDIT
+            \draw[ultra thick, rounded corners, ->] 
+            (0,35) -- (0,25);
+
+            % help line
+            \draw[thin, dashed] 
+            (0,25) -- (0,5);
+
+        \end{tikzpicture}
+        \caption{Go Cold}
+    \end{subfigure}
+    \caption{Basic fighter maneuvers for BVR tactics}
+    % \label{fig:aaweap:aim120:profile}
+\end{figure}
 \marginfigeometry
 
 \subsubsection{BVR TIMELINE --- WIP}

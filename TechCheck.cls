@@ -321,19 +321,19 @@
 % APPLY PAGE GEOMETRY
 %-----------------------------------------------------------------
 \geometry{
-	paperheight=\TC@paperh,
-	paperwidth=\TC@paperw,
-	margin=1mm,
-	top=\TC@topmar,
-	bottom=\TC@botmar,
-	headsep=5mm,
-	headheight=5mm,
-	footskip=\TC@footmar,
-	inner=\TC@inmar,
-	outer=\TC@outmar,
-    marginparwidth=0mm,
-    marginparsep=0mm,
-	centering,
+  paperheight=\TC@paperh,
+  paperwidth=\TC@paperw,
+  margin=1mm,
+  top=\TC@topmar,
+  bottom=\TC@botmar,
+  headsep=5mm,
+  headheight=5mm,
+  footskip=\TC@footmar,
+  inner=\TC@inmar,
+  outer=\TC@outmar,
+  marginparwidth=0mm,
+  marginparsep=0mm,
+  centering,
 }
 
 %-----------------------------------------------------------------

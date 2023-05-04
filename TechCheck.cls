@@ -496,21 +496,23 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	% Header
+	% rightmark links to current section
 	\fancyhead[RO]{
         \thumbnar
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
 		}
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
 		}
   	}
+	% leftmark links to current chapter
 	\fancyhead[LO]{
         \hatchodd
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{chapter.\thechapter}{\leftmark}}}
 		}
   	}
     \fancyhead[LE]{

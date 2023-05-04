@@ -508,10 +508,11 @@
 			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
 		}
   	}
+	% leftmark links to current chapter
 	\fancyhead[LO]{
         \hatchodd
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{chapter.\thechapter}{\leftmark}}}
 		}
   	}
     \fancyhead[LE]{

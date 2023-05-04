@@ -38,7 +38,6 @@
 %-----------------------------------------------------------------
 \newenvironment{tableminipage}{% begdef
 	\begin{minipage}[t]{\linewidth}
-	\vspace{-7pt}
 }{% enddef
 	\end{minipage}
 }
@@ -170,14 +169,14 @@
 	\end{itemize}
 }
 
-\newenvironment{outerchecklistenumerate}{% begdef
-	\begin{enumerate}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}]
+\newenvironment{outerchecklistenumerate}[1][]{% begdef
+	\begin{enumerate}[leftmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}, #1]
 }{% begdef
 	\end{enumerate}
 }
 
 \newenvironment{outerchecklistitemize}{% begdef
-	\begin{itemize}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\textbullet}]
+	\begin{itemize}[leftmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\textbullet}]
 }{% begdef
 	\end{itemize}
 }
@@ -185,8 +184,26 @@
 %-----------------------------------------------------------------
 % HIGH-LEVEL CUSTOM ENUMITEM ENVIRONMENTS
 %-----------------------------------------------------------------
+
+% Counter for use in cheklistenumitems
+\newcounter{checklistnumi}
+\setcounter{checklistnumi}{1} % set to one to prevent edge case error
+\newcounter{checklistnumistart} % used to check if first line to prevent
+
+% Key to start an enumerate at a given number
+\define@key{checklistnumitem}{start}{
+	\setcounter{checklistnumi}{#1}
+	\setcounter{checklistnumistart}{\value{tcolornumi}}
+}
+
+% Key to resume an enumerate at previous number
+\define@key{checklistnumitem}{resume}[]{
+	\setcounter{checklistnumistart}{\value{tcolornumi}}
+}
+
 % SHORT VERSIONS
-\newenvironment{checklistenumerate}{% begdef
+\newenvironment{checklistenumerate}[1][start=1]{% begdef
+    \setkeys{checklistnumitem}{#1}
 	\newenvironment{subenumerate}[1][]{% begdef
 		\begin{innerchecklistenumerate}[##1]
 	}{% enddef
@@ -198,12 +215,14 @@
 		\end{innerchecklistitemize}
 	}
 	\newcommand{\blueitem}[2]{
-		\item \blue{##1} {##2}
+		\item \blue{##1} {##2} 
+        \stepcounter{checklistnumi}
 	}
 	\newcommand{\dblueitem}[2]{
 		\item \dblue{##1} {##2}
+        \stepcounter{checklistnumi}
 	}
-	\begin{outerchecklistenumerate}
+	\begin{outerchecklistenumerate}[start=\value{checklistnumi}]
 }{% enddef
 	\end{outerchecklistenumerate}
 }
@@ -273,7 +292,7 @@
     right=1mm,
     fonttitle=\titlefont\bfseries,
     sidebyside,
-    lefthand width=35mm,
+    lefthand width=30mm,
     sidebyside align=top,
     sidebyside gap=5mm,
     segmentation style={solid},
@@ -284,19 +303,15 @@
 
 \newenvironment{outertcolorenumitem}{% begdef
     \newenvironment{subenumerate}[1][]{% begdef
-		\begin{tableminipage}
-            \begin{enumerate}[##1]
+		\begin{enumerate}[##1]
 	}{% enddef
-            \end{enumerate}
-		\end{tableminipage}
+		\end{enumerate}
 	}
 
     \newenvironment{subitemize}[1][]{% begdef
-		\begin{tableminipage}
-			\begin{itemize}[##1]
+		\begin{itemize}[##1]
 	}{% enddef
-			\end{itemize}
-		\end{tableminipage}
+		\end{itemize}
 	}
 
     \begin{tcolorenumitem}

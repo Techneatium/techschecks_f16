@@ -23,50 +23,25 @@
 %=================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[10pt,usenames,dvipsnames,twoside]{book}
-\NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{TechCheck}[2023/01/14]
 
-%-----------------------------------------------------------------
-% GENERAL PACKAGES
-%-----------------------------------------------------------------
-\RequirePackage{geometry}
-\RequirePackage[]{datetime2} % change date format
-\DTMnewstyle{yymmdd}{ % create new date style
-	\renewcommand*\DTMdisplaydate[4]{%
-		\DTMtwodigits{##1}\DTMtwodigits{##2}\DTMtwodigits{##3}% 
-	}
-	\renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}%
-}{}{}{}
-\DTMsetstyle{yymmdd} % set new style as default
-\RequirePackage[shortlabels]{enumitem} % pause/resume lists
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES -- UTILITY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
 \graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
-\RequirePackage{subcaption} % used for subfigures
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
-\RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units
 \RequirePackage{tikz} % shapes, figures
 \RequirePackage{tikzpagenodes} % points for tikz
 \usetikzlibrary{calc} % used for hyperlinked nodes
-\RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
-\RequirePackage{cleveref} % better referencing
-\RequirePackage[document]{ragged2e} % left ragged text
-% \RequirePackage{atbegshi}  % special commands that apply tikz to all pages
 \RequirePackage{fancyhdr} % custom header/footer
 \RequirePackage{etoolbox} % Boolean and if/else
 \RequirePackage{calc} % math inside other commands
-\RequirePackage{booktabs} % fancy tables
-\RequirePackage{multirow} % more fancy tables
-\RequirePackage{longtable} % multi page tables
-\RequirePackage{tocloft} % TOC formatting
-\RequirePackage{minitoc} % chapter tocs
-\RequirePackage[auto]{chappg}
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}
-\RequirePackage{luatex85} % required to make changebar work with lualatex
-\RequirePackage[pdftex, color, outerbars]{changebar} % what it says
 \RequirePackage{xkeyval} % allows defining keys for macros
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,23 +52,14 @@
 % FONT OPTIONS
 %-----------------------------------------------------------------
 % Declare toggles for each font option
-\newtoggle{fontHelvet}
-\newtoggle{loadfontspec}
 \newtoggle{fontJost}
 \newtoggle{fontSpartan}
 \newtoggle{fontMetropolis}
 \newtoggle{fontInter}
 
-% Default pdflatex helvetica clone
-\DeclareOption{fontHelvet}{
-  	\toggletrue{fontHelvet}
-}
-
 % Futura Clone -- pointy 
 \DeclareOption{fontJost}{
-	\toggletrue{loadfontspec}
 	\toggletrue{fontJost}
-	% toggle other fonts false
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
@@ -101,32 +67,26 @@
 
 % Futura DemiBold Clone
 \DeclareOption{fontSpartan}{
-	\toggletrue{loadfontspec}
-	\toggletrue{fontSpartan}
-	% toggle other fonts false
 	\togglefalse{fontJost}
+    \toggletrue{fontSpartan}
 	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
 }
 
 % Gotham Clone 
 \DeclareOption{fontMetropolis}{
-	\toggletrue{loadfontspec}
-	\toggletrue{fontMetropolis}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
+    \toggletrue{fontMetropolis}
 	\togglefalse{fontInter}
 }
 
 % Helvetica clone
 \DeclareOption{fontInter}{
-	\toggletrue{loadfontspec}
-	\toggletrue{fontInter}
-	% toggle other fonts false
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
 	\togglefalse{fontMetropolis}
+    \toggletrue{fontInter}
 }
 
 %-----------------------------------------------------------------
@@ -145,9 +105,9 @@
 \newlength{\TC@topmar}
 \newlength{\TC@botmar}
 \newlength{\TC@footmar}
-\setlength\TC@topmar{1.2cm}
-\setlength\TC@botmar{0.8cm}
-\setlength\TC@footmar{0.5cm}
+\setlength\TC@topmar{12mm}
+\setlength\TC@botmar{12mm}
+\setlength\TC@footmar{5mm}
 
 % indendtation for chevrons on front page
 \newlength{\TC@chevin}
@@ -180,9 +140,22 @@
 	\setlength\TC@paperw{156mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength\TC@chevin{\TC@outmar-35mm}
+	\setlength\TC@chevin{\TC@outmar-36mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
+}
+
+% Crown Quatro paper size -- 246x189mm
+\DeclareOption{crownquatro}{
+	\setlength\TC@paperh{246mm}
+	\setlength\TC@paperw{189mm}
+	\setlength\TC@inmar{10mm}
+	\setlength\TC@outmar{10mm}
+	\setlength{\TC@chevin}{\TC@outmar-33mm}
+	\setlength\TC@tabdepth{8mm}
+    \setlength\TC@botmar{20mm}
+    \setlength\TC@footmar{10mm}
+    \togglefalse{print}
 }
 
 % A5 paper with 9.5mm extra for 4x3 aspect -- 210x(148+9.5)mm
@@ -191,11 +164,10 @@
 	\setlength\TC@paperw{157.5mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{13.5mm}
-	\setlength\TC@chevin{\TC@outmar-36.5mm}
+	\setlength\TC@chevin{\TC@outmar-32.5mm}
 	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
-
 
 % Nominal A4 paper size -- 297x210mm
 \DeclareOption{a4}{
@@ -203,7 +175,7 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{14mm}
 	\setlength\TC@outmar{14mm}
-	\setlength{\TC@chevin}{\TC@outmar-31mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -214,9 +186,18 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength{\TC@chevin}{\TC@outmar-29mm}
+	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
+}
+
+\DeclareOption{oneside}{
+    \PassOptionsToClass{oneside}{book}
+    % book will get oneside option passed automatically but need  
+    % to turn off automatic thumbtab on next page after chapter
+    \PassOptionsToPackage{autothumbback=false}{techhatchtabs} 
+    % changebars are on wrong side otherwise? bug?
+    \PassOptionsToPackage{leftbars}{changebar}
 }
 
 %-----------------------------------------------------------------
@@ -291,8 +272,46 @@
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ExecuteOptions{fontSpartan, a5print, colorful}
 \ProcessOptions*\relax
+
+\LoadClass[10pt,usenames,dvipsnames]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES -- FORMATTING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{geometry}
+
+\RequirePackage[]{datetime2} % change date format
+\DTMnewstyle{yymmdd}{ % create new date style
+	\renewcommand*\DTMdisplaydate[4]{%
+		\DTMtwodigits{##1}\DTMtwodigits{##2}\DTMtwodigits{##3}% 
+	}
+	\renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}%
+}{}{}{}
+\DTMsetstyle{yymmdd} % set new style as default
+
+\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
+\RequirePackage{subcaption} % used for subfigures
+\RequirePackage{marginfix} % patches marginpar to prevent page overflow
+
+\RequirePackage[shortlabels]{enumitem} % pause/resume lists
+\RequirePackage[explicit]{titlesec} % formating of titles
+\RequirePackage{etoc} % formatting of chapter tocs
+\RequirePackage[document]{ragged2e} % left ragged text
+
+\RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
+\RequirePackage{cleveref} % better referencing
+
+\RequirePackage{booktabs} % fancy tables
+\RequirePackage{multirow} % more fancy tables
+\RequirePackage{longtable} % multi page tables
+
+\RequirePackage[auto]{chappg}
+
+\RequirePackage{luatex85} % required to make changebar work with lualatex
+\RequirePackage[pdftex, color]{changebar} % what it says
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOBAL FORMATTING
@@ -302,17 +321,19 @@
 % APPLY PAGE GEOMETRY
 %-----------------------------------------------------------------
 \geometry{
-	paperheight=\TC@paperh,
-	paperwidth=\TC@paperw,
-	margin=1mm,
-	top=\TC@topmar,
-	bottom=\TC@botmar,
-	headsep=5mm,
-	headheight=5mm,
-	footskip=\TC@footmar,
-	inner=\TC@inmar,
-	outer=\TC@outmar,
-	centering
+  paperheight=\TC@paperh,
+  paperwidth=\TC@paperw,
+  margin=1mm,
+  top=\TC@topmar,
+  bottom=\TC@botmar,
+  headsep=5mm,
+  headheight=5mm,
+  footskip=\TC@footmar,
+  inner=\TC@inmar,
+  outer=\TC@outmar,
+  marginparwidth=0mm,
+  marginparsep=0mm,
+  centering,
 }
 
 %-----------------------------------------------------------------
@@ -343,15 +364,7 @@
 %-----------------------------------------------------------------
 % OPTIONAL PACKAGES
 %-----------------------------------------------------------------
-\iftoggle{fontHelvet}{
-	\RequirePackage[T1]{fontenc}
-	\RequirePackage{helvet}
-	\renewcommand{\familydefault}{\sfdefault}
-}{}
-
-\iftoggle{loadfontspec}{
-	\RequirePackage{fontspec}
-}{}
+\RequirePackage{fontspec}
 
 \iftoggle{fontJost}{
 	\setmainfont[
@@ -416,12 +429,6 @@
 \newcommand*\aircraftshort{F-XX}
 \newcommand*{\setaircraftshort}[1]{\renewcommand*\aircraftshort{#1}}
 
-% Set number of tabs in preable
-\newcommand{\settabnumber}[1]{
-	\setcounter{tabnumber}{#1}
-	\setlength\TC@tabwidth{\textheight/\thetabnumber}
-}
-
 %-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
@@ -434,8 +441,11 @@
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
-	\fancyhead[LE,LO]{
-        \hatch
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
     }
 }
 
@@ -448,9 +458,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-		\hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 	\fancyhead[RO]{
         \thumbnar
 	}
@@ -465,9 +478,12 @@
 	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
-	\fancyhead[LE,LO]{
-        \hatch
-	}
+	\fancyhead[LO]{
+        \hatchodd
+    }
+    \fancyhead[LE]{
+        \hatcheven
+    }
 }
 
 \fancypagestyle{body}{
@@ -480,19 +496,27 @@
 	% Aircraft name in footer
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	% Header
+	% rightmark links to current section
 	\fancyhead[RO]{
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
-		}
         \thumbnar
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
+		}
 	}
 	\fancyhead[RE]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
 		}
   	}
-	\fancyhead[LE,LO]{
-        \hatch
+	% leftmark links to current chapter
+	\fancyhead[LO]{
+        \hatchodd
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{chapter.\thechapter}{\leftmark}}}
+		}
+  	}
+    \fancyhead[LE]{
+        \hatcheven
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
@@ -503,12 +527,33 @@
 \pagestyle{body}
 
 %-----------------------------------------------------------------
+% MARGIN FORMATTING / COMMANDS
+%-----------------------------------------------------------------
+% increases margin width to allow margin figures
+\newcommand{\marginfigeometry}{
+    \newgeometry{
+        includemp,
+        inner=\TC@inmar,
+        outer=\TC@outmar,
+        bottom=\TC@botmar,
+        top=\TC@topmar,
+        marginparwidth=40mm,
+        marginparsep=5mm
+    }
+}
+
+% relaxes geometry back to global definition
+\newcommand{\marginfigrestore}{
+    \restoregeometry
+}
+
+%-----------------------------------------------------------------
 % ENUMITEM FORMATTING
 %-----------------------------------------------------------------
 % spacing within lists
-\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
+\setlist[enumerate, 1]{itemsep=4pt, parsep=0pt, label=(\alph*)}
 \setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
-\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
+\setlist[itemize, 1]{itemsep=4pt, parsep=0pt, label=\textbf{\textbullet}}
 \setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
 
 %-----------------------------------------------------------------
@@ -533,17 +578,20 @@
 \setlength{\changebarsep}{2mm}
 
 %-----------------------------------------------------------------
-% TOCLOFT FORMATTING
+% TOC FORMATTING
 %-----------------------------------------------------------------
-% change distance between section number and title
-% default: 1.55em
-\tocloftpagestyle{empty}
 
-%-----------------------------------------------------------------
-% MINITOC FORMATTING
-%-----------------------------------------------------------------
-\mtcsetfont{minitoc}{section}{\normalfont\small}
-\mtcsetrules{minitoc}{off}
+\etocsettocdepth{3}
+
+% For use with `titletoc` package, matches syntax of `etoc`
+% % \printcontents[<name>]{<prefix>}{<start-level>}[<toc-depth>]{<toc-code>]
+% \newcommand{\localtableofcontents}{
+%     \startcontents[chapters]
+%     \printcontents[chapters] % name
+%     {} % prefix
+%     {1} % start-level
+%     {} % toc-code
+% }
 
 %-----------------------------------------------------------------
 % TITLE FORMATTING
@@ -555,7 +603,7 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\hatch\Huge #1} % before-code
+	{\Huge #1\hatchodd} % before-code
 	[] % after code
 
 % formatting of section
@@ -579,10 +627,24 @@
 	{0em} % sep
 	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
+% formatting of subsubsection [full width]
+\titleformat{\subsubsection} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsubsection\quad#1}}}} % before-code
+
+\titleformat{name=\subsubsection,numberless} % command
+	{\normalfont\bfseries} % format
+	{\color{color1}} % label
+	{0em} % sep
+	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing{\section}{0pt}{5pt}{2pt}
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
+\titlespacing{\subsubsection}{0pt}{2pt}{2pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOM COMMANDS / ENVIRONEMNTS

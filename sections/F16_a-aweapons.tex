@@ -1264,7 +1264,7 @@
 %             width = 128mm,
 %     ]{F16_aaweapons_amraam_employment_v07.pdf}
 %     \caption{Generic, simplified AIM-120 employment profile}
-%     \label{fig:aaweap:aim120:profile}
+%     \label{fig:aaweap:bvr:aim120profile}
 % \end{figure}
 
 \begin{figure}[htbp]
@@ -1343,12 +1343,12 @@
 
     \end{tikzpicture}
     \caption{Side-on view of a generic AIM-120 employment profile}
-    \label{fig:aaweap:aim120:profile}
+    \label{fig:aaweap:bvr:aim120profile}
 \end{figure}
 
 \begin{tcoloritemize}
     \blueitem{AIM-120 \break Employment \break Profile}{
-    \Cref{fig:aaweap:aim120:profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
+    \Cref{fig:aaweap:bvr:aim120profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
     including the following phases
 
     \begin{subitemize}
@@ -1401,16 +1401,16 @@
 \label{subsec:bvr:tacticalconsideration}
 % \label{subsec:aim120:tactics}
 \begin{tcoloritemize}
-    \blueitem{Range}{
+    \blueitem{Range Definitions}{
     \textbf{Fighter-bandit distance} can be measured at different points during the timeline
 
     \begin{subitemize}
         \item \textbf{R\textsubscript{Launch}} --- distance at launch
-        \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
         \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
+        \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
     \end{subitemize}
     
-    These are illustrated in \cref{fig:aaweap:aim120:profile}.
+    These are also illustrated in \cref{fig:aaweap:bvr:aim120profile}.
     }
     \blueitem{Maximizing Launch Range / Energy}{
     \textbf{Why?}
@@ -1439,8 +1439,8 @@
     \textbf{Why?}
     \begin{subitemize}
         \item Missile requires no support once active
-        \item Defends against unknown missile launches
-        \item Further maximizes F-pole range
+        \item Defend against unknown missile launches
+        \item Maximize F-pole range further
     \end{subitemize}
     \textbf{How?}
     \begin{subitemize}
@@ -1448,15 +1448,12 @@
         \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
     \end{subitemize}}
     \blueitem{Effect of Bandit Maneuvers}{
-    As evident in \cref{fig:aaweap:aim120:profile}, 
-    R\textsubscript{Launch} is significantly greater than the distance travelled by the missile
+    As evident in \cref{fig:aaweap:bvr:aim120profile}, 
+   \textbf{R\textsubscript{Launch}} is significantly greater than the distance travelled by the missile
     \begin{subitemize}
-        \item DLZ calculated based off \textbf{both} own state \textbf{and} bandit state
-        \begin{itemize}
-            \item \textbf{missile assumes target closure continues}
-        \end{itemize}
+        \item \textbf{DLZ calculated based off \underline{both} fighter \underline{and} bandit velocity/altitude}
         \item Bandit can significantly change missile envelope by reducing closure rate / altitude
-        \item If done post-launch can result in missile not having energy to intercept
+        \item Post-launch bandit maneuvers can result in missile not having energy to intercept
     \end{subitemize}}
 \end{tcoloritemize}
 
@@ -1465,23 +1462,31 @@
 \subsubsection{FIGHTER MANEUVERS}
 
 \begin{tcoloritemize}
-    \blueitem{Crank}{Fighter turns \textbf{45-60 deg} away from bandit 
+    \blueitem{Crank}{Fighter turns \textbf{45-60 deg} away from threat 
 
     \begin{subitemize}
         \item reduces closure while maintaining radar track
         \item typically used post-launch
-    \end{subitemize}}
-    \blueitem{Notch}{Fighter turns \textbf{70-110 deg} away from bandit
+    \end{subitemize}
+    
+    Reference \cref{fig:aaweap:bvr:fightermaneuver:crank}
+    }
+    \blueitem{Notch}{Fighter turns \textbf{70-110 deg} away from threat
 
     \begin{subitemize}
         \item minimizes relative velocity to break hostile pulse-doppler radar track
-        \item increases angular motion relative to bandit missile, forcing missile to maneuver and expend energy
-    \end{subitemize}}
+        \item increases angular motion, forcing missile to maneuver and expend energy
+    \end{subitemize}
+    
+    Reference \cref{fig:aaweap:bvr:fightermaneuver:notch}
+    }
     \blueitem{Go Cold}{Fighter turns \textbf{away} from threat
 
     \begin{subitemize}
         \item used to kinematically defeat threat missiles
-    \end{subitemize}}
+    \end{subitemize}
+    
+    Reference \cref{fig:aaweap:bvr:fightermaneuver:cold}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -1508,6 +1513,7 @@
     
         \end{tikzpicture}
         \caption{Crank}
+        \label{fig:aaweap:bvr:fightermaneuver:crank}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\linewidth}
         \centering
@@ -1531,6 +1537,7 @@
     
         \end{tikzpicture}
         \caption{Notch}
+        \label{fig:aaweap:bvr:fightermaneuver:notch}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\linewidth}
         \centering
@@ -1553,9 +1560,10 @@
 
         \end{tikzpicture}
         \caption{Go Cold}
+        \label{fig:aaweap:bvr:fightermaneuver:cold}
     \end{subfigure}
     \caption{Top-down view of basic BVR fighter maneuvers}
-    % \label{fig:aaweap:aim120:profile}
+    \label{fig:aaweap:bvr:fightermaneuver}
 \end{figure}
 
 \warningbox{
@@ -1570,20 +1578,20 @@
     \blueitem{Target Aspect}{Angle between imaginary line connecting fighter-bandit and bandit heading}
     \blueitem{Hot}{\textbf{Target aspect --- 0-40 deg}
     \begin{subitemize}
-        \item Offensive posture, maximizes closure
+        \item offensive posture, maximizes closure
     \end{subitemize}}
     \blueitem{Flank}{\textbf{Target aspect --- 40-70 deg}
     \begin{subitemize}
-        \item Minimizes closure while maintaining radar track
-    \end{subitemize}}
+        \item minimizes closure while maintaining radar track
+    \end{subitemize} }
     \blueitem{Beam}{\textbf{Target aspect --- 70-110 deg}
     \begin{subitemize}
-        \item Defensive maneuver to break pulse-doppler radar track
+        \item defensive maneuver to break pulse-doppler radar track
     \end{subitemize}}
     \blueitem{Drag}{\textbf{Target aspect --- 110-180 deg}
     \begin{subitemize}
-        \item Defensive maneuver to kinematically defeat missile
-        \item Often used in group tactics as ambush setup
+        \item defense to kinematically defeat missile
+        \item often used in group tactics as ambush setup
     \end{subitemize}}
 \end{tcoloritemize}
 
@@ -1611,6 +1619,7 @@
 
         \end{tikzpicture}
         \caption{Hot}
+        \label{fig:aaweap:bvr:ta:hot}
     \end{subfigure}
     \begin{subfigure}[b]{0.2\linewidth}
         \centering
@@ -1634,6 +1643,7 @@
 
         \end{tikzpicture}
         \caption{Flank}
+        \label{fig:aaweap:bvr:ta:flank}
     \end{subfigure}
     \begin{subfigure}[b]{0.25\linewidth}
         \centering
@@ -1657,6 +1667,7 @@
     
         \end{tikzpicture}
         \caption{Beam}
+        \label{fig:aaweap:bvr:ta:beam}
     \end{subfigure}
     \begin{subfigure}[b]{0.25\linewidth}
         \centering
@@ -1680,9 +1691,10 @@
     
         \end{tikzpicture}
         \caption{Drag}
+        \label{fig:aaweap:bvr:ta:drag}
     \end{subfigure}
     \caption{Top down view illustrating target aspect terminology}
-    % \label{fig:aaweap:aim120:profile}
+    \label{fig:aaweap:bvr:ta}
 \end{figure}
 
 \marginfigeometry

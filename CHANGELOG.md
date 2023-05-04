@@ -2,6 +2,28 @@
 
 ## CHANGELOG
 
+### Changelog - 2023.05.04 `v0.3.0`
+
+- **Preparation for figure integration**
+  - **`NEW`** Added `marginfig` commands for placing figures in margins nicely (including associated geometry changes)
+  - Completely reworked `APG-68`, `A-A Weapons`, and `PROCEDURES` chapters
+    - added placeholder figures (boxes) including new `marginfigs`
+    - better clarity and legibility
+    - began adding `tikz`-based diagrams (starting for BVR diagrams)
+- **Remove/comment-out work-in-progress chapter contents**
+- **Updated table-of-contents (TOC)**
+  - Moved main TOC into own `.tex` file
+  - **`NEW`** Added/moved disclaimer and explanation of mandatory step, notebox, and warningbox symbology into TOC file
+  - Improved per-chapter TOCs by switching to `etoc` package
+    - better compatibility with `titlesec` package
+    - reduced number of auxiliary files
+- **Further improvements to `cls` files**
+  - Changed geometry default to non-print A5 sized paper
+  - Improved hatching algorithm to automatically account for paper width
+  - **`NEW`** Section and chapter marks in header are now hyperlinks
+  - **`NEW`** Wider `crown quatro` paper size, currently non-print only
+  - Removed `Helvet` font
+
 ### Changelog - 2023.01.14 `v0.2.0`
 
 - **Complete Rewrite OF `TechCheck` Class Architecture:** many commands/environments were moved into two new `.sty` files (packages)

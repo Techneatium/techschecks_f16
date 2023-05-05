@@ -473,19 +473,55 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-        \begin{minipage}[t][30mm][t]{75mm}
-            \center{\textbf{Takeoff Profile}}
-            \begin{itemize}[leftmargin=1em]
-                \item maybe show side-on takeoff profile?
-                \item maybe just make with tikz?
-                \item match labels with steps?
-                \item maybe have as ``full-width'' figure?
-            \end{itemize}
-        \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        % coordinates
+        \coordinate (startpoint) at (0,0);
+        \coordinate (70kts) at (25,0);
+        \coordinate (rotate) at (50,0);
+        \coordinate (runwaystart) at (-5,-2.5);
+        \coordinate (runwayend) at (70,-2.5);
+
+        % runway
+        \draw[thick, fill]
+        ($(runwaystart)+(0,-0.25)$) -- ($(runwaystart)+(0,0.25)$) -- 
+        ($(runwayend)+(0,0.25)$) -- ($(runwayend)+(0,-0.25)$) -- 
+        cycle;
+
+        % path
+        \draw[ultra thick, ->]
+        (startpoint) -- (70kts);
+        \draw[ultra thick, ->]
+        (70kts) -- (rotate);
+        \draw[ultra thick, ->]
+        (rotate) -- ++(5,0) arc (270:300:10) -- ++(30:10);
+
+        % nodes
+        \node[above, align=center] at (startpoint) {\small\textbf{Brakes} \\ \small\textbf{Runup}};
+        \node[above, align=center] at (70kts) {\small\textbf{70kts} \\ \small\textbf{NWS Off}};
+        \node[above, align=center] at (rotate) {\small\textbf{128-198kts} \\ \small\textbf{Rotate}};
+
+    \end{tikzpicture}
     \caption{Takeoff Profile}
 \end{figure}
+
+% \begin{figure}[htbp]
+%     \centering
+%     \fbox{
+%         \begin{minipage}[t][30mm][t]{75mm}
+%             \center{\textbf{Takeoff Profile}}
+%             \begin{itemize}[leftmargin=1em]
+%                 \item maybe show side-on takeoff profile?
+%                 \item maybe just make with tikz?
+%                 \item match labels with steps?
+%                 \item maybe have as ``full-width'' figure?
+%             \end{itemize}
+%         \end{minipage}
+%     }
+%     \caption{Takeoff Profile}
+% \end{figure}
 
 \clearpage
 

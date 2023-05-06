@@ -507,22 +507,6 @@
     \caption{Takeoff Profile}
 \end{figure}
 
-% \begin{figure}[htbp]
-%     \centering
-%     \fbox{
-%         \begin{minipage}[t][30mm][t]{75mm}
-%             \center{\textbf{Takeoff Profile}}
-%             \begin{itemize}[leftmargin=1em]
-%                 \item maybe show side-on takeoff profile?
-%                 \item maybe just make with tikz?
-%                 \item match labels with steps?
-%                 \item maybe have as ``full-width'' figure?
-%             \end{itemize}
-%         \end{minipage}
-%     }
-%     \caption{Takeoff Profile}
-% \end{figure}
-
 \clearpage
 
 \subsection{PRE-LANDING}
@@ -540,63 +524,6 @@
 
 \begin{checklistenumerate}
     \blueitem{Approach}{Align aircraft with runway
-    % \marginpar{
-    %     \captionsetup{type=figure}
-    %     \centering
-    %     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-    %         >={Latex[round]}
-    %         ]
-
-    %         % coordinates
-    %         \coordinate (approach) at (5,-15);
-    %         \coordinate (break) at (5,20);
-    %         \coordinate (downwind) at (-15,20);
-    %         \coordinate (base) at (-15,-10);
-    %         \coordinate (final) at (-7.5,-17.5);
-    %         \coordinate (shortfinal) at (0,-10);
-    %         \coordinate (touchdown) at (0,0);
-    %         \coordinate (rollout) at (0,10);
-
-    %         % runway
-    %         \draw[thick]
-    %         ($(touchdown)+(-2,-5)$) -- ($(touchdown)+(2,-5)$) -- 
-    %         ($(touchdown)+(2,20)$) -- ($(touchdown)+(-2,20)$) -- 
-    %         cycle;
-    %         \draw[thick]
-    %         ($(touchdown)+(-1.33,-1)$) -- ($(touchdown)+(-1.33,1)$)
-    %         ($(touchdown)+(-0.66,-1)$) -- ($(touchdown)+(-0.66,1)$)
-    %         ($(touchdown)+(0.66,-1)$) -- ($(touchdown)+(0.66,1)$)
-    %         ($(touchdown)+(1.33,-1)$) -- ($(touchdown)+(1.33,1)$);
-
-    %         % pattern
-    %         \draw[ultra thick, ->] 
-    %         (approach) -- (break);
-    %         \draw[ultra thick] 
-    %         (break) arc (0:180:10);
-    %         \draw[ultra thick, >->] 
-    %         (downwind) -- (base);
-    %         \draw[ultra thick] 
-    %         (base) arc (180:270:7.5);
-    %         \draw[ultra thick] 
-    %         (final) arc (270:360:7.5);
-    %         \draw[ultra thick, >-] 
-    %         (shortfinal) -- (touchdown);
-    %         \draw[ultra thick, ->] 
-    %         (touchdown) -- (rollout);
-
-    %         % nodes
-    %         \node[right, align=left, anchor=south west] at (approach) {\textbf{1.}};
-    %         \node[right] at (break) {\textbf{2.}};
-    %         \node[left, align=right, anchor=north east] at (downwind) {\textbf{3.}};
-    %         \node[left] at (base) {\textbf{4.}};
-    %         \node[below] at (final) {\textbf{5.}};
-    %         \node[left] at (shortfinal) {\textbf{6.}};
-    %         \node[above] at (rollout) {\textbf{7.}};
-
-    %     \end{tikzpicture}
-    %     \caption{Overhead Pattern}
-    % }
-
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -606,8 +533,8 @@
 
             % coordinates
             \coordinate (approach) at (5,-15);
-            \coordinate (break) at (5,0);
-            \coordinate (downwind) at (-15,0);
+            \coordinate (break) at (5,20);
+            \coordinate (downwind) at (-15,20);
             \coordinate (base) at (-15,-15);
             \coordinate (final) at (-7.5,-22.5);
             \coordinate (shortfinal) at (0,-15);
@@ -655,14 +582,14 @@
     }
 
     \begin{subitemize}
-        \item \textbf{Altitude} \dotfill \textbf{1500 ft AGL}
-        \item \textbf{Airspeed} \dotfill \textbf{300 kts CAS}
+        \item \textbf{Altitude} --- \textbf{1500 ft AGL}
+        \item \textbf{Airspeed} --- \textbf{300 kts CAS}
     \end{subitemize}}
     \blueitem{Overhead Break}{Break left/right over desired touchdown point, maintain \underline{level turn}
 
     \begin{subitemize}
-        \item \textbf{Speedbrakes} --- \textbf{Open}
-        \item \textbf{Throttle} --- \textbf{80\%}
+        \item \textbf{Speedbrakes} --- \textbf{As Required}
+        \item \textbf{Throttle} --- \textbf{As Required}
         \item \textbf{Bank} --- \textbf{70 deg}
         \item \textbf{Break} --- \textbf{3-4 G}
     \end{subitemize}}

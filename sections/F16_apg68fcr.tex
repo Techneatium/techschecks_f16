@@ -870,15 +870,29 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- FCR --- TWS Search --- Bugged Target}}
-        \begin{itemize}
-            \item TWS search page with Bugged Target
-            \item Shows weapon symbology and steering cues
-        \end{itemize}
-    \end{minipage}
-    }
+    % TEMPORARY
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={8},
+            ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+        };
+
+        \node[] at (0,20) {\color{red}\textbf{PLACEHOLDER}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Bugged Target}}
+    %     \begin{itemize}
+    %         \item TWS search page with Bugged Target
+    %         \item Shows weapon symbology and steering cues
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{TWS Bugged Target MFD Symbology}
 \end{figure}
 

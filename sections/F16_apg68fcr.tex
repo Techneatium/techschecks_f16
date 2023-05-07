@@ -604,16 +604,43 @@
     \blueitem{SAM Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][30mm][t]{\marginparwidth}
-                \center{\textbf{Bugged Target Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show bugged tgt 
-                    \item maybe also non-bugged target for reference?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{Bugged Target}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[] (search) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={3},
+                ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+            };
+            \node[] (cursor) at (3,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={2},
+                ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+            };
+            \node[] (bugged) at (32.5,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={10},
+                ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+            };
+
+            \draw[->]
+            (cursor) -- node[above, align=center, font=\small] {\textbf{TMS} \\ \textbf{FWD}}(bugged);
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
+        %         \center{\textbf{Bugged Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show bugged tgt 
+        %             \item maybe also non-bugged target for reference?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{SAM Target Acquisition}
     }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor

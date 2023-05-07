@@ -476,16 +476,43 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- FCR --- RWS Search}}
-        \begin{itemize}
-            \item Basic RWS search page with returns
-            \item Several RWS radar returns
-            \item Maybe steerpoint (wedding cake)
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={1},
+            ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+        };
+
+        \node[align=left, font=\bfseries] (cursor) at (20,-10) {Acquisition \\ Cursor};
+        \node[align=left, font=\bfseries] (stpt) at (10,12.5) {Current \\ Steerpoint};
+        \node[align=left, font=\bfseries] (return) at (5,25) {Radar Return};
+
+        \draw[<-]
+        (2.5,-5) -- (5,-10) -- (cursor.west);
+        \draw[->]
+        (stpt.west) -- +(-5,0);
+        \draw[->]
+        (return.west) -- ++(-2,0) -- +(-5,-5);
+
+    \end{tikzpicture}
+    % \includegraphics[
+    %     height=75mm,
+    %     page={1},
+    % ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- RWS Search}}
+    %     \begin{itemize}
+    %         \item Basic RWS search page with returns
+    %         \item Several RWS radar returns
+    %         \item Maybe steerpoint (wedding cake)
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{RWS MFD Symbology}
 \end{figure}
 

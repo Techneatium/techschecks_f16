@@ -433,10 +433,23 @@
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[
-        height=75mm,
-        page={1},
-    ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+    % \includegraphics[
+    %     height=75mm,
+    %     page={1},
+    % ]{F16_apg68_RWS_HomePage_v2.pdf}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=100mm,
+                page={1},
+            ]{F16_apg68_RWS_HomePage_v2.pdf}
+        };
+
+        \node[] at (0,20) {\color{red}\textbf{MISSING CONTROLS ANNOTATIONS}};
+    \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][75mm][t]{100mm}
     %     \center{\large\textbf{MFD --- FCR --- RWS (Default CRM Page)}}
@@ -483,20 +496,22 @@
         \node[] (mfd) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={1},
-            ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+                page={13},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
 
         \node[align=left, font=\bfseries] (cursor) at (20,-10) {Acquisition \\ Cursor};
-        \node[align=left, font=\bfseries] (stpt) at (10,12.5) {Current \\ Steerpoint};
-        \node[align=left, font=\bfseries] (return) at (5,25) {Radar Return};
+        \node[align=left, font=\bfseries] (stpt) at (5,7) {Current STPT};
+        \node[align=left, font=\bfseries] (return) at (0,25) {Radar Returns};
 
         \draw[<-]
         (2.5,-5) -- (5,-10) -- (cursor.west);
         \draw[->]
-        (stpt.west) -- +(-5,0);
+        (stpt.west) -- ++(-2,0) -- +(0,3);
         \draw[->]
-        (return.west) -- ++(-2,0) -- +(-5,-5);
+        (return.west) -- ++(-3,0) -- +(0,-5);
+        \draw[->]
+        (return.east) -- ++(7,0) -- +(0,-5);
 
     \end{tikzpicture}
     % \includegraphics[
@@ -575,11 +590,11 @@
         \node[] (mfd) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={8},
-            ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+                page={27},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
 
-        \node[] at (0,20) {\color{red}\textbf{NEEDS DTT SYMBOLOGY}};
+        % \node[] at (0,20) {\color{red}\textbf{NEEDS DTT SYMBOLOGY}};
     \end{tikzpicture}
     \caption{RWS SAM/DTT MFD Symbology}
 \end{figure}
@@ -627,27 +642,21 @@
             >={Latex[round]}
             ]
             
-            \node[] (search) at (0,0) {
+            \node[draw, rounded corners, minimum width=\marginparwidth] (search) at (0,0) {
                 \includegraphics[
                     scale=0.25,
-                    page={3},
-                ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+                    page={60},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
             };
-            \node[] (cursor) at (3,0) {
+            \node[draw, rounded corners, minimum width=\marginparwidth] (sam) at (0,-35) {
                 \includegraphics[
                     scale=0.25,
-                    page={2},
-                ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
-            };
-            \node[] (bugged) at (32.5,0) {
-                \includegraphics[
-                    scale=0.25,
-                    page={10},
-                ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+                    page={61},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
             };
 
             \draw[->]
-            (cursor) -- node[above, align=center, font=\small] {\textbf{TMS} \\ \textbf{FWD}}(bugged);
+            (search) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(sam);
         \end{tikzpicture}
         % \fbox{
         %     \begin{minipage}[t][30mm][t]{\marginparwidth}
@@ -658,7 +667,7 @@
         %         \end{itemize}
         %     \end{minipage}
         % }
-        \caption{SAM Target Acquisition}
+        \caption{SAM Acquisition}
     }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
@@ -673,16 +682,37 @@
     \blueitem{DTT Acquisition}{(if desired)
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][30mm][t]{\marginparwidth}
-                \center{\textbf{DTT Target Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show both DTT target symbols
-                    \item maybe with cursor on one?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{DTT Target}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (sam) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={62},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners, minimum width=\marginparwidth] (dtt) at (0,-35) {
+                \includegraphics[
+                    scale=0.25,
+                    page={63},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+
+            \draw[->]
+            (sam) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(dtt);
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
+        %         \center{\textbf{DTT Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show both DTT target symbols
+        %             \item maybe with cursor on one?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{DTT Acquisition}
     }
     \begin{subenumerate}
         \item \textbf{Target 2} \dotfill under Acquisition Cursor
@@ -696,18 +726,18 @@
     \end{subenumerate}
     }
     \blueitem{STT Lock}{(if desired)
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][30mm][t]{\marginparwidth}
-                \center{\textbf{STT Target Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item Show transition from bugged to locked target
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{STT Target}
-    }
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][30mm][t]{\marginparwidth}
+    %             \center{\textbf{STT Target Symbology}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item Show transition from bugged to locked target
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{STT Target}
+    % }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
@@ -728,15 +758,38 @@
     \blueitem{Spotlight Search}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][60mm][t]{\marginparwidth}
-                \center{\textbf{Spotlight Scan Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show spotlight azimuth bars
-                    \item maybe show both with raw rws return and once acquired?
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners] (cursoroff) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={36},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners] (cursoron) at (0,-45) {
+                \includegraphics[
+                    scale=0.25,
+                    page={35},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+
+            \draw[->]
+            ($(cursoroff.north) + (0,10)$) -- node[pos=0, above, align=center, font=\small] {\textbf{TMS} \textbf{FWD (hold)}}(cursoroff);
+            \draw[->]
+            (cursoroff) -- node[right, align=center, font=\small] {\textbf{Slew over} \\ \textbf{Target}}(cursoron);
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{Spotlight Scan Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show spotlight azimuth bars
+        %             \item maybe show both with raw rws return and once acquired?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{Spotlight Search}
     }
     \begin{subenumerate}
@@ -794,29 +847,80 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- FCR --- TWS Search --- Cursor Target}}
-        \begin{itemize}
-            \item Basic TWS search page with returns
-            \item Includes search, track, and system (cursor) targets
-            \item Maybe include steerpoint (wedding cake)?
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={40},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Cursor Target}}
+    %     \begin{itemize}
+    %         \item Basic TWS search page with returns
+    %         \item Includes search, track, and system (cursor) targets
+    %         \item Maybe include steerpoint (wedding cake)?
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{TWS MFD Symbology}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][20mm][t]{100mm}
-        \center{\large\textbf{TWS Trackfile States}}
-        \begin{itemize}
-            \item Show MFD symbols for search, track, system, cursor, and bugged targets
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={54},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Search}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={56},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Track}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={44},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{System}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={44},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Cursor}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={52},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Bugged}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][20mm][t]{100mm}
+    %     \center{\large\textbf{TWS Trackfile States}}
+    %     \begin{itemize}
+    %         \item Show MFD symbols for search, track, system, cursor, and bugged targets
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{Trackfile MFD symbology}
 \end{figure}
     
@@ -858,6 +962,27 @@
             \item Reduces chance of losing track
         \end{itemize}
     \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={45},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \node[] at (0,20) {\color{red}\textbf{SHOULD NOT HAVE SHOOT SYMB.}};
+    \end{tikzpicture}
+    \caption{TWS Cursor Target Symbology}
+\end{figure}
+    
+\begin{tcoloritemize}
     \blueitem{Bugged Target}{
     \begin{subitemize}
         \item \textbf{Selected for weapons employment}
@@ -896,11 +1021,11 @@
         \node[] (mfd) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={8},
-            ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+                page={57},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
 
-        \node[] at (0,20) {\color{red}\textbf{PLACEHOLDER}};
+        % \node[] at (0,20) {\color{red}\textbf{PLACEHOLDER}};
     \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][75mm][t]{100mm}

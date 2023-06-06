@@ -501,17 +501,17 @@
         };
 
         \node[align=left, font=\bfseries] (cursor) at (20,-10) {Acquisition \\ Cursor};
-        \node[align=left, font=\bfseries] (stpt) at (5,7) {Current STPT};
-        \node[align=left, font=\bfseries] (return) at (0,25) {Radar Returns};
+        \node[align=left, font=\bfseries] (stpt) at (10,6) {Current STPT};
+        \node[align=left, font=\bfseries] (return) at (2.5,27.5) {Radar Returns};
 
         \draw[<-]
         (2.5,-5) -- (5,-10) -- (cursor.west);
         \draw[->]
-        (stpt.west) -- ++(-2,0) -- +(0,3);
+        (stpt.west) -- ++(-1,0) -- +(-3,2);
         \draw[->]
-        (return.west) -- ++(-3,0) -- +(0,-5);
+        (return.west) -- ++(-5.5,0) -- +(0,-5);
         \draw[->]
-        (return.east) -- ++(7,0) -- +(0,-5);
+        (return.east) -- ++(4.5,0) -- +(0,-5);
 
     \end{tikzpicture}
     % \includegraphics[

@@ -901,7 +901,7 @@
         \centering
         \includegraphics[
             scale=0.25,
-            page={44},
+            page={65},
         ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         \caption{Cursor}
     \end{subfigure}
@@ -909,7 +909,7 @@
         \centering
         \includegraphics[
             scale=0.25,
-            page={52},
+            page={66},
         ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         \caption{Bugged}
     \end{subfigure}
@@ -921,7 +921,7 @@
     %     \end{itemize}
     % \end{minipage}
     % }
-    \caption{Trackfile MFD symbology}
+    \caption{TWS Track Symbols}
 \end{figure}
     
 \begin{tcoloritemize}
@@ -977,7 +977,7 @@
             ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
 
-        \node[] at (0,20) {\color{red}\textbf{SHOULD NOT HAVE SHOOT SYMB.}};
+        % \node[] at (0,20) {\color{red}\textbf{SHOULD NOT HAVE SHOOT SYMB.}};
     \end{tikzpicture}
     \caption{TWS Cursor Target Symbology}
 \end{figure}
@@ -1013,7 +1013,6 @@
 
 \begin{figure}[htbp]
     \centering
-    % TEMPORARY
     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
         >={Latex[round]}
         ]
@@ -1024,8 +1023,6 @@
                 page={57},
             ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
-
-        % \node[] at (0,20) {\color{red}\textbf{PLACEHOLDER}};
     \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][75mm][t]{100mm}
@@ -1068,16 +1065,63 @@
     \blueitem{Track Target Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][60mm][t]{\marginparwidth}
-                \center{\textbf{Search / Track Target Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show both search and track target symbology
-                    \item maybe format as a diagram/flow chart?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{Search / Track Target Symbology}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (search) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={54},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners, minimum width=\marginparwidth] (track) at (0,-25) {
+                \includegraphics[
+                    scale=0.25,
+                    page={56},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners, minimum width=\marginparwidth] (system) at (0,-60) {
+                \includegraphics[
+                    scale=0.25,
+                    page={44},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners, minimum width=\marginparwidth] (cursor) at (0,-90) {
+                \includegraphics[
+                    scale=0.25,
+                    page={65},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners, minimum width=\marginparwidth] (bugged) at (0,-115) {
+                \includegraphics[
+                    scale=0.25,
+                    page={66},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+
+            \draw[->]
+            (search) -- node[right, align=left, font=\small] {\textbf{Automatic}}(track);
+            \draw[->]
+            (track) -- node[right, align=left, font=\small] {\textbf{TMS FWD} \\ \footnotesize\textbf{(repeat for all} \\ \footnotesize\textbf{desired targets)}}(system);
+            \draw[->]
+            (system) -- node[right, align=left, font=\small] {\textbf{Slew Cursor} \\ \textbf{near target}}(cursor);
+            \draw[->]
+            (cursor) -- node[right, align=left, font=\small] {\textbf{TMS FWD}}(bugged);
+            \draw[->]
+            ($(track.south)!0.5!(system.north) + (-10,0)$) arc (180:360:5) arc (0:180:5);
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{Search / Track Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show both search and track target symbology
+        %             \item maybe format as a diagram/flow chart?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{TWS trackfile acquisition flow}
     }
     \begin{subenumerate}
         \item Correlate onboard/offboard sensors to locate targets
@@ -1099,20 +1143,20 @@
         \item \textbf{TMS} \dotfill \textbf{Right}
     \end{subenumerate}}
     \blueitem{Upgrade to Bugged Target}{
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][60mm][t]{\marginparwidth}
-                \center{\textbf{System / Cursor / Bugged Target Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show system / bugged target symbology
-                    \item maybe format as a diagram/flow chart?
-                    \item maybe combine into one fig wth search/track target fig?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{System / Cursor /  Bugged Target Symbology}
-    }
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][60mm][t]{\marginparwidth}
+    %             \center{\textbf{System / Cursor / Bugged Target Symbology}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show system / bugged target symbology
+    %                 \item maybe format as a diagram/flow chart?
+    %                 \item maybe combine into one fig wth search/track target fig?
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{System / Cursor /  Bugged Target Symbology}
+    % }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
@@ -1458,16 +1502,29 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- FCR --- STT}}
-        \begin{itemize}
-            \item Show standard STT lock
-            \item should clearly mark target state, steering cues, dlz, NCTR
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{MFD page during STT lock}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=100mm,
+                page={37},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \node[] at (0,-20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- STT}}
+    %     \begin{itemize}
+    %         \item Show standard STT lock
+    %         \item should clearly mark target state, steering cues, dlz, NCTR
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{FCR page with STT lock and NCTR ID}
 \end{figure}
 
 \clearpage 

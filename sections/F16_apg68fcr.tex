@@ -763,23 +763,53 @@
             >={Latex[round]}
             ]
             
-            \node[draw, rounded corners] (cursoroff) at (0,0) {
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+            ] (cursoroff) at (0,0) {
                 \includegraphics[
                     scale=0.25,
                     page={36},
                 ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
             };
-            \node[draw, rounded corners] (cursoron) at (0,-45) {
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of cursoroff,
+            ] (cursoron) {
                 \includegraphics[
                     scale=0.25,
                     page={35},
                 ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
             };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of cursoron,
+            ] (bugged) {
+                \includegraphics[
+                    scale=0.25,
+                    page={66},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
 
+            % lines
             \draw[->]
-            ($(cursoroff.north) + (0,10)$) -- node[pos=0, above, align=center, font=\small] {\textbf{TMS} \textbf{FWD (hold)}}(cursoroff);
+            ($(cursoroff.north) + (0,5)$) -- node[above, align=left, font=\small] {\textbf{TMS} \textbf{FWD (hold)}}(cursoroff);
             \draw[->]
-            (cursoroff) -- node[right, align=center, font=\small] {\textbf{Slew over} \\ \textbf{Target}}(cursoron);
+            (cursoroff) -- node[right, align=left, font=\small] {\textbf{Slew over} \\ \textbf{target}}(cursoron);
+            \draw[->]
+            (cursoron) -- node[right, align=left, font=\small] {\textbf{TMS FWD} \\ \textbf{(release)}}(bugged);
+
+            % labels
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
         \end{tikzpicture}
         % \fbox{
         %     \begin{minipage}[t][60mm][t]{\marginparwidth}

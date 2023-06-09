@@ -345,40 +345,114 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{Radar Azimuth Scan}}
-        \begin{itemize}
-            \item Top-down view of ``pie'' diagram
-            \item Show various scan patterns as smaller slices of ``pie''
-            \begin{itemize}
-                \item maybe all centered?
-                \item maybe next to each other?
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[
+            anchor=east
+        ] (mfd) at (0,0) {
+            \includegraphics[
+                height=12mm,
+                page={11},
+                angle=-90,
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \coordinate (offset) at (-4,0);
+        \coordinate (center) at ($(offset)+(0:30)$);
+
+        \draw[]
+        (offset) -- node[pos=1, above right, font=\small] {A6} +(60:30) arc (60:-60:30) -- cycle;
+        \draw[color2]
+        (offset) -- node[pos=1, above right, font=\small] {A3} +(30:30) arc (30:-30:30) -- cycle;
+        \draw[red]
+        (offset) -- +(25:30) arc (25:-25:30) -- node[pos=0, below right, font=\small] {A2} cycle;
+        \draw[]
+        (offset) -- node[pos=1, right, font=\small] {A1} +(10:30) arc (10:-10:30) -- cycle;
+        \draw[color2, fill=color2!20]
+        (offset) -- +(1.5:30) arc (1.5:-1.5:30) -- cycle;
+
+        \node[anchor=west, align=left, font=\small, color2] at (center) {beamwidth} ;
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{Radar Azimuth Scan}}
+    %     \begin{itemize}
+    %         \item Top-down view of ``pie'' diagram
+    %         \item Show various scan patterns as smaller slices of ``pie''
+    %         \begin{itemize}
+    %             \item maybe all centered?
+    %             \item maybe next to each other?
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{FCR azimuth scan \& limits}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{Radar Elevation Scan}}
-        \begin{itemize}
-            \item Side-on view of ``pie'' diagram
-            \item Show various scan patterns as smaller slices of ``pie''
-            \begin{itemize}
-                \item maybe on top of each other?
-            \end{itemize}
-            \item Show bar scan patterns as classic ``snake'' diagrams 
-            \begin{itemize}
-                \item maybe place immediately next to matching ``pie'' slice?
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[
+            anchor=east
+        ] (mfd) at (0,0) {
+            \includegraphics[
+                width=12mm,
+                page={12},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \coordinate (offset) at (-2,-1);
+        \coordinate (4bar) at ($(offset) + (36:30)$);
+        \coordinate (3bar) at ($(offset) + (12:30)$);
+        \coordinate (2bar) at ($(offset) + (-12:30)$);
+        \coordinate (1bar) at ($(offset) + (-36:30)$);
+
+        \draw[]
+        (offset) -- node[pos=1, above, font=\small] {+/- 60} +(60:30) arc (60:-60:30) -- cycle;
+        \draw[fill=color2!20]
+        (offset) -- +(41.75:30) arc (41.75:31.25:30) -- cycle;
+        \draw[fill=color2!20]
+        (offset) -- +(16.65:30) arc (16.65:7.35:30) -- cycle;
+        \draw[fill=color2!20]
+        (offset) -- +(-8.45:30) arc (-8.45:-15.55:30) -- cycle;
+        \draw[fill=color2!20]
+        (offset) -- +(-33.55:30) arc (-33.55:-38.45:30) -- cycle;
+
+
+        \draw[rounded corners]
+        ($(4bar) + (10,0)$) |- ++(2,3.75)
+        -- ++(40,0) -- ++(0,-2.5) 
+        -- ++(-40,0) -- ++(0,-2.5) 
+        -- ++(40,0) -- ++(0,-2.5) 
+        -- ++(-40,0) -| cycle;
+        \draw[rounded corners]
+        ($(3bar) + (10,0)$) |- ++(0,2.5)
+        -- ++(40,0) -- ++(0,-2.5) 
+        -- ++(-40,0) -- ++(0,-2.5) 
+        -- ++(40,0) -- ++(0,2.5) 
+        -| cycle;
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{Radar Elevation Scan}}
+    %     \begin{itemize}
+    %         \item Side-on view of ``pie'' diagram
+    %         \item Show various scan patterns as smaller slices of ``pie''
+    %         \begin{itemize}
+    %             \item maybe on top of each other?
+    %         \end{itemize}
+    %         \item Show bar scan patterns as classic ``snake'' diagrams 
+    %         \begin{itemize}
+    %             \item maybe place immediately next to matching ``pie'' slice?
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{FCR elevation scan \& limits}
 \end{figure}
 

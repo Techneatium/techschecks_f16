@@ -353,27 +353,27 @@
             anchor=east
         ] (mfd) at (0,0) {
             \includegraphics[
-                height=12mm,
+                height=15mm,
                 page={11},
                 angle=-90,
             ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
 
-        \coordinate (offset) at (-4,0);
-        \coordinate (center) at ($(offset)+(0:30)$);
+        \coordinate (offset) at (-3.5,0);
+        \coordinate (center) at ($(offset)+(0:38)$);
 
         \draw[]
         (offset) -- node[pos=1, above right, font=\small] {A6} +(60:30) arc (60:-60:30) -- cycle;
-        \draw[color2]
-        (offset) -- node[pos=1, above right, font=\small] {A3} +(30:30) arc (30:-30:30) -- cycle;
-        \draw[red]
-        (offset) -- +(25:30) arc (25:-25:30) -- node[pos=0, below right, font=\small] {A2} cycle;
         \draw[]
-        (offset) -- node[pos=1, right, font=\small] {A1} +(10:30) arc (10:-10:30) -- cycle;
+        (offset) -- node[pos=1, above right, font=\small] {A3} +(30:32) arc (30:-30:32) -- cycle;
+        \draw[]
+        (offset) -- +(25:34) arc (25:-25:34) -- node[pos=0, below right, font=\small] {A2} cycle;
+        \draw[]
+        (offset) -- node[pos=1, right, font=\small] {A1} +(10:36) arc (10:-10:36) -- cycle;
         \draw[color2, fill=color2!20]
-        (offset) -- +(1.5:30) arc (1.5:-1.5:30) -- cycle;
+        (offset) -- +(1.5:38) arc (1.5:-1.5:38) -- cycle;
 
-        \node[anchor=west, align=left, font=\small, color2] at (center) {beamwidth} ;
+        \node[anchor=west, align=left, font=\small, color2] at (center) {BEAM};
     \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][75mm][t]{100mm}
@@ -388,7 +388,7 @@
     %     \end{itemize}
     % \end{minipage}
     % }
-    \caption{FCR azimuth scan \& limits}
+    \caption{FCR azimuth scan \& limits. Note that the varying radii for the different azimuth settings are for illustrative purposes.}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -401,41 +401,57 @@
             anchor=east
         ] (mfd) at (0,0) {
             \includegraphics[
-                width=12mm,
+                width=15mm,
                 page={12},
             ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
 
-        \coordinate (offset) at (-2,-1);
+        \coordinate (offset) at (-2.5,-1);
         \coordinate (4bar) at ($(offset) + (36:30)$);
         \coordinate (3bar) at ($(offset) + (12:30)$);
         \coordinate (2bar) at ($(offset) + (-12:30)$);
         \coordinate (1bar) at ($(offset) + (-36:30)$);
 
+        \node[] at ($(4bar)+(5,0)$) {4B};
+        \node[] at ($(3bar)+(5,0)$) {3B};
+        \node[] at ($(2bar)+(5,0)$) {2B};
+        \node[] at ($(1bar)+(5,0)$) {1B};
+
         \draw[]
         (offset) -- node[pos=1, above, font=\small] {+/- 60} +(60:30) arc (60:-60:30) -- cycle;
-        \draw[fill=color2!20]
+        \draw[color2, fill=color2!20]
         (offset) -- +(41.75:30) arc (41.75:31.25:30) -- cycle;
-        \draw[fill=color2!20]
+        \draw[color2, fill=color2!20]
         (offset) -- +(16.65:30) arc (16.65:7.35:30) -- cycle;
-        \draw[fill=color2!20]
+        \draw[color2, fill=color2!20]
         (offset) -- +(-8.45:30) arc (-8.45:-15.55:30) -- cycle;
-        \draw[fill=color2!20]
+        \draw[color2, fill=color2!20]
         (offset) -- +(-33.55:30) arc (-33.55:-38.45:30) -- cycle;
 
+        \coordinate (4boffset) at ($(4bar) + (30,0)$);
+        \coordinate (3boffset) at ($(3bar) + (30,0)$);
+        \coordinate (2boffset) at ($(2bar) + (30,0)$);
+        \coordinate (1boffset) at ($(1bar) + (30,0)$);
 
-        \draw[rounded corners]
-        ($(4bar) + (10,0)$) |- ++(2,3.75)
-        -- ++(40,0) -- ++(0,-2.5) 
-        -- ++(-40,0) -- ++(0,-2.5) 
-        -- ++(40,0) -- ++(0,-2.5) 
-        -- ++(-40,0) -| cycle;
-        \draw[rounded corners]
-        ($(3bar) + (10,0)$) |- ++(0,2.5)
-        -- ++(40,0) -- ++(0,-2.5) 
-        -- ++(-40,0) -- ++(0,-2.5) 
-        -- ++(40,0) -- ++(0,2.5) 
-        -| cycle;
+        \draw[->, rounded corners, ultra thick,]
+        ($(4boffset) + (-20,3.75)$) -- ($(4boffset) + (20,3.75)$) -- ++(0,-2.5)
+        -- ++(-39,0) -- ++(0, -2.5)
+        -- ++(39,0) -- ($(4boffset) + (+20,-3.75)$)
+        -- ($(4boffset) + (-20,-3.75)$) 
+        -- cycle;
+        \draw[->, rounded corners, ultra thick,]
+        ($(3boffset) + (-20,2.5)$) -- ($(3boffset) + (20,2.5)$) -- ++(0,-2.5)
+        -- ++(-40,0) -- ++(0, -2.5)
+        -- ($(3boffset) + (+20,-2.5)$) -- ++(0,2.5)
+        -- ++(-40,0) 
+        -- cycle;
+        \draw[->, rounded corners, ultra thick,]
+        ($(2boffset) + (-20,1.25)$) -- ($(2boffset) + (20,1.25)$)
+        -- ($(2boffset) + (20,-1.25)$) -- ($(2boffset) + (-20,-1.25)$)
+        -- cycle;
+        \draw[->, rounded corners, ultra thick,]
+        ($(1boffset) + (-20,0)$) -- ($(1boffset) + (20,0)$) 
+        -- cycle;
     \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][75mm][t]{100mm}
@@ -453,7 +469,7 @@
     %     \end{itemize}
     % \end{minipage}
     % }
-    \caption{FCR elevation scan \& limits}
+    \caption{FCR elevation scan \& limits. Each scan pattern tracks along the illustrated path in a loop.}
 \end{figure}
 
 \clearpage

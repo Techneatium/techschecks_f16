@@ -363,17 +363,17 @@
         \coordinate (center) at ($(offset)+(0:38)$);
 
         \draw[]
-        (offset) -- node[pos=1, above right, font=\small] {A6} +(60:30) arc (60:-60:30) -- cycle;
+        (offset) -- node[pos=1, above right, font=\small\bfseries] {A6} +(60:30) arc (60:-60:30) -- cycle;
         \draw[]
-        (offset) -- node[pos=1, above right, font=\small] {A3} +(30:32) arc (30:-30:32) -- cycle;
+        (offset) -- node[pos=1, above right, font=\small\bfseries] {A3} +(30:32) arc (30:-30:32) -- cycle;
         \draw[]
-        (offset) -- +(25:34) arc (25:-25:34) -- node[pos=0, right, font=\small] {A2} cycle;
+        (offset) -- +(25:34) arc (25:-25:34) -- node[pos=0, right, font=\small\bfseries] {A2} cycle;
         \draw[]
-        (offset) -- node[pos=1, right, font=\small] {A1} +(10:36) arc (10:-10:36) -- cycle;
+        (offset) -- node[pos=1, right, font=\small\bfseries] {A1} +(10:36) arc (10:-10:36) -- cycle;
         \draw[color2, fill=color2!20]
         (offset) -- +(1.5:38) arc (1.5:-1.5:38) -- cycle;
 
-        \node[anchor=west, align=left, font=\small, color2] at (center) {BEAM};
+        \node[anchor=west, align=left, font=\small\bfseries, color2] at (center) {BEAMWIDTH};
     \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][75mm][t]{100mm}
@@ -388,7 +388,11 @@
     %     \end{itemize}
     % \end{minipage}
     % }
-    \caption{FCR azimuth scan \& limits. The varying radii for the different azimuth settings are for illustrative purposes.}
+    \caption{
+        FCR azimuth scan \& limits. 
+        Note that the A6 pattern scans the entire azimuth range of the radar.
+        The varying radii for the different azimuth settings are for illustrative purposes.
+    }
 \end{figure}
 
 \begin{figure}[htbp]
@@ -412,13 +416,13 @@
         \coordinate (2bar) at ($(offset) + (-12:35)$);
         \coordinate (1bar) at ($(offset) + (-36:35)$);
 
-        \node[] at ($(4bar)+(5,0)$) {4B};
-        \node[] at ($(3bar)+(5,0)$) {3B};
-        \node[] at ($(2bar)+(5,0)$) {2B};
-        \node[] at ($(1bar)+(5,0)$) {1B};
+        \node[font=\small\bfseries] at ($(4bar)+(5,2.5)$) {4B};
+        \node[font=\small\bfseries] at ($(3bar)+(5,0)$) {3B};
+        \node[font=\small\bfseries] at ($(2bar)+(5,0)$) {2B};
+        \node[font=\small\bfseries] at ($(1bar)+(5,-2.5)$) {1B};
 
         \draw[]
-        (offset) -- node[pos=1, above, font=\small] {+/- 60} +(60:35) arc (60:-60:35) -- cycle;
+        (offset) -- node[pos=1, above, font=\small\bfseries] {+/- 60 deg} +(60:35) arc (60:-60:35) -- cycle;
         \draw[color2, fill=color2!20]
         (offset) -- +(41.75:35) arc (41.75:31.25:35) -- cycle;
         \draw[color2, fill=color2!20]
@@ -428,38 +432,86 @@
         \draw[color2, fill=color2!20]
         (offset) -- +(-33.55:35) arc (-33.55:-38.45:35) -- cycle;
 
-        \coordinate (4boffset) at ($(4bar) + (10,0)$);
-        \coordinate (3boffset) at ($(3bar) + (10,0)$);
-        \coordinate (2boffset) at ($(2bar) + (10,0)$);
-        \coordinate (1boffset) at ($(1bar) + (10,0)$);
+        \coordinate (4boffset) at ($(4bar) + (15,2.5)$);
+        \coordinate (3boffset) at ($(3bar) + (15,0)$);
+        \coordinate (2boffset) at ($(2bar) + (15,0)$);
+        \coordinate (1boffset) at ($(1bar) + (15,-2.5)$);
 
         % 4bar
+        \filldraw[color2!20] ($(4boffset) + (22.5,3.75)$) circle (2.5);
+
         \draw[->, rounded corners, ultra thick,]
         (4boffset)
-        -- ($(4boffset) + (0,3.75)$) -- ($(4boffset) + (40,3.75)$) -- ++(0,-2.5)
+        -- ($(4boffset) + (0,3.75)$)  -- ($(4boffset) + (20,3.75)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(4boffset) + (20,3.75)$)
+        -- ($(4boffset) + (40,3.75)$) -- ++(0,-2.5)
         -- ++(-39,0) -- ++(0, -2.5)
         -- ++(39,0) -- ($(4boffset) + (+40,-3.75)$)
+        -- ($(4boffset) + (20,-3.75)$);
+        \draw[rounded corners, ultra thick,]
+        ($(4boffset) + (20,-3.75)$)
         -- ($(4boffset) + (0,-3.75)$) 
+        -- (4boffset);
+
+        \draw[dashed, rounded corners=5]
+        ($(4boffset) + (-2.5,6.25)$) -- ($(4boffset) + (42.5,6.25)$)
+        -- ($(4boffset) + (42.5,-6.25)$) -- ($(4boffset) + (-2.5,-6.25)$)
         -- cycle;
+
+        \draw[color2, ultra thick] ($(4boffset) + (22.5,3.75)$) circle (2.5);
 
         % 3bar
         \draw[->, rounded corners, ultra thick,]
-        (3boffset)
-        -- ($(3boffset) + (0,2.5)$) -- ($(3boffset) + (40,2.5)$) -- ++(0,-2.5)
-        -- ++(-40,0) -- ++(0, -2.5)
+        ($(3boffset) + (2.5,0)$) -- (3boffset)
+        -- ($(3boffset) + (0,2.5)$) -- ($(3boffset) + (20,2.5)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(3boffset) + (20,2.5)$)
+        -- ($(3boffset) + (40,2.5)$) -- ++(0,-2.5)
+        -- ($(3boffset) + (20,0)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(3boffset) + (20,0)$)
+        -- ($(3boffset) + (0,0)$) -- ++(0, -2.5)
+        -- ($(3boffset) + (+20,-2.5)$);
+        \draw[rounded corners, ultra thick,]
+        ($(3boffset) + (+20,-2.5)$)
         -- ($(3boffset) + (+40,-2.5)$) -- ++(0,2.5)
-        -- ++(-40,0) 
+        -- ($(3boffset) + (2.5,0)$);
+
+        \draw[dashed, rounded corners=5]
+        ($(3boffset) + (-2.5,5)$) -- ($(3boffset) + (42.5,5)$)
+        -- ($(3boffset) + (42.5,-5)$) -- ($(3boffset) + (-2.5,-5)$)
         -- cycle;
 
         % 2bar
         \draw[->, rounded corners, ultra thick,]
-        ($(2boffset) + (0,1.25)$) -- ($(2boffset) + (40,1.25)$)
-        -- ($(2boffset) + (40,-1.25)$) -- ($(2boffset) + (0,-1.25)$)
+        (2boffset)
+        -- ($(2boffset) + (0,1.25)$) -- ($(2boffset) + (20,1.25)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(2boffset) + (20,1.25)$)
+        -- ($(2boffset) + (40,1.25)$)
+        -- ($(2boffset) + (40,-1.25)$) -- ($(2boffset) + (20,-1.25)$);
+        \draw[rounded corners, ultra thick,]
+        ($(2boffset) + (20,-1.25)$)
+        -- ($(2boffset) + (0,-1.25)$)
+        -- (2boffset);
+
+        \draw[dashed, rounded corners=5]
+        ($(2boffset) + (-2.5,3.75)$) -- ($(2boffset) + (42.5,3.75)$)
+        -- ($(2boffset) + (42.5,-3.75)$) -- ($(2boffset) + (-2.5,-3.75)$)
         -- cycle;
 
         % 1bar
         \draw[->, rounded corners, ultra thick,]
-        ($(1boffset) + (0,0)$) -- ($(1boffset) + (40,0)$) 
+        ($(1boffset) + (0,0)$) -- ($(1boffset) + (15,0)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(1boffset) + (40,0)$) -- ($(1boffset) + (25,0)$);
+        \draw[rounded corners, ultra thick,]
+        ($(1boffset) + (25,0)$) -- ($(1boffset) + (0,0)$);
+
+        \draw[dashed, rounded corners=5]
+        ($(1boffset) + (-2.5,2.5)$) -- ($(1boffset) + (42.5,2.5)$)
+        -- ($(1boffset) + (42.5,-2.5)$) -- ($(1boffset) + (-2.5,-2.5)$)
         -- cycle;
     \end{tikzpicture}
     % \fbox{
@@ -478,7 +530,11 @@
     %     \end{itemize}
     % \end{minipage}
     % }
-    \caption{FCR elevation scan \& limits. Each scan pattern tracks along the illustrated path in a loop.}
+    \caption{
+        FCR elevation scan \& limits. 
+        The radar beam --- blue circle --- tracks along the illustrated scan pattern in a loop, resulting in the dashed scan volume. 
+        Note that the scan patterns are not drawn to scale.
+    }
 \end{figure}
 
 \clearpage

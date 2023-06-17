@@ -407,10 +407,10 @@
         };
 
         \coordinate (offset) at (-2.5,-1);
-        \coordinate (4bar) at ($(offset) + (36:30)$);
-        \coordinate (3bar) at ($(offset) + (12:30)$);
-        \coordinate (2bar) at ($(offset) + (-12:30)$);
-        \coordinate (1bar) at ($(offset) + (-36:30)$);
+        \coordinate (4bar) at ($(offset) + (36:35)$);
+        \coordinate (3bar) at ($(offset) + (12:35)$);
+        \coordinate (2bar) at ($(offset) + (-12:35)$);
+        \coordinate (1bar) at ($(offset) + (-36:35)$);
 
         \node[] at ($(4bar)+(5,0)$) {4B};
         \node[] at ($(3bar)+(5,0)$) {3B};
@@ -418,39 +418,48 @@
         \node[] at ($(1bar)+(5,0)$) {1B};
 
         \draw[]
-        (offset) -- node[pos=1, above, font=\small] {+/- 60} +(60:30) arc (60:-60:30) -- cycle;
+        (offset) -- node[pos=1, above, font=\small] {+/- 60} +(60:35) arc (60:-60:35) -- cycle;
         \draw[color2, fill=color2!20]
-        (offset) -- +(41.75:30) arc (41.75:31.25:30) -- cycle;
+        (offset) -- +(41.75:35) arc (41.75:31.25:35) -- cycle;
         \draw[color2, fill=color2!20]
-        (offset) -- +(16.65:30) arc (16.65:7.35:30) -- cycle;
+        (offset) -- +(16.65:35) arc (16.65:7.35:35) -- cycle;
         \draw[color2, fill=color2!20]
-        (offset) -- +(-8.45:30) arc (-8.45:-15.55:30) -- cycle;
+        (offset) -- +(-8.45:35) arc (-8.45:-15.55:35) -- cycle;
         \draw[color2, fill=color2!20]
-        (offset) -- +(-33.55:30) arc (-33.55:-38.45:30) -- cycle;
+        (offset) -- +(-33.55:35) arc (-33.55:-38.45:35) -- cycle;
 
-        \coordinate (4boffset) at ($(4bar) + (30,0)$);
-        \coordinate (3boffset) at ($(3bar) + (30,0)$);
-        \coordinate (2boffset) at ($(2bar) + (30,0)$);
-        \coordinate (1boffset) at ($(1bar) + (30,0)$);
+        \coordinate (4boffset) at ($(4bar) + (10,0)$);
+        \coordinate (3boffset) at ($(3bar) + (10,0)$);
+        \coordinate (2boffset) at ($(2bar) + (10,0)$);
+        \coordinate (1boffset) at ($(1bar) + (10,0)$);
 
+        % 4bar
         \draw[->, rounded corners, ultra thick,]
-        ($(4boffset) + (-20,3.75)$) -- ($(4boffset) + (20,3.75)$) -- ++(0,-2.5)
+        (4boffset)
+        -- ($(4boffset) + (0,3.75)$) -- ($(4boffset) + (40,3.75)$) -- ++(0,-2.5)
         -- ++(-39,0) -- ++(0, -2.5)
-        -- ++(39,0) -- ($(4boffset) + (+20,-3.75)$)
-        -- ($(4boffset) + (-20,-3.75)$) 
+        -- ++(39,0) -- ($(4boffset) + (+40,-3.75)$)
+        -- ($(4boffset) + (0,-3.75)$) 
         -- cycle;
+
+        % 3bar
         \draw[->, rounded corners, ultra thick,]
-        ($(3boffset) + (-20,2.5)$) -- ($(3boffset) + (20,2.5)$) -- ++(0,-2.5)
+        (3boffset)
+        -- ($(3boffset) + (0,2.5)$) -- ($(3boffset) + (40,2.5)$) -- ++(0,-2.5)
         -- ++(-40,0) -- ++(0, -2.5)
-        -- ($(3boffset) + (+20,-2.5)$) -- ++(0,2.5)
+        -- ($(3boffset) + (+40,-2.5)$) -- ++(0,2.5)
         -- ++(-40,0) 
         -- cycle;
+
+        % 2bar
         \draw[->, rounded corners, ultra thick,]
-        ($(2boffset) + (-20,1.25)$) -- ($(2boffset) + (20,1.25)$)
-        -- ($(2boffset) + (20,-1.25)$) -- ($(2boffset) + (-20,-1.25)$)
+        ($(2boffset) + (0,1.25)$) -- ($(2boffset) + (40,1.25)$)
+        -- ($(2boffset) + (40,-1.25)$) -- ($(2boffset) + (0,-1.25)$)
         -- cycle;
+
+        % 1bar
         \draw[->, rounded corners, ultra thick,]
-        ($(1boffset) + (-20,0)$) -- ($(1boffset) + (20,0)$) 
+        ($(1boffset) + (0,0)$) -- ($(1boffset) + (40,0)$) 
         -- cycle;
     \end{tikzpicture}
     % \fbox{

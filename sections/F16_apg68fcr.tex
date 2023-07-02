@@ -1539,16 +1539,77 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][40mm][t]{100mm}
-        \center{\large\textbf{ACM Scan Patterns}}
-        \begin{itemize}
-            \item Show different scan patterns?
-            \item Unsure if this figure is necessary
-        \end{itemize}
-    \end{minipage}
+    \begin{subfigure}[t]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \draw[color2, fill=color2!20, dashed, rounded corners]
+            (-15, 10) -- (15,10) -- (15,-10) -- (-15,-10) -- cycle;
+
+            \node[] (hud) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={74},
+                ]{F16_apg68_RWS_HomePage&SAM_v7.pdf}
+            };
+
+        \end{tikzpicture}
+        \caption{HUD}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \draw[color2, fill=color2!20, dashed] 
+            (0,-3) circle [x radius=4, y radius=6];
+            
+            \node[] (bore) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={75},
+                ]{F16_apg68_RWS_HomePage&SAM_v7.pdf}
+            };
+    
+        \end{tikzpicture}
+        \caption{BORE}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \draw[color2, fill=color2!20, dashed, rounded corners]
+            (-2.5, 30) -- (2.5,30) -- (2.5,-8) -- (-2.5,-8) -- cycle;
+            
+            \node[] (vert) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={76},
+                ]{F16_apg68_RWS_HomePage&SAM_v7.pdf}
+            };
+    
+        \end{tikzpicture}
+        \caption{Vertical}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][40mm][t]{100mm}
+    %     \center{\large\textbf{ACM Scan Patterns}}
+    %     \begin{itemize}
+    %         \item Show different scan patterns?
+    %         \item Unsure if this figure is necessary
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{
+        ACM Scan Patterns shown with the relative HUD symbology. 
+        The dashed lines illustrate the scan volume for illustrative purposes and are not exact.
     }
-    \caption{ACM Scan Patterns}
+\end{figure}
 \end{figure}
 
 \begin{tcoloritemize}

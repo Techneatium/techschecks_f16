@@ -1512,15 +1512,28 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- FCR --- ACM}}
-        \begin{itemize}
-            \item Show default ACM page
-            \item clearly mark what the ``FCR format'' is (referenced in text)
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=100mm,
+                page={69},
+            ]{F16_apg68_RWS_HomePage&SAM_v7.pdf}
+        };
+
+        \node[align = center] at (0,-20) {\color{red}\textbf{MISSING ANNOTATIONS} \\ \color{red}\textbf{AZ LINES NEED REMOVAL}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- ACM}}
+    %     \begin{itemize}
+    %         \item Show default ACM page
+    %         \item clearly mark what the ``FCR format'' is (referenced in text)
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{MFD page for FCR ACM}
 \end{figure}
 

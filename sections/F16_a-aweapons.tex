@@ -82,15 +82,29 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- SMS --- GUN CONTROLS}}
-        \begin{itemize}
-            \item show sms gun page
-            \item label each of the relevant controls explained in text
-        \end{itemize}
-    \end{minipage}
-    }
+
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=100mm,
+                page={1},
+            ]{F16_aaweapons_v10.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- SMS --- GUN CONTROLS}}
+    %     \begin{itemize}
+    %         \item show sms gun page
+    %         \item label each of the relevant controls explained in text
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{MFD SMS Gun Controls}
 \end{figure}
 
@@ -159,59 +173,121 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD --- EEGS LVL II}}
-        \begin{itemize}
-            \item show EEGS LVL II symbology of the HUD
-            \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-            \begin{itemize}
-                \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
-                \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
+
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={2},
+            ]{F16_aaweapons_v10.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- EEGS LVL II}}
+    %     \begin{itemize}
+    %         \item show EEGS LVL II symbology of the HUD
+    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+    %         \begin{itemize}
+    %             \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
+    %             \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{EEGS LVL II HUD Symbology}
     \label{fig:aaweap:m61:eegslvl2}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD --- EEGS LVL V}}
-        \begin{itemize}
-            \item show EEGS LVL V symbology of the HUD
-            \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-            \begin{itemize}
-                \item more necessary here since lvl V relies on having a lock
-                \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
+
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={6},
+            ]{F16_aaweapons_v10.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- EEGS LVL V}}
+    %     \begin{itemize}
+    %         \item show EEGS LVL V symbology of the HUD
+    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+    %         \begin{itemize}
+    %             \item more necessary here since lvl V relies on having a lock
+    %             \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{EEGS LVL V HUD Symbology}
     \label{fig:aaweap:m61:eegslvl5}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][50mm][t]{100mm}
-        \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
-        \begin{itemize}
-            \item show both funnel and pipper as subfigs
-            \item include target outline in firing position
-            \item clearly mark level 5 pipper symbology elements
-            \begin{itemize}
-                \item batr
-                \item range cue
-                \item aspect
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{subfigure}[c]{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={4},
+                ]{F16_aaweapons_v10.pdf}
+            };
+    
+            \node[] at (0,-10) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        \end{tikzpicture}
+        \caption{EEGS Funnel}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={10},
+                ]{F16_aaweapons_v10.pdf}
+            };
+    
+            \node[] at (0,-20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        \end{tikzpicture}
+        \caption{Level V Pipper}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][50mm][t]{100mm}
+    %     \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
+    %     \begin{itemize}
+    %         \item show both funnel and pipper as subfigs
+    %         \item include target outline in firing position
+    %         \item clearly mark level 5 pipper symbology elements
+    %         \begin{itemize}
+    %             \item batr
+    %             \item range cue
+    %             \item aspect
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{EEGS Funnel \& Level V Pipper}
     \label{fig:aaweap:m61:funnelpipper}
 \end{figure}
@@ -250,15 +326,20 @@
     \blueitem{Acquire Firing Solution}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{EEGS Funnel}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show funnel on target
-                    \item potentially reuse from above
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \includegraphics[
+            width=\marginparwidth,
+            page={4},
+        ]{F16_aaweapons_v10.pdf}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{EEGS Funnel}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show funnel on target
+        %             \item potentially reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{EEGS Funnel}
     }
 
@@ -270,20 +351,20 @@
         \item \textbf{Funnel Lines} \dotfill \textbf{On target wingtips}
     \end{subenumerate}
     
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{MGRS Lines}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show MGRS line on target
-                    \item not sure if this fig is necessary
-                    \item maybe could modify fig from above
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{MGRS Lines}
-    }
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][40mm][t]{\marginparwidth}
+    %             \center{\textbf{MGRS Lines}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show MGRS line on target
+    %                 \item not sure if this fig is necessary
+    %                 \item maybe could modify fig from above
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{MGRS Lines}
+    % }
     Using MGRS lines
     
     \begin{subenumerate}
@@ -320,15 +401,20 @@
     \blueitem{Acquire Firing Solution}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{EEGS Level V Pipper}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show pipper on target
-                    \item potentially reuse from above
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \includegraphics[
+            height=25mm,
+            page={10},
+        ]{F16_aaweapons_v10.pdf}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{EEGS Level V Pipper}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show pipper on target
+        %             \item potentially reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{EEGS Level V Pipper}
     }
     \begin{subenumerate}

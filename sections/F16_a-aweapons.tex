@@ -238,72 +238,28 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[c]{0.45\linewidth}
-        \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            
-            \node[] (fig) at (0,0) {
-                \includegraphics[
-                    scale=1.25,
-                    page={2},
-                ]{F16_aaweapons_v10_4Items.pdf}
-            };
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                scale=1.25,
+                page={2},
+            ]{F16_aaweapons_v10_4Items.pdf}
+        };
 
-            \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (10,10) {EEGS GUN \\ FUNNEL};
-            \node[color2, anchor=west, align=left, font=\small\bfseries] (brst) at (10,32.5) {BORESIGHT \\ CROSS};
-            \node[color2, anchor=west, align=left, font=\small\bfseries] (mgrs) at (10,-20) {MGRS \\ LINES};
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (20,10) {EEGS GUN \\ FUNNEL};
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (brst) at (20,32.5) {BORESIGHT \\ CROSS};
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (mgrs) at (20,-20) {MGRS \\ LINES};
 
-            \draw[->, color2]
-            (funnel.west) -- ++(-5,0);
-            \draw[->, color2]
-            (brst.west) -- ++(-5,0);
-            \draw[->, color2]
-            (mgrs.west) -- ++(-5,0) -- +(-2.5,-5);
-        \end{tikzpicture}
-        \caption{EEGS Funnel}
-    \end{subfigure}
-    \begin{subfigure}[c]{0.50\linewidth}
-        \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-
-            \node[] (combined) at (0,0) {
-                \includegraphics[
-                    scale=1.25,
-                    page={3},
-                ]{F16_aaweapons_v10_4Items.pdf}
-            };
-
-            \node[] (tsymb) at (0,25) {
-                \includegraphics[
-                    scale=1.25,
-                    page={1},
-                ]{F16_aaweapons_v10_TSymbol.pdf}
-            };
-
-            \node[] (reticle) at (0,50) {
-                \includegraphics[
-                    scale=1.25,
-                    page={9},
-                ]{F16_aaweapons_v10.pdf}
-            };
-
-            \node[color2, anchor=west, align=left, font=\small\bfseries] (cptreticle) at (20,50) {TARGET \\ DESIGNATOR};
-            \node[color2, anchor=west, align=left, font=\small\bfseries] (cpttsymb) at (20,20) {T-SYMBOL};
-            \node[color2, anchor=west, align=left, font=\small\bfseries] (cptcombined) at (20,0) {COMBINED \\ PIPPER};
-
-            \draw[->, color2]
-            (cptreticle.west) -- ++(-10,0);
-            \draw[->, color2]
-            (cpttsymb.west) -- ++(-5,0);
-            \draw[->, color2]
-            (cptcombined.west) -- ++(-5,0);
-        \end{tikzpicture}
-        \caption{Level V Pipper}
-    \end{subfigure}
+        \draw[->, color2]
+        (funnel.west) -- ++(-12.5,0);
+        \draw[->, color2]
+        (brst.west) -- ++(-15,0);
+        \draw[->, color2]
+        (mgrs.west) -- ++(-15,0) -- +(-2.5,-5);
+    \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][50mm][t]{100mm}
     %     \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
@@ -319,8 +275,57 @@
     %     \end{itemize}
     % \end{minipage}
     % }
-    \caption{EEGS Funnel \& Level V Pipper}
-    \label{fig:aaweap:m61:funnelpipper}
+    \caption{EEGS Funnel}
+    \label{fig:aaweap:m61:eegsfunnel}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (pipper) at (0,0) {
+            \includegraphics[
+                scale=1.25,
+                page={3},
+            ]{F16_aaweapons_v10_4Items.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark1)at(pipper.south){EEGS LVL 5 PIPPER};
+
+        \node[draw, rounded corners, left=10mm of pipper] (tsymb) {
+            \includegraphics[
+                scale=1.25,
+                page={1},
+            ]{F16_aaweapons_v10_TSymbol.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark2)at(tsymb.south){T-SYMBOL Designator};
+
+        \node[draw, rounded corners, left=10mm of tsymb] (tdes) {
+            \includegraphics[
+                scale=1.25,
+                page={9},
+            ]{F16_aaweapons_v10.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark3)at(tdes.south){Target Designator};
+
+        \path[] (tdes) -- node[pos=0.5, anchor=center]{\textbf{+}}(tsymb);
+        \path[] (tsymb) -- node[pos=0.5, anchor=center]{\textbf{=}}(pipper);
+    \end{tikzpicture}
+    \caption{EEGS Level V Pipper}
+    \label{fig:aaweap:m61:eegspipper}
 \end{figure}
 
 \marginfigeometry

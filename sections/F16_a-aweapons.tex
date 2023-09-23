@@ -265,7 +265,7 @@
         \end{tikzpicture}
         \caption{EEGS Funnel}
     \end{subfigure}
-    \begin{subfigure}[c]{0.45\linewidth}
+    \begin{subfigure}[c]{0.50\linewidth}
         \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
@@ -292,7 +292,16 @@
                 ]{F16_aaweapons_v10.pdf}
             };
     
-            \node[] at (0,-20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+            \node[color2, anchor=west, align=left, font=\small\bfseries] (cptreticle) at (20,50) {TARGET \\ DESIGNATOR};
+            \node[color2, anchor=west, align=left, font=\small\bfseries] (cpttsymb) at (20,20) {T-SYMBOL};
+            \node[color2, anchor=west, align=left, font=\small\bfseries] (cptcombined) at (20,0) {COMBINED \\ PIPPER};
+
+            \draw[->, color2]
+            (cptreticle.west) -- ++(-10,0);
+            \draw[->, color2]
+            (cpttsymb.west) -- ++(-5,0);
+            \draw[->, color2]
+            (cptcombined.west) -- ++(-5,0);
         \end{tikzpicture}
         \caption{Level V Pipper}
     \end{subfigure}

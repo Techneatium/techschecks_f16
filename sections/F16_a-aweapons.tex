@@ -252,7 +252,16 @@
                 ]{F16_aaweapons_v10.pdf}
             };
     
-            \node[] at (0,-10) {\color{red}\textbf{MISSING ANNOTATIONS}};
+            \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (10,10) {EEGS GUN \\ FUNNEL};
+            \node[color2, anchor=west, align=left, font=\small\bfseries] (brst) at (10,32.5) {BORESIGHT \\ CROSS};
+            \node[color2, anchor=west, align=left, font=\small\bfseries] (mgrs) at (10,-20) {MGRS \\ LINES};
+
+            \draw[->, color2]
+            (funnel.west) -- ++(-5,0);
+            \draw[->, color2]
+            (brst.west) -- ++(-5,0);
+            \draw[->, color2]
+            (mgrs.west) -- ++(-5,0) -- +(-2.5,-5);
         \end{tikzpicture}
         \caption{EEGS Funnel}
     \end{subfigure}

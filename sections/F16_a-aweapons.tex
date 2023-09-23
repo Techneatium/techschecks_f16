@@ -248,8 +248,8 @@
             \node[] (fig) at (0,0) {
                 \includegraphics[
                     scale=1.25,
-                    page={4},
-                ]{F16_aaweapons_v10.pdf}
+                    page={2},
+                ]{F16_aaweapons_v10_4Items.pdf}
             };
     
             \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (10,10) {EEGS GUN \\ FUNNEL};
@@ -271,10 +271,24 @@
             >={Latex[round]}
             ]
             
-            \node[] (fig) at (0,0) {
+            \node[] (combined) at (0,0) {
                 \includegraphics[
                     scale=1.25,
-                    page={10},
+                    page={3},
+                ]{F16_aaweapons_v10_4Items.pdf}
+            };
+
+            \node[] (tsymb) at (0,25) {
+                \includegraphics[
+                    scale=1.25,
+                    page={1},
+                ]{F16_aaweapons_v10_TSymbol.pdf}
+            };
+
+            \node[] (reticle) at (0,50) {
+                \includegraphics[
+                    scale=1.25,
+                    page={9},
                 ]{F16_aaweapons_v10.pdf}
             };
     
@@ -338,8 +352,8 @@
         \centering
         \includegraphics[
             width=\marginparwidth,
-            page={4},
-        ]{F16_aaweapons_v10.pdf}
+            page={2},
+        ]{F16_aaweapons_v10_4Items.pdf}
         % \fbox{
         %     \begin{minipage}[t][40mm][t]{\marginparwidth}
         %         \center{\textbf{EEGS Funnel}}
@@ -571,15 +585,28 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- SMS --- AIM-9 CONTROLS}}
-        \begin{itemize}
-            \item show sms aim-9 page
-            \item label each of the relevant controls explained in text
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={13},
+            ]{F16_aaweapons_v10.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- SMS --- AIM-9 CONTROLS}}
+    %     \begin{itemize}
+    %         \item show sms aim-9 page
+    %         \item label each of the relevant controls explained in text
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{MFD SMS AIM-9 Controls}
 \end{figure}
 
@@ -617,24 +644,37 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
-        \begin{itemize}
-            \item show hud/hmd with aim-9 in use 
-            \item clearly indicate missile diamond/reticle and dynamic aiming cross
-            \item maybe show several versions?
-            \begin{itemize}
-                \item 1 with missile reticle from HUD?
-                \item 1 with missile diamond latchedon aiming cross?
-                \item 1 with diamond on target?
-                \item 1 with \textbf{X}?
-            \end{itemize}
-            or some subset of those?
-            \item can reuse these in marginfigs below?
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={14},
+            ]{F16_aaweapons_v10.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
+    %     \begin{itemize}
+    %         \item show hud/hmd with aim-9 in use 
+    %         \item clearly indicate missile diamond/reticle and dynamic aiming cross
+    %         \item maybe show several versions?
+    %         \begin{itemize}
+    %             \item 1 with missile reticle from HUD?
+    %             \item 1 with missile diamond latchedon aiming cross?
+    %             \item 1 with diamond on target?
+    %             \item 1 with \textbf{X}?
+    %         \end{itemize}
+    %         or some subset of those?
+    %         \item can reuse these in marginfigs below?
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{HUD/HMD AIM-9 Symbology}
     \label{fig:aaweap:aim9:hudhmdsymb}
 \end{figure}
@@ -831,15 +871,20 @@
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 Radar Track}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show radar target designator box
-                    \item show diamond latched to target designator box
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \includegraphics[
+            height=25mm,
+            page={19},
+        ]{F16_aaweapons_v10.pdf}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 Radar Track}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show radar target designator box
+        %             \item show diamond latched to target designator box
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{AIM-9 Radar Track}
     }
     \begin{subenumerate}

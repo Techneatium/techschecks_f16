@@ -242,6 +242,7 @@
         >={Latex[round]}
         ]
         
+        \node[minimum width=\linewidth] (blanker) at (0,0) {};
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 scale=1.25,
@@ -307,7 +308,7 @@
             anchor=north,
             align=center,
             font=\small\bfseries
-        ](mark2)at(tsymb.south){T-SYMBOL Designator};
+        ](mark2)at(tsymb.south){T-SYMBOL};
 
         \node[draw, rounded corners, left=10mm of tsymb] (tdes) {
             \includegraphics[
@@ -319,7 +320,7 @@
             anchor=north,
             align=center,
             font=\small\bfseries
-        ](mark3)at(tdes.south){Target Designator};
+        ](mark3)at(tdes.south){TARGET DESIGNATOR};
 
         \path[] (tdes) -- node[pos=0.5, anchor=center]{\textbf{+}}(tsymb);
         \path[] (tsymb) -- node[pos=0.5, anchor=center]{\textbf{=}}(pipper);
@@ -363,10 +364,21 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \includegraphics[
-            width=\marginparwidth,
-            page={2},
-        ]{F16_aaweapons_v10_4Items.pdf}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={2},
+                ]{F16_aaweapons_v10_4Items.pdf}
+            };
+        \end{tikzpicture}
+        % \includegraphics[
+        %     width=\marginparwidth,
+        %     page={2},
+        % ]{F16_aaweapons_v10_4Items.pdf}
         % \fbox{
         %     \begin{minipage}[t][40mm][t]{\marginparwidth}
         %         \center{\textbf{EEGS Funnel}}
@@ -376,7 +388,7 @@
         %         \end{itemize}
         %     \end{minipage}
         % }
-        \caption{EEGS Funnel}
+        \caption{EEGS Funnel \& MGRS Lines.}
     }
 
     \smallskip

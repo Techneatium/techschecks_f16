@@ -89,8 +89,8 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={1},
-            ]{F16_aaweapons_v10.pdf}
+                page={79},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
         \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
@@ -177,11 +177,11 @@
         >={Latex[round]}
         ]
         
-        \node[] (fig) at (0,0) {
+        \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={2},
-            ]{F16_aaweapons_v10.pdf}
+                page={80},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
         \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
@@ -210,11 +210,11 @@
         >={Latex[round]}
         ]
         
-        \node[] (fig) at (0,0) {
+        \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={6},
-            ]{F16_aaweapons_v10.pdf}
+                page={84},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
         \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
@@ -289,8 +289,8 @@
         \node[draw, rounded corners] (pipper) at (0,0) {
             \includegraphics[
                 scale=1.25,
-                page={3},
-            ]{F16_aaweapons_v10_4Items.pdf}
+                page={99},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
         \node[
             anchor=north,
@@ -301,8 +301,8 @@
         \node[draw, rounded corners, left=10mm of pipper] (tsymb) {
             \includegraphics[
                 scale=1.25,
-                page={1},
-            ]{F16_aaweapons_v10_TSymbol.pdf}
+                page={101},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
         \node[
             anchor=north,
@@ -313,8 +313,8 @@
         \node[draw, rounded corners, left=10mm of tsymb] (tdes) {
             \includegraphics[
                 scale=1.25,
-                page={9},
-            ]{F16_aaweapons_v10.pdf}
+                page={100},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
         \node[
             anchor=north,
@@ -453,10 +453,16 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \includegraphics[
-            height=25mm,
-            page={10},
-        ]{F16_aaweapons_v10.pdf}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={88},
+                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            };
+        \end{tikzpicture}
         % \fbox{
         %     \begin{minipage}[t][40mm][t]{\marginparwidth}
         %         \center{\textbf{EEGS Level V Pipper}}
@@ -620,8 +626,8 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={13},
-            ]{F16_aaweapons_v10.pdf}
+                page={91},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
         \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
@@ -676,11 +682,11 @@
         >={Latex[round]}
         ]
         
-        \node[] (fig) at (0,0) {
+        \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={14},
-            ]{F16_aaweapons_v10.pdf}
+                page={92},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
         \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
@@ -900,10 +906,17 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \includegraphics[
-            height=25mm,
-            page={19},
-        ]{F16_aaweapons_v10.pdf}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={97},
+                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            };
+        \end{tikzpicture}
+        
         % \fbox{
         %     \begin{minipage}[t][40mm][t]{\marginparwidth}
         %         \center{\textbf{AIM-9 Radar Track}}

@@ -8,5 +8,46 @@
 \clearpage 
 
 \section{HARM TARGETING SYSTEM}
-
+\subsection{HAD PAGE}
+\begin{tcoloritemize}
+    \blueitem{HAD Information}{
+        The HAD contains all the same information as the HSD, including WPTS, DataLink targets, and range rings.}
+    \blueitem{Usage}{
+        Flying diagonally to the target is best to triangulate the position of the radar. The HAD will display a PGM index that
+        represents the level of trust in the accuracy of the contact, with lower being better. It is recommended to wait for at 
+        least PGM2 for optimal results. 
+        HARM is launched in POS mode, flying to estimated location given by HAD before using its own seeker.
+    }
+    \blueitem{Track Information}{
+        \begin{subitemize}
+            \item[Green] Emitter not active but detected once / Emitter behind 3-9 line\\
+            \item[Yellow] Emitter is acitve in Search mode
+            \item[Red (Steady)] Emitter is active in Track mode
+            \item[Red (Flashing)] Emitter is active in Launch Mode
+            \item[Yellow Boxed] Primary target Selected
+            \item[Red Boxed] Primary target Handed off
+        \end{subitemize}}
+    \blueitem{Switchology}{
+    \begin{subitemize}
+        \item \textbf{Designate Primary Target/Handoff} 
+        \begin{itemize}
+            \item \textbf{TMS} \dotfill \textbf{Up}
+        \end{itemize}
+        If another contact is designated, the previous primary target becomes a Priority target.
+        \item \textbf{Cycle Priority Targets}
+        \begin{itemize}
+            \item \textbf{TMS} \dotfill \textbf{Right}
+        \end{itemize}
+        \item \textbf{Remove Priority Targets}
+        When cursor on a target
+        \begin{itemize}
+            \item \textbf{TMS} \dotfill \textbf{Down}
+        \end{itemize}
+        \item \textbf{Remove All Targets}
+        When cursor on nothing
+        \begin{itemize}
+            \item \textbf{TMS} \dotfill \textbf{Down}
+        \end{itemize}
+    \end{subitemize}}
+\end{tcoloritemize}
 \cleardoublepage

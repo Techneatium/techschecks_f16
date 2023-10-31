@@ -290,7 +290,7 @@
             \includegraphics[
                 scale=1.25,
                 page={99},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            ]{F16_aaweapons_v11.pdf}
         };
         \node[
             anchor=north,
@@ -302,7 +302,7 @@
             \includegraphics[
                 scale=1.25,
                 page={101},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            ]{F16_aaweapons_v11.pdf}
         };
         \node[
             anchor=north,
@@ -686,7 +686,7 @@
             \includegraphics[
                 height=75mm,
                 page={92},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            ]{F16_aaweapons_v11.pdf}
         };
 
         \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
@@ -757,16 +757,27 @@
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 Track}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show missile reticle
-                    \item show diamond latched to symbolic target (outline)
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-9 Track}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={105},
+                ]{F16_aaweapons_v11.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 Track}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show missile reticle
+        %             \item show diamond latched to symbolic target (outline)
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{AIM-9 missile diamond latched to target, indicating lock.}
     }
     \begin{subenumerate}
         \item \textbf{Missile Reticle} \dotfill \textbf{On-Target}
@@ -877,17 +888,32 @@
     \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{HMD BORE Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show HMD BORE circle
-                    \item show symbolic target (outline)
-                    \item can reuse from radar chapter
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{HMD BORE Symbology}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \draw[color2, fill=color2!20, dashed] 
+            (0,-3) circle [x radius=4, y radius=6];
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (bore) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={75},
+                ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{HMD BORE Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show HMD BORE circle
+        %             \item show symbolic target (outline)
+        %             \item can reuse from radar chapter
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{HMD BORE scan zone}
     }
     
     \medskip
@@ -903,6 +929,21 @@
     Can also lock from CRM, \textbf{see \Cref{subsec:crm}}
     }
     \blueitem{AIM-9 Track Acquisition}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.5,
+                    page={93},
+                ]{F16_aaweapons_v11.pdf}
+            };
+        \end{tikzpicture}
+        % \caption{AIM-9 missile diamond latched to target, indicating lock.}
+    }
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -936,16 +977,27 @@
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][60mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 DLZ}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show DLZ and indicate in-range symbology
-                    \item can probably just reuse from aim-120
-                    \item maybe link to explanation of dlz?
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=2.5,
+                    page={104},
+                ]{F16_aaweapons_v11.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 DLZ}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show DLZ and indicate in-range symbology
+        %             \item can probably just reuse from aim-120
+        %             \item maybe link to explanation of dlz?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{In-range DLZ}
     }
     \begin{subenumerate}

@@ -1214,16 +1214,99 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][50mm][t]{100mm}
-        \center{\large\textbf{DLZ/ASEC/ASC}}
-        \begin{itemize}
-            \item show dlz with stuff from text labeled
-            \item show combined asc/asec symbology
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{Missile DLZ and ASC/ASEC Symbology}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    % height=75mm,
+                    scale=0.5,
+                    page={16},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+        \end{tikzpicture}
+        \caption{pre-launch}
+        \label{fig:aaweap:aim120:dlz:pre}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    % height=75mm,
+                    scale=0.5,
+                    page={20},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+
+
+
+        \node[] at (0,-10) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        \end{tikzpicture}
+        \caption{post-launch}
+        \label{fig:aaweap:aim120:dlz:post}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    % height=75mm,
+                    scale=0.5,
+                    page={24},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+        \end{tikzpicture}
+        \caption{post-active}
+        \label{fig:aaweap:aim120:dlz:act}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][50mm][t]{100mm}
+    %     \center{\large\textbf{DLZ/ASEC/ASC}}
+    %     \begin{itemize}
+    %         \item show dlz with stuff from text labeled
+    %         \item show combined asc/asec symbology
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{Missile DLZ and Symbology}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                % height=75mm,
+                scale=0.5,
+                page={15},
+            ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        };
+
+        \node[] at (30,0) {\color{red}\textbf{NOT FINISHED}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][50mm][t]{100mm}
+    %     \center{\large\textbf{DLZ/ASEC/ASC}}
+    %     \begin{itemize}
+    %         \item show dlz with stuff from text labeled
+    %         \item show combined asc/asec symbology
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{Missile ASC/ASEC Symbology}
 \end{figure}
 
 \begin{tcoloritemize}

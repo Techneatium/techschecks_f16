@@ -1582,16 +1582,26 @@
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{AIM-120 DLZ}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show in-range dlz
-                    \item maybe also show asc inside asec?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-120 DLZ}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.75,
+                    page={16},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][50mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-120 DLZ}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show in-range dlz
+        %             \item maybe also show asc inside asec?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{In-range DLZ}
     }
     \begin{subenumerate}
         \item \textbf{ASC} \dotfill within \textbf{ASEC}

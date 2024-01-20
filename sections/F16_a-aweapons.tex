@@ -1635,22 +1635,124 @@
     \blueitem{Track Acquisition}{For demonstration we will use \textbf{CRM-TWS Submode} 
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][60mm][t]{\marginparwidth}
-                \center{\textbf{System / Bugged Target Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show system / bugged target symbology
-                    \item maybe format as a diagram/flow chart?
-                    \item maybe combine into one fig wth search/track target fig?
-                    \item can reuse from apg68 chapter
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{System / Bugged Target Symbology}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+            ] (track) at (0,0) {
+                \includegraphics[
+                    scale=0.5,
+                    page={30},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+            \node[
+                draw, 
+                rounded 
+                corners, 
+                minimum width=\marginparwidth,
+                below=17.5 of track,
+            ] (system) {
+                \includegraphics[
+                    scale=0.5,
+                    page={31},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=12.5 of system,
+            ] (cursor) {
+                \includegraphics[
+                    scale=0.5,
+                    page={32},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of cursor,
+            ] (bugged) {
+                \includegraphics[
+                    scale=0.5,
+                    page={33},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of bugged,
+            ] (post) {
+                \includegraphics[
+                    scale=0.5,
+                    page={34},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+
+            % lines
+            \draw[->]
+            (track) -- node[right, align=left, font=\small] {\textbf{TMS FWD} \\ \footnotesize\textbf{(repeat for all} \\ \footnotesize\textbf{desired targets)}}(system);
+            \draw[>-]
+            ($(track.south)!0.5!(system.north) + (-5,0)$) -- ++(0,2) arc (180:0:2.5) -- ++(0,-4) arc (360:180:2.5) -- node[left, pos=1, align=right, font=\small] {\ref{subsec:aim120:multi:sysacq}} ++(0,2);
+            \draw[->]
+            (system) -- node[right, align=left, font=\small] {\textbf{Slew Cursor} \\ \textbf{near target}}(cursor);
+            \path (system) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:acq}}(cursor);
+            \draw[->]
+            (cursor) -- node[right, align=left, font=\small] {\textbf{TMS FWD}}(bugged);
+            \path (cursor) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:tmsfwd}}(bugged);
+            \draw[->]
+            (bugged) -- node[right, align=left, font=\small] {\textbf{WPN REL}}(post);
+            \path (bugged) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:wpnrel}}(post);
+
+            % labels
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labeltrack) at (track.north west) {Track \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelsystem) at (system.north west) {System \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelcursor) at (cursor.north west) {Cursor \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelpost) at (post.north west) {AIM-120 \\ Launched};
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{System / Bugged Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show system / bugged target symbology
+        %             \item maybe format as a diagram/flow chart?
+        %             \item maybe combine into one fig wth search/track target fig?
+        %             \item can reuse from apg68 chapter
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{Multi-target workflow}
     }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
-        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \label{subsec:aim120:multi:sysacq} \textbf{TMS} \dotfill \textbf{Forward}
         \item \textbf{Target} \dotfill verify \textbf{System target}
     \end{subenumerate}
     
@@ -1668,25 +1770,25 @@
     \blueitem{Bug Acquisition}{
     \begin{subenumerate}
         \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under \textbf{Acquisition cursor}
-        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \label{subsec:aim120:multi:tmsfwd}\textbf{TMS} \dotfill \textbf{Forward}
         \item \textbf{Target} \dotfill verify \textbf{Bugged}
     \end{subenumerate}
     
     Can cycle bugged target with \textbf{TMS Right}}
     \blueitem{Fire Missile}{
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{AIM-120 DLZ}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show in-range dlz
-                    \item maybe also show asc inside asec?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-120 DLZ}
-    }
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][50mm][t]{\marginparwidth}
+    %             \center{\textbf{AIM-120 DLZ}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show in-range dlz
+    %                 \item maybe also show asc inside asec?
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{AIM-120 DLZ}
+    % }
     \begin{subenumerate}
         \item \textbf{ASC} \dotfill within \textbf{ASEC}
         \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}

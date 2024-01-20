@@ -1134,15 +1134,28 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- SMS --- AIM-120 CONTROLS}}
-        \begin{itemize}
-            \item show sms aim-120 page
-            \item label each of the relevant controls explained in text
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={7},
+            ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- SMS --- AIM-120 CONTROLS}}
+    %     \begin{itemize}
+    %         \item show sms aim-120 page
+    %         \item label each of the relevant controls explained in text
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{MFD SMS AIM-120 Controls}
 \end{figure}
 

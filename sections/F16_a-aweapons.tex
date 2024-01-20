@@ -1330,21 +1330,33 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD --- AIM-120 Symbology}}
-        \begin{itemize}
-            \item show hud in a-a mode, aim-120 selected
-            \item label each of the relevant symbology elements explained in text
-            \item probably makes sense to have one big figure with all the elements in it just to show what the hud looks like
-            \item label additional stuff not mentioned in text
-            \begin{itemize}
-                \item range/bearing information etc.
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{A-A AIM-120 HUD}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={11},
+            ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- AIM-120 Symbology}}
+    %     \begin{itemize}
+    %         \item show hud in a-a mode, aim-120 selected
+    %         \item label each of the relevant symbology elements explained in text
+    %         \item probably makes sense to have one big figure with all the elements in it just to show what the hud looks like
+    %         \item label additional stuff not mentioned in text
+    %         \begin{itemize}
+    %             \item range/bearing information etc.
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{A-A AIM-120 HUD (post-launch)}
 \end{figure}
 
 \begin{figure}[htbp]

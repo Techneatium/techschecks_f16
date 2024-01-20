@@ -1361,15 +1361,89 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][30mm][t]{100mm}
-        \center{\large\textbf{MFD --- Post-Launch Symbology}}
-        \begin{itemize}
-            \item show symbology elements side-by-side
-            \item \url{https://forum.dcs.world/topic/279555-purple-fcr-symbology/}
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={17},
+            ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    \caption{A-A AIM-120 FCR post-launch. Note the ``tail'' on the track.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={29},
+        ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        \caption{Search}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={30},
+        ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        \caption{Track}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={31},
+        ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        \caption{System}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={32},
+        ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        \caption{Cursor}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={33},
+        ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        \caption{Bugged}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={34},
+        ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        \caption{post-launch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={35},
+        ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        \caption{missile timeout}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][30mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- Post-Launch Symbology}}
+    %     \begin{itemize}
+    %         \item show symbology elements side-by-side
+    %         \item \url{https://forum.dcs.world/topic/279555-purple-fcr-symbology/}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{Post-Launch Symbology}
 \end{figure}
 

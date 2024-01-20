@@ -664,7 +664,7 @@
         \item \textbf{Dynamic Aiming Cross} --- HMD line-of-sight
     \end{subitemize}
 
-    Reference symbology in \cref{fig:aaweap:aim9:hudhmdsymb}
+    Reference symbology in \cref{fig:aaweap:aim9:hudsymb}
 
     \begin{subitemize}
         \item \textbf{DLZ} --- \textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
@@ -709,8 +709,27 @@
     %     \end{itemize}
     % \end{minipage}
     % }
-    \caption{HUD/HMD AIM-9 Symbology}
-    \label{fig:aaweap:aim9:hudhmdsymb}
+    \caption{AIM-9 HUD Symbology}
+    \label{fig:aaweap:aim9:hudsymb}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=50mm,
+                page={3},
+            ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+        };
+
+        \node[] at (0,20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    \caption{AIM-9 HMD Symbology}
+    \label{fig:aaweap:aim9:hmdsymb}
 \end{figure}
 
 \marginfigeometry

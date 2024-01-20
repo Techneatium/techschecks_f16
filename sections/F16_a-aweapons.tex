@@ -830,7 +830,27 @@
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.75,
+                    page={5},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+
+            \node[] at (0,0) {\color{red}\textbf{USES RADAR}};
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 HMD Track}}
+        %         \begin{itemize}[leftmargin=1em]
         %             \item show missile diamond \& dynamic aiming cross
+        %             \item show diamond latched to symbolic target?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{AIM-9 HMD Track}
     }
     \marginpar{

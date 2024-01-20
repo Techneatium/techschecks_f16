@@ -1710,6 +1710,17 @@
                 rounded corners, 
                 minimum width=\marginparwidth,
                 below=10 of bugged,
+            ] (dlz) {
+                \includegraphics[
+                    scale=0.5,
+                    page={16},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of dlz,
             ] (post) {
                 \includegraphics[
                     scale=0.5,
@@ -1729,8 +1740,10 @@
             (cursor) -- node[right, align=left, font=\small] {\textbf{TMS FWD}}(bugged);
             \path (cursor) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:tmsfwd}}(bugged);
             \draw[->]
-            (bugged) -- node[right, align=left, font=\small] {\textbf{WPN REL}}(post);
-            \path (bugged) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:wpnrel}}(post);
+            (bugged) -- node[right, align=left, font=\small] {\textbf{In-range}}(dlz);
+            \draw[->]
+            (dlz) -- node[right, align=left, font=\small] {\textbf{WPN REL}}(post);
+            \path (dlz) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:wpnrel}}(post);
 
             % labels
             \node[
@@ -1753,6 +1766,11 @@
                 align=left,
                 font=\bfseries\footnotesize,
             ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labeldlz) at (dlz.north west) {In-Range \\ DLZ};
             \node[
                 anchor=north west,
                 align=left,

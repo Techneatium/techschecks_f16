@@ -855,16 +855,26 @@
     }
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 HMD LOS}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show missile diamond out of HMD limits
-                    \item can probably reuse from above
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{HMD beyond seeker limits}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.75,
+                    page={6},
+                ]{F16_aaweapons_missilelaunch_new_v1_1.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 HMD LOS}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show missile diamond out of HMD limits
+        %             \item can probably reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{X indicates HMD beyond AIM-9 seeker limits}
     }
     \begin{subenumerate}
         \item Maneuver to place target within AIM-9 seeker limits

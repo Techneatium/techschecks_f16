@@ -473,17 +473,37 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-        \begin{minipage}[t][30mm][t]{75mm}
-            \center{\textbf{Takeoff Profile}}
-            \begin{itemize}[leftmargin=1em]
-                \item maybe show side-on takeoff profile?
-                \item maybe just make with tikz?
-                \item match labels with steps?
-                \item maybe have as ``full-width'' figure?
-            \end{itemize}
-        \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        % coordinates
+        \coordinate (startpoint) at (0,0);
+        \coordinate (70kts) at (25,0);
+        \coordinate (rotate) at (50,0);
+        \coordinate (runwaystart) at (-5,-2.5);
+        \coordinate (runwayend) at (70,-2.5);
+
+        % runway
+        \draw[thick, fill]
+        ($(runwaystart)+(0,-0.25)$) -- ($(runwaystart)+(0,0.25)$) -- 
+        ($(runwayend)+(0,0.25)$) -- ($(runwayend)+(0,-0.25)$) -- 
+        cycle;
+
+        % path
+        \draw[ultra thick, ->]
+        (startpoint) -- (70kts);
+        \draw[ultra thick, ->]
+        (70kts) -- (rotate);
+        \draw[ultra thick, ->]
+        (rotate) -- ++(5,0) arc (270:300:10) -- ++(30:10);
+
+        % nodes
+        \node[above, align=center] at (startpoint) {\small\textbf{Brakes} \\ \small\textbf{Runup}};
+        \node[above, align=center] at (70kts) {\small\textbf{70kts} \\ \small\textbf{NWS Off}};
+        \node[above, align=center] at (rotate) {\small\textbf{128-198kts} \\ \small\textbf{Rotate}};
+
+    \end{tikzpicture}
     \caption{Takeoff Profile}
 \end{figure}
 
@@ -506,83 +526,185 @@
     \blueitem{Approach}{Align aircraft with runway
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][80mm][t]{\marginparwidth}
-                \center{\textbf{Overhead Pattern}}
-                \begin{itemize}[leftmargin=1em]
-                    \item Show overhead pattern
-                    \item maybe just make with tikz?
-                    \item match labels with steps?
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            % coordinates
+            \coordinate (approach) at (5,-15);
+            \coordinate (break) at (5,20);
+            \coordinate (downwind) at (-15,20);
+            \coordinate (base) at (-15,-15);
+            \coordinate (final) at (-7.5,-22.5);
+            \coordinate (shortfinal) at (0,-15);
+            \coordinate (touchdown) at (0,0);
+            \coordinate (rollout) at (0,20);
+
+            % runway
+            \draw[thick]
+            ($(touchdown)+(-2,-5)$) -- ($(touchdown)+(2,-5)$) -- 
+            ($(touchdown)+(2,25)$) -- ($(touchdown)+(-2,25)$) -- 
+            cycle;
+            \draw[thick]
+            ($(touchdown)+(-1.33,-1)$) -- ($(touchdown)+(-1.33,1)$)
+            ($(touchdown)+(-0.66,-1)$) -- ($(touchdown)+(-0.66,1)$)
+            ($(touchdown)+(0.66,-1)$) -- ($(touchdown)+(0.66,1)$)
+            ($(touchdown)+(1.33,-1)$) -- ($(touchdown)+(1.33,1)$);
+
+            % pattern
+            \draw[ultra thick, ->] 
+            (approach) -- (break);
+            \draw[ultra thick] 
+            (break) arc (0:180:10);
+            \draw[ultra thick, >->] 
+            (downwind) -- (base);
+            \draw[ultra thick] 
+            (base) arc (180:270:7.5);
+            \draw[ultra thick] 
+            (final) arc (270:360:7.5);
+            \draw[ultra thick, >-] 
+            (shortfinal) -- (touchdown);
+            \draw[ultra thick, ->] 
+            (touchdown) -- (rollout);
+
+            % nodes
+            \node[right] at (approach) {\textbf{1.}};
+            \node[right] at (break) {\textbf{2.}};
+            \node[left] at (downwind) {\textbf{3.}};
+            \node[left] at (base) {\textbf{4.}};
+            \node[below] at (final) {\textbf{5.}};
+            \node[left] at (shortfinal) {\textbf{6.}};
+            \node[left=2mm] at (touchdown) {\textbf{7.}};
+            \node[left=2mm] at (rollout) {\textbf{8.}};
+
+        \end{tikzpicture}
         \caption{Overhead Pattern}
+        \label{fig:proc:landing:overhead}
     }
 
     \begin{subitemize}
-        \item \textbf{Altitude} \dotfill \textbf{1500 ft AGL}
-        \item \textbf{Airspeed} \dotfill \textbf{300 kts CAS}
+        \item \textbf{Altitude} --- \textbf{1500 ft AGL}
+        \item \textbf{Airspeed} --- \textbf{300 kts CAS}
     \end{subitemize}}
     \blueitem{Overhead Break}{Break left/right over desired touchdown point, maintain \underline{level turn}
 
     \begin{subitemize}
-        \item \textbf{Speedbrakes} --- \textbf{Open}
-        \item \textbf{Throttle} --- \textbf{80\%}
+        \item \textbf{Speedbrakes} --- \textbf{As Required}
+        \item \textbf{Throttle} --- \textbf{As Required}
         \item \textbf{Bank} --- \textbf{70 deg}
         \item \textbf{Break} --- \textbf{3-4 G}
     \end{subitemize}}
     \blueitem{Downwind Leg}{Roll out on opposite heading of runway, trim for 11 deg AoA
+
     \begin{subitemize}
         \item \textbf{Altitude} --- \textbf{1500 ft AGL}
         \item \textbf{Airspeed} --- \textbf{200-220 kts CAS}
         \item \textbf{Gear} --- \textbf{Down}
     \end{subitemize}}
-    \blueitem{Base Turn}{ Initiate abeam of desired touchdown point (wingtip at end of runway)
+    \blueitem{Base Turn}{Initiate abeam of desired touchdown point (wingtip at end of runway)
+
     \begin{subitemize}
         \item \textbf{Attitude} --- \textbf{8-10 deg nose low}
         \item \textbf{AoA} --- \textbf{11 deg}
     \end{subitemize}}
-    \blueitem{Final Turn}{Use throttle to maintain 11 deg AoA, stick to maintain 8-10 deg nose low, goal is to roll wings-level at
+    \blueitem{Final Turn}{Use throttle to maintain AoA, stick to maintain attitude, goal is to roll wings-level at
+
     \begin{subitemize}
         \item \textbf{1 mile} from desired touchdown point
         \item \textbf{Altitude} --- \textbf{300 ft AGL}
-        \item \textbf{AoA} --- \textbf{11 deg}
+        % \item \textbf{AoA} --- \textbf{11 deg}
         \item \textbf{Flightpath} --- align  with \textbf{2.5 deg HUD marker} and runway threshold
     \end{subitemize}}
-    \blueitem{Short-Final}{Once over runway
+\end{checklistenumerate}
+
+\clearpage
+
+\begin{checklistenumerate}[resume]
+    \blueitem{Short Final}{Once over runway
+    
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][80mm][t]{\marginparwidth}
-                \center{\textbf{Overhead Pattern / Flare}}
-                \begin{itemize}[leftmargin=1em]
-                    \item Show overhead pattern from above?
-                    \begin{itemize}
-                        \item modify or just same one again for reference?
-                    \end{itemize}
-                    \item or maybe show side-on flare profile?
-                    \item maybe just make with tikz?
-                    \item match labels with steps?
-                    \item maybe have as ``full-width'' figure?
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            % coordinates
+            \coordinate (approach) at (5,-15);
+            \coordinate (break) at (5,20);
+            \coordinate (downwind) at (-15,20);
+            \coordinate (base) at (-15,-15);
+            \coordinate (final) at (-7.5,-22.5);
+            \coordinate (shortfinal) at (0,-15);
+            \coordinate (touchdown) at (0,0);
+            \coordinate (rollout) at (0,20);
+
+            % runway
+            \draw[thick]
+            ($(touchdown)+(-2,-5)$) -- ($(touchdown)+(2,-5)$) -- 
+            ($(touchdown)+(2,25)$) -- ($(touchdown)+(-2,25)$) -- 
+            cycle;
+            \draw[thick]
+            ($(touchdown)+(-1.33,-1)$) -- ($(touchdown)+(-1.33,1)$)
+            ($(touchdown)+(-0.66,-1)$) -- ($(touchdown)+(-0.66,1)$)
+            ($(touchdown)+(0.66,-1)$) -- ($(touchdown)+(0.66,1)$)
+            ($(touchdown)+(1.33,-1)$) -- ($(touchdown)+(1.33,1)$);
+
+            % pattern
+            \draw[ultra thick, ->] 
+            (approach) -- (break);
+            \draw[ultra thick] 
+            (break) arc (0:180:10);
+            \draw[ultra thick, >->] 
+            (downwind) -- (base);
+            \draw[ultra thick] 
+            (base) arc (180:270:7.5);
+            \draw[ultra thick] 
+            (final) arc (270:360:7.5);
+            \draw[ultra thick, >-] 
+            (shortfinal) -- (touchdown);
+            \draw[ultra thick, ->] 
+            (touchdown) -- (rollout);
+
+            % nodes
+            \node[right] at (approach) {\textbf{1.}};
+            \node[right] at (break) {\textbf{2.}};
+            \node[left] at (downwind) {\textbf{3.}};
+            \node[left] at (base) {\textbf{4.}};
+            \node[below] at (final) {\textbf{5.}};
+            \node[left] at (shortfinal) {\textbf{6.}};
+            \node[left=2mm] at (touchdown) {\textbf{7.}};
+            \node[left=2mm] at (rollout) {\textbf{8.}};
+
+        \end{tikzpicture}
         \caption{Overhead Pattern}
     }
+
     \begin{subitemize}
         \item \textbf{Flightpath} --- shift \textbf{300-500 ft} down runway
         \item \textbf{Flare} --- gently pull back on stick
         \item \textbf{Throttle} --- \textbf{Idle}
         \item \textbf{AoA} --- \textbf{< 13 deg}
-        \item \textbf{Touchdown}
     \end{subitemize}}
-    \blueitem{Roll-Out}{Maintain nose high position for aerobraking until 100 kts
+    \blueitem{Touchdown}{}
+    \blueitem{Landing Roll}{Maintain nose-high position for \underline{aerobraking} until 100 kts
     \begin{subitemize}
-        \item \textbf{Aoa} --- \textbf{< 13 deg}
+        \item \textbf{AoA} --- \textbf{< 13 deg}
         \item \textbf{Speedbrakes} --- \textbf{Open}
         \item \textbf{Brakes} --- \textbf{As Required}
     \end{subitemize}}
+    \blueitem{Taxi}{
+    \begin{subitemize}
+        \item \textbf{NWS} --- \textbf{Engaged}
+    \end{subitemize}}
 \end{checklistenumerate}
+
+\notebox{
+    \textbf{\Cref{fig:proc:landing:overhead} is illustrated with extended approach and downwind sections for clarity}
+}
+
+\clearpage
 
 \subsection{POST-LANDING}
 \begin{checklistenumerate}

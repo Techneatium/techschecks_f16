@@ -82,15 +82,28 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- SMS --- GUN CONTROLS}}
-        \begin{itemize}
-            \item show sms gun page
-            \item label each of the relevant controls explained in text
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={79},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- SMS --- GUN CONTROLS}}
+    %     \begin{itemize}
+    %         \item show sms gun page
+    %         \item label each of the relevant controls explained in text
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{MFD SMS Gun Controls}
 \end{figure}
 
@@ -119,7 +132,7 @@
         \end{itemize}
     \end{subitemize}
     
-    Reference symbology in \cref{fig:aaweap:m61:eegslvl2} and \cref{fig:aaweap:m61:funnelpipper}
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl2} and \cref{fig:aaweap:m61:eegsfunnel}
     }
     \blueitem{Level III / IV}{Intermediate modes during radar lock acquisition}
     \blueitem{Level V}{Operating mode with radar lock. Level II symbology is retained with additional elements
@@ -153,67 +166,167 @@
         \end{itemize}
     \end{subitemize}
     
-    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aaweap:m61:funnelpipper}
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aaweap:m61:eegspipper}
     }
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD --- EEGS LVL II}}
-        \begin{itemize}
-            \item show EEGS LVL II symbology of the HUD
-            \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-            \begin{itemize}
-                \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
-                \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
+
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={80},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- EEGS LVL II}}
+    %     \begin{itemize}
+    %         \item show EEGS LVL II symbology of the HUD
+    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+    %         \begin{itemize}
+    %             \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
+    %             \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{EEGS LVL II HUD Symbology}
     \label{fig:aaweap:m61:eegslvl2}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD --- EEGS LVL V}}
-        \begin{itemize}
-            \item show EEGS LVL V symbology of the HUD
-            \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-            \begin{itemize}
-                \item more necessary here since lvl V relies on having a lock
-                \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
+
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={84},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- EEGS LVL V}}
+    %     \begin{itemize}
+    %         \item show EEGS LVL V symbology of the HUD
+    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+    %         \begin{itemize}
+    %             \item more necessary here since lvl V relies on having a lock
+    %             \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{EEGS LVL V HUD Symbology}
     \label{fig:aaweap:m61:eegslvl5}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][50mm][t]{100mm}
-        \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
-        \begin{itemize}
-            \item show both funnel and pipper as subfigs
-            \item include target outline in firing position
-            \item clearly mark level 5 pipper symbology elements
-            \begin{itemize}
-                \item batr
-                \item range cue
-                \item aspect
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{EEGS Funnel \& Level V Pipper}
-    \label{fig:aaweap:m61:funnelpipper}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[minimum width=\linewidth] (blanker) at (0,0) {};
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                scale=1.25,
+                page={2},
+            ]{F16_aaweapons_v10_4Items.pdf}
+        };
+
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (20,10) {EEGS GUN \\ FUNNEL};
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (brst) at (20,32.5) {BORESIGHT \\ CROSS};
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (mgrs) at (20,-20) {MGRS \\ LINES};
+
+        \draw[->, color2]
+        (funnel.west) -- ++(-12.5,0);
+        \draw[->, color2]
+        (brst.west) -- ++(-15,0);
+        \draw[->, color2]
+        (mgrs.west) -- ++(-15,0) -- +(-2.5,-5);
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][50mm][t]{100mm}
+    %     \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
+    %     \begin{itemize}
+    %         \item show both funnel and pipper as subfigs
+    %         \item include target outline in firing position
+    %         \item clearly mark level 5 pipper symbology elements
+    %         \begin{itemize}
+    %             \item batr
+    %             \item range cue
+    %             \item aspect
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{EEGS Funnel}
+    \label{fig:aaweap:m61:eegsfunnel}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (pipper) at (0,0) {
+            \includegraphics[
+                scale=1.25,
+                page={99},
+            ]{F16_aaweapons_v11.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark1)at(pipper.south){EEGS LVL 5 PIPPER};
+
+        \node[draw, rounded corners, left=10mm of pipper] (tsymb) {
+            \includegraphics[
+                scale=1.25,
+                page={101},
+            ]{F16_aaweapons_v11.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark2)at(tsymb.south){T-SYMBOL};
+
+        \node[draw, rounded corners, left=10mm of tsymb] (tdes) {
+            \includegraphics[
+                scale=1.25,
+                page={100},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark3)at(tdes.south){TARGET DESIGNATOR};
+
+        \path[] (tdes) -- node[pos=0.5, anchor=center]{\textbf{+}}(tsymb);
+        \path[] (tsymb) -- node[pos=0.5, anchor=center]{\textbf{=}}(pipper);
+    \end{tikzpicture}
+    \caption{EEGS Level V Pipper}
+    \label{fig:aaweap:m61:eegspipper}
 \end{figure}
 
 \marginfigeometry
@@ -250,16 +363,32 @@
     \blueitem{Acquire Firing Solution}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{EEGS Funnel}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show funnel on target
-                    \item potentially reuse from above
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{EEGS Funnel}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={2},
+                ]{F16_aaweapons_v10_4Items.pdf}
+            };
+        \end{tikzpicture}
+        % \includegraphics[
+        %     width=\marginparwidth,
+        %     page={2},
+        % ]{F16_aaweapons_v10_4Items.pdf}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{EEGS Funnel}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show funnel on target
+        %             \item potentially reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{EEGS Funnel \& MGRS Lines. Target is approx. aligned with funnel.}
     }
 
     \smallskip
@@ -270,20 +399,20 @@
         \item \textbf{Funnel Lines} \dotfill \textbf{On target wingtips}
     \end{subenumerate}
     
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{MGRS Lines}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show MGRS line on target
-                    \item not sure if this fig is necessary
-                    \item maybe could modify fig from above
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{MGRS Lines}
-    }
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][40mm][t]{\marginparwidth}
+    %             \center{\textbf{MGRS Lines}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show MGRS line on target
+    %                 \item not sure if this fig is necessary
+    %                 \item maybe could modify fig from above
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{MGRS Lines}
+    % }
     Using MGRS lines
     
     \begin{subenumerate}
@@ -296,6 +425,14 @@
     \end{subenumerate}}
 \end{checklistenumerate}
 
+\notebox{
+    \small
+    \textbf{Exact position of target relative to funnel lines dependent on funnel width and target wingspan, 
+    see \Cref{subsec:m61:eegsfunneladjust} for funnel adjustment.}
+}
+
+\clearpage
+
 \subsubsection{EEGS LVL V EMPLOYMENT --- RADAR}
 \label{subsec:m61:eegslvl5}
 \begin{checklistenumerate}
@@ -306,11 +443,6 @@
         \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
     \end{subitemize}}
-\end{checklistenumerate}
-
-\clearpage
-
-\begin{checklistenumerate}[resume]
     \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
 
     \begin{subenumerate}
@@ -320,15 +452,26 @@
     \blueitem{Acquire Firing Solution}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{EEGS Level V Pipper}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show pipper on target
-                    \item potentially reuse from above
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={88},
+                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{EEGS Level V Pipper}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show pipper on target
+        %             \item potentially reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{EEGS Level V Pipper}
     }
     \begin{subenumerate}
@@ -363,19 +506,19 @@
 
 \subsection{AIM-9 SIDEWINDER}
 \label{subsec:aim9}
-\begin{figure}[htbp]
-    \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{AIM-9 OVERVIEW}}
-        \begin{itemize}
-            \item Some kind of overview figure
-            \item maybe showing side on profile of the weapon?
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{AIM-9 Sidewinder}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \fbox{
+%     \begin{minipage}[t][75mm][t]{100mm}
+%         \center{\large\textbf{AIM-9 OVERVIEW}}
+%         \begin{itemize}
+%             \item Some kind of overview figure
+%             \item maybe showing side on profile of the weapon?
+%         \end{itemize}
+%     \end{minipage}
+%     }
+%     \caption{AIM-9 Sidewinder}
+% \end{figure}
 
 \begin{tcoloritemize}
     \blueitem{AIM-9 \break Sidewinder}{
@@ -476,15 +619,28 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- SMS --- AIM-9 CONTROLS}}
-        \begin{itemize}
-            \item show sms aim-9 page
-            \item label each of the relevant controls explained in text
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={91},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- SMS --- AIM-9 CONTROLS}}
+    %     \begin{itemize}
+    %         \item show sms aim-9 page
+    %         \item label each of the relevant controls explained in text
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{MFD SMS AIM-9 Controls}
 \end{figure}
 
@@ -508,7 +664,7 @@
         \item \textbf{Dynamic Aiming Cross} --- HMD line-of-sight
     \end{subitemize}
 
-    Reference symbology in \cref{fig:aaweap:aim9:hudhmdsymb}
+    Reference symbology in \cref{fig:aaweap:aim9:hudsymb}
 
     \begin{subitemize}
         \item \textbf{DLZ} --- \textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
@@ -522,26 +678,58 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
-        \begin{itemize}
-            \item show hud/hmd with aim-9 in use 
-            \item clearly indicate missile diamond/reticle and dynamic aiming cross
-            \item maybe show several versions?
-            \begin{itemize}
-                \item 1 with missile reticle from HUD?
-                \item 1 with missile diamond latchedon aiming cross?
-                \item 1 with diamond on target?
-                \item 1 with \textbf{X}?
-            \end{itemize}
-            or some subset of those?
-            \item can reuse these in marginfigs below?
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{HUD/HMD AIM-9 Symbology}
-    \label{fig:aaweap:aim9:hudhmdsymb}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={92},
+            ]{F16_aaweapons_v11.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
+    %     \begin{itemize}
+    %         \item show hud/hmd with aim-9 in use 
+    %         \item clearly indicate missile diamond/reticle and dynamic aiming cross
+    %         \item maybe show several versions?
+    %         \begin{itemize}
+    %             \item 1 with missile reticle from HUD?
+    %             \item 1 with missile diamond latchedon aiming cross?
+    %             \item 1 with diamond on target?
+    %             \item 1 with \textbf{X}?
+    %         \end{itemize}
+    %         or some subset of those?
+    %         \item can reuse these in marginfigs below?
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{AIM-9 HUD Symbology}
+    \label{fig:aaweap:aim9:hudsymb}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=50mm,
+                page={3},
+            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        };
+
+        \node[] at (0,20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    \caption{AIM-9 HMD Symbology}
+    \label{fig:aaweap:aim9:hmdsymb}
 \end{figure}
 
 \marginfigeometry
@@ -588,16 +776,27 @@
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 Track}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show missile reticle
-                    \item show diamond latched to symbolic target (outline)
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-9 Track}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={105},
+                ]{F16_aaweapons_v11.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 Track}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show missile reticle
+        %             \item show diamond latched to symbolic target (outline)
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{AIM-9 missile diamond latched to target, indicating lock.}
     }
     \begin{subenumerate}
         \item \textbf{Missile Reticle} \dotfill \textbf{On-Target}
@@ -631,29 +830,72 @@
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 HMD Track}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show missile diamond \& dynamic aiming cross
-                    \item show diamond latched to symbolic target?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-9 HMD Track}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.75,
+                    page={2},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 HMD Track}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show missile diamond \& dynamic aiming cross
+        %             \item show diamond latched to symbolic target?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{AIM-9 seeker follows HMD aiming cross}
     }
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 HMD LOS}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show missile diamond out of HMD limits
-                    \item can probably reuse from above
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{HMD beyond seeker limits}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.5,
+                    page={39},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 HMD Track}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show missile diamond \& dynamic aiming cross
+        %             \item show diamond latched to symbolic target?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{AIM-9 HMD track}
+    }
+    \marginpar{
+        \captionsetup{type=figure}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.75,
+                    page={6},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 HMD LOS}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show missile diamond out of HMD limits
+        %             \item can probably reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{X indicates HMD beyond AIM-9 seeker limits}
     }
     \begin{subenumerate}
         \item Maneuver to place target within AIM-9 seeker limits
@@ -675,20 +917,20 @@
     \end{subenumerate}}
 \end{checklistenumerate}
 
-\begin{figure}[htbp]
-    \centering
-    \fbox{
-    \begin{minipage}[t][40mm][t]{75mm}
-        \center{\large\textbf{AIM-9 Envelope}}
-        \begin{itemize}
-            \item show overhead missile envelope around symbolic target?
-            \item this is really a stretch goal \dots
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{AIM-9 Firing envelope}
-    \label{fig:aaweap:aim9:envelope}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \fbox{
+%     \begin{minipage}[t][40mm][t]{75mm}
+%         \center{\large\textbf{AIM-9 Envelope}}
+%         \begin{itemize}
+%             \item show overhead missile envelope around symbolic target?
+%             \item this is really a stretch goal \dots
+%         \end{itemize}
+%     \end{minipage}
+%     }
+%     \caption{AIM-9 Firing envelope}
+%     \label{fig:aaweap:aim9:envelope}
+% \end{figure}
 
 \clearpage
 
@@ -708,17 +950,32 @@
     \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{HMD BORE Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show HMD BORE circle
-                    \item show symbolic target (outline)
-                    \item can reuse from radar chapter
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{HMD BORE Symbology}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \draw[color2, fill=color2!20, dashed] 
+            (0,-6) circle [x radius=8, y radius=11.5];
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (bore) at (0,0) {
+                \includegraphics[
+                    scale=0.5,
+                    page={75},
+                ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{HMD BORE Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show HMD BORE circle
+        %             \item show symbolic target (outline)
+        %             \item can reuse from radar chapter
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{HMD BORE scan zone}
     }
     
     \medskip
@@ -734,18 +991,45 @@
     Can also lock from CRM, \textbf{see \Cref{subsec:crm}}
     }
     \blueitem{AIM-9 Track Acquisition}{
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \centering
+    %     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+    %         >={Latex[round]}
+    %         ]
+    %         \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+    %             \includegraphics[
+    %                 scale=1.5,
+    %                 page={93},
+    %             ]{F16_aaweapons_v11.pdf}
+    %         };
+    %     \end{tikzpicture}
+    %     % \caption{AIM-9 missile diamond latched to target, indicating lock.}
+    % }
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 Radar Track}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show radar target designator box
-                    \item show diamond latched to target designator box
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-9 Radar Track}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={97},
+                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            };
+        \end{tikzpicture}
+        
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 Radar Track}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show radar target designator box
+        %             \item show diamond latched to target designator box
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{AIM-9 missile diamond and target designator box latched to target, indicating radar and seeker lock.}
     }
     \begin{subenumerate}
         \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
@@ -755,16 +1039,27 @@
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][60mm][t]{\marginparwidth}
-                \center{\textbf{AIM-9 DLZ}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show DLZ and indicate in-range symbology
-                    \item can probably just reuse from aim-120
-                    \item maybe link to explanation of dlz?
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=2.5,
+                    page={104},
+                ]{F16_aaweapons_v11.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-9 DLZ}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show DLZ and indicate in-range symbology
+        %             \item can probably just reuse from aim-120
+        %             \item maybe link to explanation of dlz?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
         \caption{In-range DLZ}
     }
     \begin{subenumerate}
@@ -882,15 +1177,28 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{MFD --- SMS --- AIM-120 CONTROLS}}
-        \begin{itemize}
-            \item show sms aim-120 page
-            \item label each of the relevant controls explained in text
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={7},
+            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- SMS --- AIM-120 CONTROLS}}
+    %     \begin{itemize}
+    %         \item show sms aim-120 page
+    %         \item label each of the relevant controls explained in text
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{MFD SMS AIM-120 Controls}
 \end{figure}
 
@@ -949,16 +1257,97 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][50mm][t]{100mm}
-        \center{\large\textbf{DLZ/ASEC/ASC}}
-        \begin{itemize}
-            \item show dlz with stuff from text labeled
-            \item show combined asc/asec symbology
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{Missile DLZ and ASC/ASEC Symbology}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    % height=75mm,
+                    scale=0.5,
+                    page={16},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+        \end{tikzpicture}
+        \caption{pre-launch}
+        \label{fig:aaweap:aim120:dlz:pre}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    % height=75mm,
+                    scale=0.5,
+                    page={20},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+
+            \node[] at (0,-10) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        \end{tikzpicture}
+        \caption{post-launch}
+        \label{fig:aaweap:aim120:dlz:post}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    % height=75mm,
+                    scale=0.5,
+                    page={24},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+        \end{tikzpicture}
+        \caption{post-active}
+        \label{fig:aaweap:aim120:dlz:act}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][50mm][t]{100mm}
+    %     \center{\large\textbf{DLZ/ASEC/ASC}}
+    %     \begin{itemize}
+    %         \item show dlz with stuff from text labeled
+    %         \item show combined asc/asec symbology
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{Missile DLZ and Symbology}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                % height=75mm,
+                scale=0.5,
+                page={10},
+            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][50mm][t]{100mm}
+    %     \center{\large\textbf{DLZ/ASEC/ASC}}
+    %     \begin{itemize}
+    %         \item show dlz with stuff from text labeled
+    %         \item show combined asc/asec symbology
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{Missile ASC/ASEC Symbology}
 \end{figure}
 
 \begin{tcoloritemize}
@@ -982,34 +1371,120 @@
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][75mm][t]{100mm}
-        \center{\large\textbf{HUD --- AIM-120 Symbology}}
-        \begin{itemize}
-            \item show hud in a-a mode, aim-120 selected
-            \item label each of the relevant symbology elements explained in text
-            \item probably makes sense to have one big figure with all the elements in it just to show what the hud looks like
-            \item label additional stuff not mentioned in text
-            \begin{itemize}
-                \item range/bearing information etc.
-            \end{itemize}
-        \end{itemize}
-    \end{minipage}
-    }
-    \caption{A-A AIM-120 HUD}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={11},
+            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- AIM-120 Symbology}}
+    %     \begin{itemize}
+    %         \item show hud in a-a mode, aim-120 selected
+    %         \item label each of the relevant symbology elements explained in text
+    %         \item probably makes sense to have one big figure with all the elements in it just to show what the hud looks like
+    %         \item label additional stuff not mentioned in text
+    %         \begin{itemize}
+    %             \item range/bearing information etc.
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{A-A AIM-120 HUD (post-launch)}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \fbox{
-    \begin{minipage}[t][30mm][t]{100mm}
-        \center{\large\textbf{MFD --- Post-Launch Symbology}}
-        \begin{itemize}
-            \item show symbology elements side-by-side
-            \item \url{https://forum.dcs.world/topic/279555-purple-fcr-symbology/}
-        \end{itemize}
-    \end{minipage}
-    }
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={17},
+            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    \caption{A-A AIM-120 FCR post-launch. Note the ``tail'' on the track.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={29},
+        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        \caption{Search}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={30},
+        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        \caption{Track}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={31},
+        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        \caption{System}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={32},
+        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        \caption{Cursor}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={33},
+        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        \caption{Bugged}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={34},
+        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        \caption{post-launch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.75,
+            page={35},
+        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        \caption{missile timeout}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][30mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- Post-Launch Symbology}}
+    %     \begin{itemize}
+    %         \item show symbology elements side-by-side
+    %         \item \url{https://forum.dcs.world/topic/279555-purple-fcr-symbology/}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
     \caption{Post-Launch Symbology}
 \end{figure}
 
@@ -1148,16 +1623,26 @@
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{AIM-120 DLZ}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show in-range dlz
-                    \item maybe also show asc inside asec?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-120 DLZ}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.5,
+                    page={16},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][50mm][t]{\marginparwidth}
+        %         \center{\textbf{AIM-120 DLZ}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show in-range dlz
+        %             \item maybe also show asc inside asec?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{In-range DLZ}
     }
     \begin{subenumerate}
         \item \textbf{ASC} \dotfill within \textbf{ASEC}
@@ -1191,22 +1676,142 @@
     \blueitem{Track Acquisition}{For demonstration we will use \textbf{CRM-TWS Submode} 
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][60mm][t]{\marginparwidth}
-                \center{\textbf{System / Bugged Target Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show system / bugged target symbology
-                    \item maybe format as a diagram/flow chart?
-                    \item maybe combine into one fig wth search/track target fig?
-                    \item can reuse from apg68 chapter
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{System / Bugged Target Symbology}
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+            ] (track) at (0,0) {
+                \includegraphics[
+                    scale=0.5,
+                    page={30},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+            \node[
+                draw, 
+                rounded 
+                corners, 
+                minimum width=\marginparwidth,
+                below=17.5 of track,
+            ] (system) {
+                \includegraphics[
+                    scale=0.5,
+                    page={31},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=12.5 of system,
+            ] (cursor) {
+                \includegraphics[
+                    scale=0.5,
+                    page={32},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of cursor,
+            ] (bugged) {
+                \includegraphics[
+                    scale=0.5,
+                    page={33},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of bugged,
+            ] (dlz) {
+                \includegraphics[
+                    scale=0.5,
+                    page={16},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of dlz,
+            ] (post) {
+                \includegraphics[
+                    scale=0.5,
+                    page={34},
+                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            };
+
+            % lines
+            \draw[->]
+            (track) -- node[right, align=left, font=\small] {\textbf{TMS FWD} \\ \footnotesize\textbf{(repeat for all} \\ \footnotesize\textbf{desired targets)}}(system);
+            \draw[>-]
+            ($(track.south)!0.5!(system.north) + (-5,0)$) -- ++(0,2) arc (180:0:2.5) -- ++(0,-4) arc (360:180:2.5) -- node[left, pos=1, align=right, font=\small] {\ref{subsec:aim120:multi:sysacq}} ++(0,2);
+            \draw[->]
+            (system) -- node[right, align=left, font=\small] {\textbf{Slew Cursor} \\ \textbf{near target}}(cursor);
+            \path (system) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:acq}}(cursor);
+            \draw[->]
+            (cursor) -- node[right, align=left, font=\small] {\textbf{TMS FWD}}(bugged);
+            \path (cursor) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:tmsfwd}}(bugged);
+            \draw[->]
+            (bugged) -- node[right, align=left, font=\small] {\textbf{In-range}}(dlz);
+            \draw[->]
+            (dlz) -- node[right, align=left, font=\small] {\textbf{WPN REL}}(post);
+            \path (dlz) -- node[left, align=right, font=\small] {\ref{subsec:aim120:multi:wpnrel}}(post);
+
+            % labels
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labeltrack) at (track.north west) {Track \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelsystem) at (system.north west) {System \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelcursor) at (cursor.north west) {Cursor \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labeldlz) at (dlz.north west) {In-Range \\ DLZ};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelpost) at (post.north west) {AIM-120 \\ Launched};
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{System / Bugged Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show system / bugged target symbology
+        %             \item maybe format as a diagram/flow chart?
+        %             \item maybe combine into one fig wth search/track target fig?
+        %             \item can reuse from apg68 chapter
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{Multi-target workflow}
     }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under \textbf{Acquisition cursor}
-        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \label{subsec:aim120:multi:sysacq} \textbf{TMS} \dotfill \textbf{Forward}
         \item \textbf{Target} \dotfill verify \textbf{System target}
     \end{subenumerate}
     
@@ -1224,25 +1829,25 @@
     \blueitem{Bug Acquisition}{
     \begin{subenumerate}
         \item \label{subsec:aim120:multi:acq}\textbf{Target} \dotfill under \textbf{Acquisition cursor}
-        \item \textbf{TMS} \dotfill \textbf{Forward}
+        \item \label{subsec:aim120:multi:tmsfwd}\textbf{TMS} \dotfill \textbf{Forward}
         \item \textbf{Target} \dotfill verify \textbf{Bugged}
     \end{subenumerate}
     
     Can cycle bugged target with \textbf{TMS Right}}
     \blueitem{Fire Missile}{
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{AIM-120 DLZ}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show in-range dlz
-                    \item maybe also show asc inside asec?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{AIM-120 DLZ}
-    }
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][50mm][t]{\marginparwidth}
+    %             \center{\textbf{AIM-120 DLZ}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show in-range dlz
+    %                 \item maybe also show asc inside asec?
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{AIM-120 DLZ}
+    % }
     \begin{subenumerate}
         \item \textbf{ASC} \dotfill within \textbf{ASEC}
         \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}

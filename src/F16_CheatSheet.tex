@@ -38,42 +38,42 @@
 
 % Determine which files included in output
 \includeonly{
-	./sections/F16_titlepage,
-    ./sections/F16_tableofcontents,
-	./sections/F16_procedures,
-	./sections/F16_systems,
-	./sections/F16_apg68fcr,
-	./sections/F16_sensors,
-	./sections/F16_a-gweapons,
-	./sections/F16_a-aweapons,
-	./sections/F16_appendix,
+	sections/F16_titlepage,
+    sections/F16_tableofcontents,
+	sections/F16_procedures,
+	sections/F16_systems,
+	sections/F16_apg68fcr,
+	sections/F16_sensors,
+	sections/F16_a-gweapons,
+	sections/F16_a-aweapons,
+	sections/F16_appendix,
 }
 
 \begin{document}
-	\include{./sections/F16_titlepage}
+	\include{sections/F16_titlepage}
 
 	\frontmatter
 	\pagestyle{empty}
-	\include{./sections/F16_tableofcontents}
+	\include{sections/F16_tableofcontents}
 	
 	% restart page counter, pagenumber styling
 	\mainmatter
 	% reactivate header and footer
 	\pagestyle{body}
 
-	\include{./sections/F16_procedures}
+	\include{sections/F16_procedures}
 
-	\include{./sections/F16_systems}
+	\include{sections/F16_systems}
 
-	\include{./sections/F16_apg68fcr}
+	\include{sections/F16_apg68fcr}
 
-	\include{./sections/F16_sensors}
+	\include{sections/F16_sensors}
 
-	\include{./sections/F16_a-gweapons}
+	\include{sections/F16_a-gweapons}
 
-	\include{./sections/F16_a-aweapons}
+	\include{sections/F16_a-aweapons}
 
-	\include{./sections/F16_appendix}
+	\include{sections/F16_appendix}
 
 \iftoggle{print}{
 	\pagestyle{superempty}

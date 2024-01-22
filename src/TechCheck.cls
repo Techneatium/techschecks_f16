@@ -31,7 +31,7 @@
 
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
-\graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
+\graphicspath{{../images/}} % put figures inside folder 'images'  in same folder as .tex
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
 \RequirePackage{siunitx} % SI units
 \RequirePackage{tikz} % shapes, figures

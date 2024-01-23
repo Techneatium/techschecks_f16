@@ -1,0 +1,458 @@
+\subsection{CRM}
+\label{subsec:crm}
+
+\begin{tcoloritemize}
+    \blueitem{CRM}{
+        \textbf{C}ombined \textbf{R}adar \textbf{M}ode --- Combines A-A search submodes:
+
+        \begin{subitemize}
+            \item \textbf{RWS} --- \textbf{R}ange \textbf{W}hile \textbf{S}earch,
+            see \Cref{subsec:rws}
+            \item \textbf{TWS} --- \textbf{T}rack \textbf{W}hile \textbf{S}can,
+            see \Cref{subsec:tws}
+        \end{subitemize}
+
+        Selected by default on FCR start-up
+    }
+    \blueitem{Change CRM \break Submode}{
+    \begin{subitemize}
+        \item \textbf{OSB 2} \dotfill \textbf{Press}
+        \item Or \textbf{TMS} \dotfill \textbf{Right Long}
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm,x=1mm, y=1mm, very thick,
+        >={Latex[round]}
+        ]
+        
+        \path[
+            fill=color2!20,
+            rounded corners,
+        ] (-50,90) -- (50,90) -- (50,45) -- (-50,45) -- cycle;
+        \node[
+            anchor=north west,
+        ](mark)at(-50,90){\scriptsize \blue{Supports AIM-120 Launch}};
+        \path[
+            fill=color2!40,
+            rounded corners,
+        ] (-47.5,85) -- (0,85) -- (0,90) -- (50,90) -- (50,75) -- (-47.5,75) -- cycle;
+        \node[
+            anchor=north east,
+        ](mark)at(50,90){\scriptsize \blue{RWR Launch Warning}};
+        % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
+        \node[
+            hyperref node=subsec:rws,
+            rectangle,
+            rounded corners,
+            minimum width=15mm,
+            minimum height=15mm,
+            draw,
+        ](rws)at(0,0){\blue{RWS}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+            fill=white,
+        ](sam)at(0,50){\textbf{SAM}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+            fill=white,
+        ](dtt)at(-32.5,65){\textbf{DTT}};
+        \node[
+            hyperref node=subsec:tws,
+            rectangle,
+            rounded corners,
+            minimum width=15mm,
+            minimum height=15mm,
+            draw,
+        ](tws)at(32.5,0){\blue{TWS}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+            fill=white,
+        ](systgt)at(32.5,20){\textbf{System Tgt}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+            fill=white,
+        ](cursortgt)at(32.5,35){\textbf{Cursor Tgt}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+            fill=white,
+        ](bug)at(32.5,50){\textbf{Bugged}};
+        \node[
+            hyperref node=subsec:stt,
+            rectangle, 
+            rounded corners,
+            minimum width=90mm,
+            minimum height=7.5mm,
+            draw, 
+            fill=white,
+        ](stt)at(0,80){\blue{STT}};
+        
+        % Lines
+        \draw [->]
+            (rws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (sam);
+        \draw [<->]
+            (rws) -- node[pos=0.5, above]{\scriptsize\textbf{TMS RIGHT}}node[pos=0.5, below]{\scriptsize\textbf{(long)}} (tws);
+        \draw [->, rounded corners]
+            (sam) -| node[pos=0.25, above]{\scriptsize\textbf{TMS FWD}}node[pos=0.25, below]{\scriptsize\textbf{(2nd Tgt)}} (dtt);
+        \draw [->]
+            (tws) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (systgt);
+        \draw [->]
+            (systgt) -- node[pos=0.5, left]{\scriptsize\textbf{Cursor Over}} (cursortgt);
+        \draw [->]
+            (cursortgt) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bug);
+        \draw [->]
+            let
+                \p1=(dtt.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(sam.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}}node[pos=0.5, right]{\scriptsize\textbf{(1st Tgt)}} (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(bug.north),
+                \p2=(stt.south)
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (\x1,\y2);
+    \end{tikzpicture}
+    \caption{\textbf{CRM Radar Modes Overview}}
+    \label{fig:crmoverview}
+\end{figure}
+
+\clearpage
+
+\subsubsection{A-A SEARCH SCAN PATTERN}
+
+\begin{tcoloritemize}
+    \blueitem{Radar Gimbal Limits}{
+    APG-68 is mechanically scanned on 2 axis gimbal
+
+    \begin{subitemize}
+        \item \textbf{Azimuth} --- \pm60 deg (120 deg coverage)
+        \item \textbf{Vertical} --- \pm60 deg (120 deg coverage)
+    \end{subitemize}}
+    \blueitem{Azimuth Scan Pattern}{
+    \begin{subitemize}
+        \item \textbf{Azimuth search patterns}
+        \begin{itemize}
+            \item \textbf{A6} --- \pm60 deg
+            \item \textbf{A3} --- \pm30 deg (centered on cursor)
+            \item \textbf{A1} --- \pm10 deg (centered on cursor)
+        \end{itemize}
+        \item \textbf{Cycled via}
+        \begin{itemize}
+            \item \textbf{OSB 18} cycles available azimuth patterns
+            \item Walking cursor off side of FCR display in RWS cycles A6/A3
+        \end{itemize}
+        \item \textbf{TWS \& DTT modes use a special \pm25 deg, 3 bar scan pattern}
+        \begin{itemize}
+            \item \textbf{A2} --- \pm25 deg (centered on cursor / target)
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{Bar Scan Pattern}{
+    Elevation scan volume controlled by selecting number of ``bars'' (horizontal sweeps)
+    \begin{subitemize}
+        \item \textbf{B4} / \textbf{B2} / \textbf{B1} --- cycled via \textbf{OSB 17}
+        \item \textbf{B3} --- selected by TWS \& DTT modes
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[
+            anchor=east
+        ] (mfd) at (0,0) {
+            \includegraphics[
+                height=15mm,
+                page={11},
+                angle=-90,
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \coordinate (offset) at (-3.5,0);
+        \coordinate (center) at ($(offset)+(0:38)$);
+
+        \draw[]
+        (offset) -- node[pos=1, above right, font=\small\bfseries] {A6} +(60:30) arc (60:-60:30) -- cycle;
+        \draw[]
+        (offset) -- node[pos=1, above right, font=\small\bfseries] {A3} +(30:32) arc (30:-30:32) -- cycle;
+        \draw[]
+        (offset) -- +(25:34) arc (25:-25:34) -- node[pos=0, right, font=\small\bfseries] {A2} cycle;
+        \draw[]
+        (offset) -- node[pos=1, right, font=\small\bfseries] {A1} +(10:36) arc (10:-10:36) -- cycle;
+        \draw[color2, fill=color2!20]
+        (offset) -- +(1.5:38) arc (1.5:-1.5:38) -- cycle;
+
+        \node[anchor=west, align=left, font=\small\bfseries, color2] at (center) {BEAMWIDTH};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{Radar Azimuth Scan}}
+    %     \begin{itemize}
+    %         \item Top-down view of ``pie'' diagram
+    %         \item Show various scan patterns as smaller slices of ``pie''
+    %         \begin{itemize}
+    %             \item maybe all centered?
+    %             \item maybe next to each other?
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{
+        FCR azimuth scan \& limits. 
+        Note that the A6 pattern scans the entire azimuth range of the radar.
+        The varying radii for the different azimuth settings are for illustrative purposes.
+    }
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[
+            anchor=east
+        ] (mfd) at (0,0) {
+            \includegraphics[
+                width=15mm,
+                page={12},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \coordinate (offset) at (-2.5,-1);
+        \coordinate (4bar) at ($(offset) + (36:35)$);
+        \coordinate (3bar) at ($(offset) + (12:35)$);
+        \coordinate (2bar) at ($(offset) + (-12:35)$);
+        \coordinate (1bar) at ($(offset) + (-36:35)$);
+
+        \node[font=\small\bfseries] at ($(4bar)+(5,2.5)$) {4B};
+        \node[font=\small\bfseries] at ($(3bar)+(5,0)$) {3B};
+        \node[font=\small\bfseries] at ($(2bar)+(5,0)$) {2B};
+        \node[font=\small\bfseries] at ($(1bar)+(5,-2.5)$) {1B};
+
+        \draw[]
+        (offset) -- node[pos=1, above, font=\small\bfseries] {+/- 60 deg} +(60:35) arc (60:-60:35) -- cycle;
+        \draw[color2, fill=color2!20]
+        (offset) -- +(41.75:35) arc (41.75:31.25:35) -- cycle;
+        \draw[color2, fill=color2!20]
+        (offset) -- +(16.65:35) arc (16.65:7.35:35) -- cycle;
+        \draw[color2, fill=color2!20]
+        (offset) -- +(-8.45:35) arc (-8.45:-15.55:35) -- cycle;
+        \draw[color2, fill=color2!20]
+        (offset) -- +(-33.55:35) arc (-33.55:-38.45:35) -- cycle;
+
+        \coordinate (4boffset) at ($(4bar) + (15,2.5)$);
+        \coordinate (3boffset) at ($(3bar) + (15,0)$);
+        \coordinate (2boffset) at ($(2bar) + (15,0)$);
+        \coordinate (1boffset) at ($(1bar) + (15,-2.5)$);
+
+        % 4bar
+        \filldraw[color2!20] ($(4boffset) + (22.5,3.75)$) circle (2.5);
+
+        \draw[->, rounded corners, ultra thick,]
+        (4boffset)
+        -- ($(4boffset) + (0,3.75)$)  -- ($(4boffset) + (20,3.75)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(4boffset) + (20,3.75)$)
+        -- ($(4boffset) + (40,3.75)$) -- ++(0,-2.5)
+        -- ++(-39,0) -- ++(0, -2.5)
+        -- ++(39,0) -- ($(4boffset) + (+40,-3.75)$)
+        -- ($(4boffset) + (20,-3.75)$);
+        \draw[rounded corners, ultra thick,]
+        ($(4boffset) + (20,-3.75)$)
+        -- ($(4boffset) + (0,-3.75)$) 
+        -- (4boffset);
+
+        \draw[dashed, rounded corners=5]
+        ($(4boffset) + (-2.5,6.25)$) -- ($(4boffset) + (42.5,6.25)$)
+        -- ($(4boffset) + (42.5,-6.25)$) -- ($(4boffset) + (-2.5,-6.25)$)
+        -- cycle;
+
+        \draw[color2, ultra thick] ($(4boffset) + (22.5,3.75)$) circle (2.5);
+
+        % 3bar
+        \draw[->, rounded corners, ultra thick,]
+        ($(3boffset) + (2.5,0)$) -- (3boffset)
+        -- ($(3boffset) + (0,2.5)$) -- ($(3boffset) + (20,2.5)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(3boffset) + (20,2.5)$)
+        -- ($(3boffset) + (40,2.5)$) -- ++(0,-2.5)
+        -- ($(3boffset) + (20,0)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(3boffset) + (20,0)$)
+        -- ($(3boffset) + (0,0)$) -- ++(0, -2.5)
+        -- ($(3boffset) + (+20,-2.5)$);
+        \draw[rounded corners, ultra thick,]
+        ($(3boffset) + (+20,-2.5)$)
+        -- ($(3boffset) + (+40,-2.5)$) -- ++(0,2.5)
+        -- ($(3boffset) + (2.5,0)$);
+
+        \draw[dashed, rounded corners=5]
+        ($(3boffset) + (-2.5,5)$) -- ($(3boffset) + (42.5,5)$)
+        -- ($(3boffset) + (42.5,-5)$) -- ($(3boffset) + (-2.5,-5)$)
+        -- cycle;
+
+        % 2bar
+        \draw[->, rounded corners, ultra thick,]
+        (2boffset)
+        -- ($(2boffset) + (0,1.25)$) -- ($(2boffset) + (20,1.25)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(2boffset) + (20,1.25)$)
+        -- ($(2boffset) + (40,1.25)$)
+        -- ($(2boffset) + (40,-1.25)$) -- ($(2boffset) + (20,-1.25)$);
+        \draw[rounded corners, ultra thick,]
+        ($(2boffset) + (20,-1.25)$)
+        -- ($(2boffset) + (0,-1.25)$)
+        -- (2boffset);
+
+        \draw[dashed, rounded corners=5]
+        ($(2boffset) + (-2.5,3.75)$) -- ($(2boffset) + (42.5,3.75)$)
+        -- ($(2boffset) + (42.5,-3.75)$) -- ($(2boffset) + (-2.5,-3.75)$)
+        -- cycle;
+
+        % 1bar
+        \draw[->, rounded corners, ultra thick,]
+        ($(1boffset) + (0,0)$) -- ($(1boffset) + (15,0)$);
+        \draw[->, rounded corners, ultra thick,]
+        ($(1boffset) + (40,0)$) -- ($(1boffset) + (25,0)$);
+        \draw[rounded corners, ultra thick,]
+        ($(1boffset) + (25,0)$) -- ($(1boffset) + (0,0)$);
+
+        \draw[dashed, rounded corners=5]
+        ($(1boffset) + (-2.5,2.5)$) -- ($(1boffset) + (42.5,2.5)$)
+        -- ($(1boffset) + (42.5,-2.5)$) -- ($(1boffset) + (-2.5,-2.5)$)
+        -- cycle;
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{Radar Elevation Scan}}
+    %     \begin{itemize}
+    %         \item Side-on view of ``pie'' diagram
+    %         \item Show various scan patterns as smaller slices of ``pie''
+    %         \begin{itemize}
+    %             \item maybe on top of each other?
+    %         \end{itemize}
+    %         \item Show bar scan patterns as classic ``snake'' diagrams 
+    %         \begin{itemize}
+    %             \item maybe place immediately next to matching ``pie'' slice?
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{
+        FCR elevation scan \& limits. 
+        The radar beam --- blue circle --- tracks along the illustrated scan pattern in a loop, resulting in the dashed scan volume. 
+        Note that the scan patterns are not drawn to scale.
+    }
+\end{figure}
+
+\clearpage
+
+\subsubsection{FCR MFD CONTROLS}
+
+\begin{tcoloritemize}
+    \blueitem{Radar Mode}{
+    \textbf{OSB 1} opens page allowing selection of radar mode
+
+    \begin{subitemize}
+        \item \textbf{Left Side (OSB 19-20)} --- A-A Modes
+        \begin{itemize}
+            \item CRM --- see \cref{subsec:crm}
+            \item ACM --- see \cref{subsec:acm}
+        \end{itemize}
+        \item \textbf{Right Side (OSB 6-9)} --- A-G Modes
+        \begin{itemize}
+            \item See \cref{sec:fcr-ag}
+        \end{itemize}
+        \item \textbf{STBY (OSB 10)} --- places FCR in standby
+    \end{subitemize}}
+    \blueitem{Field of View}{
+    \textbf{OSB 3} cycles field of view
+
+    \begin{subitemize}
+        \item \textbf{EXP} --- expanded field of view
+        \item \textbf{NORM} --- normal field of view
+    \end{subitemize}
+
+    HOTAS \textbf{EXPAND/FOV} switch also cycles FOV}
+    \blueitem{Override}{Pressing \textbf{OVRD (OSB 4)}  places FCR in standby}
+    \blueitem{FCR Control}{\textbf{CNTL (OSB 5)} opens FCR control page}
+    \blueitem{Datalink Mode}{\textbf{OSB 6} cycles datalink operating mode (WIP)}
+    \blueitem{Declutter}{\textbf{DCLT (OSB 11)} opens FCR declutter page, allowing pilot to deselect symbology elements}
+    \blueitem{Elevation Bar \break Select}{\textbf{OSB 17} cycles elevation bar search pattern}
+    \blueitem{Azimuth Select}{
+    \textbf{OSB 18} cycles azimuth search pattern}
+    \blueitem{Range Select}{
+    \textbf{OSB 19-20} adjusts FCR display range scale
+    
+    \begin{subitemize}
+        \item \textbf{Can be cycled by ``walking'' cursor off top/bottom of display}
+    \end{subitemize}
+    }
+\end{tcoloritemize}
+
+\notebox{
+    \textbf{Azimuth and range can also be cycled by ``walking'' acquisition cursor of side of FCR display}
+}
+
+\begin{figure}[htbp]
+    \centering
+    % \includegraphics[
+    %     height=75mm,
+    %     page={1},
+    % ]{F16_apg68_RWS_HomePage_v2.pdf}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=100mm,
+                page={1},
+            ]{F16_apg68_RWS_HomePage_v2.pdf}
+        };
+
+        \node[] at (0,20) {\color{red}\textbf{MISSING CONTROLS ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- RWS (Default CRM Page)}}
+    %     \begin{itemize}
+    %         \item Basic RWS search page with returns
+    %         \item Several RWS radar returns
+    %         \item Maybe steerpoint (wedding cake)
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{RWS MFD Symbology}
+\end{figure}

@@ -1,0 +1,73 @@
+\subsection{STT}
+\label{subsec:stt}
+\begin{tcoloritemize}
+    \blueitem{STT}{
+    \textbf{S}ingle \textbf{T}arget \textbf{T}rack
+    \begin{subitemize}
+        \item \textbf{FCR continually scans one target}
+        \begin{itemize}
+            \item high update frequency \& precision for weapon guidance
+            \item \underline{target RWR will detect STT lock}
+        \end{itemize}
+        \item \textbf{FCR search ceases during STT lock}
+        \item \textbf{Entered by}
+        \begin{itemize}
+            \item locking bugged target from \textbf{TWS/RWS} with \textbf{TMS Forward}
+            \item placing target in search volume of \textbf{ACM} (lock occurs automatically)
+        \end{itemize}
+        \item \textbf{Exited with TMS Aft} --- returns to search mode
+    \end{subitemize}}
+    \blueitem{Display}{
+    \begin{subitemize}
+        \item \textbf{Target state} shown at top of FCR page
+        \begin{itemize}
+            \item aspect angle 
+            \item ground track 
+            \item airspeed 
+            \item closure rate
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{NCTR}{
+    \textbf{N}on-\textbf{C}ooperative \textbf{T}arget \textbf{R}ecognition
+    \begin{subitemize}
+        \item \textbf{FCR attempts to identify locked target}
+        \begin{itemize}
+            \item measures turbine parameters to produce \underline{likely} contact aircraft type
+            \item NCTR is only available in STT
+        \end{itemize}
+        \item \textbf{NCTR imposes additional requirements}
+        \begin{itemize}
+            \item target must be within 20-25nm
+            \item radar must ``see'' compressor/turbine blades
+        \end{itemize}
+        \item \textbf{Activated with IFF interrogation (TMS Left long)}
+        \item \textbf{Hostile NCTR identification counts towards ROE matrix} (combined with IFF return)
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=100mm,
+                page={37},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \node[] at (0,-20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- STT}}
+    %     \begin{itemize}
+    %         \item Show standard STT lock
+    %         \item should clearly mark target state, steering cues, dlz, NCTR
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{FCR page with STT lock and NCTR ID}
+\end{figure}

@@ -1,0 +1,149 @@
+\section{APG-68 FCR}
+
+\subsection{OVERVIEW}
+\begin{tcoloritemize}
+    \blueitem{A-A Modes}{
+    \begin{subitemize}
+        \item \textbf{CRM} --- \textbf{C}ombined \textbf{R}adar \textbf{M}ode, \break see \Cref{subsec:crm}
+        \begin{itemize}
+            \item \textbf{RWS} --- \textbf{R}ange \textbf{W}hile \textbf{S}earch, \break see \Cref{subsec:rws}
+            \item \textbf{TWS} --- \textbf{T}rack \textbf{W}hile \textbf{S}can, \break see \Cref{subsec:tws}
+        \end{itemize}
+        \item \textbf{ACM} --- \textbf{A}ir \textbf{C}ombat \textbf{M}ode, see \Cref{subsec:acm}
+        \item \textbf{STT} --- \textbf{S}ingle \textbf{T}arget \textbf{T}rack, see \Cref{subsec:stt}
+    \end{subitemize}}
+    \blueitem{A-G Modes}{\textbf{Work In Progress}
+    \begin{subitemize}
+        \item \textbf{GM} --- \textbf{G}round \textbf{M}ap
+        \item \textbf{GMT} --- \textbf{G}round \textbf{M}oving \textbf{T}arget
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm,x=1mm, y=1mm, very thick,
+        >={Latex[round]}
+        ]
+        
+        % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
+        \node[
+            hyperref node=subsec:stt,
+            rectangle, 
+            rounded corners,
+            minimum width=90mm,
+            minimum height=7.5mm,
+            draw,
+        ](stt)at(0,0){\blue{STT}--- \Cref{subsec:stt}};
+        \node[
+            hyperref node=subsec:crm,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](crm)at(0,30){\begin{tabular}{c}\blue{CRM}\\ \Cref{subsec:crm}\end{tabular}};
+        \node[
+            hyperref node=subsec:rws,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](rws)at(0,15){\begin{tabular}{c}\blue{RWS}\\ \Cref{subsec:rws}\end{tabular}};
+        \node[
+            hyperref node=subsec:tws,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](tws)at(32.5,15){\begin{tabular}{c}\blue{TWS}\\ \Cref{subsec:tws}\end{tabular}};
+        \node[
+            hyperref node=subsec:acm,
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](acm)at(0,-30){\begin{tabular}{c}\blue{ACM}\\ \Cref{subsec:acm}\end{tabular}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](bore)at(0,-15){\textbf{BORE}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](hud)at(32.5,-30){\textbf{HUD}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=25mm,
+            minimum height=7.5mm,
+            draw,
+        ](vert)at(0,-45){\textbf{Vertical}};
+
+        % Lines
+        \draw [->]
+            (crm) -- (rws);
+        \draw [->, rounded corners]
+            (crm) -| (tws);
+        \draw [->]
+            let
+                \p1=(rws.south),
+                \p2=(stt.north),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(tws.south),
+                \p2=(stt.north),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->]
+            (acm) -- (bore);
+        \draw [->]
+            (acm) -- (hud);
+        \draw [->]
+            (acm) -- (vert);
+        \draw [->]
+            let
+                \p1=(bore.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(hud.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1,\y2);
+        \draw [->, rounded corners]
+            let
+                \p1=(vert.west),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1-22.5mm,\y1) -- (\x1-22.5mm,\y2);
+                
+    \end{tikzpicture}
+    \caption{\textbf{A-A Radar Modes Overview}}
+\end{figure}
+
+\input{chapters/sensors_aa/apg68_fcr/crm}
+
+\clearpage
+
+\input{chapters/sensors_aa/apg68_fcr/rws}
+
+\clearpage
+
+\input{chapters/sensors_aa/apg68_fcr/tws}
+
+\input{chapters/sensors_aa/apg68_fcr/acm}
+
+\input{chapters/sensors_aa/apg68_fcr/stt.tex}

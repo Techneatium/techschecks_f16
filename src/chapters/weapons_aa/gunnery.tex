@@ -1,0 +1,498 @@
+\section{AIR-TO-AIR GUNNERY}
+
+\subsection{M-61 VULCAN}
+\label{subsec:m61}
+
+\begin{tcoloritemize}
+    \blueitem{M-61 Vulcan}{
+    Internally mounted, high fire-rate, 20mm rotary ``Gattling'' cannon.
+    In service since 1959
+
+    \begin{subitemize}
+        \item \textbf{Fire Rate} --- 6000rpm
+        \item \textbf{Round Size} --- 20mm
+        \item \textbf{Ammo Capacity} --- 510 rounds
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{
+    \begin{minipage}[t][40mm][t]{100mm}
+        \center{\large\textbf{M-61 OVERVIEW}}
+        \begin{itemize}
+            \item Some kind of overview figure
+            \item maybe showing side on profile of the weapon?
+        \end{itemize}
+    \end{minipage}
+    }
+    \caption{M-61 Vulcan}
+\end{figure}
+    
+\begin{tcoloritemize}
+    \blueitem{Ammunition Types}{
+    \begin{subitemize}
+        \item \textbf{HEI} --- \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary
+        \item \textbf{HEI-T} --- \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary-\textbf{T}racer
+        \item \textbf{AP} --- \textbf{A}rmor \textbf{P}iercing
+        \item \textbf{TP} --- \textbf{T}arget \textbf{P}ractice
+        \item \textbf{SAPHEI} --- \textbf{S}emi \textbf{A}rmor \textbf{P}iercing \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary
+    \end{subitemize}}
+    \blueitem{Gunsight / \break Cueing Modes}{
+    \begin{subitemize}
+        \item \textbf{EEGS} --- \textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight \\
+        \hyperref[subsec:m61:eegssymb]{See \Cref{subsec:m61:eegssymb}}
+        \item \textbf{Employment w/o radar track (EEGS level II)} \\
+        \hyperref[subsec:m61:eegslvl2]{See \Cref{subsec:m61:eegslvl2}}
+        \item \textbf{Employment with radar track (EEGS level V)} \\
+        \hyperref[subsec:m61:eegslvl5]{See \Cref{subsec:m61:eegslvl5}}
+    \end{subitemize}}
+    \blueitem{Select GUN}{
+    Via Dogfight --- AIM-9 \& GUN automatically selected
+
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+    \end{subenumerate}
+
+    Via A-A Master Mode
+
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{SMS OSB 1} \dotfill \textbf{Cycle to GUN}
+    \end{subenumerate}}
+\end{tcoloritemize}
+
+\subsubsection{SMS CONTROLS}
+\label{subsec:m61:sms}
+\begin{tcoloritemize}
+    \blueitem{Operating Mode}{\textbf{OSB 1} cycles A-A modes, should display \textbf{GUN}}
+    \blueitem{Sub-Mode}{\textbf{OSB 2} cycles gunsight modes
+    
+    \begin{subitemize}
+        \item \textbf{EEGS} --- \textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight \\
+        \textbf{See \Cref{subsec:m61:eegssymb}}
+    \end{subitemize}}
+    \blueitem{Rounds \break Remaining}{Indicates number of rounds remaining in 10s}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={79},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- SMS --- GUN CONTROLS}}
+    %     \begin{itemize}
+    %         \item show sms gun page
+    %         \item label each of the relevant controls explained in text
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{MFD SMS Gun Controls}
+\end{figure}
+
+\subsubsection{EEGS SYMBOLOGY}
+\label{subsec:m61:eegssymb}
+\begin{tcoloritemize}
+    \blueitem{EEGS}{\textbf{E}nhanced \textbf{E}nvelope \textbf{G}un\textbf{S}ight
+
+    \begin{subitemize}
+        \item \textbf{Provides multiple levels of symbology depending on presence of radar lock}
+    \end{subitemize}}
+    \blueitem{Level I}{Backup mode displaying only boresight cross in event of INS failure}
+    \blueitem{Level II}{Operating mode prior to radar lock
+
+    \begin{subitemize}
+        \item \textbf{Boresight Cross} --- shows where gun / aircraft is pointed
+        \item \textbf{EEGS Funnel}
+        \begin{itemize}
+            \item displays path of rounds through space
+            \item funnel is of set width to judge distance --- adjust width to target wingspan, stabilize edges of funnel on wingtips and fire
+        \end{itemize}
+        \item \textbf{MGRS} --- \textbf{M}ultiple \textbf{R}eference \textbf{G}un\textbf{S}ight
+        \begin{itemize}
+            \item 5 line-segments pointing towards boresight
+            \item reference for high aspect snap shots (placeing target on MGRS line should have it fly through gun cross)
+        \end{itemize}
+    \end{subitemize}
+    
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl2} and \cref{fig:aaweap:m61:eegsfunnel}
+    }
+    \blueitem{Level III / IV}{Intermediate modes during radar lock acquisition}
+    \blueitem{Level V}{Operating mode with radar lock. Level II symbology is retained with additional elements
+    
+    \begin{subitemize}
+        \item \textbf{Level V Pipper}
+        \begin{itemize}
+            \item gunfire solution --- stabilize pipper on target and fire
+            \item contains additional range/aspect cues
+        \end{itemize}
+        \item \textbf{Range Caret}
+        \begin{itemize}
+            \item displayed on \underline{inside} edge of level V pipper
+            \item unwinds from 12 o'clock at 12'000ft counter-clockwise
+        \end{itemize}
+        \item \textbf{Aspect Caret} 
+        \begin{itemize}
+            \item displayed on \underline{outside} edge of level V pipper
+        \end{itemize}
+        \item \textbf{T-Symbol}
+        \begin{itemize}
+            \item \textbf{``--- + ---'' 1G Pipper} --- lead angle for non-maneuvering target,
+            flanking horizontal lines indicate out-of-plane maneuver potential of target
+            \item \textbf{``---'' Max-G Pipper} --- lead angle for target pulling max-G towards you
+        \end{itemize}
+        \item \textbf{BATR} --- \textbf{B}ullets \textbf{A}t \textbf{T}arget \textbf{R}ange
+        \begin{itemize}
+            \item displayed once rounds have been fired
+            \item dissappears after last round has passed beyond target range
+            \item useful to evaluate shots (also for training)
+        \end{itemize}
+    \end{subitemize}
+    
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aaweap:m61:eegspipper}
+    }
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={80},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- EEGS LVL II}}
+    %     \begin{itemize}
+    %         \item show EEGS LVL II symbology of the HUD
+    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+    %         \begin{itemize}
+    %             \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
+    %             \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{EEGS LVL II HUD Symbology}
+    \label{fig:aaweap:m61:eegslvl2}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={84},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+
+        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{HUD --- EEGS LVL V}}
+    %     \begin{itemize}
+    %         \item show EEGS LVL V symbology of the HUD
+    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
+    %         \begin{itemize}
+    %             \item more necessary here since lvl V relies on having a lock
+    %             \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{EEGS LVL V HUD Symbology}
+    \label{fig:aaweap:m61:eegslvl5}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[minimum width=\linewidth] (blanker) at (0,0) {};
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                scale=1.25,
+                page={2},
+            ]{F16_aaweapons_v10_4Items.pdf}
+        };
+
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (20,10) {EEGS GUN \\ FUNNEL};
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (brst) at (20,32.5) {BORESIGHT \\ CROSS};
+        \node[color2, anchor=west, align=left, font=\small\bfseries] (mgrs) at (20,-20) {MGRS \\ LINES};
+
+        \draw[->, color2]
+        (funnel.west) -- ++(-12.5,0);
+        \draw[->, color2]
+        (brst.west) -- ++(-15,0);
+        \draw[->, color2]
+        (mgrs.west) -- ++(-15,0) -- +(-2.5,-5);
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][50mm][t]{100mm}
+    %     \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
+    %     \begin{itemize}
+    %         \item show both funnel and pipper as subfigs
+    %         \item include target outline in firing position
+    %         \item clearly mark level 5 pipper symbology elements
+    %         \begin{itemize}
+    %             \item batr
+    %             \item range cue
+    %             \item aspect
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{EEGS Funnel}
+    \label{fig:aaweap:m61:eegsfunnel}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (pipper) at (0,0) {
+            \includegraphics[
+                scale=1.25,
+                page={99},
+            ]{F16_aaweapons_v11.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark1)at(pipper.south){EEGS LVL 5 PIPPER};
+
+        \node[draw, rounded corners, left=10mm of pipper] (tsymb) {
+            \includegraphics[
+                scale=1.25,
+                page={101},
+            ]{F16_aaweapons_v11.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark2)at(tsymb.south){T-SYMBOL};
+
+        \node[draw, rounded corners, left=10mm of tsymb] (tdes) {
+            \includegraphics[
+                scale=1.25,
+                page={100},
+            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+        };
+        \node[
+            anchor=north,
+            align=center,
+            font=\small\bfseries
+        ](mark3)at(tdes.south){TARGET DESIGNATOR};
+
+        \path[] (tdes) -- node[pos=0.5, anchor=center]{\textbf{+}}(tsymb);
+        \path[] (tsymb) -- node[pos=0.5, anchor=center]{\textbf{=}}(pipper);
+    \end{tikzpicture}
+    \caption{EEGS Level V Pipper}
+    \label{fig:aaweap:m61:eegspipper}
+\end{figure}
+
+\marginfigeometry
+
+\subsubsection{GUN SELECTION}
+\label{subsec:m61:selection}
+\begin{checklistitemize}
+    \blueitem{Via Dogfight}{(GUN automatically selected)
+    \begin{subenumerate}
+        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+    \end{subenumerate}}
+    \blueitem{Via A-A Master Mode}{
+    \begin{subenumerate}
+        \item \textbf{Master Mode} \dotfill \textbf{A-A}
+        \item \textbf{SMS OSB 1} \dotfill \textbf{Cycle to GUN}
+    \end{subenumerate}}
+    \blueitem{EEGS Symbology}{Verify
+    \begin{subitemize}
+        \item \textbf{EEGS Level II} appears if no lock present
+        \item \textbf{EEGS Level V} appears if target locked
+    \end{subitemize}}
+\end{checklistitemize}
+
+\subsubsection{EEGS LVL II EMPLOYMENT --- NO RADAR}
+\label{subsec:m61:eegslvl2}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
+        \hfill (if desired, completely silences radar)
+        \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+    \blueitem{Acquire Firing Solution}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={2},
+                ]{F16_aaweapons_v10_4Items.pdf}
+            };
+        \end{tikzpicture}
+        % \includegraphics[
+        %     width=\marginparwidth,
+        %     page={2},
+        % ]{F16_aaweapons_v10_4Items.pdf}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{EEGS Funnel}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show funnel on target
+        %             \item potentially reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{EEGS Funnel \& MGRS Lines. Target is approx. aligned with funnel.}
+    }
+
+    \smallskip
+    Using EEGS funnel
+
+    \begin{subenumerate}
+        \item \textbf{EEGS Funnel} \dotfill \textbf{Stabilized On-Target}
+        \item \textbf{Funnel Lines} \dotfill \textbf{On target wingtips}
+    \end{subenumerate}
+    
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][40mm][t]{\marginparwidth}
+    %             \center{\textbf{MGRS Lines}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show MGRS line on target
+    %                 \item not sure if this fig is necessary
+    %                 \item maybe could modify fig from above
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{MGRS Lines}
+    % }
+    Using MGRS lines
+    
+    \begin{subenumerate}
+        \item \textbf{MGRS Line} \dotfill \textbf{Aligned with target}
+    \end{subenumerate}}
+    \blueitem{Fire Gun}{
+    \begin{subenumerate}
+        \item \textbf{TRIGGER} \dotfill \textbf{2nd Detent}
+        \item Adjust lead to achieve desired effects
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\notebox{
+    \small
+    \textbf{Exact position of target relative to funnel lines dependent on funnel width and target wingspan, 
+    see \Cref{subsec:m61:eegsfunneladjust} for funnel adjustment.}
+}
+
+\clearpage
+
+\subsubsection{EEGS LVL V EMPLOYMENT --- RADAR}
+\label{subsec:m61:eegslvl5}
+\begin{checklistenumerate}
+    \blueitem{Prerequisites}{
+    \begin{subitemize}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{RF Switch} \dotfill \textbf{NORM}
+        \item \textbf{Selected Weapon} \dotfill \textbf{GUN}
+        \item \textbf{Master Arm} \dotfill \textbf{ARM}
+    \end{subitemize}}
+    \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
+
+    \begin{subenumerate}
+        \item \textbf{ACM Submode} \dotfill \textbf{As desired}
+        \item Maneuver to place target in radar scan volume
+    \end{subenumerate}}
+    \blueitem{Acquire Firing Solution}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.25,
+                    page={88},
+                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            };
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
+        %         \center{\textbf{EEGS Level V Pipper}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show pipper on target
+        %             \item potentially reuse from above
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{EEGS Level V Pipper}
+    }
+    \begin{subenumerate}
+        \item \textbf{Pipper} \dotfill \textbf{Stabilized On-Target}
+    \end{subenumerate}}
+    \blueitem{Fire Gun}{
+    \begin{subenumerate}
+        \item \textbf{TRIGGER} \dotfill \textbf{2nd Detent}
+        \item Adjust lead to achieve desired effects
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\subsubsection{ADJUST EEGS FUNNEL WIDTH}
+\label{subsec:m61:eegsfunneladjust}
+\begin{checklistenumerate}
+    \blueitem{Open DED MAN Page}{
+    \begin{subenumerate}
+        \item \textbf{ICP LIST Button} \dotfill \textbf{Press}
+        \item \textbf{DED MAN Page} \dotfill \textbf{Open (5)} 
+    \end{subenumerate}}
+    \blueitem{Adjust Wingspan}{
+    \begin{subenumerate}
+        \item \textbf{WSPAN} \dotfill \textbf{Selected}
+        \item \textbf{Desired Value} \dotfill Input on ICP, \textbf{ENTR}
+        \item \textbf{WSPAN} \dotfill Verify as desired
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\marginfigrestore

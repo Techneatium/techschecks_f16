@@ -1,7 +1,7 @@
 %=================================================================
 % MIT LICENSE
 %=================================================================
-% Copyright (c) 2023 Techneatium
+% Copyright (c) 2024 Techneatium
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -38,47 +38,41 @@
 
 % Determine which files included in output
 \includeonly{
-	./sections/F16_titlepage,
-    ./sections/F16_tableofcontents,
-	./sections/F16_procedures,
-	./sections/F16_systems,
-	./sections/F16_apg68fcr,
-	./sections/F16_sensors,
-	./sections/F16_a-gweapons,
-	./sections/F16_a-aweapons,
-	./sections/F16_appendix,
+	chapters/titlepage,
+    chapters/tableofcontents,
+	chapters/procedures,
+	chapters/systems,
+	chapters/apg68fcr,
+	chapters/sensors,
+	chapters/agweapons,
+	chapters/aaweapons,
+	chapters/appendix,
 }
 
 \begin{document}
-	\include{./sections/F16_titlepage}
+	\include{chapters/titlepage}
 
 	\frontmatter
 	\pagestyle{empty}
-	\include{./sections/F16_tableofcontents}
+	\include{chapters/tableofcontents}
 	
 	% restart page counter, pagenumber styling
 	\mainmatter
 	% reactivate header and footer
 	\pagestyle{body}
 
-	\include{./sections/F16_procedures}
+	\include{chapters/procedures}
+	\include{chapters/systems}
+	\include{chapters/apg68fcr}
+	\include{chapters/sensors}
+	\include{chapters/agweapons}
+	\include{chapters/aaweapons}
+	\include{chapters/appendix}
 
-	\include{./sections/F16_systems}
-
-	\include{./sections/F16_apg68fcr}
-
-	\include{./sections/F16_sensors}
-
-	\include{./sections/F16_a-gweapons}
-
-	\include{./sections/F16_a-aweapons}
-
-	\include{./sections/F16_appendix}
-
-\iftoggle{print}{
-	\pagestyle{superempty}
-	\newpage \null
-	\thumbwide
-	\newpage \null
-}{}
+	\iftoggle{print}{
+		\pagestyle{superempty}
+		\newpage \null
+		\thumbwide
+		\newpage \null
+	}{}
 \end{document}

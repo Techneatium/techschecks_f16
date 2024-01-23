@@ -38,42 +38,42 @@
 
 % Determine which files included in output
 \includeonly{
-	chapters/F16_titlepage,
-    chapters/F16_tableofcontents,
-	chapters/F16_procedures,
-	chapters/F16_systems,
-	chapters/F16_apg68fcr,
-	chapters/F16_sensors,
-	chapters/F16_a-gweapons,
-	chapters/F16_a-aweapons,
-	chapters/F16_appendix,
+	chapters/titlepage,
+    chapters/tableofcontents,
+	chapters/procedures,
+	chapters/systems,
+	chapters/apg68fcr,
+	chapters/sensors,
+	chapters/a-gweapons,
+	chapters/a-aweapons,
+	chapters/appendix,
 }
 
 \begin{document}
-	\include{chapters/F16_titlepage}
+	\include{chapters/titlepage}
 
 	\frontmatter
 	\pagestyle{empty}
-	\include{chapters/F16_tableofcontents}
+	\include{chapters/tableofcontents}
 	
 	% restart page counter, pagenumber styling
 	\mainmatter
 	% reactivate header and footer
 	\pagestyle{body}
 
-	\include{chapters/F16_procedures}
+	\include{chapters/procedures}
 
-	\include{chapters/F16_systems}
+	\include{chapters/systems}
 
-	\include{chapters/F16_apg68fcr}
+	\include{chapters/apg68fcr}
 
-	\include{chapters/F16_sensors}
+	\include{chapters/sensors}
 
-	\include{chapters/F16_a-gweapons}
+	\include{chapters/a-gweapons}
 
-	\include{chapters/F16_a-aweapons}
+	\include{chapters/a-aweapons}
 
-	\include{chapters/F16_appendix}
+	\include{chapters/appendix}
 
 \iftoggle{print}{
 	\pagestyle{superempty}

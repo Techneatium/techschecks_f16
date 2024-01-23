@@ -1,7 +1,7 @@
 %=================================================================
 % MIT LICENSE
 %=================================================================
-% Copyright (c) 2023 Techneatium
+% Copyright (c) 2024 Techneatium
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 %=================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2023/01/14]
+\ProvidesClass{TechCheck}[2024/01/23]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PACKAGES -- UTILITY

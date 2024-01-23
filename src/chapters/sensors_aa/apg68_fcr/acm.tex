@@ -1,0 +1,473 @@
+\subsection{ACM}
+\label{subsec:acm}
+\begin{tcoloritemize}
+    \blueitem{ACM}{
+    \textbf{A}ir \textbf{C}ombat \textbf{M}ode
+
+    \begin{subitemize}
+        \item \textbf{Used to automatically lock targets while maneuvering}
+        \item \textbf{Sub-Modes}
+        \begin{itemize}
+            \item \textbf{HUD Scan} --- 30x20 deg 
+            \item \textbf{BORE} --- Boresight (3x3 deg)
+            \item \textbf{Vertical Scan} --- 10x60 deg
+            \item \textbf{Slewable} --- WIP
+        \end{itemize}
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick,
+        >={Latex[round]}
+        ]
+        
+        % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
+        \node[
+            hyperref node=subsec:acm,
+            rectangle,
+            rounded corners,
+            minimum width=15mm,
+            minimum height=15mm,
+            draw,
+        ](acm)at(0,0){\blue{ACM}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](bore)at(0,20){\textbf{BORE}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](hud)at(32.5,0){\textbf{HUD}};
+        \node[
+            rectangle,
+            rounded corners,
+            minimum width=20mm,
+            minimum height=7.5mm,
+            draw,
+        ](vert)at(0,-20){\textbf{Vertical}};
+        \node[
+            hyperref node=subsec:stt,
+            rectangle, 
+            rounded corners,
+            minimum width=90mm,
+            minimum height=7.5mm,
+            draw, 
+        ](stt)at(0,35){\blue{STT}};
+                
+        % Lines
+        \draw [->]
+            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS FWD}} (bore);
+        \draw [->]
+            (acm) -- node[pos=0.5, above]{\scriptsize\textbf{TMS}}node[pos=0.5, below]{\scriptsize\textbf{RIGHT}} (hud);
+        \draw [->]
+            (acm) -- node[pos=0.5, left]{\scriptsize\textbf{TMS AFT}} (vert);
+        \draw [->]
+            let
+                \p1=(bore.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
+        \draw [->]
+            let
+                \p1=(hud.north),
+                \p2=(stt.south),
+            in
+                (\p1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1,\y2);
+        \draw [->, rounded corners]
+            let
+                \p1=(vert.west),
+                \p2=(stt.south),
+            in
+                (\p1) -- (\x1-22.5mm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-22.5mm,\y2);
+                
+    \end{tikzpicture}
+    \caption{\textbf{ACM Radar Modes Overview}}
+    \label{fig:acmoverview}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=100mm,
+                page={69},
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+        };
+
+        \node[] at (0,-20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- ACM}}
+    %     \begin{itemize}
+    %         \item Show default ACM page
+    %         \item clearly mark what the ``FCR format'' is (referenced in text)
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{MFD page for FCR ACM}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \draw[color2, fill=color2!20, dashed, rounded corners]
+            (-15, 10) -- (15,10) -- (15,-10) -- (-15,-10) -- cycle;
+
+            \node[] (hud) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={74},
+                ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+            };
+
+        \end{tikzpicture}
+        \caption{HUD}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \draw[color2, fill=color2!20, dashed] 
+            (0,-3) circle [x radius=4, y radius=6];
+            
+            \node[] (bore) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={75},
+                ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+            };
+    
+        \end{tikzpicture}
+        \caption{BORE}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \draw[color2, fill=color2!20, dashed, rounded corners]
+            (-2.5, 30) -- (2.5,30) -- (2.5,-8) -- (-2.5,-8) -- cycle;
+            
+            \node[] (vert) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={76},
+                ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+            };
+    
+        \end{tikzpicture}
+        \caption{Vertical}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][40mm][t]{100mm}
+    %     \center{\large\textbf{ACM Scan Patterns}}
+    %     \begin{itemize}
+    %         \item Show different scan patterns?
+    %         \item Unsure if this figure is necessary
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{
+        ACM Scan Patterns shown with the relevant HUD symbology. 
+        The dashed lines indicate the scan volume for illustrative purposes and are not to scale.
+    }
+\end{figure}
+
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{subfigure}[t]{0.45\linewidth}
+%         \centering
+%         \includegraphics[
+%             scale=0.25,
+%             page={70},
+%         ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+%         \caption{HUD}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.45\linewidth}
+%         \centering
+%         \includegraphics[
+%             scale=0.25,
+%             page={71},
+%         ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+%         \caption{BORE}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.45\linewidth}
+%         \centering
+%         \includegraphics[
+%             scale=0.25,
+%             page={72},
+%         ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+%         \caption{Vertical}
+%     \end{subfigure}
+%     % \fbox{
+%     % \begin{minipage}[t][40mm][t]{100mm}
+%     %     \center{\large\textbf{ACM Scan Patterns}}
+%     %     \begin{itemize}
+%     %         \item Show different scan patterns?
+%     %         \item Unsure if this figure is necessary
+%     %     \end{itemize}
+%     % \end{minipage}
+%     % }
+%     \caption{ACM HUD Symbology}
+% \end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[
+        height=75mm,
+        page={71},
+    ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+    \caption{ACM HUD Symbology. Shown here in the BORE submode.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[
+        height=60mm,
+        page={77},
+    ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{ACM HMD Dogfight Scan}}
+    %     \begin{itemize}
+    %         \item Show HMD symbology in ACM mode
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{ACM HMD Symbology}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{HUD Submode}{
+    \begin{subitemize}
+        \item \textbf{30x20 deg scan} --- slightly larger than HUD
+        \item \textbf{Lock Range} --- 10 nm
+        \item \textbf{Selected with TMS Right} --- default mode upon ACM selection
+        \item \textbf{Default ACM mode} --- but in \textbf{NO RAD} (non-radiating) state
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} --- displays \textbf{ACM 20}
+            \item \textbf{HUD} --- no special symbology
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{BORE Submode}{
+    \begin{subitemize}
+        \item \textbf{Small, 1-beamwidth scan}
+        \begin{itemize}
+            \item centered 3 deg below gun cross
+            \item useful for precisely locking up target
+        \end{itemize}
+        \item \textbf{Lock Range} --- 20 nm
+        \item \textbf{Selected with TMS Forward}
+        \item \textbf{Scan slaves to HMD} (if equipped and powered)
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} --- displays \textbf{ACM BORE}
+            \item \textbf{HUD} --- Boresight Cross at center of radar scan zone
+            \item \textbf{HMD} --- Oval centered on HMD aiming cross
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{Vertical \break Submode}{
+    \begin{subitemize}
+        \item \textbf{10x60 deg scan}
+        \begin{itemize}
+            \item centered 23 deg above gun cross
+            \item useful during turning engagement to lock target ``across the circle''
+        \end{itemize}
+        \item \textbf{Lock Range} --- 10 nm
+        \item \textbf{Selected with TMS Aft}
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} --- displays \textbf{ACM 60}
+            \item \textbf{HUD} --- Vertical line
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{Slewable \break Submode --- WIP}{
+    \begin{subitemize}
+        \item \textbf{Scan} --- WIP
+        \item \textbf{Lock Range} --- WIP
+        \item \textbf{Slew} --- \textbf{CURSOR/ENABLE Control}
+        \item \textbf{Displays}
+        \begin{itemize}
+            \item \textbf{FCR Format} --- displays \textbf{ACM SLEW}
+            \item \textbf{HUD} --- WIP
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{NO RAD}{Upon selection of \textbf{ACM} or dropping target lock the radar is placed in non-radiating state}
+\end{tcoloritemize}
+
+\marginfigeometry
+
+\subsubsection{HUD / BORE / VERTICAL ACQUISITION}
+\begin{checklistenumerate}
+    \blueitem{FCR Setup}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \begin{subfigure}[t]{\linewidth}
+            \centering
+            \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+                >={Latex[round]}
+                ]
+    
+                \draw[color2, fill=color2!20, dashed, rounded corners]
+                (-15, 10) -- (15,10) -- (15,-10) -- (-15,-10) -- cycle;
+                
+                \node[] (hud) at (0,0) {
+                    \includegraphics[
+                        scale=0.25,
+                        page={74},
+                    ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+                };
+        
+            \end{tikzpicture}
+            \caption{HUD}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.45\linewidth}
+            \centering
+            \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+                >={Latex[round]}
+                ]
+    
+                \draw[color2, fill=color2!20, dashed] 
+                (0,-3) circle [x radius=4, y radius=6];
+                
+                \node[] (bore) at (0,0) {
+                    \includegraphics[
+                        scale=0.25,
+                        page={75},
+                    ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+                };
+        
+            \end{tikzpicture}
+            \caption{BORE}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.45\linewidth}
+            \centering
+            \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+                >={Latex[round]}
+                ]
+    
+                \draw[color2, fill=color2!20, dashed, rounded corners]
+                (-2.5, 30) -- (2.5,30) -- (2.5,-8) -- (-2.5,-8) -- cycle;
+                
+                \node[] (vert) at (0,0) {
+                    \includegraphics[
+                        scale=0.25,
+                        page={76},
+                    ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+                };
+        
+            \end{tikzpicture}
+            \caption{Vertical}
+        \end{subfigure}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{HUD / BORE / VERTICAL Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item maybe show the HUD symbols for the different modes?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{HUD / BORE / VERTICAL Symbology}
+    }
+    \begin{subenumerate}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
+    \end{subenumerate}}
+    \blueitem{Enter ACM}{
+    \begin{subenumerate}
+        \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
+        \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
+    \end{subenumerate}}
+    \blueitem{Select ACM Submode}{
+    \begin{subitemize}
+        \item \textbf{HUD} (default ACM mode) \dotfill \textbf{TMS Right}
+        \item \textbf{Bore} \dotfill \textbf{TMS Forward}
+        \item \textbf{Vertical} \dotfill \textbf{TMS Aft}
+    \end{subitemize}}
+    \blueitem{Target Acquisition}{
+    \begin{subenumerate}
+        \item Maneuver aircraft to place target within selected ACM scan volume 
+        \item Wait for automatic transition to STT 
+    \end{subenumerate}}
+    \blueitem{Target Rejection}{%
+    To unlock target
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Aft}
+    \end{subenumerate}
+    Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
+    }
+\end{checklistenumerate}
+
+\subsubsection{HMD ACQUISITION}
+\begin{checklistenumerate}
+    \blueitem{FCR/MFD Setup}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \includegraphics[
+            height=25mm,
+            page={78},
+        ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{HMD Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item maybe show the HMD symbols?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{HMD acquisition circle}
+    }
+    \begin{subenumerate}
+        \item \textbf{FCR Switch} \dotfill \textbf{FCR}
+        \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
+        \item \textbf{HMD Brightness} \dotfill \textbf{On}
+    \end{subenumerate}}
+    \blueitem{Enter ACM}{
+    \begin{subenumerate}
+        \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
+        \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
+    \end{subenumerate}}
+    \blueitem{Select ACM Bore Submode}{
+    \begin{subitemize}
+        \item \textbf{Bore} \dotfill \textbf{TMS Forward}
+    \end{subitemize}}
+    \blueitem{Target Acquisition}{
+    \begin{subenumerate}
+        \item Maneuver aircraft to place target within 60 deg of nose 
+        \item Place target within HMD acquisition circle
+        \item Wait for automatic transition to STT 
+    \end{subenumerate}}
+    \blueitem{Target Rejection}{%
+    To unlock target
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Aft}
+    \end{subenumerate}
+    Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
+    }
+\end{checklistenumerate}
+
+\subsubsection{SLEWABLE ACQUISITION --- WIP}
+
+\marginfigrestore

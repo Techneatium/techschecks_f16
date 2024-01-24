@@ -594,6 +594,32 @@
 % }
 
 %-----------------------------------------------------------------
+% PART FORMATTING
+%-----------------------------------------------------------------
+
+% remove page numbers from part pages
+\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{superempty}}{}{}
+
+% remove page numbers from TOC entries for part pages
+\makeatletter
+\renewcommand*\l@part[2]{%
+  \ifnum \c@tocdepth >-2\relax
+    \addpenalty{-\@highpenalty}%
+    \addvspace{2.25em \@plus\p@}%
+    \setlength\@tempdima{3em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      {\leavevmode
+       \large \bfseries #1}\par
+       \nobreak
+         \global\@nobreaktrue
+         \everypar{\global\@nobreakfalse\everypar{}}%
+    \endgroup
+  \fi}
+\makeatother
+
+%-----------------------------------------------------------------
 % TITLE FORMATTING
 %-----------------------------------------------------------------
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]

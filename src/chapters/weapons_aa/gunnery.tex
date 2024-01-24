@@ -186,21 +186,19 @@
             ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (boresight) at ($(fig.west)+(-2.5mm,32mm)$) {Boresight cross};
+        \draw[->, red] (boresight.east) -- (-5mm,32mm);
+
+        \node[rannot] (bandit) at ($(fig.east)+(2.5mm,32mm)$) {Bandit};
+        \draw[->, red] (bandit.west) -- ++(-37mm, 0mm) -- (1mm,20mm);
+
+        \node[lannot] (funnel) at ($(fig.west)+(-2.5mm,12mm)$) {EEGS Funnel};
+        \draw[->, red] (funnel.east) -- (-5mm,12mm);
+
+        \node[lannot] (mgrs) at ($(fig.west)+(-2.5mm,-32mm)$) {MGRS Lines};
+        \draw[->, red] (mgrs.east) -- (-15mm,-32mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{HUD --- EEGS LVL II}}
-    %     \begin{itemize}
-    %         \item show EEGS LVL II symbology of the HUD
-    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-    %         \begin{itemize}
-    %             \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
-    %             \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{EEGS LVL II HUD Symbology}
     \label{fig:aaweap:m61:eegslvl2}
 \end{figure}

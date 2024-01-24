@@ -19,6 +19,7 @@
         \begin{itemize}
             \item Search / Track / System / Cursor / Bugged
         \end{itemize}
+        \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile}}
     \end{subitemize}}
 \end{tcoloritemize}
 
@@ -57,6 +58,7 @@
             page={54},
         ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         \caption{Search}
+        \label{fig:sensorsaa:apg68:tws:trackfile:search}
     \end{subfigure}
     \begin{subfigure}[b]{0.15\linewidth}
         \centering
@@ -65,6 +67,7 @@
             page={56},
         ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         \caption{Track}
+        \label{fig:sensorsaa:apg68:tws:trackfile:track}
     \end{subfigure}
     \begin{subfigure}[b]{0.15\linewidth}
         \centering
@@ -73,6 +76,7 @@
             page={44},
         ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         \caption{System}
+        \label{fig:sensorsaa:apg68:tws:trackfile:system}
     \end{subfigure}
     \begin{subfigure}[b]{0.15\linewidth}
         \centering
@@ -81,6 +85,7 @@
             page={65},
         ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         \caption{Cursor}
+        \label{fig:sensorsaa:apg68:tws:trackfile:cursor}
     \end{subfigure}
     \begin{subfigure}[b]{0.15\linewidth}
         \centering
@@ -89,6 +94,7 @@
             page={66},
         ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         \caption{Bugged}
+        \label{fig:sensorsaa:apg68:tws:trackfile:bugged}
     \end{subfigure}
     % \fbox{
     % \begin{minipage}[t][20mm][t]{100mm}
@@ -99,8 +105,11 @@
     % \end{minipage}
     % }
     \caption{TWS Track Symbols}
+    \label{fig:sensorsaa:apg68:tws:trackfile}
 \end{figure}
-    
+
+\subsection{TRACKFILE STATES}
+\label{subsec:sensorsaa:apg68:tws:trackfile}
 \begin{tcoloritemize}
     \blueitem{Search Target}{
     \begin{subitemize}
@@ -109,16 +118,18 @@
             \item Not enough information to generate track
             \item Automatic transition to track after 1-2 radar sweeps
         \end{itemize}
-        \item \textbf{Display} --- like RWS radar brick
+        \item \textbf{Display} --- similar to RWS radar brick
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}}
     \end{subitemize}}
     \blueitem{Track Target}{
     \begin{subitemize}
         \item \textbf{FCR automatically correlates radar return data to form track files}
         \begin{itemize}
             \item Tracks target velocity, angle, altitude etc.
-            \item \underline{Maximum of 10 trackfiles}, lowest priority dropped if exceeded
+            \item \textbf{\underline{Maximum of 10 trackfiles}}, lowest priority dropped if exceeded
         \end{itemize}
         \item \textbf{Can be manually transitioned to higher modes by pilot to prioritize}
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}}
     \end{subitemize}}
     \blueitem{System Target}{
     \begin{subitemize}
@@ -128,6 +139,7 @@
             \item For future weapons employment
         \end{itemize}
         \item \textbf{No additional radar energy allocated to System Targets}
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}}
     \end{subitemize}}
     \blueitem{Cursor Target}{
     \begin{subitemize}
@@ -138,6 +150,34 @@
             \item $\pm$25 deg azimuth pattern 
             \item Reduces chance of losing track
         \end{itemize}
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}}
+    \end{subitemize}}
+    \blueitem{Bugged Target}{
+    \begin{subitemize}
+        \item \textbf{Selected for weapons employment}
+        \begin{itemize}
+            \item Can guide AIM-120C (w/o STT Lock)
+            \item DLZ displayed if missile selected
+            \item Launched AIM-120 will continue to guide even if another target is bugged --- \textbf{\underline{allows for multi-target engagement}}
+        \end{itemize}
+        \item \textbf{Scan Centered on Bugged Target}
+        \begin{itemize}
+            \item 3 bar elevation
+            \item $\pm$25 deg azimuth pattern 
+            \item Reduces chance of losing track
+        \end{itemize}
+        \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}}
+    \end{subitemize}}
+    \blueitem{Spotlight}{
+    \begin{subitemize}
+        \item \textbf{Narrow scan centered on acquisition cursor}
+        \begin{itemize}
+            \item 4 bar elevation 
+            \item \pm10 deg azimuth
+        \end{itemize}
+        \item \textbf{Allows pilot to override TWS scan priority}
+        \item \textbf{Activated by holding TMS Forward >1 sec}
     \end{subitemize}}
 \end{tcoloritemize}
 
@@ -157,36 +197,8 @@
         % \node[] at (0,20) {\color{red}\textbf{SHOULD NOT HAVE SHOOT SYMB.}};
     \end{tikzpicture}
     \caption{TWS Cursor Target Symbology}
+    \label{fig:sensorsaa:apg68:tws:cursorsymb}
 \end{figure}
-    
-\begin{tcoloritemize}
-    \blueitem{Bugged Target}{
-    \begin{subitemize}
-        \item \textbf{Selected for weapons employment}
-        \begin{itemize}
-            \item Can guide AIM-120C (w/o STT Lock)
-            \item DLZ displayed if missile selected
-            \item Launched AIM-120 will continue to guide even if another target is bugged --- \underline{allows for multi-target engagement}
-        \end{itemize}
-        \item \textbf{Scan Centered on Bugged Target}
-        \begin{itemize}
-            \item 3 bar elevation
-            \item $\pm$25 deg azimuth pattern 
-            \item Reduces chance of losing track
-        \end{itemize}
-        \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
-    \end{subitemize}}
-    \blueitem{Spotlight}{
-    \begin{subitemize}
-        \item \textbf{Narrow scan centered on acquisition cursor}
-        \begin{itemize}
-            \item 4 bar elevation 
-            \item \pm10 deg azimuth
-        \end{itemize}
-        \item \textbf{Allows pilot to override TWS scan priority}
-        \item \textbf{Activated by holding TMS Forward >1 sec}
-    \end{subitemize}}
-\end{tcoloritemize}
 
 \begin{figure}[htbp]
     \centering
@@ -211,6 +223,7 @@
     % \end{minipage}
     % }
     \caption{TWS Bugged Target MFD Symbology. Note that ``shoot'' symbology has appeared (DLZ, ASEC, steering cross)}
+    \label{fig:sensorsaa:apg68:tws:buggedsymb}
 \end{figure}
 
 \marginfigeometry

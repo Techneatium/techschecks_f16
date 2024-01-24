@@ -16,7 +16,7 @@
     }
     \caption{M-61 Vulcan}
 \end{figure}
-    
+
 \begin{tcoloritemize}
     \blueitem{M-61 Vulcan}{
     Internally mounted, high fire-rate, 20mm rotary ``Gattling'' cannon.
@@ -217,21 +217,19 @@
             ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (boresight) at ($(fig.west)+(-2.5mm,32.25mm)$) {Boresight cross};
+        \draw[->, red] (boresight.east) -- (-7mm,32.25mm);
+
+        \node[lannot] (funnel) at ($(fig.west)+(-2.5mm,8mm)$) {EEGS Funnel};
+        \draw[->, red] (funnel.east) -- (-12mm,8mm);
+
+        \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-16mm)$) {Bandit};
+        \draw[->, red] (bandit.west) -- ++(-37mm, 0mm) -- (-9mm,-16mm);
+
+        \node[lannot] (pipper) at ($(fig.west)+(-2.5mm,-16mm)$) {EEGS Level V Pipper};
+        \draw[->, red] (pipper.east) -- (-20mm,-16mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{HUD --- EEGS LVL V}}
-    %     \begin{itemize}
-    %         \item show EEGS LVL V symbology of the HUD
-    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-    %         \begin{itemize}
-    %             \item more necessary here since lvl V relies on having a lock
-    %             \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{EEGS LVL V HUD Symbology}
     \label{fig:aaweap:m61:eegslvl5}
 \end{figure}

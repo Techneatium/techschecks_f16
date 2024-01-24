@@ -1,0 +1,370 @@
+\marginfigeometry
+
+\section{TAKEOFF \& LANDING}
+
+\subsection{PRE-TAKEOFF}
+\begin{checklistenumerate}
+    \blueitem{ALT FLAPS Switch}{\textbf{Verify Norm}}
+    \blueitem{Trim}{\textbf{Check}}
+    \blueitem{ENG CONT Switch}{\textbf{Verify PRI}}
+    \blueitem{Speedbrakes}{\textbf{Closed}}
+    \blueitem{Canopy}{\textbf{Verify Closed \& Locked}}
+    \blueitem{IFF}{\textbf{Set \& Check}}
+    \blueitem{FUEL QTY Select Knob}{\textbf{NORM}}
+    \blueitem{STORES CONFIG Switch}{\textbf{As Required}
+    
+    \begin{subitemize}
+        \item \textbf{CAT I} --- \textbf{A-A Loadouts} 
+        \item \textbf{CAT III} --- \textbf{A-G / Wing tank Loadouts}
+    \end{subitemize}}
+    \blueitem{PROBE HEAT Switch}{\textbf{PROBE HEAT}}
+    \blueitem{Ejection Safety Lever}{\cbstart\textbf{Arm (down)}\cbend}
+    \blueitem{Flight Controls}{\textbf{Cycle}}
+    \blueitem{Oil Pressure}{\textbf{15-65 psi}}
+    \blueitem{TGP}{\textbf{STOW} (if installed)}
+    \blueitem{Warning \& Caution Lights}{\textbf{Verify Off}}
+\end{checklistenumerate}
+
+\subsection{TAKEOFF}
+
+\begin{checklistenumerate}
+    \blueitem{Runup}{\cbstart
+    \begin{subenumerate}
+        \item \textbf{Brake} \dotfill \textbf{Hold}
+        \item \textbf{Throttle} \dotfill \textbf{90\%}\cbend
+    \end{subenumerate}}
+    \blueitem{Runup Check}{
+    \begin{subenumerate}
+        \item \textbf{Parking Brake} \dotfill \textbf{Verify disengaged}
+        \item \textbf{Engine Parameters} \dotfill \textbf{Nominal}
+        \begin{itemize}
+            \item \textbf{HYD/OIL PRES} --- \textbf{OFF}
+            \item \textbf{Oil Pressure} --- \textbf{25-65psi}
+            \item \textbf{FTIT} --- \textbf{less than 935deg}
+            \item \textbf{HYD PRESS A \& B} --- \textbf{2850-3250psi}
+        \end{itemize}
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\clearpage
+
+\begin{checklistenumerate}[resume]
+    \blueitem{Takeoff Roll}{\cbstart
+    \marginpar{
+        \captionsetup{type=table}
+        \centering
+        \caption{\textbf{Takeoff Speeds}}
+        \label{tab:proc:takeoff:speed}
+        \begin{tabular}{c c}
+            \toprule 
+            \textbf{Weight} & \textbf{TO Speed} \\
+            \textbf{[lbs]} & \textbf{[kts]} \\
+            \midrule 
+            20000 & 128 \\
+            \midrule 
+            24000 & 142 \\
+            \midrule 
+            28000 & 156 \\
+            \midrule 
+            32000 & 168 \\
+            \midrule 
+            36000 & 178 \\
+            \midrule 
+            40000 & 188 \\
+            \midrule 
+            44000 & 198 \\
+            \bottomrule
+        \end{tabular}
+    }
+    \begin{subenumerate}
+        \item \textbf{Brake} \dotfill \textbf{Release}
+        \item \textbf{Throttle} \dotfill \textbf{As Desired}\cbend
+        \begin{itemize}
+            \item \textbf{NOZ POS} --- \textbf{< 15\%} after 5 sec at \textbf{MIL/AB}
+        \end{itemize}
+    \end{subenumerate}
+    
+    At 70 kts
+
+    \begin{subenumerate}[start=3]
+        \item \textbf{NWS} \dotfill \textbf{Disengaged}
+    \end{subenumerate}}
+    \blueitem{Rotation}{\cbstart At 10-15kts below takeoff speed, reference \cref{tab:proc:takeoff:speed}
+
+    \begin{subenumerate}
+        \item \textbf{Attitude} \dotfill \textbf{8-12 deg nose high}
+    \end{subenumerate}
+
+    Once positive rate has been achieved
+    
+    \begin{subenumerate}[start=2]
+        \item \textbf{Gear} \dotfill \textbf{UP}\cbend
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        % coordinates
+        \coordinate (startpoint) at (0,0);
+        \coordinate (70kts) at (25,0);
+        \coordinate (rotate) at (50,0);
+        \coordinate (runwaystart) at (-5,-2.5);
+        \coordinate (runwayend) at (70,-2.5);
+
+        % runway
+        \draw[thick, fill]
+        ($(runwaystart)+(0,-0.25)$) -- ($(runwaystart)+(0,0.25)$) -- 
+        ($(runwayend)+(0,0.25)$) -- ($(runwayend)+(0,-0.25)$) -- 
+        cycle;
+
+        % path
+        \draw[ultra thick, ->]
+        (startpoint) -- (70kts);
+        \draw[ultra thick, ->]
+        (70kts) -- (rotate);
+        \draw[ultra thick, ->]
+        (rotate) -- ++(5,0) arc (270:300:10) -- ++(30:10);
+
+        % nodes
+        \node[above, align=center] at (startpoint) {\small\textbf{Brakes} \\ \small\textbf{Runup}};
+        \node[above, align=center] at (70kts) {\small\textbf{70kts} \\ \small\textbf{NWS Off}};
+        \node[above, align=center] at (rotate) {\small\textbf{128-198kts} \\ \small\textbf{Rotate}};
+
+    \end{tikzpicture}
+    \caption{Takeoff Profile}
+\end{figure}
+
+\clearpage
+
+\subsection{PRE-LANDING}
+
+\begin{checklistenumerate}
+    \blueitem{Fuel}{\textbf{Check}}
+    \blueitem{Landing Light}{\textbf{ON}}
+    \blueitem{Altimeter}{\textbf{Set \& Check}}
+    \blueitem{Attitude References}{\textbf{Check}}
+    \blueitem{Anti-Ice}{\textbf{As Required}}
+    \blueitem{TGP}{\textbf{STOW} (if installed)}
+\end{checklistenumerate}
+
+\subsection{LANDING}
+
+\begin{checklistenumerate}
+    \blueitem{Approach}{Align aircraft with runway
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            % coordinates
+            \coordinate (approach) at (5,-15);
+            \coordinate (break) at (5,20);
+            \coordinate (downwind) at (-15,20);
+            \coordinate (base) at (-15,-15);
+            \coordinate (final) at (-7.5,-22.5);
+            \coordinate (shortfinal) at (0,-15);
+            \coordinate (touchdown) at (0,0);
+            \coordinate (rollout) at (0,20);
+
+            % runway
+            \draw[thick]
+            ($(touchdown)+(-2,-5)$) -- ($(touchdown)+(2,-5)$) -- 
+            ($(touchdown)+(2,25)$) -- ($(touchdown)+(-2,25)$) -- 
+            cycle;
+            \draw[thick]
+            ($(touchdown)+(-1.33,-1)$) -- ($(touchdown)+(-1.33,1)$)
+            ($(touchdown)+(-0.66,-1)$) -- ($(touchdown)+(-0.66,1)$)
+            ($(touchdown)+(0.66,-1)$) -- ($(touchdown)+(0.66,1)$)
+            ($(touchdown)+(1.33,-1)$) -- ($(touchdown)+(1.33,1)$);
+
+            % pattern
+            \draw[ultra thick, ->] 
+            (approach) -- (break);
+            \draw[ultra thick] 
+            (break) arc (0:180:10);
+            \draw[ultra thick, >->] 
+            (downwind) -- (base);
+            \draw[ultra thick] 
+            (base) arc (180:270:7.5);
+            \draw[ultra thick] 
+            (final) arc (270:360:7.5);
+            \draw[ultra thick, >-] 
+            (shortfinal) -- (touchdown);
+            \draw[ultra thick, ->] 
+            (touchdown) -- (rollout);
+
+            % nodes
+            \node[right] at (approach) {\textbf{1.}};
+            \node[right] at (break) {\textbf{2.}};
+            \node[left] at (downwind) {\textbf{3.}};
+            \node[left] at (base) {\textbf{4.}};
+            \node[below] at (final) {\textbf{5.}};
+            \node[left] at (shortfinal) {\textbf{6.}};
+            \node[left=2mm] at (touchdown) {\textbf{7.}};
+            \node[left=2mm] at (rollout) {\textbf{8.}};
+
+        \end{tikzpicture}
+        \caption{Overhead Pattern}
+        \label{fig:proc:landing:overhead}
+    }
+
+    \marnotebox{
+        \small\textbf{\Cref{fig:proc:landing:overhead} is illustrated with extended approach and downwind sections for clarity}
+    }
+
+    \begin{subitemize}
+        \item \textbf{Altitude} --- \textbf{1500 ft AGL}
+        \item \textbf{Airspeed} --- \textbf{300 kts CAS}
+    \end{subitemize}}
+    \blueitem{Overhead Break}{Break left/right over desired touchdown point, \textbf{\underline{maintain level turn}}
+
+    \begin{subitemize}
+        \item \textbf{Speedbrakes} --- \textbf{As Required}
+        \item \textbf{Throttle} --- \textbf{As Required}
+        \item \textbf{Bank} --- \textbf{70 deg}
+        \item \textbf{Break} --- \textbf{3-4 G}
+    \end{subitemize}}
+    \blueitem{Downwind Leg}{Roll out on opposite heading of runway, trim for 11 deg AoA
+
+    \begin{subitemize}
+        \item \textbf{Altitude} --- \textbf{1500 ft AGL}
+        \item \textbf{Airspeed} --- \textbf{200-220 kts CAS}
+        \item \textbf{Gear} --- \textbf{Down}
+    \end{subitemize}}
+    \blueitem{Base Turn}{Initiate abeam of desired touchdown point (wingtip at end of runway)
+
+    \begin{subitemize}
+        \item \textbf{Attitude} --- \textbf{8-10 deg nose low}
+        \item \textbf{AoA} --- \textbf{11 deg}
+    \end{subitemize}}
+    \blueitem{Final Turn}{Use throttle to maintain AoA, stick to maintain attitude, goal is to roll wings-level at
+
+    \begin{subitemize}
+        \item \textbf{1 mile} from desired touchdown point
+        \item \textbf{Altitude} --- \textbf{300 ft AGL}
+        % \item \textbf{AoA} --- \textbf{11 deg}
+        \item \textbf{Flightpath} --- align  with \textbf{2.5 deg HUD marker} and runway threshold
+    \end{subitemize}}
+\end{checklistenumerate}
+
+\clearpage
+
+\begin{checklistenumerate}[resume]
+    \blueitem{Short Final}{Once over runway
+    
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            % coordinates
+            \coordinate (approach) at (5,-15);
+            \coordinate (break) at (5,20);
+            \coordinate (downwind) at (-15,20);
+            \coordinate (base) at (-15,-15);
+            \coordinate (final) at (-7.5,-22.5);
+            \coordinate (shortfinal) at (0,-15);
+            \coordinate (touchdown) at (0,0);
+            \coordinate (rollout) at (0,20);
+
+            % runway
+            \draw[thick]
+            ($(touchdown)+(-2,-5)$) -- ($(touchdown)+(2,-5)$) -- 
+            ($(touchdown)+(2,25)$) -- ($(touchdown)+(-2,25)$) -- 
+            cycle;
+            \draw[thick]
+            ($(touchdown)+(-1.33,-1)$) -- ($(touchdown)+(-1.33,1)$)
+            ($(touchdown)+(-0.66,-1)$) -- ($(touchdown)+(-0.66,1)$)
+            ($(touchdown)+(0.66,-1)$) -- ($(touchdown)+(0.66,1)$)
+            ($(touchdown)+(1.33,-1)$) -- ($(touchdown)+(1.33,1)$);
+
+            % pattern
+            \draw[ultra thick, ->] 
+            (approach) -- (break);
+            \draw[ultra thick] 
+            (break) arc (0:180:10);
+            \draw[ultra thick, >->] 
+            (downwind) -- (base);
+            \draw[ultra thick] 
+            (base) arc (180:270:7.5);
+            \draw[ultra thick] 
+            (final) arc (270:360:7.5);
+            \draw[ultra thick, >-] 
+            (shortfinal) -- (touchdown);
+            \draw[ultra thick, ->] 
+            (touchdown) -- (rollout);
+
+            % nodes
+            \node[right] at (approach) {\textbf{1.}};
+            \node[right] at (break) {\textbf{2.}};
+            \node[left] at (downwind) {\textbf{3.}};
+            \node[left] at (base) {\textbf{4.}};
+            \node[below] at (final) {\textbf{5.}};
+            \node[left] at (shortfinal) {\textbf{6.}};
+            \node[left=2mm] at (touchdown) {\textbf{7.}};
+            \node[left=2mm] at (rollout) {\textbf{8.}};
+
+        \end{tikzpicture}
+        \caption{Overhead Pattern}
+    }
+
+    \begin{subitemize}
+        \item \textbf{Flightpath} --- shift \textbf{300-500 ft} down runway
+        \item \textbf{Flare} --- gently pull back on stick
+        \item \textbf{Throttle} --- \textbf{Idle}
+        \item \textbf{AoA} --- \textbf{< 13 deg}
+    \end{subitemize}}
+    \blueitem{Touchdown}{}
+    \blueitem{Landing Roll}{Maintain nose-high position for aerobraking until 100 kts
+    \begin{subitemize}
+        \item \textbf{AoA} --- \textbf{< 13 deg}
+        \item \textbf{Speedbrakes} --- \textbf{Open}
+        \item \textbf{Brakes} --- \textbf{As Required}
+    \end{subitemize}}
+    \blueitem{Taxi}{
+    \begin{subitemize}
+        \item \textbf{NWS} --- \textbf{Engaged}
+    \end{subitemize}}
+\end{checklistenumerate}
+
+\clearpage
+
+\subsection{POST-LANDING}
+\begin{checklistenumerate}
+    \blueitem{PROBE HEAT Switch}{\textbf{OFF}}
+    \blueitem{ECM Power}{\textbf{OFF}}
+    \blueitem{Speedbrakes}{\textbf{Close}}
+    \blueitem{Ejection Safety Lever}{\textbf{Safe (up)}}
+    \blueitem{IFF Master Knob}{\textbf{STBY}}
+    \blueitem{Landing/Taxi Light}{\textbf{As Desired}}
+    \blueitem{Armament Switches}{\textbf{Safe}}
+    \blueitem{Avionics}{\textbf{Off}
+    \begin{subitemize}
+        \item \textbf{HUD Thumbwheels} \dotfill \textbf{Off}
+        \item \textbf{SNSR PWR Switches} \dotfill \textbf{Off}
+        \item \textbf{AVIONICS PWR Switches} \dotfill \textbf{Off}
+    \end{subitemize}}
+    \blueitem{Engine Shutdown}{
+    \begin{subenumerate}
+        \item \textbf{Throttle} \dotfill \textbf{Off}
+        \item \textbf{Lights} \dotfill \textbf{Check}
+        \begin{itemize}
+            \item \textbf{JFS Light} --- \textbf{Off}
+            \item \textbf{EPU GEN Light} --- \textbf{Off}
+            \item \textbf{EPU PMG Light} --- \textbf{Off}
+        \end{itemize}
+        \item \textbf{Main PWR Switch} \dotfill \textbf{OFF}
+    \end{subenumerate}}
+    \blueitem{Oxygen Regulator}{\textbf{Off}}
+    \blueitem{Canopy}{\textbf{Open}}
+\end{checklistenumerate}
+
+\marginfigrestore

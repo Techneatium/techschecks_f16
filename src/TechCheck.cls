@@ -1,7 +1,7 @@
 %=================================================================
 % MIT LICENSE
 %=================================================================
-% Copyright (c) 2023 Techneatium
+% Copyright (c) 2024 Techneatium
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 %=================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TechCheck}[2023/01/14]
+\ProvidesClass{TechCheck}[2024/01/23]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PACKAGES -- UTILITY
@@ -31,7 +31,7 @@
 
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
-\graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
+\graphicspath{{../images/}} % put figures inside folder 'images'  in same folder as .tex
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
 \RequirePackage{siunitx} % SI units
 \RequirePackage{tikz} % shapes, figures
@@ -594,6 +594,32 @@
 % }
 
 %-----------------------------------------------------------------
+% PART FORMATTING
+%-----------------------------------------------------------------
+
+% remove page numbers from part pages
+\patchcmd{\part}{\thispagestyle{plain}}{\thispagestyle{superempty}}{}{}
+
+% remove page numbers from TOC entries for part pages
+\makeatletter
+\renewcommand*\l@part[2]{%
+  \ifnum \c@tocdepth >-2\relax
+    \addpenalty{-\@highpenalty}%
+    \addvspace{2.25em \@plus\p@}%
+    \setlength\@tempdima{3em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      {\leavevmode
+       \large \bfseries #1}\par
+       \nobreak
+         \global\@nobreaktrue
+         \everypar{\global\@nobreakfalse\everypar{}}%
+    \endgroup
+  \fi}
+\makeatother
+
+%-----------------------------------------------------------------
 % TITLE FORMATTING
 %-----------------------------------------------------------------
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
@@ -711,4 +737,32 @@
 	]
 		{#1}
 	\end{tcolorbox}
+}
+
+\newcommand{\marnotebox}[1]{
+	\marginpar{
+		\begin{tcolorbox}[
+			enhanced,
+			colback=white,
+			colframe=color1,
+			left skip=0mm,
+			right skip=0mm,
+			left=0mm,
+			right=0mm,
+			boxsep=0mm,
+			sharp corners,
+			frame hidden,
+			colbacktitle=white,
+			coltitle=color1,
+			fonttitle=\titlefont\bfseries,
+			attach boxed title to top center,
+			boxed title style={
+			sharp corners,
+			% drop shadow=color1!100
+			},
+			title=\large NOTE,
+		]
+			{#1}
+		\end{tcolorbox}
+	}
 }

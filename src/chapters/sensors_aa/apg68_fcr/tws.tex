@@ -1,0 +1,422 @@
+\subsection{TWS}
+\label{subsec:tws}
+\begin{tcoloritemize}
+    \blueitem{TWS}{
+    \textbf{T}rack \textbf{W}hile \textbf{S}can
+
+    \begin{subitemize}
+        \item \textbf{Multi-target tracking mode}
+        \begin{itemize}
+            \item Allows multi-target AIM-120 engagement
+            \item Targets not locked --- \textbf{\underline{no RWR warning}}
+        \end{itemize}
+        \item \textbf{FCR builds trackfiles for each target}
+        \begin{itemize}
+            \item Predicts target movement between scans
+            \item Slow update rate --- target maneuvers can cause radar to lose track
+        \end{itemize}
+        \item \textbf{Trackfiles can be in several states}
+        \begin{itemize}
+            \item Search / Track / System / Cursor / Bugged
+        \end{itemize}
+        \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile}}
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={40},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Cursor Target}}
+    %     \begin{itemize}
+    %         \item Basic TWS search page with returns
+    %         \item Includes search, track, and system (cursor) targets
+    %         \item Maybe include steerpoint (wedding cake)?
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{TWS MFD Symbology}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={54},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Search}
+        \label{fig:sensorsaa:apg68:tws:trackfile:search}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={56},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Track}
+        \label{fig:sensorsaa:apg68:tws:trackfile:track}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={44},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{System}
+        \label{fig:sensorsaa:apg68:tws:trackfile:system}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={65},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Cursor}
+        \label{fig:sensorsaa:apg68:tws:trackfile:cursor}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\linewidth}
+        \centering
+        \includegraphics[
+            scale=0.25,
+            page={66},
+        ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        \caption{Bugged}
+        \label{fig:sensorsaa:apg68:tws:trackfile:bugged}
+    \end{subfigure}
+    % \fbox{
+    % \begin{minipage}[t][20mm][t]{100mm}
+    %     \center{\large\textbf{TWS Trackfile States}}
+    %     \begin{itemize}
+    %         \item Show MFD symbols for search, track, system, cursor, and bugged targets
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{TWS Track Symbols}
+    \label{fig:sensorsaa:apg68:tws:trackfile}
+\end{figure}
+
+\subsection{TRACKFILE STATES}
+\label{subsec:sensorsaa:apg68:tws:trackfile}
+\begin{tcoloritemize}
+    \blueitem{Search Target}{
+    \begin{subitemize}
+        \item \textbf{Initial state for radar returns}
+        \begin{itemize}
+            \item Not enough information to generate track
+            \item Automatic transition to track after 1-2 radar sweeps
+        \end{itemize}
+        \item \textbf{Display} --- similar to RWS radar brick
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}}
+    \end{subitemize}}
+    \blueitem{Track Target}{
+    \begin{subitemize}
+        \item \textbf{FCR automatically correlates radar return data to form track files}
+        \begin{itemize}
+            \item Tracks target velocity, angle, altitude etc.
+            \item \textbf{\underline{Maximum of 10 trackfiles}}, lowest priority dropped if exceeded
+        \end{itemize}
+        \item \textbf{Can be manually transitioned to higher modes by pilot to prioritize}
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}}
+    \end{subitemize}}
+    \blueitem{System Target}{
+    \begin{subitemize}
+        \item \textbf{Allows pilot to designate targets of interest}
+        \begin{itemize}
+            \item For monitoring
+            \item For future weapons employment
+        \end{itemize}
+        \item \textbf{No additional radar energy allocated to System Targets}
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}}
+    \end{subitemize}}
+    \blueitem{Cursor Target}{
+    \begin{subitemize}
+        \item \textbf{Acquisition Cursor ``snaps'' to nearby System Targets} --- therefore named Cursor Targets
+        \item \textbf{Scan centered on Cursor Target}
+        \begin{itemize}
+            \item 3 bar elevation
+            \item $\pm$25 deg azimuth pattern 
+            \item Reduces chance of losing track
+        \end{itemize}
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}}
+    \end{subitemize}}
+    \blueitem{Bugged Target}{
+    \begin{subitemize}
+        \item \textbf{Selected for weapons employment}
+        \begin{itemize}
+            \item Can guide AIM-120C (w/o STT Lock)
+            \item DLZ displayed if missile selected
+            \item Launched AIM-120 will continue to guide even if another target is bugged --- \textbf{\underline{allows for multi-target engagement}}
+        \end{itemize}
+        \item \textbf{Scan Centered on Bugged Target}
+        \begin{itemize}
+            \item 3 bar elevation
+            \item $\pm$25 deg azimuth pattern 
+            \item Reduces chance of losing track
+        \end{itemize}
+        \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
+        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}}
+    \end{subitemize}}
+    \blueitem{Spotlight}{
+    \begin{subitemize}
+        \item \textbf{Narrow scan centered on acquisition cursor}
+        \begin{itemize}
+            \item 4 bar elevation 
+            \item \pm10 deg azimuth
+        \end{itemize}
+        \item \textbf{Allows pilot to override TWS scan priority}
+        \item \textbf{Activated by holding TMS Forward >1 sec}
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={45},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        % \node[] at (0,20) {\color{red}\textbf{SHOULD NOT HAVE SHOOT SYMB.}};
+    \end{tikzpicture}
+    \caption{TWS Cursor Target Symbology}
+    \label{fig:sensorsaa:apg68:tws:cursorsymb}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={57},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+    \end{tikzpicture}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Bugged Target}}
+    %     \begin{itemize}
+    %         \item TWS search page with Bugged Target
+    %         \item Shows weapon symbology and steering cues
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{TWS Bugged Target MFD Symbology. Note that ``shoot'' symbology has appeared (DLZ, ASEC, steering cross)}
+    \label{fig:sensorsaa:apg68:tws:buggedsymb}
+\end{figure}
+
+\marginfigeometry
+
+\subsubsection{SELECT TWS MODE}
+\begin{checklistenumerate}
+    \blueitem{FCR Switch}{\textbf{FCR}}
+    \blueitem{Desired MFD}{\textbf{FCR Page}, verify \textbf{SOI}}
+    \blueitem{Radar Mode}{
+        \textbf{CRM} (default), verify
+
+        \begin{subitemize}
+            \item \textbf{Dogfight/Missile Override} --- \textbf{NORM}
+            \item \textbf{Radar Mode (OSB 1)} --- shows \textbf{CRM}
+        \end{subitemize}
+    }
+    \blueitem{CRM Submode}{
+        \textbf{TWS}, cycle via 
+
+        \begin{subitemize}
+            \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
+        \end{subitemize}
+    }
+\end{checklistenumerate}
+
+\subsubsection{MULTI-TARGET ACQUISITION}
+\label{subsec:tws:multiacq}
+\begin{checklistenumerate}
+    \blueitem{Track Target Acquisition}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+            ] (search) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={54},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of search,
+            ] (track) {
+                \includegraphics[
+                    scale=0.25,
+                    page={56},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[
+                draw, 
+                rounded 
+                corners, 
+                minimum width=\marginparwidth,
+                below=17.5 of track,
+            ] (system) {
+                \includegraphics[
+                    scale=0.25,
+                    page={44},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=12.5 of system,
+            ] (cursor) {
+                \includegraphics[
+                    scale=0.25,
+                    page={65},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of cursor,
+            ] (bugged) {
+                \includegraphics[
+                    scale=0.25,
+                    page={66},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+
+            % lines
+            \draw[->]
+            (search) -- node[right, align=left, font=\small] {\textbf{Automatic}}(track);
+            \draw[->]
+            (track) -- node[right, align=left, font=\small] {\textbf{TMS FWD} \\ \footnotesize\textbf{(repeat for all} \\ \footnotesize\textbf{desired targets)}}(system);
+            \draw[>-]
+            ($(track.south)!0.5!(system.north) + (-5,0)$) -- ++(0,2) arc (180:0:2.5) -- ++(0,-4) arc (360:180:2.5) -- ++(0,2);
+            \draw[->]
+            (system) -- node[right, align=left, font=\small] {\textbf{Slew Cursor} \\ \textbf{near target}}(cursor);
+            \draw[->]
+            (cursor) -- node[right, align=left, font=\small] {\textbf{TMS FWD}}(bugged);
+
+            % labels
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelsearch) at (search.north west) {Search \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labeltrack) at (track.north west) {Track \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelsystem) at (system.north west) {System \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelcursor) at (cursor.north west) {Cursor \\ Target};
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{Search / Track Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show both search and track target symbology
+        %             \item maybe format as a diagram/flow chart?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{TWS trackfile acquisition flow}
+    }
+    \begin{subenumerate}
+        \item Correlate onboard/offboard sensors to locate targets
+        \begin{itemize}
+            \item raw radar returns, RWR pings
+            \item AWACS calls, datalink targets
+        \end{itemize}
+        \item Place targets within radar scan volume
+        \item FCR automatically generates Track Targets once sufficient data available
+    \end{subenumerate}}
+    \blueitem{System Target Acquisition}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward} 
+    \end{subenumerate}
+    Repeat for all desired Track Targets,
+    or to upgrade all Track Targets:
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}}
+    \blueitem{Upgrade to Bugged Target}{
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][60mm][t]{\marginparwidth}
+    %             \center{\textbf{System / Cursor / Bugged Target Symbology}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show system / bugged target symbology
+    %                 \item maybe format as a diagram/flow chart?
+    %                 \item maybe combine into one fig wth search/track target fig?
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{System / Cursor /  Bugged Target Symbology}
+    % }
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}
+    To select closest System Target 
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}
+    To cycle through System Targets in range order
+    \begin{subenumerate}
+        \item \textbf{TMS} \dotfill \textbf{Right}
+    \end{subenumerate}}
+    \blueitem{STT Lock}{(if desired)
+    \begin{subenumerate}
+        \item \textbf{Bugged Target} \dotfill under Acq Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\marginfigrestore

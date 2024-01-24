@@ -1,0 +1,383 @@
+\subsection{RWS}
+\label{subsec:rws}
+\begin{tcoloritemize}
+    \blueitem{RWS}{
+    \textbf{R}ange \textbf{W}hile \textbf{S}earch
+
+    \begin{subitemize}
+        \item \textbf{Fast, Long(er)-Range Search}
+        \begin{itemize}
+            \item Radar scans selectable search volume
+            \item Displays raw target position returns
+        \end{itemize}
+        \item \textbf{No track data} 
+        \begin{itemize}
+            \item exact target range, velocity, angle, etc.
+            \item but can transition to advanced modes
+        \end{itemize}
+        % (exact target range, velocity, angle, etc.)
+        % --- but can transition to advanced modes
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={13},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        \node[align=left, font=\bfseries] (cursor) at (20,-10) {Acquisition \\ Cursor};
+        \node[align=left, font=\bfseries] (stpt) at (10,6) {Current STPT};
+        \node[align=left, font=\bfseries] (return) at (2.5,27.5) {Radar Returns};
+
+        \draw[<-]
+        (2.5,-5) -- (5,-10) -- (cursor.west);
+        \draw[->]
+        (stpt.west) -- ++(-1,0) -- +(-3,2);
+        \draw[->]
+        (return.west) -- ++(-5.5,0) -- +(0,-5);
+        \draw[->]
+        (return.east) -- ++(4.5,0) -- +(0,-5);
+
+    \end{tikzpicture}
+    % \includegraphics[
+    %     height=75mm,
+    %     page={1},
+    % ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
+    % \fbox{
+    % \begin{minipage}[t][75mm][t]{100mm}
+    %     \center{\large\textbf{MFD --- FCR --- RWS Search}}
+    %     \begin{itemize}
+    %         \item Basic RWS search page with returns
+    %         \item Several RWS radar returns
+    %         \item Maybe steerpoint (wedding cake)
+    %     \end{itemize}
+    % \end{minipage}
+    % }
+    \caption{RWS MFD Symbology}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem{SAM \break Submode}{
+    \textbf{S}ituational \textbf{A}warness \textbf{M}ode
+
+    \begin{subitemize}
+        \item \textbf{Target is ``Bugged''} (Pseudo-Track)
+        \begin{itemize}
+            \item Can guide AIM-120C (w/o STT Lock)
+            \item DLZ displayed if missile selected
+        \end{itemize}
+        \item \textbf{RWS search  continues}
+        \begin{itemize}
+            \item Scan pauses on SAM target
+            \item FCR manages scan volume
+        \end{itemize}
+    \end{subitemize}}
+    \blueitem{DTT \break Submode}{
+    \textbf{D}ual \textbf{T}arget \textbf{T}rack
+
+    \begin{subitemize}
+        \item \textbf{2 Targets ``Bugged''} --- primary / secondary
+        \begin{itemize}
+            \item Can guide AIM-120C on \textbf{\underline{primary target}}
+            \item DLZ displayed if missile selected
+        \end{itemize}
+        \item \textbf{TMS Left --- swaps primary / secondary}
+        \item \textbf{RWS search  continues}
+        \begin{itemize}
+            \item Scan pauses on both primary / secondary
+            \item FCR manages scan volume
+        \end{itemize}
+        \item \textbf{Within 10nm search pattern inhibited} --- radar only scans primary/secondary targets
+        \item \textbf{Once \underline{either} target within 3nm automatically transitions to STT}
+    \end{subitemize}}
+    \blueitem{Spotlight}{
+    \begin{subitemize}
+        \item \textbf{Narrow scan centered on acquisition cursor}
+        \begin{itemize}
+            \item 4 bar elevation 
+            \item \pm10 deg azimuth
+        \end{itemize}
+        \item \textbf{Useful to rapidly acquire radar returns from target at known position}
+        \item \textbf{Activated by holding TMS Forward >1 sec}
+        \begin{itemize}
+            \item Enters SAM submode if target detected under Acquisition Cursor
+            \item Returns to previous search pattern if no target under Acquisition Cursor when released
+        \end{itemize}
+    \end{subitemize}}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (mfd) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={27},
+            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+        };
+
+        % \node[] at (0,20) {\color{red}\textbf{NEEDS DTT SYMBOLOGY}};
+    \end{tikzpicture}
+    \caption{RWS SAM/DTT MFD Symbology}
+\end{figure}
+
+\marginfigeometry
+
+\subsubsection{SELECT RWS MODE}
+\begin{checklistenumerate}
+    \blueitem{FCR Switch}{\textbf{FCR}}
+    \blueitem{Desired MFD}{\textbf{FCR Page}, verify \textbf{SOI}}
+    \blueitem{Radar Mode}{
+        \textbf{CRM} (default), verify
+
+        \begin{subitemize}
+            \item \textbf{Dogfight/Missile Override} --- \textbf{NORM}
+            \item \textbf{Radar Mode (OSB 1)} --- shows \textbf{CRM}
+        \end{subitemize}
+    }
+    \blueitem{CRM Submode}{
+        \textbf{RWS} (default), cycle via 
+
+        \begin{subitemize}
+            \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
+        \end{subitemize}
+    }
+\end{checklistenumerate}
+
+\subsubsection{SAM / DTT ACQUISITION}
+\label{subsec:rws:samdttacq}
+\begin{checklistenumerate}
+    \blueitem{Locate Targets}{
+    \begin{subenumerate}
+        \item Correlate onboard/offboard sensors
+        \begin{itemize}
+            \item raw radar returns, RWR pings
+            \item AWACS calls, datalink targets
+        \end{itemize}
+        \item Place targets within radar scan volume
+    \end{subenumerate}}
+    \blueitem{SAM Acquisition}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (search) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={60},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners, minimum width=\marginparwidth] (sam) at (0,-35) {
+                \includegraphics[
+                    scale=0.25,
+                    page={61},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+
+            \draw[->]
+            (search) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(sam);
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
+        %         \center{\textbf{Bugged Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show bugged tgt 
+        %             \item maybe also non-bugged target for reference?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{SAM Acquisition}
+    }
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
+        \item \textbf{Target} \dotfill Verify \textbf{Bugged}
+    \end{subenumerate}
+    \begin{subitemize}
+        \item Can guide AIM-120C on Bugged target
+        \item DLZ displayed if missile selected
+        \item RWS search continues
+    \end{subitemize}}
+    \blueitem{DTT Acquisition}{(if desired)
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[draw, rounded corners, minimum width=\marginparwidth] (sam) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={62},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[draw, rounded corners, minimum width=\marginparwidth] (dtt) at (0,-35) {
+                \includegraphics[
+                    scale=0.25,
+                    page={63},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+
+            \draw[->]
+            (sam) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(dtt);
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
+        %         \center{\textbf{DTT Target Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show both DTT target symbols
+        %             \item maybe with cursor on one?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{DTT Acquisition}
+    }
+    \begin{subenumerate}
+        \item \textbf{Target 2} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
+    \end{subenumerate}
+
+    To swap primary / secondary target
+
+    \begin{subenumerate}[start=3]
+        \item \textbf{TMS} \dotfill \textbf{Left}
+    \end{subenumerate}
+    }
+    \blueitem{STT Lock}{(if desired)
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][30mm][t]{\marginparwidth}
+    %             \center{\textbf{STT Target Symbology}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item Show transition from bugged to locked target
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{STT Target}
+    % }
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\subsubsection{SPOTLIGHT ACQUISITION}
+\begin{checklistenumerate}
+    \blueitem{Locate Targets}{
+    \begin{subenumerate}
+        \item Correlate onboard/offboard sensors
+        \begin{itemize}
+            \item raw radar returns, RWR pings
+            \item AWACS calls, datalink targets
+        \end{itemize}
+        \item Place target within radar scan limits
+    \end{subenumerate}}
+    \blueitem{Spotlight Search}{
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+            ] (cursoroff) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                    page={36},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of cursoroff,
+            ] (cursoron) {
+                \includegraphics[
+                    scale=0.25,
+                    page={35},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+            \node[
+                draw, 
+                rounded corners, 
+                minimum width=\marginparwidth,
+                below=10 of cursoron,
+            ] (bugged) {
+                \includegraphics[
+                    scale=0.25,
+                    page={66},
+                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            };
+
+            % lines
+            \draw[->]
+            ($(cursoroff.north) + (0,5)$) -- node[pos=0, above, align=left, font=\small] {\textbf{TMS} \textbf{FWD (hold)}}(cursoroff);
+            \draw[->]
+            (cursoroff) -- node[right, align=left, font=\small] {\textbf{Slew over} \\ \textbf{target}}(cursoron);
+            \draw[->]
+            (cursoron) -- node[right, align=left, font=\small] {\textbf{TMS FWD} \\ \textbf{(release)}}(bugged);
+
+            % labels
+            \node[
+                anchor=north west,
+                align=left,
+                font=\bfseries\footnotesize,
+            ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
+        \end{tikzpicture}
+        % \fbox{
+        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
+        %         \center{\textbf{Spotlight Scan Symbology}}
+        %         \begin{itemize}[leftmargin=1em]
+        %             \item show spotlight azimuth bars
+        %             \item maybe show both with raw rws return and once acquired?
+        %         \end{itemize}
+        %     \end{minipage}
+        % }
+        \caption{Spotlight Search}
+    }
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill near Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
+        \begin{itemize}
+            \item FCR enters \pm10deg scan around acquisition cursor
+        \end{itemize}
+    \end{subenumerate}}
+    \blueitem{SAM Acquisition}{
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward (release)}
+        \item \textbf{Target} \dotfill Verify \textbf{Bugged}
+    \end{subenumerate}
+    \begin{subitemize}
+        \item Can guide AIM-120C on Bugged target
+        \item DLZ displayed if missile selected
+        \item RWS search continues
+    \end{subitemize}}
+    \blueitem{STT Lock}{(if desired)
+    \begin{subenumerate}
+        \item \textbf{Target} \dotfill under Acquisition Cursor
+        \item \textbf{TMS} \dotfill \textbf{Forward}
+    \end{subenumerate}}
+\end{checklistenumerate}
+
+\marginfigrestore

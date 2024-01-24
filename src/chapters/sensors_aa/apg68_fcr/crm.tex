@@ -35,12 +35,12 @@
             anchor=north west,
         ](mark)at(-50,90){\scriptsize \blue{Supports AIM-120 Launch}};
         \path[
-            fill=color2!40,
+            fill=color2!60,
             rounded corners,
         ] (-47.5,85) -- (0,85) -- (0,90) -- (50,90) -- (50,75) -- (-47.5,75) -- cycle;
         \node[
             anchor=north east,
-        ](mark)at(50,90){\scriptsize \blue{RWR Launch Warning}};
+        ](mark)at(50,90){\scriptsize \textbf{\color{white}RWR Launch Warning}};
         % \node[<options>](<coordinate name>)at(<coordinate>){<text>};
         \node[
             hyperref node=subsec:rws,
@@ -157,6 +157,7 @@
         \item \textbf{Vertical} --- \pm60 deg (120 deg coverage)
     \end{subitemize}}
     \blueitem{Azimuth Scan Pattern}{
+    Horizontal scan volume controlled by selecting limits of gimbal azimuth
     \begin{subitemize}
         \item \textbf{Azimuth search patterns}
         \begin{itemize}
@@ -169,17 +170,22 @@
             \item \textbf{OSB 18} cycles available azimuth patterns
             \item Walking cursor off side of FCR display in RWS cycles A6/A3
         \end{itemize}
-        \item \textbf{TWS \& DTT modes use a special \pm25 deg, 3 bar scan pattern}
+        \item \textbf{TWS \& DTT modes use a special \pm25 deg, \\ 
+        3 bar scan pattern}
         \begin{itemize}
             \item \textbf{A2} --- \pm25 deg (centered on cursor / target)
         \end{itemize}
-    \end{subitemize}}
+    \end{subitemize}
+    Reference \cref{fig:sensors_aa:apg68:crm:azscan} for graphical representation
+    }
     \blueitem{Bar Scan Pattern}{
     Elevation scan volume controlled by selecting number of ``bars'' (horizontal sweeps)
     \begin{subitemize}
         \item \textbf{B4} / \textbf{B2} / \textbf{B1} --- cycled via \textbf{OSB 17}
         \item \textbf{B3} --- selected by TWS \& DTT modes
-    \end{subitemize}}
+    \end{subitemize}
+    Reference \cref{fig:sensors_aa:apg68:crm:barscan} for graphical representation
+    }
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -232,6 +238,7 @@
         Note that the A6 pattern scans the entire azimuth range of the radar.
         The varying radii for the different azimuth settings are for illustrative purposes.
     }
+    \label{fig:sensors_aa:apg68:crm:azscan}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -374,11 +381,12 @@
         The radar beam --- blue circle --- tracks along the illustrated scan pattern in a loop, resulting in the dashed scan volume. 
         Note that the scan patterns are not drawn to scale.
     }
+    \label{fig:sensors_aa:apg68:crm:barscan}
 \end{figure}
 
 \clearpage
 
-\subsubsection{FCR MFD CONTROLS}
+\subsubsection{MFD CONTROLS}
 
 \begin{tcoloritemize}
     \blueitem{Radar Mode}{

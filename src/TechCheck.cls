@@ -712,3 +712,31 @@
 		{#1}
 	\end{tcolorbox}
 }
+
+\newcommand{\marnotebox}[1]{
+	\marginpar{
+		\begin{tcolorbox}[
+			enhanced,
+			colback=white,
+			colframe=color1,
+			left skip=0mm,
+			right skip=0mm,
+			left=0mm,
+			right=0mm,
+			boxsep=0mm,
+			sharp corners,
+			frame hidden,
+			colbacktitle=white,
+			coltitle=color1,
+			fonttitle=\titlefont\bfseries,
+			attach boxed title to top center,
+			boxed title style={
+			sharp corners,
+			% drop shadow=color1!100
+			},
+			title=\large NOTE,
+		]
+			{#1}
+		\end{tcolorbox}
+	}
+}

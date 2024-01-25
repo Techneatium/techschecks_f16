@@ -361,7 +361,36 @@
             ]{F16_aaweapons_missilelaunch_new_v2.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        \node[
+            draw,
+            rounded 
+            corners, 
+            red, 
+            minimum width=10.5mm, 
+            minimum height=34mm
+        ] (dlznode) at (14.5,3) {};
+
+        % Annotations
+        \node[lannot] (td) at ($(fig.west)+(-2.5mm,30mm)$) {Target designator box};
+        \draw[->, red] (td.east) -- ++(40mm, 0mm) -- (0mm, 25mm);
+
+        \node[lannot] (asec) at ($(fig.west)+(-2.5mm,9mm)$) {ASC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
+        \draw[->, red] (asec.east) -- ++(30mm, 0mm) -- (-2mm, 2mm);
+
+        \node[lannot] (asec) at ($(fig.west)+(-2.5mm,-9.5mm)$) {ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
+        \draw[->, red] (asec.east) -- ++(20mm, 0mm) -- (-18mm, -6mm);
+
+        \node[lannot] (weap) at ($(fig.west)+(-2.5mm,-23mm)$) {Selected weapon};
+        \draw[->, red] (weap.east) -- ++(14mm, 0mm);
+
+        \node[rannot] (diamond) at ($(fig.east)+(2.5mm,30mm)$) {Missile \\ diamond};
+        \draw[->, red] (diamond.west) -- ++(-25mm, 0mm) -- (2.5mm, 21mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(2.5mm,-5mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
+        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm) -- (dlznode);
+
+        \node[rannot] (range) at ($(fig.east)+(2.5mm,-25.5mm)$) {Target range};
+        \draw[->, red] (range.west) -- ++(-11mm, 0mm);
     \end{tikzpicture}
     % \fbox{
     % \begin{minipage}[t][75mm][t]{100mm}

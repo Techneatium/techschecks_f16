@@ -163,6 +163,7 @@
         \item \textbf{R\textsubscript{ACT} --- Active range}
         \begin{itemize}
             \item range at which AIM-120 will go active
+            \item not shown in \ref{fig:aa_weap:aim120:dlz}
         \end{itemize}
         \item \textbf{R\textsubscript{MIN} --- Minimum range}
         \item \textbf{Countdown}
@@ -170,7 +171,8 @@
             \item \textbf{A} --- seconds until missile goes active
             \item \textbf{T} --- seconds until predicted impact
         \end{itemize}
-    \end{subitemize}}
+    \end{subitemize}
+    Reference \cref{fig:aa_weap:aim120:dlz}}
     \blueitem{ASC \& ASEC}{
     \begin{subitemize}
         \item \textbf{Displays target lead cues to maximize missile performance on HUD \& FCR Page with}
@@ -192,7 +194,7 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.6\linewidth}
         \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
@@ -205,11 +207,44 @@
                     page={16},
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
+
+            % Annotations
+            \node[lannot] (rscale) at ($(fig.west)+(-2.5mm,17mm)$) {Range scale};
+            \draw[->, red] (rscale.east) -- ++(12mm, 0mm);
+
+            \node[lannot] (tgt) at ($(fig.west)+(-2.5mm,10mm)$) {Target range};
+            \draw[->, red] (tgt.east) -- ++(8mm,0mm) -- (1.5mm, 6mm);
+
+            \node[lannot] (closure) at ($(fig.west)+(-2.5mm,3.0mm)$) {Closure};
+            \draw[->, red] (closure.east) -- ++(4mm,0mm);
+
+            \node[lannot] (mpole) at ($(fig.west)+(-2.5mm,-6mm)$) {M-Pole};
+            \draw[->, red] (mpole.east) -- ++(6mm,0mm) -- ++(2mm, 3mm);
+
+            \node[lannot] (apole) at ($(fig.west)+(-2.5mm,-17mm)$) {A-Pole};
+            \draw[->, red] (apole.east) -- ++(11mm,0mm);
+
+            \node[rannot] (raero) at ($(fig.east)+(2.5mm,13mm)$) {R\textsubscript{aero}};
+            \draw[->, red] (raero.west) -- ++(-2.5mm, 0mm) -- ++(-2.5mm, -1.5mm);
+
+            \node[rannot] (ropt) at ($(fig.east)+(2.5mm,8.5mm)$) {R\textsubscript{opt}};
+            \draw[->, red] (ropt.west) -- ++(-6mm, 0mm);
+
+            \node[rannot] (rpi) at ($(fig.east)+(2.5mm,4mm)$) {R\textsubscript{PI}};
+            \draw[->, red] (rpi.west) -- ++(-4mm, 0mm) -- ++(-2mm, 3mm);
+
+            \node[rannot] (rtr) at ($(fig.east)+(2.5mm,-7.5mm)$) {R\textsubscript{TR}};
+            \draw[->, red] (rtr.west) -- ++(-4mm, 0mm);
+
+            \node[rannot] (rmin) at ($(fig.east)+(2.5mm,-14.5mm)$) {R\textsubscript{min}};
+            \draw[->, red] (rmin.west) -- ++(-4mm, 0mm);
         \end{tikzpicture}
         \caption{pre-launch}
-        \label{fig:aaweap:aim120:dlz:pre}
+        \label{fig:aa_weap:aim120:dlz:pre}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\linewidth}
+
+    \vspace{1em}
+    \begin{subfigure}[b]{0.45\linewidth}
         \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
@@ -223,12 +258,20 @@
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
 
-            \node[] at (0,-10) {\color{red}\textbf{MISSING ANNOTATIONS}};
+            % Annotations
+            \node[lannot] (mpole) at ($(fig.west)+(-2.5mm,0.75mm)$) {M-Pole \\ {\footnotesize (next)}};
+            \draw[->, red] (mpole.east) -- ++(6mm,0mm);
+
+            \node[lannot] (mpleif) at ($(fig.west)+(-2.5mm,-10mm)$) {M-Pole \\ {\footnotesize (in-flight)}};
+            \draw[->, red] (mpleif.east) -- ++(6mm,0mm) -- ++(5.5mm, -3.5mm);
+
+            \node[lannot, text width=30mm] (apole) at ($(fig.west)+(-2.5mm,-19mm)$) {Time-to-active \\ {\footnotesize (in-flight)}};
+            \draw[->, red] (apole.east) -- ++(11mm,0mm);
         \end{tikzpicture}
         \caption{post-launch}
-        \label{fig:aaweap:aim120:dlz:post}
+        \label{fig:aa_weap:aim120:dlz:post}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.45\linewidth}
         \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
@@ -241,20 +284,19 @@
                     page={24},
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
+
+            % Annotations
+            \node[rannot] (fpole) at ($(fig.east)+(2.5mm,-13mm)$) {F-Pole \\ {\footnotesize (in-flight)}};
+            \draw[->, red] (fpole.west) -- ++(-2mm,0mm) -- ++(-2.5mm, -3mm);
+
+            \node[rannot, text width=30mm] (ttg) at ($(fig.east)+(2.5mm,-22mm)$) {Time-to-impact \\ {\footnotesize (in-flight)}};
+            \draw[->, red] (ttg.west) -- ++(-4mm,0mm);
         \end{tikzpicture}
         \caption{post-active}
-        \label{fig:aaweap:aim120:dlz:act}
+        \label{fig:aa_weap:aim120:dlz:act}
     \end{subfigure}
-    % \fbox{
-    % \begin{minipage}[t][50mm][t]{100mm}
-    %     \center{\large\textbf{DLZ/ASEC/ASC}}
-    %     \begin{itemize}
-    %         \item show dlz with stuff from text labeled
-    %         \item show combined asc/asec symbology
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{Missile DLZ and Symbology}
+    \caption{DLZ symbology both before (a) and after (b) AIM-120 launch as well as post missile going active.} 
+    \label{fig:aa_weap:aim120:dlz}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -266,7 +308,7 @@
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 % height=75mm,
-                scale=0.5,
+                scale=0.25,
                 page={10},
             ]{F16_aaweapons_missilelaunch_new_v2.pdf}
         };

@@ -124,18 +124,33 @@
             ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
+        \draw[->, red] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+
+        \node[lannot] (los) at ($(fig.west)+(0mm,14.5mm)$) {LOS mode};
+        \draw[->, red] (los.east) -- ++(4mm, 0mm);
+
+        \node[lannot] (lstation) at ($(fig.west)+(0mm,-21mm)$) {Selected station};
+        \draw[->, red] (lstation.east) -- ++(4mm, 0mm);
+
+        \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
+        \draw[->, red] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+
+        \node[rannot] (sel) at ($(fig.east)+(0mm,13mm)$) {Selected \\ weapon};
+        \draw[->, red] (sel.west) -- ++(-4mm, 0mm);
+
+        \node[rannot] (cool) at ($(fig.east)+(0mm,3mm)$) {Cooling \\ status};
+        \draw[->, red] (cool.west) -- ++(-4mm, 0mm);
+
+        \node[rannot] (lstation) at ($(fig.east)+(0mm,-21mm)$) {Selected station};
+        \draw[->, red] (lstation.west) -- ++(-4mm, 0mm);
+
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-36mm)$) {Selective Jettison};
+        \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,6mm)$);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- SMS --- AIM-9 CONTROLS}}
-    %     \begin{itemize}
-    %         \item show sms aim-9 page
-    %         \item label each of the relevant controls explained in text
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{MFD SMS AIM-9 Controls}
+    \caption{AIM-9 SMS Page}
+    \label{fig:aa_weap:aim9:sms}
 \end{figure}
 
 \clearpage

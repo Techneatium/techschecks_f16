@@ -244,7 +244,21 @@
             ]{F16_aaweapons_missilelaunch_new_v2.pdf}
         };
 
-        \node[] at (0,20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,20mm)$) {Boresight cross};
+        \draw[->, red] (diamond.east) -- ++(20mm, 0mm) -- (-5.5mm, 11.5mm);
+
+        \node[lannot] (td) at ($(fig.west)+(-2.5mm,5mm)$) {Target designator box};
+        \draw[->, red] (td.east) -- ++(33mm, 0mm);
+
+        \node[lannot] (mode) at ($(fig.west)+(-2.5mm,-10mm)$) {Mode};
+        \draw[->, red] (mode.east) -- ++(7.5mm, 0mm) -- (-27mm, -7mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(2.5mm,20mm)$) {DLZ};
+        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm);
+
+        \node[rannot] (diamond) at ($(fig.east)+(2.5mm,0mm)$) {Missile \\ diamond};
+        \draw[->, red] (diamond.west) -- ++(-32mm, 0mm) -- (1.5mm, 3mm);
     \end{tikzpicture}
     \caption{AIM-9 HMD Symbology}
     \label{fig:aaweap:aim9:hmdsymb}

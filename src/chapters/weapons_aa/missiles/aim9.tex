@@ -198,26 +198,35 @@
             ]{F16_aaweapons_v11.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+
+        \node[
+            draw,
+            rounded 
+            corners, 
+            red, 
+            minimum width=8.5mm, 
+            minimum height=25mm
+        ] (dlznode) at (12.5,1) {};
+
+        % Annotations
+        \node[lannot] (td) at ($(fig.west)+(-2.5mm,22.5mm)$) {Target designator box};
+        \draw[->, red] (td.east) -- ++(25mm, 0mm);
+
+        \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,12.5mm)$) {Missile \\ diamond};
+        \draw[->, red] (diamond.east) -- ++(18mm, 0mm) -- (-11mm, 21mm);
+
+        \node[lannot] (weap) at ($(fig.west)+(-2.5mm,-19.5mm)$) {Selected weapon};
+        \draw[->, red] (weap.east) -- ++(15mm, 0mm);
+
+        \node[rannot] (cross) at ($(fig.east)+(2.5mm,34mm)$) {Boresight \\ cross};
+        \draw[->, red] (cross.west) -- ++(-25mm, 0mm) -- (1mm, 24.5mm);
+
+        \node[rannot] (ret) at ($(fig.east)+(2.5mm,24mm)$) {Missile \\ reticle};
+        \draw[->, red] (ret.west) -- ++(-30mm, 0mm) -- (4mm, 19mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(2.5mm,-15mm)$) {DLZ};
+        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm) -- (dlznode);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
-    %     \begin{itemize}
-    %         \item show hud/hmd with aim-9 in use 
-    %         \item clearly indicate missile diamond/reticle and dynamic aiming cross
-    %         \item maybe show several versions?
-    %         \begin{itemize}
-    %             \item 1 with missile reticle from HUD?
-    %             \item 1 with missile diamond latchedon aiming cross?
-    %             \item 1 with diamond on target?
-    %             \item 1 with \textbf{X}?
-    %         \end{itemize}
-    %         or some subset of those?
-    %         \item can reuse these in marginfigs below?
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{AIM-9 HUD Symbology}
     \label{fig:aaweap:aim9:hudsymb}
 \end{figure}

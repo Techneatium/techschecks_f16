@@ -392,21 +392,7 @@
         \node[rannot] (range) at ($(fig.east)+(2.5mm,-25.5mm)$) {Target range};
         \draw[->, red] (range.west) -- ++(-11mm, 0mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{HUD --- AIM-120 Symbology}}
-    %     \begin{itemize}
-    %         \item show hud in a-a mode, aim-120 selected
-    %         \item label each of the relevant symbology elements explained in text
-    %         \item probably makes sense to have one big figure with all the elements in it just to show what the hud looks like
-    %         \item label additional stuff not mentioned in text
-    %         \begin{itemize}
-    %             \item range/bearing information etc.
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{A-A AIM-120 HUD (post-launch)}
+    \caption{AIM-120 HUD symbology post-launch}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -422,9 +408,32 @@
             ]{F16_aaweapons_missilelaunch_new_v2.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (aspect) at ($(fig.west)+(-2.5mm, 31mm)$) {Aspect};
+        \draw[->, red] (aspect.east) -- ++(11mm, 0mm);
+
+        \node[lannot] (track) at ($(fig.west)+(-2.5mm, 24.5mm)$) {Ground track};
+        \draw[->, red] (track.east) -- ++(14mm, 0mm) -- (-23mm,29mm);
+
+        \node[lannot] (tgt) at ($(fig.west)+(-2.5mm,10mm)$) {Target \\ {\footnotesize with tail}};
+        \draw[->, red] (tgt.east) -- ++(25mm, 0mm) -- (-2mm, 5mm);
+
+        \node[lannot] (asec) at ($(fig.west)+(-2.5mm,-5mm)$) {ASEC / ASC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
+        \draw[->, red] (asec.east) -- ++(30mm, 0mm) -- (-8mm, -4mm);
+
+        \node[lannot] (bulls) at ($(fig.west)+(-2.5mm,-18.5mm)$) {Bullseye of cursor};
+        \draw[->, red] (bulls.east) -- ++(5mm, 0mm);
+
+        \node[rannot] (closure) at ($(fig.east)+(2.5mm,31mm)$) {Closure};
+        \draw[->, red] (closure.west) -- ++(-10mm, 0mm);
+
+        \node[rannot] (as) at ($(fig.east)+(2.5mm,25mm)$) {Airspeed};
+        \draw[->, red] (as.west) -- ++(-24mm, 0mm) -- (14mm, 29mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(2.5mm,0mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
+        \draw[->, red] (dlz.west) -- ++(-8mm, 0mm);
     \end{tikzpicture}
-    \caption{A-A AIM-120 FCR post-launch. Note the ``tail'' on the track.}
+    \caption{AIM-120 FCR page post-launch. Note the ``tail'' on the track. Tail flashes once AIM-120 has gone active.}
 \end{figure}
 
 \begin{figure}[htbp]

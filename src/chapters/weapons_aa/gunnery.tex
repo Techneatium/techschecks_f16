@@ -104,9 +104,8 @@
         \node[rannot] (sj) at ($(fig.east)+(0mm,-14mm)$) {Selective Jettison};
         \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,12mm)$);
 
-
     \end{tikzpicture}
-    \caption{MFD SMS Gun Controls}
+    \caption{Gun SMS page}
 \end{figure}
 
 \subsubsection{EEGS SYMBOLOGY}
@@ -134,7 +133,7 @@
         \end{itemize}
     \end{subitemize}
     
-    Reference symbology in \cref{fig:aaweap:m61:eegslvl2} and \cref{fig:aaweap:m61:eegsfunnel}
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl2}
     }
     \blueitem{Level III / IV}{Intermediate modes during radar lock acquisition}
     \blueitem{Level V}{Operating mode with radar lock. Level II symbology is retained with additional elements
@@ -232,50 +231,6 @@
     \end{tikzpicture}
     \caption{EEGS LVL V HUD Symbology}
     \label{fig:aaweap:m61:eegslvl5}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
-        
-        \node[minimum width=\linewidth] (blanker) at (0,0) {};
-        \node[draw, rounded corners] (fig) at (0,0) {
-            \includegraphics[
-                scale=1.25,
-                page={2},
-            ]{F16_aaweapons_v10_4Items.pdf}
-        };
-
-        \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (20,10) {EEGS GUN \\ FUNNEL};
-        \node[color2, anchor=west, align=left, font=\small\bfseries] (brst) at (20,32.5) {BORESIGHT \\ CROSS};
-        \node[color2, anchor=west, align=left, font=\small\bfseries] (mgrs) at (20,-20) {MGRS \\ LINES};
-
-        \draw[->, color2]
-        (funnel.west) -- ++(-12.5,0);
-        \draw[->, color2]
-        (brst.west) -- ++(-15,0);
-        \draw[->, color2]
-        (mgrs.west) -- ++(-15,0) -- +(-2.5,-5);
-    \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][50mm][t]{100mm}
-    %     \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
-    %     \begin{itemize}
-    %         \item show both funnel and pipper as subfigs
-    %         \item include target outline in firing position
-    %         \item clearly mark level 5 pipper symbology elements
-    %         \begin{itemize}
-    %             \item batr
-    %             \item range cue
-    %             \item aspect
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{EEGS Funnel}
-    \label{fig:aaweap:m61:eegsfunnel}
 \end{figure}
 
 \begin{figure}[htbp]

@@ -310,23 +310,25 @@
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 % height=75mm,
-                scale=0.25,
+                scale=0.5,
                 page={10},
             ]{F16_aaweapons_missilelaunch_new_v2.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (asec) at ($(fig.west)+(-2.5mm,20mm)$) {ASEC};
+        \draw[->, red] (asec.east) -- ++(8mm,0mm) -- (-16mm,16mm);
+
+        \node[lannot] (asc) at ($(fig.west)+(-2.5mm,-10mm)$) {ASC};
+        \draw[->, red] (asc.east) -- ++(20mm,0mm) -- (0mm, -3mm);
+
+        \node[rannot] (aspect) at ($(fig.east)+(2.5mm,10mm)$) {Aspect caret};
+        \draw[->, red] (aspect.west) -- ++(-18mm, 0mm) -- (1mm,20mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][50mm][t]{100mm}
-    %     \center{\large\textbf{DLZ/ASEC/ASC}}
-    %     \begin{itemize}
-    %         \item show dlz with stuff from text labeled
-    %         \item show combined asc/asec symbology
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{Missile ASC/ASEC Symbology}
+    \caption{
+        AIM-120 ASC / ASEC HUD Symbology, equivalent symbology appears on FCR page. 
+        ASC should be placed within ASEC to maximize P\textsubscript{kill}.
+    }
     \label{fig:aa_weap:aim120:asc_asec}
 \end{figure}
 
@@ -494,15 +496,6 @@
         ]{F16_aaweapons_missilelaunch_new_v2.pdf}
         \caption{missile timeout}
     \end{subfigure}
-    % \fbox{
-    % \begin{minipage}[t][30mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- Post-Launch Symbology}}
-    %     \begin{itemize}
-    %         \item show symbology elements side-by-side
-    %         \item \url{https://forum.dcs.world/topic/279555-purple-fcr-symbology/}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{Post-Launch Symbology}
 \end{figure}
 
@@ -651,15 +644,6 @@
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][50mm][t]{\marginparwidth}
-        %         \center{\textbf{AIM-120 DLZ}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show in-range dlz
-        %             \item maybe also show asc inside asec?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{In-range DLZ}
     }
     \begin{subenumerate}
@@ -814,17 +798,6 @@
                 font=\bfseries\footnotesize,
             ] (labelpost) at (post.north west) {AIM-120 \\ Launched};
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
-        %         \center{\textbf{System / Bugged Target Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show system / bugged target symbology
-        %             \item maybe format as a diagram/flow chart?
-        %             \item maybe combine into one fig wth search/track target fig?
-        %             \item can reuse from apg68 chapter
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{Multi-target workflow}
     }
     \begin{subenumerate}
@@ -853,19 +826,6 @@
     
     Can cycle bugged target with \textbf{TMS Right}}
     \blueitem{Fire Missile}{
-    % \marginpar{
-    %     \captionsetup{type=figure}
-    %     \fbox{
-    %         \begin{minipage}[t][50mm][t]{\marginparwidth}
-    %             \center{\textbf{AIM-120 DLZ}}
-    %             \begin{itemize}[leftmargin=1em]
-    %                 \item show in-range dlz
-    %                 \item maybe also show asc inside asec?
-    %             \end{itemize}
-    %         \end{minipage}
-    %     }
-    %     \caption{AIM-120 DLZ}
-    % }
     \begin{subenumerate}
         \item \textbf{ASC} \dotfill within \textbf{ASEC}
         \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}

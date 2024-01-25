@@ -69,8 +69,6 @@
     }
 \end{tcoloritemize}
 
-\clearpage
-
 \subsubsection{SMS CONTROLS}
 \label{subsec:aim120:sms}
 \begin{tcoloritemize}
@@ -114,18 +112,29 @@
             ]{F16_aaweapons_missilelaunch_new_v2.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (mode) at ($(fig.west)+(-2.5mm,27mm)$) {Operating \\ mode};
+        \draw[->, red] (mode.east) -- ++(15mm, 0mm) -- (-24mm,32mm);
+
+        \node[lannot] (los) at ($(fig.west)+(-2.5mm,14.25mm)$) {LOS mode};
+        \draw[->, red] (los.east) -- ++(5mm, 0mm);
+
+        \node[lannot] (lstation) at ($(fig.west)+(-2.5mm,-23mm)$) {Selected station};
+        \draw[->, red] (lstation.east) -- ++(5mm, 0mm);
+
+        \node[rannot] (inv) at ($(fig.east)+(2.5mm,27mm)$) {Inventory};
+        \draw[->, red] (inv.west) -- ++(-26mm, 0mm) -- (13mm, 32mm);
+
+        \node[rannot] (sel) at ($(fig.east)+(2.5mm,14.25mm)$) {Selected \\ weapon};
+        \draw[->, red] (sel.west) -- ++(-5mm, 0mm);
+
+        \node[rannot] (lstation) at ($(fig.east)+(2.5mm,-23mm)$) {Selected station};
+        \draw[->, red] (lstation.west) -- ++(-5mm, 0mm);
+
+        \node[rannot] (sj) at ($(fig.east)+(2.5mm,-40mm)$) {Selective Jettison};
+        \draw[->, red] (sj.west) -- ++(-15mm, 0mm) -- ($(fig.south) + (25mm,2mm)$);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- SMS --- AIM-120 CONTROLS}}
-    %     \begin{itemize}
-    %         \item show sms aim-120 page
-    %         \item label each of the relevant controls explained in text
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{MFD SMS AIM-120 Controls}
+    \caption{AIM-120 SMS page}
 \end{figure}
 
 \clearpage

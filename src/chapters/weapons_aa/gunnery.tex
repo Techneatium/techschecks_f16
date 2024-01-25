@@ -144,30 +144,35 @@
             \item gunfire solution --- stabilize pipper on target and fire
             \item contains additional range/aspect cues
         \end{itemize}
-        \item \textbf{Range Caret}
-        \begin{itemize}
-            \item displayed on \underline{inside} edge of level V pipper
-            \item unwinds from 12 o'clock at 12'000ft counter-clockwise
-        \end{itemize}
-        \item \textbf{Aspect Caret} 
-        \begin{itemize}
-            \item displayed on \underline{outside} edge of level V pipper
-        \end{itemize}
+        \textbf{reference \cref{fig:aaweap:m61:eegslvl5,fig:aa_weap:m61:eegs:5pipper}}
         \item \textbf{T-Symbol}
         \begin{itemize}
             \item \textbf{``--- + ---'' 1G Pipper} --- lead angle for non-maneuvering target,
             flanking horizontal lines indicate out-of-plane maneuver potential of target
             \item \textbf{``---'' Max-G Pipper} --- lead angle for target pulling max-G towards you
         \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:tsymb}}
+        \item \textbf{Range Caret}
+        \begin{itemize}
+            \item displayed on \underline{inside} edge of level V pipper
+            \item unwinds from 12 o'clock at 12'000ft counter-clockwise
+        \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:tdescirc}}
+        \item \textbf{Aspect Caret} 
+        \begin{itemize}
+            \item displayed on \underline{outside} edge of level V pipper
+        \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:tdescirc}}
         \item \textbf{BATR} --- \textbf{B}ullets \textbf{A}t \textbf{T}arget \textbf{R}ange
         \begin{itemize}
             \item displayed once rounds have been fired
             \item dissappears after last round has passed beyond target range
             \item useful to evaluate shots (also for training)
         \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:pipper}}
     \end{subitemize}
     
-    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aa_weap:m61:eegs:5pipper}
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl5,fig:aa_weap:m61:eegs:5pipper}
     }
 \end{tcoloritemize}
 
@@ -235,7 +240,7 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\linewidth}
+    \begin{subfigure}[b]{\linewidth}
         \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
@@ -243,16 +248,28 @@
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
-                    scale=1.5,
+                    scale=1.75,
                     page={101},
                 ]{F16_aaweapons_v11.pdf}
             };
+
+            % Annotations
+            \node[lannot] (1g) at ($(fig.west)+(-2.5mm,12mm)$) {1-g Pipper};
+            \draw[->, red] (1g.east) -- ++(22mm,0mm) -- (-1.5mm,5mm);
+
+            \node[lannot] (9g) at ($(fig.west)+(-2.5mm,-12mm)$) {9-g Pipper};
+            \draw[->, red] (9g.east) -- ++(22mm,0mm);
+
+            \node[rannot] (manpot) at ($(fig.east)+(2.5mm,5mm)$) {Maneuver potential lines};
+            \draw[->, red] (manpot.west) -- ++(-10mm, 0mm) -- (12mm,2mm);
 
         \end{tikzpicture}
         \caption{T-symbol}
         \label{fig:aa_weap:m61:eegs:tsymb}
     \end{subfigure}
-    \begin{subfigure}[b]{0.45\linewidth}
+
+    \vspace{2em}
+    \begin{subfigure}[b]{\linewidth}
         \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
@@ -260,31 +277,60 @@
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
-                    scale=1.5,
-                    page={100},
-                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
-            };
-        \end{tikzpicture}
-        \caption{Target designator}
-        \label{fig:aa_weap:m61:eegs:tdes}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.6\linewidth}
-        \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-
-            \node[draw, rounded corners] (fig) at (0,0) {
-                \includegraphics[
-                    scale=2,
-                    page={99},
+                    scale=1.75,
+                    page={86},
                 ]{F16_aaweapons_v11.pdf}
             };
+
+            % Annotations
+            \node[lannot] (12oclock) at ($(fig.west)+(-2.5mm,13mm)$) {12000 ft};
+            \draw[->, red] (12oclock.east) -- ++(14mm,0mm) -- ($(fig.north) + (-2mm,-3mm)$);
+
+            \node[lannot] (9oclock) at ($(fig.west)+(-2.5mm,0mm)$) {9000 ft};
+            \draw[->, red] (9oclock.east) -- ++(6mm,0mm);
+
+            \node[lannot] (aspect) at ($(fig.west)+(-2.5mm,-10mm)$) {Aspect caret};
+            \draw[->, red] (aspect.east) -- ++(4mm,0mm) -- (-11mm, -8.5mm);
+
+            \node[rannot] (rcue) at ($(fig.east)+(2.5mm,8mm)$) {Range cue};
+            \draw[->, red] (rcue.west) -- ++(-8mm, 0mm) -- (8.5mm,-1mm);
+
+            \node[rannot] (3oclock) at ($(fig.east)+(2.5mm,0mm)$) {3000 ft};
+            \draw[->, red] (3oclock.west) -- ++(-6mm,0mm);
+
+            \node[rannot] (6oclock) at ($(fig.east)+(2.5mm,-13mm)$) {6000 ft};
+            \draw[->, red] (6oclock.west) -- ++(-14mm,0mm) -- ($(fig.south) + (2mm,3mm)$);
+
         \end{tikzpicture}
-        \caption{Full pipper}
+        \caption{target designator circle}
+        \label{fig:aa_weap:m61:eegs:tdescirc}
+    \end{subfigure}
+
+    \vspace{2em}
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.75,
+                    page={88},
+                ]{F16_aaweapons_v11.pdf}
+            };
+
+            % Annotations
+            \node[lannot] (batr) at ($(fig.west)+(-2.5mm,0mm)$) {BATR \\ circle};
+            \draw[->, red] (batr.east) -- ++(23mm,0mm);
+
+            \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-7mm)$) {Bandit};
+            \draw[->, red] (bandit.west) -- ++(-23mm,0mm) -- (2.5mm, -3mm);
+        \end{tikzpicture}
+        \caption{full, combined pipper, shown approx. on-target}
         \label{fig:aa_weap:m61:eegs:pipper}
     \end{subfigure}
-    \caption{EEGS Level V Pipper}
+    \caption{EEGS Level V Pipper, split by component}
     \label{fig:aa_weap:m61:eegs:5pipper}
 \end{figure}
 

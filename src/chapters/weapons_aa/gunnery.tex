@@ -167,7 +167,7 @@
         \end{itemize}
     \end{subitemize}
     
-    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aaweap:m61:eegspipper}
+    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aa_weap:m61:eegs:5pipper}
     }
 \end{tcoloritemize}
 
@@ -235,51 +235,57 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
+    \begin{subfigure}[b]{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
 
-        \node[draw, rounded corners] (pipper) at (0,0) {
-            \includegraphics[
-                scale=1.25,
-                page={99},
-            ]{F16_aaweapons_v11.pdf}
-        };
-        \node[
-            anchor=north,
-            align=center,
-            font=\small\bfseries
-        ](mark1)at(pipper.south){EEGS LVL 5 PIPPER};
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.5,
+                    page={101},
+                ]{F16_aaweapons_v11.pdf}
+            };
 
-        \node[draw, rounded corners, left=10mm of pipper] (tsymb) {
-            \includegraphics[
-                scale=1.25,
-                page={101},
-            ]{F16_aaweapons_v11.pdf}
-        };
-        \node[
-            anchor=north,
-            align=center,
-            font=\small\bfseries
-        ](mark2)at(tsymb.south){T-SYMBOL};
+        \end{tikzpicture}
+        \caption{T-symbol}
+        \label{fig:aa_weap:m61:eegs:tsymb}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
 
-        \node[draw, rounded corners, left=10mm of tsymb] (tdes) {
-            \includegraphics[
-                scale=1.25,
-                page={100},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
-        };
-        \node[
-            anchor=north,
-            align=center,
-            font=\small\bfseries
-        ](mark3)at(tdes.south){TARGET DESIGNATOR};
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.5,
+                    page={100},
+                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            };
+        \end{tikzpicture}
+        \caption{Target designator}
+        \label{fig:aa_weap:m61:eegs:tdes}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.6\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
 
-        \path[] (tdes) -- node[pos=0.5, anchor=center]{\textbf{+}}(tsymb);
-        \path[] (tsymb) -- node[pos=0.5, anchor=center]{\textbf{=}}(pipper);
-    \end{tikzpicture}
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    scale=2,
+                    page={99},
+                ]{F16_aaweapons_v11.pdf}
+            };
+        \end{tikzpicture}
+        \caption{Full pipper}
+        \label{fig:aa_weap:m61:eegs:pipper}
+    \end{subfigure}
     \caption{EEGS Level V Pipper}
-    \label{fig:aaweap:m61:eegspipper}
+    \label{fig:aa_weap:m61:eegs:5pipper}
 \end{figure}
 
 \marginfigeometry

@@ -86,23 +86,23 @@
         };
 
         % Annotations
-        \node[annot, align=center, anchor=east] (mode) at ($(fig.north west)+(7.5mm,2mm)$) {Operating mode};
-        \draw[->, red] (mode.east) -- ++(5mm, 0mm) -- (-23mm,35mm);
+        \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
+        \draw[->, red] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
 
-        \node[annot, align=center, anchor=south] (submode) at ($(fig.north)+(-11mm,2mm)$) {Submode};
-        \draw[->, red] (submode.south) -- (-11mm, 35mm);
+        \node[lannot] (submode) at ($(fig.west)+(0mm,14mm)$) {Submode};
+        \draw[->, red] (submode.east) -- ++(22.5mm, 0mm) -- (-11mm, 29mm);
 
-        \node[annot, align=center, anchor=south] (inv) at ($(fig.north)+(11mm,2mm)$) {Inventory};
-        \draw[->, red] (inv.south) -- (11mm, 35mm);
+        \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
+        \draw[->, red] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
 
-        \node[rannot] (rounds) at ($(fig.east)+(2.5mm,21.5mm)$) {Rounds \\ remaining};
-        \draw[->, red] (rounds.west) -- ++(-7mm,0mm);
+        \node[rannot] (rounds) at ($(fig.east)+(0mm,14mm)$) {Rounds \\ remaining};
+        \draw[->, red] (rounds.west) -- ++(-8mm,0mm) -- (28mm, 18mm);
 
-        \node[rannot] (rdy) at ($(fig.east)+(2.5mm,10mm)$) {Ready \\ indication};
-        \draw[->, red] (rdy.west) -- ++(-22mm, 0mm) -- (12.5mm,18mm);
+        \node[rannot] (rdy) at ($(fig.east)+(0mm,0mm)$) {Ready \\ indication};
+        \draw[->, red] (rdy.west) -- ++(-20mm, 0mm) -- (10mm,18mm);
 
-        \node[rannot] (sj) at ($(fig.east)+(2.5mm,-15mm)$) {Selective Jettison};
-        \draw[->, red] (sj.west) -- ++(-15mm, 0mm) -- ($(fig.south) + (22mm,12mm)$);
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-14mm)$) {Selective Jettison};
+        \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,12mm)$);
 
 
     \end{tikzpicture}

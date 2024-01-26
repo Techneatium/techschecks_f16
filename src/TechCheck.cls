@@ -44,6 +44,8 @@
 \tcbuselibrary{skins, breakable}
 \RequirePackage{xkeyval} % allows defining keys for macros
 
+\input{tikzsettings.tex}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

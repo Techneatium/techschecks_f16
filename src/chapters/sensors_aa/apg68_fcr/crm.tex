@@ -443,24 +443,49 @@
         >={Latex[round]}
         ]
         
-        \node[] (mfd) at (0,0) {
+        \node[] (fig) at (0,0) {
             \includegraphics[
-                height=100mm,
+                height=75mm,
                 page={1},
             ]{F16_apg68_RWS_HomePage_v2.pdf}
         };
 
-        \node[] at (0,20) {\color{red}\textbf{MISSING CONTROLS ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (mode) at ($(fig.west)+(0mm,38mm)$) {FCR mode};
+        \draw[->, red] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
+
+        \node[lannot] (submode) at ($(fig.west)+(0mm,28mm)$) {CRM \\ submode};
+        \draw[->, red] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
+
+        \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range select};
+        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+
+        \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth select};
+        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+
+        \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation bar select};
+        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+
+        \node[annot, anchor=south, align=center] (fov) at ($(fig.north)+(0mm,0mm)$) {FOV select};
+        \draw[->, red] (fov.south) -- ++(0mm, -3.5mm);
+
+        \node[rannot] (cntl) at ($(fig.east)+(0mm,38mm)$) {Control};
+        \draw[->, red] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
+
+        \node[rannot] (ovrd) at ($(fig.east)+(0mm,28mm)$) {Override};
+        \draw[->, red] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
+
+        \node[rannot] (dl) at ($(fig.east)+(0mm,20.5mm)$) {Datalink mode};
+        \draw[->, red] (dl.west) -- ++(-4mm,0mm);
+
+        \node[rannot] (acq) at ($(fig.east)+(0mm,10mm)$) {Acquisition cursor};
+        \draw[->, red] (acq.west) -- ++(-30mm, 0mm) -- (3mm,5mm);
+
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-8mm)$) {Horizon \\indicator};
+        \draw[->, red] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
+
+        \node[rannot] (dclt) at ($(fig.east)+(0mm,-38mm)$) {Declutter};
+        \draw[->, red] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- RWS (Default CRM Page)}}
-    %     \begin{itemize}
-    %         \item Basic RWS search page with returns
-    %         \item Several RWS radar returns
-    %         \item Maybe steerpoint (wedding cake)
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{RWS MFD Symbology}
+    \caption{FCR page with basic controls \& symbology marked. Note that FCR is illustrated in default mode immediately after startup.}
 \end{figure}

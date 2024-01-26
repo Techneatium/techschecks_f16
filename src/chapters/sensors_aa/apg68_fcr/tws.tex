@@ -2,7 +2,7 @@
 \label{subsec:tws}
 \begin{tcoloritemize}
     \blueitem{TWS}{
-    \textbf{T}rack \textbf{W}hile \textbf{S}can
+    \textbf{T}rack \textbf{W}hile \textbf{S}can --- reference \cref{fig:sensors_aa:apg68:tws:search} for symbology
 
     \begin{subitemize}
         \item \textbf{Multi-target tracking mode}
@@ -19,7 +19,7 @@
         \begin{itemize}
             \item Search / Track / System / Cursor / Bugged
         \end{itemize}
-        \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile}}
+        \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile} for trackfile symbology}
     \end{subitemize}}
 \end{tcoloritemize}
 
@@ -35,18 +35,31 @@
                 page={40},
             ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
+
+        % Annotations
+        \node[lannot] (search) at ($(fig.west)+(0mm,28mm)$) {Search target};
+        \draw[->, red] (search.east) -- ++(30mm, 0mm) -- ++(4mm, -4mm);
+
+        \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
+        \draw[->, red] (sec.east) -- ++(32mm, 0mm);
+
+        \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Current STPT};
+        \draw[->, red] (as.west) -- ++(-12mm, 0mm) -- ++(-3mm, -3mm);
+
+        \node[rannot] (system) at ($(fig.east)+(0mm,10mm)$) {System \\ target};
+        \draw[->, red] (system.west) -- ++(-26mm, 0mm);
+
+        \node[rannot] (cursor) at ($(fig.east)+(0mm,-4mm)$) {Acquisition cursor};
+        \draw[->, red] (cursor.west) -- ++(-11mm, 0mm);
+
+        \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
+        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
+        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Cursor Target}}
-    %     \begin{itemize}
-    %         \item Basic TWS search page with returns
-    %         \item Includes search, track, and system (cursor) targets
-    %         \item Maybe include steerpoint (wedding cake)?
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{TWS MFD Symbology}
+    \caption{Basic TWS search FCR page symbology.}
+    \label{fig:sensors_aa:apg68:tws:search}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -96,19 +109,11 @@
         \caption{Bugged}
         \label{fig:sensorsaa:apg68:tws:trackfile:bugged}
     \end{subfigure}
-    % \fbox{
-    % \begin{minipage}[t][20mm][t]{100mm}
-    %     \center{\large\textbf{TWS Trackfile States}}
-    %     \begin{itemize}
-    %         \item Show MFD symbols for search, track, system, cursor, and bugged targets
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{TWS Track Symbols}
     \label{fig:sensorsaa:apg68:tws:trackfile}
 \end{figure}
 
-\subsection{TRACKFILE STATES}
+\subsubsection{TRACKFILE STATES}
 \label{subsec:sensorsaa:apg68:tws:trackfile}
 \begin{tcoloritemize}
     \blueitem{Search Target}{
@@ -191,12 +196,26 @@
             \includegraphics[
                 height=75mm,
                 page={45},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
         };
 
-        % \node[] at (0,20) {\color{red}\textbf{SHOULD NOT HAVE SHOOT SYMB.}};
+        % Annotations
+        \node[lannot] (system) at ($(fig.west)+(0mm,29mm)$) {System \\ target};
+        \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, -4mm);
+
+        \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
+        \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+
+        \node[rannot] (cursor) at ($(fig.east)+(0mm,11mm)$) {Cursor \\ target};
+        \draw[->, red] (cursor.west) -- ++(-15mm, 0mm);
+
+        \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
+        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
+        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
-    \caption{TWS Cursor Target Symbology}
+    \caption{TWS FCR page symbology with cursor target}
     \label{fig:sensorsaa:apg68:tws:cursorsymb}
 \end{figure}
 
@@ -210,19 +229,48 @@
             \includegraphics[
                 height=75mm,
                 page={57},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
         };
+
+        % Annotations
+        \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
+        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+
+        \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
+        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+
+        % \node[lannot] (system) at ($(fig.west)+(0mm,15mm)$) {System \\ target};
+        % \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, 4mm);
+
+        \node[lannot] (cross) at ($(fig.west)+(0mm,7mm)$) {Steering \\ cross};
+        \draw[->, red] (cross.east) -- ++(32mm, 0mm) -- ++(4mm, 4mm);
+
+        % \node[lannot] (sec) at ($(fig.west)+(0mm,-8mm)$) {Azimuth scan limits};
+        % \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+
+        \node[lannot] (asec) at ($(fig.west)+(0mm,-6mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
+        \draw[->, red] (asec.east) -- ++(30mm, 0mm) -- ++(4mm, 4mm);
+
+        \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
+        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+
+        \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
+        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+
+        \node[rannot] (bug) at ($(fig.east)+(0mm,11mm)$) {Bugged \\ target};
+        \draw[->, red] (bug.west) -- ++(-20mm, 0mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(0mm,-10mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
+        \draw[->, red] (dlz.west) -- ++(-7mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
+        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Bugged Target}}
-    %     \begin{itemize}
-    %         \item TWS search page with Bugged Target
-    %         \item Shows weapon symbology and steering cues
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{TWS Bugged Target MFD Symbology. Note that ``shoot'' symbology has appeared (DLZ, ASEC, steering cross)}
+    \caption{
+        TWS FCR page symbology with bugged target. 
+        Note that ``shoot'' symbology (DLZ, ASEC, steering cross) 
+        as well as additional information about the bugged target is displayed.
+    }
     \label{fig:sensorsaa:apg68:tws:buggedsymb}
 \end{figure}
 
@@ -253,6 +301,7 @@
 \label{subsec:tws:multiacq}
 \begin{checklistenumerate}
     \blueitem{Track Target Acquisition}{
+    \label{subsec:sensorsaa:apg68:tws:multi:trk}
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -319,14 +368,16 @@
             % lines
             \draw[->]
             (search) -- node[right, align=left, font=\small] {\textbf{Automatic}}(track);
+            \path (search) -- node[left, align=right, font=\small] {\ref{subsec:sensorsaa:apg68:tws:multi:trk}}(track);
             \draw[->]
             (track) -- node[right, align=left, font=\small] {\textbf{TMS FWD} \\ \footnotesize\textbf{(repeat for all} \\ \footnotesize\textbf{desired targets)}}(system);
             \draw[>-]
-            ($(track.south)!0.5!(system.north) + (-5,0)$) -- ++(0,2) arc (180:0:2.5) -- ++(0,-4) arc (360:180:2.5) -- ++(0,2);
+            ($(track.south)!0.5!(system.north) + (-5,0)$) -- ++(0,2) arc (180:0:2.5) -- ++(0,-4) arc (360:180:2.5) -- node[left, align=right, font=\small, pos=1] {\ref{subsec:sensorsaa:apg68:tws:multi:sys}} ++(0,2);
             \draw[->]
             (system) -- node[right, align=left, font=\small] {\textbf{Slew Cursor} \\ \textbf{near target}}(cursor);
             \draw[->]
             (cursor) -- node[right, align=left, font=\small] {\textbf{TMS FWD}}(bugged);
+            \path (cursor) -- node[left, align=right, font=\small] {\ref{subsec:sensorsaa:apg68:tws:multi:bug}}(bugged);
 
             % labels
             \node[
@@ -355,15 +406,6 @@
                 font=\bfseries\footnotesize,
             ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
-        %         \center{\textbf{Search / Track Target Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show both search and track target symbology
-        %             \item maybe format as a diagram/flow chart?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{TWS trackfile acquisition flow}
     }
     \begin{subenumerate}
@@ -376,6 +418,7 @@
         \item FCR automatically generates Track Targets once sufficient data available
     \end{subenumerate}}
     \blueitem{System Target Acquisition}{
+    \label{subsec:sensorsaa:apg68:tws:multi:sys}
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward} 
@@ -386,20 +429,7 @@
         \item \textbf{TMS} \dotfill \textbf{Right}
     \end{subenumerate}}
     \blueitem{Upgrade to Bugged Target}{
-    % \marginpar{
-    %     \captionsetup{type=figure}
-    %     \fbox{
-    %         \begin{minipage}[t][60mm][t]{\marginparwidth}
-    %             \center{\textbf{System / Cursor / Bugged Target Symbology}}
-    %             \begin{itemize}[leftmargin=1em]
-    %                 \item show system / bugged target symbology
-    %                 \item maybe format as a diagram/flow chart?
-    %                 \item maybe combine into one fig wth search/track target fig?
-    %             \end{itemize}
-    %         \end{minipage}
-    %     }
-    %     \caption{System / Cursor /  Bugged Target Symbology}
-    % }
+    \label{subsec:sensorsaa:apg68:tws:multi:bug}
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}

@@ -98,25 +98,48 @@
         >={Latex[round]}
         ]
         
-        \node[] (mfd) at (0,0) {
+        \node[] (fig) at (0,0) {
             \includegraphics[
-                height=100mm,
+                height=75mm,
                 page={69},
             ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
         };
 
-        \node[] at (0,-20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (mode) at ($(fig.west)+(0mm,38mm)$) {FCR mode};
+        \draw[->, red] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
+
+        \node[lannot] (submode) at ($(fig.west)+(0mm,28mm)$) {ACM \\ submode};
+        \draw[->, red] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
+
+        \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range scale};
+        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+
+        \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth};
+        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+
+        \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation \\ bar};
+        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+
+        \node[annot, anchor=south, align=center] (fov) at ($(fig.north)+(0mm,0mm)$) {FOV select};
+        \draw[->, red] (fov.south) -- ++(0mm, -3.5mm);
+
+        \node[rannot] (cntl) at ($(fig.east)+(0mm,38mm)$) {Control};
+        \draw[->, red] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
+
+        \node[rannot] (ovrd) at ($(fig.east)+(0mm,28mm)$) {Override};
+        \draw[->, red] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
+
+        \node[rannot] (dl) at ($(fig.east)+(0mm,20.5mm)$) {Datalink mode};
+        \draw[->, red] (dl.west) -- ++(-4mm,0mm);
+
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-8mm)$) {Horizon \\indicator};
+        \draw[->, red] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
+
+        \node[rannot] (dclt) at ($(fig.east)+(0mm,-38mm)$) {Declutter};
+        \draw[->, red] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- ACM}}
-    %     \begin{itemize}
-    %         \item Show default ACM page
-    %         \item clearly mark what the ``FCR format'' is (referenced in text)
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{MFD page for FCR ACM}
+    \caption{ACM FCR page symbology}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -130,7 +153,7 @@
             \draw[color2, fill=color2!20, dashed, rounded corners]
             (-15, 10) -- (15,10) -- (15,-10) -- (-15,-10) -- cycle;
 
-            \node[] (hud) at (0,0) {
+            \node[] (fig) at (0,0) {
                 \includegraphics[
                     scale=0.25,
                     page={74},
@@ -178,83 +201,110 @@
         \end{tikzpicture}
         \caption{Vertical}
     \end{subfigure}
-    % \fbox{
-    % \begin{minipage}[t][40mm][t]{100mm}
-    %     \center{\large\textbf{ACM Scan Patterns}}
-    %     \begin{itemize}
-    %         \item Show different scan patterns?
-    %         \item Unsure if this figure is necessary
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{
         ACM Scan Patterns shown with the relevant HUD symbology. 
         The dashed lines indicate the scan volume for illustrative purposes and are not to scale.
     }
 \end{figure}
 
-% \begin{figure}[htbp]
-%     \centering
-%     \begin{subfigure}[t]{0.45\linewidth}
-%         \centering
-%         \includegraphics[
-%             scale=0.25,
-%             page={70},
-%         ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
-%         \caption{HUD}
-%     \end{subfigure}
-%     \begin{subfigure}[t]{0.45\linewidth}
-%         \centering
-%         \includegraphics[
-%             scale=0.25,
-%             page={71},
-%         ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
-%         \caption{BORE}
-%     \end{subfigure}
-%     \begin{subfigure}[t]{0.45\linewidth}
-%         \centering
-%         \includegraphics[
-%             scale=0.25,
-%             page={72},
-%         ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
-%         \caption{Vertical}
-%     \end{subfigure}
-%     % \fbox{
-%     % \begin{minipage}[t][40mm][t]{100mm}
-%     %     \center{\large\textbf{ACM Scan Patterns}}
-%     %     \begin{itemize}
-%     %         \item Show different scan patterns?
-%     %         \item Unsure if this figure is necessary
-%     %     \end{itemize}
-%     % \end{minipage}
-%     % }
-%     \caption{ACM HUD Symbology}
-% \end{figure}
-
 \begin{figure}[htbp]
     \centering
-    \includegraphics[
-        height=75mm,
-        page={71},
-    ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
-    \caption{ACM HUD Symbology. Shown here in the BORE submode.}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=75mm,
+                page={71},
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+        };
+
+        % Annotations
+        \node[lannot] (bs) at ($(fig.west)+(-2.5mm,34mm)$) {Boresight cross};
+        \draw[->, red] (bs.east) -- ++(34mm,0mm) -- ++(4mm,-4mm);
+
+        \node[lannot] (eegs) at ($(fig.west)+(-2.5mm,24mm)$) {EEGS funnel};
+        \draw[->, red] (eegs.east) -- ++(32mm,0mm);
+
+        \node[lannot] (acc) at ($(fig.west)+(-2.5mm,13.5mm)$) {Acceleration};
+        \draw[->, red] (acc.east) -- ++(16mm,0mm);
+
+        \node[lannot] (cas) at ($(fig.west)+(-2.5mm,0mm)$) {Airspeed \\ {\footnotesize calibrated}};
+        \draw[->, red] (cas.east) -- ++(7mm,0mm);
+
+        \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-15mm)$) {Mode};
+        \draw[->, red] (dgft.east) -- ++(9mm,0mm) -- ++(4mm, -4mm);
+
+        \node[lannot] (mgrs) at ($(fig.west)+(-2.5mm,-32mm)$) {MGRS lines};
+        \draw[->, red] (mgrs.east) -- ++(10mm,0mm);
+
+        \node[rannot] (bore) at ($(fig.east)+(2.5mm,13mm)$) {Scan zone indicator};
+        \draw[->, red] (bore.west) -- ++(-38mm, 0mm);
+
+        \node[rannot] (alt) at ($(fig.east)+(2.5mm,0mm)$) {Altimeter};
+        \draw[->, red] (alt.west) -- ++(-12mm, 0mm);
+
+        \node[rannot] (arc) at ($(fig.east)+(2.5mm,-12mm)$) {Attitude arc};
+        \draw[->, red] (arc.west) -- ++(-28mm, 0mm);
+
+        \node[rannot] (slant) at ($(fig.east)+(2.5mm,-25.25mm)$) {Target slant range};
+        \draw[->, red] (slant.west) -- ++(-20mm, 0mm);
+    \end{tikzpicture}
+    \caption{ACM HUD Symbology. Shown in BORE submode.}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[
-        height=60mm,
-        page={77},
-    ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{ACM HMD Dogfight Scan}}
-    %     \begin{itemize}
-    %         \item Show HMD symbology in ACM mode
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{ACM HMD Symbology}
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (fig) at (0,0) {
+            \includegraphics[
+                height=60mm,
+                page={77},
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+        };
+
+        % Annotations
+        \node[lannot] (rwr) at ($(fig.west)+(-2.5mm,22.5mm)$) {RWR};
+        \draw[->, red] (rwr.east) -- ++(7mm,0mm);
+
+        \node[lannot] (acc) at ($(fig.west)+(-2.5mm,16.5mm)$) {Acceleration};
+        \draw[->, red] (acc.east) -- ++(8mm,0mm) -- ++(4mm, -2mm);
+
+        \node[lannot] (cas) at ($(fig.west)+(-2.5mm,9.5mm)$) {Airspeed};
+        \draw[->, red] (cas.east) -- ++(5.5mm,0mm);
+
+        \node[lannot] (cross) at ($(fig.west)+(-2.5mm,2mm)$) {Aiming cross};
+        \draw[->, red] (cross.east) -- ++(28mm,0mm) -- ++(5mm,5mm);
+
+        \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-6.5mm)$) {Mode};
+        \draw[->, red] (dgft.east) -- ++(7mm,0mm);
+
+        \node[lannot] (hdg) at ($(fig.west)+(-2.5mm,-26mm)$) {Heading \\ {\footnotesize HMD LOS}};
+        \draw[->, red] (hdg.east) -- ++(22mm,0mm);
+
+        \node[rannot] (acq) at ($(fig.east)+(2.5mm,22.5mm)$) {Acquisition circle};
+        \draw[->, red] (acq.west) -- ++(-28mm,0mm) -- ++(-4mm,-4mm);
+
+        \node[rannot] (alt) at ($(fig.east)+(2.5mm,9.5mm)$) {Altimeter};
+        \draw[->, red] (alt.west) -- ++(-6mm, 0mm);
+
+        \node[rannot] (range) at ($(fig.east)+(2.5mm,-1mm)$) {Target slant range};
+        \draw[->, red] (range.west) -- ++(-10mm, 0mm) -- ++(-4mm, -4mm);
+
+        \node[rannot] (stpt) at ($(fig.east)+(2.5mm,-14.5mm)$) {Distance to STPT};
+        \draw[->, red] (stpt.west) -- ++(-8mm, 0mm);
+    \end{tikzpicture}
+    \caption{
+        ACM HMD Symbology. 
+        Shown in BORE submode. 
+        Note that RWR indication is of highest threat 
+        with diamond indicating direction of threat 
+        and gap indicating current HMD LOS.
+    }
 \end{figure}
 
 \begin{tcoloritemize}

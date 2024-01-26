@@ -303,19 +303,55 @@
 
 \begin{figure}[htbp]
     \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (fig) at (0,0) {
     \includegraphics[
         height=60mm,
         page={77},
     ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{ACM HMD Dogfight Scan}}
-    %     \begin{itemize}
-    %         \item Show HMD symbology in ACM mode
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{ACM HMD Symbology}
+        };
+
+        % Annotations
+        \node[lannot] (rwr) at ($(fig.west)+(-2.5mm,22.5mm)$) {RWR};
+        \draw[->, red] (rwr.east) -- ++(7mm,0mm);
+
+        \node[lannot] (acc) at ($(fig.west)+(-2.5mm,16.5mm)$) {Acceleration};
+        \draw[->, red] (acc.east) -- ++(8mm,0mm) -- ++(4mm, -2mm);
+
+        \node[lannot] (cas) at ($(fig.west)+(-2.5mm,9.5mm)$) {Airspeed};
+        \draw[->, red] (cas.east) -- ++(5.5mm,0mm);
+
+        \node[lannot] (cross) at ($(fig.west)+(-2.5mm,2mm)$) {Aiming cross};
+        \draw[->, red] (cross.east) -- ++(28mm,0mm) -- ++(5mm,5mm);
+
+        \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-6.5mm)$) {Mode};
+        \draw[->, red] (dgft.east) -- ++(7mm,0mm);
+
+        \node[lannot] (hdg) at ($(fig.west)+(-2.5mm,-26mm)$) {Heading \\ {\footnotesize HMD LOS}};
+        \draw[->, red] (hdg.east) -- ++(22mm,0mm);
+
+        \node[rannot] (acq) at ($(fig.east)+(2.5mm,22.5mm)$) {Acquisition circle};
+        \draw[->, red] (acq.west) -- ++(-28mm,0mm) -- ++(-4mm,-4mm);
+
+        \node[rannot] (alt) at ($(fig.east)+(2.5mm,9.5mm)$) {Altimeter};
+        \draw[->, red] (alt.west) -- ++(-6mm, 0mm);
+
+        \node[rannot] (range) at ($(fig.east)+(2.5mm,-1mm)$) {Target slant range};
+        \draw[->, red] (range.west) -- ++(-10mm, 0mm) -- ++(-4mm, -4mm);
+
+        \node[rannot] (stpt) at ($(fig.east)+(2.5mm,-14.5mm)$) {Distance to STPT};
+        \draw[->, red] (stpt.west) -- ++(-8mm, 0mm);
+    \end{tikzpicture}
+    \caption{
+        ACM HMD Symbology. 
+        Shown in BORE submode. 
+        Note that RWR indication is of highest threat 
+        with diamond indicating direction of threat 
+        and gap indicating current HMD LOS.
+    }
 \end{figure}
 
 \begin{tcoloritemize}

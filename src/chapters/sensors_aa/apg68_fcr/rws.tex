@@ -26,42 +26,34 @@
         >={Latex[round]}
         ]
         
-        \node[] (mfd) at (0,0) {
+        \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
                 page={13},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
         };
 
-        \node[align=left, font=\bfseries] (cursor) at (20,-10) {Acquisition \\ Cursor};
-        \node[align=left, font=\bfseries] (stpt) at (10,6) {Current STPT};
-        \node[align=left, font=\bfseries] (return) at (2.5,27.5) {Radar Returns};
+        % Annotations
+        \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range select};
+        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
 
-        \draw[<-]
-        (2.5,-5) -- (5,-10) -- (cursor.west);
-        \draw[->]
-        (stpt.west) -- ++(-1,0) -- +(-3,2);
-        \draw[->]
-        (return.west) -- ++(-5.5,0) -- +(0,-5);
-        \draw[->]
-        (return.east) -- ++(4.5,0) -- +(0,-5);
+        \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth select};
+        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
 
+        \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation bar select};
+        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+
+        \node[rannot] (ret) at ($(fig.east)+(0mm,28mm)$) {RWS \\ returns};
+        \draw[->, red] (ret.west) -- ++(-16mm, 0mm) -- (18mm,18mm);
+        \draw[->, red] (ret.west) -- ++(-50mm, 0mm) -- (-16mm,20mm);
+
+        \node[rannot] (stpt) at ($(fig.east)+(0mm,6mm)$) {Current STPT};
+        \draw[->, red] (stpt.west) -- ++(-42mm, 0mm) -- (-7mm,9mm);
+
+        \node[rannot] (acq) at ($(fig.east)+(0mm,-10mm)$) {Acquisition cursor};
+        \draw[->, red] (acq.west) -- ++(-30mm, 0mm) -- (3mm,-5mm);
     \end{tikzpicture}
-    % \includegraphics[
-    %     height=75mm,
-    %     page={1},
-    % ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- RWS Search}}
-    %     \begin{itemize}
-    %         \item Basic RWS search page with returns
-    %         \item Several RWS radar returns
-    %         \item Maybe steerpoint (wedding cake)
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{RWS MFD Symbology}
+    \caption{RWS FCR mode symbology.}
 \end{figure}
 
 \begin{tcoloritemize}

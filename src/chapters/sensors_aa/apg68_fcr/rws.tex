@@ -116,12 +116,38 @@
             \includegraphics[
                 height=75mm,
                 page={27},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
         };
 
-        % \node[] at (0,20) {\color{red}\textbf{NEEDS DTT SYMBOLOGY}};
+        % Annotations
+        \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
+        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+
+        \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
+        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+
+        \node[lannot] (sec) at ($(fig.west)+(0mm,10.25mm)$) {Secondary target};
+        \draw[->, red] (sec.east) -- ++(27mm, 0mm);
+
+        \node[lannot] (prim) at ($(fig.west)+(0mm,-7mm)$) {Primary target \& cursor};
+        \draw[->, red] (prim.east) -- ++(15mm, 0mm) -- ++(4mm, 6mm);
+
+        \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
+        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+
+        \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
+        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(0mm,-2mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
+        \draw[->, red] (dlz.west) -- ++(-8mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-24mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
+        \draw[->, red] (asec.west) -- ++(-26mm, 0mm) -- (4mm,-7mm);
+
+        \node[annot, anchor=south, align=left, text width=35mm] (fov) at ($(fig.north)+(-6.5mm,0mm)$) {Azimuth scan limits};
+        \draw[->, red] (fov.south) -- ++(0mm, -15mm) -- ++(12mm, -6mm);
     \end{tikzpicture}
-    \caption{RWS SAM/DTT MFD Symbology}
+    \caption{RWS SAM / DTT submode symbology. Additional information on primary target is displayed at top of FCR page.}
 \end{figure}
 
 \marginfigeometry

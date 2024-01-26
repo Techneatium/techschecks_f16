@@ -204,12 +204,26 @@
             \includegraphics[
                 height=75mm,
                 page={45},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
         };
 
-        % \node[] at (0,20) {\color{red}\textbf{SHOULD NOT HAVE SHOOT SYMB.}};
+        % Annotations
+        \node[lannot] (system) at ($(fig.west)+(0mm,29mm)$) {System \\ target};
+        \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, -4mm);
+
+        \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
+        \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+
+        \node[rannot] (cursor) at ($(fig.east)+(0mm,11mm)$) {Cursor \\ target};
+        \draw[->, red] (cursor.west) -- ++(-15mm, 0mm);
+
+        \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
+        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
+        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
-    \caption{TWS Cursor Target Symbology}
+    \caption{TWS FCR page symbology with cursor target}
     \label{fig:sensorsaa:apg68:tws:cursorsymb}
 \end{figure}
 
@@ -223,19 +237,48 @@
             \includegraphics[
                 height=75mm,
                 page={57},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
         };
+
+        % Annotations
+        \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
+        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+
+        \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
+        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+
+        % \node[lannot] (system) at ($(fig.west)+(0mm,15mm)$) {System \\ target};
+        % \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, 4mm);
+
+        \node[lannot] (cross) at ($(fig.west)+(0mm,7mm)$) {Steering \\ cross};
+        \draw[->, red] (cross.east) -- ++(32mm, 0mm) -- ++(4mm, 4mm);
+
+        % \node[lannot] (sec) at ($(fig.west)+(0mm,-8mm)$) {Azimuth scan limits};
+        % \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+
+        \node[lannot] (asec) at ($(fig.west)+(0mm,-6mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
+        \draw[->, red] (asec.east) -- ++(30mm, 0mm) -- ++(4mm, 4mm);
+
+        \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
+        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+
+        \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
+        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+
+        \node[rannot] (bug) at ($(fig.east)+(0mm,11mm)$) {Bugged \\ target};
+        \draw[->, red] (bug.west) -- ++(-20mm, 0mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(0mm,-10mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
+        \draw[->, red] (dlz.west) -- ++(-7mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
+        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Bugged Target}}
-    %     \begin{itemize}
-    %         \item TWS search page with Bugged Target
-    %         \item Shows weapon symbology and steering cues
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{TWS Bugged Target MFD Symbology. Note that ``shoot'' symbology has appeared (DLZ, ASEC, steering cross)}
+    \caption{
+        TWS FCR page symbology with bugged target. 
+        Note that ``shoot'' symbology (DLZ, ASEC, steering cross) 
+        as well as additional information about the bugged target is displayed.
+    }
     \label{fig:sensorsaa:apg68:tws:buggedsymb}
 \end{figure}
 

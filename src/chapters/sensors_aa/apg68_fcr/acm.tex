@@ -256,11 +256,49 @@
 
 \begin{figure}[htbp]
     \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+
+        \node[draw, rounded corners] (fig) at (0,0) {
     \includegraphics[
         height=75mm,
         page={71},
     ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
-    \caption{ACM HUD Symbology. Shown here in the BORE submode.}
+        };
+
+        % Annotations
+        \node[lannot] (bs) at ($(fig.west)+(-2.5mm,34mm)$) {Boresight cross};
+        \draw[->, red] (bs.east) -- ++(34mm,0mm) -- ++(4mm,-4mm);
+
+        \node[lannot] (eegs) at ($(fig.west)+(-2.5mm,24mm)$) {EEGS funnel};
+        \draw[->, red] (eegs.east) -- ++(32mm,0mm);
+
+        \node[lannot] (acc) at ($(fig.west)+(-2.5mm,13.5mm)$) {Acceleration};
+        \draw[->, red] (acc.east) -- ++(16mm,0mm);
+
+        \node[lannot] (cas) at ($(fig.west)+(-2.5mm,0mm)$) {Airspeed \\ {\footnotesize calibrated}};
+        \draw[->, red] (cas.east) -- ++(7mm,0mm);
+
+        \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-15mm)$) {Mode};
+        \draw[->, red] (dgft.east) -- ++(9mm,0mm) -- ++(4mm, -4mm);
+
+        \node[lannot] (mgrs) at ($(fig.west)+(-2.5mm,-32mm)$) {MGRS lines};
+        \draw[->, red] (mgrs.east) -- ++(10mm,0mm);
+
+        \node[rannot] (bore) at ($(fig.east)+(2.5mm,13mm)$) {Scan zone indicator};
+        \draw[->, red] (bore.west) -- ++(-38mm, 0mm);
+
+        \node[rannot] (alt) at ($(fig.east)+(2.5mm,0mm)$) {Altimeter};
+        \draw[->, red] (alt.west) -- ++(-12mm, 0mm);
+
+        \node[rannot] (arc) at ($(fig.east)+(2.5mm,-12mm)$) {Attitude arc};
+        \draw[->, red] (arc.west) -- ++(-28mm, 0mm);
+
+        \node[rannot] (slant) at ($(fig.east)+(2.5mm,-25.25mm)$) {Target slant range};
+        \draw[->, red] (slant.west) -- ++(-20mm, 0mm);
+    \end{tikzpicture}
+    \caption{ACM HUD Symbology. Shown in BORE submode.}
 \end{figure}
 
 \begin{figure}[htbp]

@@ -2,7 +2,7 @@
 \label{subsec:tws}
 \begin{tcoloritemize}
     \blueitem{TWS}{
-    \textbf{T}rack \textbf{W}hile \textbf{S}can
+    \textbf{T}rack \textbf{W}hile \textbf{S}can --- reference \cref{fig:sensors_aa:apg68:tws} for symbology
 
     \begin{subitemize}
         \item \textbf{Multi-target tracking mode}
@@ -19,7 +19,7 @@
         \begin{itemize}
             \item Search / Track / System / Cursor / Bugged
         \end{itemize}
-        \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile}}
+        \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile} for trackfile symbology}
     \end{subitemize}}
 \end{tcoloritemize}
 
@@ -35,18 +35,31 @@
                 page={40},
             ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
         };
+
+        % Annotations
+        \node[lannot] (search) at ($(fig.west)+(0mm,28mm)$) {Search target};
+        \draw[->, red] (search.east) -- ++(30mm, 0mm) -- ++(4mm, -4mm);
+
+        \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
+        \draw[->, red] (sec.east) -- ++(32mm, 0mm);
+
+        \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Current STPT};
+        \draw[->, red] (as.west) -- ++(-12mm, 0mm) -- ++(-3mm, -3mm);
+
+        \node[rannot] (system) at ($(fig.east)+(0mm,10mm)$) {System \\ target};
+        \draw[->, red] (system.west) -- ++(-26mm, 0mm);
+
+        \node[rannot] (cursor) at ($(fig.east)+(0mm,-4mm)$) {Acquisition cursor};
+        \draw[->, red] (cursor.west) -- ++(-11mm, 0mm);
+
+        \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
+        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
+        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- TWS Search --- Cursor Target}}
-    %     \begin{itemize}
-    %         \item Basic TWS search page with returns
-    %         \item Includes search, track, and system (cursor) targets
-    %         \item Maybe include steerpoint (wedding cake)?
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{TWS MFD Symbology}
+    \caption{Basic TWS search FCR page symbology.}
+    \label{fig:sensors_aa:apg68:tws}
 \end{figure}
 
 \begin{figure}[htbp]

@@ -46,6 +46,8 @@
 
 \input{tikzsettings.tex}
 
+\RequirePackage{ttccolors}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -513,9 +515,33 @@
 	% leftmark links to current chapter
 	\fancyhead[LO]{
         \hatchodd
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{chapter.\thechapter}{\leftmark}}}
-		}
+		\begin{tikzpicture}[baseline=(title.base)]
+			\node [
+				draw,
+				anchor=south west,
+				fill=Black, 
+				minimum width=10mm,
+				minimum height=10mm,
+			] (numbox) at (0, 0) {};
+			\node [
+				draw, 
+				color=white, 
+				minimum width=7.5mm, 
+				fill=\chaptercolor, 
+				inner sep=0pt, 
+				line width=0.4mm,
+				circle, 
+				text=white,
+				font=\titlefont\Large\bfseries,
+			] (chapternum) at (numbox.center) {\thechapter};
+			\node [
+				anchor=west, 
+				fill=Black, 
+				minimum height=10mm,
+				text=white, 
+				font=\titlefont\Large\bfseries,
+			] (title) at (numbox.east) {\hyperlink{chapter.\thechapter}{\leftmark}};
+		\end{tikzpicture}
   	}
     \fancyhead[LE]{
         \hatcheven

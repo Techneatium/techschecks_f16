@@ -1,3 +1,25 @@
+% figure nodes
+\tikzset{
+    figstyle/.style={                
+        auto, 
+        node distance=10mm, 
+        x=1mm,
+        y=1mm, 
+        very thick, 
+        line cap=round,
+        >={Latex[round]},
+    }
+}
+
+\tikzset{
+    boxedmarfigstyle/.style={                
+        draw, 
+        rounded corners, 
+        minimum width=\marginparwidth,
+    }
+}
+
+% annotations
 \tikzset{
     annot/.style={
         text width=20mm, 

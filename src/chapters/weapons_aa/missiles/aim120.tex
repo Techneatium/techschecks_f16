@@ -198,9 +198,7 @@
     \centering
     \begin{subfigure}[b]{0.6\linewidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
@@ -248,9 +246,7 @@
     \vspace{1em}
     \begin{subfigure}[b]{0.45\linewidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
@@ -275,9 +271,7 @@
     \end{subfigure}
     \begin{subfigure}[b]{0.45\linewidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
@@ -605,10 +599,8 @@
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=0.5,
                     page={16},
@@ -649,25 +641,17 @@
     \blueitem{Track Acquisition}{For demonstration we will use \textbf{CRM-TWS Submode} 
     \marginpar{
         \captionsetup{type=figure}
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-            ] (track) at (0,0) {
+                boxedmarfigstyle,            ] (track) at (0,0) {
                 \includegraphics[
                     scale=0.5,
                     page={30},
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
             \node[
-                draw, 
-                rounded 
-                corners, 
-                minimum width=\marginparwidth,
+                boxedmarfigstyle,
                 below=17.5 of track,
             ] (system) {
                 \includegraphics[
@@ -676,10 +660,7 @@
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-                below=12.5 of system,
+                boxedmarfigstyle,                below=12.5 of system,
             ] (cursor) {
                 \includegraphics[
                     scale=0.5,
@@ -687,10 +668,7 @@
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-                below=10 of cursor,
+                boxedmarfigstyle,                below=10 of cursor,
             ] (bugged) {
                 \includegraphics[
                     scale=0.5,
@@ -698,10 +676,7 @@
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-                below=10 of bugged,
+                boxedmarfigstyle,                below=10 of bugged,
             ] (dlz) {
                 \includegraphics[
                     scale=0.5,
@@ -709,10 +684,7 @@
                 ]{F16_aaweapons_missilelaunch_new_v2.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-                below=10 of dlz,
+                boxedmarfigstyle,                below=10 of dlz,
             ] (post) {
                 \includegraphics[
                     scale=0.5,

@@ -305,25 +305,17 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-            ] (search) at (0,0) {
+                boxedmarfigstyle,            ] (search) at (0,0) {
                 \includegraphics[
                     scale=0.25,
                     page={54},
                 ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-                below=10 of search,
+                boxedmarfigstyle,                below=10 of search,
             ] (track) {
                 \includegraphics[
                     scale=0.25,
@@ -343,10 +335,7 @@
                 ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-                below=12.5 of system,
+                boxedmarfigstyle,                below=12.5 of system,
             ] (cursor) {
                 \includegraphics[
                     scale=0.25,
@@ -354,10 +343,7 @@
                 ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
-                below=10 of cursor,
+                boxedmarfigstyle,                below=10 of cursor,
             ] (bugged) {
                 \includegraphics[
                     scale=0.25,

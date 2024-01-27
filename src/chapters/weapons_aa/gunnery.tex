@@ -241,9 +241,7 @@
     \centering
     \begin{subfigure}[b]{\linewidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
@@ -270,9 +268,7 @@
     \vspace{2em}
     \begin{subfigure}[b]{\linewidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
@@ -308,9 +304,7 @@
     \vspace{2em}
     \begin{subfigure}[b]{\linewidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
@@ -368,11 +362,9 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=1.25,
                     page={82},
@@ -435,10 +427,8 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=1.25,
                     page={88},

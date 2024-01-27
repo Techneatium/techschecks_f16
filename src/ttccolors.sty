@@ -1,0 +1,25 @@
+\definecolor{ttcred}{RGB}{218, 37, 29}
+\definecolor{ttcyellow}{RGB}{248,195,0}
+\definecolor{ttcgreen}{RGB}{0,146,63}
+\definecolor{ttcblue}{RGB}{0,130,201}
+\definecolor{ttcraspberry}{RGB}{162, 26, 104}
+\definecolor{ttcorange}{RGB}{231, 120, 23}
+\definecolor{ttclime}{RGB}{139, 202, 152}
+
+
+\newcounter{colorcounter}
+\newcommand{\chaptercolor}{%
+  \ifcase\value{colorcounter}%
+    ttcyellow\or
+    ttcgreen\or
+    ttcblue\or
+    ttcraspberry\or
+    ttcorange\or
+    ttclime\else
+    black\fi
+}
+
+\newcommand{\cyclechpcolor}{%
+  \stepcounter{colorcounter}%
+  \ifnum\value{colorcounter}>6\setcounter{colorcounter}{0}\fi
+}

@@ -29,8 +29,7 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={13},
-            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+            ]{mfd/fcr_aa/rws_search.pdf}
         };
 
         % Annotations
@@ -115,8 +114,7 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={27},
-            ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+            ]{mfd/fcr_aa/rws_sam_dtt.pdf}
         };
 
         % Annotations
@@ -194,28 +192,17 @@
             \node[boxedmarfigstyle] (search) at (0,0) {
                 \includegraphics[
                     scale=0.25,
-                    page={60},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_01.pdf}
             };
             \node[boxedmarfigstyle] (sam) at (0,-35) {
                 \includegraphics[
                     scale=0.25,
-                    page={61},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_02.pdf}
             };
 
             \draw[->]
             (search) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(sam);
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
-        %         \center{\textbf{Bugged Target Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show bugged tgt 
-        %             \item maybe also non-bugged target for reference?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{SAM Acquisition}
     }
     \begin{subenumerate}
@@ -237,28 +224,17 @@
             \node[boxedmarfigstyle] (sam) at (0,0) {
                 \includegraphics[
                     scale=0.25,
-                    page={62},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_03.pdf}
             };
             \node[boxedmarfigstyle] (dtt) at (0,-35) {
                 \includegraphics[
                     scale=0.25,
-                    page={63},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_04.pdf}
             };
 
             \draw[->]
             (sam) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(dtt);
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
-        %         \center{\textbf{DTT Target Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show both DTT target symbols
-        %             \item maybe with cursor on one?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{DTT Acquisition}
     }
     \begin{subenumerate}
@@ -273,18 +249,6 @@
     \end{subenumerate}
     }
     \blueitem{STT Lock}{(if desired)
-    % \marginpar{
-    %     \captionsetup{type=figure}
-    %     \fbox{
-    %         \begin{minipage}[t][30mm][t]{\marginparwidth}
-    %             \center{\textbf{STT Target Symbology}}
-    %             \begin{itemize}[leftmargin=1em]
-    %                 \item Show transition from bugged to locked target
-    %             \end{itemize}
-    %         \end{minipage}
-    %     }
-    %     \caption{STT Target}
-    % }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
@@ -309,27 +273,27 @@
         \begin{tikzpicture}[figstyle]
             
             \node[
-                boxedmarfigstyle,            ] (cursoroff) at (0,0) {
+                boxedmarfigstyle,            
+            ] (cursoroff) at (0,0) {
                 \includegraphics[
                     scale=0.25,
-                    page={36},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_spotlight_subfig_cursor_off.pdf}
             };
             \node[
-                boxedmarfigstyle,                below=10 of cursoroff,
+                boxedmarfigstyle,                
+                below=10 of cursoroff,
             ] (cursoron) {
                 \includegraphics[
                     scale=0.25,
-                    page={35},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_spotlight_subfig_cursor_on.pdf}
             };
             \node[
-                boxedmarfigstyle,                below=10 of cursoron,
+                boxedmarfigstyle,                
+                below=10 of cursoron,
             ] (bugged) {
                 \includegraphics[
-                    scale=0.25,
-                    page={66},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                    scale=0.5,
+                ]{mfd/fcr_aa/tgt_bugged.pdf}
             };
 
             % lines
@@ -347,15 +311,6 @@
                 font=\bfseries\footnotesize,
             ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
-        %         \center{\textbf{Spotlight Scan Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show spotlight azimuth bars
-        %             \item maybe show both with raw rws return and once acquired?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{Spotlight Search}
     }
     \begin{subenumerate}

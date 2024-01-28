@@ -4,7 +4,7 @@
     \centering
     \includegraphics[
             width = 108mm,
-    ]{F16_aaweapons_amraam_overview_v01.pdf}
+    ]{diagrams/weap/weap_aa_amraam_overview.pdf}
     \fbox{
     \begin{minipage}[t][25mm][t]{100mm}
         \center{\large\textbf{AIM-120 OVERVIEW}}
@@ -108,8 +108,7 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={7},
-            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            ]{mfd/sms/aim120.pdf}
         };
 
         % Annotations
@@ -202,10 +201,8 @@
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
-                    % height=75mm,
                     scale=0.5,
-                    page={16},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/aim120_subfig_dlz_prelaunch.pdf}
             };
 
             % Annotations
@@ -250,10 +247,8 @@
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
-                    % height=75mm,
                     scale=0.5,
-                    page={20},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/aim120_subfig_dlz_postlaunch.pdf}
             };
 
             % Annotations
@@ -275,10 +270,8 @@
 
             \node[draw, rounded corners] (fig) at (0,0) {
                 \includegraphics[
-                    % height=75mm,
                     scale=0.5,
-                    page={24},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/aim120_subfig_dlz_active.pdf}
             };
 
             % Annotations
@@ -303,10 +296,8 @@
 
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
-                % height=75mm,
                 scale=0.5,
-                page={10},
-            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            ]{hud/aim120/subfig_asec_asc.pdf}
         };
 
         % Annotations
@@ -353,8 +344,7 @@
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={11},
-            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            ]{hud/aim120/postlaunch.pdf}
         };
 
         \node[
@@ -400,8 +390,7 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={17},
-            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            ]{mfd/fcr_aa/aim120_postlaunch.pdf}
         };
 
         % Annotations
@@ -438,24 +427,21 @@
         \centering
         \includegraphics[
             scale=0.75,
-            page={33},
-        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        ]{mfd/fcr_aa/tgt_bugged.pdf}
         \caption{bugged target}
     \end{subfigure}
     \begin{subfigure}[t]{0.3\linewidth}
         \centering
         \includegraphics[
             scale=0.75,
-            page={34},
-        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        ]{mfd/fcr_aa/tgt_tail.pdf}
         \caption{indicates AIM-120 launched}
     \end{subfigure}
     \begin{subfigure}[t]{0.3\linewidth}
         \centering
         \includegraphics[
             scale=0.75,
-            page={35},
-        ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+        ]{mfd/fcr_aa/tgt_impact.pdf}
         \caption{indicates predicted t\textsubscript{imp} has occured}
     \end{subfigure}
     \caption{
@@ -603,8 +589,7 @@
             \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=0.5,
-                    page={16},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/aim120_subfig_dlz_prelaunch.pdf}
             };
         \end{tikzpicture}
         \caption{In-range DLZ}
@@ -644,11 +629,11 @@
         \begin{tikzpicture}[figstyle]
 
             \node[
-                boxedmarfigstyle,            ] (track) at (0,0) {
+                boxedmarfigstyle,            
+            ] (track) at (0,0) {
                 \includegraphics[
                     scale=0.5,
-                    page={30},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/tgt_track.pdf}
             };
             \node[
                 boxedmarfigstyle,
@@ -656,40 +641,39 @@
             ] (system) {
                 \includegraphics[
                     scale=0.5,
-                    page={31},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/tgt_system.pdf}
             };
             \node[
-                boxedmarfigstyle,                below=12.5 of system,
+                boxedmarfigstyle,                
+                below=12.5 of system,
             ] (cursor) {
                 \includegraphics[
                     scale=0.5,
-                    page={32},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/tgt_cursor.pdf}
             };
             \node[
-                boxedmarfigstyle,                below=10 of cursor,
+                boxedmarfigstyle,                
+                below=10 of cursor,
             ] (bugged) {
                 \includegraphics[
                     scale=0.5,
-                    page={33},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/tgt_bugged.pdf}
             };
             \node[
-                boxedmarfigstyle,                below=10 of bugged,
+                boxedmarfigstyle,                
+                below=10 of bugged,
             ] (dlz) {
                 \includegraphics[
                     scale=0.5,
-                    page={16},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/aim120_subfig_dlz_prelaunch.pdf}
             };
             \node[
-                boxedmarfigstyle,                below=10 of dlz,
+                boxedmarfigstyle,                
+                below=10 of dlz,
             ] (post) {
                 \includegraphics[
                     scale=0.5,
-                    page={34},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{mfd/fcr_aa/tgt_impact.pdf}
             };
 
             % lines

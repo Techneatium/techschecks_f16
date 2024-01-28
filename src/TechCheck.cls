@@ -521,6 +521,7 @@
 		]
 			\node [
 				draw,
+                hyperref node=frontpage,
 				anchor=north west,
 				fill=Black, 
 				minimum width=\pagewidth,

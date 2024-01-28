@@ -514,14 +514,41 @@
   	}
 	% leftmark links to current chapter
 	\fancyhead[LO]{
-        \hatchodd
-		\begin{tikzpicture}[baseline=(title.base)]
+        % \hatchodd
+		\begin{tikzpicture}[
+			remember picture,
+			overlay,
+		]
 			\node [
 				draw,
-				anchor=south west,
+				anchor=north west,
 				fill=Black, 
-				minimum width=10mm,
+				minimum width=\pagewidth,
 				minimum height=10mm,
+				% xshift = -\TC@inmar-1mm,
+				line width=0,
+			] (blackbox) at (current page.north west) {};
+		\end{tikzpicture}
+		\begin{tikzpicture}[
+			remember picture,
+			baseline=(title.base),
+			overlay,
+		]
+			% \node [
+			% 	draw,
+			% 	anchor=north west,
+			% 	fill=Black, 
+			% 	minimum width=\pagewidth+2mm,
+			% 	minimum height=10mm,
+			% 	% xshift = -\TC@inmar-1mm,
+			% 	line width=0,
+			% ] (blackbox) at (current page.north west) {};
+			\node [
+				anchor=west,
+				minimum width=7.5mm,
+				minimum height=10mm,
+				line width=0,
+				xshift=-1mm,
 			] (numbox) at (0, 0) {};
 			\node [
 				draw, 
@@ -536,11 +563,12 @@
 			] (chapternum) at (numbox.center) {\thechapter};
 			\node [
 				anchor=west, 
-				fill=Black, 
 				minimum height=10mm,
 				text=white, 
+				line width=0,
 				font=\titlefont\Large\bfseries,
-			] (title) at (numbox.east) {\hyperlink{chapter.\thechapter}{\leftmark}};
+				right=0 of numbox,
+			] (title) {\hyperlink{chapter.\thechapter}{\leftmark}};
 		\end{tikzpicture}
   	}
     \fancyhead[LE]{

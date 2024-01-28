@@ -212,7 +212,7 @@
 % color3 - alternate highlight color
 
 \DeclareOption{colorful}{
-	\colorlet{color1}{black}
+	\colorlet{color1}{Black}
 	% \definecolor{color1}{HTML}{222222}
 	\colorlet{color2}{NavyBlue}
 	\colorlet{color3}{NavyBlue}
@@ -503,13 +503,13 @@
 	% rightmark links to current section
 	\fancyhead[RO]{
         \thumbnar
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
+		\colorbox{Black}{
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\uppercase{\rightmark}}}}
 		}
 	}
 	\fancyhead[RE]{
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
+		\colorbox{Black}{
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\uppercase{\rightmark}}}}
 		}
   	}
 	% leftmark links to current chapter
@@ -701,26 +701,26 @@
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
 
 \titleformat{name=\subsection,numberless} % command
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
 % formatting of subsubsection [full width]
 \titleformat{\subsubsection} % command
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsubsection\quad#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsubsection\quad#1}}}} % before-code
 
 \titleformat{name=\subsubsection,numberless} % command
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}

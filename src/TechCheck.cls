@@ -441,7 +441,7 @@
 % fancy header with section title in hatching
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ -- #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}{}}
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
@@ -501,16 +501,16 @@
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	% Header
 	% rightmark links to current section
-	\fancyhead[RO]{
-        \thumbnar
-		\colorbox{Black}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\uppercase{\rightmark}}}}
-		}
+	\fancyhead[RO]{%
+        \thumbnar%
+		\colorbox{color1}{%
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}%
+		}%
 	}
-	\fancyhead[RE]{
-		\colorbox{Black}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\uppercase{\rightmark}}}}
-		}
+	\fancyhead[RE]{%
+		\colorbox{color1}{%
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}%
+		}%
   	}
 	% leftmark links to current chapter
 	\fancyhead[LO]{

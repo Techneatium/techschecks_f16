@@ -46,6 +46,8 @@
 
 \input{tikzsettings.tex}
 
+\RequirePackage{techcolors}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -439,7 +441,7 @@
 % fancy header with section title in hatching
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ -- #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}{}}
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
@@ -499,23 +501,66 @@
 	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	% Header
 	% rightmark links to current section
-	\fancyhead[RO]{
-        \thumbnar
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
-		}
+	\fancyhead[RO]{%
+        \thumbnar%
+		\colorbox{color1}{%
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}%
+		}%
 	}
-	\fancyhead[RE]{
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}
-		}
+	\fancyhead[RE]{%
+		\colorbox{color1}{%
+			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{section.\thesection}{\rightmark}}}%
+		}%
   	}
 	% leftmark links to current chapter
 	\fancyhead[LO]{
-        \hatchodd
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\hyperlink{chapter.\thechapter}{\leftmark}}}
-		}
+        % \hatchodd
+		\begin{tikzpicture}[
+			remember picture,
+			overlay,
+		]
+			\node [
+				draw,
+                hyperref node=frontpage,
+				anchor=north west,
+				fill=Black, 
+				minimum width=\pagewidth,
+				minimum height=10mm,
+				line width=0,
+			] (blackbox) at (current page.north west) {};
+		\end{tikzpicture}
+		\begin{tikzpicture}[
+			remember picture,
+			baseline=(title.base),
+			overlay,
+		]
+			\node [
+				anchor=west,
+				minimum width=7.5mm,
+				minimum height=10mm,
+				line width=0,
+				xshift=-1mm,
+			] (numbox) at (0, 0) {};
+			\node [
+				draw, 
+				color=white, 
+				minimum width=7.5mm, 
+				fill=\chaptercolor, 
+				inner sep=0pt, 
+				line width=0.4mm,
+				circle, 
+				text=white,
+				font=\titlefont\Large\bfseries,
+			] (chapternum) at (numbox.center) {\thechapter};
+			\node [
+				anchor=west, 
+				minimum height=10mm,
+				text=white, 
+				line width=0,
+				font=\titlefont\Large\bfseries,
+				right=0 of numbox,
+			] (title) {\hyperlink{chapter.\thechapter}{\leftmark}};
+		\end{tikzpicture}
   	}
     \fancyhead[LE]{
         \hatcheven
@@ -631,7 +676,73 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\Huge #1\hatchodd} % before-code
+	{
+		\begin{tikzpicture}[
+			remember picture,
+			baseline=(title.base),
+			overlay,
+		]
+			% background for alignment
+			\node [
+				anchor=west,
+				minimum width=15mm,
+				minimum height=15mm,
+				line width=0,
+				xshift=-1mm,
+			] (numboxbackground) at (0, 0) {};
+			\node [
+				anchor=west, 
+				minimum height=12mm,
+				text=white, 
+				line width=0,
+				font=\titlefont\Huge\bfseries,
+				right=0 of numboxbackground,
+			] (titlebackground) {#1\quad\null};
+			% black fill aligned to right of title
+			\node [
+				anchor=east,
+				minimum width=2\pagewidth,
+				minimum height=15mm,
+				fill=color1,
+				line width=0,
+				xshift=-1mm,
+			] (fill) at (titlebackground.east) {};
+			% main content
+			\node [
+				anchor=west,
+				minimum width=15mm,
+				minimum height=15mm,
+				line width=0,
+				xshift=-1mm,
+			] (numbox) at (0, 0) {};
+			\node [
+				draw, 
+				color=white, 
+				minimum width=12mm, 
+				fill=\chaptercolor, 
+				inner sep=0pt, 
+				line width=0.6mm,
+				circle, 
+				text=white,
+				font=\titlefont\Huge\bfseries,
+			] (chapternum) at (numbox.center) {\thechapter};
+			\node [
+				anchor=west, 
+				minimum height=12mm,
+				text=white, 
+				line width=0,
+				font=\titlefont\Huge\bfseries,
+				right=0 of numbox,
+			] (title) {#1\quad\null};
+		\end{tikzpicture}
+	} % before-code
+	[] % after code
+
+\titleformat{name=\chapter,numberless}[display]
+	{\titlefont\Huge\bfseries} % format
+	{} % label
+	{0pt} % sep
+	{#1} % before-code
 	[] % after code
 
 % formatting of section
@@ -647,26 +758,26 @@
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
 
 \titleformat{name=\subsection,numberless} % command
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
 % formatting of subsubsection [full width]
 \titleformat{\subsubsection} % command
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsubsection\quad#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsubsection\quad#1}}}} % before-code
 
 \titleformat{name=\subsubsection,numberless} % command
 	{\normalfont\bfseries} % format
 	{\color{color1}} % label
 	{0em} % sep
-	{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}

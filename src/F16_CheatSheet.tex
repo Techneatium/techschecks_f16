@@ -54,6 +54,7 @@
 	chapters/appendix,
 }
 
+\color{color1} % set main font color for whole document
 \begin{document}
 	\include{chapters/titlepage}
 
@@ -68,13 +69,19 @@
 
 	\include{chapters/part_proc}
 	\include{chapters/proc_basic}
+	\cyclechpcolor
 	\include{chapters/proc_em}
 	\include{chapters/part_sys}
+	\cyclechpcolor
 	\include{chapters/systems}
+	\cyclechpcolor
 	\include{chapters/sensors_aa}
+	\cyclechpcolor
 	\include{chapters/sensors_ag}
 	\include{chapters/part_weap}
+	\cyclechpcolor
 	\include{chapters/weapons_ag}
+	\cyclechpcolor
 	\include{chapters/weapons_aa}
 	\include{chapters/part_supp}
 	\include{chapters/appendix}

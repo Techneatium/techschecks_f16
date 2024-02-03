@@ -526,7 +526,6 @@
 				fill=Black, 
 				minimum width=\pagewidth,
 				minimum height=10mm,
-				% xshift = -\TC@inmar-1mm,
 				line width=0,
 			] (blackbox) at (current page.north west) {};
 		\end{tikzpicture}
@@ -535,15 +534,6 @@
 			baseline=(title.base),
 			overlay,
 		]
-			% \node [
-			% 	draw,
-			% 	anchor=north west,
-			% 	fill=Black, 
-			% 	minimum width=\pagewidth+2mm,
-			% 	minimum height=10mm,
-			% 	% xshift = -\TC@inmar-1mm,
-			% 	line width=0,
-			% ] (blackbox) at (current page.north west) {};
 			\node [
 				anchor=west,
 				minimum width=7.5mm,

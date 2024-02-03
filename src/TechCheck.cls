@@ -686,7 +686,73 @@
 	{\titlefont\huge\bfseries} % format
 	{\chaptertitlename\ \thechapter} % label
 	{20pt} % sep
-	{\Huge #1\hatchodd} % before-code
+	{
+		\begin{tikzpicture}[
+			remember picture,
+			baseline=(title.base),
+			overlay,
+		]
+			% background for alignment
+			\node [
+				anchor=west,
+				minimum width=15mm,
+				minimum height=15mm,
+				line width=0,
+				xshift=-1mm,
+			] (numboxbackground) at (0, 0) {};
+			\node [
+				anchor=west, 
+				minimum height=12mm,
+				text=white, 
+				line width=0,
+				font=\titlefont\Huge\bfseries,
+				right=0 of numboxbackground,
+			] (titlebackground) {#1\quad\null};
+			% black fill aligned to right of title
+			\node [
+				anchor=east,
+				minimum width=2\pagewidth,
+				minimum height=15mm,
+				fill=color1,
+				line width=0,
+				xshift=-1mm,
+			] (fill) at (titlebackground.east) {};
+			% main content
+			\node [
+				anchor=west,
+				minimum width=15mm,
+				minimum height=15mm,
+				line width=0,
+				xshift=-1mm,
+			] (numbox) at (0, 0) {};
+			\node [
+				draw, 
+				color=white, 
+				minimum width=12mm, 
+				fill=\chaptercolor, 
+				inner sep=0pt, 
+				line width=0.6mm,
+				circle, 
+				text=white,
+				font=\titlefont\Huge\bfseries,
+			] (chapternum) at (numbox.center) {\thechapter};
+			\node [
+				anchor=west, 
+				minimum height=12mm,
+				text=white, 
+				line width=0,
+				font=\titlefont\Huge\bfseries,
+				right=0 of numbox,
+			] (title) {#1\quad\null};
+		\end{tikzpicture}
+	} % before-code
+	[] % after code
+
+\titleformat{name=\chapter,numberless}[display]
+	{\titlefont\Huge\bfseries} % format
+	{} % label
+	{0pt} % sep
+	{#1} % before-code
 	[] % after code
 
 % formatting of section

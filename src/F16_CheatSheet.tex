@@ -39,7 +39,7 @@
 % Determine which files included in output
 \includeonly{
 	chapters/titlepage,
-    chapters/tableofcontents,
+    chapters/frontmatter,
 	chapters/part_proc,
 	chapters/proc_basic,
 	chapters/proc_em,
@@ -73,7 +73,7 @@
 
 	\frontmatter
 	\pagestyle{empty}
-	\include{chapters/tableofcontents}
+	\include{chapters/frontmatter}
 	
 	% restart page counter, pagenumber styling
 	\mainmatter
@@ -97,6 +97,7 @@
 	\cyclechpcolor
 	\include{chapters/weapons_aa}
 	\include{chapters/part_supp}
+	\cyclechpcolor
 	\include{chapters/appendix}
 
 	\iftoggle{print}{

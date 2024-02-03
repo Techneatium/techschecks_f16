@@ -212,7 +212,7 @@
 % color3 - alternate highlight color
 
 \DeclareOption{colorful}{
-	\colorlet{color1}{Black}
+	\colorlet{color1}{black}
 	% \definecolor{color1}{HTML}{222222}
 	\colorlet{color2}{NavyBlue}
 	\colorlet{color3}{NavyBlue}

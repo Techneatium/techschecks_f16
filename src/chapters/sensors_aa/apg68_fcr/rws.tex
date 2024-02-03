@@ -26,42 +26,33 @@
         >={Latex[round]}
         ]
         
-        \node[] (mfd) at (0,0) {
+        \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={13},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{mfd/fcr_aa/rws_search.pdf}
         };
 
-        \node[align=left, font=\bfseries] (cursor) at (20,-10) {Acquisition \\ Cursor};
-        \node[align=left, font=\bfseries] (stpt) at (10,6) {Current STPT};
-        \node[align=left, font=\bfseries] (return) at (2.5,27.5) {Radar Returns};
+        % Annotations
+        \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range select};
+        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
 
-        \draw[<-]
-        (2.5,-5) -- (5,-10) -- (cursor.west);
-        \draw[->]
-        (stpt.west) -- ++(-1,0) -- +(-3,2);
-        \draw[->]
-        (return.west) -- ++(-5.5,0) -- +(0,-5);
-        \draw[->]
-        (return.east) -- ++(4.5,0) -- +(0,-5);
+        \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth select};
+        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
 
+        \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation bar select};
+        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+
+        \node[rannot] (ret) at ($(fig.east)+(0mm,28mm)$) {RWS \\ returns};
+        \draw[->, red] (ret.west) -- ++(-16mm, 0mm) -- (18mm,18mm);
+        \draw[->, red] (ret.west) -- ++(-50mm, 0mm) -- (-16mm,20mm);
+
+        \node[rannot] (stpt) at ($(fig.east)+(0mm,6mm)$) {Current STPT};
+        \draw[->, red] (stpt.west) -- ++(-42mm, 0mm) -- (-7mm,9mm);
+
+        \node[rannot] (acq) at ($(fig.east)+(0mm,-10mm)$) {Acquisition cursor};
+        \draw[->, red] (acq.west) -- ++(-30mm, 0mm) -- (3mm,-5mm);
     \end{tikzpicture}
-    % \includegraphics[
-    %     height=75mm,
-    %     page={1},
-    % ]{F16_apg68_RWS_HomePage&SAM_v3.pdf}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- RWS Search}}
-    %     \begin{itemize}
-    %         \item Basic RWS search page with returns
-    %         \item Several RWS radar returns
-    %         \item Maybe steerpoint (wedding cake)
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{RWS MFD Symbology}
+    \caption{RWS FCR mode symbology.}
 \end{figure}
 
 \begin{tcoloritemize}
@@ -120,16 +111,41 @@
         >={Latex[round]}
         ]
         
-        \node[] (mfd) at (0,0) {
+        \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={27},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{mfd/fcr_aa/rws_sam_dtt.pdf}
         };
 
-        % \node[] at (0,20) {\color{red}\textbf{NEEDS DTT SYMBOLOGY}};
+        % Annotations
+        \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
+        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+
+        \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
+        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+
+        \node[lannot] (sec) at ($(fig.west)+(0mm,10.25mm)$) {Secondary target};
+        \draw[->, red] (sec.east) -- ++(27mm, 0mm);
+
+        \node[lannot] (prim) at ($(fig.west)+(0mm,-7mm)$) {Primary target \& cursor};
+        \draw[->, red] (prim.east) -- ++(15mm, 0mm) -- ++(4mm, 6mm);
+
+        \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
+        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+
+        \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
+        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(0mm,-2mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
+        \draw[->, red] (dlz.west) -- ++(-8mm, 0mm);
+
+        \node[rannot] (asec) at ($(fig.east)+(0mm,-24mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
+        \draw[->, red] (asec.west) -- ++(-26mm, 0mm) -- (4mm,-7mm);
+
+        \node[annot, anchor=south, align=left, text width=35mm] (fov) at ($(fig.north)+(-6.5mm,0mm)$) {Azimuth scan limits};
+        \draw[->, red] (fov.south) -- ++(0mm, -15mm) -- ++(12mm, -6mm);
     \end{tikzpicture}
-    \caption{RWS SAM/DTT MFD Symbology}
+    \caption{RWS SAM / DTT submode symbology. Additional information on primary target is displayed at top of FCR page.}
 \end{figure}
 
 \marginfigeometry
@@ -171,35 +187,22 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
-            \node[draw, rounded corners, minimum width=\marginparwidth] (search) at (0,0) {
+            \node[boxedmarfigstyle] (search) at (0,0) {
                 \includegraphics[
                     scale=0.25,
-                    page={60},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_01.pdf}
             };
-            \node[draw, rounded corners, minimum width=\marginparwidth] (sam) at (0,-35) {
+            \node[boxedmarfigstyle] (sam) at (0,-35) {
                 \includegraphics[
                     scale=0.25,
-                    page={61},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_02.pdf}
             };
 
             \draw[->]
             (search) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(sam);
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
-        %         \center{\textbf{Bugged Target Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show bugged tgt 
-        %             \item maybe also non-bugged target for reference?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{SAM Acquisition}
     }
     \begin{subenumerate}
@@ -216,35 +219,22 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
-            \node[draw, rounded corners, minimum width=\marginparwidth] (sam) at (0,0) {
+            \node[boxedmarfigstyle] (sam) at (0,0) {
                 \includegraphics[
                     scale=0.25,
-                    page={62},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_03.pdf}
             };
-            \node[draw, rounded corners, minimum width=\marginparwidth] (dtt) at (0,-35) {
+            \node[boxedmarfigstyle] (dtt) at (0,-35) {
                 \includegraphics[
                     scale=0.25,
-                    page={63},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_04.pdf}
             };
 
             \draw[->]
             (sam) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(dtt);
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][30mm][t]{\marginparwidth}
-        %         \center{\textbf{DTT Target Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show both DTT target symbols
-        %             \item maybe with cursor on one?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{DTT Acquisition}
     }
     \begin{subenumerate}
@@ -259,18 +249,6 @@
     \end{subenumerate}
     }
     \blueitem{STT Lock}{(if desired)
-    % \marginpar{
-    %     \captionsetup{type=figure}
-    %     \fbox{
-    %         \begin{minipage}[t][30mm][t]{\marginparwidth}
-    %             \center{\textbf{STT Target Symbology}}
-    %             \begin{itemize}[leftmargin=1em]
-    %                 \item Show transition from bugged to locked target
-    %             \end{itemize}
-    %         \end{minipage}
-    %     }
-    %     \caption{STT Target}
-    % }
     \begin{subenumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
@@ -292,41 +270,30 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
+                boxedmarfigstyle,            
             ] (cursoroff) at (0,0) {
                 \includegraphics[
                     scale=0.25,
-                    page={36},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_spotlight_subfig_cursor_off.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
+                boxedmarfigstyle,                
                 below=10 of cursoroff,
             ] (cursoron) {
                 \includegraphics[
                     scale=0.25,
-                    page={35},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                ]{mfd/fcr_aa/rws_spotlight_subfig_cursor_on.pdf}
             };
             \node[
-                draw, 
-                rounded corners, 
-                minimum width=\marginparwidth,
+                boxedmarfigstyle,                
                 below=10 of cursoron,
             ] (bugged) {
                 \includegraphics[
-                    scale=0.25,
-                    page={66},
-                ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+                    scale=0.5,
+                ]{mfd/fcr_aa/tgt_bugged.pdf}
             };
 
             % lines
@@ -344,15 +311,6 @@
                 font=\bfseries\footnotesize,
             ] (labelbugged) at (bugged.north west) {Bugged \\ Target};
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
-        %         \center{\textbf{Spotlight Scan Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show spotlight azimuth bars
-        %             \item maybe show both with raw rws return and once acquired?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{Spotlight Search}
     }
     \begin{subenumerate}

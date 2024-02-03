@@ -199,9 +199,8 @@
         ] (mfd) at (0,0) {
             \includegraphics[
                 height=15mm,
-                page={11},
                 angle=-90,
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
 
         \coordinate (offset) at (-3.5,0);
@@ -220,19 +219,6 @@
 
         \node[anchor=west, align=left, font=\small\bfseries, color2] at (center) {BEAMWIDTH};
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{Radar Azimuth Scan}}
-    %     \begin{itemize}
-    %         \item Top-down view of ``pie'' diagram
-    %         \item Show various scan patterns as smaller slices of ``pie''
-    %         \begin{itemize}
-    %             \item maybe all centered?
-    %             \item maybe next to each other?
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{
         FCR azimuth scan \& limits. 
         Note that the A6 pattern scans the entire azimuth range of the radar.
@@ -252,8 +238,7 @@
         ] (mfd) at (0,0) {
             \includegraphics[
                 width=15mm,
-                page={12},
-            ]{F16_apg68_RWS_HomePage&SAM_v6-1.pdf}
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
         };
 
         \coordinate (offset) at (-2.5,-1);
@@ -360,22 +345,6 @@
         -- ($(1boffset) + (42.5,-2.5)$) -- ($(1boffset) + (-2.5,-2.5)$)
         -- cycle;
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{Radar Elevation Scan}}
-    %     \begin{itemize}
-    %         \item Side-on view of ``pie'' diagram
-    %         \item Show various scan patterns as smaller slices of ``pie''
-    %         \begin{itemize}
-    %             \item maybe on top of each other?
-    %         \end{itemize}
-    %         \item Show bar scan patterns as classic ``snake'' diagrams 
-    %         \begin{itemize}
-    %             \item maybe place immediately next to matching ``pie'' slice?
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{
         FCR elevation scan \& limits. 
         The radar beam --- blue circle --- tracks along the illustrated scan pattern in a loop, resulting in the dashed scan volume. 
@@ -435,32 +404,52 @@
 
 \begin{figure}[htbp]
     \centering
-    % \includegraphics[
-    %     height=75mm,
-    %     page={1},
-    % ]{F16_apg68_RWS_HomePage_v2.pdf}
     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
         >={Latex[round]}
         ]
         
-        \node[] (mfd) at (0,0) {
+        \node[] (fig) at (0,0) {
             \includegraphics[
-                height=100mm,
-                page={1},
-            ]{F16_apg68_RWS_HomePage_v2.pdf}
+                height=75mm,
+            ]{mfd/fcr_aa/rws_homepage.pdf}
         };
 
-        \node[] at (0,20) {\color{red}\textbf{MISSING CONTROLS ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (mode) at ($(fig.west)+(0mm,38mm)$) {FCR mode};
+        \draw[->, red] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
+
+        \node[lannot] (submode) at ($(fig.west)+(0mm,28mm)$) {CRM \\ submode};
+        \draw[->, red] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
+
+        \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range select};
+        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+
+        \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth select};
+        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+
+        \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation bar select};
+        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+
+        \node[annot, anchor=south, align=center] (fov) at ($(fig.north)+(0mm,0mm)$) {FOV select};
+        \draw[->, red] (fov.south) -- ++(0mm, -3.5mm);
+
+        \node[rannot] (cntl) at ($(fig.east)+(0mm,38mm)$) {Control};
+        \draw[->, red] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
+
+        \node[rannot] (ovrd) at ($(fig.east)+(0mm,28mm)$) {Override};
+        \draw[->, red] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
+
+        \node[rannot] (dl) at ($(fig.east)+(0mm,20.5mm)$) {Datalink mode};
+        \draw[->, red] (dl.west) -- ++(-4mm,0mm);
+
+        \node[rannot] (acq) at ($(fig.east)+(0mm,10mm)$) {Acquisition cursor};
+        \draw[->, red] (acq.west) -- ++(-30mm, 0mm) -- (3mm,5mm);
+
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-8mm)$) {Horizon \\indicator};
+        \draw[->, red] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
+
+        \node[rannot] (dclt) at ($(fig.east)+(0mm,-38mm)$) {Declutter};
+        \draw[->, red] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- FCR --- RWS (Default CRM Page)}}
-    %     \begin{itemize}
-    %         \item Basic RWS search page with returns
-    %         \item Several RWS radar returns
-    %         \item Maybe steerpoint (wedding cake)
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{RWS MFD Symbology}
+    \caption{FCR page with basic controls \& symbology marked. Note that FCR is illustrated in default mode immediately after startup.}
 \end{figure}

@@ -1,18 +1,13 @@
 \subsection{AIM-9 SIDEWINDER}
 \label{subsec:aim9}
-% \begin{figure}[htbp]
-%     \centering
-%     \fbox{
-%     \begin{minipage}[t][75mm][t]{100mm}
-%         \center{\large\textbf{AIM-9 OVERVIEW}}
-%         \begin{itemize}
-%             \item Some kind of overview figure
-%             \item maybe showing side on profile of the weapon?
-%         \end{itemize}
-%     \end{minipage}
-%     }
-%     \caption{AIM-9 Sidewinder}
-% \end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[
+            width = 0.8\textwidth,
+    ]{diagrams/weap/weap_aa_aim9_overview.pdf}
+    % TODO: labels? some kind of flavor stuff?
+    \caption{AIM-9 Sidewinder}
+\end{figure}
 
 \begin{tcoloritemize}
     \blueitem{AIM-9 \break Sidewinder}{
@@ -120,22 +115,36 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={91},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            ]{mfd/sms/aim9.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
+        \draw[->, red] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+
+        \node[lannot] (los) at ($(fig.west)+(0mm,14.5mm)$) {LOS mode};
+        \draw[->, red] (los.east) -- ++(4mm, 0mm);
+
+        \node[lannot] (lstation) at ($(fig.west)+(0mm,-21mm)$) {Selected station};
+        \draw[->, red] (lstation.east) -- ++(4mm, 0mm);
+
+        \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
+        \draw[->, red] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+
+        \node[rannot] (sel) at ($(fig.east)+(0mm,13mm)$) {Selected \\ weapon};
+        \draw[->, red] (sel.west) -- ++(-4mm, 0mm);
+
+        \node[rannot] (cool) at ($(fig.east)+(0mm,3mm)$) {Cooling \\ status};
+        \draw[->, red] (cool.west) -- ++(-4mm, 0mm);
+
+        \node[rannot] (lstation) at ($(fig.east)+(0mm,-21mm)$) {Selected station};
+        \draw[->, red] (lstation.west) -- ++(-4mm, 0mm);
+
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-36mm)$) {Selective Jettison};
+        \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,6mm)$);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- SMS --- AIM-9 CONTROLS}}
-    %     \begin{itemize}
-    %         \item show sms aim-9 page
-    %         \item label each of the relevant controls explained in text
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{MFD SMS AIM-9 Controls}
+    \caption{AIM-9 SMS Page}
+    \label{fig:aa_weap:aim9:sms}
 \end{figure}
 
 \clearpage
@@ -158,7 +167,7 @@
         \item \textbf{Dynamic Aiming Cross} --- HMD line-of-sight
     \end{subitemize}
 
-    Reference symbology in \cref{fig:aaweap:aim9:hudsymb}
+    Reference symbology in \cref{fig:aa_weap:aim9:hudsymb}
 
     \begin{subitemize}
         \item \textbf{DLZ} --- \textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
@@ -179,32 +188,39 @@
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={92},
-            ]{F16_aaweapons_v11.pdf}
+            ]{hud/aim9/full.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        \node[
+            draw,
+            rounded 
+            corners, 
+            red, 
+            minimum width=8.5mm, 
+            minimum height=25mm
+        ] (dlznode) at (12.5,1) {};
+
+        % Annotations
+        \node[lannot] (td) at ($(fig.west)+(-2.5mm,22.5mm)$) {Target designator box};
+        \draw[->, red] (td.east) -- ++(25mm, 0mm);
+
+        \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,12.5mm)$) {Missile \\ diamond};
+        \draw[->, red] (diamond.east) -- ++(18mm, 0mm) -- (-11mm, 21mm);
+
+        \node[lannot] (weap) at ($(fig.west)+(-2.5mm,-19.5mm)$) {Selected weapon};
+        \draw[->, red] (weap.east) -- ++(15mm, 0mm);
+
+        \node[rannot] (cross) at ($(fig.east)+(2.5mm,34mm)$) {Boresight \\ cross};
+        \draw[->, red] (cross.west) -- ++(-25mm, 0mm) -- (1mm, 24.5mm);
+
+        \node[rannot] (ret) at ($(fig.east)+(2.5mm,24mm)$) {Missile \\ reticle};
+        \draw[->, red] (ret.west) -- ++(-30mm, 0mm) -- (4mm, 19mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(2.5mm,-15mm)$) {DLZ};
+        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm) -- (dlznode);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{HUD/HMD --- AIM-9 Symbology}}
-    %     \begin{itemize}
-    %         \item show hud/hmd with aim-9 in use 
-    %         \item clearly indicate missile diamond/reticle and dynamic aiming cross
-    %         \item maybe show several versions?
-    %         \begin{itemize}
-    %             \item 1 with missile reticle from HUD?
-    %             \item 1 with missile diamond latchedon aiming cross?
-    %             \item 1 with diamond on target?
-    %             \item 1 with \textbf{X}?
-    %         \end{itemize}
-    %         or some subset of those?
-    %         \item can reuse these in marginfigs below?
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{AIM-9 HUD Symbology}
-    \label{fig:aaweap:aim9:hudsymb}
+    \label{fig:aa_weap:aim9:hudsymb}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -216,14 +232,27 @@
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=50mm,
-                page={3},
-            ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+            ]{hmd/aim9_locked.pdf}
         };
 
-        \node[] at (0,20) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,20mm)$) {Boresight cross};
+        \draw[->, red] (diamond.east) -- ++(20mm, 0mm) -- (-5.5mm, 11.5mm);
+
+        \node[lannot] (td) at ($(fig.west)+(-2.5mm,5mm)$) {Target designator box};
+        \draw[->, red] (td.east) -- ++(33mm, 0mm);
+
+        \node[lannot] (mode) at ($(fig.west)+(-2.5mm,-10mm)$) {Mode};
+        \draw[->, red] (mode.east) -- ++(7.5mm, 0mm) -- (-27mm, -7mm);
+
+        \node[rannot] (dlz) at ($(fig.east)+(2.5mm,20mm)$) {DLZ};
+        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm);
+
+        \node[rannot] (diamond) at ($(fig.east)+(2.5mm,0mm)$) {Missile \\ diamond};
+        \draw[->, red] (diamond.west) -- ++(-32mm, 0mm) -- (1.5mm, 3mm);
     \end{tikzpicture}
     \caption{AIM-9 HMD Symbology}
-    \label{fig:aaweap:aim9:hmdsymb}
+    \label{fig:aa_weap:aim9:hmdsymb}
 \end{figure}
 
 \marginfigeometry
@@ -271,25 +300,13 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=1.25,
-                    page={105},
-                ]{F16_aaweapons_v11.pdf}
+                ]{hud/aim9/subfig_missile_diamond.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{AIM-9 Track}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show missile reticle
-        %             \item show diamond latched to symbolic target (outline)
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{AIM-9 missile diamond latched to target, indicating lock.}
     }
     \begin{subenumerate}
@@ -324,71 +341,35 @@
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=0.75,
-                    page={2},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{hmd/aiming_cross.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{AIM-9 HMD Track}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show missile diamond \& dynamic aiming cross
-        %             \item show diamond latched to symbolic target?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{AIM-9 seeker follows HMD aiming cross}
     }
     \marginpar{
         \captionsetup{type=figure}
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=0.5,
-                    page={39},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{hmd/aim9_track_missile_diamond.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{AIM-9 HMD Track}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show missile diamond \& dynamic aiming cross
-        %             \item show diamond latched to symbolic target?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{AIM-9 HMD track}
     }
     \marginpar{
         \captionsetup{type=figure}
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=0.75,
-                    page={6},
-                ]{F16_aaweapons_missilelaunch_new_v2.pdf}
+                ]{hmd/los.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{AIM-9 HMD LOS}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show missile diamond out of HMD limits
-        %             \item can probably reuse from above
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{X indicates HMD beyond AIM-9 seeker limits}
     }
     \begin{subenumerate}
@@ -411,21 +392,6 @@
     \end{subenumerate}}
 \end{checklistenumerate}
 
-% \begin{figure}[htbp]
-%     \centering
-%     \fbox{
-%     \begin{minipage}[t][40mm][t]{75mm}
-%         \center{\large\textbf{AIM-9 Envelope}}
-%         \begin{itemize}
-%             \item show overhead missile envelope around symbolic target?
-%             \item this is really a stretch goal \dots
-%         \end{itemize}
-%     \end{minipage}
-%     }
-%     \caption{AIM-9 Firing envelope}
-%     \label{fig:aaweap:aim9:envelope}
-% \end{figure}
-
 \clearpage
 
 \subsubsection{SLAVE EMPLOYMENT --- RADAR}
@@ -445,30 +411,17 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
 
-            \draw[color2, fill=color2!20, dashed] 
-            (0,-6) circle [x radius=8, y radius=11.5];
+            % \draw[color2, fill=color2!20, dashed] 
+            % (0,-6) circle [x radius=8, y radius=11.5];
             
-            \node[draw, rounded corners, minimum width=\marginparwidth] (bore) at (0,0) {
+            \node[boxedmarfigstyle] (bore) at (0,0) {
                 \includegraphics[
                     scale=0.5,
-                    page={75},
-                ]{F16_apg68_RWS_HomePage&SAM_v8.pdf}
+                ]{hmd/dgft_subfig_bore.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{HMD BORE Symbology}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show HMD BORE circle
-        %             \item show symbolic target (outline)
-        %             \item can reuse from radar chapter
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{HMD BORE scan zone}
     }
     
@@ -485,44 +438,16 @@
     Can also lock from CRM, \textbf{see \Cref{subsec:crm}}
     }
     \blueitem{AIM-9 Track Acquisition}{
-    % \marginpar{
-    %     \captionsetup{type=figure}
-    %     \centering
-    %     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-    %         >={Latex[round]}
-    %         ]
-    %         \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
-    %             \includegraphics[
-    %                 scale=1.5,
-    %                 page={93},
-    %             ]{F16_aaweapons_v11.pdf}
-    %         };
-    %     \end{tikzpicture}
-    %     % \caption{AIM-9 missile diamond latched to target, indicating lock.}
-    % }
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=1.25,
-                    page={97},
-                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+                ]{hud/aim9/subfig_td_box_missile_diamond.pdf}
             };
         \end{tikzpicture}
-        
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{AIM-9 Radar Track}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show radar target designator box
-        %             \item show diamond latched to target designator box
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{AIM-9 missile diamond and target designator box latched to target, indicating radar and seeker lock.}
     }
     \begin{subenumerate}
@@ -534,26 +459,13 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=2.5,
-                    page={104},
-                ]{F16_aaweapons_v11.pdf}
+                ]{hud/aim9/subfig_dlz.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][60mm][t]{\marginparwidth}
-        %         \center{\textbf{AIM-9 DLZ}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show DLZ and indicate in-range symbology
-        %             \item can probably just reuse from aim-120
-        %             \item maybe link to explanation of dlz?
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{In-range DLZ}
     }
     \begin{subenumerate}

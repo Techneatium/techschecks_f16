@@ -39,36 +39,65 @@
 % Determine which files included in output
 \includeonly{
 	chapters/titlepage,
-    chapters/tableofcontents,
+    chapters/frontmatter,
+	chapters/part_proc,
 	chapters/proc_basic,
 	chapters/proc_em,
+	chapters/part_sys,
 	chapters/systems,
 	chapters/sensors_aa,
 	chapters/sensors_ag,
+	chapters/part_weap,
 	chapters/weapons_ag,
 	chapters/weapons_aa,
+	chapters/part_supp,
 	chapters/appendix,
 }
 
+\AddToHook{shipout/foreground}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+		red!45,
+		rotate=60,
+		scale=5,
+		opacity=0.5, 
+		align=center,
+		font=\normalfont,
+	] at (current page.center) {Draft Release \\ {Do not Distribute!} \\ {UOAF}}; 
+  \end{tikzpicture}
+}
+
+\color{color1} % set main font color for whole document
 \begin{document}
 	\include{chapters/titlepage}
 
 	\frontmatter
 	\pagestyle{empty}
-	\include{chapters/tableofcontents}
+	\include{chapters/frontmatter}
 	
 	% restart page counter, pagenumber styling
 	\mainmatter
 	% reactivate header and footer
 	\pagestyle{body}
 
+	\include{chapters/part_proc}
 	\include{chapters/proc_basic}
+	\cyclechpcolor
 	\include{chapters/proc_em}
+	\include{chapters/part_sys}
+	\cyclechpcolor
 	\include{chapters/systems}
+	\cyclechpcolor
 	\include{chapters/sensors_aa}
+	\cyclechpcolor
 	\include{chapters/sensors_ag}
+	\include{chapters/part_weap}
+	\cyclechpcolor
 	\include{chapters/weapons_ag}
+	\cyclechpcolor
 	\include{chapters/weapons_aa}
+	\include{chapters/part_supp}
+	\cyclechpcolor
 	\include{chapters/appendix}
 
 	\iftoggle{print}{

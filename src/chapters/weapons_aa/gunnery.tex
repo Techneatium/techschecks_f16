@@ -3,18 +3,6 @@
 \subsection{M-61 VULCAN}
 \label{subsec:m61}
 
-\begin{tcoloritemize}
-    \blueitem{M-61 Vulcan}{
-    Internally mounted, high fire-rate, 20mm rotary ``Gattling'' cannon.
-    In service since 1959
-
-    \begin{subitemize}
-        \item \textbf{Fire Rate} --- 6000rpm
-        \item \textbf{Round Size} --- 20mm
-        \item \textbf{Ammo Capacity} --- 510 rounds
-    \end{subitemize}}
-\end{tcoloritemize}
-
 \begin{figure}[htbp]
     \centering
     \fbox{
@@ -26,10 +14,20 @@
         \end{itemize}
     \end{minipage}
     }
+    % TODO: add me!
     \caption{M-61 Vulcan}
 \end{figure}
-    
+
 \begin{tcoloritemize}
+    \blueitem{M-61 Vulcan}{
+    Internally mounted, high fire-rate, 20mm rotary ``Gattling'' cannon.
+    In service since 1959
+
+    \begin{subitemize}
+        \item \textbf{Fire Rate} --- 6000rpm
+        \item \textbf{Round Size} --- 20mm
+        \item \textbf{Ammo Capacity} --- 510 rounds
+    \end{subitemize}}
     \blueitem{Ammunition Types}{
     \begin{subitemize}
         \item \textbf{HEI} --- \textbf{H}igh \textbf{E}xplosive \textbf{I}ncendiary
@@ -84,22 +82,29 @@
         \node[] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={79},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            ]{mfd/sms/gun.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
+        \draw[->, red] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+
+        \node[lannot] (submode) at ($(fig.west)+(0mm,14mm)$) {Submode};
+        \draw[->, red] (submode.east) -- ++(22.5mm, 0mm) -- (-11mm, 29mm);
+
+        \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
+        \draw[->, red] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+
+        \node[rannot] (rounds) at ($(fig.east)+(0mm,14mm)$) {Rounds \\ remaining};
+        \draw[->, red] (rounds.west) -- ++(-8mm,0mm) -- (28mm, 18mm);
+
+        \node[rannot] (rdy) at ($(fig.east)+(0mm,0mm)$) {Ready \\ indication};
+        \draw[->, red] (rdy.west) -- ++(-20mm, 0mm) -- (10mm,18mm);
+
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-14mm)$) {Selective Jettison};
+        \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,12mm)$);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{MFD --- SMS --- GUN CONTROLS}}
-    %     \begin{itemize}
-    %         \item show sms gun page
-    %         \item label each of the relevant controls explained in text
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{MFD SMS Gun Controls}
+    \caption{Gun SMS page}
 \end{figure}
 
 \subsubsection{EEGS SYMBOLOGY}
@@ -127,7 +132,7 @@
         \end{itemize}
     \end{subitemize}
     
-    Reference symbology in \cref{fig:aaweap:m61:eegslvl2} and \cref{fig:aaweap:m61:eegsfunnel}
+    Reference symbology in \cref{fig:aa_weap:m61:eegslvl2}
     }
     \blueitem{Level III / IV}{Intermediate modes during radar lock acquisition}
     \blueitem{Level V}{Operating mode with radar lock. Level II symbology is retained with additional elements
@@ -138,30 +143,35 @@
             \item gunfire solution --- stabilize pipper on target and fire
             \item contains additional range/aspect cues
         \end{itemize}
-        \item \textbf{Range Caret}
-        \begin{itemize}
-            \item displayed on \underline{inside} edge of level V pipper
-            \item unwinds from 12 o'clock at 12'000ft counter-clockwise
-        \end{itemize}
-        \item \textbf{Aspect Caret} 
-        \begin{itemize}
-            \item displayed on \underline{outside} edge of level V pipper
-        \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegslvl5,fig:aa_weap:m61:eegs:5pipper}}
         \item \textbf{T-Symbol}
         \begin{itemize}
             \item \textbf{``--- + ---'' 1G Pipper} --- lead angle for non-maneuvering target,
             flanking horizontal lines indicate out-of-plane maneuver potential of target
             \item \textbf{``---'' Max-G Pipper} --- lead angle for target pulling max-G towards you
         \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:tsymb}}
+        \item \textbf{Range Caret}
+        \begin{itemize}
+            \item displayed on \underline{inside} edge of level V pipper
+            \item unwinds from 12 o'clock at 12'000ft counter-clockwise
+        \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:tdescirc}}
+        \item \textbf{Aspect Caret} 
+        \begin{itemize}
+            \item displayed on \underline{outside} edge of level V pipper
+        \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:tdescirc}}
         \item \textbf{BATR} --- \textbf{B}ullets \textbf{A}t \textbf{T}arget \textbf{R}ange
         \begin{itemize}
             \item displayed once rounds have been fired
             \item dissappears after last round has passed beyond target range
             \item useful to evaluate shots (also for training)
         \end{itemize}
+        \textbf{reference \cref{fig:aa_weap:m61:eegs:pipper}}
     \end{subitemize}
     
-    Reference symbology in \cref{fig:aaweap:m61:eegslvl5} and \cref{fig:aaweap:m61:eegspipper}
+    Reference symbology in \cref{fig:aa_weap:m61:eegslvl5,fig:aa_weap:m61:eegs:5pipper}
     }
 \end{tcoloritemize}
 
@@ -175,27 +185,24 @@
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={80},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            ]{hud/eegs/lvl2.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (boresight) at ($(fig.west)+(-2.5mm,32mm)$) {Boresight cross};
+        \draw[->, red] (boresight.east) -- (-5mm,32mm);
+
+        \node[rannot] (bandit) at ($(fig.east)+(2.5mm,32mm)$) {Bandit};
+        \draw[->, red] (bandit.west) -- ++(-37mm, 0mm) -- (1mm,20mm);
+
+        \node[lannot] (funnel) at ($(fig.west)+(-2.5mm,12mm)$) {EEGS Funnel};
+        \draw[->, red] (funnel.east) -- (-5mm,12mm);
+
+        \node[lannot] (mgrs) at ($(fig.west)+(-2.5mm,-32mm)$) {MGRS Lines};
+        \draw[->, red] (mgrs.east) -- (-15mm,-32mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{HUD --- EEGS LVL II}}
-    %     \begin{itemize}
-    %         \item show EEGS LVL II symbology of the HUD
-    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-    %         \begin{itemize}
-    %             \item if don't have target here maybe put in marginfig below? (just show funnel with target at correct point to shoot)
-    %             \item alternatively, maybe have separate figure just showing target in funnel here? (could be reused as marginfig below)
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{EEGS LVL II HUD Symbology}
-    \label{fig:aaweap:m61:eegslvl2}
+    \label{fig:aa_weap:m61:eegslvl2}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -208,120 +215,111 @@
         \node[draw, rounded corners] (fig) at (0,0) {
             \includegraphics[
                 height=75mm,
-                page={84},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+            ]{hud/eegs/lvl5.pdf}
         };
 
-        \node[] at (0,0) {\color{red}\textbf{MISSING ANNOTATIONS}};
+        % Annotations
+        \node[lannot] (boresight) at ($(fig.west)+(-2.5mm,32.25mm)$) {Boresight cross};
+        \draw[->, red] (boresight.east) -- (-7mm,32.25mm);
+
+        \node[lannot] (funnel) at ($(fig.west)+(-2.5mm,8mm)$) {EEGS Funnel};
+        \draw[->, red] (funnel.east) -- (-12mm,8mm);
+
+        \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-16mm)$) {Bandit};
+        \draw[->, red] (bandit.west) -- ++(-37mm, 0mm) -- (-9mm,-16mm);
+
+        \node[lannot] (pipper) at ($(fig.west)+(-2.5mm,-16mm)$) {EEGS Level V Pipper};
+        \draw[->, red] (pipper.east) -- (-20mm,-16mm);
     \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][75mm][t]{100mm}
-    %     \center{\large\textbf{HUD --- EEGS LVL V}}
-    %     \begin{itemize}
-    %         \item show EEGS LVL V symbology of the HUD
-    %         \item maybe with a simiplified target outline ``mid pull'' in the funnel?
-    %         \begin{itemize}
-    %             \item more necessary here since lvl V relies on having a lock
-    %             \item maybe have separate figure just showing lvl 5 target pipper since there is a lot going on (could be reuses as marginfig below)
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
     \caption{EEGS LVL V HUD Symbology}
-    \label{fig:aaweap:m61:eegslvl5}
+    \label{fig:aa_weap:m61:eegslvl5}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
-        
-        \node[minimum width=\linewidth] (blanker) at (0,0) {};
-        \node[draw, rounded corners] (fig) at (0,0) {
-            \includegraphics[
-                scale=1.25,
-                page={2},
-            ]{F16_aaweapons_v10_4Items.pdf}
-        };
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
 
-        \node[color2, anchor=west, align=left, font=\small\bfseries] (funnel) at (20,10) {EEGS GUN \\ FUNNEL};
-        \node[color2, anchor=west, align=left, font=\small\bfseries] (brst) at (20,32.5) {BORESIGHT \\ CROSS};
-        \node[color2, anchor=west, align=left, font=\small\bfseries] (mgrs) at (20,-20) {MGRS \\ LINES};
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.75,
+                ]{hud/eegs/lvl5_subfig_tsymb.pdf}
+            };
 
-        \draw[->, color2]
-        (funnel.west) -- ++(-12.5,0);
-        \draw[->, color2]
-        (brst.west) -- ++(-15,0);
-        \draw[->, color2]
-        (mgrs.west) -- ++(-15,0) -- +(-2.5,-5);
-    \end{tikzpicture}
-    % \fbox{
-    % \begin{minipage}[t][50mm][t]{100mm}
-    %     \center{\large\textbf{EEGS Funnel \& LVL V Pipper}}
-    %     \begin{itemize}
-    %         \item show both funnel and pipper as subfigs
-    %         \item include target outline in firing position
-    %         \item clearly mark level 5 pipper symbology elements
-    %         \begin{itemize}
-    %             \item batr
-    %             \item range cue
-    %             \item aspect
-    %         \end{itemize}
-    %     \end{itemize}
-    % \end{minipage}
-    % }
-    \caption{EEGS Funnel}
-    \label{fig:aaweap:m61:eegsfunnel}
-\end{figure}
+            % Annotations
+            \node[lannot] (1g) at ($(fig.west)+(-2.5mm,12mm)$) {1-g Pipper};
+            \draw[->, red] (1g.east) -- ++(22mm,0mm) -- (-1.5mm,5mm);
 
-\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
+            \node[lannot] (9g) at ($(fig.west)+(-2.5mm,-12mm)$) {9-g Pipper};
+            \draw[->, red] (9g.east) -- ++(22mm,0mm);
 
-        \node[draw, rounded corners] (pipper) at (0,0) {
-            \includegraphics[
-                scale=1.25,
-                page={99},
-            ]{F16_aaweapons_v11.pdf}
-        };
-        \node[
-            anchor=north,
-            align=center,
-            font=\small\bfseries
-        ](mark1)at(pipper.south){EEGS LVL 5 PIPPER};
+            \node[rannot] (manpot) at ($(fig.east)+(2.5mm,5mm)$) {Maneuver potential lines};
+            \draw[->, red] (manpot.west) -- ++(-10mm, 0mm) -- (12mm,2mm);
 
-        \node[draw, rounded corners, left=10mm of pipper] (tsymb) {
-            \includegraphics[
-                scale=1.25,
-                page={101},
-            ]{F16_aaweapons_v11.pdf}
-        };
-        \node[
-            anchor=north,
-            align=center,
-            font=\small\bfseries
-        ](mark2)at(tsymb.south){T-SYMBOL};
+        \end{tikzpicture}
+        \caption{T-symbol}
+        \label{fig:aa_weap:m61:eegs:tsymb}
+    \end{subfigure}
 
-        \node[draw, rounded corners, left=10mm of tsymb] (tdes) {
-            \includegraphics[
-                scale=1.25,
-                page={100},
-            ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
-        };
-        \node[
-            anchor=north,
-            align=center,
-            font=\small\bfseries
-        ](mark3)at(tdes.south){TARGET DESIGNATOR};
+    \vspace{2em}
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
 
-        \path[] (tdes) -- node[pos=0.5, anchor=center]{\textbf{+}}(tsymb);
-        \path[] (tsymb) -- node[pos=0.5, anchor=center]{\textbf{=}}(pipper);
-    \end{tikzpicture}
-    \caption{EEGS Level V Pipper}
-    \label{fig:aaweap:m61:eegspipper}
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.75,
+                ]{hud/eegs/lvl5_subfig_tdcircle.pdf}
+            };
+
+            % Annotations
+            \node[lannot] (12oclock) at ($(fig.west)+(-2.5mm,13mm)$) {12000 ft};
+            \draw[->, red] (12oclock.east) -- ++(14mm,0mm) -- ($(fig.north) + (-2mm,-3mm)$);
+
+            \node[lannot] (9oclock) at ($(fig.west)+(-2.5mm,0mm)$) {9000 ft};
+            \draw[->, red] (9oclock.east) -- ++(6mm,0mm);
+
+            \node[lannot] (aspect) at ($(fig.west)+(-2.5mm,-10mm)$) {Aspect caret};
+            \draw[->, red] (aspect.east) -- ++(4mm,0mm) -- (-11mm, -8.5mm);
+
+            \node[rannot] (rcue) at ($(fig.east)+(2.5mm,8mm)$) {Range cue};
+            \draw[->, red] (rcue.west) -- ++(-8mm, 0mm) -- (8.5mm,-1mm);
+
+            \node[rannot] (3oclock) at ($(fig.east)+(2.5mm,0mm)$) {3000 ft};
+            \draw[->, red] (3oclock.west) -- ++(-6mm,0mm);
+
+            \node[rannot] (6oclock) at ($(fig.east)+(2.5mm,-13mm)$) {6000 ft};
+            \draw[->, red] (6oclock.west) -- ++(-14mm,0mm) -- ($(fig.south) + (2mm,3mm)$);
+
+        \end{tikzpicture}
+        \caption{target designator circle}
+        \label{fig:aa_weap:m61:eegs:tdescirc}
+    \end{subfigure}
+
+    \vspace{2em}
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
+
+            \node[draw, rounded corners] (fig) at (0,0) {
+                \includegraphics[
+                    scale=1.75,
+                ]{hud/eegs/lvl5_subfig_full.pdf}
+            };
+
+            % Annotations
+            \node[lannot] (batr) at ($(fig.west)+(-2.5mm,0mm)$) {BATR \\ circle};
+            \draw[->, red] (batr.east) -- ++(23mm,0mm);
+
+            \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-7mm)$) {Bandit};
+            \draw[->, red] (bandit.west) -- ++(-23mm,0mm) -- (2.5mm, -3mm);
+        \end{tikzpicture}
+        \caption{full, combined pipper, shown approx. on-target}
+        \label{fig:aa_weap:m61:eegs:pipper}
+    \end{subfigure}
+    \caption{EEGS Level V Pipper, split by component}
+    \label{fig:aa_weap:m61:eegs:5pipper}
 \end{figure}
 
 \marginfigeometry
@@ -359,30 +357,14 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=1.25,
-                    page={2},
-                ]{F16_aaweapons_v10_4Items.pdf}
+                ]{hud/eegs/lvl2_subfig_funnel_mgrs.pdf}
             };
         \end{tikzpicture}
-        % \includegraphics[
-        %     width=\marginparwidth,
-        %     page={2},
-        % ]{F16_aaweapons_v10_4Items.pdf}
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{EEGS Funnel}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show funnel on target
-        %             \item potentially reuse from above
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{EEGS Funnel \& MGRS Lines. Target is approx. aligned with funnel.}
     }
 
@@ -393,21 +375,7 @@
         \item \textbf{EEGS Funnel} \dotfill \textbf{Stabilized On-Target}
         \item \textbf{Funnel Lines} \dotfill \textbf{On target wingtips}
     \end{subenumerate}
-    
-    % \marginpar{
-    %     \captionsetup{type=figure}
-    %     \fbox{
-    %         \begin{minipage}[t][40mm][t]{\marginparwidth}
-    %             \center{\textbf{MGRS Lines}}
-    %             \begin{itemize}[leftmargin=1em]
-    %                 \item show MGRS line on target
-    %                 \item not sure if this fig is necessary
-    %                 \item maybe could modify fig from above
-    %             \end{itemize}
-    %         \end{minipage}
-    %     }
-    %     \caption{MGRS Lines}
-    % }
+
     Using MGRS lines
     
     \begin{subenumerate}
@@ -420,10 +388,15 @@
     \end{subenumerate}}
 \end{checklistenumerate}
 
-\notebox{
-    \small
-    \textbf{Exact position of target relative to funnel lines dependent on funnel width and target wingspan, 
-    see \Cref{subsec:m61:eegsfunneladjust} for funnel adjustment.}
+% \notebox{
+%     \small
+%     \textbf{Exact position of target relative to funnel lines dependent on funnel width and target wingspan, 
+%     see \Cref{subsec:m61:eegsfunneladjust} for funnel adjustment.}
+% }
+
+\marnotebox{
+    \footnotesize
+    \textbf{Exact position of target relative to funnel lines dependent on funnel width and target wingspan}
 }
 
 \clearpage
@@ -448,25 +421,13 @@
     \marginpar{
         \captionsetup{type=figure}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            \node[draw, rounded corners, minimum width=\marginparwidth] (fig) at (0,0) {
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
                 \includegraphics[
                     scale=1.25,
-                    page={88},
-                ]{F16_aaweapons_v10_NoBackgroundImages.pdf}
+                ]{hud/eegs/lvl5_subfig_full.pdf}
             };
         \end{tikzpicture}
-        % \fbox{
-        %     \begin{minipage}[t][40mm][t]{\marginparwidth}
-        %         \center{\textbf{EEGS Level V Pipper}}
-        %         \begin{itemize}[leftmargin=1em]
-        %             \item show pipper on target
-        %             \item potentially reuse from above
-        %         \end{itemize}
-        %     \end{minipage}
-        % }
         \caption{EEGS Level V Pipper}
     }
     \begin{subenumerate}

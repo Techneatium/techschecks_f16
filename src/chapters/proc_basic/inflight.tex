@@ -8,22 +8,47 @@
     \blueitem{Safe Aircraft}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{Refueling Areas}}
-                \begin{itemize}[leftmargin=1em]
-                    \item stretch-goal figure
-                    \item show top-down view of tanker
-                    \item label areas
-                    \begin{itemize}
-                        \item observation area
-                        \item refueling area
-                        \item reform area
-                    \end{itemize}
-                \end{itemize}
-            \end{minipage}
-        }
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[] (fig) at (0,0) {
+                \includegraphics[
+                    width=0.5\marginparwidth,
+                    angle=270,
+                ]{diagrams/aircraft/silhouette_tanker_top.pdf}
+            };
+    
+            % Annotations
+            \node[
+                draw, 
+                ellipse, 
+                dashed, 
+                font=\footnotesize, 
+                align=center,
+                minimum width=25mm,
+                yshift=3mm,
+                xshift=-2mm,
+            ] (obs) at (fig.north west) {Observation \\ area};
+            \node[
+                dashed, 
+                font=\footnotesize, 
+                align=center,
+                anchor=east,
+            ] (fuel) at (fig.west) {Refueling \\ area};
+            \node[
+                draw, 
+                ellipse, 
+                dashed, 
+                font=\footnotesize, 
+                align=center,
+                minimum width=25mm,
+                yshift=-3mm,
+                xshift=-2mm,
+            ] (reform) at (fig.south west) {Reform \\ area};
+        \end{tikzpicture}
         \caption{Refueling Areas}
+        \label{fig:proc_basic:aarefueling:areas}
     }
     \begin{subenumerate}
         \item \textbf{Master Arm} \dotfill \textbf{OFF}
@@ -59,9 +84,10 @@
             \end{minipage}
         }
         \caption{Tanker Director Lights}
+        % TODO: me!
     }
     \begin{subitemize}
-        \item Fly into refueling area and allow boom operator to fly boom into refueling port
+        \item Fly into refueling area (reference \cref{fig:proc_basic:aarefueling:areas}) and allow boom operator to fly boom into refueling port
         \item \textbf{AR/NWS Light} illuminates to indicate contact
         \item Reference director lights to maintain position within boom limits
         \item Monitor refueling progress on DED/HUD

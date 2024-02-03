@@ -1,0 +1,25 @@
+\definecolor{techred}{RGB}{218, 37, 29}
+\definecolor{techyellow}{RGB}{248,195,0}
+\definecolor{techgreen}{RGB}{0,146,63}
+\definecolor{techblue}{RGB}{0,130,201}
+\definecolor{techraspberry}{RGB}{162, 26, 104}
+\definecolor{techorange}{RGB}{231, 120, 23}
+\definecolor{techlime}{RGB}{139, 202, 152}
+
+
+\newcounter{colorcounter}
+\newcommand{\chaptercolor}{%
+  \ifcase\value{colorcounter}%
+    techyellow\or
+    techgreen\or
+    techblue\or
+    techraspberry\or
+    techorange\or
+    techlime\else
+    techred\fi
+}
+
+\newcommand{\cyclechpcolor}{%
+  \stepcounter{colorcounter}%
+  \ifnum\value{colorcounter}>6\setcounter{colorcounter}{0}\fi
+}

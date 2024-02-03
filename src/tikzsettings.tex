@@ -1,0 +1,43 @@
+% figure nodes
+\tikzset{
+    figstyle/.style={                
+        auto, 
+        node distance=10mm, 
+        x=1mm,
+        y=1mm, 
+        very thick, 
+        line cap=round,
+        >={Latex[round]},
+    }
+}
+
+\tikzset{
+    boxedmarfigstyle/.style={                
+        draw, 
+        rounded corners, 
+        minimum width=\marginparwidth,
+    }
+}
+
+% annotations
+\tikzset{
+    annot/.style={
+        text width=20mm, 
+        font=\small\bfseries,
+        red,
+    }
+}
+\tikzset{
+    lannot/.style={
+        annot,
+        align=right,
+        anchor=east,
+    }
+}
+\tikzset{
+    rannot/.style={
+        annot,
+        align=left,
+        anchor=west,
+    }
+}

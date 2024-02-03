@@ -523,7 +523,7 @@
 				draw,
                 hyperref node=frontpage,
 				anchor=north west,
-				fill=Black, 
+				fill=color1, 
 				minimum width=\pagewidth,
 				minimum height=10mm,
 				line width=0,

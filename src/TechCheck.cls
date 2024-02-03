@@ -46,7 +46,7 @@
 
 \input{tikzsettings.tex}
 
-\RequirePackage{ttccolors}
+\RequirePackage{techcolors}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O P T I O N S   S T A R T

@@ -54,6 +54,19 @@
 	chapters/appendix,
 }
 
+\AddToHook{shipout/foreground}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+		red!45,
+		rotate=60,
+		scale=5,
+		opacity=0.5, 
+		align=center,
+		font=\normalfont,
+	] at (current page.center) {Draft Release \\ {Do not Distribute!} \\ {UOAF}}; 
+  \end{tikzpicture}
+}
+
 \color{color1} % set main font color for whole document
 \begin{document}
 	\include{chapters/titlepage}

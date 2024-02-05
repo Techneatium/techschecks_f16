@@ -523,36 +523,48 @@
 % creates hyperlinked white chevron with section name
 \newcommand{\thumbfront}[2]{
 	\begin{tikzpicture}[remember picture,overlay]
-	%white chevrons
-	\fill[white]
-		([xshift=\THT@chevin,
-		yshift=-(#2+0.5)*\THT@tabwidth+(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([xshift=\THT@chevout,
-		yshift=-(#2+0.5)*\THT@tabwidth+(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([xshift=\THT@chevpoint,
-		yshift=-(#2+0.5)*\THT@tabwidth
-		]current page text area.north east) --
-		([xshift=\THT@chevout,
-		yshift=-(#2+0.5)*\THT@tabwidth-(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([
-		xshift=\THT@chevin,
-		yshift=-(#2+0.5)*\THT@tabwidth-(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		cycle;
+	% chapter number
+    \node [
+        anchor=east,
+        xshift=\THT@outmar, 
+        yshift=-(#2+0.5)*\THT@tabwidth,
+        fill=color1,
+        minimum width=10mm,
+        % minimum height=10mm,
+		minimum height=\THT@tabwidth-2mm,
+        line width=0,
+    ] (numbox) at (current page text area.north east) {};
+    \node [
+        draw, 
+        color=white, 
+        minimum width=7.5mm, 
+        fill=\chaptercolor, 
+        inner sep=0pt, 
+        line width=0.4mm,
+        circle, 
+        text=white,
+        font=\titlefont\Large\bfseries,
+    ] (chapternum) at (numbox.center) {#2};
 	% hyperlinked node for each section
 	% uses a number (thumbtab:#2) as label
 	\node[
 		rectangle,
-		anchor=west,
-		rotate=0,
+		anchor=east,
+        fill=color1,
 		minimum width=20mm,
-		minimum height=\THT@tabwidth-5mm,
-		hyperref node=thumbtab:#2
-	](Procedure) at ([xshift=\THT@chevin, yshift=-(#2+0.5)*\THT@tabwidth]current page text area.north east) {
-		\textbf{#1}
+        text width=20mm,
+		minimum height=\THT@tabwidth-2mm,
+        % minimum height=10mm,
+        left=0,
+        right=0,
+        line width=0,
+		hyperref node=thumbtab:#2,
+        align=right,
+        text=white,
+        font=\bfseries,
+        left=0 of numbox,
+	](text) at (numbox.west) {
+		#1
 	};
 	\end{tikzpicture}
 }

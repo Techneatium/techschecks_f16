@@ -15,15 +15,23 @@
 	
 	% label for hyperrefs back to frontpage
 	\label{frontpage}
-	% make chevrons
-    % use tabular for multi line node
-	\thumbfront{Procedures}{0}
-	\thumbfront{Systems}{1}
-	\thumbfront{\begin{tabular}{c} A-A \\ Sensors \end{tabular}}{2} 
-	\thumbfront{\begin{tabular}{c} A-G \\ Sensors \end{tabular}}{3}
-	\thumbfront{\begin{tabular}{c} A-G \\ Weapons \end{tabular}}{4}
-	\thumbfront{\begin{tabular}{c} A-A \\ Weapons \end{tabular}}{5}
-	\thumbfront{Appendix}{6}
+	% make thumbfronts
+	\thumbfront{Procedures \\ {\footnotesize Normal}}{0}
+	\cyclechpcolor
+	\thumbfront{Procedures \\ {\footnotesize Emergency}}{1}
+	\cyclechpcolor
+	\thumbfront{Aircraft \\ Systems}{2}
+	\cyclechpcolor
+	\thumbfront{Sensors \\ {\footnotesize A-A}}{3} 
+	\cyclechpcolor
+	\thumbfront{Sensors \\ {\footnotesize A-G}}{4}
+	\cyclechpcolor
+	\thumbfront{Weapons \\ {\footnotesize A-G}}{5}
+	\cyclechpcolor
+	\thumbfront{Weapons \\ {\footnotesize A-A}}{6}
+	\cyclechpcolor
+	\thumbfront{Appendix}{7}
 	\thumbwide
 
 	\cleardoublepage
+	\resetchpcolor

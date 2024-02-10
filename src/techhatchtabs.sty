@@ -500,29 +500,35 @@
         xshift=-5mm,
         yshift=80mm,
         font=\Huge\titlefont\bfseries
-    ]() at (current page text area.west) {
-        Tech's Checks
+    ] (techcheck) at (current page text area.west) {
+        \fontspec[
+            Path=./fonts/,
+            Ligatures=TeX,
+        ]{Spartan MB-Regular}
+        Tech's Checks\hspace{3.25em}
+        \fontspec[
+            Path=./fonts/,
+            Ligatures=TeX,
+        ]{Spartan MB-Italic}
+        \large
+        Gold Edition
     };
     \node[
-        anchor=west,
-        xshift=-5mm,
-        % xshift=\THT@centeroffset,
-        yshift=65mm,
-    ]() at (current page text area.west) {
+        anchor=north west,
+        yshift=0mm,
+    ](name) at (techcheck.south west) {
         #1
     };
     \node[
-        anchor=west,
-        xshift=-5mm,
-        % xshift=\THT@centeroffset,
-        yshift=55mm,
+        anchor=north west,
+        yshift=0mm,
         font=\Large\titlefont\bfseries
-    ]() at (current page text area.west) {
+    ]() at (name.south west) {
         {\colorbox{color1}{\textcolor{white}{REV: \today}}}
     };
     \node[
         xshift=\THT@centeroffset,
-        yshift=-10mm
+        yshift=-0mm
     ]() at (current page.center) {
         #2
     };

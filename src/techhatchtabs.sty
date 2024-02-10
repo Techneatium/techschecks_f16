@@ -521,7 +521,7 @@
 }
 
 % creates hyperlinked white chevron with section name
-\newcommand{\thumbfront}[2]{
+\newcommand{\thumbfront}[3]{
 	\begin{tikzpicture}[remember picture,overlay]
 	% chapter number
     \node [
@@ -544,7 +544,7 @@
         circle, 
         text=white,
         font=\titlefont\Large\bfseries,
-    ] (chapternum) at (numbox.center) {#2};
+    ] (chapternum) at (numbox.center) {#3};
 	% hyperlinked node for each section
 	% uses a number (thumbtab:#2) as label
 	\node[

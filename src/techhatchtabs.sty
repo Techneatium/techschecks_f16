@@ -496,19 +496,34 @@
 \newcommand{\fronttitleprep}[2]{
     \begin{tikzpicture}[overlay, remember picture]
     \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=85mm]current page.center) {
-        \Huge \titlefont\textbf{Pocket Checklist}
+        anchor=west,
+        xshift=-5mm,
+        yshift=80mm,
+        font=\Huge\titlefont\bfseries
+    ]() at (current page text area.west) {
+        Tech's Checks
     };
     \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=70mm]current page.center) {
+        anchor=west,
+        xshift=-5mm,
+        % xshift=\THT@centeroffset,
+        yshift=65mm,
+    ]() at (current page text area.west) {
         #1
     };
     \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=55mm]current page.center) {
-        \Large \titlefont\textbf{\colorbox{color1}{\textcolor{white}{REV: \today}}} \blue{}
+        anchor=west,
+        xshift=-5mm,
+        % xshift=\THT@centeroffset,
+        yshift=55mm,
+        font=\Large\titlefont\bfseries
+    ]() at (current page text area.west) {
+        {\colorbox{color1}{\textcolor{white}{REV: \today}}}
     };
     \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=-10mm]current page.center) {
+        xshift=\THT@centeroffset,
+        yshift=-10mm
+    ]() at (current page.center) {
         #2
     };
     \end{tikzpicture}

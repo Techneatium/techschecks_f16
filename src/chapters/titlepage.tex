@@ -120,5 +120,67 @@
 	\thumbwide%
 
     \restoregeometry
+	\clearpage
+
+	\begin{tikzpicture}[overlay, remember picture]
+		% logos
+		\node[
+			anchor=center,
+			xshift=-\textwidth/4,
+			yshift=-40mm,
+		](logotc) at (current page text area.north) {%
+			\includegraphics[%
+				height=\textwidth/3,%
+				page=1,
+			]{diagrams/logos/techschecks.pdf}%
+		};
+		\node[
+			anchor=center,
+			xshift=\textwidth/4,
+			yshift=-40mm,
+		](logogoldwolf) at (current page text area.north) {%
+			\includegraphics[%
+				height=\textwidth/3,%
+				page=1,
+			]{diagrams/logos/goldwolf.jpg}%
+		};
+		% thanks
+		\node[
+			anchor=south west,
+			xshift=0mm,
+			yshift=0mm,
+			minimum width=\textwidth/2,
+			text width=\textwidth/2,
+			% font=\large,
+			align=left,
+		] (thanks) at (current page text area.south west) {%
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+				LetterSpace=5.0,
+			]{Spartan MB-Light Italic}
+			Special thanks to \hfill\\
+			\hfill Mythic \\
+			\hfill TheMerryMarlin \\
+			\hfill The UOAF Community
+		};
+		\node[
+			anchor=south west,
+			xshift=0mm,
+			yshift=2em,
+			minimum width=\textwidth/2,
+			text width=\textwidth/2,
+			font=\large,
+			align=left,
+		] (morkvitnir) at (thanks.north west) {%
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+				LetterSpace=5.0,
+			]{Spartan MB-Italic}
+			Custom typefaces by \hfill\\
+			\hfill Morkvitnir
+		};
+	\end{tikzpicture}
 	\cleardoublepage
 	\resetchpcolor

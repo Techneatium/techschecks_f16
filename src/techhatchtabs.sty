@@ -490,9 +490,6 @@
 % FRONT PAGE
 %-----------------------------------------------------------------
 
-\newlength{\THT@centeroffset} % center of whitespace next thumbfront area
-\setlength\THT@centeroffset{(\THT@thumbfrontdimh-\THT@outmar-5mm)/2}
-
 \newlength\THT@titlepageouter
 \newlength\THT@titlepageinner
 \setlength\THT@titlepageinner{\THT@inmar}
@@ -510,7 +507,7 @@
     \node[
         anchor=north west,
         xshift=-5mm,
-        % yshift=80mm,
+        yshift=0mm,
         font=\Huge\titlefont\bfseries
     ] (techcheck) at (current page text area.north west) {
         \fontspec[

@@ -213,17 +213,14 @@
 
 \DeclareOption{colorful}{
 	\colorlet{color1}{black}
-	% \definecolor{color1}{HTML}{222222}
 	\colorlet{color2}{NavyBlue}
 	\colorlet{color3}{NavyBlue}
-	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 \DeclareOption{b/w}{
 	\colorlet{color1}{black}
 	\colorlet{color2}{black}
 	\colorlet{color3}{black}
-	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 %-----------------------------------------------------------------
@@ -801,12 +798,6 @@
 \newcommand{\dblue}[1]{%
 	\colorbox{color3}{%
 		\textbf{\textcolor{white}{#1}}%
-	}%
-}
-
-\newcommand{\yellow}[1]{%
-	\colorbox{color4}{%
-		\textbf{\textcolor{black}{#1}}%
 	}%
 }
 

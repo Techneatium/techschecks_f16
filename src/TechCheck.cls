@@ -573,10 +573,11 @@
 %-----------------------------------------------------------------
 % CAPTION SETUP
 %-----------------------------------------------------------------
+\DeclareCaptionFont{titlefont}{\titlefont}
 \captionsetup{
-	hypcap=true, 
-	figurename=Fig., 
-	labelfont={bf}, 
+	hypcap=true,
+	figurename=Fig.,
+	labelfont={bf, titlefont},
 	font=small,
 }
 

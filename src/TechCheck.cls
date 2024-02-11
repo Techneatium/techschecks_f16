@@ -113,9 +113,6 @@
 \setlength\TC@botmar{12mm}
 \setlength\TC@footmar{5mm}
 
-% indendtation for chevrons on front page
-\newlength{\TC@chevin}
-
 % tab dimensions
 \newlength{\TC@tabwidth}
 \newlength{\TC@tabdepth}
@@ -133,7 +130,6 @@
 	\setlength\TC@paperw{148mm}
 	\setlength\TC@inmar{10mm}
 	\setlength\TC@outmar{10mm}
-	\setlength{\TC@chevin}{\TC@outmar-33mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -144,7 +140,6 @@
 	\setlength\TC@paperw{156mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength\TC@chevin{\TC@outmar-36mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -155,7 +150,6 @@
 	\setlength\TC@paperw{189mm}
 	\setlength\TC@inmar{10mm}
 	\setlength\TC@outmar{10mm}
-	\setlength{\TC@chevin}{\TC@outmar-33mm}
 	\setlength\TC@tabdepth{8mm}
     \setlength\TC@botmar{20mm}
     \setlength\TC@footmar{10mm}
@@ -168,7 +162,6 @@
 	\setlength\TC@paperw{157.5mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{13.5mm}
-	\setlength\TC@chevin{\TC@outmar-32.5mm}
 	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
@@ -179,7 +172,6 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{14mm}
 	\setlength\TC@outmar{14mm}
-	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -190,7 +182,6 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -357,7 +348,6 @@
     outer=\TC@outmar,
     tabwidth=\TC@tabwidth,
     tabdepth=\TC@tabdepth,
-    chevin=\TC@chevin,
 ]{techhatchtabs} % custom page hatching 
 
 \RequirePackage{technumitem} % custom enumitem like environments

@@ -793,21 +793,21 @@
 % CUSTOM COMMANDS
 %-----------------------------------------------------------------
 % command to create blue, bold mini-titles
-\newcommand{\blue}[1]{
-	\textbf{\textcolor{color2}{#1}}
+\newcommand{\blue}[1]{%
+	\textbf{\textcolor{color2}{#1}}%
 }
 
 % command to create bold, white-on-blue, mini titles
-\newcommand{\dblue}[1]{
-	\colorbox{color3}{
-		\textbf{\textcolor{white}{#1}}
-	}
+\newcommand{\dblue}[1]{%
+	\colorbox{color3}{%
+		\textbf{\textcolor{white}{#1}}%
+	}%
 }
 
-\newcommand{\yellow}[1]{
-	\colorbox{color4}{
-		\textbf{\textcolor{black}{#1}}
-	}
+\newcommand{\yellow}[1]{%
+	\colorbox{color4}{%
+		\textbf{\textcolor{black}{#1}}%
+	}%
 }
 
 \newcommand{\notebox}[1]{

@@ -214,13 +214,13 @@
 	}{% enddef
 		\end{innerchecklistitemize}
 	}
-	\newcommand{\blueitem}[2]{
-		\item \blue{##1} {##2} 
-        \stepcounter{checklistnumi}
+	\newcommand{\blueitem}[2]{%
+		\item \blue{##1} {##2}%
+        \stepcounter{checklistnumi}%
 	}
-	\newcommand{\dblueitem}[2]{
-		\item \dblue{##1} {##2}
-        \stepcounter{checklistnumi}
+	\newcommand{\dblueitem}[2]{%
+		\item \dblue{##1} {##2}%
+        \stepcounter{checklistnumi}%
 	}
 	\begin{outerchecklistenumerate}[start=\value{checklistnumi}]
 }{% enddef
@@ -238,11 +238,11 @@
 	}{% enddef
 		\end{innerchecklistitemize}
 	}
-	\newcommand{\blueitem}[2]{
-		\item \blue{##1} ##2
+	\newcommand{\blueitem}[2]{%
+		\item \blue{##1} ##2%
 	}
-	\newcommand{\dblueitem}[2]{
-		\item \dblue{##1} ##2
+	\newcommand{\dblueitem}[2]{%
+		\item \dblue{##1} ##2%
 	}
 	\begin{outerchecklistitemize}
 }{% enddef

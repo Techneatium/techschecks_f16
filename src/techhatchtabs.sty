@@ -355,31 +355,31 @@
 }
 
 % rounds all 4 corners, for front page and back page
-\newcommand{\thumbwide}{
-	\ifKV@hatchtabs@round
-        \@RoundFillNW
-        \@RoundFillNE{0mm}
-        \@RoundFillSE
-        \@RoundFrame{0mm}
-	\fi
+\newcommand{\thumbwide}{%
+	\ifKV@hatchtabs@round%
+        \@RoundFillNW%
+        \@RoundFillNE{0mm}%
+        \@RoundFillSE%
+        \@RoundFrame{0mm}%
+	\fi%
 }
 
 % rounds all 4 corners, removes width from outer edge
 % for all pages that are not front-, back- or section-page
-\newcommand{\thumbnar}{
-	\ifKV@hatchtabs@round
-        \ifKV@hatchtabs@autothumbnar
-            \ifKV@hatchtabs@thumbnarindent
-                \@RoundFillNW
-                \@RoundFillNE{\THT@tabdimh}
-                \@RoundFrame{\THT@tabdimh}
-            \else 
-                \@RoundFillNW
-                \@RoundFillNE{0mm}
-                \@RoundFrame{0mm}
-            \fi
-        \fi
-	\fi
+\newcommand{\thumbnar}{%
+	\ifKV@hatchtabs@round%
+        \ifKV@hatchtabs@autothumbnar%
+            \ifKV@hatchtabs@thumbnarindent%
+                \@RoundFillNW%
+                \@RoundFillNE{\THT@tabdimh}%
+                \@RoundFrame{\THT@tabdimh}%
+            \else%
+                \@RoundFillNW%
+                \@RoundFillNE{0mm}%
+                \@RoundFrame{0mm}%
+            \fi%
+        \fi%
+	\fi%
 }
 
 %-----------------------------------------------------------------
@@ -514,7 +514,7 @@
 \setlength\THT@thumbfrontnamewidth{\THT@thumbfrontwidth-\THT@thumbfrontcircwidth}
 
 % creates hyperlinked node with colored circle for chapter
-\newcommand{\thumbfront}[3]{
+\newcommand{\thumbfront}[3]{%
 	\begin{tikzpicture}[remember picture,overlay]
 	% chapter number
     \node [
@@ -525,7 +525,7 @@
         minimum width=\THT@thumbfrontcircwidth,
 		minimum height=\THT@tabdimv-2mm,
         line width=0,
-    ] (numbox) at (current page text area.north east) {};
+    ] (numbox) at (current page text area.north east) {};%
     \node [
         draw, 
         color=white, 
@@ -536,7 +536,7 @@
         circle, 
         text=\chpcolortext,
         font=\titlefont\Large\bfseries,
-    ] (chapternum) at (numbox.center) {#3};
+    ] (chapternum) at (numbox.center) {#3};%
 	% hyperlinked node for each section
 	% uses a number (thumbtab:#2) as label
 	\node[
@@ -554,10 +554,10 @@
         text=white,
         font=\bfseries,
         left=0 of numbox,
-	](text) at (numbox.west) {
-		#1
+	](text) at (numbox.west) {%
+		#1%
 	};
-	\end{tikzpicture}
+	\end{tikzpicture}%
 }
 
 \newcommand{\@FrontFill}{%
@@ -568,6 +568,6 @@
         ([xshift=\THT@titlepageouter, yshift=-\THT@botmar]current page text area.south east) --
         ([xshift=0mm, yshift=-\THT@botmar]current page text area.south east) --
         ([xshift=0mm, yshift=2mm]current page text area.north east) --
-        cycle;%
-    \end{tikzpicture}%
+        cycle;
+    \end{tikzpicture}
 }

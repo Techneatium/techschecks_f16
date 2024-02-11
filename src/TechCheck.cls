@@ -293,7 +293,12 @@
 }{}{}{}
 \DTMsetstyle{yymmdd} % set new style as default
 
-\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
+\RequirePackage[
+	hypcap=true, 
+	figurename=Fig., 
+	labelfont={bf}, 
+	font=small
+]{caption} % allows proper captions for non-float figures
 \RequirePackage{subcaption} % used for subfigures
 \RequirePackage{marginfix} % patches marginpar to prevent page overflow
 

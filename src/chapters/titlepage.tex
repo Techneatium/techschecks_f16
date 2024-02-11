@@ -4,14 +4,100 @@
 	% deactivate header and footer
 	\pagestyle{superempty}
 	
-    % creates title blocks
-	\fronttitleprep{
-        \aircraftlong
-    }{
-        \includegraphics[
-            width=2\textwidth
-        ]{diagrams/aircraft/wireframe_front.pdf}
-    }
+    % set geometry and create black area for thumbtabs
+	\fronttitleprep
+
+	% title blocks
+	\begin{tikzpicture}[overlay, remember picture]
+		\node[
+			anchor=north west,
+			xshift=-5mm,
+			yshift=-5mm,
+			font=\Huge
+		] (techcheck) at (current page text area.north west) {%
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+				LetterSpace=5.0,
+			]{Spartan MB-Light}
+			Tech's Checks
+		};%
+		\node[
+			anchor=north west,
+			yshift=-0.5em,
+			fill=color1,
+			text=white,
+			minimum width=\textwidth,
+			font=\huge,
+		](name) at (techcheck.south west) {%
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+			]{Spartan MB-SemiBold}%
+			\aircraftlong%
+		};%
+		\node[
+			anchor=north west,
+			yshift=-0.5em,
+			font=\large
+		] () at (name.south west) {%
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+				LetterSpace=5.0,
+			]{Spartan MB-Light}
+			REV: \today
+		};%
+		\node[
+			xshift=10mm,
+			yshift=0mm,
+		](pic) at (current page text area.west) {%
+			\includegraphics[%
+				width=2\textwidth,%
+			]{diagrams/aircraft/wireframe_front.pdf}%
+		};%
+
+		\node[
+			anchor=south,
+			xshift=-5mm,
+			yshift=0mm,
+			minimum width=\textwidth,
+			font=\large,
+			fill=techyellow,
+		] (gold) at (current page text area.south) {%
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+			]{Spartan MB-Medium Italic}%
+			Gold Edition%
+		};%
+
+		\node[
+			anchor=south east,
+			xshift=-0mm,
+			yshift=2em,
+			font=\large,
+		] (tech) at (gold.north east) {
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+			]{Spartan MB-Light Italic}%
+			and Goldwolf%
+		};%
+
+		\node[
+			anchor=south east,
+			xshift=-0mm,
+			yshift=0em,
+			font=\large,
+		] (goldwolf) at (tech.north east) {
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+			]{Spartan MB-Light Italic}
+			By Techneatium%
+		};%
+	\end{tikzpicture}
 	
 	% label for hyperrefs back to frontpage
 	\label{frontpage}

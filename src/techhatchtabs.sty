@@ -493,14 +493,26 @@
 \newlength{\THT@centeroffset} % center of whitespace next thumbfront area
 \setlength\THT@centeroffset{(\THT@thumbfrontdimh-\THT@outmar-5mm)/2}
 
+\newlength\THT@titlepageouter
+\newlength\THT@titlepageinner
+\setlength\THT@titlepageinner{\THT@inmar}
+\setlength\THT@titlepageouter{33mm}
+
 \newcommand{\fronttitleprep}[2]{
+    \newgeometry{
+        showframe,
+        top=\THT@topmar,
+        bottom=\THT@botmar,
+        inner=\THT@titlepageinner,
+        outer=\THT@titlepageouter,
+    }
     \begin{tikzpicture}[overlay, remember picture]
     \node[
-        anchor=west,
+        anchor=north west,
         xshift=-5mm,
-        yshift=80mm,
+        % yshift=80mm,
         font=\Huge\titlefont\bfseries
-    ] (techcheck) at (current page text area.west) {
+    ] (techcheck) at (current page text area.north west) {
         \fontspec[
             Path=./fonts/,
             Ligatures=TeX,
@@ -527,9 +539,8 @@
         {\colorbox{color1}{\textcolor{white}{REV: \today}}}
     };
     \node[
-        xshift=\THT@centeroffset,
         yshift=-0mm
-    ]() at (current page.center) {
+    ]() at (current page text area.center) {
         #2
     };
     \end{tikzpicture}
@@ -542,7 +553,7 @@
 	% chapter number
     \node [
         anchor=east,
-        xshift=\THT@outmar, 
+        xshift=\THT@titlepageouter, 
         yshift=-(#2+0.5)*\THT@tabdimv,
         fill=color1,
         minimum width=10mm,
@@ -589,10 +600,10 @@
     \begin{tikzpicture}[remember picture, overlay]
 		% Black area for white chevrons
         \fill[color1]
-        ([xshift=\THT@outmar, yshift=2mm]current page text area.north east) --
-        ([xshift=\THT@outmar, yshift=-\THT@botmar]current page text area.south east) --
-        ([xshift=\THT@thumbfrontdimh, yshift=-\THT@botmar]current page text area.south east) --
-        ([xshift=\THT@thumbfrontdimh, yshift=2mm]current page text area.north east) --
+        ([xshift=\THT@titlepageouter, yshift=2mm]current page text area.north east) --
+        ([xshift=\THT@titlepageouter, yshift=-\THT@botmar]current page text area.south east) --
+        ([xshift=0mm, yshift=-\THT@botmar]current page text area.south east) --
+        ([xshift=0mm, yshift=2mm]current page text area.north east) --
         cycle;
     \end{tikzpicture}
 }

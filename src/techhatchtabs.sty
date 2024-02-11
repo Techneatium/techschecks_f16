@@ -541,10 +541,51 @@
         REV: \today
     };
     \node[
-        xshift=-5mm,
-        yshift=20mm,
-    ](pic) at (current page text area.center) {
+        xshift=10mm,
+        yshift=0mm,
+    ](pic) at (current page text area.west) {
         #2
+    };
+
+    \node[
+        anchor=south,
+        xshift=-5mm,
+        yshift=0mm,
+        minimum width=\textwidth,
+        font=\large,
+        fill=techyellow,
+    ] (gold) at (current page text area.south) {
+        \fontspec[
+            Path=./fonts/,
+            Ligatures=TeX,
+        ]{Spartan MB-Medium Italic}
+        Gold Edition
+    };
+
+    \node[
+        anchor=south east,
+        xshift=-0mm,
+        yshift=2em,
+        font=\large,
+    ] (tech) at (gold.north east) {
+        \fontspec[
+            Path=./fonts/,
+            Ligatures=TeX,
+        ]{Spartan MB-Light Italic}
+        and Goldwolf
+    };
+
+    \node[
+        anchor=south east,
+        xshift=-0mm,
+        yshift=0em,
+        font=\large,
+    ] (goldwolf) at (tech.north east) {
+        \fontspec[
+            Path=./fonts/,
+            Ligatures=TeX,
+        ]{Spartan MB-Light Italic}
+        By Techneatium
     };
     \end{tikzpicture}
     \@FrontFill

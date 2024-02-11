@@ -544,6 +544,13 @@
     \@FrontFill
 }
 
+\newlength\THT@thumbfrontwidth
+\newlength\THT@thumbfrontcircwidth
+\newlength\THT@thumbfrontnamewidth
+\setlength\THT@thumbfrontwidth{\THT@titlepageouter}
+\setlength\THT@thumbfrontcircwidth{10mm}
+\setlength\THT@thumbfrontnamewidth{\THT@thumbfrontwidth-\THT@thumbfrontcircwidth}
+
 % creates hyperlinked node with colored circle for chapter
 \newcommand{\thumbfront}[3]{
 	\begin{tikzpicture}[remember picture,overlay]
@@ -553,8 +560,7 @@
         xshift=\THT@titlepageouter, 
         yshift=-(#2+0.5)*\THT@tabdimv,
         fill=color1,
-        minimum width=10mm,
-        % minimum height=10mm,
+        minimum width=\THT@thumbfrontcircwidth,
 		minimum height=\THT@tabdimv-2mm,
         line width=0,
     ] (numbox) at (current page text area.north east) {};
@@ -575,10 +581,9 @@
 		rectangle,
 		anchor=east,
         fill=color1,
-		minimum width=20mm,
+		minimum width=\THT@thumbfrontnamewidth,
         text width=20mm,
 		minimum height=\THT@tabdimv-2mm,
-        % minimum height=10mm,
         left=0,
         right=0,
         line width=0,

@@ -567,7 +567,7 @@
 \captionsetup{
 	hypcap=true,
 	figurename=Fig.,
-	labelfont={bf, titlefont},
+	labelfont={bf},
 	font=small,
 }
 

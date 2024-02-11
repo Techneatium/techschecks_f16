@@ -508,36 +508,39 @@
         anchor=north west,
         xshift=-5mm,
         yshift=-5mm,
-        font=\Huge\titlefont\bfseries
+        font=\Huge
     ] (techcheck) at (current page text area.north west) {
         \fontspec[
             Path=./fonts/,
             Ligatures=TeX,
-        ]{Spartan MB-Regular}
-        Tech's Checks\hspace{3.25em}
-        \fontspec[
-            Path=./fonts/,
-            Ligatures=TeX,
-        ]{Spartan MB-Italic}
-        \large
-        Gold Edition
+            LetterSpace=5.0,
+        ]{Spartan MB-Light}
+        Tech's Checks
     };
     \node[
         anchor=north west,
         yshift=-0.5em,
         fill=color1,
         text=white,
-        font=\huge\titlefont\bfseries,
+        minimum width=\textwidth,
+        font=\huge,
     ](name) at (techcheck.south west) {
+        \fontspec[
+            Path=./fonts/,
+            Ligatures=TeX,
+        ]{Spartan MB-SemiBold}
         #1
     };
     \node[
         anchor=north west,
         yshift=-0.5em,
-        fill=color1,
-        text=white,
-        font=\Large\titlefont\bfseries
+        font=\large
     ]() at (name.south west) {
+        \fontspec[
+            Path=./fonts/,
+            Ligatures=TeX,
+            LetterSpace=5.0,
+        ]{Spartan MB-Light}
         REV: \today
     };
     \node[

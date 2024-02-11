@@ -5,10 +5,11 @@
 	\pagestyle{superempty}
 	
     % set geometry and create black area for thumbtabs
-	\fronttitleprep
+	\fronttitleprep%
 
 	% title blocks
 	\begin{tikzpicture}[overlay, remember picture]
+		% title
 		\node[
 			anchor=north west,
 			xshift=-5mm,
@@ -56,6 +57,7 @@
 				width=2\textwidth,%
 			]{diagrams/aircraft/wireframe_front.pdf}%
 		};
+		% gold band for edition
 		\node[
 			anchor=south,
 			xshift=-5mm,
@@ -70,12 +72,13 @@
 			]{Spartan MB-Medium Italic}%
 			Gold Edition%
 		};
+		% authors
 		\node[
 			anchor=south east,
 			xshift=-0mm,
 			yshift=2em,
 			font=\large,
-		] (tech) at (gold.north east) {
+		] (goldwolf) at (gold.north east) {
 			\fontspec[
 				Path=./fonts/,
 				Ligatures=TeX,
@@ -87,7 +90,7 @@
 			xshift=-0mm,
 			yshift=0em,
 			font=\large,
-		] (goldwolf) at (tech.north east) {
+		] (techneatium) at (goldwolf.north east) {
 			\fontspec[
 				Path=./fonts/,
 				Ligatures=TeX,

@@ -545,11 +545,11 @@
 				draw, 
 				color=white, 
 				minimum width=7.5mm, 
-				fill=\chaptercolor, 
+				fill=\chpcolorhighlight, 
 				inner sep=0pt, 
 				line width=0.4mm,
 				circle, 
-				text=white,
+				text=\chpcolortext,
 				font=\titlefont\Large\bfseries,
 			] (chapternum) at (numbox.center) {\thechapter};
 			\node [
@@ -719,11 +719,11 @@
 				draw, 
 				color=white, 
 				minimum width=12mm, 
-				fill=\chaptercolor, 
+				fill=\chpcolorhighlight, 
 				inner sep=0pt, 
 				line width=0.6mm,
 				circle, 
-				text=white,
+				text=\chpcolortext,
 				font=\titlefont\Huge\bfseries,
 			] (chapternum) at (numbox.center) {\thechapter};
 			\node [

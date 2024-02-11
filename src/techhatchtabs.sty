@@ -58,7 +58,7 @@
 % i.e can be cut out from edge of page
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{thumbtabindent}[true]{}
 
-% if true then thumbnars are 'indented' by tabwidth
+% if true then thumbnars are 'indented' by tabdimv
 \define@boolkey{techhatchtabs.sty}[KV@hatchtabs@]{thumbnarindent}[true]{}
 
 % if true then non-special pages are thumbnar'd
@@ -83,19 +83,19 @@
 \newlength{\THT@inmar}
 \newlength{\THT@outmar}
 % tab dimensions
-\newlength{\THT@tabwidth}
-\newlength{\THT@tabdepth}
+\newlength{\THT@tabdimv}
+\newlength{\THT@tabdimh}
 % indendtation for chevrons on front page
-\newlength{\THT@chevin}
+\newlength{\THT@thumbfrontdimh}
 
 % defaults
 \setlength\THT@topmar{12mm}
 \setlength\THT@botmar{8mm}
 \setlength\THT@inmar{10mm}
 \setlength\THT@outmar{10mm}
-\setlength\THT@tabwidth{20mm} % total guess
-\setlength\THT@tabdepth{12mm}
-\setlength\THT@chevin{\THT@outmar-33mm}
+\setlength\THT@tabdimh{12mm}
+\setlength\THT@tabdimv{20mm}
+\setlength\THT@thumbfrontdimh{\THT@outmar-33mm}
 
 % options
 \DeclareOptionX{top}{
@@ -110,14 +110,14 @@
 \DeclareOptionX{outer}{
     \setlength\THT@outmar{#1}
 }
-\DeclareOptionX{tabwidth}{
-    \setlength\THT@tabwidth{#1}
+\DeclareOptionX{tabdimv}{
+    \setlength\THT@tabdimv{#1}
 }
-\DeclareOptionX{tabdepth}{
-    \setlength\THT@tabdepth{#1}
+\DeclareOptionX{tabdimh}{
+    \setlength\THT@tabdimh{#1}
 }
-\DeclareOptionX{chevin}{
-    \setlength\THT@chevin{#1}
+\DeclareOptionX{thumbfrontdimh}{
+    \setlength\THT@thumbfrontdimh{#1}
 }
 
 %-----------------------------------------------------------------
@@ -171,7 +171,7 @@
 \newcommand{\settabnumber}[1]{
 	\setcounter{THT@tabnumber}{#1}
     % determine width based on number of tabs
-	\setlength\THT@tabwidth{\textheight/\theTHT@tabnumber}
+	\setlength\THT@tabdimv{\textheight/\theTHT@tabnumber}
 }
 
 % 'normal' rounded thumbtabs
@@ -180,15 +180,15 @@
         rectangle,
         anchor=south west,
         rotate=270,
-        minimum height=\THT@tabdepth,
-        minimum width=\THT@tabwidth,
+        minimum height=\THT@tabdimh,
+        minimum width=\THT@tabdimv,
     },
     thumbbacknode/.style={
         rectangle,
         anchor=south east,
         rotate=90,
-        minimum height=\THT@tabdepth,
-        minimum width=\THT@tabwidth,
+        minimum height=\THT@tabdimh,
+        minimum width=\THT@tabdimv,
     },
 }
 
@@ -199,16 +199,16 @@
             rectangle,
             anchor=south west,
             rotate=270,
-            minimum height=\THT@tabdepth,
-            minimum width=0.98\THT@tabwidth,
+            minimum height=\THT@tabdimh,
+            minimum width=0.98\THT@tabdimv,
             fill=color1,
         },
         thumbbacknode/.style={
             rectangle,
             anchor=south east,
             rotate=90,
-            minimum height=\THT@tabdepth,
-            minimum width=0.98\THT@tabwidth,
+            minimum height=\THT@tabdimh,
+            minimum width=0.98\THT@tabdimv,
             fill=color1,
         },
     }
@@ -309,8 +309,8 @@
         \ifKV@hatchtabs@thumbtabindent
             % if indent then create cutline around tab
             \@RoundFillNW
-            \@TabFillNE{\THT@tabdepth}{#2}
-            \@TabFrame{\THT@tabdepth}{#2}
+            \@TabFillNE{\THT@tabdimh}{#2}
+            \@TabFrame{\THT@tabdimh}{#2}
         \else
             % else thumbwide
             \@RoundFillNW
@@ -322,7 +322,7 @@
     \node[
         thumbtabnode,
     ]
-    (sectionnode) at ([xshift=1\THT@outmar-\THT@tabdepth, yshift=-#2*\THT@tabwidth]current page text area.north east){
+    (sectionnode) at ([xshift=1\THT@outmar-\THT@tabdimh, yshift=-#2*\THT@tabdimv]current page text area.north east){
         \ifKV@hatchtabs@squaretabs
             \color{white}\small\titlefont\textbf{#1}
         \else
@@ -343,7 +343,7 @@
 		\node[
 			thumbbacknode,
 		]
-		(sectionnode) at ([xshift=-1\THT@outmar+\THT@tabdepth, yshift=-#2*\THT@tabwidth]current page text area.north west) {
+		(sectionnode) at ([xshift=-1\THT@outmar+\THT@tabdimh, yshift=-#2*\THT@tabdimv]current page text area.north west) {
         \ifKV@hatchtabs@squaretabs
             \color{white}\small\titlefont\textbf{#1}
         \else
@@ -355,31 +355,31 @@
 }
 
 % rounds all 4 corners, for front page and back page
-\newcommand{\thumbwide}{
-	\ifKV@hatchtabs@round
-        \@RoundFillNW
-        \@RoundFillNE{0mm}
-        \@RoundFillSE
-        \@RoundFrame{0mm}
-	\fi
+\newcommand{\thumbwide}{%
+	\ifKV@hatchtabs@round%
+        \@RoundFillNW%
+        \@RoundFillNE{0mm}%
+        \@RoundFillSE%
+        \@RoundFrame{0mm}%
+	\fi%
 }
 
 % rounds all 4 corners, removes width from outer edge
 % for all pages that are not front-, back- or section-page
-\newcommand{\thumbnar}{
-	\ifKV@hatchtabs@round
-        \ifKV@hatchtabs@autothumbnar
-            \ifKV@hatchtabs@thumbnarindent
-                \@RoundFillNW
-                \@RoundFillNE{\THT@tabdepth}
-                \@RoundFrame{\THT@tabdepth}
-            \else 
-                \@RoundFillNW
-                \@RoundFillNE{0mm}
-                \@RoundFrame{0mm}
-            \fi
-        \fi
-	\fi
+\newcommand{\thumbnar}{%
+	\ifKV@hatchtabs@round%
+        \ifKV@hatchtabs@autothumbnar%
+            \ifKV@hatchtabs@thumbnarindent%
+                \@RoundFillNW%
+                \@RoundFillNE{\THT@tabdimh}%
+                \@RoundFrame{\THT@tabdimh}%
+            \else%
+                \@RoundFillNW%
+                \@RoundFillNE{0mm}%
+                \@RoundFrame{0mm}%
+            \fi%
+        \fi%
+	\fi%
 }
 
 %-----------------------------------------------------------------
@@ -404,7 +404,7 @@
 % fills in ouside of rounded NE corner + indentation with white
 \newcommand{\@RoundFillNE}[1]{
     \begin{tikzpicture}[remember picture, overlay]
-		% arg is indentation, \THT@tabdepth for thumbnar
+		% arg is indentation, \THT@tabdimh for thumbnar
 		\fill[white]
 			([xshift=\THT@outmar+\marginparsep+\marginparwidth, yshift=\THT@topmar]current page text area.north east) --
 			([xshift=\THT@outmar+\marginparsep+\marginparwidth, yshift=\THT@topmar-10mm]current page text area.north east) --
@@ -434,7 +434,7 @@
 % draws rounded line around page with indentation on outer edge
 \newcommand{\@RoundFrame}[1]{
     \begin{tikzpicture}[remember picture, overlay]
-		% arg is indentation, \THT@tabdepth for thumbnar
+		% arg is indentation, \THT@tabdimh for thumbnar
 		\draw[color1]
 			([xshift=-\THT@inmar, yshift=\THT@topmar]current page text area.north west) [rounded corners = \THT@swround] --
 			([xshift=-\THT@inmar, yshift=-\THT@botmar]current page text area.south west) [rounded corners = \THT@seround] --
@@ -447,14 +447,14 @@
 % fills area outside of NE corner for rounded thumbtabs
 \newcommand{\@TabFillNE}[2]{
     \begin{tikzpicture}[remember picture, overlay]
-		% 1st arg is indentation -> \THT@tabdepth
+		% 1st arg is indentation -> \THT@tabdimh
         % 2nd arg is tab int
 		\fill[white]
-            ([xshift=\THT@outmar, yshift=-#2*\THT@tabwidth-5mm]current page text area.north east)
+            ([xshift=\THT@outmar, yshift=-#2*\THT@tabdimv-5mm]current page text area.north east)
             [rounded corners=4mm] --
-            ([xshift=\THT@outmar, yshift=-#2*\THT@tabwidth]current page text area.north east)
+            ([xshift=\THT@outmar, yshift=-#2*\THT@tabdimv]current page text area.north east)
             [rounded corners=3mm] --
-            ([xshift=\THT@outmar-#1, yshift=-#2*\THT@tabwidth]current page text area.north east)
+            ([xshift=\THT@outmar-#1, yshift=-#2*\THT@tabdimv]current page text area.north east)
             [rounded corners=\THT@neround] --
             ([xshift=\THT@outmar-#1, yshift=\THT@topmar]current page text area.north east) --
             ([xshift=\THT@outmar-#1-10mm, yshift=\THT@topmar]current page text area.north east)
@@ -467,7 +467,7 @@
 % draws frame around page including indentation & thumbtab
 \newcommand{\@TabFrame}[2]{
     \begin{tikzpicture}[remember picture, overlay]
-		% 1st arg is indentation -> \THT@tabdepth
+		% 1st arg is indentation -> \THT@tabdimh
         % 2nd arg is tab int
 		\draw[color1]
             ([xshift=-\THT@inmar, yshift=\THT@topmar]current page text area.north west)
@@ -476,9 +476,9 @@
             [rounded corners=\THT@seround] --
             ([xshift=\THT@outmar, yshift=-\THT@botmar]current page text area.south east)
             [rounded corners=4mm] --
-            ([xshift=\THT@outmar, yshift=-#2*\THT@tabwidth]current page text area.north east)
+            ([xshift=\THT@outmar, yshift=-#2*\THT@tabdimv]current page text area.north east)
             [rounded corners=3mm] --
-            ([xshift=\THT@outmar-#1, yshift=-#2*\THT@tabwidth]current page text area.north east)
+            ([xshift=\THT@outmar-#1, yshift=-#2*\THT@tabdimv]current page text area.north east)
             [rounded corners=\THT@neround] --
             ([xshift=\THT@outmar-#1, yshift=\THT@topmar]current page text area.north east)
             [rounded corners=\THT@nwround]--
@@ -490,81 +490,84 @@
 % FRONT PAGE
 %-----------------------------------------------------------------
 
-\newlength{\THT@chevout} % sets for right side of chevron
-\newlength{\THT@chevpoint} % sets point of chevron
-\newlength{\THT@centeroffset} % center of whitespace next to chevrons
-\setlength\THT@chevout{\THT@outmar-12mm}
-\setlength\THT@chevpoint{\THT@outmar-5mm}
-% chevron height is set by tabwidth so it lines up
-\setlength\THT@centeroffset{(\THT@chevin-\THT@outmar-5mm)/2}
+\newlength\THT@titlepageouter
+\newlength\THT@titlepageinner
+\setlength\THT@titlepageinner{\THT@inmar}
+\setlength\THT@titlepageouter{33mm}
 
-\newcommand{\fronttitleprep}[2]{
-    \begin{tikzpicture}[overlay, remember picture]
-    \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=85mm]current page.center) {
-        \Huge \titlefont\textbf{Pocket Checklist}
-    };
-    \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=70mm]current page.center) {
-        #1
-    };
-    \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=55mm]current page.center) {
-        \Large \titlefont\textbf{\colorbox{color1}{\textcolor{white}{REV: \today}}} \blue{}
-    };
-    \node[
-    ]() at ([xshift=\THT@centeroffset,yshift=-10mm]current page.center) {
-        #2
-    };
-    \end{tikzpicture}
-    \@FrontFill
+\newcommand{\fronttitleprep}{
+    \newgeometry{
+        showframe,
+        top=\THT@topmar,
+        bottom=\THT@botmar,
+        inner=\THT@titlepageinner,
+        outer=\THT@titlepageouter,
+    }%
+    \@FrontFill%
 }
 
-% creates hyperlinked white chevron with section name
-\newcommand{\thumbfront}[2]{
+\newlength\THT@thumbfrontwidth
+\newlength\THT@thumbfrontcircwidth
+\newlength\THT@thumbfrontnamewidth
+\setlength\THT@thumbfrontwidth{\THT@titlepageouter}
+\setlength\THT@thumbfrontcircwidth{10mm}
+\setlength\THT@thumbfrontnamewidth{\THT@thumbfrontwidth-\THT@thumbfrontcircwidth}
+
+% creates hyperlinked node with colored circle for chapter
+\newcommand{\thumbfront}[3]{%
 	\begin{tikzpicture}[remember picture,overlay]
-	%white chevrons
-	\fill[white]
-		([xshift=\THT@chevin,
-		yshift=-(#2+0.5)*\THT@tabwidth+(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([xshift=\THT@chevout,
-		yshift=-(#2+0.5)*\THT@tabwidth+(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([xshift=\THT@chevpoint,
-		yshift=-(#2+0.5)*\THT@tabwidth
-		]current page text area.north east) --
-		([xshift=\THT@chevout,
-		yshift=-(#2+0.5)*\THT@tabwidth-(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		([
-		xshift=\THT@chevin,
-		yshift=-(#2+0.5)*\THT@tabwidth-(\THT@tabwidth/2-2.5mm)
-		]current page text area.north east) --
-		cycle;
+	% chapter number
+    \node [
+        anchor=east,
+        xshift=\THT@titlepageouter, 
+        yshift=-(#2+0.5)*\THT@tabdimv,
+        fill=color1,
+        minimum width=\THT@thumbfrontcircwidth,
+		minimum height=\THT@tabdimv-2mm,
+        line width=0,
+    ] (numbox) at (current page text area.north east) {};%
+    \node [
+        draw, 
+        color=white, 
+        minimum width=7.5mm, 
+        fill=\chpcolorhighlight, 
+        inner sep=0pt, 
+        line width=0.4mm,
+        circle, 
+        text=\chpcolortext,
+        font=\titlefont\Large\bfseries,
+    ] (chapternum) at (numbox.center) {#3};%
 	% hyperlinked node for each section
 	% uses a number (thumbtab:#2) as label
 	\node[
 		rectangle,
-		anchor=west,
-		rotate=0,
-		minimum width=20mm,
-		minimum height=\THT@tabwidth-5mm,
-		hyperref node=thumbtab:#2
-	](Procedure) at ([xshift=\THT@chevin, yshift=-(#2+0.5)*\THT@tabwidth]current page text area.north east) {
-		\textbf{#1}
+		anchor=east,
+        fill=color1,
+		minimum width=\THT@thumbfrontnamewidth,
+        text width=20mm,
+		minimum height=\THT@tabdimv-2mm,
+        left=0,
+        right=0,
+        line width=0,
+		hyperref node=thumbtab:#2,
+        align=right,
+        text=white,
+        font=\bfseries,
+        left=0 of numbox,
+	](text) at (numbox.west) {%
+		#1%
 	};
-	\end{tikzpicture}
+	\end{tikzpicture}%
 }
 
-\newcommand{\@FrontFill}{
-    \begin{tikzpicture}[remember picture, overlay]
+\newcommand{\@FrontFill}{%
+    \begin{tikzpicture}[remember picture, overlay]%
 		% Black area for white chevrons
         \fill[color1]
-        ([xshift=\THT@outmar, yshift=2mm]current page text area.north east) --
-        ([xshift=\THT@outmar, yshift=-\THT@botmar]current page text area.south east) --
-        ([xshift=\THT@chevin-5mm, yshift=-\THT@botmar]current page text area.south east) --
-        ([xshift=\THT@chevin-5mm, yshift=2mm]current page text area.north east) --
+        ([xshift=\THT@titlepageouter, yshift=2mm]current page text area.north east) --
+        ([xshift=\THT@titlepageouter, yshift=-\THT@botmar]current page text area.south east) --
+        ([xshift=0mm, yshift=-\THT@botmar]current page text area.south east) --
+        ([xshift=0mm, yshift=2mm]current page text area.north east) --
         cycle;
     \end{tikzpicture}
 }

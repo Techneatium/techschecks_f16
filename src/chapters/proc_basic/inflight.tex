@@ -72,19 +72,38 @@
     \blueitem{Refuel\cbstart}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{Director Lights}}
-                \begin{itemize}[leftmargin=1em]
-                    \item stretch-goal figure
-                    \item show tanker director lights
-                    \item show ``flat'' rather than in perspective
-                    \item include centerline stripe
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{Tanker Director Lights}
-        % TODO: me!
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[] (figl) at (-5,0) {
+                \includegraphics[
+                    height=\marginparwidth,
+                ]{diagrams/aircraft/tanker_lights_vertical.pdf}
+            };
+
+            \node[] (figr) at (5,0) {
+                \includegraphics[
+                    height=\marginparwidth,
+                ]{diagrams/aircraft/tanker_lights_longitudinal.pdf}
+            };
+
+            % Annotations
+            \node[lannot, text width=10mm] (mode) at ($(figl.west)+(-1mm,15mm)$) {Down};
+            \draw[->, red] (mode.east) -- ++(3mm, 0mm);
+
+            \node[lannot, text width=10mm] (mode) at ($(figl.west)+(-1mm,-15mm)$) {Up};
+            \draw[->, red] (mode.east) -- ++(3mm, 0mm);
+            
+            \node[rannot, text width=10mm] (mode) at ($(figr.east)+(1mm,15mm)$) {Fwd};
+            \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
+            
+            \node[rannot, text width=10mm] (mode) at ($(figr.east)+(1mm,-15mm)$) {Aft};
+            \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
+        \end{tikzpicture}
+        \caption{Tanker director lights, can be considered as commands to pilot}
+        \label{fig:proc_basic:aarefueling:lights}
     }
     \begin{subitemize}
         \item Fly into refueling area (reference \cref{fig:proc_basic:aarefueling:areas}) and allow boom operator to fly boom into refueling port

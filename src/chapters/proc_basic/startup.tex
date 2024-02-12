@@ -4,11 +4,27 @@
 
 \subsection{PRE-START}
 \begin{checklistenumerate}
+    \blueitem{Verify Check}{\cbstart
+    \marwarningbox{
+        \small\textbf{If switches not positioned correctly, could lead to malfunction or hazard during startup}
+    }
+    \begin{subenumerate}
+        \item \textbf{FUEL MASTER Switch} \dotfill \textbf{MASTER}
+        \item \textbf{ENG FEED Knob} \dotfill \textbf{NORM}
+        \item \textbf{EPU Switch} \dotfill \textbf{NORM}
+        \item \textbf{ENG CONT Switch} \dotfill \textbf{PRI}
+        \item \textbf{Throttle} \dotfill \textbf{OFF}
+        \item \textbf{LG Handle} \dotfill \textbf{DN}
+        \item \textbf{HOOK Switch} \dotfill \textbf{UP}
+        \item \textbf{MASTER ARM Switch} \dotfill \textbf{OFF}
+        \item \textbf{AIR SOURCE Knob} \dotfill \textbf{NORM}
+    \end{subenumerate}
+    \cbend}
     \blueitem{\hyperref[fig:proc_basic:prestart:flcscheck]{FLCS Check}}{
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/flcs_check.pdf}
-        \caption{\textbf{FLCS Check}}
+        \caption{FLCS Check}
         \label{fig:proc_basic:prestart:flcscheck}
     }
     \begin{subenumerate}
@@ -30,7 +46,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/main_power.pdf}
-        \caption{\textbf{Main Power}}
+        \caption{Main Power}
         \label{fig:proc_basic:prestart:mainpower}
     }
     \begin{subenumerate}
@@ -59,7 +75,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/engine_start.pdf}
-        \caption{\textbf{Engine Start}}
+        \caption{Engine Start}
     }
     \begin{subenumerate}
         \item \textbf{JFS Switch} \dotfill \textbf{START 2}
@@ -74,7 +90,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/engine_instruments.pdf}
-        \caption{\textbf{ENG Instruments}}
+        \caption{ENG Instruments}
     }
     \begin{subenumerate}
         \item \textbf{FUEL FLOW} --- 700-1700 PPH
@@ -87,9 +103,7 @@
 \end{checklistenumerate}
 
 \notebox{
-    \begin{itemize}
-        \item \textbf{Can close Canopy prior to advancing Throttle to IDLE to reduce cockpit noise}
-    \end{itemize}
+    \textbf{Can close Canopy prior to advancing Throttle to IDLE to reduce cockpit noise}
 }
 
 \clearpage
@@ -100,7 +114,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/test_panel.pdf}
-        \caption{\textbf{TEST Panel}}
+        \caption{TEST Panel}
     }
     \begin{subenumerate}
         \item \textbf{PROBE HEAT Switch} \dotfill \textbf{PROBE HEAT} \\
@@ -116,7 +130,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/avionics_ins.pdf}
-        \caption{\textbf{Avionics \& INS}}
+        \caption{Avionics \& INS}
     }
     \begin{subenumerate}
         \item \textbf{MMC Switch} \dotfill \textbf{MMC}
@@ -139,7 +153,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/snsr_pwr.pdf}
-        \caption{\textbf{SNSR PWR Panel}}
+        \caption{SNSR PWR Panel}
     }
     \begin{subenumerate}
         \item \textbf{LEFT HDPT Switch} \dotfill \textbf{As Required} \\
@@ -158,48 +172,41 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/hud_sai.pdf}
-        \caption{\textbf{HUD, C\&I, ECM, SPD BRK, WHEELS Down, SAI}}
+        \caption{HUD, C\&I, ECM, SPD BRK, WHEELS Down, SAI}
     }
     \begin{subenumerate}
         \item \textbf{HUD Control Panel} \dotfill \textbf{As Desired}
         \item \textbf{HUD Brightness} \dotfill \textbf{As Desired} 
     \end{subenumerate}\cbend}
-    \blueitem{C\&I Knob}{\textbf{UFC}}
-    \blueitem{ECM Panel}{\cbstart\textbf{As Desired}\cbend}
-    \blueitem{SPD BRK Check}{\textbf{Cycle} (back to closed)}
-    \blueitem{WHEELS Down Lights}{Verify \textbf{Three Green}}
-    \blueitem{\cbstart  Standby Attitude Indicator\cbend}{\textbf{Set}}
-    \blueitem{Tests \& Checks}{\hyperref[subsec:testschecks]{\textbf{See \Cref{subsec:testschecks} Tests \& Checks}}}
-% \end{checklistenumerate}
-
-% \clearpage
-
-% \begin{checklistenumerate}[resume]
-    \blueitem{Avionics Setup}{
-    \marginpar{
+    \blueitem{C\&I Knob}{\dotfill\textbf{UFC}}
+    \blueitem{ECM Panel}{\cbstart\dotfill\textbf{As Desired}\cbend}
+    \blueitem{SPD BRK Check}{\dotfill\textbf{Cycle} (back to closed)}
+    \blueitem{WHEELS Down Lights}{\dotfill Verify \textbf{Three Green}}
+    \blueitem{\cbstart  Standby Attitude Indicator\cbend}{\dotfill\textbf{Set}}
+    \blueitem{Tests \& Checks}{\dotfill\hyperref[subsec:testschecks]{\textbf{See \Cref{subsec:testschecks}}}}
+    \blueitem{Avionics Setup}{%
+    \marginpar{%
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/final_setup.pdf}
-        \caption{\textbf{Final Setup}}
+        \caption{Final Setup}
     }
-    \cbstart\textbf{Program As Required}}
-    \blueitem{Canopy}{\textbf{Close and Lock}}
-    \blueitem{Altimeter}{\textbf{Set and Check}}
-    \blueitem{Exterior Lights}{\textbf{As Desired}}
-    \blueitem{INS Knob}{\textbf{NAV}\cbend}
-    \blueitem{NWS}{\textbf{Engage}}
-    \blueitem{Throttle}{\textbf{Advance} (Check brakes \& NWS)}
-    \blueitem{Flight Instruments}{\textbf{Check}}
+    \cbstart\dotfill\textbf{Program As Required}}
+    \blueitem{Canopy}{\dotfill\textbf{Close and Lock}}
+    \blueitem{Altimeter}{\dotfill\textbf{Set and Check}}
+    \blueitem{Exterior Lights}{\dotfill\textbf{As Desired}}
+    \blueitem{INS Knob}{\dotfill\textbf{NAV}\cbend}
+    \blueitem{NWS}{\dotfill\textbf{Engage}}
+    \blueitem{Throttle}{\dotfill\textbf{Advance} (Check brakes \& NWS)}
+    \blueitem{Flight Instruments}{\dotfill\textbf{Check}}
 \end{checklistenumerate}
 
 % \clearpage
 
 \warningbox{
+    \textbf{Aircraft Rearming can interrupt INS align}
     \begin{itemize}
-        \item \textbf{Aircraft Rearming can interrupt INS align}
-        \begin{itemize}
-            \item If interrupted recycle INS knob to off, then back to align
-            \item Recommend rearming either before or after INS align
-        \end{itemize}
+        \item If interrupted recycle INS knob to off, then back to align
+        \item Recommend rearming either before or after INS align
     \end{itemize}
 }
 
@@ -212,7 +219,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/check_eng_sec.pdf}
-        \caption{\textbf{ENG SEC Mode}}
+        \caption{ENG SEC Mode}
     }
     \begin{subenumerate}
         \item \textbf{ENG CONT Switch} \dotfill \textbf{SEC}
@@ -232,7 +239,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/check_flcs_bit.pdf}
-        \caption{\textbf{FLCS BIT}}
+        \caption{FLCS BIT}
     }
     \begin{subenumerate}
         \item \textbf{FLCS BIT Switch} \dotfill \textbf{BIT}
@@ -257,7 +264,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/check_fuel_qty.pdf}
-        \caption{\textbf{FUEL QTY Check}}
+        \caption{FUEL QTY Check}
     }
     \begin{subenumerate}
         \item \textbf{FUEL QTY SEL Knob} \dotfill \textbf{TEST}
@@ -289,7 +296,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/check_dbu.pdf}
-        \caption{\textbf{DBU Check}}
+        \caption{DBU Check}
     }
     \begin{subenumerate}
         \item \textbf{DIGITAL BACKUP Switch} \dotfill \textbf{BACKUP}
@@ -303,7 +310,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/check_trim.pdf}
-        \caption{\textbf{Trim Check}}
+        \caption{Trim Check}
     }
     \begin{subenumerate}
         \item \textbf{TRIM/AP DISC Swtich} \dotfill \textbf{DISC}
@@ -329,7 +336,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/check_mpo.pdf}
-        \caption{\textbf{MPO Check}}
+        \caption{MPO Check}
     }
     \begin{subenumerate}
         \item \textbf{Stick} \dotfill \textbf{Full Forward \& Hold}
@@ -343,7 +350,7 @@
     \marginpar{
         \captionsetup{type=figure}
         \includegraphics[width=\marginparwidth]{diagrams/cockpit/check_epu.pdf}
-        \caption{\textbf{EPU Check}}
+        \caption{EPU Check}
     }
     \begin{subenumerate}
         \item \textbf{EPU FUEL Qty} \dotfill \textbf{95-102 Percent}

@@ -113,9 +113,6 @@
 \setlength\TC@botmar{12mm}
 \setlength\TC@footmar{5mm}
 
-% indendtation for chevrons on front page
-\newlength{\TC@chevin}
-
 % tab dimensions
 \newlength{\TC@tabwidth}
 \newlength{\TC@tabdepth}
@@ -133,7 +130,6 @@
 	\setlength\TC@paperw{148mm}
 	\setlength\TC@inmar{10mm}
 	\setlength\TC@outmar{10mm}
-	\setlength{\TC@chevin}{\TC@outmar-33mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -144,7 +140,6 @@
 	\setlength\TC@paperw{156mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength\TC@chevin{\TC@outmar-36mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -155,7 +150,6 @@
 	\setlength\TC@paperw{189mm}
 	\setlength\TC@inmar{10mm}
 	\setlength\TC@outmar{10mm}
-	\setlength{\TC@chevin}{\TC@outmar-33mm}
 	\setlength\TC@tabdepth{8mm}
     \setlength\TC@botmar{20mm}
     \setlength\TC@footmar{10mm}
@@ -168,7 +162,6 @@
 	\setlength\TC@paperw{157.5mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{13.5mm}
-	\setlength\TC@chevin{\TC@outmar-32.5mm}
 	\setlength\TC@tabdepth{9.5mm}
 	\toggletrue{print}
 }
@@ -179,7 +172,6 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{14mm}
 	\setlength\TC@outmar{14mm}
-	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
     \togglefalse{print}
 }
@@ -190,7 +182,6 @@
 	\setlength\TC@paperw{210mm}
 	\setlength\TC@inmar{16mm}
 	\setlength\TC@outmar{12mm}
-	\setlength{\TC@chevin}{\TC@outmar-35mm}
 	\setlength\TC@tabdepth{8mm}
 	\toggletrue{print}
 }
@@ -213,17 +204,14 @@
 
 \DeclareOption{colorful}{
 	\colorlet{color1}{black}
-	% \definecolor{color1}{HTML}{222222}
 	\colorlet{color2}{NavyBlue}
 	\colorlet{color3}{NavyBlue}
-	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 \DeclareOption{b/w}{
 	\colorlet{color1}{black}
 	\colorlet{color2}{black}
 	\colorlet{color3}{black}
-	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 %-----------------------------------------------------------------
@@ -296,7 +284,7 @@
 }{}{}{}
 \DTMsetstyle{yymmdd} % set new style as default
 
-\RequirePackage[hypcap=true, figurename=Fig.]{caption} % allows proper captions for non-float figures
+\RequirePackage{caption} % allows proper captions for non-float figures
 \RequirePackage{subcaption} % used for subfigures
 \RequirePackage{marginfix} % patches marginpar to prevent page overflow
 
@@ -360,7 +348,6 @@
     outer=\TC@outmar,
     tabwidth=\TC@tabwidth,
     tabdepth=\TC@tabdepth,
-    chevin=\TC@chevin,
 ]{techhatchtabs} % custom page hatching 
 
 \RequirePackage{technumitem} % custom enumitem like environments
@@ -572,6 +559,17 @@
 	\renewcommand{\footrulewidth}{0pt} % footer rule width
 }
 \pagestyle{body}
+
+%-----------------------------------------------------------------
+% CAPTION SETUP
+%-----------------------------------------------------------------
+\DeclareCaptionFont{titlefont}{\titlefont}
+\captionsetup{
+	hypcap=true,
+	figurename=Fig.,
+	labelfont={bf},
+	font=small,
+}
 
 %-----------------------------------------------------------------
 % MARGIN FORMATTING / COMMANDS
@@ -793,21 +791,15 @@
 % CUSTOM COMMANDS
 %-----------------------------------------------------------------
 % command to create blue, bold mini-titles
-\newcommand{\blue}[1]{
-	\textbf{\textcolor{color2}{#1}}
+\newcommand{\blue}[1]{%
+	\textbf{\textcolor{color2}{#1}}%
 }
 
 % command to create bold, white-on-blue, mini titles
-\newcommand{\dblue}[1]{
-	\colorbox{color3}{
-		\textbf{\textcolor{white}{#1}}
-	}
-}
-
-\newcommand{\yellow}[1]{
-	\colorbox{color4}{
-		\textbf{\textcolor{black}{#1}}
-	}
+\newcommand{\dblue}[1]{%
+	\colorbox{color3}{%
+		\textbf{\textcolor{white}{#1}}%
+	}%
 }
 
 \newcommand{\notebox}[1]{
@@ -874,6 +866,34 @@
 			% drop shadow=color1!100
 			},
 			title=\large NOTE,
+		]
+			{#1}
+		\end{tcolorbox}
+	}
+}
+
+\newcommand{\marwarningbox}[1]{
+	\marginpar{
+		\begin{tcolorbox}[
+			enhanced,
+			colback=white,
+			colframe=color1,
+			left skip=0mm,
+			right skip=0mm,
+			left=0mm,
+			right=0mm,
+			boxsep=0mm,
+			sharp corners,
+			frame hidden,
+			colbacktitle=white,
+			coltitle=color1,
+			fonttitle=\titlefont\bfseries,
+			attach boxed title to top center,
+			boxed title style={
+			sharp corners,
+			drop shadow=color1!100,
+			},
+			title=\large WARNING
 		]
 			{#1}
 		\end{tcolorbox}

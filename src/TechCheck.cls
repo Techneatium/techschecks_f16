@@ -58,14 +58,12 @@
 % Declare toggles for each font option
 \newtoggle{fontJost}
 \newtoggle{fontSpartan}
-\newtoggle{fontMetropolis}
 \newtoggle{fontInter}
 
 % Futura Clone -- pointy 
 \DeclareOption{fontJost}{
 	\toggletrue{fontJost}
 	\togglefalse{fontSpartan}
-	\togglefalse{fontMetropolis}
 	\togglefalse{fontInter}
 }
 
@@ -73,15 +71,6 @@
 \DeclareOption{fontSpartan}{
 	\togglefalse{fontJost}
     \toggletrue{fontSpartan}
-	\togglefalse{fontMetropolis}
-	\togglefalse{fontInter}
-}
-
-% Gotham Clone 
-\DeclareOption{fontMetropolis}{
-	\togglefalse{fontJost}
-	\togglefalse{fontSpartan}
-    \toggletrue{fontMetropolis}
 	\togglefalse{fontInter}
 }
 
@@ -89,7 +78,6 @@
 \DeclareOption{fontInter}{
 	\togglefalse{fontJost}
 	\togglefalse{fontSpartan}
-	\togglefalse{fontMetropolis}
     \toggletrue{fontInter}
 }
 
@@ -383,19 +371,6 @@
 	]{Spartan MB}
 	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
-}{}
-
-\iftoggle{fontMetropolis}{
-	\setmainfont[
-		Path=./fonts/,
-		Ligatures=TeX,
-		UprightFont=*-Regular,
-		ItalicFont=*-Regular Italic,
-		BoldFont=*-Semi Bold,
-		BoldFeatures={LetterSpace=3.0},
-	]{Metropolis}
-	\newfontfamily\tightfont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-	\newfontfamily\titlefont{Metropolis-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontInter}{

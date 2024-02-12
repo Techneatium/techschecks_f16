@@ -379,7 +379,7 @@
 		Ligatures=TeX,
 		UprightFont=*-Regular,
 		BoldFont=*-Bold,
-		ItalicFont=Jost-Italic,
+		ItalicFont=Spartan MB-Italic,
 	]{Inter}
 	\newfontfamily\tightfont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 	\newfontfamily\titlefont{Spartan MB-Bold}[Path=./fonts/, Ligatures=TeX, LetterSpace=4.0]

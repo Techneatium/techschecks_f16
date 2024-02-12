@@ -28,14 +28,16 @@
                 font=\footnotesize, 
                 align=center,
                 minimum width=25mm,
-                yshift=3mm,
-                xshift=-2mm,
+                minimum height=15mm,
+                yshift=8mm,
+                xshift=8mm,
             ] (obs) at (fig.north west) {Observation \\ area};
             \node[
                 dashed, 
                 font=\footnotesize, 
                 align=center,
                 anchor=east,
+                xshift=3mm,
             ] (fuel) at (fig.west) {Refueling \\ area};
             \node[
                 draw, 
@@ -44,8 +46,9 @@
                 font=\footnotesize, 
                 align=center,
                 minimum width=25mm,
-                yshift=-3mm,
-                xshift=-2mm,
+                minimum height=15mm,
+                yshift=-8mm,
+                xshift=8mm,
             ] (reform) at (fig.south west) {Reform \\ area};
         \end{tikzpicture}
         \caption{Refueling areas}
@@ -91,16 +94,16 @@
             };
 
             % Annotations
-            \node[lannot, text width=10mm] (mode) at ($(figl.west)+(-1mm,15mm)$) {Down};
+            \node[lannot, text width=8mm, font=\footnotesize] (mode) at ($(figl.west)+(-1mm,15mm)$) {Down};
             \draw[->, red] (mode.east) -- ++(3mm, 0mm);
 
-            \node[lannot, text width=10mm] (mode) at ($(figl.west)+(-1mm,-15mm)$) {Up};
+            \node[lannot, text width=8mm, font=\footnotesize] (mode) at ($(figl.west)+(-1mm,-15mm)$) {Up};
             \draw[->, red] (mode.east) -- ++(3mm, 0mm);
             
-            \node[rannot, text width=10mm] (mode) at ($(figr.east)+(1mm,15mm)$) {Fwd};
+            \node[rannot, text width=8mm, font=\footnotesize] (mode) at ($(figr.east)+(1mm,15mm)$) {Fwd};
             \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
             
-            \node[rannot, text width=10mm] (mode) at ($(figr.east)+(1mm,-15mm)$) {Aft};
+            \node[rannot, text width=8mm, font=\footnotesize] (mode) at ($(figr.east)+(1mm,-15mm)$) {Aft};
             \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
         \end{tikzpicture}
         \caption{Tanker director lights, can be considered as commands to pilot}

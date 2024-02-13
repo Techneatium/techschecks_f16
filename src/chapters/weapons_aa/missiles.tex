@@ -378,19 +378,25 @@
         \centering
         \begin{tikzpicture}[figstyle]
             % FIGHTER
-            \draw[ultra thick, rounded corners, ->] 
-            (0,0) -- (0,15);
+            \node[
+                anchor=north,
+                yshift=1mm,
+            ] (fighter) at (0,0) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
     
             % BANDIT
-            \draw[ultra thick, rounded corners, ->] 
-            (0,35) -- +(-75:15);
+            \draw[very thick, rounded corners, ->] 
+            (0,20) -- +(-75:15);
     
             % help line
             \draw[thin, dashed] 
-            (0,35) -- (0,5);
+            (0,20) -- (0,0);
     
             \draw[thin]
-            (0,25) arc (-90:-75:10) node[pos=1.0, right]{\small\titlefont 0-40$^\circ$};
+            (0,10) arc (-90:-75:10) node[pos=1.0, right]{\small\titlefont 0-40$^\circ$};
 
         \end{tikzpicture}
         \caption{Hot}
@@ -400,19 +406,25 @@
         \centering
         \begin{tikzpicture}[figstyle]
             % FIGHTER
-            \draw[ultra thick, rounded corners, ->] 
-            (0,0) -- (0,15);
+            \node[
+                anchor=north,
+                yshift=1mm,
+            ] (fighter) at (0,0) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
     
             % BANDIT
-            \draw[ultra thick, rounded corners, ->] 
-            (0,35) -- +(-30:15);
+            \draw[very thick, rounded corners, ->] 
+            (0,20) -- +(-30:15);
     
             % help line
             \draw[thin, dashed] 
-            (0,35) -- (0,5);
+            (0,20) -- (0,0);
     
             \draw[thin]
-            (0,25) arc (-90:-30:10) node[pos=0.25, below right]{\small\titlefont 40-70$^\circ$};
+            (0,10) arc (-90:-30:10) node[pos=0.25, below right]{\small\titlefont 40-70$^\circ$};
 
         \end{tikzpicture}
         \caption{Flank}
@@ -422,19 +434,25 @@
         \centering
         \begin{tikzpicture}[figstyle]
             % FIGHTER
-            \draw[ultra thick, rounded corners, ->] 
-            (0,0) -- (0,15);
+            \node[
+                anchor=north,
+                yshift=1mm,
+            ] (fighter) at (0,0) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
     
             % BANDIT
-            \draw[ultra thick, rounded corners, ->] 
-            (0,35) -- +(0:15);
+            \draw[very thick, rounded corners, ->] 
+            (0,20) -- +(0:15);
     
             % help line
             \draw[thin, dashed] 
-            (0,35) -- (0,5);
+            (0,20) -- (0,0);
     
             \draw[thin]
-            (0,25) arc (-90:0:10) node[pos=0.25, below right]{\small\titlefont 70-110$^\circ$};
+            (0,10) arc (-90:0:10) node[pos=0.25, below right]{\small\titlefont 70-110$^\circ$};
     
         \end{tikzpicture}
         \caption{Beam}
@@ -444,25 +462,31 @@
         \centering
         \begin{tikzpicture}[figstyle]
             % FIGHTER
-            \draw[ultra thick, rounded corners, ->] 
-            (0,0) -- (0,15);
+            \node[
+                anchor=north,
+                yshift=1mm,
+            ] (fighter) at (0,0) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
     
             % BANDIT
-            \draw[ultra thick, rounded corners, ->] 
-            (0,35) -- +(90:15);
+            \draw[very thick, rounded corners, ->] 
+            (0,20) -- +(90:15);
     
             % help line
             \draw[thin, dashed] 
-            (0,35) -- (0,5);
+            (0,20) -- (0,0);
     
             \draw[thin]
-            (0,25) arc (-90:90:10) node[pos=0.125, below right]{\small\titlefont 110-180$^\circ$};
+            (0,10) arc (-90:90:10) node[pos=0.125, below right]{\small\titlefont 110-180$^\circ$};
     
         \end{tikzpicture}
         \caption{Drag}
         \label{fig:aa_weap:bvr:ta:drag}
     \end{subfigure}
-    \caption{Top down view illustrating target aspect terminology}
+    \caption{Top down view illustrating target aspect classification}
     \label{fig:aa_weap:bvr:ta}
 \end{figure}
 

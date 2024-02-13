@@ -4,7 +4,7 @@
     \blueitem{RWS}{
     \textbf{R}ange \textbf{W}hile \textbf{S}earch
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Fast, Long(er)-Range Search}
         \begin{itemize}
             \item Radar scans selectable search volume
@@ -17,7 +17,7 @@
         \end{itemize}
         % (exact target range, velocity, angle, etc.)
         % --- but can transition to advanced modes
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -59,7 +59,7 @@
     \blueitem{SAM \break Submode}{
     \textbf{S}ituational \textbf{A}warness \textbf{M}ode
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Target is ``Bugged''} (Pseudo-Track)
         \begin{itemize}
             \item Can guide AIM-120C (w/o STT Lock)
@@ -70,11 +70,11 @@
             \item Scan pauses on SAM target
             \item FCR manages scan volume
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{DTT \break Submode}{
     \textbf{D}ual \textbf{T}arget \textbf{T}rack
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{2 Targets ``Bugged''} --- primary / secondary
         \begin{itemize}
             \item Can guide AIM-120C on \textbf{\underline{primary target}}
@@ -88,9 +88,9 @@
         \end{itemize}
         \item \textbf{Within 10nm search pattern inhibited} --- radar only scans primary/secondary targets
         \item \textbf{Once \underline{either} target within 3nm automatically transitions to STT}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Spotlight}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Narrow scan centered on acquisition cursor}
         \begin{itemize}
             \item 4 bar elevation 
@@ -102,7 +102,7 @@
             \item Enters SAM submode if target detected under Acquisition Cursor
             \item Returns to previous search pattern if no target under Acquisition Cursor when released
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -157,17 +157,17 @@
     \blueitem{Radar Mode}{
         \textbf{CRM} (default), verify
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{Dogfight/Missile Override} --- \textbf{NORM}
             \item \textbf{Radar Mode (OSB 1)} --- shows \textbf{CRM}
-        \end{subitemize}
+        \end{itemize}
     }
     \blueitem{CRM Submode}{
         \textbf{RWS} (default), cycle via 
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
-        \end{subitemize}
+        \end{itemize}
     }
 \end{checklistenumerate}
 
@@ -175,14 +175,14 @@
 \label{subsec:rws:samdttacq}
 \begin{checklistenumerate}
     \blueitem{Locate Targets}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Correlate onboard/offboard sensors
         \begin{itemize}
             \item raw radar returns, RWR pings
             \item AWACS calls, datalink targets
         \end{itemize}
         \item Place targets within radar scan volume
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{SAM Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
@@ -205,16 +205,16 @@
         \end{tikzpicture}
         \caption{SAM Acquisition}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
         \item \textbf{Target} \dotfill Verify \textbf{Bugged}
-    \end{subenumerate}
-    \begin{subitemize}
+    \end{enumerate}
+    \begin{itemize}
         \item Can guide AIM-120C on Bugged target
         \item DLZ displayed if missile selected
         \item RWS search continues
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{DTT Acquisition}{(if desired)
     \marginpar{
         \captionsetup{type=figure}
@@ -237,35 +237,35 @@
         \end{tikzpicture}
         \caption{DTT Acquisition}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target 2} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
-    \end{subenumerate}
+    \end{enumerate}
 
     To swap primary / secondary target
 
-    \begin{subenumerate}[start=3]
+    \begin{enumerate}[start=3]
         \item \textbf{TMS} \dotfill \textbf{Left}
-    \end{subenumerate}
+    \end{enumerate}
     }
     \blueitem{STT Lock}{(if desired)
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \subsubsection{SPOTLIGHT ACQUISITION}
 \begin{checklistenumerate}
     \blueitem{Locate Targets}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Correlate onboard/offboard sensors
         \begin{itemize}
             \item raw radar returns, RWR pings
             \item AWACS calls, datalink targets
         \end{itemize}
         \item Place target within radar scan limits
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Spotlight Search}{
     \marginpar{
         \captionsetup{type=figure}
@@ -313,29 +313,29 @@
         \end{tikzpicture}
         \caption{Spotlight Search}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill near Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
         \begin{itemize}
             \item FCR enters \pm10deg scan around acquisition cursor
         \end{itemize}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{SAM Acquisition}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (release)}
         \item \textbf{Target} \dotfill Verify \textbf{Bugged}
-    \end{subenumerate}
-    \begin{subitemize}
+    \end{enumerate}
+    \begin{itemize}
         \item Can guide AIM-120C on Bugged target
         \item DLZ displayed if missile selected
         \item RWS search continues
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{STT Lock}{(if desired)
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \marginfigrestore

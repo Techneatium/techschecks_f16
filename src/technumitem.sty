@@ -36,18 +36,6 @@
 %-----------------------------------------------------------------
 % LOW LEVEL CUSTOM ENUMITEM ENVIRONMENTS
 %-----------------------------------------------------------------
-\newenvironment{innerchecklistenumerate}[1][]{% begdef
-	\begin{enumerate}[itemsep=4pt, #1]
-}{% enddef
-	\end{enumerate}
-}
-
-\newenvironment{innerchecklistitemize}[1][]{% begdef
-	\begin{itemize}[#1]
-}{% enddef
-	\end{itemize}
-}
-
 \newenvironment{outerchecklistenumerate}[1][]{% begdef
 	\begin{enumerate}[leftmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}, #1]
 }{% begdef
@@ -83,16 +71,6 @@
 % SHORT VERSIONS
 \newenvironment{checklistenumerate}[1][start=1]{% begdef
     \setkeys{checklistnumitem}{#1}
-	\newenvironment{subenumerate}[1][]{% begdef
-		\begin{innerchecklistenumerate}[##1]
-	}{% enddef
-		\end{innerchecklistenumerate}
-	}
-	\newenvironment{subitemize}[1][]{% begdef
-		\begin{innerchecklistitemize}[##1]
-	}{% enddef
-		\end{innerchecklistitemize}
-	}
 	\newcommand{\blueitem}[2]{%
 		\item \blue{##1} {##2}%
         \stepcounter{checklistnumi}%
@@ -107,16 +85,6 @@
 }
 
 \newenvironment{checklistitemize}{% begdef
-	\newenvironment{subenumerate}[1][]{% begdef
-		\begin{innerchecklistenumerate}[##1]
-	}{% enddef
-		\end{innerchecklistenumerate}
-	}
-	\newenvironment{subitemize}[1][]{% begdef
-		\begin{innerchecklistitemize}[##1]
-	}{% enddef
-		\end{innerchecklistitemize}
-	}
 	\newcommand{\blueitem}[2]{%
 		\item \blue{##1} ##2%
 	}
@@ -181,18 +149,6 @@
 }
 
 \newenvironment{outertcolorenumitem}{% begdef
-    \newenvironment{subenumerate}[1][]{% begdef
-		\begin{enumerate}[##1]
-	}{% enddef
-		\end{enumerate}
-	}
-
-    \newenvironment{subitemize}[1][]{% begdef
-		\begin{itemize}[##1]
-	}{% enddef
-		\end{itemize}
-	}
-
     \begin{tcolorenumitem}
 }{% enddef
     \end{tcolorenumitem}

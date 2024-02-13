@@ -92,46 +92,46 @@
     \Cref{fig:aa_weap:bvr:aim120profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
     including the following phases
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{A --- Launch / Boost Phase}
         \item \textbf{B --- Mid-Course Phase}
         \item \textbf{C --- Acquisition}
         \item \textbf{D --- Intercept}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Launch / Boost Phase}{
     \textbf{Boost}
 
-    \begin{subitemize}
+    \begin{itemize}
         \item Motor only fires for initial seconds of flight 
         \item After burnout missile \textbf{\underline{cannot gain energy}}
-    \end{subitemize}
+    \end{itemize}
 
     \textbf{Lofting} 
 
-    \begin{subitemize}
+    \begin{itemize}
         \item To reach longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
         \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
-    \end{subitemize}
+    \end{itemize}
     }
     \blueitem{Mid-Course Phase}{
     \textbf{Missile flies using internal IMU}
 
-    \begin{subitemize}
+    \begin{itemize}
         \item Receives periodic datalink updates
         \item Will fly to last updated target position if DL lost
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Acquisition \& MPRF ``Active'' Phase}{
     \textbf{Missile radar turns on once close to target location}
-    \begin{subitemize}
+    \begin{itemize}
         \item Seeker in MPRF (Medium Pulse Repetition Frequency) mode 
         \item Locks on to closest / best target
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Terminal Phase \& Intercept}{
     \textbf{Once missile seeker has acquired target}
-    \begin{subitemize}
+    \begin{itemize}
         \item Flies PNG intercept trajectory
         \item Requires no further DL support, fighter can turn away from the bandit
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \warningbox{
@@ -145,57 +145,57 @@
     \blueitem{Range Definitions}{
     \textbf{Fighter-bandit distance} can be measured at different points during the timeline
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{R\textsubscript{Launch}} --- distance at launch
         \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
         \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
-    \end{subitemize}
+    \end{itemize}
     
     These are also illustrated in \cref{fig:aa_weap:bvr:aim120profile}.
     }
     \blueitem{Maximizing Launch Range / Energy}{
     \textbf{Why?}
-    \begin{subitemize}
+    \begin{itemize}
         \item Ability to launch at longer ranges forces bandit defensive
         \item Bandit may not be able to counter-launch
         \item Higher launch energy increases P\textsubscript{intercept} %probability of intercept
-    \end{subitemize}
+    \end{itemize}
     \textbf{How?}
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{High velocity} --- increases kinetic energy 
         \item \textbf{High altitude} --- increases potential energy, reduces drag
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Maximizing \break F-Pole Range}{
     \textbf{Why?}
-    \begin{subitemize}
+    \begin{itemize}
         \item Less likely to enter bandit launch envelope
         \item More time/range to launch 2nd missile if necessary
-    \end{subitemize}
+    \end{itemize}
     \textbf{How?}
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Crank} --- turn 45-60 degrees away from bandit to reduce closure rate, maintain radar contact
         \item \textbf{Dive} --- reduces threat missile envelope
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Flowing Cold}{
     \textbf{Why?}
-    \begin{subitemize}
+    \begin{itemize}
         \item Missile requires no support once active
         \item Defend against unknown missile launches
         \item Maximize F-pole range further
-    \end{subitemize}
+    \end{itemize}
     \textbf{How?}
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Turn} --- Away from bandit / threat
         \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Effect of Bandit Maneuvers}{
     As evident in \cref{fig:aa_weap:bvr:aim120profile}, 
    \textbf{R\textsubscript{Launch}} is significantly greater than the distance travelled by the missile
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{DLZ calculated based off \underline{both} fighter \underline{and} bandit velocity/altitude}
         \item Bandit can significantly change missile envelope by reducing closure rate / altitude
         \item Post-launch bandit maneuvers can result in missile not having energy to intercept
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \clearpage
@@ -205,27 +205,27 @@
 \begin{tcoloritemize}
     \blueitem{Crank}{Fighter turns \textbf{45-60 deg} away from threat 
 
-    \begin{subitemize}
+    \begin{itemize}
         \item reduces closure while maintaining radar track
         \item typically used post-launch
-    \end{subitemize}
+    \end{itemize}
     
     Reference \cref{fig:aa_weap:bvr:fightermaneuver:crank}
     }
     \blueitem{Notch}{Fighter turns \textbf{70-110 deg} away from threat
 
-    \begin{subitemize}
+    \begin{itemize}
         \item minimizes relative velocity to break hostile pulse-doppler radar track
         \item increases angular motion, forcing missile to maneuver and expend energy
-    \end{subitemize}
+    \end{itemize}
     
     Reference \cref{fig:aa_weap:bvr:fightermaneuver:notch}
     }
     \blueitem{Go Cold}{Fighter turns \textbf{away} from threat
 
-    \begin{subitemize}
+    \begin{itemize}
         \item used to kinematically defeat threat missiles
-    \end{subitemize}
+    \end{itemize}
     
     Reference \cref{fig:aa_weap:bvr:fightermaneuver:cold}}
 \end{tcoloritemize}
@@ -312,22 +312,22 @@
 \begin{tcoloritemize}
     \blueitem{Target Aspect}{Angle between imaginary line connecting fighter-bandit and bandit heading}
     \blueitem{Hot}{\textbf{Target aspect --- 0-40 deg}
-    \begin{subitemize}
+    \begin{itemize}
         \item offensive posture, maximizes closure
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Flank}{\textbf{Target aspect --- 40-70 deg}
-    \begin{subitemize}
+    \begin{itemize}
         \item minimizes closure while maintaining radar track
-    \end{subitemize} }
+    \end{itemize} }
     \blueitem{Beam}{\textbf{Target aspect --- 70-110 deg}
-    \begin{subitemize}
+    \begin{itemize}
         \item defensive maneuver to break pulse-doppler radar track
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Drag}{\textbf{Target aspect --- 110-180 deg}
-    \begin{subitemize}
+    \begin{itemize}
         \item defense to kinematically defeat missile
         \item often used in group tactics as ambush setup
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]

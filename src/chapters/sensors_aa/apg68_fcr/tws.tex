@@ -4,7 +4,7 @@
     \blueitem{TWS}{
     \textbf{T}rack \textbf{W}hile \textbf{S}can --- reference \cref{fig:sensors_aa:apg68:tws:search} for symbology
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Multi-target tracking mode}
         \begin{itemize}
             \item Allows multi-target AIM-120 engagement
@@ -20,7 +20,7 @@
             \item Search / Track / System / Cursor / Bugged
         \end{itemize}
         \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile} for trackfile symbology}
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -111,7 +111,7 @@
 \label{subsec:sensorsaa:apg68:tws:trackfile}
 \begin{tcoloritemize}
     \blueitem{Search Target}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Initial state for radar returns}
         \begin{itemize}
             \item Not enough information to generate track
@@ -119,9 +119,9 @@
         \end{itemize}
         \item \textbf{Display} --- similar to RWS radar brick
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Track Target}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{FCR automatically correlates radar return data to form track files}
         \begin{itemize}
             \item Tracks target velocity, angle, altitude etc.
@@ -129,9 +129,9 @@
         \end{itemize}
         \item \textbf{Can be manually transitioned to higher modes by pilot to prioritize}
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{System Target}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Allows pilot to designate targets of interest}
         \begin{itemize}
             \item For monitoring
@@ -139,9 +139,9 @@
         \end{itemize}
         \item \textbf{No additional radar energy allocated to System Targets}
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Cursor Target}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Acquisition Cursor ``snaps'' to nearby System Targets} --- therefore named Cursor Targets
         \item \textbf{Scan centered on Cursor Target}
         \begin{itemize}
@@ -150,9 +150,9 @@
             \item Reduces chance of losing track
         \end{itemize}
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Bugged Target}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Selected for weapons employment}
         \begin{itemize}
             \item Can guide AIM-120C (w/o STT Lock)
@@ -167,9 +167,9 @@
         \end{itemize}
         \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Spotlight}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Narrow scan centered on acquisition cursor}
         \begin{itemize}
             \item 4 bar elevation 
@@ -177,7 +177,7 @@
         \end{itemize}
         \item \textbf{Allows pilot to override TWS scan priority}
         \item \textbf{Activated by holding TMS Forward >1 sec}
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -275,17 +275,17 @@
     \blueitem{Radar Mode}{
         \textbf{CRM} (default), verify
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{Dogfight/Missile Override} --- \textbf{NORM}
             \item \textbf{Radar Mode (OSB 1)} --- shows \textbf{CRM}
-        \end{subitemize}
+        \end{itemize}
     }
     \blueitem{CRM Submode}{
         \textbf{TWS}, cycle via 
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
-        \end{subitemize}
+        \end{itemize}
     }
 \end{checklistenumerate}
 
@@ -382,7 +382,7 @@
         \end{tikzpicture}
         \caption{TWS trackfile acquisition flow}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Correlate onboard/offboard sensors to locate targets
         \begin{itemize}
             \item raw radar returns, RWR pings
@@ -390,37 +390,37 @@
         \end{itemize}
         \item Place targets within radar scan volume
         \item FCR automatically generates Track Targets once sufficient data available
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{System Target Acquisition}{
     \label{subsec:sensorsaa:apg68:tws:multi:sys}
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward} 
-    \end{subenumerate}
+    \end{enumerate}
     Repeat for all desired Track Targets,
     or to upgrade all Track Targets:
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Upgrade to Bugged Target}{
     \label{subsec:sensorsaa:apg68:tws:multi:bug}
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}
+    \end{enumerate}
     To select closest System Target 
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
-    \end{subenumerate}
+    \end{enumerate}
     To cycle through System Targets in range order
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{STT Lock}{(if desired)
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Bugged Target} \dotfill under Acq Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \marginfigrestore

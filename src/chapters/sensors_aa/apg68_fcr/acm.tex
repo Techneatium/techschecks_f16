@@ -106,37 +106,37 @@
 
         % Annotations
         \node[lannot] (mode) at ($(fig.west)+(0mm,38mm)$) {FCR mode};
-        \draw[->, red] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
+        \draw[annotptr] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
 
         \node[lannot] (submode) at ($(fig.west)+(0mm,28mm)$) {ACM \\ submode};
-        \draw[->, red] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
+        \draw[annotptr] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
 
         \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range scale};
-        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (rsel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth};
-        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (asel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation \\ bar};
-        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (bsel.east) -- ++(4.5mm, 0mm);
 
         \node[annot, anchor=south, align=center] (fov) at ($(fig.north)+(0mm,0mm)$) {FOV select};
-        \draw[->, red] (fov.south) -- ++(0mm, -3.5mm);
+        \draw[annotptr] (fov.south) -- ++(0mm, -3.5mm);
 
         \node[rannot] (cntl) at ($(fig.east)+(0mm,38mm)$) {Control};
-        \draw[->, red] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
+        \draw[annotptr] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
 
         \node[rannot] (ovrd) at ($(fig.east)+(0mm,28mm)$) {Override};
-        \draw[->, red] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
+        \draw[annotptr] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
 
         \node[rannot] (dl) at ($(fig.east)+(0mm,20.5mm)$) {Datalink mode};
-        \draw[->, red] (dl.west) -- ++(-4mm,0mm);
+        \draw[annotptr] (dl.west) -- ++(-4mm,0mm);
 
         \node[rannot] (sj) at ($(fig.east)+(0mm,-8mm)$) {Horizon \\indicator};
-        \draw[->, red] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
+        \draw[annotptr] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
 
         \node[rannot] (dclt) at ($(fig.east)+(0mm,-38mm)$) {Declutter};
-        \draw[->, red] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
+        \draw[annotptr] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
     \end{tikzpicture}
     \caption{ACM FCR page symbology}
 \end{figure}
@@ -211,34 +211,34 @@
 
         % Annotations
         \node[lannot] (bs) at ($(fig.west)+(-2.5mm,34mm)$) {Boresight cross};
-        \draw[->, red] (bs.east) -- ++(34mm,0mm) -- ++(4mm,-4mm);
+        \draw[annotptr] (bs.east) -- ++(34mm,0mm) -- ++(4mm,-4mm);
 
         \node[lannot] (eegs) at ($(fig.west)+(-2.5mm,24mm)$) {EEGS funnel};
-        \draw[->, red] (eegs.east) -- ++(32mm,0mm);
+        \draw[annotptr] (eegs.east) -- ++(32mm,0mm);
 
         \node[lannot] (acc) at ($(fig.west)+(-2.5mm,13.5mm)$) {Acceleration};
-        \draw[->, red] (acc.east) -- ++(16mm,0mm);
+        \draw[annotptr] (acc.east) -- ++(16mm,0mm);
 
         \node[lannot] (cas) at ($(fig.west)+(-2.5mm,0mm)$) {Airspeed \\ {\footnotesize calibrated}};
-        \draw[->, red] (cas.east) -- ++(7mm,0mm);
+        \draw[annotptr] (cas.east) -- ++(7mm,0mm);
 
         \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-15mm)$) {Mode};
-        \draw[->, red] (dgft.east) -- ++(9mm,0mm) -- ++(4mm, -4mm);
+        \draw[annotptr] (dgft.east) -- ++(9mm,0mm) -- ++(4mm, -4mm);
 
         \node[lannot] (mgrs) at ($(fig.west)+(-2.5mm,-32mm)$) {MGRS lines};
-        \draw[->, red] (mgrs.east) -- ++(10mm,0mm);
+        \draw[annotptr] (mgrs.east) -- ++(10mm,0mm);
 
         \node[rannot] (bore) at ($(fig.east)+(2.5mm,13mm)$) {Scan zone indicator};
-        \draw[->, red] (bore.west) -- ++(-38mm, 0mm);
+        \draw[annotptr] (bore.west) -- ++(-38mm, 0mm);
 
         \node[rannot] (alt) at ($(fig.east)+(2.5mm,0mm)$) {Altimeter};
-        \draw[->, red] (alt.west) -- ++(-12mm, 0mm);
+        \draw[annotptr] (alt.west) -- ++(-12mm, 0mm);
 
         \node[rannot] (arc) at ($(fig.east)+(2.5mm,-12mm)$) {Attitude arc};
-        \draw[->, red] (arc.west) -- ++(-28mm, 0mm);
+        \draw[annotptr] (arc.west) -- ++(-28mm, 0mm);
 
         \node[rannot] (slant) at ($(fig.east)+(2.5mm,-25.25mm)$) {Target slant range};
-        \draw[->, red] (slant.west) -- ++(-20mm, 0mm);
+        \draw[annotptr] (slant.west) -- ++(-20mm, 0mm);
     \end{tikzpicture}
     \caption{ACM HUD Symbology. Shown in BORE submode.}
 \end{figure}
@@ -257,34 +257,34 @@
 
         % Annotations
         \node[lannot] (rwr) at ($(fig.west)+(-2.5mm,22.5mm)$) {RWR};
-        \draw[->, red] (rwr.east) -- ++(7mm,0mm);
+        \draw[annotptr] (rwr.east) -- ++(7mm,0mm);
 
         \node[lannot] (acc) at ($(fig.west)+(-2.5mm,16.5mm)$) {Acceleration};
-        \draw[->, red] (acc.east) -- ++(8mm,0mm) -- ++(4mm, -2mm);
+        \draw[annotptr] (acc.east) -- ++(8mm,0mm) -- ++(4mm, -2mm);
 
         \node[lannot] (cas) at ($(fig.west)+(-2.5mm,9.5mm)$) {Airspeed};
-        \draw[->, red] (cas.east) -- ++(5.5mm,0mm);
+        \draw[annotptr] (cas.east) -- ++(5.5mm,0mm);
 
         \node[lannot] (cross) at ($(fig.west)+(-2.5mm,2mm)$) {Aiming cross};
-        \draw[->, red] (cross.east) -- ++(28mm,0mm) -- ++(5mm,5mm);
+        \draw[annotptr] (cross.east) -- ++(28mm,0mm) -- ++(5mm,5mm);
 
         \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-6.5mm)$) {Mode};
-        \draw[->, red] (dgft.east) -- ++(7mm,0mm);
+        \draw[annotptr] (dgft.east) -- ++(7mm,0mm);
 
         \node[lannot] (hdg) at ($(fig.west)+(-2.5mm,-26mm)$) {Heading \\ {\footnotesize HMD LOS}};
-        \draw[->, red] (hdg.east) -- ++(22mm,0mm);
+        \draw[annotptr] (hdg.east) -- ++(22mm,0mm);
 
         \node[rannot] (acq) at ($(fig.east)+(2.5mm,22.5mm)$) {Acquisition circle};
-        \draw[->, red] (acq.west) -- ++(-28mm,0mm) -- ++(-4mm,-4mm);
+        \draw[annotptr] (acq.west) -- ++(-28mm,0mm) -- ++(-4mm,-4mm);
 
         \node[rannot] (alt) at ($(fig.east)+(2.5mm,9.5mm)$) {Altimeter};
-        \draw[->, red] (alt.west) -- ++(-6mm, 0mm);
+        \draw[annotptr] (alt.west) -- ++(-6mm, 0mm);
 
         \node[rannot] (range) at ($(fig.east)+(2.5mm,-1mm)$) {Target slant range};
-        \draw[->, red] (range.west) -- ++(-10mm, 0mm) -- ++(-4mm, -4mm);
+        \draw[annotptr] (range.west) -- ++(-10mm, 0mm) -- ++(-4mm, -4mm);
 
         \node[rannot] (stpt) at ($(fig.east)+(2.5mm,-14.5mm)$) {Distance to STPT};
-        \draw[->, red] (stpt.west) -- ++(-8mm, 0mm);
+        \draw[annotptr] (stpt.west) -- ++(-8mm, 0mm);
     \end{tikzpicture}
     \caption{
         ACM HMD Symbology. 

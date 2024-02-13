@@ -88,22 +88,22 @@
 
         % Annotations
         \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
-        \draw[->, red] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+        \draw[annotptr] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
 
         \node[lannot] (submode) at ($(fig.west)+(0mm,14mm)$) {Submode};
-        \draw[->, red] (submode.east) -- ++(22.5mm, 0mm) -- (-11mm, 29mm);
+        \draw[annotptr] (submode.east) -- ++(22.5mm, 0mm) -- (-11mm, 29mm);
 
         \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
-        \draw[->, red] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+        \draw[annotptr] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
 
         \node[rannot] (rounds) at ($(fig.east)+(0mm,14mm)$) {Rounds \\ remaining};
-        \draw[->, red] (rounds.west) -- ++(-8mm,0mm) -- (28mm, 18mm);
+        \draw[annotptr] (rounds.west) -- ++(-8mm,0mm) -- (28mm, 18mm);
 
         \node[rannot] (rdy) at ($(fig.east)+(0mm,0mm)$) {Ready \\ indication};
-        \draw[->, red] (rdy.west) -- ++(-20mm, 0mm) -- (10mm,18mm);
+        \draw[annotptr] (rdy.west) -- ++(-20mm, 0mm) -- (10mm,18mm);
 
         \node[rannot] (sj) at ($(fig.east)+(0mm,-14mm)$) {Selective Jettison};
-        \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,12mm)$);
+        \draw[annotptr] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,12mm)$);
     \end{tikzpicture}
     \caption{Gun SMS page}
 \end{figure}
@@ -191,16 +191,16 @@
 
         % Annotations
         \node[lannot] (boresight) at ($(fig.west)+(-2.5mm,32mm)$) {Boresight cross};
-        \draw[->, red] (boresight.east) -- (-5mm,32mm);
+        \draw[annotptr] (boresight.east) -- (-5mm,32mm);
 
         \node[rannot] (bandit) at ($(fig.east)+(2.5mm,32mm)$) {Bandit};
-        \draw[->, red] (bandit.west) -- ++(-37mm, 0mm) -- (1mm,20mm);
+        \draw[annotptr] (bandit.west) -- ++(-37mm, 0mm) -- (1mm,20mm);
 
         \node[lannot] (funnel) at ($(fig.west)+(-2.5mm,12mm)$) {EEGS Funnel};
-        \draw[->, red] (funnel.east) -- (-5mm,12mm);
+        \draw[annotptr] (funnel.east) -- (-5mm,12mm);
 
         \node[lannot] (mgrs) at ($(fig.west)+(-2.5mm,-32mm)$) {MGRS Lines};
-        \draw[->, red] (mgrs.east) -- (-15mm,-32mm);
+        \draw[annotptr] (mgrs.east) -- (-15mm,-32mm);
     \end{tikzpicture}
     \caption{EEGS LVL II HUD Symbology}
     \label{fig:aa_weap:m61:eegslvl2}
@@ -221,16 +221,16 @@
 
         % Annotations
         \node[lannot] (boresight) at ($(fig.west)+(-2.5mm,32.25mm)$) {Boresight cross};
-        \draw[->, red] (boresight.east) -- (-7mm,32.25mm);
+        \draw[annotptr] (boresight.east) -- (-7mm,32.25mm);
 
         \node[lannot] (funnel) at ($(fig.west)+(-2.5mm,8mm)$) {EEGS Funnel};
-        \draw[->, red] (funnel.east) -- (-12mm,8mm);
+        \draw[annotptr] (funnel.east) -- (-12mm,8mm);
 
         \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-16mm)$) {Bandit};
-        \draw[->, red] (bandit.west) -- ++(-37mm, 0mm) -- (-9mm,-16mm);
+        \draw[annotptr] (bandit.west) -- ++(-37mm, 0mm) -- (-9mm,-16mm);
 
         \node[lannot] (pipper) at ($(fig.west)+(-2.5mm,-16mm)$) {EEGS Level V Pipper};
-        \draw[->, red] (pipper.east) -- (-20mm,-16mm);
+        \draw[annotptr] (pipper.east) -- (-20mm,-16mm);
     \end{tikzpicture}
     \caption{EEGS LVL V HUD Symbology}
     \label{fig:aa_weap:m61:eegslvl5}
@@ -250,13 +250,13 @@
 
             % Annotations
             \node[lannot] (1g) at ($(fig.west)+(-2.5mm,12mm)$) {1-g Pipper};
-            \draw[->, red] (1g.east) -- ++(22mm,0mm) -- (-1.5mm,5mm);
+            \draw[annotptr] (1g.east) -- ++(22mm,0mm) -- (-1.5mm,5mm);
 
             \node[lannot] (9g) at ($(fig.west)+(-2.5mm,-12mm)$) {9-g Pipper};
-            \draw[->, red] (9g.east) -- ++(22mm,0mm);
+            \draw[annotptr] (9g.east) -- ++(22mm,0mm);
 
             \node[rannot] (manpot) at ($(fig.east)+(2.5mm,5mm)$) {Maneuver potential lines};
-            \draw[->, red] (manpot.west) -- ++(-10mm, 0mm) -- (12mm,2mm);
+            \draw[annotptr] (manpot.west) -- ++(-10mm, 0mm) -- (12mm,2mm);
 
         \end{tikzpicture}
         \caption{T-symbol}
@@ -276,22 +276,22 @@
 
             % Annotations
             \node[lannot] (12oclock) at ($(fig.west)+(-2.5mm,13mm)$) {12000 ft};
-            \draw[->, red] (12oclock.east) -- ++(14mm,0mm) -- ($(fig.north) + (-2mm,-3mm)$);
+            \draw[annotptr] (12oclock.east) -- ++(14mm,0mm) -- ($(fig.north) + (-2mm,-3mm)$);
 
             \node[lannot] (9oclock) at ($(fig.west)+(-2.5mm,0mm)$) {9000 ft};
-            \draw[->, red] (9oclock.east) -- ++(6mm,0mm);
+            \draw[annotptr] (9oclock.east) -- ++(6mm,0mm);
 
             \node[lannot] (aspect) at ($(fig.west)+(-2.5mm,-10mm)$) {Aspect caret};
-            \draw[->, red] (aspect.east) -- ++(4mm,0mm) -- (-11mm, -8.5mm);
+            \draw[annotptr] (aspect.east) -- ++(4mm,0mm) -- (-11mm, -8.5mm);
 
             \node[rannot] (rcue) at ($(fig.east)+(2.5mm,8mm)$) {Range cue};
-            \draw[->, red] (rcue.west) -- ++(-8mm, 0mm) -- (8.5mm,-1mm);
+            \draw[annotptr] (rcue.west) -- ++(-8mm, 0mm) -- (8.5mm,-1mm);
 
             \node[rannot] (3oclock) at ($(fig.east)+(2.5mm,0mm)$) {3000 ft};
-            \draw[->, red] (3oclock.west) -- ++(-6mm,0mm);
+            \draw[annotptr] (3oclock.west) -- ++(-6mm,0mm);
 
             \node[rannot] (6oclock) at ($(fig.east)+(2.5mm,-13mm)$) {6000 ft};
-            \draw[->, red] (6oclock.west) -- ++(-14mm,0mm) -- ($(fig.south) + (2mm,3mm)$);
+            \draw[annotptr] (6oclock.west) -- ++(-14mm,0mm) -- ($(fig.south) + (2mm,3mm)$);
 
         \end{tikzpicture}
         \caption{target designator circle}
@@ -311,10 +311,10 @@
 
             % Annotations
             \node[lannot] (batr) at ($(fig.west)+(-2.5mm,0mm)$) {BATR \\ circle};
-            \draw[->, red] (batr.east) -- ++(23mm,0mm);
+            \draw[annotptr] (batr.east) -- ++(23mm,0mm);
 
             \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-7mm)$) {Bandit};
-            \draw[->, red] (bandit.west) -- ++(-23mm,0mm) -- (2.5mm, -3mm);
+            \draw[annotptr] (bandit.west) -- ++(-23mm,0mm) -- (2.5mm, -3mm);
         \end{tikzpicture}
         \caption{full, combined pipper, shown approx. on-target}
         \label{fig:aa_weap:m61:eegs:pipper}

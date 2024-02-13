@@ -95,16 +95,16 @@
 
             % Annotations
             \node[lannot, text width=8mm, font=\footnotesize] (mode) at ($(figl.west)+(-1mm,15mm)$) {Down};
-            \draw[->, red] (mode.east) -- ++(3mm, 0mm);
+            \draw[annotptr] (mode.east) -- ++(3mm, 0mm);
 
             \node[lannot, text width=8mm, font=\footnotesize] (mode) at ($(figl.west)+(-1mm,-15mm)$) {Up};
-            \draw[->, red] (mode.east) -- ++(3mm, 0mm);
+            \draw[annotptr] (mode.east) -- ++(3mm, 0mm);
             
             \node[rannot, text width=8mm, font=\footnotesize] (mode) at ($(figr.east)+(1mm,15mm)$) {Fwd};
-            \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
+            \draw[annotptr] (mode.west) -- ++(-3mm, 0mm);
             
             \node[rannot, text width=8mm, font=\footnotesize] (mode) at ($(figr.east)+(1mm,-15mm)$) {Aft};
-            \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
+            \draw[annotptr] (mode.west) -- ++(-3mm, 0mm);
         \end{tikzpicture}
         \caption{Tanker director lights, can be considered as commands to pilot}
         \label{fig:proc_basic:aarefueling:lights}

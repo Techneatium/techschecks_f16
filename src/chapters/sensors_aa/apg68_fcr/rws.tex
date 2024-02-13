@@ -34,23 +34,23 @@
 
         % Annotations
         \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range select};
-        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (rsel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth select};
-        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (asel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation bar select};
-        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (bsel.east) -- ++(4.5mm, 0mm);
 
         \node[rannot] (ret) at ($(fig.east)+(0mm,28mm)$) {RWS \\ returns};
-        \draw[->, red] (ret.west) -- ++(-16mm, 0mm) -- (18mm,18mm);
-        \draw[->, red] (ret.west) -- ++(-50mm, 0mm) -- (-16mm,20mm);
+        \draw[annotptr] (ret.west) -- ++(-16mm, 0mm) -- (18mm,18mm);
+        \draw[annotptr] (ret.west) -- ++(-50mm, 0mm) -- (-16mm,20mm);
 
         \node[rannot] (stpt) at ($(fig.east)+(0mm,6mm)$) {Current STPT};
-        \draw[->, red] (stpt.west) -- ++(-42mm, 0mm) -- (-7mm,9mm);
+        \draw[annotptr] (stpt.west) -- ++(-42mm, 0mm) -- (-7mm,9mm);
 
         \node[rannot] (acq) at ($(fig.east)+(0mm,-10mm)$) {Acquisition cursor};
-        \draw[->, red] (acq.west) -- ++(-30mm, 0mm) -- (3mm,-5mm);
+        \draw[annotptr] (acq.west) -- ++(-30mm, 0mm) -- (3mm,-5mm);
     \end{tikzpicture}
     \caption{RWS FCR mode symbology.}
 \end{figure}
@@ -119,31 +119,31 @@
 
         % Annotations
         \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
-        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+        \draw[annotptr] (asp.east) -- ++(9mm, 0mm);
 
         \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
-        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
 
         \node[lannot] (sec) at ($(fig.west)+(0mm,10.25mm)$) {Secondary target};
-        \draw[->, red] (sec.east) -- ++(27mm, 0mm);
+        \draw[annotptr] (sec.east) -- ++(27mm, 0mm);
 
         \node[lannot] (prim) at ($(fig.west)+(0mm,-7mm)$) {Primary target \& cursor};
-        \draw[->, red] (prim.east) -- ++(15mm, 0mm) -- ++(4mm, 6mm);
+        \draw[annotptr] (prim.east) -- ++(15mm, 0mm) -- ++(4mm, 6mm);
 
         \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
-        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+        \draw[annotptr] (clos.west) -- ++(-9mm, 0mm);
 
         \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
-        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+        \draw[annotptr] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(0mm,-2mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
-        \draw[->, red] (dlz.west) -- ++(-8mm, 0mm);
+        \draw[annotptr] (dlz.west) -- ++(-8mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-24mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
-        \draw[->, red] (asec.west) -- ++(-26mm, 0mm) -- (4mm,-7mm);
+        \draw[annotptr] (asec.west) -- ++(-26mm, 0mm) -- (4mm,-7mm);
 
         \node[annot, anchor=south, align=left, text width=35mm] (fov) at ($(fig.north)+(-6.5mm,0mm)$) {Azimuth scan limits};
-        \draw[->, red] (fov.south) -- ++(0mm, -15mm) -- ++(12mm, -6mm);
+        \draw[annotptr] (fov.south) -- ++(0mm, -15mm) -- ++(12mm, -6mm);
     \end{tikzpicture}
     \caption{RWS SAM / DTT submode symbology. Additional information on primary target is displayed at top of FCR page.}
 \end{figure}

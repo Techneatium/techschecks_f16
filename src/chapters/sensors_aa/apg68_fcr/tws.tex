@@ -37,25 +37,25 @@
 
         % Annotations
         \node[lannot] (search) at ($(fig.west)+(0mm,28mm)$) {Search target};
-        \draw[->, red] (search.east) -- ++(30mm, 0mm) -- ++(4mm, -4mm);
+        \draw[annotptr] (search.east) -- ++(30mm, 0mm) -- ++(4mm, -4mm);
 
         \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
-        \draw[->, red] (sec.east) -- ++(32mm, 0mm);
+        \draw[annotptr] (sec.east) -- ++(32mm, 0mm);
 
         \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Current STPT};
-        \draw[->, red] (as.west) -- ++(-12mm, 0mm) -- ++(-3mm, -3mm);
+        \draw[annotptr] (as.west) -- ++(-12mm, 0mm) -- ++(-3mm, -3mm);
 
         \node[rannot] (system) at ($(fig.east)+(0mm,10mm)$) {System \\ target};
-        \draw[->, red] (system.west) -- ++(-26mm, 0mm);
+        \draw[annotptr] (system.west) -- ++(-26mm, 0mm);
 
         \node[rannot] (cursor) at ($(fig.east)+(0mm,-4mm)$) {Acquisition cursor};
-        \draw[->, red] (cursor.west) -- ++(-11mm, 0mm);
+        \draw[annotptr] (cursor.west) -- ++(-11mm, 0mm);
 
         \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
-        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+        \draw[annotptr] (searchr.west) -- ++(-11mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
-        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
+        \draw[annotptr] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
     \caption{Basic TWS search FCR page symbology.}
     \label{fig:sensors_aa:apg68:tws:search}
@@ -194,19 +194,19 @@
 
         % Annotations
         \node[lannot] (system) at ($(fig.west)+(0mm,29mm)$) {System \\ target};
-        \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, -4mm);
+        \draw[annotptr] (system.east) -- ++(37mm, 0mm) -- ++(4mm, -4mm);
 
         \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
-        \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+        \draw[annotptr] (sec.east) -- ++(36mm, 0mm);
 
         \node[rannot] (cursor) at ($(fig.east)+(0mm,11mm)$) {Cursor \\ target};
-        \draw[->, red] (cursor.west) -- ++(-15mm, 0mm);
+        \draw[annotptr] (cursor.west) -- ++(-15mm, 0mm);
 
         \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
-        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+        \draw[annotptr] (searchr.west) -- ++(-11mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
-        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
+        \draw[annotptr] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
     \caption{TWS FCR page symbology with cursor target}
     \label{fig:sensorsaa:apg68:tws:cursorsymb}
@@ -226,37 +226,37 @@
 
         % Annotations
         \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
-        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+        \draw[annotptr] (asp.east) -- ++(9mm, 0mm);
 
         \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
-        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
 
         % \node[lannot] (system) at ($(fig.west)+(0mm,15mm)$) {System \\ target};
-        % \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, 4mm);
+        % \draw[annotptr] (system.east) -- ++(37mm, 0mm) -- ++(4mm, 4mm);
 
         \node[lannot] (cross) at ($(fig.west)+(0mm,7mm)$) {Steering \\ cross};
-        \draw[->, red] (cross.east) -- ++(32mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (cross.east) -- ++(32mm, 0mm) -- ++(4mm, 4mm);
 
         % \node[lannot] (sec) at ($(fig.west)+(0mm,-8mm)$) {Azimuth scan limits};
-        % \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+        % \draw[annotptr] (sec.east) -- ++(36mm, 0mm);
 
         \node[lannot] (asec) at ($(fig.west)+(0mm,-6mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
-        \draw[->, red] (asec.east) -- ++(30mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (asec.east) -- ++(30mm, 0mm) -- ++(4mm, 4mm);
 
         \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
-        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+        \draw[annotptr] (clos.west) -- ++(-9mm, 0mm);
 
         \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
-        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+        \draw[annotptr] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
 
         \node[rannot] (bug) at ($(fig.east)+(0mm,11mm)$) {Bugged \\ target};
-        \draw[->, red] (bug.west) -- ++(-20mm, 0mm);
+        \draw[annotptr] (bug.west) -- ++(-20mm, 0mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(0mm,-10mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
-        \draw[->, red] (dlz.west) -- ++(-7mm, 0mm);
+        \draw[annotptr] (dlz.west) -- ++(-7mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
-        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
+        \draw[annotptr] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
     \caption{
         TWS FCR page symbology with bugged target. 

@@ -120,28 +120,28 @@
 
         % Annotations
         \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
-        \draw[->, red] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+        \draw[annotptr] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
 
         \node[lannot] (los) at ($(fig.west)+(0mm,14.5mm)$) {LOS mode};
-        \draw[->, red] (los.east) -- ++(4mm, 0mm);
+        \draw[annotptr] (los.east) -- ++(4mm, 0mm);
 
         \node[lannot] (lstation) at ($(fig.west)+(0mm,-21mm)$) {Selected station};
-        \draw[->, red] (lstation.east) -- ++(4mm, 0mm);
+        \draw[annotptr] (lstation.east) -- ++(4mm, 0mm);
 
         \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
-        \draw[->, red] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+        \draw[annotptr] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
 
         \node[rannot] (sel) at ($(fig.east)+(0mm,13mm)$) {Selected \\ weapon};
-        \draw[->, red] (sel.west) -- ++(-4mm, 0mm);
+        \draw[annotptr] (sel.west) -- ++(-4mm, 0mm);
 
         \node[rannot] (cool) at ($(fig.east)+(0mm,3mm)$) {Cooling \\ status};
-        \draw[->, red] (cool.west) -- ++(-4mm, 0mm);
+        \draw[annotptr] (cool.west) -- ++(-4mm, 0mm);
 
         \node[rannot] (lstation) at ($(fig.east)+(0mm,-21mm)$) {Selected station};
-        \draw[->, red] (lstation.west) -- ++(-4mm, 0mm);
+        \draw[annotptr] (lstation.west) -- ++(-4mm, 0mm);
 
         \node[rannot] (sj) at ($(fig.east)+(0mm,-36mm)$) {Selective Jettison};
-        \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,6mm)$);
+        \draw[annotptr] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,6mm)$);
     \end{tikzpicture}
     \caption{AIM-9 SMS Page}
     \label{fig:aa_weap:aim9:sms}
@@ -202,22 +202,22 @@
 
         % Annotations
         \node[lannot] (td) at ($(fig.west)+(-2.5mm,22.5mm)$) {Target designator box};
-        \draw[->, red] (td.east) -- ++(25mm, 0mm);
+        \draw[annotptr] (td.east) -- ++(25mm, 0mm);
 
         \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,12.5mm)$) {Missile \\ diamond};
-        \draw[->, red] (diamond.east) -- ++(18mm, 0mm) -- (-11mm, 21mm);
+        \draw[annotptr] (diamond.east) -- ++(18mm, 0mm) -- (-11mm, 21mm);
 
         \node[lannot] (weap) at ($(fig.west)+(-2.5mm,-19.5mm)$) {Selected weapon};
-        \draw[->, red] (weap.east) -- ++(15mm, 0mm);
+        \draw[annotptr] (weap.east) -- ++(15mm, 0mm);
 
         \node[rannot] (cross) at ($(fig.east)+(2.5mm,34mm)$) {Boresight \\ cross};
-        \draw[->, red] (cross.west) -- ++(-25mm, 0mm) -- (1mm, 24.5mm);
+        \draw[annotptr] (cross.west) -- ++(-25mm, 0mm) -- (1mm, 24.5mm);
 
         \node[rannot] (ret) at ($(fig.east)+(2.5mm,24mm)$) {Missile \\ reticle};
-        \draw[->, red] (ret.west) -- ++(-30mm, 0mm) -- (4mm, 19mm);
+        \draw[annotptr] (ret.west) -- ++(-30mm, 0mm) -- (4mm, 19mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(2.5mm,-15mm)$) {DLZ};
-        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm) -- (dlznode);
+        \draw[annotptr] (dlz.west) -- ++(-10mm, 0mm) -- (dlznode);
     \end{tikzpicture}
     \caption{AIM-9 HUD Symbology}
     \label{fig:aa_weap:aim9:hudsymb}
@@ -237,19 +237,19 @@
 
         % Annotations
         \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,20mm)$) {Boresight cross};
-        \draw[->, red] (diamond.east) -- ++(20mm, 0mm) -- (-5.5mm, 11.5mm);
+        \draw[annotptr] (diamond.east) -- ++(20mm, 0mm) -- (-5.5mm, 11.5mm);
 
         \node[lannot] (td) at ($(fig.west)+(-2.5mm,5mm)$) {Target designator box};
-        \draw[->, red] (td.east) -- ++(33mm, 0mm);
+        \draw[annotptr] (td.east) -- ++(33mm, 0mm);
 
         \node[lannot] (mode) at ($(fig.west)+(-2.5mm,-10mm)$) {Mode};
-        \draw[->, red] (mode.east) -- ++(7.5mm, 0mm) -- (-27mm, -7mm);
+        \draw[annotptr] (mode.east) -- ++(7.5mm, 0mm) -- (-27mm, -7mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(2.5mm,20mm)$) {DLZ};
-        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm);
+        \draw[annotptr] (dlz.west) -- ++(-10mm, 0mm);
 
         \node[rannot] (diamond) at ($(fig.east)+(2.5mm,0mm)$) {Missile \\ diamond};
-        \draw[->, red] (diamond.west) -- ++(-32mm, 0mm) -- (1.5mm, 3mm);
+        \draw[annotptr] (diamond.west) -- ++(-32mm, 0mm) -- (1.5mm, 3mm);
     \end{tikzpicture}
     \caption{AIM-9 HMD Symbology}
     \label{fig:aa_weap:aim9:hmdsymb}

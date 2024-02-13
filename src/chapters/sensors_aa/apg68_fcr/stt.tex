@@ -59,31 +59,31 @@
 
         % Annotations
         \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
-        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+        \draw[annotptr] (asp.east) -- ++(9mm, 0mm);
 
         \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
-        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
 
         \node[lannot] (cross) at ($(fig.west)+(0mm,9mm)$) {Steering \\ cross};
-        \draw[->, red] (cross.east) -- ++(27mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (cross.east) -- ++(27mm, 0mm) -- ++(4mm, 4mm);
 
         \node[lannot] (asec) at ($(fig.west)+(0mm,-8mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
-        \draw[->, red] (asec.east) -- ++(28mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (asec.east) -- ++(28mm, 0mm) -- ++(4mm, 4mm);
 
         \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
-        \draw[->, red] (clos.west) -- ++(-8mm, 0mm);
+        \draw[annotptr] (clos.west) -- ++(-8mm, 0mm);
 
         \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
-        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+        \draw[annotptr] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
 
         \node[rannot] (bug) at ($(fig.east)+(0mm,12mm)$) {STT \\ Target};
-        \draw[->, red] (bug.west) -- ++(-32mm, 0mm) -- ++(-4mm, 4mm);
+        \draw[annotptr] (bug.west) -- ++(-32mm, 0mm) -- ++(-4mm, 4mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(0mm,2mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
-        \draw[->, red] (dlz.west) -- ++(-7mm, 0mm);
+        \draw[annotptr] (dlz.west) -- ++(-7mm, 0mm);
 
         \node[annot, anchor=south, align=center] (nctr) at ($(fig.north)+(-7mm,0mm)$) {NCTR ID};
-        \draw[->, red] (nctr.south) -- ++(0mm, -8.5mm) -- ++(4mm, 0mm);
+        \draw[annotptr] (nctr.south) -- ++(0mm, -8.5mm) -- ++(4mm, 0mm);
     \end{tikzpicture}
     \caption{RWS FCR page with STT lock and NCTR ID.}
 \end{figure}

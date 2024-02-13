@@ -530,16 +530,25 @@
     \blueitem{Radar Acquisition}{%
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{Bugged/STT Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show bugged target symbol
-                    \item maybe also show stt symbol?
-                \end{itemize}
-            \end{minipage}
-        }
+        \centering
+        \begin{tikzpicture}[figstyle]
+            
+            \node[boxedmarfigstyle] (search) at (0,0) {
+                \includegraphics[
+                    scale=0.25,
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_01.pdf}
+            };
+            \node[boxedmarfigstyle] (sam) at (0,-35) {
+                \includegraphics[
+                    scale=0.25,
+                ]{mfd/fcr_aa/rws_sam_dtt_subfig_02.pdf}
+            };
+
+            \draw[->]
+            (search) -- node[right, align=center, font=\small] {\textbf{TMS} \textbf{FWD}}(sam);
+        \end{tikzpicture}
         \caption{Bugged/STT Symbology}
+        % TODO: improve figure
     }%
     For demonstration we will use \textbf{CRM-RWS Submode} 
 
@@ -556,18 +565,19 @@
         \item \textbf{Target} \dotfill verify \textbf{Locked}
     \end{subenumerate}}
     \blueitem{LOS IFF}{%
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{IFF return}}
-                \begin{itemize}[leftmargin=1em]
-                    \item maybe show friendly IFF return?
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{IFF return, do not shoot!}
-    }%
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][40mm][t]{\marginparwidth}
+    %             \center{\textbf{IFF return}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item maybe show friendly IFF return?
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{IFF return, do not shoot!}
+    % }%
+    % TODO: add iff figure!
     \textbf{See \Cref{sec:iff}}
 
     \begin{subenumerate}
@@ -666,7 +676,7 @@
             ] (post) {
                 \includegraphics[
                     scale=0.5,
-                ]{mfd/fcr_aa/tgt_impact.pdf}
+                ]{mfd/fcr_aa/tgt_tail.pdf}
             };
 
             % lines

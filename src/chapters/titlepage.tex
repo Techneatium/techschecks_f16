@@ -129,20 +129,29 @@
 			xshift=-\textwidth/4,
 			yshift=-40mm,
 		](logotc) at (current page text area.north) {%
-			\includegraphics[%
-				height=\textwidth/3,%
-				page=1,
-			]{diagrams/logos/techschecks.pdf}%
+			\IfFileExists{%
+				figs/diagrams/logos/techschecks.pdf%
+			}{%
+				\includegraphics[%
+					height=\textwidth/3,%
+					page=1,%
+				]{diagrams/logos/techschecks.pdf}%
+			}{}%
 		};
 		\node[
 			anchor=center,
 			xshift=\textwidth/4,
 			yshift=-40mm,
 		](logogoldwolf) at (current page text area.north) {%
-			\includegraphics[%
-				height=\textwidth/3,%
-				page=1,
-			]{diagrams/logos/goldwolf.jpg}%
+			\IfFileExists{%
+				figs/diagrams/logos/goldwolf.pdf%
+			}{%
+				\includegraphics[%
+					height=\textwidth/3,%
+					page=1,%
+				]{diagrams/logos/goldwolf.pdf}%
+			}{}%
+			
 		};
 		% thanks
 		\node[

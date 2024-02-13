@@ -8,6 +8,7 @@
     \blueitem{Safe Aircraft}{
     \marginpar{
         \captionsetup{type=figure}
+        \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
             ]
@@ -16,7 +17,7 @@
                 \includegraphics[
                     width=0.5\marginparwidth,
                     angle=270,
-                ]{diagrams/aircraft/silhouette_tanker_top.pdf}
+                ]{diagrams/aircraft/silhouette_tanker_f16_top.pdf}
             };
     
             % Annotations
@@ -27,14 +28,16 @@
                 font=\footnotesize, 
                 align=center,
                 minimum width=25mm,
-                yshift=3mm,
-                xshift=-2mm,
+                minimum height=15mm,
+                yshift=8mm,
+                xshift=8mm,
             ] (obs) at (fig.north west) {Observation \\ area};
             \node[
                 dashed, 
                 font=\footnotesize, 
                 align=center,
                 anchor=east,
+                xshift=3mm,
             ] (fuel) at (fig.west) {Refueling \\ area};
             \node[
                 draw, 
@@ -43,11 +46,12 @@
                 font=\footnotesize, 
                 align=center,
                 minimum width=25mm,
-                yshift=-3mm,
-                xshift=-2mm,
+                minimum height=15mm,
+                yshift=-8mm,
+                xshift=8mm,
             ] (reform) at (fig.south west) {Reform \\ area};
         \end{tikzpicture}
-        \caption{Refueling Areas}
+        \caption{Refueling areas}
         \label{fig:proc_basic:aarefueling:areas}
     }
     \begin{subenumerate}
@@ -72,24 +76,43 @@
     \blueitem{Refuel\cbstart}{
     \marginpar{
         \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][50mm][t]{\marginparwidth}
-                \center{\textbf{Director Lights}}
-                \begin{itemize}[leftmargin=1em]
-                    \item stretch-goal figure
-                    \item show tanker director lights
-                    \item show ``flat'' rather than in perspective
-                    \item include centerline stripe
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{Tanker Director Lights}
-        % TODO: me!
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \node[] (figl) at (-5,0) {
+                \includegraphics[
+                    height=\marginparwidth,
+                ]{diagrams/aircraft/tanker_lights_vertical.pdf}
+            };
+
+            \node[] (figr) at (5,0) {
+                \includegraphics[
+                    height=\marginparwidth,
+                ]{diagrams/aircraft/tanker_lights_longitudinal.pdf}
+            };
+
+            % Annotations
+            \node[lannot, text width=8mm, font=\footnotesize] (mode) at ($(figl.west)+(-1mm,15mm)$) {Down};
+            \draw[->, red] (mode.east) -- ++(3mm, 0mm);
+
+            \node[lannot, text width=8mm, font=\footnotesize] (mode) at ($(figl.west)+(-1mm,-15mm)$) {Up};
+            \draw[->, red] (mode.east) -- ++(3mm, 0mm);
+            
+            \node[rannot, text width=8mm, font=\footnotesize] (mode) at ($(figr.east)+(1mm,15mm)$) {Fwd};
+            \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
+            
+            \node[rannot, text width=8mm, font=\footnotesize] (mode) at ($(figr.east)+(1mm,-15mm)$) {Aft};
+            \draw[->, red] (mode.west) -- ++(-3mm, 0mm);
+        \end{tikzpicture}
+        \caption{Tanker director lights, can be considered as commands to pilot}
+        \label{fig:proc_basic:aarefueling:lights}
     }
     \begin{subitemize}
-        \item Fly into refueling area (reference \cref{fig:proc_basic:aarefueling:areas}) and allow boom operator to fly boom into refueling port
+        \item Fly into refueling area, reference \cref{fig:proc_basic:aarefueling:areas}, allow boom operator to fly boom into refueling port
         \item \textbf{AR/NWS Light} illuminates to indicate contact
-        \item Reference director lights to maintain position within boom limits
+        \item Reference director lights to maintain position within boom limits, reference \cref{fig:proc_basic:aarefueling:lights}
         \item Monitor refueling progress on DED/HUD
     \end{subitemize}}
     \blueitem{Post-Refueling}{

@@ -39,6 +39,14 @@
         \coordinate (C_fighter) at ($(A_fighter)+(20,0)$);
         \coordinate (D_fighter) at ($(C_fighter)+(-5,-5)$);
 
+        \node[
+            anchor=east,
+        ] (fig_A_fighter) at (A_fighter) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+
         \draw[ultra thick, ->] 
         (A_fighter) -- 
         (C_fighter) .. controls ($(C_fighter)+(5,0)$) and ($(C_fighter)+(5,-5)$) .. 
@@ -236,8 +244,19 @@
         \centering
         \begin{tikzpicture}[figstyle]
             % FIGHTER
+            \node[
+                anchor=north,
+                yshift=1mm,
+            ] (fighter) at (0,0) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
             \draw[ultra thick, rounded corners, ->] 
-            (0,0) -- (0,5) -- +(30:15);
+            (0,0) -- (0,5) -- +(30:15) node[rotate=-60, anchor=south, yshift=-1mm]{
+                \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
     
             % BANDIT
             \draw[ultra thick, rounded corners, ->] 
@@ -248,7 +267,7 @@
             (0,25) -- (0,5);
     
             \draw[thin]
-            (0,15) arc (90:30:10) node[pos=0.25, above right]{\small\titlefont 45-60$^\circ$};
+            (0,15) arc (90:30:10) node[pos=0.15, above right]{\small\titlefont 45-60$^\circ$};
     
         \end{tikzpicture}
         \caption{Crank}
@@ -258,8 +277,19 @@
         \centering
         \begin{tikzpicture}[figstyle]
             % FIGHTER
+            \node[
+                anchor=north,
+                yshift=1mm,
+            ] (fighter) at (0,0) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
             \draw[ultra thick, rounded corners, ->] 
-            (0,0) -- (0,5) -- +(0:15);
+            (0,0) -- (0,5) -- +(0:15) node[rotate=-90, anchor=south, yshift=-1mm]{
+                \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
     
             % BANDIT
             \draw[ultra thick, rounded corners, ->] 
@@ -280,10 +310,22 @@
         \centering
         \begin{tikzpicture}[figstyle]
             % FIGHTER
+            \node[
+                anchor=north,
+                yshift=1mm,
+            ] (fighter) at (0,0) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
             \draw[ultra thick, ->] 
             (0,0) -- 
             (0,5) arc (180:0:5) --
-            (10,0);
+            (10,0) 
+            node[rotate=-180, anchor=south, yshift=-1mm]{
+                \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
     
             % BANDIT
             \draw[ultra thick, rounded corners, ->] 
@@ -302,10 +344,8 @@
 \end{figure}
 
 \warningbox{
-    \textbf{Turning back in after going cold can place fighter within bandit launch envelope}
+    \textbf{Turning in after going cold can place fighter within bandit launch envelope}
 }
-
-\clearpage
 
 \subsubsection{TARGET ASPECT}
 

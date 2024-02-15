@@ -2,10 +2,32 @@
 \label{subsec:aim9}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[
-            width = 0.8\textwidth,
-    ]{diagrams/weap/weap_aa_aim9_overview.pdf}
-    % TODO: labels? some kind of flavor stuff?
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                    width = 0.8\textwidth,
+            ]{diagrams/weap/weap_aa_aim9_overview.pdf}
+        };
+
+        \node[
+            anchor=south west,
+            font=\titlefont\huge,
+        ] (aim9) at (fig.north west) {AIM-9};
+        \node[
+            anchor=north west,
+        ] (sw) at (aim9.south west) {%
+            \fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+				LetterSpace=5.0,
+			]{Spartan MB-Regular}
+            SIDEWINDER%
+        };
+
+    \end{tikzpicture}
     \caption{AIM-9 Sidewinder}
 \end{figure}
 

@@ -24,3 +24,12 @@ FOR THE CODE CONTAINED IN THIS PROJECT:
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
 =================================================================
+
+FOR ALL NON-LATEX GRAPHICS CONTAINED IN THIS PROJECT:
+[Including all .pdf, .svg, .png, .jpg files]
+
+=================================================================
+ This work is licensed under CC BY-SA 4.0. 
+ To view a copy of this license, 
+ visit http://creativecommons.org/licenses/by-sa/4.0/
+=================================================================

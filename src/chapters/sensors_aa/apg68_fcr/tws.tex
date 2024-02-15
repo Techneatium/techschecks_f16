@@ -7,17 +7,17 @@
     \begin{itemize}
         \item \textbf{Multi-target tracking mode}
         \begin{itemize}
-            \item Allows multi-target AIM-120 engagement
-            \item Targets not locked --- \textbf{\underline{no RWR warning}}
+            \item allows multi-target AIM-120 engagement
+            \item targets not locked --- \textbf{\underline{no RWR warning}}
         \end{itemize}
         \item \textbf{FCR builds trackfiles for each target}
         \begin{itemize}
-            \item Predicts target movement between scans
-            \item Slow update rate --- target maneuvers can cause radar to lose track
+            \item predicts target movement between scans
+            \item slow update rate --- target maneuvers can cause radar to lose track
         \end{itemize}
         \item \textbf{Trackfiles can be in several states}
         \begin{itemize}
-            \item Search / Track / System / Cursor / Bugged
+            \item search / Track / System / Cursor / Bugged
         \end{itemize}
         \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile} for trackfile symbology}
     \end{itemize}}
@@ -114,8 +114,8 @@
     \begin{itemize}
         \item \textbf{Initial state for radar returns}
         \begin{itemize}
-            \item Not enough information to generate track
-            \item Automatic transition to track after 1-2 radar sweeps
+            \item not enough information to generate track
+            \item automatic transition to track after 1-2 radar sweeps
         \end{itemize}
         \item \textbf{Display} --- similar to RWS radar brick
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}}
@@ -124,8 +124,8 @@
     \begin{itemize}
         \item \textbf{FCR automatically correlates radar return data to form track files}
         \begin{itemize}
-            \item Tracks target velocity, angle, altitude etc.
-            \item \textbf{\underline{Maximum of 10 trackfiles}}, lowest priority dropped if exceeded
+            \item tracks target velocity, angle, altitude etc.
+            \item \textbf{\underline{maximum of 10 trackfiles}}, lowest priority dropped if exceeded
         \end{itemize}
         \item \textbf{Can be manually transitioned to higher modes by pilot to prioritize}
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}}
@@ -134,8 +134,8 @@
     \begin{itemize}
         \item \textbf{Allows pilot to designate targets of interest}
         \begin{itemize}
-            \item For monitoring
-            \item For future weapons employment
+            \item for monitoring
+            \item for future weapons employment
         \end{itemize}
         \item \textbf{No additional radar energy allocated to System Targets}
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}}
@@ -147,7 +147,7 @@
         \begin{itemize}
             \item 3 bar elevation
             \item $\pm$25 deg azimuth pattern 
-            \item Reduces chance of losing track
+            \item reduces chance of losing track
         \end{itemize}
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}}
     \end{itemize}}
@@ -155,15 +155,15 @@
     \begin{itemize}
         \item \textbf{Selected for weapons employment}
         \begin{itemize}
-            \item Can guide AIM-120C (w/o STT Lock)
+            \item can guide AIM-120C (w/o STT Lock)
             \item DLZ displayed if missile selected
-            \item Launched AIM-120 will continue to guide even if another target is bugged --- \textbf{\underline{allows for multi-target engagement}}
+            \item launched AIM-120 will continue to guide even if another target is bugged --- \textbf{\underline{allows for multi-target engagement}}
         \end{itemize}
         \item \textbf{Scan Centered on Bugged Target}
         \begin{itemize}
             \item 3 bar elevation
             \item $\pm$25 deg azimuth pattern 
-            \item Reduces chance of losing track
+            \item reduces chance of losing track
         \end{itemize}
         \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
         \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}}

@@ -106,7 +106,7 @@
 
         % Annotations
         \node[lannot] (mode) at ($(fig.west)+(-2.5mm,27mm)$) {Operating \\ mode};
-        \draw[annotptr] (mode.east) -- ++(15mm, 0mm) -- (-24mm,32mm);
+        \draw[annotptr] (mode.east) -- ++(12mm, 0mm) -- ++(5mm,5mm);
 
         \node[lannot] (los) at ($(fig.west)+(-2.5mm,14.25mm)$) {LOS mode};
         \draw[annotptr] (los.east) -- ++(5mm, 0mm);
@@ -115,7 +115,7 @@
         \draw[annotptr] (lstation.east) -- ++(5mm, 0mm);
 
         \node[rannot] (inv) at ($(fig.east)+(2.5mm,27mm)$) {Inventory};
-        \draw[annotptr] (inv.west) -- ++(-26mm, 0mm) -- (13mm, 32mm);
+        \draw[annotptr] (inv.west) -- ++(-24mm, 0mm) -- ++(-5mm, 5mm);
 
         \node[rannot] (sel) at ($(fig.east)+(2.5mm,14.25mm)$) {Selected \\ weapon};
         \draw[annotptr] (sel.west) -- ++(-5mm, 0mm);
@@ -124,7 +124,7 @@
         \draw[annotptr] (lstation.west) -- ++(-5mm, 0mm);
 
         \node[rannot] (sj) at ($(fig.east)+(2.5mm,-40mm)$) {Selective Jettison};
-        \draw[annotptr] (sj.west) -- ++(-15mm, 0mm) -- ($(fig.south) + (25mm,2mm)$);
+        \draw[annotptr] (sj.west) -- ++(-14mm, 0mm) -- ++(-4mm,4mm);
     \end{tikzpicture}
     \caption{AIM-120 SMS page}
 \end{figure}
@@ -295,13 +295,13 @@
 
         % Annotations
         \node[lannot] (asec) at ($(fig.west)+(-2.5mm,20mm)$) {ASEC};
-        \draw[annotptr] (asec.east) -- ++(8mm,0mm) -- (-16mm,16mm);
+        \draw[annotptr] (asec.east) -- ++(8mm,0mm) -- ++(3mm,-3mm);
 
         \node[lannot] (asc) at ($(fig.west)+(-2.5mm,-10mm)$) {ASC};
-        \draw[annotptr] (asc.east) -- ++(20mm,0mm) -- (0mm, -3mm);
+        \draw[annotptr] (asc.east) -- ++(21mm,0mm) -- ++(6mm, 6mm);
 
-        \node[rannot] (aspect) at ($(fig.east)+(2.5mm,10mm)$) {Aspect caret};
-        \draw[annotptr] (aspect.west) -- ++(-18mm, 0mm) -- (1mm,20mm);
+        \node[rannot] (aspect) at ($(fig.east)+(2.5mm,12mm)$) {Aspect caret};
+        \draw[annotptr] (aspect.west) -- ++(-18mm, 0mm) -- ++(-8mm,8mm);
     \end{tikzpicture}
     \caption{
         AIM-120 ASC / ASEC HUD Symbology, equivalent symbology appears on FCR page. 

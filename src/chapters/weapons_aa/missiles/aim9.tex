@@ -119,8 +119,8 @@
         };
 
         % Annotations
-        \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
-        \draw[annotptr] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+        \node[lannot] (mode) at ($(fig.west)+(0mm,26mm)$) {Operating \\ mode};
+        \draw[annotptr] (mode.east) -- ++(12mm, 0mm) -- ++(3mm,3mm);
 
         \node[lannot] (los) at ($(fig.west)+(0mm,14.5mm)$) {LOS mode};
         \draw[annotptr] (los.east) -- ++(4mm, 0mm);
@@ -128,8 +128,8 @@
         \node[lannot] (lstation) at ($(fig.west)+(0mm,-21mm)$) {Selected station};
         \draw[annotptr] (lstation.east) -- ++(4mm, 0mm);
 
-        \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
-        \draw[annotptr] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+        \node[rannot] (inv) at ($(fig.east)+(0mm,26mm)$) {Inventory};
+        \draw[annotptr] (inv.west) -- ++(-23mm, 0mm) -- ++(-3mm, 3mm);
 
         \node[rannot] (sel) at ($(fig.east)+(0mm,13mm)$) {Selected \\ weapon};
         \draw[annotptr] (sel.west) -- ++(-4mm, 0mm);
@@ -141,7 +141,7 @@
         \draw[annotptr] (lstation.west) -- ++(-4mm, 0mm);
 
         \node[rannot] (sj) at ($(fig.east)+(0mm,-36mm)$) {Selective Jettison};
-        \draw[annotptr] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,6mm)$);
+        \draw[annotptr] (sj.west) -- ++(-12mm, 0mm) -- ++(-3mm, 3mm);
     \end{tikzpicture}
     \caption{AIM-9 SMS Page}
     \label{fig:aa_weap:aim9:sms}

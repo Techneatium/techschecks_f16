@@ -4,23 +4,25 @@
     \blueitem{TWS}{
     \textbf{T}rack \textbf{W}hile \textbf{S}can --- reference \cref{fig:sensors_aa:apg68:tws:search} for symbology
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Multi-target tracking mode}
         \begin{itemize}
-            \item Allows multi-target AIM-120 engagement
-            \item Targets not locked --- \textbf{\underline{no RWR warning}}
+            \item allows multi-target AIM-120 engagement
+            \item targets not locked --- \textbf{\underline{no RWR warning}}
         \end{itemize}
         \item \textbf{FCR builds trackfiles for each target}
         \begin{itemize}
-            \item Predicts target movement between scans
-            \item Slow update rate --- target maneuvers can cause radar to lose track
+            \item predicts target movement between scans
+            \item slow update rate --- target maneuvers can cause radar to lose track
         \end{itemize}
         \item \textbf{Trackfiles can be in several states}
         \begin{itemize}
-            \item Search / Track / System / Cursor / Bugged
+            \item search / Track / System / Cursor / Bugged
         \end{itemize}
-        \textbf{Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} \& \cref{fig:sensorsaa:apg68:tws:trackfile} for trackfile symbology}
-    \end{subitemize}}
+    \end{itemize}
+    
+    Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} for trackfile explanation \& \cref{fig:sensorsaa:apg68:tws:trackfile} for trackfile symbology
+    }
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -37,25 +39,25 @@
 
         % Annotations
         \node[lannot] (search) at ($(fig.west)+(0mm,28mm)$) {Search target};
-        \draw[->, red] (search.east) -- ++(30mm, 0mm) -- ++(4mm, -4mm);
+        \draw[annotptr] (search.east) -- ++(30mm, 0mm) -- ++(4mm, -4mm);
 
         \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
-        \draw[->, red] (sec.east) -- ++(32mm, 0mm);
+        \draw[annotptr] (sec.east) -- ++(32mm, 0mm);
 
         \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Current STPT};
-        \draw[->, red] (as.west) -- ++(-12mm, 0mm) -- ++(-3mm, -3mm);
+        \draw[annotptr] (as.west) -- ++(-12mm, 0mm) -- ++(-3mm, -3mm);
 
         \node[rannot] (system) at ($(fig.east)+(0mm,10mm)$) {System \\ target};
-        \draw[->, red] (system.west) -- ++(-26mm, 0mm);
+        \draw[annotptr] (system.west) -- ++(-26mm, 0mm);
 
         \node[rannot] (cursor) at ($(fig.east)+(0mm,-4mm)$) {Acquisition cursor};
-        \draw[->, red] (cursor.west) -- ++(-11mm, 0mm);
+        \draw[annotptr] (cursor.west) -- ++(-11mm, 0mm);
 
         \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
-        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+        \draw[annotptr] (searchr.west) -- ++(-11mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
-        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
+        \draw[annotptr] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
     \caption{Basic TWS search FCR page symbology.}
     \label{fig:sensors_aa:apg68:tws:search}
@@ -111,73 +113,80 @@
 \label{subsec:sensorsaa:apg68:tws:trackfile}
 \begin{tcoloritemize}
     \blueitem{Search Target}{
-    \begin{subitemize}
-        \item \textbf{Initial state for radar returns}
-        \begin{itemize}
-            \item Not enough information to generate track
-            \item Automatic transition to track after 1-2 radar sweeps
-        \end{itemize}
+
+    \textbf{Initial state for radar returns}
+    \begin{itemize}
+        \item not enough information to generate track
+        \item automatic transition to track after 1-2 radar sweeps
         \item \textbf{Display} --- similar to RWS radar brick
-        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}}
-    \end{subitemize}}
+    \end{itemize}
+
+    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}
+    }
     \blueitem{Track Target}{
-    \begin{subitemize}
-        \item \textbf{FCR automatically correlates radar return data to form track files}
-        \begin{itemize}
-            \item Tracks target velocity, angle, altitude etc.
-            \item \textbf{\underline{Maximum of 10 trackfiles}}, lowest priority dropped if exceeded
-        \end{itemize}
-        \item \textbf{Can be manually transitioned to higher modes by pilot to prioritize}
-        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}}
-    \end{subitemize}}
+    
+    \textbf{FCR automatically correlates radar return data to form track files}
+    \begin{itemize}
+    \item tracks target velocity, angle, altitude etc.
+    \item \textbf{\underline{maximum of 10 trackfiles}}, lowest priority dropped if exceeded
+    \item can be manually transitioned to higher modes by pilot to prioritize
+    \end{itemize}
+
+    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}
+    }
     \blueitem{System Target}{
-    \begin{subitemize}
-        \item \textbf{Allows pilot to designate targets of interest}
-        \begin{itemize}
-            \item For monitoring
-            \item For future weapons employment
-        \end{itemize}
-        \item \textbf{No additional radar energy allocated to System Targets}
-        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}}
-    \end{subitemize}}
+    
+    \textbf{Allows pilot to designate targets of interest}
+    \begin{itemize}
+        \item for monitoring
+        \item for future weapons employment
+        \item \textbf{no additional radar energy allocated to System Targets}
+    \end{itemize}
+
+    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}
+    }
     \blueitem{Cursor Target}{
-    \begin{subitemize}
-        \item \textbf{Acquisition Cursor ``snaps'' to nearby System Targets} --- therefore named Cursor Targets
-        \item \textbf{Scan centered on Cursor Target}
+        
+    \textbf{Acquisition Cursor ``snaps'' to nearby System Targets} --- therefore named Cursor Targets
+    \begin{itemize}
+        \item \textbf{scan centered on Cursor Target}
         \begin{itemize}
             \item 3 bar elevation
             \item $\pm$25 deg azimuth pattern 
-            \item Reduces chance of losing track
+            \item reduces chance of losing track
         \end{itemize}
-        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}}
-    \end{subitemize}}
+    \end{itemize}
+
+    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}
+    }
     \blueitem{Bugged Target}{
-    \begin{subitemize}
-        \item \textbf{Selected for weapons employment}
-        \begin{itemize}
-            \item Can guide AIM-120C (w/o STT Lock)
-            \item DLZ displayed if missile selected
-            \item Launched AIM-120 will continue to guide even if another target is bugged --- \textbf{\underline{allows for multi-target engagement}}
-        \end{itemize}
-        \item \textbf{Scan Centered on Bugged Target}
+        
+    \textbf{Selected for weapons employment}
+    \begin{itemize}
+        \item can guide AIM-120C (w/o STT Lock)
+        \item DLZ displayed if missile selected
+        \item launched AIM-120 will continue to guide even if another target is bugged --- \textbf{\underline{allows for multi-target engagement}} 
+        \item \textbf{scan Centered on Bugged Target}
         \begin{itemize}
             \item 3 bar elevation
             \item $\pm$25 deg azimuth pattern 
-            \item Reduces chance of losing track
+            \item reduces chance of losing track
         \end{itemize}
         \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
-        \item \textbf{Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}}
-    \end{subitemize}}
-    \blueitem{Spotlight}{
-    \begin{subitemize}
-        \item \textbf{Narrow scan centered on acquisition cursor}
+    \end{itemize}
+
+    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}
+    }
+    \blueitem{Spotlight}{\textbf{Narrow scan centered on acquisition cursor}
+    \begin{itemize}
+        \item \textbf{narrow scan}
         \begin{itemize}
             \item 4 bar elevation 
             \item \pm10 deg azimuth
         \end{itemize}
-        \item \textbf{Allows pilot to override TWS scan priority}
-        \item \textbf{Activated by holding TMS Forward >1 sec}
-    \end{subitemize}}
+        \item allows pilot to override TWS scan priority
+        \item \textbf{activated by holding TMS Forward >1 sec}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -194,19 +203,19 @@
 
         % Annotations
         \node[lannot] (system) at ($(fig.west)+(0mm,29mm)$) {System \\ target};
-        \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, -4mm);
+        \draw[annotptr] (system.east) -- ++(37mm, 0mm) -- ++(4mm, -4mm);
 
         \node[lannot] (sec) at ($(fig.west)+(0mm,8mm)$) {Azimuth scan limits};
-        \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+        \draw[annotptr] (sec.east) -- ++(36mm, 0mm);
 
         \node[rannot] (cursor) at ($(fig.east)+(0mm,11mm)$) {Cursor \\ target};
-        \draw[->, red] (cursor.west) -- ++(-15mm, 0mm);
+        \draw[annotptr] (cursor.west) -- ++(-15mm, 0mm);
 
         \node[rannot] (searchr) at ($(fig.east)+(0mm,-15mm)$) {Search \\ target};
-        \draw[->, red] (searchr.west) -- ++(-11mm, 0mm);
+        \draw[annotptr] (searchr.west) -- ++(-11mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
-        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
+        \draw[annotptr] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
     \caption{TWS FCR page symbology with cursor target}
     \label{fig:sensorsaa:apg68:tws:cursorsymb}
@@ -226,37 +235,37 @@
 
         % Annotations
         \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
-        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+        \draw[annotptr] (asp.east) -- ++(9mm, 0mm);
 
         \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
-        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
 
         % \node[lannot] (system) at ($(fig.west)+(0mm,15mm)$) {System \\ target};
-        % \draw[->, red] (system.east) -- ++(37mm, 0mm) -- ++(4mm, 4mm);
+        % \draw[annotptr] (system.east) -- ++(37mm, 0mm) -- ++(4mm, 4mm);
 
         \node[lannot] (cross) at ($(fig.west)+(0mm,7mm)$) {Steering \\ cross};
-        \draw[->, red] (cross.east) -- ++(32mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (cross.east) -- ++(32mm, 0mm) -- ++(4mm, 4mm);
 
         % \node[lannot] (sec) at ($(fig.west)+(0mm,-8mm)$) {Azimuth scan limits};
-        % \draw[->, red] (sec.east) -- ++(36mm, 0mm);
+        % \draw[annotptr] (sec.east) -- ++(36mm, 0mm);
 
         \node[lannot] (asec) at ($(fig.west)+(0mm,-6mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
-        \draw[->, red] (asec.east) -- ++(30mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (asec.east) -- ++(30mm, 0mm) -- ++(4mm, 4mm);
 
         \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
-        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+        \draw[annotptr] (clos.west) -- ++(-9mm, 0mm);
 
         \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
-        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+        \draw[annotptr] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
 
         \node[rannot] (bug) at ($(fig.east)+(0mm,11mm)$) {Bugged \\ target};
-        \draw[->, red] (bug.west) -- ++(-20mm, 0mm);
+        \draw[annotptr] (bug.west) -- ++(-20mm, 0mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(0mm,-10mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
-        \draw[->, red] (dlz.west) -- ++(-7mm, 0mm);
+        \draw[annotptr] (dlz.west) -- ++(-7mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-26mm)$) {Track \\ targets};
-        \draw[->, red] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
+        \draw[annotptr] (asec.west) -- ++(-20mm, 0mm) -- ++(-6mm,10mm);
     \end{tikzpicture}
     \caption{
         TWS FCR page symbology with bugged target. 
@@ -275,17 +284,17 @@
     \blueitem{Radar Mode}{
         \textbf{CRM} (default), verify
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{Dogfight/Missile Override} --- \textbf{NORM}
             \item \textbf{Radar Mode (OSB 1)} --- shows \textbf{CRM}
-        \end{subitemize}
+        \end{itemize}
     }
     \blueitem{CRM Submode}{
         \textbf{TWS}, cycle via 
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
-        \end{subitemize}
+        \end{itemize}
     }
 \end{checklistenumerate}
 
@@ -382,7 +391,7 @@
         \end{tikzpicture}
         \caption{TWS trackfile acquisition flow}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Correlate onboard/offboard sensors to locate targets
         \begin{itemize}
             \item raw radar returns, RWR pings
@@ -390,37 +399,37 @@
         \end{itemize}
         \item Place targets within radar scan volume
         \item FCR automatically generates Track Targets once sufficient data available
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{System Target Acquisition}{
     \label{subsec:sensorsaa:apg68:tws:multi:sys}
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward} 
-    \end{subenumerate}
+    \end{enumerate}
     Repeat for all desired Track Targets,
     or to upgrade all Track Targets:
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Upgrade to Bugged Target}{
     \label{subsec:sensorsaa:apg68:tws:multi:bug}
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}
+    \end{enumerate}
     To select closest System Target 
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
-    \end{subenumerate}
+    \end{enumerate}
     To cycle through System Targets in range order
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Right}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{STT Lock}{(if desired)
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Bugged Target} \dotfill under Acq Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \marginfigrestore

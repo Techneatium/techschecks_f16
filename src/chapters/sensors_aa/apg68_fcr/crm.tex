@@ -5,20 +5,22 @@
     \blueitem{CRM}{
         \textbf{C}ombined \textbf{R}adar \textbf{M}ode --- Combines A-A search submodes:
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{RWS} --- \textbf{R}ange \textbf{W}hile \textbf{S}earch,
             see \Cref{subsec:rws}
             \item \textbf{TWS} --- \textbf{T}rack \textbf{W}hile \textbf{S}can,
             see \Cref{subsec:tws}
-        \end{subitemize}
+        \end{itemize}
 
-        Selected by default on FCR start-up
+        Selected by default on FCR start-up. 
+        
+        Reference \cref{fig:crmoverview}
     }
     \blueitem{Change CRM \break Submode}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{OSB 2} \dotfill \textbf{Press}
         \item Or \textbf{TMS} \dotfill \textbf{Right Long}
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -152,13 +154,13 @@
     \blueitem{Radar Gimbal Limits}{
     APG-68 is mechanically scanned on 2 axis gimbal
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Azimuth} --- \pm60 deg (120 deg coverage)
         \item \textbf{Vertical} --- \pm60 deg (120 deg coverage)
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Azimuth Scan Pattern}{
     Horizontal scan volume controlled by selecting limits of gimbal azimuth
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Azimuth search patterns}
         \begin{itemize}
             \item \textbf{A6} --- \pm60 deg
@@ -168,22 +170,22 @@
         \item \textbf{Cycled via}
         \begin{itemize}
             \item \textbf{OSB 18} cycles available azimuth patterns
-            \item Walking cursor off side of FCR display in RWS cycles A6/A3
+            \item walking cursor off side of FCR display in RWS cycles A6/A3
         \end{itemize}
         \item \textbf{TWS \& DTT modes use a special \pm25 deg, \\ 
         3 bar scan pattern}
         \begin{itemize}
             \item \textbf{A2} --- \pm25 deg (centered on cursor / target)
         \end{itemize}
-    \end{subitemize}
+    \end{itemize}
     Reference \cref{fig:sensors_aa:apg68:crm:azscan} for graphical representation
     }
     \blueitem{Bar Scan Pattern}{
     Elevation scan volume controlled by selecting number of ``bars'' (horizontal sweeps)
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{B4} / \textbf{B2} / \textbf{B1} --- cycled via \textbf{OSB 17}
         \item \textbf{B3} --- selected by TWS \& DTT modes
-    \end{subitemize}
+    \end{itemize}
     Reference \cref{fig:sensors_aa:apg68:crm:barscan} for graphical representation
     }
 \end{tcoloritemize}
@@ -361,7 +363,7 @@
     \blueitem{Radar Mode}{
     \textbf{OSB 1} opens page allowing selection of radar mode
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Left Side (OSB 19-20)} --- A-A Modes
         \begin{itemize}
             \item CRM --- see \cref{subsec:crm}
@@ -369,17 +371,17 @@
         \end{itemize}
         \item \textbf{Right Side (OSB 6-9)} --- A-G Modes
         \begin{itemize}
-            \item See \cref{sec:fcr-ag}
+            \item see \cref{sec:fcr-ag}
         \end{itemize}
         \item \textbf{STBY (OSB 10)} --- places FCR in standby
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Field of View}{
     \textbf{OSB 3} cycles field of view
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{EXP} --- expanded field of view
         \item \textbf{NORM} --- normal field of view
-    \end{subitemize}
+    \end{itemize}
 
     HOTAS \textbf{EXPAND/FOV} switch also cycles FOV}
     \blueitem{Override}{Pressing \textbf{OVRD (OSB 4)}  places FCR in standby}
@@ -392,9 +394,9 @@
     \blueitem{Range Select}{
     \textbf{OSB 19-20} adjusts FCR display range scale
     
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Can be cycled by ``walking'' cursor off top/bottom of display}
-    \end{subitemize}
+    \end{itemize}
     }
 \end{tcoloritemize}
 
@@ -416,40 +418,40 @@
 
         % Annotations
         \node[lannot] (mode) at ($(fig.west)+(0mm,38mm)$) {FCR mode};
-        \draw[->, red] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
+        \draw[annotptr] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
 
         \node[lannot] (submode) at ($(fig.west)+(0mm,28mm)$) {CRM \\ submode};
-        \draw[->, red] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
+        \draw[annotptr] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
 
         \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range select};
-        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (rsel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth select};
-        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (asel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation bar select};
-        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (bsel.east) -- ++(4.5mm, 0mm);
 
         \node[annot, anchor=south, align=center] (fov) at ($(fig.north)+(0mm,0mm)$) {FOV select};
-        \draw[->, red] (fov.south) -- ++(0mm, -3.5mm);
+        \draw[annotptr] (fov.south) -- ++(0mm, -3.5mm);
 
         \node[rannot] (cntl) at ($(fig.east)+(0mm,38mm)$) {Control};
-        \draw[->, red] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
+        \draw[annotptr] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
 
         \node[rannot] (ovrd) at ($(fig.east)+(0mm,28mm)$) {Override};
-        \draw[->, red] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
+        \draw[annotptr] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
 
         \node[rannot] (dl) at ($(fig.east)+(0mm,20.5mm)$) {Datalink mode};
-        \draw[->, red] (dl.west) -- ++(-4mm,0mm);
+        \draw[annotptr] (dl.west) -- ++(-4mm,0mm);
 
         \node[rannot] (acq) at ($(fig.east)+(0mm,10mm)$) {Acquisition cursor};
-        \draw[->, red] (acq.west) -- ++(-30mm, 0mm) -- (3mm,5mm);
+        \draw[annotptr] (acq.west) -- ++(-30mm, 0mm) -- (3mm,5mm);
 
         \node[rannot] (sj) at ($(fig.east)+(0mm,-8mm)$) {Horizon \\indicator};
-        \draw[->, red] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
+        \draw[annotptr] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
 
         \node[rannot] (dclt) at ($(fig.east)+(0mm,-38mm)$) {Declutter};
-        \draw[->, red] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
+        \draw[annotptr] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
     \end{tikzpicture}
     \caption{FCR page with basic controls \& symbology marked. Note that FCR is illustrated in default mode immediately after startup.}
 \end{figure}

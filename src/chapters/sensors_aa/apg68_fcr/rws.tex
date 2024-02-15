@@ -4,11 +4,11 @@
     \blueitem{RWS}{
     \textbf{R}ange \textbf{W}hile \textbf{S}earch
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Fast, Long(er)-Range Search}
         \begin{itemize}
-            \item Radar scans selectable search volume
-            \item Displays raw target position returns
+            \item radar scans selectable search volume
+            \item displays raw target position returns
         \end{itemize}
         \item \textbf{No track data} 
         \begin{itemize}
@@ -17,7 +17,7 @@
         \end{itemize}
         % (exact target range, velocity, angle, etc.)
         % --- but can transition to advanced modes
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -34,23 +34,23 @@
 
         % Annotations
         \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range select};
-        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (rsel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth select};
-        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (asel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation bar select};
-        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (bsel.east) -- ++(4.5mm, 0mm);
 
         \node[rannot] (ret) at ($(fig.east)+(0mm,28mm)$) {RWS \\ returns};
-        \draw[->, red] (ret.west) -- ++(-16mm, 0mm) -- (18mm,18mm);
-        \draw[->, red] (ret.west) -- ++(-50mm, 0mm) -- (-16mm,20mm);
+        \draw[annotptr] (ret.west) -- ++(-16mm, 0mm) -- (18mm,18mm);
+        \draw[annotptr] (ret.west) -- ++(-50mm, 0mm) -- (-16mm,20mm);
 
         \node[rannot] (stpt) at ($(fig.east)+(0mm,6mm)$) {Current STPT};
-        \draw[->, red] (stpt.west) -- ++(-42mm, 0mm) -- (-7mm,9mm);
+        \draw[annotptr] (stpt.west) -- ++(-42mm, 0mm) -- (-7mm,9mm);
 
         \node[rannot] (acq) at ($(fig.east)+(0mm,-10mm)$) {Acquisition cursor};
-        \draw[->, red] (acq.west) -- ++(-30mm, 0mm) -- (3mm,-5mm);
+        \draw[annotptr] (acq.west) -- ++(-30mm, 0mm) -- (3mm,-5mm);
     \end{tikzpicture}
     \caption{RWS FCR mode symbology.}
 \end{figure}
@@ -59,50 +59,52 @@
     \blueitem{SAM \break Submode}{
     \textbf{S}ituational \textbf{A}warness \textbf{M}ode
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Target is ``Bugged''} (Pseudo-Track)
         \begin{itemize}
-            \item Can guide AIM-120C (w/o STT Lock)
+            \item can guide AIM-120C (w/o STT Lock)
             \item DLZ displayed if missile selected
         \end{itemize}
         \item \textbf{RWS search  continues}
         \begin{itemize}
-            \item Scan pauses on SAM target
+            \item scan pauses on SAM target
             \item FCR manages scan volume
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{DTT \break Submode}{
     \textbf{D}ual \textbf{T}arget \textbf{T}rack
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{2 Targets ``Bugged''} --- primary / secondary
         \begin{itemize}
-            \item Can guide AIM-120C on \textbf{\underline{primary target}}
+            \item can guide AIM-120C on \textbf{\underline{primary target}}
             \item DLZ displayed if missile selected
         \end{itemize}
         \item \textbf{TMS Left --- swaps primary / secondary}
         \item \textbf{RWS search  continues}
         \begin{itemize}
-            \item Scan pauses on both primary / secondary
+            \item scan pauses on both primary / secondary
             \item FCR manages scan volume
         \end{itemize}
         \item \textbf{Within 10nm search pattern inhibited} --- radar only scans primary/secondary targets
         \item \textbf{Once \underline{either} target within 3nm automatically transitions to STT}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Spotlight}{
-    \begin{subitemize}
-        \item \textbf{Narrow scan centered on acquisition cursor}
+        
+    \textbf{Narrow scan centered on acquisition cursor}
+    \begin{itemize}
+        \item \textbf{Narrow scan}
         \begin{itemize}
             \item 4 bar elevation 
             \item \pm10 deg azimuth
         \end{itemize}
-        \item \textbf{Useful to rapidly acquire radar returns from target at known position}
+        \item Useful to rapidly acquire radar returns from target at known position
         \item \textbf{Activated by holding TMS Forward >1 sec}
         \begin{itemize}
-            \item Enters SAM submode if target detected under Acquisition Cursor
-            \item Returns to previous search pattern if no target under Acquisition Cursor when released
+            \item enters SAM submode if target detected under Acquisition Cursor
+            \item returns to previous search pattern if no target under Acquisition Cursor when released
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -119,31 +121,31 @@
 
         % Annotations
         \node[lannot] (asp) at ($(fig.west)+(0mm,30.25mm)$) {Aspect};
-        \draw[->, red] (asp.east) -- ++(9mm, 0mm);
+        \draw[annotptr] (asp.east) -- ++(9mm, 0mm);
 
         \node[lannot] (trk) at ($(fig.west)+(0mm,24mm)$) {Track};
-        \draw[->, red] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
+        \draw[annotptr] (trk.east) -- ++(12mm, 0mm) -- ++(4mm, 4mm);
 
         \node[lannot] (sec) at ($(fig.west)+(0mm,10.25mm)$) {Secondary target};
-        \draw[->, red] (sec.east) -- ++(27mm, 0mm);
+        \draw[annotptr] (sec.east) -- ++(27mm, 0mm);
 
         \node[lannot] (prim) at ($(fig.west)+(0mm,-7mm)$) {Primary target \& cursor};
-        \draw[->, red] (prim.east) -- ++(15mm, 0mm) -- ++(4mm, 6mm);
+        \draw[annotptr] (prim.east) -- ++(15mm, 0mm) -- ++(4mm, 6mm);
 
         \node[rannot] (clos) at ($(fig.east)+(0mm,30.25mm)$) {Closure};
-        \draw[->, red] (clos.west) -- ++(-9mm, 0mm);
+        \draw[annotptr] (clos.west) -- ++(-9mm, 0mm);
 
         \node[rannot] (as) at ($(fig.east)+(0mm,24mm)$) {Airspeed};
-        \draw[->, red] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
+        \draw[annotptr] (as.west) -- ++(-22mm, 0mm) -- ++(-4mm, 4mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(0mm,-2mm)$) {DLZ \\ {\footnotesize see \cref{fig:aa_weap:aim120:dlz}}};
-        \draw[->, red] (dlz.west) -- ++(-8mm, 0mm);
+        \draw[annotptr] (dlz.west) -- ++(-8mm, 0mm);
 
         \node[rannot] (asec) at ($(fig.east)+(0mm,-24mm)$) {ASC / ASEC \\ {\footnotesize see \cref{fig:aa_weap:aim120:asc_asec}}};
-        \draw[->, red] (asec.west) -- ++(-26mm, 0mm) -- (4mm,-7mm);
+        \draw[annotptr] (asec.west) -- ++(-26mm, 0mm) -- (4mm,-7mm);
 
         \node[annot, anchor=south, align=left, text width=35mm] (fov) at ($(fig.north)+(-6.5mm,0mm)$) {Azimuth scan limits};
-        \draw[->, red] (fov.south) -- ++(0mm, -15mm) -- ++(12mm, -6mm);
+        \draw[annotptr] (fov.south) -- ++(0mm, -15mm) -- ++(12mm, -6mm);
     \end{tikzpicture}
     \caption{RWS SAM / DTT submode symbology. Additional information on primary target is displayed at top of FCR page.}
 \end{figure}
@@ -157,17 +159,17 @@
     \blueitem{Radar Mode}{
         \textbf{CRM} (default), verify
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{Dogfight/Missile Override} --- \textbf{NORM}
             \item \textbf{Radar Mode (OSB 1)} --- shows \textbf{CRM}
-        \end{subitemize}
+        \end{itemize}
     }
     \blueitem{CRM Submode}{
         \textbf{RWS} (default), cycle via 
 
-        \begin{subitemize}
+        \begin{itemize}
             \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
-        \end{subitemize}
+        \end{itemize}
     }
 \end{checklistenumerate}
 
@@ -175,14 +177,14 @@
 \label{subsec:rws:samdttacq}
 \begin{checklistenumerate}
     \blueitem{Locate Targets}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Correlate onboard/offboard sensors
         \begin{itemize}
             \item raw radar returns, RWR pings
             \item AWACS calls, datalink targets
         \end{itemize}
         \item Place targets within radar scan volume
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{SAM Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
@@ -205,16 +207,16 @@
         \end{tikzpicture}
         \caption{SAM Acquisition}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
         \item \textbf{Target} \dotfill Verify \textbf{Bugged}
-    \end{subenumerate}
-    \begin{subitemize}
+    \end{enumerate}
+    \begin{itemize}
         \item Can guide AIM-120C on Bugged target
         \item DLZ displayed if missile selected
         \item RWS search continues
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{DTT Acquisition}{(if desired)
     \marginpar{
         \captionsetup{type=figure}
@@ -237,35 +239,35 @@
         \end{tikzpicture}
         \caption{DTT Acquisition}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target 2} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
-    \end{subenumerate}
+    \end{enumerate}
 
     To swap primary / secondary target
 
-    \begin{subenumerate}[start=3]
+    \begin{enumerate}[start=3]
         \item \textbf{TMS} \dotfill \textbf{Left}
-    \end{subenumerate}
+    \end{enumerate}
     }
     \blueitem{STT Lock}{(if desired)
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \subsubsection{SPOTLIGHT ACQUISITION}
 \begin{checklistenumerate}
     \blueitem{Locate Targets}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Correlate onboard/offboard sensors
         \begin{itemize}
             \item raw radar returns, RWR pings
             \item AWACS calls, datalink targets
         \end{itemize}
         \item Place target within radar scan limits
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Spotlight Search}{
     \marginpar{
         \captionsetup{type=figure}
@@ -313,29 +315,29 @@
         \end{tikzpicture}
         \caption{Spotlight Search}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill near Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (hold)}
         \begin{itemize}
             \item FCR enters \pm10deg scan around acquisition cursor
         \end{itemize}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{SAM Acquisition}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (release)}
         \item \textbf{Target} \dotfill Verify \textbf{Bugged}
-    \end{subenumerate}
-    \begin{subitemize}
+    \end{enumerate}
+    \begin{itemize}
         \item Can guide AIM-120C on Bugged target
         \item DLZ displayed if missile selected
         \item RWS search continues
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{STT Lock}{(if desired)
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \marginfigrestore

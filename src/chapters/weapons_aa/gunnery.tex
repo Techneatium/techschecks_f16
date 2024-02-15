@@ -88,22 +88,22 @@
 
         % Annotations
         \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
-        \draw[annotptr] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+        \draw[annotptr] (mode.east) -- ++(10mm, 0mm) -- ++(3mm,3mm);
 
         \node[lannot] (submode) at ($(fig.west)+(0mm,14mm)$) {Submode};
-        \draw[annotptr] (submode.east) -- ++(22.5mm, 0mm) -- (-11mm, 29mm);
+        \draw[annotptr] (submode.east) -- ++(10mm, 0mm) -- ++(15mm, 15mm);
 
         \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
-        \draw[annotptr] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+        \draw[annotptr] (inv.west) -- ++(-21mm, 0mm) -- ++(-3mm, 3mm);
 
         \node[rannot] (rounds) at ($(fig.east)+(0mm,14mm)$) {Rounds \\ remaining};
-        \draw[annotptr] (rounds.west) -- ++(-8mm,0mm) -- (28mm, 18mm);
+        \draw[annotptr] (rounds.west) -- ++(-4mm,0mm) -- ++(-5mm, 5mm);
 
         \node[rannot] (rdy) at ($(fig.east)+(0mm,0mm)$) {Ready \\ indication};
-        \draw[annotptr] (rdy.west) -- ++(-20mm, 0mm) -- (10mm,18mm);
+        \draw[annotptr] (rdy.west) -- ++(-8mm, 0mm) -- ++(-19mm,19mm);
 
-        \node[rannot] (sj) at ($(fig.east)+(0mm,-14mm)$) {Selective Jettison};
-        \draw[annotptr] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,12mm)$);
+        \node[rannot] (sj) at ($(fig.east)+(0mm,-22mm)$) {Selective Jettison};
+        \draw[annotptr] (sj.west) -- ++(-10mm, 0mm) -- ++(-6mm, -6mm);
     \end{tikzpicture}
     \caption{Gun SMS page}
 \end{figure}
@@ -193,8 +193,8 @@
         \node[lannot] (boresight) at ($(fig.west)+(-2.5mm,32mm)$) {Boresight cross};
         \draw[annotptr] (boresight.east) -- (-5mm,32mm);
 
-        \node[rannot] (bandit) at ($(fig.east)+(2.5mm,32mm)$) {Bandit};
-        \draw[annotptr] (bandit.west) -- ++(-37mm, 0mm) -- (1mm,20mm);
+        \node[rannot] (bandit) at ($(fig.east)+(2.5mm,12mm)$) {Bandit};
+        \draw[annotptr] (bandit.west) -- ++(-36mm, 0mm) -- ++(-4mm,4mm);
 
         \node[lannot] (funnel) at ($(fig.west)+(-2.5mm,12mm)$) {EEGS Funnel};
         \draw[annotptr] (funnel.east) -- (-5mm,12mm);
@@ -250,13 +250,13 @@
 
             % Annotations
             \node[lannot] (1g) at ($(fig.west)+(-2.5mm,12mm)$) {1-g Pipper};
-            \draw[annotptr] (1g.east) -- ++(22mm,0mm) -- (-1.5mm,5mm);
+            \draw[annotptr] (1g.east) -- ++(22mm,0mm) -- ++(6mm,-6mm);
 
             \node[lannot] (9g) at ($(fig.west)+(-2.5mm,-12mm)$) {9-g Pipper};
             \draw[annotptr] (9g.east) -- ++(22mm,0mm);
 
             \node[rannot] (manpot) at ($(fig.east)+(2.5mm,5mm)$) {Maneuver potential lines};
-            \draw[annotptr] (manpot.west) -- ++(-10mm, 0mm) -- (12mm,2mm);
+            \draw[annotptr] (manpot.west) -- ++(-10mm, 0mm) -- ++(-4mm,-4mm);
 
         \end{tikzpicture}
         \caption{T-symbol}
@@ -313,8 +313,8 @@
             \node[lannot] (batr) at ($(fig.west)+(-2.5mm,0mm)$) {BATR \\ circle};
             \draw[annotptr] (batr.east) -- ++(23mm,0mm);
 
-            \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-7mm)$) {Bandit};
-            \draw[annotptr] (bandit.west) -- ++(-23mm,0mm) -- (2.5mm, -3mm);
+            \node[rannot] (bandit) at ($(fig.east)+(2.5mm,-6mm)$) {Bandit};
+            \draw[annotptr] (bandit.west) -- ++(-22mm,0mm) -- ++(-4mm, 4mm);
         \end{tikzpicture}
         \caption{full, combined pipper, shown approx. on-target}
         \label{fig:aa_weap:m61:eegs:pipper}

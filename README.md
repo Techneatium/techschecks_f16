@@ -1,8 +1,8 @@
-# F-16C CHEATSHEET
+# TECH'S CHECKS F16
 
 ## HOW TO USE
 
-Check the [Releases](https://github.com/Techneatium/F16_CheatSheet/releases) and download the latest PDF, then use as desired. The remaining files are the LaTeX source code
+Check the [Releases](https://github.com/Techneatium/techschecks_f16/releases) and download the latest PDF, then use as desired. The remaining files are the LaTeX source code
 
 For ease of maintenance, no image file versions are maintained here. To convert this to a format directly suitable as an in-game kneeboard (e.g PNG) please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/)
 
@@ -10,7 +10,6 @@ For ease of maintenance, no image file versions are maintained here. To convert 
 
 ## WHAT IS THIS?
 
-- A kneeboard-style `cheatsheet` for the DCS F-16C
 - Intended to allow someone already knowledgeable about the tomcat's systems to quickly find necessary information
 - For ease of maintenance, only the PDF is available here. To convert this to a format directly suitable as an in-game kneeboard please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/).
 

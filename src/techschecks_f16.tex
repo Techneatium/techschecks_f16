@@ -26,15 +26,13 @@
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
 \documentclass[fontInter, a5, oneside]{TechCheck}
-\title{F16_Cheatsheet}
+\title{techschecks_f16}
 \author{Techneatium}
 
-\setaircraftlong{F-16C BLOCK 50 AIRCRAFT} % sets long label for title page
+\setaircraftlong{F-16C BLOCK 50} % sets long label for title page
 \setaircraftshort{F-16C} % sets short label for header
-\settabnumber{8} % sets number of tabs for document
+\settabnumber{10} % sets number of tabs for document
 \setcounter{secnumdepth}{3}
-
-\usetikzlibrary{calc, shapes, arrows, arrows.meta,  positioning, decorations.pathreplacing}
 
 % Determine which files included in output
 \includeonly{
@@ -54,18 +52,18 @@
 	chapters/appendix,
 }
 
-\AddToHook{shipout/foreground}{
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[
-		red!45,
-		rotate=60,
-		scale=5,
-		opacity=0.5, 
-		align=center,
-		font=\normalfont,
-	] at (current page.center) {Draft Release \\ {Do not Distribute!} \\ {UOAF}}; 
-  \end{tikzpicture}
-}
+% \AddToHook{shipout/foreground}{
+%   \begin{tikzpicture}[remember picture,overlay]
+%     \node[
+% 		black!45,
+% 		rotate=60,
+% 		scale=5,
+% 		opacity=0.4, 
+% 		align=center,
+% 		font=\normalfont,
+% 	] at (current page.center) {Draft Release \\ Do not Distribute!}; 
+%   \end{tikzpicture}
+% }
 
 \color{color1} % set main font color for whole document
 \begin{document}

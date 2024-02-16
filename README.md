@@ -1,82 +1,31 @@
-# F-16C CHEATSHEET
+This is a guide for the DCS F-16C designed as a reference work to allow users to quickly look up what they need to know. It is intended to fill the spot in between the excellent guides Chuck, and full aircraft manuals provided by the developers. At the same time we leverage LaTeX to add quality of life features for the reader.
 
-## HOW TO USE
+The "Gold Edition" label signifies a collaboration with [Goldwolf](https://www.reddit.com/user/goldwolf) to include custom figures and illustrations.
 
-Check the [Releases](https://github.com/Techneatium/F16_CheatSheet/releases) and download the latest PDF, then use as desired. The remaining files are the LaTeX source code
+## Features
+
+- Inspired by and intended to be _reminiscent_ of real aerospace documentation
+- **100% custom vector graphics and figures** made by [Goldwolf](https://www.reddit.com/user/goldwolf)
+  - location of switches and panels indicated for procedures
+  - illustrations of HUD, MFD, and HMD symbology
+- **Compact size** (< 2 Mb) ensures quick loading
+- Lots of hyperlinks to enable **quick navigation**
+  - from the front page to each chapter (simply click on the chapter name)
+  - from any location you can click on the header to return to the front page
+  - both the chapter and section name are hyperlinks to their beginnings respectively
+- Local tables of contents at the start of each chapter
+- **Custom F-16 fonts** by [Morkvitnir](https://www.reddit.com/user/morkvitnir9) for use in figures
+
+## Installation
+
+Check the [Releases](https://github.com/Techneatium/techschecks_f16/releases) and download the latest PDF, then use as desired. The remaining files are the LaTeX source code
 
 For ease of maintenance, no image file versions are maintained here. To convert this to a format directly suitable as an in-game kneeboard (e.g PNG) please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/)
 
-***
+## DISCLAIMER
 
-## WHAT IS THIS?
+THIS PROJECT REPRESENTS A PERSONAL PROJECT AND IS INTENDED FOR ENTERTAINMENT PURPOSES ONLY. DO NOT USE FOR REAL LIFE TRAINING OR SCENARIOS.
 
-- A kneeboard-style `cheatsheet` for the DCS F-16C
-- Intended to allow someone already knowledgeable about the tomcat's systems to quickly find necessary information
-- For ease of maintenance, only the PDF is available here. To convert this to a format directly suitable as an in-game kneeboard please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/).
-
-## COOL FEATURES
-
-Or at least what *I* think is cool.
-
-### Hyperlinks. Lot's of Hyperlinks
-
-To facilitate quick location of the desired information the front page's chevrons/thumbtabs act as hyperlinks to the relevant chapters. Then, the mini-table-of-contents at the start of each chapter are also hyperlinks to the sections and subsections. Finally, one can return to the front page at any time simply by clicking on the hatching at the top of the page in order to find the next piece of information.
-
-### Thumbtabs
-
-The front page chevrons and thumbtabs on the chapter pages are not just for show. If printed and cut they should act in much the same way as the thumbtabs on typical in-cockpit checklists. Additional cut lines are provided on odd pages as necesary.
-
-### Styling
-
-While the styling of this document is in no ways completely representative of actual documentation, it was chosen to feel *inspired* by actual NATOPS and Emergency Checklists.
-
-***
-
-## REPOSITORY - `TECHS CHECKS`
+## Repository - `TECHS CHECKS`
 
 [**Check out my other Cheatsheets**](https://github.com/Techneatium/Techs-Checks) (Precompiled PDFs for various aircraft)
-
-***
-
-## WORK IN PROGRESS
-
-- **Guide is essentially in pre-alpha** - nothing is fixed, formatting is unclear, all is experimental
-  
-### TO-DO
-
-- `PROCEDURES`
-  - `START-UP`
-    - Requires all diagrams (currently just placeholders)
-    - Current placeholder styling good
-    - Perhaps try out styling with individual panel outlines which can then be filled in to highlight?
-  - `TAKEOFF & LANDING`
-  - `INFLIGHT`
-  - `EMERGENCY PROCEDURES`
-
-- `SYSTEMS`
-  - all of it
-
-- `APG-68 FCR`
-  - all of it
-
-- `TGP & HTS`
-  - all of it
-
-- `A/G WEAPONS`
-  - all of it
-
-- `A/A WEAPONS`
-  - `M-61`
-    - Need diagrams of EEGS symbology both in general, and (if possible) what a "firing solution" looks like.
-    - Refer to official ED manual / Chuck's guide for some example screenshots
-    - Diagram showing TMS functionality in ACM modes would be useful to reference here. These would be very useful for each sensor / sensor mode
-  - `AIM-9`
-  - `AIM-120 AMRAAM`
-    - OVERVIEW
-      - Needs to be written
-      - Diagrams for HUD symbology with & without radar lock
-      - Diagrams for FCR symbology with & without radar lock (also different radar modes, bugged vs stt, etc.)
-      - Refer to official ED manual p.205 and following
-
-- `APPENDIX`
-  - all of it

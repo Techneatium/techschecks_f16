@@ -2,10 +2,32 @@
 \label{subsec:aim9}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[
-            width = 0.8\textwidth,
-    ]{diagrams/weap/weap_aa_aim9_overview.pdf}
-    % TODO: labels? some kind of flavor stuff?
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \node[] (fig) at (0,0) {
+            \includegraphics[
+                    width = 0.8\textwidth,
+            ]{diagrams/weap/weap_aa_aim9_overview.pdf}
+        };
+
+        \node[
+            anchor=south west,
+            font=\titlefont\huge,
+        ] (aim9) at (fig.north west) {AIM-9};
+        \node[
+            anchor=north west,
+        ] (sw) at (aim9.south west) {%
+            \fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+				LetterSpace=5.0,
+			]{Spartan MB-Regular}
+            SIDEWINDER%
+        };
+
+    \end{tikzpicture}
     \caption{AIM-9 Sidewinder}
 \end{figure}
 
@@ -13,46 +35,46 @@
     \blueitem{AIM-9 \break Sidewinder}{
     Short-range, fire-and-forget ``dogfight'' missile. First entered service in 1956
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Guidance} --- IR-guided (\textbf{Fox 2})
         \item \textbf{Range} --- min: \textasciitilde3000ft, max: \textasciitilde10-20nm
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Variants}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{9M} --- IR-guided, short range, all-aspect
         \item \textbf{9X} --- HOBS (\textbf{H}igh \textbf{O}ff-\textbf{B}ore\textbf{S}ight) capable, thrust-vectored, all-aspect
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Acquisition / Cueing Modes}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Acquisition with own missile seeker (BORE)} \\
-        \hyperref[subsec:aim9:bore]{See \Cref{subsec:aim9:bore}}
+        \hyperref[subsec:aim9:bore]{see \Cref{subsec:aim9:bore}}
         \item \textbf{Seeker cued with HMD LOS (BORE)} \\
-        {See \Cref{subsec:aim9:hmcs}}
+        {see \Cref{subsec:aim9:hmcs}}
         \item \textbf{Seeker slaved to radar track LOS (SLAVE)} \\
-        \hyperref[subsec:aim9:slave]{See \Cref{subsec:aim9:slave}}
-    \end{subitemize}}
+        \hyperref[subsec:aim9:slave]{see \Cref{subsec:aim9:slave}}
+    \end{itemize}}
     \blueitem{Select AIM-9}{
     Via Dogfight --- AIM-9 \& GUN automatically selected
 
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
         \item \textbf{Selected Weapon (OSB 7)} \dotfill Verify \textbf{9LM / 9X}
-    \end{subenumerate}
+    \end{enumerate}
 
     Via Missile Override
 
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{OVRD}
         \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{9LM / 9X}
-    \end{subenumerate}
+    \end{enumerate}
 
     Via A-A Master Mode
 
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Master Mode} \dotfill \textbf{A-A}
         \item \textbf{Operating Mode (SMS OSB 1)} \dotfill Verify \textbf{AAM}
         \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{9LM / 9X}
-    \end{subenumerate}
+    \end{enumerate}
     
     Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
     }
@@ -63,10 +85,10 @@
 \begin{tcoloritemize}
     \blueitem{SPOT / SCAN}{
     \textbf{OSB 2} controls seeker field of view
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{SPOT} --- Narrow, increased detection range
         \item \textbf{SCAN} --- Wide, decreased detection range
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Selected Weapon}{
     \textbf{OSB 7} cycles through available A-A weapon types
     
@@ -76,10 +98,10 @@
     \blueitem{WARM / COOL}{
     \textbf{OSB 8} controls seeker cooling status
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{COOL} ---  increases seeker sensitivity, should be set prior to engagement
         \item Set automatically for \textbf{DGFT} \& \textbf{MSL OVRD}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Selected Station}{
     \textbf{OSB 10 / 16} select/cycle available missile pylons
     
@@ -89,7 +111,7 @@
     \blueitem{SLAVE / BORE}{
     \textbf{OSB 19} controls seeker line-of-sight
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{BORE} --- \hyperref[subsec:aim9:bore]{\textbf{See \Cref{subsec:aim9:bore}}}
         \begin{itemize}
             \item acquisition with own missile seeker
@@ -101,7 +123,7 @@
             \item seeker slaved to radar track LOS
             \item typically via ACM Modes
         \end{itemize}
-    \end{subitemize}
+    \end{itemize}
     
     Line-of-sight mode can also be cycled with \textbf{Cursor Enable Depress}}
 \end{tcoloritemize}
@@ -119,29 +141,29 @@
         };
 
         % Annotations
-        \node[lannot] (mode) at ($(fig.west)+(0mm,27mm)$) {Operating \\ mode};
-        \draw[->, red] (mode.east) -- ++(10mm, 0mm) -- (-25mm,29mm);
+        \node[lannot] (mode) at ($(fig.west)+(0mm,26mm)$) {Operating \\ mode};
+        \draw[annotptr] (mode.east) -- ++(12mm, 0mm) -- ++(3mm,3mm);
 
         \node[lannot] (los) at ($(fig.west)+(0mm,14.5mm)$) {LOS mode};
-        \draw[->, red] (los.east) -- ++(4mm, 0mm);
+        \draw[annotptr] (los.east) -- ++(4mm, 0mm);
 
         \node[lannot] (lstation) at ($(fig.west)+(0mm,-21mm)$) {Selected station};
-        \draw[->, red] (lstation.east) -- ++(4mm, 0mm);
+        \draw[annotptr] (lstation.east) -- ++(4mm, 0mm);
 
-        \node[rannot] (inv) at ($(fig.east)+(0mm,27mm)$) {Inventory};
-        \draw[->, red] (inv.west) -- ++(-21mm, 0mm) -- (14mm, 29mm);
+        \node[rannot] (inv) at ($(fig.east)+(0mm,26mm)$) {Inventory};
+        \draw[annotptr] (inv.west) -- ++(-23mm, 0mm) -- ++(-3mm, 3mm);
 
         \node[rannot] (sel) at ($(fig.east)+(0mm,13mm)$) {Selected \\ weapon};
-        \draw[->, red] (sel.west) -- ++(-4mm, 0mm);
+        \draw[annotptr] (sel.west) -- ++(-4mm, 0mm);
 
         \node[rannot] (cool) at ($(fig.east)+(0mm,3mm)$) {Cooling \\ status};
-        \draw[->, red] (cool.west) -- ++(-4mm, 0mm);
+        \draw[annotptr] (cool.west) -- ++(-4mm, 0mm);
 
         \node[rannot] (lstation) at ($(fig.east)+(0mm,-21mm)$) {Selected station};
-        \draw[->, red] (lstation.west) -- ++(-4mm, 0mm);
+        \draw[annotptr] (lstation.west) -- ++(-4mm, 0mm);
 
         \node[rannot] (sj) at ($(fig.east)+(0mm,-36mm)$) {Selective Jettison};
-        \draw[->, red] (sj.west) -- ++(-12.5mm, 0mm) -- ($(fig.south) + (22mm,6mm)$);
+        \draw[annotptr] (sj.west) -- ++(-12mm, 0mm) -- ++(-3mm, 3mm);
     \end{tikzpicture}
     \caption{AIM-9 SMS Page}
     \label{fig:aa_weap:aim9:sms}
@@ -153,7 +175,7 @@
 \begin{tcoloritemize}
     \blueitem{MFD Symbology}{Reference \Cref{subsec:aim120:symb}}
     \blueitem{HUD/HMD \break Symbology}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Missile Diamond} --- AIM-9 seeker line-of-sight
         \begin{itemize}
             \item displayed on HUD \& HMD
@@ -165,17 +187,17 @@
             \item size reflects \textbf{SPOT/SCAN} setting 
         \end{itemize}
         \item \textbf{Dynamic Aiming Cross} --- HMD line-of-sight
-    \end{subitemize}
+    \end{itemize}
 
     Reference symbology in \cref{fig:aa_weap:aim9:hudsymb}
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{DLZ} --- \textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
         \begin{itemize}
             \item displays missile/target range information
             \item reference \Cref{subsec:aim120:symb}
         \end{itemize}
-    \end{subitemize}
+    \end{itemize}
     }
 \end{tcoloritemize}
 
@@ -202,22 +224,22 @@
 
         % Annotations
         \node[lannot] (td) at ($(fig.west)+(-2.5mm,22.5mm)$) {Target designator box};
-        \draw[->, red] (td.east) -- ++(25mm, 0mm);
+        \draw[annotptr] (td.east) -- ++(25mm, 0mm);
 
         \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,12.5mm)$) {Missile \\ diamond};
-        \draw[->, red] (diamond.east) -- ++(18mm, 0mm) -- (-11mm, 21mm);
+        \draw[annotptr] (diamond.east) -- ++(18mm, 0mm) -- (-11mm, 21mm);
 
         \node[lannot] (weap) at ($(fig.west)+(-2.5mm,-19.5mm)$) {Selected weapon};
-        \draw[->, red] (weap.east) -- ++(15mm, 0mm);
+        \draw[annotptr] (weap.east) -- ++(15mm, 0mm);
 
         \node[rannot] (cross) at ($(fig.east)+(2.5mm,34mm)$) {Boresight \\ cross};
-        \draw[->, red] (cross.west) -- ++(-25mm, 0mm) -- (1mm, 24.5mm);
+        \draw[annotptr] (cross.west) -- ++(-25mm, 0mm) -- (1mm, 24.5mm);
 
         \node[rannot] (ret) at ($(fig.east)+(2.5mm,24mm)$) {Missile \\ reticle};
-        \draw[->, red] (ret.west) -- ++(-30mm, 0mm) -- (4mm, 19mm);
+        \draw[annotptr] (ret.west) -- ++(-30mm, 0mm) -- (4mm, 19mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(2.5mm,-15mm)$) {DLZ};
-        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm) -- (dlznode);
+        \draw[annotptr] (dlz.west) -- ++(-10mm, 0mm) -- (dlznode);
     \end{tikzpicture}
     \caption{AIM-9 HUD Symbology}
     \label{fig:aa_weap:aim9:hudsymb}
@@ -237,19 +259,19 @@
 
         % Annotations
         \node[lannot] (diamond) at ($(fig.west)+(-2.5mm,20mm)$) {Boresight cross};
-        \draw[->, red] (diamond.east) -- ++(20mm, 0mm) -- (-5.5mm, 11.5mm);
+        \draw[annotptr] (diamond.east) -- ++(20mm, 0mm) -- (-5.5mm, 11.5mm);
 
         \node[lannot] (td) at ($(fig.west)+(-2.5mm,5mm)$) {Target designator box};
-        \draw[->, red] (td.east) -- ++(33mm, 0mm);
+        \draw[annotptr] (td.east) -- ++(33mm, 0mm);
 
         \node[lannot] (mode) at ($(fig.west)+(-2.5mm,-10mm)$) {Mode};
-        \draw[->, red] (mode.east) -- ++(7.5mm, 0mm) -- (-27mm, -7mm);
+        \draw[annotptr] (mode.east) -- ++(7.5mm, 0mm) -- (-27mm, -7mm);
 
         \node[rannot] (dlz) at ($(fig.east)+(2.5mm,20mm)$) {DLZ};
-        \draw[->, red] (dlz.west) -- ++(-10mm, 0mm);
+        \draw[annotptr] (dlz.west) -- ++(-10mm, 0mm);
 
         \node[rannot] (diamond) at ($(fig.east)+(2.5mm,0mm)$) {Missile \\ diamond};
-        \draw[->, red] (diamond.west) -- ++(-32mm, 0mm) -- (1.5mm, 3mm);
+        \draw[annotptr] (diamond.west) -- ++(-32mm, 0mm) -- (1.5mm, 3mm);
     \end{tikzpicture}
     \caption{AIM-9 HMD Symbology}
     \label{fig:aa_weap:aim9:hmdsymb}
@@ -260,20 +282,20 @@
 \subsubsection{AIM-9 SELECTION}
 \begin{checklistitemize}
     \blueitem{Via DGFT}{(AIM-9 selected automatically)
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Via MSL OVRD}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{MSL OVRD}
         \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
         \begin{itemize}
             \item \textbf{SMS OSB 7} --- \textbf{Press}
             \item or \textbf{NWS/MSL STEP} --- \textbf{Press (long)}
         \end{itemize}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Via A-A Master Mode}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Master Mode} \dotfill \textbf{A-A}
         \item \textbf{SMS OSB 1} \dotfill \textbf{Verify AAM} (default)
         \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
@@ -281,21 +303,21 @@
             \item \textbf{SMS OSB 7} --- \textbf{Press}
             \item or \textbf{NWS/MSL STEP} --- \textbf{Press (long)}
         \end{itemize}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistitemize}
 
 \subsubsection{BORE EMPLOYMENT --- NO RADAR}
 \label{subsec:aim9:bore}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
         \hfill (if desired, completely silences radar)
         \item \textbf{Selected Weapon} \dotfill \textbf{9M/9X}
         \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
         \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
@@ -309,18 +331,18 @@
         \end{tikzpicture}
         \caption{AIM-9 missile diamond latched to target, indicating lock.}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Missile Reticle} \dotfill \textbf{On-Target}
         \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
         \item \textbf{Missile Diamond} \dotfill verify latched to target
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Fire Missile}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Maneuver into firing position
         \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \clearpage
@@ -329,7 +351,7 @@
 \label{subsec:aim9:hmcs}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{HMD SYMB. INT} \dotfill \textbf{INT}
         \item \textbf{RF Switch} \dotfill \textbf{SILENT} \\
         \hfill (if desired, completely silences radar)
@@ -337,7 +359,7 @@
         \item \textbf{SLAVE/BORE} \dotfill \textbf{BORE}
         \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{AIM-9 Track Acquisition}{
     \marginpar{
         \captionsetup{type=figure}
@@ -372,24 +394,24 @@
         \end{tikzpicture}
         \caption{X indicates HMD beyond AIM-9 seeker limits}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Maneuver to place target within AIM-9 seeker limits
         \item \textbf{HMD Aiming Cross} \dotfill \textbf{On-Target}
-    \end{subenumerate}
+    \end{enumerate}
 
     Missile diamond follows aiming cross (within seeker limits)
 
-    \begin{subenumerate}[start=3]
+    \begin{enumerate}[start=3]
         \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
         \item \textbf{Missile Diamond} \dotfill verify latched to target
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Fire Missile}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Maneuver into firing position
         \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \clearpage
@@ -398,7 +420,7 @@
 \label{subsec:aim9:slave}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{RF Switch} \dotfill \textbf{NORM}
         \item \textbf{HMD SYMB. INT} \dotfill As desired
@@ -406,7 +428,7 @@
         \item \textbf{SLAVE/BORE} \dotfill Verify \textbf{SLAVE}
         \item \textbf{WARM/COOL} \dotfill Verify \textbf{COOL}
         \item \textbf{Master Arm} \dotfill \textbf{ARM}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Radar Acquisition}{ACM selected automatically in \textbf{DGFT} mode, \textbf{see \Cref{subsec:acm}}
     \marginpar{
         \captionsetup{type=figure}
@@ -428,12 +450,12 @@
     \medskip
     For demonstration we will use \textbf{ACM BORE Submode} with HMD
     
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{FCR Mode} \dotfill \textbf{ACM}
         \item \textbf{TMS} \dotfill \textbf{FWD}
         \item \textbf{Target} \dotfill \textbf{In HMD BORE Symbol}
         \item \textbf{Radar} \dotfill wait for \textbf{STT Lock}
-    \end{subenumerate}
+    \end{enumerate}
     
     Can also lock from CRM, \textbf{see \Cref{subsec:crm}}
     }
@@ -450,11 +472,11 @@
         \end{tikzpicture}
         \caption{AIM-9 missile diamond and target designator box latched to target, indicating radar and seeker lock.}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{CAGE/UNCAGE} \dotfill \textbf{Press}
         \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{Missile Diamond} \dotfill verify latched to target
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Fire Missile}{
     \marginpar{
         \captionsetup{type=figure}
@@ -468,12 +490,12 @@
         \end{tikzpicture}
         \caption{In-range DLZ}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Maneuver into firing position
         \item \textbf{DLZ} \dotfill indicates \textbf{In-Range}
         \item \textbf{Sidewinder Audio} \dotfill \textbf{Lock Tone}
         \item \textbf{WPN REL} \dotfill \textbf{Depress}
-    \end{subenumerate}}
+    \end{enumerate}}
 \end{checklistenumerate}
 
 \marginfigrestore 

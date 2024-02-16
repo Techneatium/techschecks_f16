@@ -6,10 +6,11 @@
 \definecolor{techorange}{RGB}{231, 120, 23}
 \definecolor{techlime}{RGB}{139, 202, 152}
 
-
-\newcounter{colorcounter}
-\newcommand{\chaptercolor}{%
-  \ifcase\value{colorcounter}%
+% defines highlight color for chapters
+% principly used for circles with chapter number in header
+\newcounter{colorcountercirc}
+\newcommand{\chpcolorhighlight}{%
+  \ifcase\value{colorcountercirc}%
     techyellow\or
     techgreen\or
     techblue\or
@@ -19,7 +20,28 @@
     techred\fi
 }
 
+% defines text color to ensure text contrast to 
+% chapter highlight color
+\newcounter{colorcounternum}
+\newcommand{\chpcolortext}{%
+  \ifcase\value{colorcounternum}%
+    color1\or
+    white\or
+    white\or
+    white\or
+    white\or
+    color1\else
+    white\fi
+}
+
 \newcommand{\cyclechpcolor}{%
-  \stepcounter{colorcounter}%
-  \ifnum\value{colorcounter}>6\setcounter{colorcounter}{0}\fi
+  \stepcounter{colorcountercirc}%
+  \ifnum\value{colorcountercirc}>6\setcounter{colorcountercirc}{0}\fi
+  \stepcounter{colorcounternum}%
+  \ifnum\value{colorcounternum}>6\setcounter{colorcounternum}{0}\fi
+}
+
+\newcommand{\resetchpcolor}{%
+  \setcounter{colorcountercirc}{0}
+  \setcounter{colorcounternum}{0}
 }

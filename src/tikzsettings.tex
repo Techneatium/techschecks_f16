@@ -1,3 +1,5 @@
+\usetikzlibrary{calc, shapes, arrows, arrows.meta,  positioning, decorations.pathreplacing}
+
 % figure nodes
 \tikzset{
     figstyle/.style={                
@@ -39,5 +41,11 @@
         annot,
         align=left,
         anchor=west,
+    }
+}
+\tikzset{
+    annotptr/.style={
+        ->,
+        red,
     }
 }

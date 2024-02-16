@@ -4,7 +4,7 @@
     \blueitem{ACM}{
     \textbf{A}ir \textbf{C}ombat \textbf{M}ode
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Used to automatically lock targets while maneuvering}
         \item \textbf{Sub-Modes}
         \begin{itemize}
@@ -13,7 +13,7 @@
             \item \textbf{Vertical Scan} --- 10x60 deg
             \item \textbf{Slewable} --- WIP
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -88,7 +88,7 @@
                 (\p1) -- (\x1-22.5mm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-22.5mm,\y2);
                 
     \end{tikzpicture}
-    \caption{\textbf{ACM Radar Modes Overview}}
+    \caption{ACM Radar Modes Overview}
     \label{fig:acmoverview}
 \end{figure}
 
@@ -106,37 +106,37 @@
 
         % Annotations
         \node[lannot] (mode) at ($(fig.west)+(0mm,38mm)$) {FCR mode};
-        \draw[->, red] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
+        \draw[annotptr] (mode.east) -- ++(12mm, 0mm) -- (-24mm,35mm);
 
         \node[lannot] (submode) at ($(fig.west)+(0mm,28mm)$) {ACM \\ submode};
-        \draw[->, red] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
+        \draw[annotptr] (submode.east) -- ++(23mm, 0mm) -- (-13mm, 31mm);
 
         \node[lannot] (rsel) at ($(fig.west)+(0mm,18mm)$) {Range scale};
-        \draw[->, red] (rsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (rsel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (asel) at ($(fig.west)+(0mm,0.5mm)$) {Azimuth};
-        \draw[->, red] (asel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (asel.east) -- ++(4.5mm, 0mm);
 
         \node[lannot] (bsel) at ($(fig.west)+(0mm,-10.5mm)$) {Elevation \\ bar};
-        \draw[->, red] (bsel.east) -- ++(4.5mm, 0mm);
+        \draw[annotptr] (bsel.east) -- ++(4.5mm, 0mm);
 
         \node[annot, anchor=south, align=center] (fov) at ($(fig.north)+(0mm,0mm)$) {FOV select};
-        \draw[->, red] (fov.south) -- ++(0mm, -3.5mm);
+        \draw[annotptr] (fov.south) -- ++(0mm, -3.5mm);
 
         \node[rannot] (cntl) at ($(fig.east)+(0mm,38mm)$) {Control};
-        \draw[->, red] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
+        \draw[annotptr] (cntl.west) -- ++(-13mm, 0mm) -- (23mm, 35mm);
 
         \node[rannot] (ovrd) at ($(fig.east)+(0mm,28mm)$) {Override};
-        \draw[->, red] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
+        \draw[annotptr] (ovrd.west) -- ++(-24mm, 0mm) -- (12mm, 31mm);
 
         \node[rannot] (dl) at ($(fig.east)+(0mm,20.5mm)$) {Datalink mode};
-        \draw[->, red] (dl.west) -- ++(-4mm,0mm);
+        \draw[annotptr] (dl.west) -- ++(-4mm,0mm);
 
         \node[rannot] (sj) at ($(fig.east)+(0mm,-8mm)$) {Horizon \\indicator};
-        \draw[->, red] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
+        \draw[annotptr] (sj.west) -- ++(-20mm, 0mm) -- (12mm,-1mm);
 
         \node[rannot] (dclt) at ($(fig.east)+(0mm,-38mm)$) {Declutter};
-        \draw[->, red] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
+        \draw[annotptr] (dclt.west) -- ++(-13mm, 0mm) -- (23mm, -35mm);
     \end{tikzpicture}
     \caption{ACM FCR page symbology}
 \end{figure}
@@ -211,34 +211,34 @@
 
         % Annotations
         \node[lannot] (bs) at ($(fig.west)+(-2.5mm,34mm)$) {Boresight cross};
-        \draw[->, red] (bs.east) -- ++(34mm,0mm) -- ++(4mm,-4mm);
+        \draw[annotptr] (bs.east) -- ++(34mm,0mm) -- ++(4mm,-4mm);
 
         \node[lannot] (eegs) at ($(fig.west)+(-2.5mm,24mm)$) {EEGS funnel};
-        \draw[->, red] (eegs.east) -- ++(32mm,0mm);
+        \draw[annotptr] (eegs.east) -- ++(32mm,0mm);
 
         \node[lannot] (acc) at ($(fig.west)+(-2.5mm,13.5mm)$) {Acceleration};
-        \draw[->, red] (acc.east) -- ++(16mm,0mm);
+        \draw[annotptr] (acc.east) -- ++(16mm,0mm);
 
         \node[lannot] (cas) at ($(fig.west)+(-2.5mm,0mm)$) {Airspeed \\ {\footnotesize calibrated}};
-        \draw[->, red] (cas.east) -- ++(7mm,0mm);
+        \draw[annotptr] (cas.east) -- ++(7mm,0mm);
 
         \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-15mm)$) {Mode};
-        \draw[->, red] (dgft.east) -- ++(9mm,0mm) -- ++(4mm, -4mm);
+        \draw[annotptr] (dgft.east) -- ++(9mm,0mm) -- ++(4mm, -4mm);
 
         \node[lannot] (mgrs) at ($(fig.west)+(-2.5mm,-32mm)$) {MGRS lines};
-        \draw[->, red] (mgrs.east) -- ++(10mm,0mm);
+        \draw[annotptr] (mgrs.east) -- ++(10mm,0mm);
 
         \node[rannot] (bore) at ($(fig.east)+(2.5mm,13mm)$) {Scan zone indicator};
-        \draw[->, red] (bore.west) -- ++(-38mm, 0mm);
+        \draw[annotptr] (bore.west) -- ++(-38mm, 0mm);
 
         \node[rannot] (alt) at ($(fig.east)+(2.5mm,0mm)$) {Altimeter};
-        \draw[->, red] (alt.west) -- ++(-12mm, 0mm);
+        \draw[annotptr] (alt.west) -- ++(-12mm, 0mm);
 
         \node[rannot] (arc) at ($(fig.east)+(2.5mm,-12mm)$) {Attitude arc};
-        \draw[->, red] (arc.west) -- ++(-28mm, 0mm);
+        \draw[annotptr] (arc.west) -- ++(-28mm, 0mm);
 
         \node[rannot] (slant) at ($(fig.east)+(2.5mm,-25.25mm)$) {Target slant range};
-        \draw[->, red] (slant.west) -- ++(-20mm, 0mm);
+        \draw[annotptr] (slant.west) -- ++(-20mm, 0mm);
     \end{tikzpicture}
     \caption{ACM HUD Symbology. Shown in BORE submode.}
 \end{figure}
@@ -257,34 +257,34 @@
 
         % Annotations
         \node[lannot] (rwr) at ($(fig.west)+(-2.5mm,22.5mm)$) {RWR};
-        \draw[->, red] (rwr.east) -- ++(7mm,0mm);
+        \draw[annotptr] (rwr.east) -- ++(7mm,0mm);
 
         \node[lannot] (acc) at ($(fig.west)+(-2.5mm,16.5mm)$) {Acceleration};
-        \draw[->, red] (acc.east) -- ++(8mm,0mm) -- ++(4mm, -2mm);
+        \draw[annotptr] (acc.east) -- ++(8mm,0mm) -- ++(4mm, -2mm);
 
         \node[lannot] (cas) at ($(fig.west)+(-2.5mm,9.5mm)$) {Airspeed};
-        \draw[->, red] (cas.east) -- ++(5.5mm,0mm);
+        \draw[annotptr] (cas.east) -- ++(5.5mm,0mm);
 
         \node[lannot] (cross) at ($(fig.west)+(-2.5mm,2mm)$) {Aiming cross};
-        \draw[->, red] (cross.east) -- ++(28mm,0mm) -- ++(5mm,5mm);
+        \draw[annotptr] (cross.east) -- ++(28mm,0mm) -- ++(5mm,5mm);
 
         \node[lannot] (dgft) at ($(fig.west)+(-2.5mm,-6.5mm)$) {Mode};
-        \draw[->, red] (dgft.east) -- ++(7mm,0mm);
+        \draw[annotptr] (dgft.east) -- ++(7mm,0mm);
 
         \node[lannot] (hdg) at ($(fig.west)+(-2.5mm,-26mm)$) {Heading \\ {\footnotesize HMD LOS}};
-        \draw[->, red] (hdg.east) -- ++(22mm,0mm);
+        \draw[annotptr] (hdg.east) -- ++(22mm,0mm);
 
         \node[rannot] (acq) at ($(fig.east)+(2.5mm,22.5mm)$) {Acquisition circle};
-        \draw[->, red] (acq.west) -- ++(-28mm,0mm) -- ++(-4mm,-4mm);
+        \draw[annotptr] (acq.west) -- ++(-28mm,0mm) -- ++(-4mm,-4mm);
 
         \node[rannot] (alt) at ($(fig.east)+(2.5mm,9.5mm)$) {Altimeter};
-        \draw[->, red] (alt.west) -- ++(-6mm, 0mm);
+        \draw[annotptr] (alt.west) -- ++(-6mm, 0mm);
 
         \node[rannot] (range) at ($(fig.east)+(2.5mm,-1mm)$) {Target slant range};
-        \draw[->, red] (range.west) -- ++(-10mm, 0mm) -- ++(-4mm, -4mm);
+        \draw[annotptr] (range.west) -- ++(-10mm, 0mm) -- ++(-4mm, -4mm);
 
         \node[rannot] (stpt) at ($(fig.east)+(2.5mm,-14.5mm)$) {Distance to STPT};
-        \draw[->, red] (stpt.west) -- ++(-8mm, 0mm);
+        \draw[annotptr] (stpt.west) -- ++(-8mm, 0mm);
     \end{tikzpicture}
     \caption{
         ACM HMD Symbology. 
@@ -297,7 +297,7 @@
 
 \begin{tcoloritemize}
     \blueitem{HUD Submode}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{30x20 deg scan} --- slightly larger than HUD
         \item \textbf{Lock Range} --- 10 nm
         \item \textbf{Selected with TMS Right} --- default mode upon ACM selection
@@ -307,9 +307,9 @@
             \item \textbf{FCR Format} --- displays \textbf{ACM 20}
             \item \textbf{HUD} --- no special symbology
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{BORE Submode}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Small, 1-beamwidth scan}
         \begin{itemize}
             \item centered 3 deg below gun cross
@@ -324,9 +324,9 @@
             \item \textbf{HUD} --- Boresight Cross at center of radar scan zone
             \item \textbf{HMD} --- Oval centered on HMD aiming cross
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Vertical \break Submode}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{10x60 deg scan}
         \begin{itemize}
             \item centered 23 deg above gun cross
@@ -339,9 +339,9 @@
             \item \textbf{FCR Format} --- displays \textbf{ACM 60}
             \item \textbf{HUD} --- Vertical line
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Slewable \break Submode --- WIP}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Scan} --- WIP
         \item \textbf{Lock Range} --- WIP
         \item \textbf{Slew} --- \textbf{CURSOR/ENABLE Control}
@@ -350,7 +350,7 @@
             \item \textbf{FCR Format} --- displays \textbf{ACM SLEW}
             \item \textbf{HUD} --- WIP
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{NO RAD}{Upon selection of \textbf{ACM} or dropping target lock the radar is placed in non-radiating state}
 \end{tcoloritemize}
 
@@ -417,31 +417,31 @@
         \end{subfigure}
         \caption{HUD / BORE / VERTICAL Symbology}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Enter ACM}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
         \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Select ACM Submode}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{HUD} (default ACM mode) \dotfill \textbf{TMS Right}
         \item \textbf{Bore} \dotfill \textbf{TMS Forward}
         \item \textbf{Vertical} \dotfill \textbf{TMS Aft}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Target Acquisition}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Maneuver aircraft to place target within selected ACM scan volume 
         \item Wait for automatic transition to STT 
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Target Rejection}{%
     To unlock target
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Aft}
-    \end{subenumerate}
+    \end{enumerate}
     Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
     }
 \end{checklistenumerate}
@@ -457,31 +457,31 @@
         ]{hmd/dgft_subfig_bore.pdf}
         \caption{HMD acquisition circle}
     }
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
         \item \textbf{HMD Brightness} \dotfill \textbf{On}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Enter ACM}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
         \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Select ACM Bore Submode}{
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Bore} \dotfill \textbf{TMS Forward}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Target Acquisition}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Maneuver aircraft to place target within 60 deg of nose 
         \item Place target within HMD acquisition circle
         \item Wait for automatic transition to STT 
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Target Rejection}{%
     To unlock target
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Aft}
-    \end{subenumerate}
+    \end{enumerate}
     Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
     }
 \end{checklistenumerate}

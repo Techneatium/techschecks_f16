@@ -1,4 +1,5 @@
 *.aux
+*.jpg
 *.log
 *.out
 *.synctex.gz

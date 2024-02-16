@@ -4,23 +4,23 @@
 \begin{tcoloritemize}
     \blueitem{IFF}{
     \textbf{I}dentify \textbf{F}riend or \textbf{F}oe
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Unknown contacts can be ``interrogated'' to determine if friendly}
         \item \textbf{Works via transponder system}
         \begin{itemize}
-            \item Interrogater sends coded pulse
-            \item Friendly transponder return matching coded pulse
+            \item interrogater sends coded pulse
+            \item friendly transponder return matching coded pulse
         \end{itemize}
         \item \textbf{Controlled via dedicated IFF panel}
         \begin{itemize}
-            \item Must be powered on separately from FCR to function
+            \item must be powered on separately from FCR to function
         \end{itemize}
         \item \textbf{Friendly IFF replies displayed as green circles on FCR MFD}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Manual \break Interrogation}{
     Manual IFF interrogation can be initiated in 2 modes
 
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{Scan} --- Interrogates entire radar scan volume
         \begin{itemize}
             \item Activated by pressing \textbf{TMS Left (short)}
@@ -31,7 +31,7 @@
             \item Actived by pressing \textbf{TMS Left (long)}
             \item \textbf{LOS} appears next to \textbf{OSB 16} on FCR page
         \end{itemize}
-    \end{subitemize}}
+    \end{itemize}}
 \end{tcoloritemize}
 
 \warningbox{
@@ -83,17 +83,17 @@
 %     \blueitem{Master Switch}{
 %     Controls operating mode of IFF system when \textbf{C\&I Switch} is set to \textbf{BACKUP}
 
-%     \begin{subitemize}
+%     \begin{itemize}
 %         \item \textbf{OFF} --- removes power from system
 %         \item \textbf{STBY} --- system is powered but in standby mode
 %         \item \textbf{NORM} --- normal operating mode
-%     \end{subitemize}
+%     \end{itemize}
 %     }
 %     \blueitem{M-4 Code Switch}{}
 %     \blueitem{C \& I Switch}{
 %     Selects source for \textbf{C}ommunications \textbf{\&} \textbf{I}FF control
 
-%     \begin{subitemize}
+%     \begin{itemize}
 %         \item \textbf{BACKUP}
 %         \begin{itemize}
 %             \item \textbf{UHF} and \textbf{IFF} panels used to control relevant systems
@@ -103,7 +103,7 @@
 %         \begin{itemize}
 %             \item Sets input source as UFC (ICP \& DED) for both IFF and UHF
 %         \end{itemize}
-%     \end{subitemize}}
+%     \end{itemize}}
 %     \blueitem{Enable Switch}{}
 %     \blueitem{Mode 1 / 3 Selectors}{}
 %     \blueitem{Mode 4 Reply Switch}{}
@@ -116,70 +116,72 @@
 \label{sec:iff:interrogation}
 \begin{checklistenumerate}
     \blueitem{Prerequisites}{
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][40mm][t]{\marginparwidth}
-                \center{\textbf{IFF Control Panel Location}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show panel location like in start up
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{IFF Control Panel}
-    }
-    \begin{subitemize}
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][40mm][t]{\marginparwidth}
+    %             \center{\textbf{IFF Control Panel Location}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show panel location like in start up
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{IFF Control Panel}
+    % }
+    % TODO: add iff figures!
+    \begin{itemize}
         \item \textbf{C\&I Switch} \dotfill \textbf{UFC}
         \item \textbf{IFF Master Mode Switch} \dotfill \textbf{NORM}
         \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}, \textbf{SOI}
-    \end{subitemize}
+    \end{itemize}
     
     Not necessary, but highly recommended
     
-    \begin{subitemize}
+    \begin{itemize}
         \item \textbf{FCR Switch} \dotfill \textbf{FCR}
-    \end{subitemize}}
+    \end{itemize}}
     \blueitem{Locate Targets}{
-    \begin{subenumerate}
+    \begin{enumerate}
         \item Correlate onboard/offboard sensors
         \begin{itemize}
             \item raw radar returns, RWR pings
             \item AWACS calls, datalink targets
         \end{itemize}
         \item Place target within radar scan volume
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Interrogate}{
-    \marginpar{
-        \captionsetup{type=figure}
-        \fbox{
-            \begin{minipage}[t][80mm][t]{\marginparwidth}
-                \center{\textbf{IFF Return Symbology}}
-                \begin{itemize}[leftmargin=1em]
-                    \item show symbology elements for IFF returns (friendly and non friendly)
-                \end{itemize}
-            \end{minipage}
-        }
-        \caption{IFF Symbology}
-    }
+    % \marginpar{
+    %     \captionsetup{type=figure}
+    %     \fbox{
+    %         \begin{minipage}[t][80mm][t]{\marginparwidth}
+    %             \center{\textbf{IFF Return Symbology}}
+    %             \begin{itemize}[leftmargin=1em]
+    %                 \item show symbology elements for IFF returns (friendly and non friendly)
+    %             \end{itemize}
+    %         \end{minipage}
+    %     }
+    %     \caption{IFF Symbology}
+    % }
+    % TODO: add me!
 
     \smallskip
     To interrogate the entire radar scan volume
 
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Left (short)}
-    \end{subenumerate}
+    \end{enumerate}
 
     To interrogate the currently locked target or volume around the cursor 
 
-    \begin{subenumerate}
+    \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Left (long)}
-    \end{subenumerate}}
+    \end{enumerate}}
     \blueitem{Evaluate Returns}{After 1-3 sec IFF replies should appear
 
-    \begin{subitemize}
+    \begin{itemize}
         \item Friendlies are marked by green circles
         \item Depending on avionics and radar mode, radar tracks may be marked in green to indicate friendly
-    \end{subitemize}}
+    \end{itemize}}
 \end{checklistenumerate}
 
 \marginfigrestore

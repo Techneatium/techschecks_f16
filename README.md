@@ -6,15 +6,17 @@ The "Gold Edition" label signifies a collaboration with [Goldwolf](https://www.r
 
 - Inspired by and intended to be _reminiscent_ of real aerospace documentation
 - **100% custom vector graphics and figures** made by [Goldwolf](https://www.reddit.com/user/goldwolf)
-- Compact size (< 2 Mb) ensures quick loading
-- Lots of hyperlinks to enable quick navigation
-  - from front page to each chapter
+  - location of switches and panels indicated for procedures
+  - illustrations of HUD, MFD, and HMD symbology
+- **Compact size** (< 2 Mb) ensures quick loading
+- Lots of hyperlinks to enable **quick navigation**
+  - from the front page to each chapter (simply click on the chapter name)
   - from any location you can click on the header to return to the front page
   - both the chapter and section name are hyperlinks to their beginnings respectively
 - Local tables of contents at the start of each chapter
 - **Custom F-16 fonts** by [Morkvitnir](https://www.reddit.com/user/morkvitnir9) for use in figures
 
-## INSTALLATION
+## Installation
 
 Check the [Releases](https://github.com/Techneatium/techschecks_f16/releases) and download the latest PDF, then use as desired. The remaining files are the LaTeX source code
 
@@ -24,6 +26,6 @@ For ease of maintenance, no image file versions are maintained here. To convert 
 
 THIS PROJECT REPRESENTS A PERSONAL PROJECT AND IS INTENDED FOR ENTERTAINMENT PURPOSES ONLY. DO NOT USE FOR REAL LIFE TRAINING OR SCENARIOS.
 
-## REPOSITORY - `TECHS CHECKS`
+## Repository - `TECHS CHECKS`
 
 [**Check out my other Cheatsheets**](https://github.com/Techneatium/Techs-Checks) (Precompiled PDFs for various aircraft)

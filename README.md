@@ -11,7 +11,8 @@ The "Gold Edition" label signifies a collaboration with [Goldwolf](https://www.r
   - from front page to each chapter
   - from any location you can click on the header to return to the front page
   - both the chapter and section name are hyperlinks to their beginnings respectively
-- local tables of contents at the start of each chapter
+- Local tables of contents at the start of each chapter
+- **Custom F-16 fonts** by [Morkvitnir](https://www.reddit.com/user/morkvitnir9) for use in figures
 
 ## INSTALLATION
 

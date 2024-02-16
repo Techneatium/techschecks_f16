@@ -153,7 +153,7 @@
 			}{}%
 			
 		};
-		% thanks
+		% cc
 		\node[
 			anchor=south west,
 			xshift=0mm,
@@ -162,7 +162,25 @@
 			text width=\textwidth/1.5,
 			font=\normalsize,
 			align=left,
-		] (thanks) at (current page text area.south west) {%
+		] (cc) at (current page text area.south west) {%
+			\fontspec[
+				Path=./fonts/,
+				Ligatures=TeX,
+				LetterSpace=5.0,
+			]{Spartan MB-Light Italic}
+			The figures and illustrations contained within this work are licensed under 
+			\href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}.
+		};
+		% thanks
+		\node[
+			anchor=south west,
+			xshift=0mm,
+			yshift=2em,
+			minimum width=\textwidth/1.5,
+			text width=\textwidth/1.5,
+			font=\normalsize,
+			align=left,
+		] (thanks) at (cc.north west) {%
 			\fontspec[
 				Path=./fonts/,
 				Ligatures=TeX,

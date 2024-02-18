@@ -813,7 +813,7 @@
 		sharp corners,
 		drop shadow=color1!100,
 		},
-		title=\large WARNING
+		title=\large CAUTION
 	]
 		{#1}
 	\end{tcolorbox}

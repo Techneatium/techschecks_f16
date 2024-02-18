@@ -24,9 +24,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{technumitem}[2024/01/23]
 
-\RequirePackage{booktabs} % fancy tables
-\RequirePackage{multirow} % more fancy tables
-\RequirePackage{longtable} % multi page tables
+\RequirePackage{enumitem} % better enumerate/itemize formatting
 
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}
@@ -58,25 +56,23 @@
 \newcounter{checklistnumistart} % used to check if first line to prevent
 
 % Key to start an enumerate at a given number
-\define@key{checklistnumitem}{start}{
-	\setcounter{checklistnumi}{#1}
-	\setcounter{checklistnumistart}{\value{tcolornumi}}
+\define@key{checklistnumitem}{start}{%
+	\setcounter{checklistnumi}{#1}%
+	\setcounter{checklistnumistart}{\value{tcolornumi}}%
 }
 
 % Key to resume an enumerate at previous number
-\define@key{checklistnumitem}{resume}[]{
-	\setcounter{checklistnumistart}{\value{tcolornumi}}
+\define@key{checklistnumitem}{resume}[]{%
+	\setcounter{checklistnumistart}{\value{tcolornumi}}%
 }
 
-% SHORT VERSIONS
 \newenvironment{checklistenumerate}[1][start=1]{% begdef
-    \setkeys{checklistnumitem}{#1}
-	\newcommand{\blueitem}[2]{%
-		\item \blue{##1} {##2}%
-        \stepcounter{checklistnumi}%
+    \setkeys{checklistnumitem}{#1}%
+	\newcommand{\blueitem}[1][]{%
+		\item \blue{##1}\stepcounter{checklistnumi}%
 	}
-	\newcommand{\dblueitem}[2]{%
-		\item \dblue{##1} {##2}%
+	\newcommand{\dblueitem}[1][]{%
+		\item \dblue{##1}%
         \stepcounter{checklistnumi}%
 	}
 	\begin{outerchecklistenumerate}[start=\value{checklistnumi}]
@@ -85,11 +81,11 @@
 }
 
 \newenvironment{checklistitemize}{% begdef
-	\newcommand{\blueitem}[2]{%
-		\item \blue{##1} ##2%
+	\newcommand{\blueitem}[1][]{%
+		\item \blue{##1}%
 	}
-	\newcommand{\dblueitem}[2]{%
-		\item \dblue{##1} ##2%
+	\newcommand{\dblueitem}[1][]{%
+		\item \dblue{##1}%
 	}
 	\begin{outerchecklistitemize}
 }{% enddef
@@ -104,7 +100,6 @@
     breakable,
     colback=white,
     colframe=color1,
-    % sharp corners=north,
     colbacktitle=color1,
     coltitle=white,
     left=0mm,
@@ -129,7 +124,6 @@
     nobeforeafter,
     colback=white,
     colframe=color1,
-    % sharp corners,
     boxrule=0.5mm,
     colbacktitle=color1,
     coltitle=white,
@@ -165,58 +159,63 @@
 \newcounter{tcolornumistart} % used to check if first line to prevent
 
 % Key to start an enumerate at a given number
-\define@key{tcolornumitem}{start}{
-	\setcounter{tcolornumi}{#1}
-	\setcounter{tcolornumistart}{\value{tcolornumi}}
+\define@key{tcolornumitem}{start}{%
+	\setcounter{tcolornumi}{#1}%
+	\setcounter{tcolornumistart}{\value{tcolornumi}}%
 }
 
 % Key to resume an enumerate at previous number
-\define@key{tcolornumitem}{resume}[]{
-	\setcounter{tcolornumistart}{\value{tcolornumi}}
+\define@key{tcolornumitem}{resume}[]{%
+	\setcounter{tcolornumistart}{\value{tcolornumi}}%
 }
 
 \newenvironment{tcolorenumerate}[1][start=1]{% begdef
-	\setkeys{tcolornumitem}{#1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-        \ifnum\value{tcolornumi}>\value{tcolornumistart}
-            \tcbline
-		\else
-		\fi
-        \begin{innertcolorenumitem}
-		    \textbf{\arabic{tcolornumi}.}\blue{##1}
-            \tcblower
-            ##2
-        \end{innertcolorenumitem}
-		\stepcounter{tcolornumi} \\
-	}
-	% Uses custom tcolorbox style
-	\begin{outertcolorenumitem}
+	\setkeys{tcolornumitem}{#1}%
+    \def\endpreviousitem{%
+        \ifx\tempitem\undefined\else\end{innertcolorenumitem}\fi%
+    }%
+    \def\seppreviousitem{%
+        \ifx\tempitem\undefined\else\tcbline\fi%
+        \global\let\tempitem\undefined%
+    }%
+	\newcommand{\blueitem}[1][]{%
+        \endpreviousitem% Close the previous item, if any
+        \seppreviousitem% Separate from previous item, if any
+        \begin{innertcolorenumitem}%
+		    \textbf{\arabic{tcolornumi}.}\ \ifx\relax##1\relax\else\blue{##1}\fi% Only use the optional argument if it is provided
+            \tcblower%
+            \global\let\tempitem\relax%
+		    \stepcounter{tcolornumi}
+	}%
+    \global\let\tempitem\undefined%
+	\begin{outertcolorenumitem}% Uses custom tcolorbox style
 }{% enddef
-	\end{outertcolorenumitem}
+    \endpreviousitem% Ensure the last item is closed
+    \global\let\tempitem\undefined% Reset \tempitem to avoid interference outside the environment
+	\end{outertcolorenumitem}%
 }
 
 \newenvironment{tcoloritemize}[1][start=1]{% begdef
-	\setkeys{tcolornumitem}{#1}
-	% Define command equiv to `item`
-	% arg 1 - typeset in blue in 2. column
-	% arg 2 - typeset normally in 3. column
-	\newcommand{\blueitem}[2]{
-        \ifnum\value{tcolornumi}>\value{tcolornumistart}
-            \tcbline
-		\else
-		\fi
-        \begin{innertcolorenumitem}
-		    \blue{##1}
-            \tcblower
-            ##2
-        \end{innertcolorenumitem}
-		\stepcounter{tcolornumi} \\
-	}
-	% Uses custom tcolorbox style
-	\begin{outertcolorenumitem}
+    \setkeys{tcolornumitem}{#1}%
+    \def\endpreviousitem{%
+        \ifx\tempitem\undefined\else\end{innertcolorenumitem}\fi%
+    }%
+    \def\seppreviousitem{%
+        \ifx\tempitem\undefined\else\tcbline\fi%
+        \global\let\tempitem\undefined%
+    }%
+    \newcommand{\blueitem}[1][]{%
+        \endpreviousitem% Close the previous item, if any
+        \seppreviousitem% Separate from previous item, if any
+        \begin{innertcolorenumitem}%
+            \ifx\relax##1\relax\else\blue{##1}\fi% Only use the optional argument if it is provided
+            \tcblower%
+            \global\let\tempitem\relax
+    }%
+    \global\let\tempitem\undefined%
+    \begin{outertcolorenumitem}% Uses custom tcolorbox style
 }{% enddef
-	\end{outertcolorenumitem}
+    \endpreviousitem% Ensure the last item is closed
+    \global\let\tempitem\undefined% Reset \tempitem to avoid interference outside the environment
+    \end{outertcolorenumitem}%
 }

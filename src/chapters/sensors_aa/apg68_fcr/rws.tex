@@ -1,7 +1,7 @@
 \subsection{RWS}
 \label{subsec:rws}
 \begin{tcoloritemize}
-    \blueitem{RWS}{
+    \blueitem[RWS]
     \textbf{R}ange \textbf{W}hile \textbf{S}earch
 
     \begin{itemize}
@@ -17,7 +17,7 @@
         \end{itemize}
         % (exact target range, velocity, angle, etc.)
         % --- but can transition to advanced modes
-    \end{itemize}}
+    \end{itemize}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -56,7 +56,7 @@
 \end{figure}
 
 \begin{tcoloritemize}
-    \blueitem{SAM \break Submode}{
+    \blueitem[SAM \break Submode]
     \textbf{S}ituational \textbf{A}warness \textbf{M}ode
 
     \begin{itemize}
@@ -70,8 +70,8 @@
             \item scan pauses on SAM target
             \item FCR manages scan volume
         \end{itemize}
-    \end{itemize}}
-    \blueitem{DTT \break Submode}{
+    \end{itemize}
+    \blueitem[DTT \break Submode]
     \textbf{D}ual \textbf{T}arget \textbf{T}rack
 
     \begin{itemize}
@@ -88,8 +88,8 @@
         \end{itemize}
         \item \textbf{Within 10nm search pattern inhibited} --- radar only scans primary/secondary targets
         \item \textbf{Once \underline{either} target within 3nm automatically transitions to STT}
-    \end{itemize}}
-    \blueitem{Spotlight}{
+    \end{itemize}
+    \blueitem[Spotlight]{
         
     \textbf{Narrow scan centered on acquisition cursor}
     \begin{itemize}
@@ -154,29 +154,27 @@
 
 \subsubsection{SELECT RWS MODE}
 \begin{checklistenumerate}
-    \blueitem{FCR Switch}{\textbf{FCR}}
-    \blueitem{Desired MFD}{\textbf{FCR Page}, verify \textbf{SOI}}
-    \blueitem{Radar Mode}{
+    \blueitem[FCR Switch] \textbf{FCR}
+    \blueitem[Desired MFD] \textbf{FCR Page}, verify \textbf{SOI}
+    \blueitem[Radar Mode]
         \textbf{CRM} (default), verify
 
         \begin{itemize}
             \item \textbf{Dogfight/Missile Override} --- \textbf{NORM}
             \item \textbf{Radar Mode (OSB 1)} --- shows \textbf{CRM}
         \end{itemize}
-    }
-    \blueitem{CRM Submode}{
+    \blueitem[CRM Submode]
         \textbf{RWS} (default), cycle via 
 
         \begin{itemize}
             \item \textbf{TMS Right (long)} / \textbf{OSB 2} 
         \end{itemize}
-    }
 \end{checklistenumerate}
 
 \subsubsection{SAM / DTT ACQUISITION}
 \label{subsec:rws:samdttacq}
 \begin{checklistenumerate}
-    \blueitem{Locate Targets}{
+    \blueitem[Locate Targets]
     \begin{enumerate}
         \item Correlate onboard/offboard sensors
         \begin{itemize}
@@ -184,8 +182,8 @@
             \item AWACS calls, datalink targets
         \end{itemize}
         \item Place targets within radar scan volume
-    \end{enumerate}}
-    \blueitem{SAM Acquisition}{
+    \end{enumerate}
+    \blueitem[SAM Acquisition]
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -216,8 +214,8 @@
         \item Can guide AIM-120C on Bugged target
         \item DLZ displayed if missile selected
         \item RWS search continues
-    \end{itemize}}
-    \blueitem{DTT Acquisition}{(if desired)
+    \end{itemize}
+    \blueitem[DTT Acquisition] (if desired)
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -249,17 +247,16 @@
     \begin{enumerate}[start=3]
         \item \textbf{TMS} \dotfill \textbf{Left}
     \end{enumerate}
-    }
-    \blueitem{STT Lock}{(if desired)
+    \blueitem[STT Lock] (if desired)
     \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{enumerate}}
+    \end{enumerate}
 \end{checklistenumerate}
 
 \subsubsection{SPOTLIGHT ACQUISITION}
 \begin{checklistenumerate}
-    \blueitem{Locate Targets}{
+    \blueitem[Locate Targets]
     \begin{enumerate}
         \item Correlate onboard/offboard sensors
         \begin{itemize}
@@ -267,8 +264,8 @@
             \item AWACS calls, datalink targets
         \end{itemize}
         \item Place target within radar scan limits
-    \end{enumerate}}
-    \blueitem{Spotlight Search}{
+    \end{enumerate}
+    \blueitem[Spotlight Search]
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -321,8 +318,8 @@
         \begin{itemize}
             \item FCR enters \pm10deg scan around acquisition cursor
         \end{itemize}
-    \end{enumerate}}
-    \blueitem{SAM Acquisition}{
+    \end{enumerate}
+    \blueitem[SAM Acquisition]
     \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward (release)}
@@ -332,12 +329,12 @@
         \item Can guide AIM-120C on Bugged target
         \item DLZ displayed if missile selected
         \item RWS search continues
-    \end{itemize}}
-    \blueitem{STT Lock}{(if desired)
+    \end{itemize}
+    \blueitem[STT Lock] (if desired)
     \begin{enumerate}
         \item \textbf{Target} \dotfill under Acquisition Cursor
         \item \textbf{TMS} \dotfill \textbf{Forward}
-    \end{enumerate}}
+    \end{enumerate}
 \end{checklistenumerate}
 
 \marginfigrestore

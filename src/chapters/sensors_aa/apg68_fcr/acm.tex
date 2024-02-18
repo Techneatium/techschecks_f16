@@ -1,7 +1,7 @@
 \subsection{ACM}
 \label{subsec:acm}
 \begin{tcoloritemize}
-    \blueitem{ACM}{
+    \blueitem[ACM]
     \textbf{A}ir \textbf{C}ombat \textbf{M}ode
 
     \begin{itemize}
@@ -13,7 +13,7 @@
             \item \textbf{Vertical Scan} --- 10x60 deg
             \item \textbf{Slewable} --- WIP
         \end{itemize}
-    \end{itemize}}
+    \end{itemize}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -296,7 +296,7 @@
 \end{figure}
 
 \begin{tcoloritemize}
-    \blueitem{HUD Submode}{
+    \blueitem[HUD Submode]
     \begin{itemize}
         \item \textbf{30x20 deg scan} --- slightly larger than HUD
         \item \textbf{Lock Range} --- 10 nm
@@ -307,8 +307,8 @@
             \item \textbf{FCR Format} --- displays \textbf{ACM 20}
             \item \textbf{HUD} --- no special symbology
         \end{itemize}
-    \end{itemize}}
-    \blueitem{BORE Submode}{
+    \end{itemize}
+    \blueitem[BORE Submode]
     \begin{itemize}
         \item \textbf{Small, 1-beamwidth scan}
         \begin{itemize}
@@ -324,8 +324,8 @@
             \item \textbf{HUD} --- Boresight Cross at center of radar scan zone
             \item \textbf{HMD} --- Oval centered on HMD aiming cross
         \end{itemize}
-    \end{itemize}}
-    \blueitem{Vertical \break Submode}{
+    \end{itemize}
+    \blueitem[Vertical \break Submode]
     \begin{itemize}
         \item \textbf{10x60 deg scan}
         \begin{itemize}
@@ -339,8 +339,8 @@
             \item \textbf{FCR Format} --- displays \textbf{ACM 60}
             \item \textbf{HUD} --- Vertical line
         \end{itemize}
-    \end{itemize}}
-    \blueitem{Slewable \break Submode --- WIP}{
+    \end{itemize}
+    \blueitem[Slewable \break Submode --- WIP]
     \begin{itemize}
         \item \textbf{Scan} --- WIP
         \item \textbf{Lock Range} --- WIP
@@ -350,15 +350,15 @@
             \item \textbf{FCR Format} --- displays \textbf{ACM SLEW}
             \item \textbf{HUD} --- WIP
         \end{itemize}
-    \end{itemize}}
-    \blueitem{NO RAD}{Upon selection of \textbf{ACM} or dropping target lock the radar is placed in non-radiating state}
+    \end{itemize}
+    \blueitem[NO RAD]{Upon selection of \textbf{ACM} or dropping target lock the radar is placed in non-radiating state}
 \end{tcoloritemize}
 
 \marginfigeometry
 
 \subsubsection{HUD / BORE / VERTICAL ACQUISITION}
 \begin{checklistenumerate}
-    \blueitem{FCR Setup}{
+    \blueitem[FCR Setup]
     \marginpar{
         \captionsetup{type=figure}
         \begin{subfigure}[t]{\linewidth}
@@ -420,35 +420,35 @@
     \begin{enumerate}
         \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
-    \end{enumerate}}
-    \blueitem{Enter ACM}{
+    \end{enumerate}
+    \blueitem[Enter ACM]
     \begin{enumerate}
         \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
         \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
-    \end{enumerate}}
-    \blueitem{Select ACM Submode}{
+    \end{enumerate}
+    \blueitem[Select ACM Submode]
     \begin{itemize}
         \item \textbf{HUD} (default ACM mode) \dotfill \textbf{TMS Right}
         \item \textbf{Bore} \dotfill \textbf{TMS Forward}
         \item \textbf{Vertical} \dotfill \textbf{TMS Aft}
-    \end{itemize}}
-    \blueitem{Target Acquisition}{
+    \end{itemize}
+    \blueitem[Target Acquisition]
     \begin{enumerate}
         \item Maneuver aircraft to place target within selected ACM scan volume 
         \item Wait for automatic transition to STT 
-    \end{enumerate}}
-    \blueitem{Target Rejection}{%
+    \end{enumerate}
+    \blueitem[Target Rejection]
     To unlock target
     \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Aft}
     \end{enumerate}
     Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
-    }
+    
 \end{checklistenumerate}
 
 \subsubsection{HMD ACQUISITION}
 \begin{checklistenumerate}
-    \blueitem{FCR/MFD Setup}{
+    \blueitem[FCR/MFD Setup]
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -461,29 +461,28 @@
         \item \textbf{FCR Switch} \dotfill \textbf{FCR}
         \item \textbf{Desired MFD} \dotfill \textbf{FCR Page}
         \item \textbf{HMD Brightness} \dotfill \textbf{On}
-    \end{enumerate}}
-    \blueitem{Enter ACM}{
+    \end{enumerate}
+    \blueitem[Enter ACM]
     \begin{enumerate}
         \item \textbf{Dogfight/Missile Override} \dotfill \textbf{DGFT}
         \item \textbf{Radar Mode (OSB 2)} \dotfill verify \textbf{ACM}
-    \end{enumerate}}
-    \blueitem{Select ACM Bore Submode}{
+    \end{enumerate}
+    \blueitem[Select ACM Bore Submode]
     \begin{itemize}
         \item \textbf{Bore} \dotfill \textbf{TMS Forward}
-    \end{itemize}}
-    \blueitem{Target Acquisition}{
+    \end{itemize}
+    \blueitem[Target Acquisition]
     \begin{enumerate}
         \item Maneuver aircraft to place target within 60 deg of nose 
         \item Place target within HMD acquisition circle
         \item Wait for automatic transition to STT 
-    \end{enumerate}}
-    \blueitem{Target Rejection}{%
+    \end{enumerate}
+    \blueitem[Target Rejection]
     To unlock target
     \begin{enumerate}
         \item \textbf{TMS} \dotfill \textbf{Aft}
     \end{enumerate}
-    Radar returns to \textbf{HUD} submode in \textbf{NO RAD} 
-    }
+    Radar returns to \textbf{HUD} submode in \textbf{NO RAD}
 \end{checklistenumerate}
 
 \subsubsection{SLEWABLE ACQUISITION --- WIP}

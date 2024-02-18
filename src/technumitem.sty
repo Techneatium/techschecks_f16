@@ -24,9 +24,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{technumitem}[2024/01/23]
 
-\RequirePackage{booktabs} % fancy tables
-\RequirePackage{multirow} % more fancy tables
-\RequirePackage{longtable} % multi page tables
+\RequirePackage{enumitem} % better enumerate/itemize formatting
 
 \RequirePackage{tcolorbox} % for rounded boxes
 \tcbuselibrary{skins, breakable}
@@ -58,17 +56,16 @@
 \newcounter{checklistnumistart} % used to check if first line to prevent
 
 % Key to start an enumerate at a given number
-\define@key{checklistnumitem}{start}{
-	\setcounter{checklistnumi}{#1}
-	\setcounter{checklistnumistart}{\value{tcolornumi}}
+\define@key{checklistnumitem}{start}{%
+	\setcounter{checklistnumi}{#1}%
+	\setcounter{checklistnumistart}{\value{tcolornumi}}%
 }
 
 % Key to resume an enumerate at previous number
-\define@key{checklistnumitem}{resume}[]{
-	\setcounter{checklistnumistart}{\value{tcolornumi}}
+\define@key{checklistnumitem}{resume}[]{%
+	\setcounter{checklistnumistart}{\value{tcolornumi}}%
 }
 
-% SHORT VERSIONS
 \newenvironment{checklistenumerate}[1][start=1]{% begdef
     \setkeys{checklistnumitem}{#1}%
 	\newcommand{\blueitem}[1][]{%
@@ -103,7 +100,6 @@
     breakable,
     colback=white,
     colframe=color1,
-    % sharp corners=north,
     colbacktitle=color1,
     coltitle=white,
     left=0mm,
@@ -128,7 +124,6 @@
     nobeforeafter,
     colback=white,
     colframe=color1,
-    % sharp corners,
     boxrule=0.5mm,
     colbacktitle=color1,
     coltitle=white,
@@ -164,14 +159,14 @@
 \newcounter{tcolornumistart} % used to check if first line to prevent
 
 % Key to start an enumerate at a given number
-\define@key{tcolornumitem}{start}{
-	\setcounter{tcolornumi}{#1}
-	\setcounter{tcolornumistart}{\value{tcolornumi}}
+\define@key{tcolornumitem}{start}{%
+	\setcounter{tcolornumi}{#1}%
+	\setcounter{tcolornumistart}{\value{tcolornumi}}%
 }
 
 % Key to resume an enumerate at previous number
-\define@key{tcolornumitem}{resume}[]{
-	\setcounter{tcolornumistart}{\value{tcolornumi}}
+\define@key{tcolornumitem}{resume}[]{%
+	\setcounter{tcolornumistart}{\value{tcolornumi}}%
 }
 
 \newenvironment{tcolorenumerate}[1][start=1]{% begdef

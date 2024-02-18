@@ -798,7 +798,7 @@
 	\end{tcolorbox}
 }
 
-\newcommand{\warningbox}[1]{
+\newcommand{\cautionbox}[1]{
 	\begin{tcolorbox}[
 		enhanced,
 		colback=white,
@@ -847,7 +847,7 @@
 	}
 }
 
-\newcommand{\marwarningbox}[1]{
+\newcommand{\marcautionbox}[1]{
 	\marginpar{
 		\begin{tcolorbox}[
 			enhanced,
@@ -868,7 +868,7 @@
 			sharp corners,
 			drop shadow=color1!100,
 			},
-			title=\large WARNING
+			title=\large CAUTION
 		]
 			{#1}
 		\end{tcolorbox}

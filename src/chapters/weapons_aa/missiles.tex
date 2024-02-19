@@ -661,84 +661,6 @@
     \end{minipage}
 \end{figure}
 
-% \begin{figure}[htbp]
-%     \centering
-%     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-%         >={Latex[round]}
-%         ]
-        
-%         \coordinate (lead) at (0,0);
-%         \coordinate (wing) at ($(lead)+(-45:27.5)$);
-
-%         \node[yshift=-3mm] (leadfig) at (lead) {
-%             \includegraphics[
-%                 width=7.5mm,
-%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
-%         };
-        
-%         \node[] (wingfig) at (wing) {
-%             \includegraphics[
-%                 width=7.5mm,
-%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
-%         };
-
-%         \draw[dashed]
-%         (lead) -- ++(-30:15) arc (-30:-60:15) -- (lead);
-
-%         \draw[]
-%         ($(lead)+(-30:15)$) 
-%         -- ++(-30:25) node[font=\footnotesize, pos=1, right] {30$^\circ$}
-%         arc  (-30:-60:40) 
-%         node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'}
-%         node[font=\footnotesize, pos=1, below right] {60$^\circ$}
-%         -- ++(120:25)
-%         arc (-60:-30:15)
-%         node[font=\footnotesize, below, pos=0.5, rotate=45] {500'};
-
-%     \end{tikzpicture}
-%     \caption{Fighting wing formation}
-%     \label{fig:aa_weap:form:fightingwing}
-% \end{figure}
-
-% \begin{figure}[htbp]
-%     \centering
-%     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-%         >={Latex[round]}
-%         ]
-        
-%         \coordinate (lead) at (0,0);
-%         \coordinate (wing) at ($(lead)+(-45:45)$);
-
-%         \node[yshift=-3mm] (leadfig) at (lead) {
-%             \includegraphics[
-%                 width=7.5mm,
-%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
-%         };
-        
-%         \node[] (wingfig) at (wing) {
-%             \includegraphics[
-%                 width=7.5mm,
-%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
-%         };
-
-%         \draw[dashed]
-%         (lead) -- ++(-30:30) arc (-30:-60:30) -- (lead);
-
-%         \draw[]
-%         ($(lead)+(-30:30)$) 
-%         -- ++(-30:30) node[font=\footnotesize, pos=1, right] {30$^\circ$}
-%         arc  (-30:-60:60) 
-%         node[font=\footnotesize, below, pos=0.5, rotate=45] {6000'}
-%         node[font=\footnotesize, pos=1, below right] {60$^\circ$}
-%         -- ++(120:30)
-%         arc (-60:-30:30)
-%         node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'};
-
-%     \end{tikzpicture}
-%     \caption{Two-ship wedge formation}
-%     \label{fig:aa_weap:form:wedge}
-% \end{figure}
-
 \begin{tcoloritemize}
     \blueitem[Line Abreast]
     \textbf{Tactical A-A Formation} --- mutual 6'o'clock cover, ensures all flight members in position to shoot simultaneously
@@ -762,11 +684,11 @@
 
 \begin{figure}[htbp]
     \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            
-            \coordinate (lead) at (0,0);
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \coordinate (lead) at (0,0);
         \coordinate (wing) at ($(lead)+(0:40)$);
 
         \draw[dashed]
@@ -781,20 +703,20 @@
         -- ++(160:40)
         arc (-20:0:20)
         node[font=\footnotesize, right, pos=0.5] {4000'};
-    
-            \node[yshift=-3mm] (leadfig) at (lead) {
-                \includegraphics[
-                    width=7.5mm,
-                ]{diagrams/aircraft/silhouette_f16_top.pdf}
-            };
-            
-            \node[yshift=-3mm] (wingfig) at (wing) {
-                \includegraphics[
-                    width=7.5mm,
-                ]{diagrams/aircraft/silhouette_f16_top.pdf}
-            };
 
-        \end{tikzpicture}
+        \node[yshift=-3mm] (leadfig) at (lead) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        
+        \node[yshift=-3mm] (wingfig) at (wing) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+
+    \end{tikzpicture}
     \caption{Two-ship line abreast formation}
     \label{fig:aa_weap:form:lineabreast}
 \end{figure}

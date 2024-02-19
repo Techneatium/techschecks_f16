@@ -762,21 +762,25 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{0.45\linewidth}
-        \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
             >={Latex[round]}
             ]
             
             \coordinate (lead) at (0,0);
-            \coordinate (wing) at (40,0);
+        \coordinate (wing) at ($(lead)+(0:40)$);
 
-            \draw[thin, <->]
-            ($(lead)+(0,7.5)$) -- node[font=\small, pos=0.5, above]{4,000'-12,000'}
-            ($(wing)+(0,7.5)$);
-            \draw[thin]
-            (lead) -- ($(lead)+(0,10)$)
-            (wing) -- ($(wing)+(0,10)$);
+        \draw[dashed]
+        (lead) -- ++(0:20) arc (0:-20:20) -- (lead);
+
+        \draw[fill=color2!15]
+        ($(lead)+(0:20)$) 
+        -- ++(0:40) node[font=\footnotesize, pos=1, right] {0$^\circ$}
+        arc  (0:-20:60) 
+        node[font=\footnotesize, right, pos=0.5] {12000'}
+        node[font=\footnotesize, pos=1, below right] {20$^\circ$}
+        -- ++(160:40)
+        arc (-20:0:20)
+        node[font=\footnotesize, right, pos=0.5] {4000'};
     
             \node[yshift=-3mm] (leadfig) at (lead) {
                 \includegraphics[
@@ -789,66 +793,8 @@
                     width=7.5mm,
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}
             };
-    
-            \draw[dashed]
-            (lead) -- ++(40, 0) arc (0:-20:40) -- (lead);
-
-            \draw[thin, <->]
-            ($(lead)+(20,0)$) arc (0:-20:20) node[pos=0.5, right]{\small 0-20$^\circ$};
-    
-        \end{tikzpicture}
-        \caption{horizontal spacing}
-    \end{subfigure}
-    \begin{subfigure}{0.50\linewidth}
-        \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
-            
-            \coordinate (lead) at (0,0);
-            \coordinate (wing) at (40,0);
-            \coordinate (winghigh) at ($(wing)+(0,7.5)$);
-            \coordinate (winglow) at ($(wing)+(0,-7.5)$);
-
-            \draw[thin, <->]
-            ($(winghigh)+(5,0)$) -- node[font=\small,rotate=90, pos=0.5, below]{\pm 2,000'}
-            ($(winglow)+(5,0)$);
-            \draw[thin]
-            (winghigh) -- ($(winghigh)+(7.5,0)$)
-            (winglow) -- ($(winglow)+(7.5,0)$);
-    
-            \node[] (leadfig) at (lead) {
-                \includegraphics[
-                    width=10mm,
-                ]{diagrams/aircraft/wireframe_front.pdf}
-            };
-            
-            \node[] (wingfig) at (wing) {
-                \includegraphics[
-                    width=10mm,
-                ]{diagrams/aircraft/wireframe_front.pdf}
-            };
-            
-            \node[] (winghighfig) at (winghigh) {
-                \includegraphics[
-                    width=10mm,
-                ]{diagrams/aircraft/wireframe_front.pdf}
-            };
-            
-            \node[] (winglowfig) at (winglow) {
-                \includegraphics[
-                    width=10mm,
-                ]{diagrams/aircraft/wireframe_front.pdf}
-            };
-    
-            \draw[dashed]
-            (lead) -- (wing)
-            (lead) -- (winghigh)
-            (lead) -- (winglow);
 
         \end{tikzpicture}
-        \caption{vertical spacing}
-    \end{subfigure}
     \caption{Two-ship line abreast formation}
     \label{fig:aa_weap:form:lineabreast}
 \end{figure}

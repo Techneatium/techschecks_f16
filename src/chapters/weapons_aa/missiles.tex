@@ -537,3 +537,234 @@
 \end{center}
 
 \marginfigrestore
+
+\subsection{FORMATIONS}
+
+\begin{tcoloritemize}
+    \blueitem[Fighting Wing]
+    \textbf{Easiest for wingman} --- used in low-threat areas, allows heads-down time
+
+    \medskip
+
+    \textbf{Advantages}
+    \begin{itemize}
+        \item easy to maintain
+        \item leader's 6'o'clock covered
+    \end{itemize}
+
+    \textbf{Disadvantages}
+    \begin{itemize}
+        \item wingman's 6'o'clock NOT covered
+        \item close proximity
+    \end{itemize}
+
+    Reference \cref{fig:aa_weap:form:fightingwing} for illustration
+    \blueitem[Wedge]
+
+    \textbf{Advantages}
+    \begin{itemize}
+        \item easy to maintain
+        \item leader's 6'o'clock covered
+        \item free for aggressive maneuvering
+    \end{itemize}
+
+    \textbf{Disadvantages}
+    \begin{itemize}
+        \item wingman's 6'o'clock NOT covered
+        \item lead changes difficult
+    \end{itemize}
+
+    Reference \cref{fig:aa_weap:form:wedge} for illustration
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \coordinate (lead) at (0,0);
+        \coordinate (wing) at ($(lead)+(-45:27.5)$);
+
+        \node[yshift=-3mm] (leadfig) at (lead) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        
+        \node[] (wingfig) at (wing) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+
+        \draw[dashed]
+        (lead) -- ++(-30:15) arc (-30:-60:15) -- (lead);
+
+        \draw[]
+        ($(lead)+(-30:15)$) 
+        -- ++(-30:25) node[font=\footnotesize, pos=1, right] {30$^\circ$}
+        arc  (-30:-60:40) 
+        node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'}
+        node[font=\footnotesize, pos=1, below right] {60$^\circ$}
+        -- ++(120:25)
+        arc (-60:-30:15)
+        node[font=\footnotesize, below, pos=0.5, rotate=45] {500'};
+
+    \end{tikzpicture}
+    \caption{Fighting wing formation}
+    \label{fig:aa_weap:form:fightingwing}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \coordinate (lead) at (0,0);
+        \coordinate (wing) at ($(lead)+(-45:45)$);
+
+        \node[yshift=-3mm] (leadfig) at (lead) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        
+        \node[] (wingfig) at (wing) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+
+        \draw[dashed]
+        (lead) -- ++(-30:30) arc (-30:-60:30) -- (lead);
+
+        \draw[]
+        ($(lead)+(-30:30)$) 
+        -- ++(-30:30) node[font=\footnotesize, pos=1, right] {30$^\circ$}
+        arc  (-30:-60:60) 
+        node[font=\footnotesize, below, pos=0.5, rotate=45] {6000'}
+        node[font=\footnotesize, pos=1, below right] {60$^\circ$}
+        -- ++(120:30)
+        arc (-60:-30:30)
+        node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'};
+
+    \end{tikzpicture}
+    \caption{Two-ship wedge formation}
+    \label{fig:aa_weap:form:wedge}
+\end{figure}
+
+\begin{tcoloritemize}
+    \blueitem[Line Abreast]
+    \textbf{Tactical A-A Formation} --- mutual 6'o'clock cover, ensures all flight members in position to shoot simultaneously
+    \medskip
+
+    \textbf{Advantages}
+    \begin{itemize}
+        \item mutual 6'o'clock cover
+        \item laterally spread
+        \item simplifies tactical turns
+        \item allows simultaneous bandit engagement
+    \end{itemize}
+
+    \textbf{Disadvantages}
+    \begin{itemize}
+        \item difficult to maintain
+    \end{itemize}
+
+    Reference \cref{fig:aa_weap:form:lineabreast} for illustration
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \coordinate (lead) at (0,0);
+            \coordinate (wing) at (40,0);
+
+            \draw[thin, <->]
+            ($(lead)+(0,7.5)$) -- node[font=\small, pos=0.5, above]{4,000'-12,000'}
+            ($(wing)+(0,7.5)$);
+            \draw[thin]
+            (lead) -- ($(lead)+(0,10)$)
+            (wing) -- ($(wing)+(0,10)$);
+    
+            \node[yshift=-3mm] (leadfig) at (lead) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[yshift=-3mm] (wingfig) at (wing) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+    
+            \draw[dashed]
+            (lead) -- ++(40, 0) arc (0:-20:40) -- (lead);
+
+            \draw[thin, <->]
+            ($(lead)+(20,0)$) arc (0:-20:20) node[pos=0.5, right]{\small 0-20$^\circ$};
+    
+        \end{tikzpicture}
+        \caption{horizontal spacing}
+    \end{subfigure}
+    \begin{subfigure}{0.50\linewidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \coordinate (lead) at (0,0);
+            \coordinate (wing) at (40,0);
+            \coordinate (winghigh) at ($(wing)+(0,7.5)$);
+            \coordinate (winglow) at ($(wing)+(0,-7.5)$);
+
+            \draw[thin, <->]
+            ($(winghigh)+(5,0)$) -- node[font=\small,rotate=90, pos=0.5, below]{\pm 2,000'}
+            ($(winglow)+(5,0)$);
+            \draw[thin]
+            (winghigh) -- ($(winghigh)+(7.5,0)$)
+            (winglow) -- ($(winglow)+(7.5,0)$);
+    
+            \node[] (leadfig) at (lead) {
+                \includegraphics[
+                    width=10mm,
+                ]{diagrams/aircraft/wireframe_front.pdf}
+            };
+            
+            \node[] (wingfig) at (wing) {
+                \includegraphics[
+                    width=10mm,
+                ]{diagrams/aircraft/wireframe_front.pdf}
+            };
+            
+            \node[] (winghighfig) at (winghigh) {
+                \includegraphics[
+                    width=10mm,
+                ]{diagrams/aircraft/wireframe_front.pdf}
+            };
+            
+            \node[] (winglowfig) at (winglow) {
+                \includegraphics[
+                    width=10mm,
+                ]{diagrams/aircraft/wireframe_front.pdf}
+            };
+    
+            \draw[dashed]
+            (lead) -- (wing)
+            (lead) -- (winghigh)
+            (lead) -- (winglow);
+
+        \end{tikzpicture}
+        \caption{vertical spacing}
+    \end{subfigure}
+    \caption{Two-ship line abreast formation}
+    \label{fig:aa_weap:form:lineabreast}
+\end{figure}

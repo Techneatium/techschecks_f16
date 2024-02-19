@@ -864,27 +864,9 @@
         \coordinate (3) at ($(1)+(20,0)$);
         \coordinate (4) at ($(3)+(-45:20)$);
 
-        \draw[dashed]
-        (1) -- ++(-150:10) arc (-150:-120:10) -- (1);
-
-        \draw[fill=color2!15]
-        ($(1)+(-150:10)$) 
-        -- ++(-150:20)
-        arc  (-150:-120:30) 
-        node[font=\footnotesize, pos=0.5, below left] {fighting wing}
-        -- ++(60:20)
-        arc (-120:-150:10);
-
-        \draw[dashed]
-        (3) -- ++(-30:10) arc (-30:-60:10) -- (3);
-
-        \draw[fill=color2!15]
-        ($(3)+(-30:10)$) 
-        -- ++(-30:20)
-        arc  (-30:-60:30) 
-        node[font=\footnotesize, pos=0.5, below right] {fighting wing}
-        -- ++(120:20)
-        arc (-60:-30:10);
+        \draw[thin]
+        (1) -- (2) node[font=\footnotesize, pos=0.5, above left] {fighting wing}
+        (3) -- (4)node[font=\footnotesize, pos=0.5, above right] {fighting wing};
 
         \draw[thin, <->]
         ($(1)+(0,5)$) 
@@ -900,7 +882,7 @@
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
         
-        \node[] (2fig) at (2) {
+        \node[yshift=-2mm] (2fig) at (2) {
             \includegraphics[
                 width=5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
@@ -912,7 +894,7 @@
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
         
-        \node[] (4fig) at (4) {
+        \node[yshift=-2mm] (4fig) at (4) {
             \includegraphics[
                 width=5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}

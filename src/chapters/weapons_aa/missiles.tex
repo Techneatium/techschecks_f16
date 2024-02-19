@@ -852,3 +852,73 @@
     \label{fig:aa_weap:form:boxoffset}
     \end{minipage}
 \end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+        >={Latex[round]}
+        ]
+        
+        \coordinate (1) at (0,0);
+        \coordinate (2) at ($(1)+(-135:20)$);
+        \coordinate (3) at ($(1)+(20,0)$);
+        \coordinate (4) at ($(3)+(-45:20)$);
+
+        \draw[dashed]
+        (1) -- ++(-150:10) arc (-150:-120:10) -- (1);
+
+        \draw[fill=color2!15]
+        ($(1)+(-150:10)$) 
+        -- ++(-150:20)
+        arc  (-150:-120:30) 
+        node[font=\footnotesize, pos=0.5, below left] {fighting wing}
+        -- ++(60:20)
+        arc (-120:-150:10);
+
+        \draw[dashed]
+        (3) -- ++(-30:10) arc (-30:-60:10) -- (3);
+
+        \draw[fill=color2!15]
+        ($(3)+(-30:10)$) 
+        -- ++(-30:20)
+        arc  (-30:-60:30) 
+        node[font=\footnotesize, pos=0.5, below right] {fighting wing}
+        -- ++(120:20)
+        arc (-60:-30:10);
+
+        \draw[thin, <->]
+        ($(1)+(0,5)$) 
+        -- ($(3)+(0,5)$)
+        node[font=\footnotesize, pos=0.5, above] {line abreast};
+        \draw[thin]
+        (1) -- ($(1)+(0,7)$)
+        (3) -- ($(3)+(0,7)$);
+
+        \node[yshift=-2mm] (1fig) at (1) {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        
+        \node[] (2fig) at (2) {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+
+        \node[yshift=-2mm] (3fig) at (3) {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        
+        \node[] (4fig) at (4) {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+
+    \end{tikzpicture}
+    \caption{Fluid-four formation}
+    \label{fig:aa_weap:form:fluidfour}
+\end{figure}

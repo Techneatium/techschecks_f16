@@ -583,81 +583,161 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
-        
-        \coordinate (lead) at (0,0);
-        \coordinate (wing) at ($(lead)+(-45:27.5)$);
-
-        \node[yshift=-3mm] (leadfig) at (lead) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-        
-        \node[] (wingfig) at (wing) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-
-        \draw[dashed]
-        (lead) -- ++(-30:15) arc (-30:-60:15) -- (lead);
-
-        \draw[]
-        ($(lead)+(-30:15)$) 
-        -- ++(-30:25) node[font=\footnotesize, pos=1, right] {30$^\circ$}
-        arc  (-30:-60:40) 
-        node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'}
-        node[font=\footnotesize, pos=1, below right] {60$^\circ$}
-        -- ++(120:25)
-        arc (-60:-30:15)
-        node[font=\footnotesize, below, pos=0.5, rotate=45] {500'};
-
-    \end{tikzpicture}
-    \caption{Fighting wing formation}
-    \label{fig:aa_weap:form:fightingwing}
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \coordinate (lead) at (0,0);
+            \coordinate (wing) at ($(lead)+(-45:27.5)$);
+    
+            \node[yshift=-3mm] (leadfig) at (lead) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[] (wingfig) at (wing) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+    
+            \draw[dashed]
+            (lead) -- ++(-30:15) arc (-30:-60:15) -- (lead);
+    
+            \draw[]
+            ($(lead)+(-30:15)$) 
+            -- ++(-30:25) node[font=\footnotesize, pos=1, right] {30$^\circ$}
+            arc  (-30:-60:40) 
+            node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'}
+            node[font=\footnotesize, pos=1, below right] {60$^\circ$}
+            -- ++(120:25)
+            arc (-60:-30:15)
+            node[font=\footnotesize, below, pos=0.5, rotate=45] {500'};
+    
+        \end{tikzpicture}
+        \caption{Fighting wing formation}
+        \label{fig:aa_weap:form:fightingwing}
+    \end{minipage}%
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+            >={Latex[round]}
+            ]
+            
+            \coordinate (lead) at (0,0);
+            \coordinate (wing) at ($(lead)+(-45:30)$);
+    
+            \node[yshift=-3mm] (leadfig) at (lead) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[] (wingfig) at (wing) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+    
+            \draw[dashed]
+            (lead) -- ++(-30:20) arc (-30:-60:20) -- (lead);
+    
+            \draw[]
+            ($(lead)+(-30:20)$) 
+            -- ++(-30:20) node[font=\footnotesize, pos=1, right] {30$^\circ$}
+            arc  (-30:-60:40) 
+            node[font=\footnotesize, below, pos=0.5, rotate=45] {6000'}
+            node[font=\footnotesize, pos=1, below right] {60$^\circ$}
+            -- ++(120:20)
+            arc (-60:-30:20)
+            node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'};
+    
+        \end{tikzpicture}
+        \caption{Two-ship wedge formation}
+        \label{fig:aa_weap:form:wedge}
+    \end{minipage}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+%         >={Latex[round]}
+%         ]
         
-        \coordinate (lead) at (0,0);
-        \coordinate (wing) at ($(lead)+(-45:45)$);
+%         \coordinate (lead) at (0,0);
+%         \coordinate (wing) at ($(lead)+(-45:27.5)$);
 
-        \node[yshift=-3mm] (leadfig) at (lead) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
+%         \node[yshift=-3mm] (leadfig) at (lead) {
+%             \includegraphics[
+%                 width=7.5mm,
+%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
+%         };
         
-        \node[] (wingfig) at (wing) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
+%         \node[] (wingfig) at (wing) {
+%             \includegraphics[
+%                 width=7.5mm,
+%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
+%         };
 
-        \draw[dashed]
-        (lead) -- ++(-30:30) arc (-30:-60:30) -- (lead);
+%         \draw[dashed]
+%         (lead) -- ++(-30:15) arc (-30:-60:15) -- (lead);
 
-        \draw[]
-        ($(lead)+(-30:30)$) 
-        -- ++(-30:30) node[font=\footnotesize, pos=1, right] {30$^\circ$}
-        arc  (-30:-60:60) 
-        node[font=\footnotesize, below, pos=0.5, rotate=45] {6000'}
-        node[font=\footnotesize, pos=1, below right] {60$^\circ$}
-        -- ++(120:30)
-        arc (-60:-30:30)
-        node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'};
+%         \draw[]
+%         ($(lead)+(-30:15)$) 
+%         -- ++(-30:25) node[font=\footnotesize, pos=1, right] {30$^\circ$}
+%         arc  (-30:-60:40) 
+%         node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'}
+%         node[font=\footnotesize, pos=1, below right] {60$^\circ$}
+%         -- ++(120:25)
+%         arc (-60:-30:15)
+%         node[font=\footnotesize, below, pos=0.5, rotate=45] {500'};
 
-    \end{tikzpicture}
-    \caption{Two-ship wedge formation}
-    \label{fig:aa_weap:form:wedge}
-\end{figure}
+%     \end{tikzpicture}
+%     \caption{Fighting wing formation}
+%     \label{fig:aa_weap:form:fightingwing}
+% \end{figure}
+
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
+%         >={Latex[round]}
+%         ]
+        
+%         \coordinate (lead) at (0,0);
+%         \coordinate (wing) at ($(lead)+(-45:45)$);
+
+%         \node[yshift=-3mm] (leadfig) at (lead) {
+%             \includegraphics[
+%                 width=7.5mm,
+%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
+%         };
+        
+%         \node[] (wingfig) at (wing) {
+%             \includegraphics[
+%                 width=7.5mm,
+%             ]{diagrams/aircraft/silhouette_f16_top.pdf}
+%         };
+
+%         \draw[dashed]
+%         (lead) -- ++(-30:30) arc (-30:-60:30) -- (lead);
+
+%         \draw[]
+%         ($(lead)+(-30:30)$) 
+%         -- ++(-30:30) node[font=\footnotesize, pos=1, right] {30$^\circ$}
+%         arc  (-30:-60:60) 
+%         node[font=\footnotesize, below, pos=0.5, rotate=45] {6000'}
+%         node[font=\footnotesize, pos=1, below right] {60$^\circ$}
+%         -- ++(120:30)
+%         arc (-60:-30:30)
+%         node[font=\footnotesize, below, pos=0.5, rotate=45] {3000'};
+
+%     \end{tikzpicture}
+%     \caption{Two-ship wedge formation}
+%     \label{fig:aa_weap:form:wedge}
+% \end{figure}
 
 \begin{tcoloritemize}
     \blueitem[Line Abreast]

@@ -11,9 +11,7 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
+    \begin{tikzpicture}[figstyle]
         % help lines
         % \draw[help lines] (0,-10) grid (100,10);
 
@@ -256,14 +254,14 @@
                     width=7.5mm,
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}
             };
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,0) -- (0,5) -- +(30:15) node[rotate=-60, anchor=south, yshift=-1mm]{
                 \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
     
             % BANDIT
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,35) -- (0,25);
     
             % help line
@@ -289,14 +287,14 @@
                     width=7.5mm,
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}
             };
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,0) -- (0,5) -- +(0:15) node[rotate=-90, anchor=south, yshift=-1mm]{
                 \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
     
             % BANDIT
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,35) -- (0,25);
     
             % help line
@@ -322,7 +320,7 @@
                     width=7.5mm,
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}
             };
-            \draw[very thick, ->] 
+            \draw[->] 
             (0,0) -- 
             (0,5) arc (180:0:5) --
             (10,0) 
@@ -332,7 +330,7 @@
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
     
             % BANDIT
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,35) -- (0,25);
 
             % help line
@@ -395,7 +393,7 @@
             };
     
             % BANDIT
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,20) -- +(-75:15);
     
             % help line
@@ -423,7 +421,7 @@
             };
     
             % BANDIT
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,20) -- +(-30:15);
     
             % help line
@@ -451,7 +449,7 @@
             };
     
             % BANDIT
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,20) -- +(0:15);
     
             % help line
@@ -479,7 +477,7 @@
             };
     
             % BANDIT
-            \draw[very thick, rounded corners, ->] 
+            \draw[rounded corners, ->] 
             (0,20) -- +(90:15);
     
             % help line
@@ -510,7 +508,7 @@
     \centering
     \begin{tikzpicture}[figstyle]
         
-        \draw[very thick, ->] 
+        \draw[->] 
             (0,0) -- 
             node[below, pos=0]{
                 \includegraphics[
@@ -585,9 +583,7 @@
     \centering
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (lead) at (0,0);
             \coordinate (wing) at ($(lead)+(-45:27.5)$);
@@ -623,9 +619,7 @@
     \end{minipage}%
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (lead) at (0,0);
             \coordinate (wing) at ($(lead)+(-45:30)$);
@@ -684,9 +678,7 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
+    \begin{tikzpicture}[figstyle]
         
         \coordinate (lead) at (0,0);
         \coordinate (wing) at ($(lead)+(0:40)$);
@@ -743,7 +735,7 @@
         \centering
         \begin{tikzpicture}[figstyle]
             
-            \draw[very thick, ->] 
+            \draw[->] 
             (0,0) -- 
             node[below, pos=0]{
                 \includegraphics[
@@ -757,7 +749,7 @@
                     width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
                 
-            \draw[very thick, ->] 
+            \draw[->] 
             (10,0) -- 
             node[below, pos=0]{
                 \includegraphics[
@@ -777,7 +769,7 @@
         \centering
         \begin{tikzpicture}[figstyle]
             
-            \draw[very thick, ->] 
+            \draw[->] 
             (0,0) -- 
             node[below, pos=0]{
                 \includegraphics[
@@ -791,7 +783,7 @@
                     width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
                 
-            \draw[very thick, ->] 
+            \draw[->] 
             (10,0) -- 
             node[below, pos=0]{
                 \includegraphics[
@@ -816,7 +808,7 @@
     \centering
     \begin{tikzpicture}[figstyle]
             
-        \draw[very thick, ->] 
+        \draw[->] 
         (0,0) -- 
         node[below, pos=0]{
             \includegraphics[
@@ -830,7 +822,7 @@
                 width=7.5mm,
         ]{diagrams/aircraft/silhouette_f16_top.pdf}};
             
-        \draw[very thick, ->] 
+        \draw[->] 
         (10,0) -- 
         node[below, pos=0]{
             \includegraphics[
@@ -857,9 +849,7 @@
     \centering
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (1) at (0,0);
             \coordinate (2) at ($(1)+(20,0)$);
@@ -926,9 +916,7 @@
     \end{minipage}%
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (1) at (0,0);
             \coordinate (2) at ($(1)+(20,0)$);
@@ -997,9 +985,7 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-        >={Latex[round]}
-        ]
+    \begin{tikzpicture}[figstyle]
         
         \coordinate (1) at (0,0);
         \coordinate (2) at ($(1)+(-135:20)$);
@@ -1056,9 +1042,7 @@
     \centering
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (1) at (0,0);
             \coordinate (2) at ($(1)+(-150:10)$);
@@ -1100,9 +1084,7 @@
     \end{minipage}%
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (1) at (0,0);
             \coordinate (2) at ($(1)+(-150:10)$);
@@ -1148,9 +1130,7 @@
     \centering
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (1) at (0,0);
             \coordinate (2) at ($(1)+(-90:10)$);
@@ -1192,9 +1172,7 @@
     \end{minipage}%
     \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,
-            >={Latex[round]}
-            ]
+        \begin{tikzpicture}[figstyle]
             
             \coordinate (1) at (0,0);
             \coordinate (2) at ($(1)+(0:10)$);

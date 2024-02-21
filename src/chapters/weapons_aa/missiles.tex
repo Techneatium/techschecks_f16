@@ -723,6 +723,80 @@
 
 \begin{figure}[htbp]
     \centering
+    \begin{tikzpicture}[figstyle]
+            
+        \draw[very thick, ->] 
+        (0,0) -- 
+        node[below, pos=0]{
+            \includegraphics[
+            width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+        ++(0,10) 
+        arc (180:90:10) 
+        -- ++(30,0) 
+        node[above, pos=1, rotate=-90]{
+            \includegraphics[
+                width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+            
+        \draw[very thick, ->] 
+        (20,0) -- 
+        node[below, pos=0]{
+            \includegraphics[
+            width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+        ++(0,30) 
+        arc (180:90:10) 
+        -- ++(10,0) 
+        node[above, pos=1, rotate=-90]{
+            \includegraphics[
+                width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+    \end{tikzpicture}
+    \caption{Tactical turn}
+    \label{fig:aa_weap:form:tacturn}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[figstyle]
+            
+        \draw[very thick, ->] 
+        (0,0) -- 
+        node[below, pos=0]{
+            \includegraphics[
+            width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+        ++(0,20) 
+        arc (180:00:20) 
+        -- ++(0,-10)
+        node[above, pos=1, rotate=180]{
+            \includegraphics[
+                width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+            
+        \draw[very thick, ->] 
+        (20,0) -- 
+        node[below, pos=0]{
+            \includegraphics[
+            width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+        ++(0,20) 
+        arc (180:0:20) 
+        -- ++(0,-10)
+        node[above, pos=1, rotate=180]{
+            \includegraphics[
+                width=7.5mm,
+        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+    \end{tikzpicture}
+    \caption{Hook turn}
+    \label{fig:aa_weap:form:hookturn}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
     \begin{minipage}[b]{0.5\textwidth}
         \centering
         \begin{tikzpicture}[auto, node distance=10mm, x=1mm, y=1mm, very thick, line cap=round,

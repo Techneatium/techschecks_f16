@@ -42,7 +42,11 @@
 \subsection{RANGE DEFINITIONS}
 
 \begin{tcoloritemize}
-    \blueitem[WEZ]
+    \blueitem[Bandit WEZ] \textbf{W}eapon \textbf{E}ngagement \textbf{Zone}
+
+    \medskip
+    range at which bandit weapons can engage fighter, synonomous with bandit R\textsubscript{F-pole} in this document
+
     \blueitem[MAR] \textbf{M}inimum \textbf{A}bort \textbf{R}ange
 
     \medskip
@@ -74,11 +78,19 @@
     \medskip
     minimum range at which a fighter which is out can recommit, 
     retarget and employ an AIM-120 before going out again at MAR
+
     \blueitem[DR] \textbf{D}ecision \textbf{R}ange
+
+    \medskip
+    minimum range at which fighter can execute briefed notch maneuver for launch-and-decide tactics
+
+    \medskip
+
+    \textbf{DR} = max bandit R\textsubscript{F-pole} + bandit closure \times \ t\textsubscript{notch}
 \end{tcoloritemize}
 
 \notebox{
-    \small\textbf{\Crefrange{fig:ttpaa:timeline:banzai}{fig:ttpaa:timeline:skate} are not to scale, any crank maneuvers are ommitted for compactness.}
+    \small\textbf{\Crefrange{fig:ttpaa:timeline:banzai}{fig:ttpaa:timeline:shortskate} are not to scale, any crank maneuvers are ommitted for compactness.}
 }
 
 \marginfigeometry
@@ -119,6 +131,8 @@
             \draw[thin]
                 (25,0) -- (25,75);
 
+            \path let \p1=(bandit) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {BANDIT};
             \path let \p1=(wez) in 
             node[font=\footnotesize,anchor=west] at (25,\y1) {WEZ};
             \path let \p1=(mar) in 
@@ -130,8 +144,6 @@
             \path let \p1=(cr) in 
             node[font=\footnotesize,anchor=west] at (25,\y1) {CR};
 
-            
-            
             \draw[thin, dashed] let \p1=(wez) in  
                 (25,\y1) -- ++(-30, 0);
             \draw[thin, dashed] let \p1=(mar) in  
@@ -244,7 +256,7 @@
         \item flight members obtain FCR lock on assigned contact
     \end{itemize}
 
-    \blueitem[Employment]
+    \blueitem[MRM Employment]
     \label{subsec:ttpaa:timeline:banzai:shoot}
     \begin{itemize} 
         \item verify clear avenue of fire
@@ -307,6 +319,8 @@
             \draw[thin]
                 (25,0) -- (25,80);
 
+            \path let \p1=(bandit) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {BANDIT};
             \path let \p1=(wez) in 
             node[font=\footnotesize,anchor=west] at (25,\y1) {WEZ};
             \path let \p1=(mar) in 
@@ -453,7 +467,7 @@
         \item flight members obtain FCR lock on assigned contact
     \end{itemize}
 
-    \blueitem[Employment]
+    \blueitem[MRM Employment]
     \label{subsec:ttpaa:timeline:skate:shoot}
     \begin{itemize} 
         \item verify clear avenue of fire
@@ -490,7 +504,7 @@
         \item \textbf{range must be greater than MRR}
         \item fighter must reacquire \& sort bandit
     \end{itemize}
-    \blueitem[Employment]
+    \blueitem[MRM Employment]
     \label{subsec:ttpaa:timeline:skate:shoot2}
     \begin{itemize}
         \item \textbf{must be accomplished before MAR}
@@ -528,7 +542,7 @@
             \coordinate (mtr) at (0,10);
             \coordinate (sort) at (0,20);
             \coordinate (tr) at (0,30);
-            \coordinate (shoot) at (0,40);
+            \coordinate (msr) at (0,40);
             \coordinate (mar) at (0,55);
             \coordinate (wez) at (0,65);
             \coordinate (fighter_end) at (15,50);
@@ -537,10 +551,14 @@
             \draw[thin]
                 (20,0) -- (20,80);
 
+            \path let \p1=(bandit) in 
+            node[font=\footnotesize,anchor=west] at (20,\y1) {BANDIT};
             \path let \p1=(wez) in 
             node[font=\footnotesize,anchor=west] at (20,\y1) {WEZ};
             \path let \p1=(mar) in 
             node[font=\footnotesize,anchor=west] at (20,\y1) {MAR};
+            \path let \p1=(msr) in 
+            node[font=\footnotesize,anchor=west] at (20,\y1) {MSR};
             \path let \p1=(tr) in 
             node[font=\footnotesize,anchor=west] at (20,\y1) {TR};
             \path let \p1=(mtr) in 
@@ -553,6 +571,8 @@
             \draw[thin, dashed] let \p1=(wez) in  
                 (20,\y1) -- ++(-30, 0);
             \draw[thin, dashed] let \p1=(mar) in  
+                (20,\y1) -- ++(-20, 0);
+            \draw[thin, dashed] let \p1=(msr) in  
                 (20,\y1) -- ++(-20, 0);
             \draw[thin, dashed] let \p1=(tr) in  
                 (20,\y1) -- ++(-20, 0);
@@ -578,9 +598,9 @@
                 (mtr);
             \draw[->]
                 (mtr)
-                -- (shoot);
+                -- (msr);
             \draw[->]
-                (shoot)
+                (msr)
                 -- (mar);
             \draw[->]
                 (mar)
@@ -622,7 +642,7 @@
             \node[left, align=right, font=\small] at (sort) {
                 \ref{subsec:ttpaa:timeline:shortskate:sort}
             };
-            \node[left, align=right, font=\small] at (shoot) {
+            \node[left, align=right, font=\small] at (msr) {
                 \ref{subsec:ttpaa:timeline:shortskate:shoot}
             };
             \node[left, align=right, font=\small] at (mar) {
@@ -656,7 +676,7 @@
         \item flight members obtain FCR lock on assigned contact
     \end{itemize}
 
-    \blueitem[Employment]
+    \blueitem[MRM Employment]
     \label{subsec:ttpaa:timeline:shortskate:shoot}
     \begin{itemize} 
         \item verify clear avenue of fire
@@ -665,6 +685,7 @@
         manual loft to maximize performance
         \item \textbf{crank post launch to minimize closure}
         \item \textbf{within TR to increase P\textsubscript{K}}
+        \item \textbf{must be accomplished before MSR}
         \item \textbf{no option to recommit and engage before MAR}
     \end{itemize}
     

@@ -82,6 +82,188 @@
 \subsection{BANZAI TIMELINE}
 \label{subsec:ttpaa:timeline:banzai}
 
+\begin{checklistenumerate}[start=0]
+    \blueitem[Pre-commit] maintain SA
+    
+    \begin{itemize}
+        \item \textbf{Comms} --- monitor AWACS
+        \item \textbf{Sensors} --- sanitize airspace
+    \end{itemize}
+
+    \blueitem[Commit]%
+    \label{subsec:ttpaa:timeline:banzai:commit}
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[figstyle]
+
+            % coordinates
+            \coordinate (fighter_start) at (0,0);
+            \coordinate (bandit) at (5,75);
+
+            \coordinate (cr) at (0,0);
+            \coordinate (mtr) at (0,10);
+            \coordinate (sort) at (0,17.5);
+            \coordinate (shoot) at (0,25);
+            \coordinate (dr) at (0,35);
+            \coordinate (fighter_banzai) at (20,55);
+            \coordinate (fighter_abort) at (20,30);
+            \coordinate (mar) at (5,50);
+            \coordinate (wez) at (0,60);
+
+            % range lines
+            \draw[thin]
+                (25,0) -- (25,75);
+
+            \path let \p1=(wez) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {WEZ};
+            \path let \p1=(mar) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {MAR};
+            \path let \p1=(dr) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {DR};
+            \path let \p1=(mtr) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {MTR};
+            \path let \p1=(cr) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {CR};
+
+            
+            
+            \draw[thin, dashed] let \p1=(wez) in  
+                (25,\y1) -- ++(-30, 0);
+            \draw[thin, dashed] let \p1=(mar) in  
+                (25,\y1) -- ++(-30, 0);
+            \draw[thin, dashed] let \p1=(dr) in  
+                (25,\y1) -- ++(-25, 0);
+            \draw[thin, dashed] let \p1=(mtr) in  
+                (25,\y1) -- ++(-25, 0);
+            \draw[thin, dashed] let \p1=(cr) in  
+                (25,\y1) -- ++(-25, 0);
+
+            % bandit wez
+            \draw[fill=red!40]
+                (bandit)
+                -- ++(-60:15)
+                arc (-60:-120:15)
+                -- (bandit);
+            
+            % timeline
+            \draw[->] 
+                (fighter_start) -- 
+                node[below, pos=0]{
+                    \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+                (mtr);
+            \draw[->]
+                (mtr)
+                -- (shoot);
+            \draw[->]
+                (shoot)
+                -- (dr);
+            \draw[->, dashed]
+                (dr)
+                arc (180:90:5) 
+                -- ++(10,0)
+                arc (90:0:5) 
+                -- (fighter_abort)
+                node[below, pos=1, ]{
+                    \includegraphics[
+                        angle=180,
+                        width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+            \draw[->]
+                (dr)
+                arc (180:90:5) 
+                -- ++(10,0)
+                arc (-90:0:5) 
+                -- (fighter_banzai)
+                node[above, pos=1, ]{
+                    \includegraphics[
+                        angle=0,
+                        width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+            % bandit
+            \node[] at (bandit) {
+                \includegraphics[
+                    angle=180,
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+            % labels
+            \node[left, align=right, font=\small] at (cr) {
+                \ref{subsec:ttpaa:timeline:banzai:commit}
+            };
+            \node[left, align=right, font=\small] at (mtr) {
+                \ref{subsec:ttpaa:timeline:banzai:target}
+            };
+            \node[left, align=right, font=\small] at (sort) {
+                \ref{subsec:ttpaa:timeline:banzai:sort}
+            };
+            \node[left, align=right, font=\small] at (shoot) {
+                \ref{subsec:ttpaa:timeline:skate:shoot}
+            };
+            \node[left, align=right, font=\small] at (dr) {
+                \ref{subsec:ttpaa:timeline:banzai:notch}
+            };
+            \node[left, align=right, font=\small] at (fighter_banzai) {
+                \ref{subsec:ttpaa:timeline:banzai:banzai}
+            };
+            \node[left, align=right, font=\small] at (fighter_abort) {
+                \ref{subsec:ttpaa:timeline:banzai:abort}
+            };
+
+        \end{tikzpicture}
+        \caption{Banzai timeline}
+        \label{fig:ttpaa:timeline:banzai}
+    }%
+    \textbf{--- start of intercept timeline}
+    \begin{itemize}
+        \item AWACS picture or own FCR contacts meet briefed commit criteria
+        \item flight leaves assigned patrol area
+        \item \textbf{should be accomplished before CR}
+    \end{itemize}
+
+    \blueitem[Target]
+    \label{subsec:ttpaa:timeline:banzai:target}
+    \begin{itemize}
+        \item target call indicates responsibility to \\
+        engage group in accordance with ROE
+        \item flight members obtain radar contact
+        \item \textbf{must be accomplished before MTR}
+    \end{itemize}
+
+    \blueitem[Sort]
+    \label{subsec:ttpaa:timeline:banzai:sort}
+    \begin{itemize}
+        \item flight members sort contacts
+        \item flight members obtain FCR lock on assigned contact
+    \end{itemize}
+
+    \blueitem[Employment]
+    \label{subsec:ttpaa:timeline:banzai:shoot}
+    \begin{itemize} 
+        \item verify clear avenue of fire
+        \item \textbf{crank post launch to minimize closure}
+        \item \textbf{such that missile active before fighter reaches DR}
+    \end{itemize}
+    
+    \blueitem[Notch]
+    \label{subsec:ttpaa:timeline:banzai:notch}
+    \begin{itemize} 
+        \item notch predetermined time (15s)
+        \item \textbf{minimum range of DR}
+    \end{itemize}
+    \blueitem[Banzai / Abort]
+    \begin{enumerate}[label=\textbf{\arabic{enumi}\alph*.}]
+        \item \blue{Abort} (spiked) --- \textbf{5G slicing turn}%
+        \label{subsec:ttpaa:timeline:banzai:abort}%
+        \item \blue{Banzai} (naked) --- recommit and engage%
+        \label{subsec:ttpaa:timeline:banzai:banzai}%
+    \end{enumerate}
+    
+\end{checklistenumerate}
+
 \clearpage
 
 \subsection{SKATE TIMELINE}

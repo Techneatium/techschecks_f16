@@ -62,7 +62,13 @@
 
 \marginfigeometry
 
+\subsection{BANZAI TIMELINE}
+\label{subsec:ttpaa:timeline:banzai}
+
+\clearpage
+
 \subsection{SKATE TIMELINE}
+\label{subsec:ttpaa:timeline:skate}
 
 \begin{checklistenumerate}[start=0]
     \blueitem[Pre-commit] maintain SA
@@ -81,7 +87,7 @@
 
             % coordinates
             \coordinate (fighter_start) at (0,0);
-            \coordinate (bandit) at (10,80);
+            \coordinate (bandit) at (5,80);
 
             \coordinate (cr) at (0,5);
             \coordinate (mtr) at (0,10);
@@ -170,6 +176,17 @@
                 node[below, pos=1, ]{
                     \includegraphics[
                         angle=180,
+                        width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+            \draw[->, dashed]
+                (mar)
+                arc (180:90:5) 
+                -- ++(5,0)
+                arc (-90:0:5) 
+                -- ++(0, 5)
+                node[above, pos=1, ]{
+                    \includegraphics[
+                        angle=0,
                         width=7.5mm,
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}};
 
@@ -284,7 +301,7 @@
 \clearpage
 
 \subsection{SHORT SKATE TIMELINE}
-\subsection{BANZAI TIMELINE}
+\label{subsec:ttpaa:timeline:shortskate}
 
 \marginpar{
     \captionsetup{type=figure}

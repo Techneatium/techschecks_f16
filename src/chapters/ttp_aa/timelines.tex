@@ -423,7 +423,7 @@
                 \ref{subsec:ttpaa:timeline:skate:shoot2}
             };
             \node[left, align=right, font=\small] at (mar) {
-                \ref{subsec:ttpaa:timeline:skate:out2}
+                \ref{subsec:ttpaa:timeline:skate:abort}
             };
 
         \end{tikzpicture}
@@ -457,7 +457,8 @@
     \label{subsec:ttpaa:timeline:skate:shoot}
     \begin{itemize} 
         \item verify clear avenue of fire
-        \item \textbf{DLZ} --- R\textsubscript{PI} to R\textsubscript{OPT}\\
+        \item \textbf{DLZ} --- R\textsubscript{PI} to R\textsubscript{OPT}
+        \hfill (see \cref{fig:ttpaa:timeline:skate:dlz})\\
         manual loft to maximize performance
         \item \textbf{crank post launch to minimize closure}
         \item \textbf{should be accomplished before TR}
@@ -473,7 +474,8 @@
                 ]{mfd/fcr_aa/aim120_subfig_dlz_prelaunch.pdf}
             };
         \end{tikzpicture}
-        \caption{In-range DLZ}
+        \caption{DLZ for skate}
+        \label{fig:ttpaa:timeline:skate:dlz}
     }
 
     \blueitem[Out]
@@ -493,8 +495,8 @@
     \begin{itemize}
         \item \textbf{must be accomplished before MAR}
     \end{itemize}
-    \blueitem[Out]%
-    \label{subsec:ttpaa:timeline:skate:out2}
+    \blueitem[Abort]%
+    \label{subsec:ttpaa:timeline:skate:abort}
     \textbf{--- 5G slicing turn at MAR}
 \end{checklistenumerate}
 
@@ -513,11 +515,11 @@
 
     \blueitem[Commit]%
     \label{subsec:ttpaa:timeline:shortskate:commit}
-\marginpar{
-    \captionsetup{type=figure}
-    \centering
-    \begin{tikzpicture}[figstyle]
-        
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[figstyle]
+
             % coordinates
             \coordinate (fighter_start) at (0,0);
             \coordinate (bandit) at (0,80);
@@ -567,12 +569,12 @@
                 -- (bandit);
             
             % timeline
-        \draw[->] 
+            \draw[->] 
                 (fighter_start) -- 
-            node[below, pos=0]{
-                \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+                node[below, pos=0]{
+                    \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
                 (mtr);
             \draw[->]
                 (mtr)
@@ -593,9 +595,9 @@
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}};
             \draw[->, dashed]
                 (mar)
-            arc (180:90:5) 
+                arc (180:90:5) 
                 -- ++(5,0)
-            arc (-90:0:5) 
+                arc (-90:0:5) 
                 -- ++(0, 5)
                 node[above, pos=1, ]{
                     \includegraphics[
@@ -675,10 +677,10 @@
                     scale=0.5,
                 ]{mfd/fcr_aa/aim120_subfig_dlz_prelaunch.pdf}
             };
-    \end{tikzpicture}
+        \end{tikzpicture}
         \caption{DLZ for short skate}
         \label{fig:ttpaa:timeline:shortskate:dlz}
-}
+    }
     \blueitem[Abort]%
     \label{subsec:ttpaa:timeline:shortskate:abort}
     \textbf{--- 5G slicing turn at MAR}

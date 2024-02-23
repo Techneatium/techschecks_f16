@@ -56,6 +56,7 @@
         \centering
         \begin{tikzpicture}[figstyle]
 
+            % coordinates
             \coordinate (fighter_start) at (0,0);
             \coordinate (bandit) at (10,80);
 
@@ -69,6 +70,7 @@
             \coordinate (mar) at (5,55);
             \coordinate (fighter_end) at (20,50);
 
+            % range lines
             \draw[thin]
                 (25,0) -- (25,80);
 
@@ -96,12 +98,14 @@
             \draw[thin, dashed]
                 (25,5) -- ++(-25,0);
 
+            % bandit wez
             \draw[fill=red!40]
                 (bandit)
                 -- ++(-60:15)
                 arc (-60:-120:15)
                 -- (bandit);
             
+            % timeline
             \draw[->] 
                 (fighter_start) -- 
                 node[below, pos=0]{
@@ -137,12 +141,14 @@
                         width=7.5mm,
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}};
 
+            % bandit
             \node[] at (bandit) {
                 \includegraphics[
                     angle=180,
                     width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
 
+            % labels
             \node[left, align=right, font=\small] at (cr) {
                 \ref{subsec:ttpaa:timeline:skate:commit}
             };

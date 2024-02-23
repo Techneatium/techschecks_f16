@@ -40,6 +40,214 @@
 \marginfigeometry
 
 \subsection{SKATE TIMELINE}
+
+\begin{checklistenumerate}[start=0]
+    \blueitem[Pre-commit] maintain SA
+    
+    \begin{itemize}
+        \item \textbf{Comms} --- monitor AWACS
+        \item \textbf{Sensors} --- sanitize airspace
+    \end{itemize}
+
+    \blueitem[Commit]%
+    \label{subsec:ttpaa:timeline:skate:commit}
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[figstyle]
+
+            \coordinate (fighter_start) at (0,0);
+            \coordinate (bandit) at (10,80);
+
+            \coordinate (cr) at (0,5);
+            \coordinate (mtr) at (0,10);
+            \coordinate (sort) at (0,20);
+            \coordinate (tr) at (0,30);
+            \coordinate (dor) at (0,40);
+            \coordinate (recommit) at (15,20);
+            \coordinate (shoot2) at (5,50);
+            \coordinate (mar) at (5,55);
+            \coordinate (fighter_end) at (20,50);
+
+            \draw[thin]
+                (25,0) -- (25,80);
+
+            \node[font=\footnotesize,anchor=west] at (25,65) {WEZ};
+            \node[font=\footnotesize,anchor=west] at (25,55) {MAR};
+            \node[font=\footnotesize,anchor=west] at (25,40) {DOR};
+            \node[font=\footnotesize,anchor=west] at (25,20) {MRR};
+            \node[font=\footnotesize,anchor=west] at (25,30) {TR};
+            \node[font=\footnotesize,anchor=west] at (25,10) {MTR};
+            \node[font=\footnotesize,anchor=west] at (25,5) {CR};
+
+            
+            \draw[thin, dashed]
+                (25,65) -- ++(-30, 0);
+            \draw[thin, dashed]
+                (25,55) -- ++(-20, 0);
+            \draw[thin, dashed]
+                (25,40) -- ++(-25, 0);
+            \draw[thin, dashed]
+                (25,30) -- ++(-25, 0);
+            \draw[thin, dashed]
+                (25,20) -- ++(-10, 0);
+            \draw[thin, dashed]
+                (25,10) -- ++(-25, 0);
+            \draw[thin, dashed]
+                (25,5) -- ++(-25,0);
+
+            \draw[fill=red!40]
+                (bandit)
+                -- ++(-60:15)
+                arc (-60:-120:15)
+                -- (bandit);
+            
+            \draw[->] 
+                (fighter_start) -- 
+                node[below, pos=0]{
+                    \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+                (mtr);
+            \draw[->]
+                (mtr)
+                -- (tr);
+            \draw[->]
+                (tr)
+                -- (dor);
+            \draw[->]
+                (dor)
+                arc (180:90:5) 
+                -- ++(5,0)
+                arc (90:0:5) 
+                -- (recommit);
+            \draw[->]
+                (recommit)
+                arc (0:-180:5) 
+                -- (mar);
+            \draw[->]
+                (mar)
+                arc (180:90:5) 
+                -- ++(5,0)
+                arc (90:0:5) 
+                -- (fighter_end)
+                node[below, pos=1, ]{
+                    \includegraphics[
+                        angle=180,
+                        width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+            \node[] at (bandit) {
+                \includegraphics[
+                    angle=180,
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+            \node[left, align=right, font=\small] at (cr) {
+                \ref{subsec:ttpaa:timeline:skate:commit}
+            };
+            \node[left, align=right, font=\small] at (mtr) {
+                \ref{subsec:ttpaa:timeline:skate:target}
+            };
+            \node[left, align=right, font=\small] at (sort) {
+                \ref{subsec:ttpaa:timeline:skate:sort}
+            };
+            \node[left, align=right, font=\small] at (tr) {
+                \ref{subsec:ttpaa:timeline:skate:shoot}
+            };
+            \node[left, align=right, font=\small] at (dor) {
+                \ref{subsec:ttpaa:timeline:skate:out}
+            };
+            \node[left, align=right, font=\small] at (recommit) {
+                \ref{subsec:ttpaa:timeline:skate:recommit}
+            };
+            \node[left, align=right, font=\small] at (shoot2) {
+                \ref{subsec:ttpaa:timeline:skate:shoot2}
+            };
+            \node[left, align=right, font=\small] at (mar) {
+                \ref{subsec:ttpaa:timeline:skate:out2}
+            };
+
+            % \filldraw[red] (tr) circle (2pt);
+            % \filldraw[red] (mar) circle (2pt);
+
+        \end{tikzpicture}
+        \caption{Skate timeline}
+        \label{fig:ttpaa:timeline:skate}
+    }%
+    \textbf{--- start of intercept timeline}
+    \begin{itemize}
+        \item AWACS picture or own FCR contacts meet briefed commit criteria
+        \item flight leaves assigned patrol area
+        \item \textbf{should be accomplished before CR}
+    \end{itemize}
+
+    \blueitem[Target]
+    \label{subsec:ttpaa:timeline:skate:target}
+    \begin{itemize}
+        \item target call indicates responsibility to kill group
+        \item flight members obtain radar contact
+        \item \textbf{must be accomplished before MTR}
+    \end{itemize}
+
+    \blueitem[Sort]
+    \label{subsec:ttpaa:timeline:skate:sort}
+    \begin{itemize}
+        \item flight members sort contacts
+        \item flight members obtain FCR lock on assigned contact
+    \end{itemize}
+
+    \blueitem[Employment]
+    \label{subsec:ttpaa:timeline:skate:shoot}
+    \begin{itemize} 
+        \item verify clear avenue of fire
+        \item \textbf{DLZ} --- R\textsubscript{PI} to R\textsubscript{OPT}\\
+        manual loft to maximize performance
+        \item \textbf{crank post launch to minimize closure}
+        \item \textbf{should be accomplished before TR}
+    \end{itemize}
+
+    \marnotebox{
+        \small\textbf{\Cref{fig:ttpaa:timeline:skate} NOT to scale}
+    }
+    
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.5,
+                ]{mfd/fcr_aa/aim120_subfig_dlz_prelaunch.pdf}
+            };
+        \end{tikzpicture}
+        \caption{In-range DLZ}
+    }
+
+    \blueitem[Out]
+    \label{subsec:ttpaa:timeline:skate:out}
+    \begin{itemize}
+        \item \textbf{before DOR, after pitbull}
+        \item 5G slicing turn
+    \end{itemize}
+    \blueitem[Recommit] (if necessary)
+    \label{subsec:ttpaa:timeline:skate:recommit}
+    \begin{itemize}
+        \item \textbf{range must be greater than MRR}
+        \item fighter must reacquire \& sort bandit
+    \end{itemize}
+    \blueitem[Employment]
+    \label{subsec:ttpaa:timeline:skate:shoot2}
+    \begin{itemize}
+        \item \textbf{must be accomplished before MAR}
+    \end{itemize}
+    \blueitem[Out]%
+    \label{subsec:ttpaa:timeline:skate:out2}
+    \textbf{--- 5G slicing turn at MAR}
+\end{checklistenumerate}
+
+\clearpage
+
 \subsection{SHORT SKATE TIMELINE}
 \subsection{BANZAI TIMELINE}
 

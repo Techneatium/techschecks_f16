@@ -503,35 +503,185 @@
 \subsection{SHORT SKATE TIMELINE}
 \label{subsec:ttpaa:timeline:shortskate}
 
+\begin{checklistenumerate}[start=0]
+    \blueitem[Pre-commit] maintain SA
+    
+    \begin{itemize}
+        \item \textbf{Comms} --- monitor AWACS
+        \item \textbf{Sensors} --- sanitize airspace
+    \end{itemize}
+
+    \blueitem[Commit]%
+    \label{subsec:ttpaa:timeline:shortskate:commit}
 \marginpar{
     \captionsetup{type=figure}
     \centering
     \begin{tikzpicture}[figstyle]
         
+            % coordinates
+            \coordinate (fighter_start) at (0,0);
+            \coordinate (bandit) at (0,80);
+
+            \coordinate (cr) at (0,0);
+            \coordinate (mtr) at (0,10);
+            \coordinate (sort) at (0,20);
+            \coordinate (tr) at (0,30);
+            \coordinate (shoot) at (0,40);
+            \coordinate (mar) at (0,55);
+            \coordinate (wez) at (0,65);
+            \coordinate (fighter_end) at (15,50);
+
+            % range lines
+            \draw[thin]
+                (20,0) -- (20,80);
+
+            \path let \p1=(wez) in 
+            node[font=\footnotesize,anchor=west] at (20,\y1) {WEZ};
+            \path let \p1=(mar) in 
+            node[font=\footnotesize,anchor=west] at (20,\y1) {MAR};
+            \path let \p1=(tr) in 
+            node[font=\footnotesize,anchor=west] at (20,\y1) {TR};
+            \path let \p1=(mtr) in 
+            node[font=\footnotesize,anchor=west] at (20,\y1) {MTR};
+            \path let \p1=(cr) in 
+            node[font=\footnotesize,anchor=west] at (20,\y1) {CR};
+
+            
+            
+            \draw[thin, dashed] let \p1=(wez) in  
+                (20,\y1) -- ++(-30, 0);
+            \draw[thin, dashed] let \p1=(mar) in  
+                (20,\y1) -- ++(-20, 0);
+            \draw[thin, dashed] let \p1=(tr) in  
+                (20,\y1) -- ++(-20, 0);
+            \draw[thin, dashed] let \p1=(mtr) in  
+                (20,\y1) -- ++(-20, 0);
+            \draw[thin, dashed] let \p1=(cr) in  
+                (20,\y1) -- ++(-20, 0);
+
+            % bandit wez
+            \draw[fill=red!40]
+                (bandit)
+                -- ++(-60:15)
+                arc (-60:-120:15)
+                -- (bandit);
+            
+            % timeline
         \draw[->] 
-            (0,0) -- 
+                (fighter_start) -- 
             node[below, pos=0]{
                 \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-            ++(0,20) 
+                (mtr);
+            \draw[->]
+                (mtr)
+                -- (shoot);
+            \draw[->]
+                (shoot)
+                -- (mar);
+            \draw[->]
+                (mar)
+                arc (180:90:5) 
+                -- ++(5,0)
+                arc (90:0:5) 
+                -- (fighter_end)
+                node[below, pos=1, ]{
+                    \includegraphics[
+                        angle=180,
+                        width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+            \draw[->, dashed]
+                (mar)
             arc (180:90:5) 
+                -- ++(5,0)
             arc (-90:0:5) 
-            -- ++(0,20) 
-            arc (180:0:5) 
-            -- ++(0,-50)
-            node[below, pos=1, ]{
+                -- ++(0, 5)
+                node[above, pos=1, ]{
+                    \includegraphics[
+                        angle=0,
+                        width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+            % bandit
+            \node[] at (bandit) {
                 \includegraphics[
                     angle=180,
                     width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
 
+            % labels
+            \node[left, align=right, font=\small] at (cr) {
+                \ref{subsec:ttpaa:timeline:shortskate:commit}
+            };
+            \node[left, align=right, font=\small] at (mtr) {
+                \ref{subsec:ttpaa:timeline:shortskate:target}
+            };
+            \node[left, align=right, font=\small] at (sort) {
+                \ref{subsec:ttpaa:timeline:shortskate:sort}
+            };
+            \node[left, align=right, font=\small] at (shoot) {
+                \ref{subsec:ttpaa:timeline:shortskate:shoot}
+            };
+            \node[left, align=right, font=\small] at (mar) {
+                \ref{subsec:ttpaa:timeline:shortskate:abort}
+            };
+
+        \end{tikzpicture}
+        \caption{Skate timeline}
+        \label{fig:ttpaa:timeline:shortskate}
+    }%
+    \textbf{--- start of intercept timeline}
+    \begin{itemize}
+        \item AWACS picture or own FCR contacts meet briefed commit criteria
+        \item flight leaves assigned patrol area
+        \item \textbf{should be accomplished before CR}
+    \end{itemize}
+
+    \blueitem[Target]
+    \label{subsec:ttpaa:timeline:shortskate:target}
+    \begin{itemize}
+        \item target call indicates responsibility to \\
+        engage group in accordance with ROE
+        \item flight members obtain radar contact
+        \item \textbf{must be accomplished before MTR}
+    \end{itemize}
+
+    \blueitem[Sort]
+    \label{subsec:ttpaa:timeline:shortskate:sort}
+    \begin{itemize}
+        \item flight members sort contacts
+        \item flight members obtain FCR lock on assigned contact
+    \end{itemize}
+
+    \blueitem[Employment]
+    \label{subsec:ttpaa:timeline:shortskate:shoot}
+    \begin{itemize} 
+        \item verify clear avenue of fire
+        \item \textbf{DLZ} --- R\textsubscript{TR} to R\textsubscript{PI} 
+        \hfill (see \cref{fig:ttpaa:timeline:shortskate:dlz})\\
+        manual loft to maximize performance
+        \item \textbf{crank post launch to minimize closure}
+        \item \textbf{within TR to increase P\textsubscript{K}}
+        \item \textbf{no option to recommit and engage before MAR}
+    \end{itemize}
+    
+    \marginpar{
+        \captionsetup{type=figure}
+        \centering
+        \begin{tikzpicture}[figstyle]
+            \node[boxedmarfigstyle] (fig) at (0,0) {
+                \includegraphics[
+                    scale=0.5,
+                ]{mfd/fcr_aa/aim120_subfig_dlz_prelaunch.pdf}
+            };
     \end{tikzpicture}
-    \caption{Work in progress timeline illustration}
+        \caption{DLZ for short skate}
+        \label{fig:ttpaa:timeline:shortskate:dlz}
 }
-\begin{center}
-    \vspace{\textheight/4}
-    \Large\titlefont\textbf{COMING SOON}
-\end{center}
+    \blueitem[Abort]%
+    \label{subsec:ttpaa:timeline:shortskate:abort}
+    \textbf{--- 5G slicing turn at MAR}
+\end{checklistenumerate}
 
 \marginfigrestore

@@ -65,38 +65,47 @@
             \coordinate (sort) at (0,20);
             \coordinate (tr) at (0,30);
             \coordinate (dor) at (0,40);
-            \coordinate (recommit) at (15,20);
+            \coordinate (mrr) at (15,20);
             \coordinate (shoot2) at (5,50);
             \coordinate (mar) at (5,55);
+            \coordinate (wez) at (0,65);
             \coordinate (fighter_end) at (20,50);
 
             % range lines
             \draw[thin]
                 (25,0) -- (25,80);
 
-            \node[font=\footnotesize,anchor=west] at (25,65) {WEZ};
-            \node[font=\footnotesize,anchor=west] at (25,55) {MAR};
-            \node[font=\footnotesize,anchor=west] at (25,40) {DOR};
-            \node[font=\footnotesize,anchor=west] at (25,20) {MRR};
-            \node[font=\footnotesize,anchor=west] at (25,30) {TR};
-            \node[font=\footnotesize,anchor=west] at (25,10) {MTR};
-            \node[font=\footnotesize,anchor=west] at (25,5) {CR};
+            \path let \p1=(wez) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {WEZ};
+            \path let \p1=(mar) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {MAR};
+            \path let \p1=(dor) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {DOR};
+            \path let \p1=(mrr) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {MRR};
+            \path let \p1=(tr) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {TR};
+            \path let \p1=(mtr) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {MTR};
+            \path let \p1=(cr) in 
+            node[font=\footnotesize,anchor=west] at (25,\y1) {CR};
 
             
-            \draw[thin, dashed]
-                (25,65) -- ++(-30, 0);
-            \draw[thin, dashed]
-                (25,55) -- ++(-20, 0);
-            \draw[thin, dashed]
-                (25,40) -- ++(-25, 0);
-            \draw[thin, dashed]
-                (25,30) -- ++(-25, 0);
-            \draw[thin, dashed]
-                (25,20) -- ++(-10, 0);
-            \draw[thin, dashed]
-                (25,10) -- ++(-25, 0);
-            \draw[thin, dashed]
-                (25,5) -- ++(-25,0);
+            
+            \draw[thin, dashed] let \p1=(wez) in  
+                (25,\y1) -- ++(-30, 0);
+            \draw[thin, dashed] let \p1=(mar) in  
+                (25,\y1) -- ++(-20, 0);
+            \draw[thin, dashed] let \p1=(dor) in  
+                (25,\y1) -- ++(-25, 0);
+            \draw[thin, dashed] let \p1=(tr) in  
+                (25,\y1) -- ++(-25, 0);
+            \draw[thin, dashed] let \p1=(mrr) in  
+                (25,\y1) -- ++(-10, 0);
+            \draw[thin, dashed] let \p1=(mtr) in  
+                (25,\y1) -- ++(-25, 0);
+            \draw[thin, dashed] let \p1=(cr) in  
+                (25,\y1) -- ++(-25, 0);
 
             % bandit wez
             \draw[fill=red!40]

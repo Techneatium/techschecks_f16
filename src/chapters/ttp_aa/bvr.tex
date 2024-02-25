@@ -105,34 +105,34 @@
     \textbf{Boost}
 
     \begin{itemize}
-        \item Motor only fires for initial seconds of flight 
-        \item After burnout missile \textbf{\underline{cannot gain energy}}
+        \item motor only fires for initial seconds of flight 
+        \item after burnout missile \textbf{\underline{cannot gain energy}}
     \end{itemize}
 
     \textbf{Lofting} 
 
     \begin{itemize}
-        \item To reach longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
-        \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
+        \item to reach longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
+        \item pilot can manually loft by raising the nose 20-30 deg prior to launch
     \end{itemize}
     \blueitem[Mid-Course Phase]
-    \textbf{Missile flies using internal IMU}
+    \textbf{Missile navigates using internal IMU}
 
     \begin{itemize}
-        \item Receives periodic datalink updates
-        \item Will fly to last updated target position if DL lost
+        \item receives periodic datalink updates
+        \item will fly to last updated target position if DL lost
     \end{itemize}
     \blueitem[Acquisition \& MPRF ``Active'' Phase]
-    \textbf{Missile radar turns on once close to target location}
+    \textbf{Missile seeker activates once close to predicted target location}
     \begin{itemize}
-        \item Seeker in MPRF (Medium Pulse Repetition Frequency) mode 
-        \item Locks on to closest / best target
+        \item seeker in MPRF (medium pulse-repetition frequency) mode 
+        \item locks on to closest / best target
     \end{itemize}
     \blueitem[Terminal Phase \& Intercept]
-    \textbf{Once missile seeker has acquired target}
+    \textbf{After missile seeker has acquired target}
     \begin{itemize}
-        \item Flies PNG intercept trajectory
-        \item Requires no further DL support, fighter can turn away from the bandit
+        \item flies optimized PNG (proportional navigation) intercept trajectory
+        \item requires no further DL support, fighter can turn away from the bandit
     \end{itemize}
 \end{tcoloritemize}
 
@@ -157,47 +157,47 @@
     
     These are also illustrated in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}.
     \blueitem[Maximizing Launch Range / Energy]
-    \textbf{Why?}
+    \textbf{Why:}
     \begin{itemize}
-        \item Ability to launch at longer ranges forces bandit defensive
-        \item Bandit may not be able to counter-launch
-        \item Higher launch energy increases P\textsubscript{intercept} %probability of intercept
+        \item ability to launch at longer ranges forces bandit defensive
+        \item bandit may not be able to counter-launch
+        \item higher launch energy increases P\textsubscript{intercept} %probability of intercept
     \end{itemize}
-    \textbf{How?}
+    \textbf{How:}
     \begin{itemize}
-        \item \textbf{High velocity} --- increases kinetic energy 
-        \item \textbf{High altitude} --- increases potential energy, reduces drag
+        \item \textbf{high velocity} --- increases kinetic energy 
+        \item \textbf{high altitude} --- increases potential energy, reduces drag
     \end{itemize}
     \blueitem[Maximizing \break F-Pole Range]
-    \textbf{Why?}
+    \textbf{Why:}
     \begin{itemize}
-        \item Less likely to enter bandit launch envelope
-        \item More time/range to launch 2nd missile if necessary
+        \item less likely to enter bandit launch envelope
+        \item more time/range to launch 2nd missile if necessary
     \end{itemize}
-    \textbf{How?}
+    \textbf{How:}
     \begin{itemize}
-        \item \textbf{Crank} --- turn 45-60 degrees away from bandit to reduce closure rate, maintain radar contact
-        \item \textbf{Dive} --- reduces threat missile envelope
+        \item \textbf{crank} --- turn 45-60 degrees away from bandit to reduce closure rate, maintain radar contact
+        \item \textbf{dive} --- reduces threat missile envelope
     \end{itemize}
     \blueitem[Flowing Cold]
-    \textbf{Why?}
+    \textbf{Why:}
     \begin{itemize}
-        \item Missile requires no support once active
-        \item Defend against unknown missile launches
-        \item Maximize F-pole range further
+        \item missile requires no support once active
+        \item defend against unknown missile launches
+        \item maximize F-pole range further
     \end{itemize}
-    \textbf{How?}
+    \textbf{How:}
     \begin{itemize}
-        \item \textbf{Turn} --- Away from bandit / threat
-        \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
+        \item \textbf{turn} --- away from bandit / threat
+        \item \textbf{dive} --- if necessary, reduces threat missile envelope 
     \end{itemize}
     \blueitem[Effect of Bandit Maneuvers]
     As evident in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}, 
    \textbf{R\textsubscript{Launch}} is significantly greater than the distance travelled by the missile
     \begin{itemize}
         \item \textbf{DLZ calculated based off \underline{both} fighter \underline{and} bandit velocity/altitude}
-        \item Bandit can significantly change missile envelope by reducing closure rate / altitude
-        \item Post-launch bandit maneuvers can result in missile not having energy to intercept
+        \item bandit can significantly change missile envelope by reducing closure rate / altitude
+        \item post-launch bandit maneuvers can result in missile not having energy to intercept
     \end{itemize}
 \end{tcoloritemize}
 

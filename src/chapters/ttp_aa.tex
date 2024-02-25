@@ -9,7 +9,6 @@
 \begin{tcoloritemize}
     \blueitem[Goal]
     The ultimate goal of any air-to-air engagement is to kill the enemy without being killed. 
-    First, we define our desired end state.
 
     \medskip
     \textbf{Desired end-state:}
@@ -21,45 +20,33 @@
     \end{enumerate}
 
     \blueitem[BVR Killchain]
-    Assuming an engagement using AIM-120, 
-    we work backwards from the desired end-state 
+    We work backwards from the desired end-state 
     to missile launch to define the killchain:
-    \begin{enumerate}
-        \item bandit is destroyed by missile detonation
-        \label{subsec:ttp_aa:intro:howto:killchain:destroyed}
-        \item missile fuzes with bandit within lethal radius
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+        \item missile fuzes, bandit destroyed
         \label{subsec:ttp_aa:intro:howto:killchain:fuzes}
-        \item missile terminal guidance intercepts bandit, despite potential bandit maneuvers
+        \item terminal guidance
         \label{subsec:ttp_aa:intro:howto:killchain:terminal}
-        \item bandit is acquired by missile seeker
+        \item missile seeker acquisition
         \label{subsec:ttp_aa:intro:howto:killchain:acquired}
-        \item missile arrives at acquisition point with enough terminal energy to consumate intercept
-        \label{subsec:ttp_aa:intro:howto:killchain:acqpoint}
-        \item fighter maintains FCR contact with bandit to provide mid-course guidance via DL
+        \item mid-course guidance
         \label{subsec:ttp_aa:intro:howto:killchain:midcourse}
-        \item fighter launches missile with parameters \\
+        \item missile launch
         \label{subsec:ttp_aa:intro:howto:killchain:launch}
-        (altitude, velocity, aspect, loft angle)
     \end{enumerate}
 
-    Reference \cref{subsec:ttp_aa:bvr_fundamentals:ar} and \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}
-    for more details on AIM-120 profile.
-
     \blueitem[P\textsubscript{K} --- Probability of Kill]
-    It is obvious that some steps in the killchain above are probabalistic 
-    \ref{subsec:ttp_aa:intro:howto:killchain:destroyed},
+    Some steps in the killchain are probabalistic 
     \ref{subsec:ttp_aa:intro:howto:killchain:fuzes},
     \ref{subsec:ttp_aa:intro:howto:killchain:acquired}.
     However, as it is impossible to predict bandit actions perfectly, 
     we can assume 
     \ref{subsec:ttp_aa:intro:howto:killchain:terminal},
-    \ref{subsec:ttp_aa:intro:howto:killchain:acqpoint},
     \ref{subsec:ttp_aa:intro:howto:killchain:midcourse}
     are also probabalistic.
 
     \medskip
-    Therefore, we summarize the chance of all events in the killchain occuring successfully 
-    as the probability of kill, P\textsubscript{K}.
+    The probability of kill P\textsubscript{K} is the sum chance of all events in the killchain occuring successfully.
 
     \blueitem[Devising Tactics]
     To achieve \ref{subsec:ttp_aa:intro:howto:endstate:bandit},
@@ -71,6 +58,8 @@
     Simultaneously, we must ensure that our tactics minimize bandit P\textsubscript{K}, 
     ensuring \ref{subsec:ttp_aa:intro:howto:endstate:fighter}
 \end{tcoloritemize}
+
+\clearpage
 
 \subsection{OVERVIEW}
 \begin{tcoloritemize}

@@ -51,7 +51,7 @@
 	chapters/part_ttp,
 	chapters/ttp_aa,
 	chapters/part_supp,
-	chapters/appendix,
+	chapters/supp_figures,
 }
 
 % \AddToHook{shipout/foreground}{
@@ -99,9 +99,10 @@
 	\include{chapters/part_ttp}
 	\cyclechpcolor
 	\include{chapters/ttp_aa}
+	\appendix
 	\include{chapters/part_supp}
 	\cyclechpcolor
-	\include{chapters/appendix}
+	\include{chapters/supp_figures}
 
 	\iftoggle{print}{
 		\pagestyle{superempty}

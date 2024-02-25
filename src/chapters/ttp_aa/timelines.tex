@@ -1,12 +1,5 @@
 \section{INTERCEPT TIMELINES}
-
-\subsection{TERMINOLOGY}
-
-\begin{tcoloritemize}
-    \blueitem[Contact]
-    \blueitem[Group]
-    \blueitem[Picture]
-\end{tcoloritemize}
+\label{sec:ttp_aa:timelines}
 
 \subsection[AR FLOW]{ACTIVE-RADAR MISSILE FLOW}
 
@@ -17,32 +10,40 @@
     with the fighter turning cold once AIM-120 has gone active.
 
     \bigskip
-    \textbf{Skate} \hfill see \cref{subsec:ttpaa:timeline:skate}\\
+    \textbf{Skate} \hfill see \cref{subsec:ttp_aa:timeline:skate}\\
     AIM-120 launched before a briefed tranisition range 
     such that it goes active before fighters reach a desired out range.
     Fighters go out before recommitting for a second launch.
     
     \bigskip
-    \textbf{Short-Skate} \hfill see \cref{subsec:ttpaa:timeline:shortskate}\\
+    \textbf{Short-Skate} \hfill see \cref{subsec:ttp_aa:timeline:shortskate}\\
     AIM-120 launched such that fighter can go out before reaching MAR.
+
+    \bigskip
+    Launch-and-leave tactics preserve a kinematic defense by going out
 
     \blueitem[Launch-and-Decide]
     Launch-and-decide tactics also utilize AIM-120 terminal guidance independence, 
     allowing fighter to decide whether to abort out or continue in.
 
     \bigskip
-    \textbf{Banzai} \hfill see \cref{subsec:ttpaa:timeline:banzai}\\
+    \textbf{Banzai} \hfill see \cref{subsec:ttp_aa:timeline:banzai}\\
     Fighter launches before a briefed decision range and goes into notch for predetermined duration. 
     Can abort out or continue in depending on if spiked/naked and bandit maneuver.
 
-    Typically employed with elements cranking in opposite directions, increasing chance of 1 fighter being naked
+    Typically employed with elements cranking in opposite directions, 
+    increasing chance of 1 fighter being naked.
+
+    \bigskip
+    Launch-and-decide tactics do NOT necessarily preserve a kinematic defense, 
+    but allow fighters to decide to press the attack.
 \end{tcoloritemize}
 
 
 \subsection{RANGE DEFINITIONS}
 
 \begin{tcoloritemize}
-    \blueitem[Bandit WEZ] \textbf{W}eapon \textbf{E}ngagement \textbf{Zone}
+    \blueitem[Bandit WEZ] \textbf{W}eapon \textbf{E}ngagement \textbf{Z}one
 
     \medskip
     range at which bandit weapons can engage fighter, synonomous with bandit R\textsubscript{F-pole} in this document
@@ -89,37 +90,39 @@
     \textbf{DR} = max bandit R\textsubscript{F-pole} + bandit closure \times \ t\textsubscript{notch}
 \end{tcoloritemize}
 
-\notebox{
+\notebox{%
+    \small%
     \textbf{It is important to note that:}
     \begin{itemize}
-        \item The timelines described in \cref{subsec:ttpaa:timeline:banzai,subsec:ttpaa:timeline:skate,subsec:ttpaa:timeline:shortskate}
-        are to help illustrate core concepts of intercept timelines, \textbf{NOT} to be followed as absolute procedures.
-        \item To define a proper timeline, you must define you assumptions.
+        \item The timelines described in \cref{subsec:ttp_aa:timeline:banzai,subsec:ttp_aa:timeline:skate,subsec:ttp_aa:timeline:shortskate}
+        are to help illustrate core concepts of intercept timelines, 
+        \textbf{NOT} to be followed as absolute procedures.
+        \item To derive a true timeline, you must define your assumptions.
         \begin{itemize}
-            \item what is the bandit doing, what speed/altitude?
+            \item what is the bandit state (speed/altitude)?
             \item what is the performance of bandit missiles?
-            \item what tactics will the bandit most likely employ?
+            \item what tactics will bandit most likely employ?
         \end{itemize}
-        \item Specifically, defining the bandit WEZ / R\textsubscript{f-pole}, which define the MAR, 
-        relies on an accurate understanding of threat missile and aircraft performance 
-        as well as tactics.
-        \item The timelines visualized in \cref{fig:ttpaa:timeline:banzai,fig:ttpaa:timeline:skate,fig:ttpaa:timeline:shortskate} are not to scale, 
+        \item Specifically, defining the bandit WEZ / R\textsubscript{f-pole}, 
+        which determine the MAR, 
+        relies on accurate models of of threat missiles, aircraft, and tactics.
+        \item \Cref{fig:ttp_aa:timeline:banzai,fig:ttp_aa:timeline:skate,fig:ttp_aa:timeline:shortskate} 
+        are not to scale, 
         any crank maneuvers are ommitted for compactness and visual clarity.
-        \item Rather than getting lost in the FCR page trying to execute complex tactics, 
-        ensure that the fundamentals are not getting forgotten. A typical order of priority is
+        \item Flight members should prioritize tasks during an intercept to maintain SA.
+        Typical order of priority is
         \begin{enumerate}
             \item formation
             \item sensors
             \item communications
         \end{enumerate}
-        in that order.
     \end{itemize}
 }
 
 \marginfigeometry
 
 \subsection{BANZAI TIMELINE}
-\label{subsec:ttpaa:timeline:banzai}
+\label{subsec:ttp_aa:timeline:banzai}
 
 \begin{checklistenumerate}[start=0]
     \blueitem[Pre-commit] maintain SA
@@ -130,7 +133,7 @@
     \end{itemize}
 
     \blueitem[Commit]%
-    \label{subsec:ttpaa:timeline:banzai:commit}
+    \label{subsec:ttp_aa:timeline:banzai:commit}
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -231,30 +234,30 @@
 
             % labels
             \node[left, align=right, font=\small] at (cr) {
-                \ref{subsec:ttpaa:timeline:banzai:commit}
+                \ref{subsec:ttp_aa:timeline:banzai:commit}
             };
             \node[left, align=right, font=\small] at (mtr) {
-                \ref{subsec:ttpaa:timeline:banzai:target}
+                \ref{subsec:ttp_aa:timeline:banzai:target}
             };
             \node[left, align=right, font=\small] at (sort) {
-                \ref{subsec:ttpaa:timeline:banzai:sort}
+                \ref{subsec:ttp_aa:timeline:banzai:sort}
             };
             \node[left, align=right, font=\small] at (shoot) {
-                \ref{subsec:ttpaa:timeline:skate:shoot}
+                \ref{subsec:ttp_aa:timeline:skate:shoot}
             };
             \node[left, align=right, font=\small] at (dr) {
-                \ref{subsec:ttpaa:timeline:banzai:notch}
+                \ref{subsec:ttp_aa:timeline:banzai:notch}
             };
             \node[left, align=right, font=\small] at (fighter_banzai) {
-                \ref{subsec:ttpaa:timeline:banzai:banzai}
+                \ref{subsec:ttp_aa:timeline:banzai:banzai}
             };
             \node[left, align=right, font=\small] at (fighter_abort) {
-                \ref{subsec:ttpaa:timeline:banzai:abort}
+                \ref{subsec:ttp_aa:timeline:banzai:abort}
             };
 
         \end{tikzpicture}
         \caption{Banzai timeline}
-        \label{fig:ttpaa:timeline:banzai}
+        \label{fig:ttp_aa:timeline:banzai}
     }%
     \textbf{--- no later than CR}
     \begin{itemize}
@@ -264,7 +267,7 @@
     \end{itemize}
 
     \blueitem[Target] \textbf{--- no later than MTR}
-    \label{subsec:ttpaa:timeline:banzai:target}
+    \label{subsec:ttp_aa:timeline:banzai:target}
     \begin{itemize}
         \item target call indicates responsibility to \\
         engage group in accordance with ROE
@@ -272,14 +275,14 @@
     \end{itemize}
 
     \blueitem[Sort]
-    \label{subsec:ttpaa:timeline:banzai:sort}
+    \label{subsec:ttp_aa:timeline:banzai:sort}
     \begin{itemize}
         \item flight members sort contacts
         \item flight members obtain FCR lock on assigned contact
     \end{itemize}
 
     \blueitem[MRM Employment]
-    \label{subsec:ttpaa:timeline:banzai:shoot}
+    \label{subsec:ttp_aa:timeline:banzai:shoot}
     \begin{itemize} 
         \item verify clear avenue of fire
         \item crank post launch to minimize closure
@@ -287,16 +290,16 @@
     \end{itemize}
     
     \blueitem[Notch] \textbf{--- no later than DR}
-    \label{subsec:ttpaa:timeline:banzai:notch}
+    \label{subsec:ttp_aa:timeline:banzai:notch}
     \begin{itemize} 
         \item notch predetermined time (15s)
     \end{itemize}
     \blueitem[Banzai / Abort]
     \begin{enumerate}[label=\textbf{\arabic{enumi}\alph*.}]
         \item \blue{Abort} (spiked) --- \textbf{5G slicing turn}%
-        \label{subsec:ttpaa:timeline:banzai:abort}%
+        \label{subsec:ttp_aa:timeline:banzai:abort}%
         \item \blue{Banzai} (naked) --- recommit and engage%
-        \label{subsec:ttpaa:timeline:banzai:banzai}%
+        \label{subsec:ttp_aa:timeline:banzai:banzai}%
     \end{enumerate}
     
 \end{checklistenumerate}
@@ -304,7 +307,7 @@
 \clearpage
 
 \subsection{SKATE TIMELINE}
-\label{subsec:ttpaa:timeline:skate}
+\label{subsec:ttp_aa:timeline:skate}
 
 \begin{checklistenumerate}[start=0]
     \blueitem[Pre-commit] maintain SA
@@ -315,7 +318,7 @@
     \end{itemize}
 
     \blueitem[Commit]%
-    \label{subsec:ttpaa:timeline:skate:commit}
+    \label{subsec:ttp_aa:timeline:skate:commit}
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -437,33 +440,33 @@
 
             % labels
             \node[left, align=right, font=\small] at (cr) {
-                \ref{subsec:ttpaa:timeline:skate:commit}
+                \ref{subsec:ttp_aa:timeline:skate:commit}
             };
             \node[left, align=right, font=\small] at (mtr) {
-                \ref{subsec:ttpaa:timeline:skate:target}
+                \ref{subsec:ttp_aa:timeline:skate:target}
             };
             \node[left, align=right, font=\small] at (sort) {
-                \ref{subsec:ttpaa:timeline:skate:sort}
+                \ref{subsec:ttp_aa:timeline:skate:sort}
             };
             \node[left, align=right, font=\small] at (tr) {
-                \ref{subsec:ttpaa:timeline:skate:shoot}
+                \ref{subsec:ttp_aa:timeline:skate:shoot}
             };
             \node[left, align=right, font=\small] at (dor) {
-                \ref{subsec:ttpaa:timeline:skate:out}
+                \ref{subsec:ttp_aa:timeline:skate:out}
             };
             \node[left, align=right, font=\small] at (mrr) {
-                \ref{subsec:ttpaa:timeline:skate:recommit}
+                \ref{subsec:ttp_aa:timeline:skate:recommit}
             };
             \node[left, align=right, font=\small] at (shoot2) {
-                \ref{subsec:ttpaa:timeline:skate:shoot2}
+                \ref{subsec:ttp_aa:timeline:skate:shoot2}
             };
             \node[left, align=right, font=\small] at (mar) {
-                \ref{subsec:ttpaa:timeline:skate:abort}
+                \ref{subsec:ttp_aa:timeline:skate:abort}
             };
 
         \end{tikzpicture}
         \caption{Skate timeline}
-        \label{fig:ttpaa:timeline:skate}
+        \label{fig:ttp_aa:timeline:skate}
     }%
     \textbf{--- no later than CR}
     \begin{itemize}
@@ -473,7 +476,7 @@
     \end{itemize}
 
     \blueitem[Target] \textbf{--- no later than MTR}
-    \label{subsec:ttpaa:timeline:skate:target}
+    \label{subsec:ttp_aa:timeline:skate:target}
     \begin{itemize}
         \item target call indicates responsibility to \\
         engage group in accordance with ROE
@@ -481,18 +484,18 @@
     \end{itemize}
 
     \blueitem[Sort]
-    \label{subsec:ttpaa:timeline:skate:sort}
+    \label{subsec:ttp_aa:timeline:skate:sort}
     \begin{itemize}
         \item flight members sort contacts
         \item flight members obtain FCR lock on assigned contact
     \end{itemize}
 
     \blueitem[MRM Employment] \textbf{--- no later than TR}
-    \label{subsec:ttpaa:timeline:skate:shoot}
+    \label{subsec:ttp_aa:timeline:skate:shoot}
     \begin{itemize} 
         \item verify clear avenue of fire
         \item DLZ --- R\textsubscript{PI} to R\textsubscript{OPT}
-        \hfill (see \cref{fig:ttpaa:timeline:skate:dlz})\\
+        \hfill (see \cref{fig:ttp_aa:timeline:skate:dlz})\\
         manual loft to maximize performance
         \item crank post launch to minimize closure
     \end{itemize}
@@ -508,31 +511,34 @@
             };
         \end{tikzpicture}
         \caption{DLZ for skate}
-        \label{fig:ttpaa:timeline:skate:dlz}
+        \label{fig:ttp_aa:timeline:skate:dlz}
     }
 
     \blueitem[Out] \textbf{--- no later than DOR, after pitbull}
-    \label{subsec:ttpaa:timeline:skate:out}
+    \label{subsec:ttp_aa:timeline:skate:out}
     \begin{itemize}
         \item 5G slicing turn
     \end{itemize}
     \blueitem[Recommit] (if necessary)
-    \label{subsec:ttpaa:timeline:skate:recommit}
+    \label{subsec:ttp_aa:timeline:skate:recommit}
     \begin{itemize}
         \item \textbf{range must be greater than MRR}
         \item fighter must reacquire \& sort bandit
     \end{itemize}
     \blueitem[MRM Employment] \textbf{--- no later than MAR}
-    \label{subsec:ttpaa:timeline:skate:shoot2}
+    \begin{itemize}
+        \item typically use launch-and-decide tactics
+    \end{itemize}
+    \label{subsec:ttp_aa:timeline:skate:shoot2}
     \blueitem[Abort]%
-    \label{subsec:ttpaa:timeline:skate:abort}
+    \label{subsec:ttp_aa:timeline:skate:abort}
     \textbf{--- 5G slicing turn at MAR}
 \end{checklistenumerate}
 
 \clearpage
 
 \subsection{SHORT SKATE TIMELINE}
-\label{subsec:ttpaa:timeline:shortskate}
+\label{subsec:ttp_aa:timeline:shortskate}
 
 \begin{checklistenumerate}[start=0]
     \blueitem[Pre-commit] maintain SA
@@ -543,7 +549,7 @@
     \end{itemize}
 
     \blueitem[Commit]%
-    \label{subsec:ttpaa:timeline:shortskate:commit}
+    \label{subsec:ttp_aa:timeline:shortskate:commit}
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -649,24 +655,24 @@
 
             % labels
             \node[left, align=right, font=\small] at (cr) {
-                \ref{subsec:ttpaa:timeline:shortskate:commit}
+                \ref{subsec:ttp_aa:timeline:shortskate:commit}
             };
             \node[left, align=right, font=\small] at (mtr) {
-                \ref{subsec:ttpaa:timeline:shortskate:target}
+                \ref{subsec:ttp_aa:timeline:shortskate:target}
             };
             \node[left, align=right, font=\small] at (sort) {
-                \ref{subsec:ttpaa:timeline:shortskate:sort}
+                \ref{subsec:ttp_aa:timeline:shortskate:sort}
             };
             \node[left, align=right, font=\small] at (msr) {
-                \ref{subsec:ttpaa:timeline:shortskate:shoot}
+                \ref{subsec:ttp_aa:timeline:shortskate:shoot}
             };
             \node[left, align=right, font=\small] at (mar) {
-                \ref{subsec:ttpaa:timeline:shortskate:abort}
+                \ref{subsec:ttp_aa:timeline:shortskate:abort}
             };
 
         \end{tikzpicture}
-        \caption{Skate timeline}
-        \label{fig:ttpaa:timeline:shortskate}
+        \caption{Short skate timeline}
+        \label{fig:ttp_aa:timeline:shortskate}
     }%
     \textbf{--- no later than CR}
     \begin{itemize}
@@ -676,7 +682,7 @@
     \end{itemize}
 
     \blueitem[Target] \textbf{--- no later than MTR}
-    \label{subsec:ttpaa:timeline:shortskate:target}
+    \label{subsec:ttp_aa:timeline:shortskate:target}
     \begin{itemize}
         \item target call indicates responsibility to \\
         engage group in accordance with ROE
@@ -684,22 +690,21 @@
     \end{itemize}
 
     \blueitem[Sort]
-    \label{subsec:ttpaa:timeline:shortskate:sort}
+    \label{subsec:ttp_aa:timeline:shortskate:sort}
     \begin{itemize}
         \item flight members sort contacts
         \item flight members obtain FCR lock on assigned contact
     \end{itemize}
 
     \blueitem[MRM Employment] \textbf{--- no later than MSR}
-    \label{subsec:ttpaa:timeline:shortskate:shoot}
+    \label{subsec:ttp_aa:timeline:shortskate:shoot}
     \begin{itemize} 
         \item verify clear avenue of fire
         \item DLZ --- R\textsubscript{TR} to R\textsubscript{PI} 
-        \hfill (see \cref{fig:ttpaa:timeline:shortskate:dlz})\\
+        \hfill (see \cref{fig:ttp_aa:timeline:shortskate:dlz})\\
         manual loft to maximize performance
         \item crank post launch to minimize closure
         \item launch from within TR to increase P\textsubscript{K}
-        \item \textbf{no option to recommit and engage before MAR}
     \end{itemize}
     
     \marginpar{
@@ -713,11 +718,17 @@
             };
         \end{tikzpicture}
         \caption{DLZ for short skate}
-        \label{fig:ttpaa:timeline:shortskate:dlz}
+        \label{fig:ttp_aa:timeline:shortskate:dlz}
     }
     \blueitem[Abort]%
-    \label{subsec:ttpaa:timeline:shortskate:abort}
+    \label{subsec:ttp_aa:timeline:shortskate:abort}
     \textbf{--- 5G slicing turn at MAR}
 \end{checklistenumerate}
+
+\notebox{%
+    \small\textbf{%
+        Launching at MSR does \textbf{NOT} preserve option to recommit
+    }
+}
 
 \marginfigrestore

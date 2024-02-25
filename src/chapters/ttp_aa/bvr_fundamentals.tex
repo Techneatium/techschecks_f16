@@ -1,7 +1,8 @@
 \section{BVR FUNDAMENTALS}
-\label{subsec:bvr}
+\label{sec:ttp_aa:bvr_fundamentals}
 
 \subsection[AR FUNDAMENTALS]{ACTIVE RADAR MISSILE FUNDAMENTALS}
+\label{subsec:ttp_aa:bvr_fundamentals:ar}
 
 \begin{figure}[htbp]
     \centering
@@ -85,13 +86,13 @@
 
     \end{tikzpicture}
     \caption{Side-on view of a generic AIM-120 employment profile}
-    \label{fig:aa_weap:bvr:aim120profile}
+    \label{fig:ttp_aa:bvr_fundamentals:aim120profile}
     % TODO: silhouettes?
 \end{figure}
 
 \begin{tcoloritemize}
     \blueitem[AIM-120 \break Employment \break Profile]
-    \Cref{fig:aa_weap:bvr:aim120profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
+    \Cref{fig:ttp_aa:bvr_fundamentals:aim120profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
     including the following phases
 
     \begin{itemize}
@@ -104,47 +105,46 @@
     \textbf{Boost}
 
     \begin{itemize}
-        \item Motor only fires for initial seconds of flight 
-        \item After burnout missile \textbf{\underline{cannot gain energy}}
+        \item motor only fires for initial seconds of flight 
+        \item after burnout missile \textbf{\underline{cannot gain energy}}
     \end{itemize}
 
     \textbf{Lofting} 
 
     \begin{itemize}
-        \item To reach longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
-        \item Pilot can manually loft by raising the nose 20-30 deg prior to launch
+        \item to reach longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
+        \item pilot can manually loft by raising the nose 20-30 deg prior to launch
     \end{itemize}
     \blueitem[Mid-Course Phase]
-    \textbf{Missile flies using internal IMU}
+    \textbf{Missile navigates using internal IMU}
 
     \begin{itemize}
-        \item Receives periodic datalink updates
-        \item Will fly to last updated target position if DL lost
+        \item receives periodic datalink updates
+        \item will fly to last updated target position if DL lost
     \end{itemize}
     \blueitem[Acquisition \& MPRF ``Active'' Phase]
-    \textbf{Missile radar turns on once close to target location}
+    \textbf{Missile seeker activates once close to predicted target location}
     \begin{itemize}
-        \item Seeker in MPRF (Medium Pulse Repetition Frequency) mode 
-        \item Locks on to closest / best target
+        \item seeker in MPRF (medium pulse-repetition frequency) mode 
+        \item locks on to closest / best target
     \end{itemize}
     \blueitem[Terminal Phase \& Intercept]
-    \textbf{Once missile seeker has acquired target}
+    \textbf{After missile seeker has acquired target}
     \begin{itemize}
-        \item Flies PNG intercept trajectory
-        \item Requires no further DL support, fighter can turn away from the bandit
+        \item flies optimized PNG (proportional navigation) intercept trajectory
+        \item requires no further DL support, fighter can turn away from the bandit
     \end{itemize}
 \end{tcoloritemize}
 
 \cautionbox{
     \textbf{Do NOT employ AIM-120 without clear avenue-of-fire} 
     \begin{itemize}
-        \item AIM-120 has NO IFF functionality
+        \item AIM-120 does \textbf{NOT} have IFF capability
     \end{itemize}
 }
 
-\subsubsection{TACTICAL CONSIDERATIONS}
-\label{subsec:bvr:tacticalconsideration}
-% \label{subsec:aim120:tactics}
+\subsection{TACTICAL CONSIDERATIONS}
+\label{sec:ttp_aa:bvr_fundamentals:tacticalconsideration}
 \begin{tcoloritemize}
     \blueitem[Range Definitions]
     \textbf{Fighter-bandit distance} can be measured at different points during the timeline
@@ -155,49 +155,49 @@
         \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
     \end{itemize}
     
-    These are also illustrated in \cref{fig:aa_weap:bvr:aim120profile}.
+    These are also illustrated in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}.
     \blueitem[Maximizing Launch Range / Energy]
-    \textbf{Why?}
+    \textbf{Why:}
     \begin{itemize}
-        \item Ability to launch at longer ranges forces bandit defensive
-        \item Bandit may not be able to counter-launch
-        \item Higher launch energy increases P\textsubscript{intercept} %probability of intercept
+        \item ability to launch at longer ranges forces bandit defensive
+        \item bandit may not be able to counter-launch
+        \item higher launch energy increases P\textsubscript{intercept} %probability of intercept
     \end{itemize}
-    \textbf{How?}
+    \textbf{How:}
     \begin{itemize}
-        \item \textbf{High velocity} --- increases kinetic energy 
-        \item \textbf{High altitude} --- increases potential energy, reduces drag
+        \item \textbf{high velocity} --- increases kinetic energy 
+        \item \textbf{high altitude} --- increases potential energy, reduces drag
     \end{itemize}
     \blueitem[Maximizing \break F-Pole Range]
-    \textbf{Why?}
+    \textbf{Why:}
     \begin{itemize}
-        \item Less likely to enter bandit launch envelope
-        \item More time/range to launch 2nd missile if necessary
+        \item less likely to enter bandit launch envelope
+        \item more time/range to launch 2nd missile if necessary
     \end{itemize}
-    \textbf{How?}
+    \textbf{How:}
     \begin{itemize}
-        \item \textbf{Crank} --- turn 45-60 degrees away from bandit to reduce closure rate, maintain radar contact
-        \item \textbf{Dive} --- reduces threat missile envelope
+        \item \textbf{crank} --- turn 45-60 degrees away from bandit to reduce closure rate, maintain radar contact
+        \item \textbf{dive} --- reduces threat missile envelope
     \end{itemize}
     \blueitem[Flowing Cold]
-    \textbf{Why?}
+    \textbf{Why:}
     \begin{itemize}
-        \item Missile requires no support once active
-        \item Defend against unknown missile launches
-        \item Maximize F-pole range further
+        \item missile requires no support once active
+        \item defend against unknown missile launches
+        \item maximize F-pole range further
     \end{itemize}
-    \textbf{How?}
+    \textbf{How:}
     \begin{itemize}
-        \item \textbf{Turn} --- Away from bandit / threat
-        \item \textbf{Dive} --- if necessary, reduces threat missile envelope 
+        \item \textbf{turn} --- away from bandit / threat
+        \item \textbf{dive} --- if necessary, reduces threat missile envelope 
     \end{itemize}
     \blueitem[Effect of Bandit Maneuvers]
-    As evident in \cref{fig:aa_weap:bvr:aim120profile}, 
+    As evident in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}, 
    \textbf{R\textsubscript{Launch}} is significantly greater than the distance travelled by the missile
     \begin{itemize}
         \item \textbf{DLZ calculated based off \underline{both} fighter \underline{and} bandit velocity/altitude}
-        \item Bandit can significantly change missile envelope by reducing closure rate / altitude
-        \item Post-launch bandit maneuvers can result in missile not having energy to intercept
+        \item bandit can significantly change missile envelope by reducing closure rate / altitude
+        \item post-launch bandit maneuvers can result in missile not having energy to intercept
     \end{itemize}
 \end{tcoloritemize}
 
@@ -214,7 +214,7 @@
         \item typically used post-launch
     \end{itemize}
     
-    Reference \cref{fig:aa_weap:bvr:fightermaneuver:crank}
+    Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:crank}
     \blueitem[Notch]
     Fighter turns \textbf{70-110 deg} away from threat
 
@@ -223,7 +223,7 @@
         \item increases angular motion, forcing missile to maneuver and expend energy
     \end{itemize}
     
-    Reference \cref{fig:aa_weap:bvr:fightermaneuver:notch}
+    Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:notch}
     \blueitem[Go Cold]
     Fighter turns \textbf{away} from threat
 
@@ -231,7 +231,7 @@
         \item used to kinematically defeat threat missiles
     \end{itemize}
     
-    Reference \cref{fig:aa_weap:bvr:fightermaneuver:cold}
+    Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:cold}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -266,8 +266,8 @@
             (0,15) arc (90:30:10) node[pos=0.15, above right]{\small\titlefont 45-60$^\circ$};
     
         \end{tikzpicture}
-        \caption{Crank}
-        \label{fig:aa_weap:bvr:fightermaneuver:crank}
+        \caption{crank}
+        \label{fig:ttp_aa:bvr_fundamentals:fightermaneuver:crank}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\linewidth}
         \centering
@@ -299,8 +299,8 @@
             (0,15) arc (90:0:10) node[pos=0.5, above right]{\small\titlefont 70-110$^\circ$};
     
         \end{tikzpicture}
-        \caption{Notch}
-        \label{fig:aa_weap:bvr:fightermaneuver:notch}
+        \caption{notch}
+        \label{fig:ttp_aa:bvr_fundamentals:fightermaneuver:notch}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\linewidth}
         \centering
@@ -332,15 +332,15 @@
             (0,25) -- (0,5);
 
         \end{tikzpicture}
-        \caption{Go Cold}
-        \label{fig:aa_weap:bvr:fightermaneuver:cold}
+        \caption{go cold}
+        \label{fig:ttp_aa:bvr_fundamentals:fightermaneuver:cold}
     \end{subfigure}
     \caption{Top-down view of basic BVR fighter maneuvers}
-    \label{fig:aa_weap:bvr:fightermaneuver}
+    \label{fig:ttp_aa:bvr_fundamentals:fightermaneuver}
 \end{figure}
 
 \notebox{
-    \textbf{Turning in after going cold can place fighter within bandit launch envelope}
+    \small\textbf{Turning in after going cold can place fighter within bandit launch envelope due to increased closure rate}
 }
 
 \subsection{TARGET ASPECT}
@@ -398,8 +398,8 @@
             (0,10) arc (-90:-75:10) node[pos=1.0, right]{\small\titlefont 0-40$^\circ$};
 
         \end{tikzpicture}
-        \caption{Hot}
-        \label{fig:aa_weap:bvr:ta:hot}
+        \caption{hot}
+        \label{fig:ttp_aa:bvr_fundamentals:ta:hot}
     \end{subfigure}
     \begin{subfigure}[b]{0.2\linewidth}
         \centering
@@ -426,8 +426,8 @@
             (0,10) arc (-90:-30:10) node[pos=0.25, below right]{\small\titlefont 40-70$^\circ$};
 
         \end{tikzpicture}
-        \caption{Flank}
-        \label{fig:aa_weap:bvr:ta:flank}
+        \caption{flank}
+        \label{fig:ttp_aa:bvr_fundamentals:ta:flank}
     \end{subfigure}
     \begin{subfigure}[b]{0.25\linewidth}
         \centering
@@ -454,8 +454,8 @@
             (0,10) arc (-90:0:10) node[pos=0.25, below right]{\small\titlefont 70-110$^\circ$};
     
         \end{tikzpicture}
-        \caption{Beam}
-        \label{fig:aa_weap:bvr:ta:beam}
+        \caption{beam}
+        \label{fig:ttp_aa:bvr_fundamentals:ta:beam}
     \end{subfigure}
     \begin{subfigure}[b]{0.25\linewidth}
         \centering
@@ -482,11 +482,11 @@
             (0,10) arc (-90:90:10) node[pos=0.125, below right]{\small\titlefont 110-180$^\circ$};
     
         \end{tikzpicture}
-        \caption{Drag}
-        \label{fig:aa_weap:bvr:ta:drag}
+        \caption{drag}
+        \label{fig:ttp_aa:bvr_fundamentals:ta:drag}
     \end{subfigure}
-    \caption{Top down view illustrating target aspect classification}
-    \label{fig:aa_weap:bvr:ta}
+    \caption{Top-down view illustrating target aspect classification}
+    \label{fig:ttp_aa:bvr_fundamentals:ta}
 \end{figure}
 
 \clearpage

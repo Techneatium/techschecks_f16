@@ -90,30 +90,32 @@
     \textbf{DR} = max bandit R\textsubscript{F-pole} + bandit closure \times \ t\textsubscript{notch}
 \end{tcoloritemize}
 
-\notebox{
+\notebox{%
+    \small%
     \textbf{It is important to note that:}
     \begin{itemize}
         \item The timelines described in \cref{subsec:ttp_aa:timeline:banzai,subsec:ttp_aa:timeline:skate,subsec:ttp_aa:timeline:shortskate}
-        are to help illustrate core concepts of intercept timelines, \textbf{NOT} to be followed as absolute procedures.
-        \item To define a proper timeline, you must define you assumptions.
+        are to help illustrate core concepts of intercept timelines, 
+        \textbf{NOT} to be followed as absolute procedures.
+        \item To derive a true timeline, you must define your assumptions.
         \begin{itemize}
-            \item what is the bandit doing, what speed/altitude?
+            \item what is the bandit state (speed/altitude)?
             \item what is the performance of bandit missiles?
-            \item what tactics will the bandit most likely employ?
+            \item what tactics will bandit most likely employ?
         \end{itemize}
-        \item Specifically, defining the bandit WEZ / R\textsubscript{f-pole}, which define the MAR, 
-        relies on an accurate understanding of threat missile and aircraft performance 
-        as well as tactics.
-        \item The timelines visualized in \cref{fig:ttp_aa:timeline:banzai,fig:ttp_aa:timeline:skate,fig:ttp_aa:timeline:shortskate} are not to scale, 
+        \item Specifically, defining the bandit WEZ / R\textsubscript{f-pole}, 
+        which determine the MAR, 
+        relies on accurate models of of threat missiles, aircraft, and tactics.
+        \item \Cref{fig:ttp_aa:timeline:banzai,fig:ttp_aa:timeline:skate,fig:ttp_aa:timeline:shortskate} 
+        are not to scale, 
         any crank maneuvers are ommitted for compactness and visual clarity.
-        \item Rather than getting lost in the FCR page trying to execute complex tactics, 
-        ensure that the fundamentals are not getting forgotten. A typical order of priority is
+        \item Flight members should prioritize tasks during an intercept to maintain SA.
+        Typical order of priority is, in order
         \begin{enumerate}
             \item formation
             \item sensors
             \item communications
         \end{enumerate}
-        in that order.
     \end{itemize}
 }
 

@@ -15,47 +15,66 @@
         % bandit wez
         \draw[fill=red!40]
             (bandit)
-            -- ++(-60:15)
-            arc (-60:-120:15)
+            -- ++(-110:48)
+            arc (-110:-120:48)
             -- (bandit);
+
+        \node[rotate=-90] (naked_notch_mid) at (20, 30) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        \node[rotate=90] (spiked_notch_mid) at (-20, 30) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
         
-        % timeline
+        % naked fighter
         \draw[->] 
             (naked_start) -- 
             node[below, pos=0]{
                 \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-            (naked_notch_start);
-        \draw[->]
             (naked_notch_start)
             arc (180:90:5) 
-            -- ++(10,0)
-            arc (-90:0:5) 
-            -- ++(0,10)
-            node[above, pos=1]{
+            -- (naked_notch_mid);
+        \draw[->]
+            (naked_notch_mid.north)
+            arc (-90:45:5) 
+            -- ++(135:10)
+            node[above, pos=1, rotate=45] (naked_commit) {
                 \includegraphics[
                     angle=0,
                     width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+        \node[font=\footnotesize, below] at (naked_notch_mid.east) {Naked}; 
+        \node[font=\footnotesize, right] at (naked_commit.east) {Commit};
+
+        % spiked fighter
         \draw[->] 
             (spiked_start) -- 
             node[below, pos=0]{
                 \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-            (spiked_notch_start);
-        \draw[->]
             (spiked_notch_start)
             arc (0:90:5) 
-            -- ++(-10,0)
+            -- (spiked_notch_mid);
+        \draw[->]
+            (spiked_notch_mid.north)
             arc (90:180:5) 
             -- ++(0,-10)
-            node[below, pos=1, ]{
+            node[below, pos=1] (spiked_abort) {
                 \includegraphics[
                     angle=180,
                     width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+
+        \node[font=\footnotesize, below] at (spiked_notch_mid.west) {Spiked}; 
+        \node[font=\footnotesize, below] at (spiked_abort.south) {Abort};
 
         % bandit
         \node[] at (bandit) {
@@ -65,6 +84,6 @@
         ]{diagrams/aircraft/silhouette_f16_top.pdf}};
 
     \end{tikzpicture}
-    \caption{Banzai timeline}
+    \caption{Banzai element tactics}
     \label{fig:ttp_aa:element}
 \end{figure}

@@ -139,43 +139,88 @@
     \end{itemize}
 
     Reference \cref{fig:supp_fig:form:lineabreast} for illustration
+
+    \blueitem[Spread]
+    \textbf{Similar to line abreast} --- more room for wingman to maneuver
+
+    Reference \cref{fig:supp_fig:form:lineabreast} for illustration
 \end{tcoloritemize}
+
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[figstyle]
+    \begin{minipage}[b]{0.55\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
         
-        \coordinate (lead) at (0,0);
-        \coordinate (wing) at ($(lead)+(0:40)$);
-
-        \draw[dashed]
-        (lead) -- ++(0:20) arc (0:-20:20) -- (lead);
-
-        \draw[fill=color2!15]
-        ($(lead)+(0:20)$) 
-        -- ++(0:40) node[font=\footnotesize, pos=1, right] {0$^\circ$}
-        arc  (0:-20:60) 
-        node[font=\footnotesize, right, pos=0.5] {2.0 nm}
-        node[font=\footnotesize, pos=1, below right] {20$^\circ$}
-        -- ++(160:40)
-        arc (-20:0:20)
-        node[font=\footnotesize, right, pos=0.5] {0.7 nm};
-
-        \node[yshift=-3mm] (leadfig) at (lead) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
+            \coordinate (lead) at (0,0);
+            \coordinate (wing) at ($(lead)+(0:40)$);
+    
+            \draw[dashed]
+            (lead) -- ++(0:20) arc (0:-20:20) -- (lead);
+    
+            \draw[fill=color2!15]
+            ($(lead)+(0:20)$) 
+            -- ++(0:40) node[font=\footnotesize, pos=1, right] {0$^\circ$}
+            arc  (0:-20:60) 
+            node[font=\footnotesize, right, pos=0.5] {2.0 nm}
+            node[font=\footnotesize, pos=1, below right] {20$^\circ$}
+            -- ++(160:40)
+            arc (-20:0:20)
+            node[font=\footnotesize, right, pos=0.5] {0.7 nm};
+    
+            \node[yshift=-3mm] (leadfig) at (lead) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[yshift=-3mm] (wingfig) at (wing) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+    
+        \end{tikzpicture}
+        \caption{Two-ship line abreast formation}
+        \label{fig:supp_fig:form:lineabreast}
+    \end{minipage}%
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
         
-        \node[yshift=-3mm] (wingfig) at (wing) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-
-    \end{tikzpicture}
-    \caption{Two-ship line abreast formation}
-    \label{fig:supp_fig:form:lineabreast}
+            \coordinate (lead) at (0,0);
+            \coordinate (wing) at ($(lead)+(-30:30)$);
+    
+            \draw[dashed]
+            (lead) -- ++(0:20) arc (0:-60:20) -- (lead);
+    
+            \draw[fill=color2!15]
+            ($(lead)+(0:20)$) 
+            -- ++(0:20) node[font=\footnotesize, pos=1, right] {0$^\circ$}
+            arc  (0:-60:40) 
+            node[font=\footnotesize, right, pos=0.5] {2.0 nm}
+            node[font=\footnotesize, pos=1, below right] {60$^\circ$}
+            -- ++(120:20)
+            arc (-60:0:20)
+            node[font=\footnotesize, right, pos=0.75] {1.0 nm};
+    
+            \node[yshift=-3mm] (leadfig) at (lead) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[yshift=-0mm] (wingfig) at (wing) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+    
+        \end{tikzpicture}
+        \caption{Two-ship spread formation}
+        \label{fig:supp_fig:form:spread}
+    \end{minipage}
 \end{figure}
 
 \clearpage

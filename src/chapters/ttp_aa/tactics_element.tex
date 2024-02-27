@@ -313,22 +313,22 @@
         \coordinate (spiked_start) at (-5,0);
         \coordinate (bandit) at (0,45);
 
-        \coordinate (naked_notch_start) at (5,-5);
-        \coordinate (spiked_notch_start) at (-5,-5);
+        \coordinate (naked_notch_start) at (5,-15);
+        \coordinate (spiked_notch_start) at (-5,-15);
 
         % bandit wez
         \draw[fill=red!40]
             (bandit)
-            -- ++(-107.5:62)
-            arc (-107.5:-112.5:62)
+            -- ++(-105:72)
+            arc (-105:-110:72)
             -- (bandit);
 
-        \node[rotate=-90] (naked_notch_mid) at (20, -10) {
+        \node[rotate=-90] (naked_notch_mid) at (20, -20) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
-        \node[rotate=90] (spiked_notch_mid) at (-20, -10) {
+        \node[rotate=90] (spiked_notch_mid) at (-20, -20) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
@@ -346,9 +346,9 @@
             -- (naked_notch_mid);
         \draw[->]
             (naked_notch_mid.north)
-            arc (-90:45:5) 
-            -- ++(135:10)
-            node[above, pos=1, rotate=45] (naked_commit) {
+            arc (-90:30:5) 
+            -- ++(120:10)
+            node[above, pos=1, rotate=30] (naked_commit) {
                 \includegraphics[
                     angle=0,
                     width=7.5mm,

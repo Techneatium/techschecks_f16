@@ -1,11 +1,34 @@
 \section{ELEMENT TACTICS}
 
+\begin{tcoloritemize}
+    \blueitem[Element]
+\end{tcoloritemize}
+
 \subsection{ELEMENT RESPONSIBILITIES}
+
+\begin{tcoloritemize}
+    \blueitem[Lead]
+    \blueitem[Wingman]
+\end{tcoloritemize}
 
 \subsection{OFFENSIVE}
 
 \begin{tcoloritemize}
     \blueitem[Notch-Press]
+    Employment of launch-and-decide banzai tactics (\cref{subsec:ttp_aa:timeline:banzai})
+    as an element. Lead, wingman notch in opposite directions, 
+    spiked fighter aborts, 
+    naked fighter presses.
+    \hfill(see \cref{fig:ttp_aa:element:offensive:notchpress})
+
+    \bigskip
+    \textbf{Advantages}
+
+    \bigskip
+    \textbf{Disadvantages}
+    \begin{itemize}
+        \item if bandit equipped with active-radar missiles may not get spiked even if targeted
+    \end{itemize}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -15,10 +38,10 @@
         % coordinates
         \coordinate (naked_start) at (5,0);
         \coordinate (spiked_start) at (-5,0);
-        \coordinate (bandit) at (0,70);
+        \coordinate (bandit) at (0,60);
 
-        \coordinate (naked_notch_start) at (5,25);
-        \coordinate (spiked_notch_start) at (-5,25);
+        \coordinate (naked_notch_start) at (5,15);
+        \coordinate (spiked_notch_start) at (-5,15);
 
         % bandit wez
         \draw[fill=red!40]
@@ -27,12 +50,12 @@
             arc (-110:-120:48)
             -- (bandit);
 
-        \node[rotate=-90] (naked_notch_mid) at (20, 30) {
+        \node[rotate=-90] (naked_notch_mid) at (20, 20) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
-        \node[rotate=90] (spiked_notch_mid) at (-20, 30) {
+        \node[rotate=90] (spiked_notch_mid) at (-20, 20) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}

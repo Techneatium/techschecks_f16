@@ -1,4 +1,4 @@
-\subsection{TACTICAL TURNS}
+\subsection{MANEUVERS}
 
 \begin{tcoloritemize}
     \blueitem[Tactical Turn]
@@ -86,79 +86,80 @@
     \caption{Tactical turn}
     \label{fig:supp_fig:form:tacturn}
 \end{figure}
-
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[figstyle]
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
             
-        \draw[->] 
-        (0,0) -- 
-        node[below, pos=0]{
-            \includegraphics[
-            width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-        ++(0,20) 
-        arc (180:00:10) 
-        -- ++(0,-10)
-        node[above, pos=1, rotate=180]{
-            \includegraphics[
+            \draw[->] 
+            (0,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
                 width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,20) 
+            arc (180:00:10) 
+            -- ++(0,-10)
+            node[above, pos=1, rotate=180]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+                
+            \draw[->] 
+            (10,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,20) 
+            arc (180:0:10) 
+            -- ++(0,-10)
+            node[above, pos=1, rotate=180]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+    
+        \end{tikzpicture}
+        \caption{Hook turn}
+        \label{fig:supp_fig:form:hookturn}
+    \end{minipage}%
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
             
-        \draw[->] 
-        (10,0) -- 
-        node[below, pos=0]{
-            \includegraphics[
-            width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-        ++(0,20) 
-        arc (180:0:10) 
-        -- ++(0,-10)
-        node[above, pos=1, rotate=180]{
-            \includegraphics[
+            \draw[->] 
+            (0,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
                 width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
-
-    \end{tikzpicture}
-    \caption{Hook turn}
-    \label{fig:supp_fig:form:hookturn}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[figstyle]
-            
-        \draw[->] 
-        (0,0) -- 
-        node[below, pos=0]{
-            \includegraphics[
-            width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-        ++(0,20) 
-        arc (180:00:10) 
-        -- ++(0,-10)
-        node[above, pos=1, rotate=180]{
-            \includegraphics[
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,20) 
+            arc (180:00:10) 
+            -- ++(0,-10)
+            node[above, pos=1, rotate=180]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+                
+            \draw[->] 
+            (10,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
                 width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
-            
-        \draw[->] 
-        (10,0) -- 
-        node[below, pos=0]{
-            \includegraphics[
-            width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-        ++(0,20) 
-        arc (0:180:10) 
-        -- ++(0,-10)
-        node[above, pos=1, rotate=180]{
-            \includegraphics[
-                width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
-
-    \end{tikzpicture}
-    \caption{Cross turn}
-    \label{fig:supp_fig:form:crossturn}
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,20) 
+            arc (0:180:10) 
+            -- ++(0,-10)
+            node[above, pos=1, rotate=180]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+    
+        \end{tikzpicture}
+        \caption{Cross turn}
+        \label{fig:supp_fig:form:crossturn}
+    \end{minipage}
 \end{figure}
 
 \begin{figure}[htbp]

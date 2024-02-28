@@ -202,12 +202,14 @@
         \coordinate (4) at ($(3)+(-30:10)$);
 
         \draw[]
-        (1) -- (2);
+        (1) -- (2)
+        node[font=\footnotesize, left, pos=1] {Fingertip};
         \draw[]
         (1) -- (3)
         node[font=\footnotesize, above, pos=0.5] {LAB};
         \draw[]
-        (3) -- (4);
+        (3) -- (4)
+        node[font=\footnotesize, right, pos=1] {Fingertip};
 
         \node[yshift=-3mm] (1fig) at (1) {
             \includegraphics[
@@ -237,9 +239,6 @@
         \node[anchor=north, font=\footnotesize] (2label) at (2fig.south) {2};
         \node[anchor=north, font=\footnotesize] (3label) at (3fig.south) {3};
         \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
-
-        \node[anchor=east, font=\footnotesize] at (2fig.west) {Fingertip};
-        \node[anchor=west, font=\footnotesize] at (4fig.east) {Fingertip};
 
     \end{tikzpicture}
     \caption{Res Cell}
@@ -310,7 +309,7 @@
         \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
 
     \end{tikzpicture}
-    \caption{Four-ship offset box formation}
+    \caption{Four-ship offset box}
     \label{fig:supp_fig:form:boxoffset}
 \end{figure}
 
@@ -355,7 +354,7 @@
             \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
 
         \end{tikzpicture}
-        \caption{Fingertip formation}
+        \caption{Fingertip}
         \label{fig:supp_fig:form:fingertip}
     \end{minipage}%
     \begin{minipage}[b]{0.5\textwidth}
@@ -397,7 +396,7 @@
             \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
 
         \end{tikzpicture}
-        \caption{Diamond formation}
+        \caption{Diamond}
         \label{fig:supp_fig:form:diamond}
     \end{minipage}
 \end{figure}

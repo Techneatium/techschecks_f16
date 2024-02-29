@@ -2,24 +2,20 @@
 
 \begin{tcoloritemize}
     \blueitem[Fingertip]
-    \textbf{Standard formation} --- wingman align wingtip missile rail with canopy
+    \textbf{Standard formation} --- wingman align wingtip missile rail with canopy,
+    reference \cref{fig:supp_fig:form:fingertip} for illustration
     
-    \bigskip
-    \textbf{Disadvantage}
-    \begin{itemize}
-        \item wingmen must constantly reference lead
-    \end{itemize}
-    Reference \cref{fig:supp_fig:form:fingertip} for illustration
+    \medskip
+    \textbf{Disadvantage} --- wingmen must constantly reference lead
 
     \blueitem[Finger Four] 
-    \textbf{Loose Fingertip} --- spacing now 0.2-0.3 nm
+    \textbf{Loose Fingertip} --- spacing now 0.2-0.3 nm,
 
-    Reference \cref{fig:supp_fig:form:fingerfour} for illustration
+    reference \cref{fig:supp_fig:form:fingerfour} for illustration
 
     \blueitem[Route]
-    \textbf{Enlarged Fingertip} --- allows more heads-down time for wingmen
-
-    Reference \cref{fig:supp_fig:form:route} for illustration
+    \textbf{Enlarged Fingertip} --- allows more heads-down time for wingmen,
+    reference \cref{fig:supp_fig:form:route} for illustration
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -174,20 +170,21 @@
 
 \begin{tcoloritemize}
     \blueitem[Line Abreast] 
-    \textbf{Tactical Formation} --- allows simultaneous weapons employment
+    \textbf{Tactical Formation} --- allows simultaneous weapons employment,
+    reference \cref{fig:supp_fig:form:4shiplab}
 
-    \textbf{Disadvantages} --- difficult to maintain
-
-    Reference \cref{fig:supp_fig:form:4shiplab} for illustration
+    \medskip
+    \textbf{Disadvantages} 
+    \begin{itemize}
+        \item difficult to maintain
+    \end{itemize}
     \blueitem[Spread] 
-    \textbf{Relaxed line abreast} --- more room for wingman to maneuver, easier to maintain
-
-    Reference \cref{fig:supp_fig:form:spread} for illustration
+    \textbf{Relaxed line abreast} --- more room for wingman to maneuver, easier to maintain,
+    reference \cref{fig:supp_fig:form:spread}
     
     \blueitem[Fluid Four]
-    \textbf{Relaxed line abreast} --- wingmen in fighting wing
-    
-    Reference \cref{fig:supp_fig:form:fluidfour} for illustration
+    \textbf{Relaxed line abreast} --- wingmen in fighting wing,
+    reference \cref{fig:supp_fig:form:fluidfour}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -304,7 +301,7 @@
         \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
 
     \end{tikzpicture}
-    \caption{Spread}
+    \caption{Four-ship spread}
     \label{fig:supp_fig:form:spread}
 \end{figure}
 
@@ -376,6 +373,20 @@
     \label{fig:supp_fig:form:fluidfour}
 \end{figure}
 
+\begin{tcoloritemize}
+    \blueitem[Res Cell] 
+    \textbf{Encumbers bandit radar sort} --- wingmen hide within resolution cell of bandit radar,
+    reference \cref{fig:supp_fig:form:rescell}
+
+    \blueitem[Box] 
+    \textbf{Staggered line abreast} --- allows trailing element to cover lead element, trail can offset 
+    reference \cref{fig:supp_fig:form:boxoffset}
+    
+    \blueitem[Diamond]
+    \textbf{Airshow formation} --- no tactical advantage, hard to maintain, you will die looking cool,
+    reference \cref{fig:supp_fig:form:diamond}
+\end{tcoloritemize}
+
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[figstyle]
@@ -431,156 +442,294 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[figstyle]
-        
-        \coordinate (1) at (0,0);
-        \coordinate (2) at ($(1)+(20,0)$);
-        \coordinate (3) at ($(1)+(10,-30)$);
-        \coordinate (4) at ($(3)+(20,0)$);
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
+            
+            \coordinate (1) at (0,0);
+            \coordinate (2) at ($(1)+(20,0)$);
+            \coordinate (3) at ($(1)+(10,-30)$);
+            \coordinate (4) at ($(3)+(20,0)$);
 
-        \draw[<->]
-        ($(1)+(-5,0)$) 
-        -- ($(3)+(-15,0)$)
-        node[font=\footnotesize, pos=0.5, rotate=90, above] {1.5-3.0 nm};
-        \draw[thin]
-        (1) -- ($(1)+(-7,0)$)
-        (3) -- ($(3)+(-17,0)$);
+            \draw[<->]
+            ($(1)+(-5,0)$) 
+            -- ($(3)+(-15,0)$)
+            node[font=\footnotesize, pos=0.5, rotate=90, above] {1.5-3.0 nm};
+            \draw[thin]
+            (1) -- ($(1)+(-7,0)$)
+            (3) -- ($(3)+(-17,0)$);
 
-        \draw[<->]
-        ($(1)+(0,5)$) 
-        -- ($(2)+(0,5)$)
-        node[font=\footnotesize, pos=0.5, above] {LAB};
-        \draw[thin]
-        (1) -- ($(1)+(0,7)$)
-        (2) -- ($(2)+(0,7)$);
+            \draw[<->]
+            ($(1)+(0,5)$) 
+            -- ($(2)+(0,5)$)
+            node[font=\footnotesize, pos=0.5, above] {LAB};
+            \draw[thin]
+            (1) -- ($(1)+(0,7)$)
+            (2) -- ($(2)+(0,7)$);
 
-        \draw[<->]
-        ($(3)+(0,5)$) 
-        -- ($(4)+(0,5)$)
-        node[font=\footnotesize, pos=0.5, above] {LAB};
-        \draw[thin]
-        (3) -- ($(3)+(0,7)$)
-        (4) -- ($(4)+(0,7)$);
+            \draw[<->]
+            ($(3)+(0,5)$) 
+            -- ($(4)+(0,5)$)
+            node[font=\footnotesize, pos=0.5, above] {LAB};
+            \draw[thin]
+            (3) -- ($(3)+(0,7)$)
+            (4) -- ($(4)+(0,7)$);
 
 
-        \node[yshift=-2mm] (1fig) at (1) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-        
-        \node[yshift=-2mm] (2fig) at (2) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
+            \node[yshift=-2mm] (1fig) at (1) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[yshift=-2mm] (2fig) at (2) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
 
-        \node[yshift=-2mm] (3fig) at (3) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-        
-        \node[yshift=-2mm] (4fig) at (4) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
+            \node[yshift=-2mm] (3fig) at (3) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[yshift=-2mm] (4fig) at (4) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
 
-        \node[anchor=north, font=\footnotesize] (1label) at (1fig.south) {1};
-        \node[anchor=north, font=\footnotesize] (2label) at (2fig.south) {2};
-        \node[anchor=north, font=\footnotesize] (3label) at (3fig.south) {3};
-        \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
+            \node[anchor=north, font=\footnotesize] (1label) at (1fig.south) {1};
+            \node[anchor=north, font=\footnotesize] (2label) at (2fig.south) {2};
+            \node[anchor=north, font=\footnotesize] (3label) at (3fig.south) {3};
+            \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
 
-    \end{tikzpicture}
-    \caption{Four-ship offset box}
-    \label{fig:supp_fig:form:boxoffset}
+        \end{tikzpicture}
+        \caption{Four-ship offset box}
+        \label{fig:supp_fig:form:boxoffset}
+    \end{minipage}%
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
+            
+            \coordinate (1) at (0,0);
+            \coordinate (2) at ($(1)+(-135:10)$);
+            \coordinate (3) at ($(1)+(-45:10)$);
+            \coordinate (4) at ($(3)+(-135:10)$);
+
+            \node[yshift=-2mm] (1fig) at (1) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[yshift=-2mm] (2fig) at (2) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+
+            \node[yshift=-2mm] (3fig) at (3) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+            
+            \node[yshift=-2mm] (4fig) at (4) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+
+            \node[anchor=south, font=\footnotesize] (1label) at (1fig.north) {1};
+            \node[anchor=north, font=\footnotesize] (2label) at (2fig.south) {2};
+            \node[anchor=north, font=\footnotesize] (3label) at (3fig.south) {3};
+            \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
+
+        \end{tikzpicture}
+        \caption{Diamond}
+        \label{fig:supp_fig:form:diamond}
+    \end{minipage}
 \end{figure}
+
+\clearpage
+
+\begin{tcoloritemize}
+    \blueitem[Trail] 
+    \textbf{IFR formation}
+    --- allows radar / TACAN contact between flight members for deconfliction,
+    distance as briefed,
+    reference \ref{fig:supp_fig:form:trail}
+
+    \blueitem[Stack]
+    \textbf{More restrictive trail} --- similar to trail but with altitude separation and tighter distance constraints,
+    reference \ref{fig:supp_fig:form:stack}
+
+    \blueitem[Ladder]
+    \textbf{A-G formation} --- similar to trail with altitude separation,
+    reference \ref{fig:supp_fig:form:ladder}
+\end{tcoloritemize}
 
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[figstyle]
         
         \coordinate (1) at (0,0);
-        \coordinate (2) at ($(1)+(-150:20)$);
-        \coordinate (3) at ($(1)+(-30:20)$);
-        \coordinate (4) at ($(3)+(-150:20)$);
+        \coordinate (2) at ($(1)+(180:20)$);
+        \coordinate (3) at ($(2)+(180:20)$);
+        \coordinate (4) at ($(3)+(180:20)$);
 
-        \node[yshift=-2mm] (1fig) at (1) {
+        \node[yshift=-2mm, rotate=-90] (1fig) at (1) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
         
-        \node[yshift=-2mm] (2fig) at (2) {
+        \node[yshift=-2mm, rotate=-90] (2fig) at (2) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
 
-        \node[yshift=-2mm] (3fig) at (3) {
+        \node[yshift=-2mm, rotate=-90] (3fig) at (3) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
         
-        \node[yshift=-2mm] (4fig) at (4) {
+        \node[yshift=-2mm, rotate=-90] (4fig) at (4) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
 
-        \node[anchor=north, font=\footnotesize] (1label) at (1fig.south) {1};
-        \node[anchor=north, font=\footnotesize] (2label) at (2fig.south) {2};
-        \node[anchor=north, font=\footnotesize] (3label) at (3fig.south) {3};
-        \node[anchor=north, font=\footnotesize] (4label) at (4fig.south) {4};
+        \node[anchor=north, font=\footnotesize] (1label) at (1fig.east) {1};
+        \node[anchor=north, font=\footnotesize] (2label) at (2fig.east) {2};
+        \node[anchor=north, font=\footnotesize] (3label) at (3fig.east) {3};
+        \node[anchor=north, font=\footnotesize] (4label) at (4fig.east) {4};
 
     \end{tikzpicture}
-    \caption{Diamond}
-    \label{fig:supp_fig:form:diamond}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[figstyle]
-        
-        \coordinate (1) at (0,0);
-        \coordinate (2) at ($(1)+(-90:15)$);
-        \coordinate (3) at ($(2)+(-90:15)$);
-        \coordinate (4) at ($(3)+(-90:15)$);
-
-        \node[yshift=-2mm] (1fig) at (1) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-        
-        \node[yshift=-2mm] (2fig) at (2) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-
-        \node[yshift=-2mm] (3fig) at (3) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-        
-        \node[yshift=-2mm] (4fig) at (4) {
-            \includegraphics[
-                width=7.5mm,
-            ]{diagrams/aircraft/silhouette_f16_top.pdf}
-        };
-
-        \node[anchor=west, font=\footnotesize] (1label) at (1fig.east) {1};
-        \node[anchor=west, font=\footnotesize] (2label) at (2fig.east) {2};
-        \node[anchor=west, font=\footnotesize] (3label) at (3fig.east) {3};
-        \node[anchor=west, font=\footnotesize] (4label) at (4fig.east) {4};
-
-    \end{tikzpicture}
-    \caption{Trail formation}
+    \caption{Trail}
     \label{fig:supp_fig:form:trail}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[figstyle]
+        
+        \coordinate (1) at (0,0);
+        \coordinate (2) at ($(1)+(-20, -5)$);
+        \coordinate (3) at ($(2)+(-20, -5)$);
+        \coordinate (4) at ($(3)+(-20, -5)$);
+
+        \draw[<->, thin]
+        ($(2)+(10,0)$) 
+        -- ($(3)+(30,0)$)
+        node[font=\footnotesize, pos=0.5, right] {500-2000 ft};
+        \draw[thin]
+        (2) -- ($(2)+(12,0)$)
+        (3) -- ($(3)+(32,0)$);
+
+        \draw[<->, thin]
+        ($(3)+(0,10)$) 
+        -- ($(4)+(0,15)$)
+        node[font=\footnotesize, pos=0.5, above] {0.5-1.0 nm};
+        \draw[thin]
+        (3) -- ($(3)+(0,12)$)
+        (4) -- ($(4)+(0,17)$);
+
+        \node[yshift=0.75mm] (1fig) at (1) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+        
+        \node[yshift=0.75mm] (2fig) at (2) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+
+        \node[yshift=0.75mm] (3fig) at (3) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+        
+        \node[yshift=0.75mm] (4fig) at (4) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+
+        \node[anchor=north, font=\footnotesize] (1label) at (1fig.west) {1};
+        \node[anchor=north, font=\footnotesize] (2label) at (2fig.west) {2};
+        \node[anchor=north, font=\footnotesize] (3label) at (3fig.west) {3};
+        \node[anchor=north, font=\footnotesize] (4label) at (4fig.west) {4};
+
+    \end{tikzpicture}
+    \caption{Stack}
+    \label{fig:supp_fig:form:stack}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[figstyle]
+        
+        \coordinate (1) at (0,0);
+        \coordinate (2) at ($(1)+(-20, 5)$);
+        \coordinate (3) at ($(2)+(-20, 5)$);
+        \coordinate (4) at ($(3)+(-20, 5)$);
+
+        \draw[<->, thin]
+        ($(2)+(10,0)$) 
+        -- ($(3)+(30,0)$)
+        node[font=\footnotesize, pos=0.5, right] {500-2000 ft};
+        \draw[thin]
+        (2) -- ($(2)+(12,0)$)
+        (3) -- ($(3)+(32,0)$);
+
+        \draw[<->, thin]
+        ($(3)+(0,-10)$) 
+        -- ($(4)+(0,-15)$)
+        node[font=\footnotesize, pos=0.5, below] {0.5-1.0 nm};
+        \draw[thin]
+        (3) -- ($(3)+(0,-12)$)
+        (4) -- ($(4)+(0,-17)$);
+
+        \node[yshift=0.75mm] (1fig) at (1) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+        
+        \node[yshift=0.75mm] (2fig) at (2) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+
+        \node[yshift=0.75mm] (3fig) at (3) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+        
+        \node[yshift=0.75mm] (4fig) at (4) {
+            \includegraphics[
+                width=12mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+
+        \node[anchor=north, font=\footnotesize] (1label) at (1fig.west) {1};
+        \node[anchor=north, font=\footnotesize] (2label) at (2fig.west) {2};
+        \node[anchor=north, font=\footnotesize] (3label) at (3fig.west) {3};
+        \node[anchor=north, font=\footnotesize] (4label) at (4fig.west) {4};
+
+    \end{tikzpicture}
+    \caption{Ladder}
+    \label{fig:supp_fig:form:ladder}
 \end{figure}
 
 \clearpage

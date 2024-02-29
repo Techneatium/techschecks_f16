@@ -7,15 +7,29 @@
 \section{DIAGRAMS}
 
 \subsection{COCKPIT OVERVIEW}
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
-    \includegraphics[
-        height = 0.70\textheight,
-        page = {1},
-        % trim = {1.5cm, 2.5cm, 15.5cm, 1.5cm},
-        % clip
-    ]{diagrams/cockpit/cockpit_full.pdf}
-    \caption{F-16C Block 52 Cockpit Overview}
+    \begin{tikzpicture}[figstyle]
+        \node[](fig) at (0,0)
+        {
+            \includegraphics[
+                height = 0.65\textheight
+            ]{diagrams/cockpit/cockpit_full.pdf}
+        };
+
+        \draw[red] 
+        (-2,58) -- ++(0,5) node [font=\footnotesize, left, pos=0.5] {10$^\circ$}
+        (-10,49) -- ++(0,5) node [font=\footnotesize, left, pos=0.5] {20$^\circ$}
+        (-18,42) -- ++(0,5) node [font=\footnotesize, left, pos=0.5] {30$^\circ$};
+
+        \draw[color2] 
+        (10,57) -- ++(5,0) node [font=\footnotesize, right, pos=1] {0$^\circ$}
+        (18,48.5) -- ++(5,0) node [font=\footnotesize, right, pos=1] {10$^\circ$}
+        (25.5,36.75) -- ++(5,0) node [font=\footnotesize, right, pos=1] {20$^\circ$}
+        (30.5,27) -- ++(5,0) node [font=\footnotesize, right, pos=1] {30$^\circ$};
+    \end{tikzpicture}
+    \caption{F-16C block 52 cockpit overview. 
+    Note the additional annotation lines which indicate vertical and horizontal angle references}
     \label{fig:cockpitoverview}
 \end{figure}
 

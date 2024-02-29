@@ -2,14 +2,23 @@
 
 \begin{tcoloritemize}
     \blueitem[Tactical Turn]
-    \textbf{Maintains line abreast formation}
-    
-    \begin{itemize}
-        \item flight member on outside must initiate turn
-    \end{itemize}
-    \medskip
+    \textbf{Maintains LAB formation} --- flight member on outside must initiate turn,
+    reference \cref{fig:supp_fig:form:tacturn} for illustration
 
-    Reference \cref{fig:supp_fig:form:tacturn} for illustration
+    \blueitem[Hook Turn]
+    \textbf{Element turns cold while maintaining LAB} --- ideal for CAP / grinder tactics,
+    reference \cref{fig:supp_fig:form:hookturn}
+
+    \blueitem[Cross Turn]
+    \textbf{Element turns cold while maintaining LAB} --- similar to hook turn, flight members swap sides
+    reference \cref{fig:supp_fig:form:crossturn}
+
+    \blueitem[Shackle]
+    \textbf{Element members swap sides} --- reference \cref{fig:supp_fig:form:shackle}
+
+    \blueitem[In-Place Turn]
+    \textbf{Places wingman in trail} --- can be combined with 2nd in-place turn to return to LAB,
+    reference \cref{fig:supp_fig:form:inplace}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -86,6 +95,7 @@
     \caption{Tactical turn}
     \label{fig:supp_fig:form:tacturn}
 \end{figure}
+
 \begin{figure}[htbp]
     \centering
     \begin{minipage}[b]{0.5\textwidth}
@@ -164,39 +174,78 @@
 
 \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}[figstyle]
-            
-        \draw[->] 
-        (0,0) -- 
-        node[below, pos=0]{
-            \includegraphics[
-            width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-        ++(0,5) 
-        arc (180:135:17) 
-        arc (-45:0:17) 
-        -- ++(0,5)
-        node[above, pos=1]{
-            \includegraphics[
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
+                
+            \draw[->] 
+            (0,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
                 width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
-            
-        \draw[->] 
-        (10,0) -- 
-        node[below, pos=0]{
-            \includegraphics[
-            width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
-        ++(0,5) 
-        arc (0:45:17) 
-        arc (-135:-180:17) 
-        -- ++(0,5)
-        node[above, pos=1]{
-            \includegraphics[
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,2.5) 
+            arc (180:135:17) 
+            arc (-45:0:17) 
+            -- ++(0,2.5)
+            node[above, pos=1]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+                
+            \draw[->] 
+            (10,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
                 width=7.5mm,
-        ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,2.5) 
+            arc (0:45:17) 
+            arc (-135:-180:17) 
+            -- ++(0,2.5)
+            node[above, pos=1]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
 
-    \end{tikzpicture}
-    \caption{Shackle}
-    \label{fig:supp_fig:form:shackle}
+        \end{tikzpicture}
+        \caption{Shackle}
+        \label{fig:supp_fig:form:shackle}
+    \end{minipage}%
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[figstyle]
+            
+            \draw[->] 
+            (0,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,10) 
+            arc (180:90:10) 
+            % -- ++(0,0)
+            node[above, pos=1, rotate=-90]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+                
+            \draw[->] 
+            (20,0) -- 
+            node[below, pos=0]{
+                \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}} 
+            ++(0,10) 
+            arc (180:90:10) 
+            % -- ++(0,0)
+            node[above, pos=1, rotate=-90]{
+                \includegraphics[
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}};
+    
+        \end{tikzpicture}
+        \caption{In-place 90 right}
+        \label{fig:supp_fig:form:inplace}
+    \end{minipage}
 \end{figure}

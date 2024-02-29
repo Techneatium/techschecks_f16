@@ -252,6 +252,7 @@
 
 \begin{tcoloritemize}
     \blueitem[Overhead \break Approach]
+    Reference \cref{subsec:proc_basic:to_ldg:ldg} for landing procedure.
     \begin{itemize}
         \item flight should be in echelon right/left
         \item lead breaks first, 2-4 in 5 second intervals 
@@ -299,12 +300,9 @@
         \draw[ultra thick, ->] 
         (approach4) -- (break4);
         \draw[ultra thick] 
-        (break1) arc (0:180:10);
-        \draw[ultra thick] 
-        (break2) arc (0:180:12.5);
-        \draw[ultra thick] 
-        (break3) arc (0:180:15);
-        \draw[ultra thick] 
+        (break1) arc (0:180:10)
+        (break2) arc (0:180:12.5)
+        (break3) arc (0:180:15)
         (break4) arc (0:180:17.5) -- (downwind);
         \draw[ultra thick, >->] 
         (downwind) -- (base);

@@ -249,3 +249,100 @@
         \label{fig:supp_fig:form:inplace}
     \end{minipage}
 \end{figure}
+
+\begin{tcoloritemize}
+    \blueitem[Overhead \break Approach]
+    \begin{itemize}
+        \item flight should be in echelon right/left
+        \item lead breaks first, 2-4 in 5 second intervals 
+    \end{itemize}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[figstyle]
+
+        % coordinates
+        \coordinate (approach1) at (5,-25);
+        \coordinate (approach2) at (10,-30);
+        \coordinate (approach3) at (15,-35);
+        \coordinate (approach4) at (20,-40);
+        \coordinate (break1) at (5,20);
+        \coordinate (break2) at (10,25);
+        \coordinate (break3) at (15,30);
+        \coordinate (break4) at (20,35);
+        \coordinate (downwind) at (-15,20);
+        \coordinate (base) at (-15,-15);
+        \coordinate (final) at (-7.5,-22.5);
+        \coordinate (shortfinal) at (0,-15);
+        \coordinate (touchdown) at (0,0);
+        \coordinate (rollout) at (0,20);
+
+        % runway
+        \draw[thick]
+        ($(touchdown)+(-2,-5)$) -- ($(touchdown)+(2,-5)$) -- 
+        ($(touchdown)+(2,25)$) -- ($(touchdown)+(-2,25)$) -- 
+        cycle;
+        \draw[thick]
+        ($(touchdown)+(-1.33,-1)$) -- ($(touchdown)+(-1.33,1)$)
+        ($(touchdown)+(-0.66,-1)$) -- ($(touchdown)+(-0.66,1)$)
+        ($(touchdown)+(0.66,-1)$) -- ($(touchdown)+(0.66,1)$)
+        ($(touchdown)+(1.33,-1)$) -- ($(touchdown)+(1.33,1)$);
+
+        % pattern
+        \draw[ultra thick, ->] 
+        (approach1) -- (break1);
+        \draw[ultra thick, ->] 
+        (approach2) -- (break2);
+        \draw[ultra thick, ->] 
+        (approach3) -- (break3);
+        \draw[ultra thick, ->] 
+        (approach4) -- (break4);
+        \draw[ultra thick] 
+        (break1) arc (0:180:10);
+        \draw[ultra thick] 
+        (break2) arc (0:180:12.5);
+        \draw[ultra thick] 
+        (break3) arc (0:180:15);
+        \draw[ultra thick] 
+        (break4) arc (0:180:17.5) -- (downwind);
+        \draw[ultra thick, >->] 
+        (downwind) -- (base);
+        \draw[ultra thick] 
+        (base) arc (180:270:7.5);
+        \draw[ultra thick] 
+        (final) arc (270:360:7.5);
+        \draw[ultra thick, >-] 
+        (shortfinal) -- (touchdown);
+        \draw[ultra thick, ->] 
+        (touchdown) -- (rollout);
+
+        % nodes
+        \node[below] at (approach1)
+        {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        \node[below] at (approach2)
+        {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        \node[below] at (approach3)
+        {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        \node[below] at (approach4)
+        {
+            \includegraphics[
+                width=5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+
+    \end{tikzpicture}
+    \caption{Four-ship overhead approach \& break}
+\end{figure}

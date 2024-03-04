@@ -1,4 +1,11 @@
+*.acn
+*.acr
+*.alg
 *.aux
+*.glg
+*.glo
+*.gls
+*.ist
 *.jpg
 *.log
 *.out

@@ -263,6 +263,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{geometry}
 
+\RequirePackage[acronym, nonumberlist, style=super]{glossaries}
+
 \RequirePackage[]{datetime2} % change date format
 \DTMnewstyle{yymmdd}{ % create new date style
 	\renewcommand*\DTMdisplaydate[4]{%

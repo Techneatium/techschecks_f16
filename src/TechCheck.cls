@@ -286,6 +286,8 @@
 \RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
 \RequirePackage{cleveref} % better referencing
 
+\RequirePackage{imakeidx}
+
 \RequirePackage{booktabs} % fancy tables
 \RequirePackage{multirow} % more fancy tables
 \RequirePackage{longtable} % multi page tables

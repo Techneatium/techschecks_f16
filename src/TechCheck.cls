@@ -263,7 +263,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{geometry}
 
-\RequirePackage[acronym, nonumberlist, style=super, nopostdot]{glossaries}
+\RequirePackage[acronym, nonumberlist, style=super, nopostdot, toc]{glossaries}
 
 \RequirePackage[]{datetime2} % change date format
 \DTMnewstyle{yymmdd}{ % create new date style

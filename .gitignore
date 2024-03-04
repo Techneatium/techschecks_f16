@@ -5,6 +5,7 @@
 *.glg
 *.glo
 *.gls
+*.glsdefs
 *.ist
 *.jpg
 *.log

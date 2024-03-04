@@ -99,6 +99,7 @@
 	chapters/ttp_aa,
 	chapters/part_supp,
 	chapters/supp_figures,
+	chapters/index_glossary,
 }
 
 % \AddToHook{shipout/foreground}{
@@ -150,6 +151,8 @@
 	\include{chapters/part_supp}
 	\cyclechpcolor
 	\include{chapters/supp_figures}
+	\cyclechpcolor
+	\include{chapters/index_glossary}
 
 	\iftoggle{print}{
 		\pagestyle{superempty}

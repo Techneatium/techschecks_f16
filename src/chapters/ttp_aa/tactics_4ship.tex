@@ -38,7 +38,7 @@
 
         % fighters
         \foreach \n in {lead_lead, lead_wing, elem_lead, elem_wing} {
-            \node[] at (\n) {
+            \node[] (\n_fig) at (\n) {
                 \includegraphics[
                     width=7.5mm,
                 ]{diagrams/aircraft/silhouette_f16_top.pdf}
@@ -139,28 +139,18 @@
             ]{diagrams/aircraft/silhouette_f16_top.pdf}
         };
         
-        % lead
+        \foreach \n in {lead, wing} {
         \draw[->] 
-            (lead_hot) 
+                (\n_hot) 
             -- ++(0,5)
             arc (180:0:10) 
-            -- (lead_cold_fig.south);
+                -- (\n_cold_fig.south);
         \draw[->] 
-            (lead_cold) 
+                (\n_cold) 
             -- ++(0,-5)
             arc (0:-180:10) 
-            -- (lead_hot_fig.south);
-        % wing
-        \draw[->] 
-            (wing_hot) 
-            -- ++(0,5)
-            arc (180:0:10) 
-            -- (wing_cold_fig.south);
-        \draw[->] 
-            (wing_cold) 
-            -- ++(0,-5)
-            arc (0:-180:10) 
-            -- (wing_hot_fig.south);
+                -- (\n_hot_fig.south);
+        }
 
         % bandit
         \node[] (bandit_fig) at (bandit) {

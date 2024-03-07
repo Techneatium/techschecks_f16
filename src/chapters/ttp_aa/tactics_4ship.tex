@@ -140,15 +140,15 @@
         };
         
         \foreach \n in {lead, wing} {
-        \draw[->] 
+            \draw[->] 
                 (\n_hot) 
-            -- ++(0,5)
-            arc (180:0:10) 
+                -- ++(0,5)
+                arc (180:0:10) 
                 -- (\n_cold_fig.south);
-        \draw[->] 
+            \draw[->] 
                 (\n_cold) 
-            -- ++(0,-5)
-            arc (0:-180:10) 
+                -- ++(0,-5)
+                arc (0:-180:10) 
                 -- (\n_hot_fig.south);
         }
 
@@ -176,4 +176,90 @@
     \label{fig:ttp_aa:4ship:offensive:grinder}
 \end{figure}
 
+\clearpage
+
 \subsection{DEFENSIVE TACTICS}
+
+\begin{tcoloritemize}
+    \blueitem[Delouse] Non-engaged element turns hot on bandits spiking friendlies
+    \hfill\textbf{see \cref{fig:ttp_aa:4ship:defensive:delouse}}
+    \begin{itemize}
+        \item clears spiked element/friendlies
+        \item forces bandits defensive
+    \end{itemize}
+
+    \blueitem[Use Cases]
+    \begin{itemize}
+        \item Cold element in grinder clears hot element post-engagement
+        \item friendly aircraft request delouse from fighters on egress / after aborting
+    \end{itemize}
+\end{tcoloritemize}
+
+\notebox{
+    \small Delouse is \textbf{NOT} restricted to four-ship, 
+    or to within own flight, 
+    it is a general defensive tactic to clear friendlies when recommitting is not available.
+}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[figstyle]
+
+        % coordinates
+        \coordinate (spiked_lead) at (0,0);
+        \coordinate (spiked_wing) at ($(spiked_lead) + (-10,5)$);
+        \coordinate (naked_lead) at (60, 10);
+        \coordinate (naked_wing) at ($(naked_lead) + (-10,5)$);
+        \coordinate (bandit_lead) at (0,40);
+        \coordinate (bandit_wing) at ($(bandit_lead) + (-10,5)$);
+
+        % bandit
+        \foreach \n in {bandit_lead, bandit_wing}
+        {
+            \draw[fill=red!40] 
+            (\n) -- ++(-87:42) arc (-87:-93:42) -- cycle;
+            \node[] (\n_fig) at (\n) {
+            \includegraphics[
+                    angle=180,
+                    width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        }
+
+        % fighters
+        \foreach \n in {spiked_lead, spiked_wing, naked_lead, naked_wing}
+        {
+            \node[rotate=180] (\n_fig) at (\n) {
+                \includegraphics[
+                    width=7.5mm,
+                ]{diagrams/aircraft/silhouette_f16_top.pdf}
+            };
+        }
+
+        % flightpath
+        \draw[->]
+            (spiked_lead_fig.north) 
+            -- ++(0,-10);
+        \draw[->]
+            (spiked_wing_fig.north) 
+            -- ++(0,-10);
+        \draw[->]
+            (naked_lead_fig.north) 
+            -- ++(0,-5)
+            arc (0:-150:10)
+            -- ++(120:20);
+        \draw[->]
+            (naked_wing_fig.north) 
+            -- ++(0,-10)
+            arc (0:-150:10)
+            -- ++(120:20);
+
+        % labels
+        \node[font=\small, align=right, left] at (spiked_wing_fig.east) {Spiked \\ Element};
+        \node[font=\small, align=left, right] at (naked_lead_fig.west) {Naked \\ Element};
+        \node[font=\small, right] at (bandit_lead_fig.east) {Bandits};
+
+    \end{tikzpicture}
+    \caption{Four-ship delouse}%
+    \label{fig:ttp_aa:4ship:defensive:delouse}
+\end{figure}

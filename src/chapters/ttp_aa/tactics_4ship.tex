@@ -2,7 +2,109 @@
 
 \subsection{OFFENSIVE TACTICS}
 
-\subsection{DEFENSIVE TACTICS}
+\begin{tcoloritemize}
+    \blueitem[Wall]
+    Flight goes line abreast
+    \hfill\textbf{see \cref{fig:ttp_aa:4ship:offensive:wall}}
+    \begin{itemize}
+        \item \textbf{maximizes weapon employment capability}
+        \item maximizes sensor coverage \& overlap
+    \end{itemize}
+    
+    \blueitem[Use Cases]
+    \begin{itemize}
+        \item Sweep --- clear airspace of threats
+        \item Escort --- sanitize airspace in front of friendlies
+    \end{itemize}
+\end{tcoloritemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[figstyle]
+
+        % coordinates
+        \coordinate (flight_lead) at (0,0);
+        \coordinate (lead_wing) at (-15,0);
+        \coordinate (elem_lead) at (15,0);
+        \coordinate (elem_wing) at (30,0);
+        \coordinate (bandit) at (7.5,40);
+        \coordinate (bandit_wing) at (2.5,45);
+
+        % fighter wez
+        \draw[fill=color2!15] 
+        (flight_lead) -- ++(60:30) arc (60:120:30) -- cycle
+        (lead_wing) -- ++(60:30) arc (60:120:30) -- cycle
+        (elem_lead) -- ++(60:30) arc (60:120:30) -- cycle
+        (elem_wing) -- ++(60:30) arc (60:120:30) -- cycle;
+
+        % fighters
+        \node[] (flight_lead_fig) at (flight_lead) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        \node[] (lead_wing_fig) at (lead_wing) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        \node[] (elem_lead_fig) at (elem_lead) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+        \node[] (elem_wing_fig) at (elem_wing) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_top.pdf}
+        };
+
+    \end{tikzpicture}
+    \caption{Four-ship wall tactics}%
+    \label{fig:ttp_aa:4ship:offensive:wall}
+\end{figure}
+
+\notebox{
+    \small Wall tactics are \textbf{NOT} limited to four-ship, 
+    8-ship wall also typical, depends on threat environment.
+}
+
+\begin{tcoloritemize}
+    \blueitem[Grinder]
+    Flight splits into elements, enter racetrack pattern\\
+    \hfill\textbf{see \cref{fig:ttp_aa:4ship:offensive:grinder}}
+    \begin{itemize}
+        \item \textbf{at least one element hot}
+        \item continual sensor coverage along grinder axis
+        \item cold element available for delouse
+    \end{itemize}
+
+    \blueitem[Use Cases] CAP --- Combat Air Patrol 
+    \begin{itemize}
+        \item protection of geographic area for prolonged vulnerability period
+        \item protection of high value assets (HAVCAP)
+    \end{itemize}
+
+    \blueitem[Hot Element \break Priorities]
+    \begin{itemize}
+        \item sorting, targeting
+        \item radio / communications
+    \end{itemize}
+
+    \blueitem[Cold Element \break Priorities]
+    \begin{itemize}
+        \item building situational awarness
+        \item listen for comms from hot element
+        \item know when to turn in
+    \end{itemize}
+\end{tcoloritemize}
+
+\notebox{
+    \small%
+    Grinder tactics do \textbf{NOT} necessarily require four-ship, 
+    can be employed by a single element. 
+    However, most common for four-ship.
+}
 
 \begin{figure}[htbp]
     \centering
@@ -16,7 +118,7 @@
         \coordinate (bandit) at (0,40);
         \coordinate (bandit_wing) at (-10,45);
 
-        bandit wez
+        % bandit wez
         \draw[fill=red!40] 
         (bandit_wing) -- ++(-60:15) arc (-60:-120:15) -- (bandit_wing);
         \draw[fill=red!40] 
@@ -95,3 +197,5 @@
     \caption{Four-ship grinder tactics}%
     \label{fig:ttp_aa:4ship:offensive:grinder}
 \end{figure}
+
+\subsection{DEFENSIVE TACTICS}

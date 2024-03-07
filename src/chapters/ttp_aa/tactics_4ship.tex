@@ -23,7 +23,7 @@
     \begin{tikzpicture}[figstyle]
 
         % coordinates
-        \coordinate (flight_lead) at (0,0);
+        \coordinate (lead_lead) at (0,0);
         \coordinate (lead_wing) at (-15,0);
         \coordinate (elem_lead) at (15,0);
         \coordinate (elem_wing) at (30,0);
@@ -32,13 +32,13 @@
 
         % fighter wez
         \draw[fill=color2!15] 
-        (flight_lead) -- ++(60:30) arc (60:120:30) -- cycle
+        (lead_lead) -- ++(60:30) arc (60:120:30) -- cycle
         (lead_wing) -- ++(60:30) arc (60:120:30) -- cycle
         (elem_lead) -- ++(60:30) arc (60:120:30) -- cycle
         (elem_wing) -- ++(60:30) arc (60:120:30) -- cycle;
 
         % fighters
-        \node[] (flight_lead_fig) at (flight_lead) {
+        \node[] (lead_lead_fig) at (lead_lead) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_top.pdf}

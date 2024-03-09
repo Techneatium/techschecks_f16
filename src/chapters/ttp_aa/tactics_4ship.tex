@@ -1,22 +1,81 @@
 \section{FOUR-SHIP TACTICS}
 \label{sec:ttp_aa:tactics_4ship}
 
+\begin{tcoloritemize}
+    \blueitem[Flight / Four-Ship]
+    Combination of 2 elements to a single four-ship or ``flight''.
+    Standard group size for planning \& tasking purposes. 
+    Allows flight to split into 2 groups while maintaining element sizing for mutual support
+\end{tcoloritemize}
+
+\subsection{FLIGHT RESPONSIBILITIES}
+
+\begin{tcoloritemize}
+    \blueitem[1 --- Flight Lead]
+    \begin{itemize}
+        \item primary tactical decision making
+        \item primary higher-level planning \& communication
+        \item primary navigation, sensor lookout
+    \end{itemize}
+    
+    \blueitem[2 --- Wingman]
+    \begin{itemize}
+        \item maintain formation
+        \item sensor awarness
+        \item communication with lead
+        \item tactical awarness
+        \item navigation \& position awarness
+    \end{itemize}
+
+    \blueitem[3 --- Element Lead]
+    \begin{itemize}
+        \item maintain formation
+        \item secondary tactical decision making
+        \item secondary higher-level planning \& communication
+        \item secondary navigation, sensor lookout
+    \end{itemize}
+
+    \blueitem[4 --- Wingman]
+    Same as 2
+
+\end{tcoloritemize}
+
+\notebox{
+    \small
+    In the event that flight lead is shot down, 
+    the element lead assumes command and responsibility of the flight
+}
+
+\clearpage
+
 \subsection{OFFENSIVE TACTICS}
 
 \begin{tcoloritemize}
     \blueitem[Wall]
-    Flight goes line abreast
-    \hfill\textbf{see \cref{fig:ttp_aa:4ship:offensive:wall}}
+    Flight goes line abreast, 
+    reference \cref{subsec:supp_fig:form:4ship,fig:supp_fig:form:4shiplab}
+    for formation
+
+    \bigskip
+    \textbf{Advantages}
     \begin{itemize}
-        \item \textbf{maximizes weapon employment capability}
-        \item maximizes sensor coverage \& overlap
+        \item \textbf{maximizes simultaneous weapon employment capability of flight}
+        \item maximizes sensor coverage / overlap
+    \end{itemize}
+
+    \textbf{Disadvantages}
+    \begin{itemize}
+        \item requires continuous monitoring to maintain formation
+        \item rapid geographic displacement, 
+        not suited to holding/protecting area
     \end{itemize}
     
-    \blueitem[Use Cases]
+    \textbf{Typical Use Cases}
     \begin{itemize}
         \item Sweep --- clear airspace of threats
         \item Escort --- sanitize airspace in front of friendlies
     \end{itemize}
+    \hfill\textbf{see \cref{fig:ttp_aa:4ship:offensive:wall}}
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -52,27 +111,45 @@
 \end{figure}
 
 \notebox{
-    \small Wall tactics are \textbf{NOT} limited to four-ship, 
-    8-ship wall also typical, depends on threat environment.
+    \small
+    \begin{itemize}
+        \item Wall tactics are \textbf{NOT} limited to four-ship, 
+        8-ship wall also typical, depends on threat environment
+        \item Modification of formation to spread or fluid-four,
+        shown in \cref{fig:supp_fig:form:spread,fig:supp_fig:form:fluidfour} respectively,
+        can vastly simplify maintaining formation
+    \end{itemize}
 }
 
 \clearpage
 
 \begin{tcoloritemize}
     \blueitem[Grinder]
-    Flight splits into elements, enter racetrack pattern\\
-    \hfill\textbf{see \cref{fig:ttp_aa:4ship:offensive:grinder}}
+    Flight splits into elements, enter racetrack pattern
+
+    \bigskip
+    \textbf{Advantages}
     \begin{itemize}
         \item \textbf{at least one element hot}
+        \item grinder remains geographically stationary
         \item continual sensor coverage along grinder axis
         \item cold element available for delouse
     \end{itemize}
 
-    \blueitem[Use Cases] CAP --- Combat Air Patrol 
+    \textbf{Disadvantages}
     \begin{itemize}
-        \item protection of geographic area for prolonged vulnerability period
-        \item protection of high value assets (HAVCAP)
+        \item reduced simultaneous weapon employment \& sensor coverage capability
+        \item requires initial set up
+        \item flight must regroup to four-ship to exit grinder
     \end{itemize}
+
+    \textbf{Typical Use Cases} 
+    \begin{itemize}
+        \item CAP --- Combat Air Patrol, protection of geographic area for prolonged vulnerability period
+        \item HAVCAP --- High Asset Value CAP, protection of high value assets (AWACS, tanker, EW)
+    \end{itemize}
+    
+    \hfill\textbf{see \cref{fig:ttp_aa:4ship:offensive:grinder}}
 
     \blueitem[Hot Element \break Priorities]
     \begin{itemize}
@@ -86,6 +163,19 @@
         \item listen for comms from hot element
         \item know when to turn in
     \end{itemize}
+
+    \blueitem[Transition into Grinder]
+    \textbf{Pump}
+    --- Starting from wall formation, trail element turns cold before reaching desired grinder station,
+    then turns hot once desired grinder spacing is achieved
+
+    \bigskip
+
+    \textbf{Box}
+    --- Starting from box formation, 
+    reference \cref{subsec:supp_fig:form:4ship}, 
+    with desired grinder spacing between elements.
+    Lead element turns cold over desired grinder station
 \end{tcoloritemize}
 
 \notebox{
@@ -186,17 +276,20 @@
     Non-engaged element turns hot on bandits spiking other elment,
     spiked element continues cold.
 
-    \hfill\textbf{see \cref{fig:ttp_aa:4ship:defensive:delouse}}
+    \bigskip
+    \textbf{Advantages}
     \begin{itemize}
         \item clears spiked element/friendlies
         \item forces bandits defensive
     \end{itemize}
 
-    \blueitem[Use Cases]
+    \textbf{Typical Use Cases}
     \begin{itemize}
-        \item Cold element in grinder clears hot element post-engagement
+        \item cold element in grinder clears hot element post-engagement
         \item friendly aircraft request delouse from fighters on egress / after aborting
     \end{itemize}
+
+    \hfill\textbf{see \cref{fig:ttp_aa:4ship:defensive:delouse}}
 \end{tcoloritemize}
 
 \notebox{

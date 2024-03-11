@@ -16,25 +16,33 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, AT ANGELS 20.
+            SIMBA 1, AT \textbf{ANGELS} 20.
         \end{minipage}
     \end{center}    
 
     \blueitem[AZIMUTH]
-    1. A picture label describing the lateral separation of two GROUPS.\newline
-    2. Direction to a threat.
+    \begin{enumerate}
+        \item \label{AZIMUTHA} A picture label describing the lateral separation of two GROUPS.
+        \item \label{AZIMUTHB} Direction to a threat.
+    \end{enumerate}
 
     \medskip
-    \textbf{Example}
+    \textbf{Example \ref{AZIMUTHA}}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            MUFASA, PICTURE IS TWO GROUPS, AZIMUTH 20, EAST GROUP BULLSEYE 210/30, 
-            TWENTY-FIVE THOUSAND,
-            TRACK SOUTH,
-            WEST GROUP BULLSEYE 234/44,
-            NINETEEN THOUSAND,
-            TRACK SOUTH 
-        \end{minipage}
+        
+        \begin{tabular}{>{\itshape}r l}
+            who & MUFASA, \\
+            what & PICTURE IS TWO GROUPS, \\
+            & \textbf{AZIMUTH} 20, \\
+            first group & EAST GROUP BULLSEYE 210/30, \\
+            & TWENTY-FIVE THOUSAND, \\
+            & TRACK SOUTH, \\
+            & HOSTILE, \\
+            second group & WEST GROUP BULLSEYE 234/44 \\
+            & NINETEEN THOUSAND, \\
+            & TRACK SOUTH, \\
+            & HOSTILE. \\
+        \end{tabular}
     \end{center}
 
     \blueitem[BANDIT]
@@ -43,12 +51,13 @@
     \medskip
     \textbf{Example}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            MUFASA, LEAD GROUP BULLSEYE 270/40, 
-            TWENTY-FIVE THOUSAND,
-            BANDIT
-            TRACK SOUTH.
-        \end{minipage}
+        \begin{tabular}{>{\itshape}r l}
+            who & MUFASA, \\
+            what & LEAD GROUP BULLSEYE 270/40, \\
+            & TWENTY-FIVE THOUSAND, \\
+            identified as & \textbf{BANDIT}, \\
+            & TRACK SOUTH.\\
+        \end{tabular}
     \end{center}
 
     \blueitem[BANZAI]
@@ -58,7 +67,7 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, (FLIGHT) BANZAI.
+            SIMBA 1, \textbf{BANZAI}.
         \end{minipage}
     \end{center}
 
@@ -69,7 +78,7 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, TACAN BENT.
+            SIMBA 1, TACAN \textbf{BENT}.
         \end{minipage}
     \end{center}
 
@@ -80,7 +89,7 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, BINGO, RTB.
+            SIMBA 1, \textbf{BINGO}, RTB.
         \end{minipage}
     \end{center}
 
@@ -90,9 +99,10 @@
     \medskip
     \textbf{Example}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            SIMBA 1-2's BLIND!
-        \end{minipage}
+        \begin{tabular}{>{\itshape}r l}
+            recipient & 1, \\
+            sender & 2's \textbf{BLIND}! \\
+        \end{tabular}
     \end{center}
 
     \blueitem[BOGEY DOPE]
@@ -101,9 +111,11 @@
     \medskip
     \textbf{Example}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            MUFASA, SIMBA 1, REQUEST BOGEY DOPE. \newline
-        \end{minipage}
+        \begin{tabular}{>{\itshape}r l}
+            recipient & MUFASA, \\
+            sender & SIMBA 1, \\
+            what & REQUEST \textbf{BOGEY DOPE}. \\
+        \end{tabular}
     \end{center}
 
     \blueitem[BRAA] 
@@ -112,12 +124,13 @@
     \medskip
     \textbf{Example}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            SIMBA 1, NEAREST GROUP BRAA 020/30,
-            TWENTY THOUSAND,
-            BEAMING,
-            FLOGGER.
-        \end{minipage}
+        \begin{tabular}{>{\itshape}r l}
+            recipient & SIMBA 1, \\
+            what & NEAREST THREAT \textbf{BRAA} 020/30, \\
+            & TWENTY THOUSAND, \\
+            & BEAMING, \\
+            & FLOGGER. \\
+        \end{tabular}
     \end{center}
 
     \blueitem[BUDDY LOCK] 
@@ -130,17 +143,18 @@
     \medskip
     \textbf{Example}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            SIMBA 1, BUDDY SPIKE, F-15,
-            BULLSEYE 240/20,
-            TWENTY-THOUSAND,
-            TRACK NORTH.\newline
-            NALA 1, BUDDY LOCK.
-        \end{minipage}
+        \begin{tabular}{>{\itshape}r l}
+            who & SIMBA 1, \\
+            what & \textbf{BUDDY SPIKE} BULLSEYE 240/20, \\
+            & TWENTY THOUSAND. \\
+            response \\
+            who & NALA 1, \\
+            what & \textbf{BUDDY LOCK}. \\
+        \end{tabular}
     \end{center}
 
     \blueitem[BULLSEYE] 
-    A pre-established reference point on the theater map, from which the position 
+    Pre-established reference point on the theater map, from which the position 
     of an object can be referenced using bearin and range.
 
     \blueitem[BUSTER] 
@@ -150,7 +164,7 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, MUFASA, FLY HEADING 270, BUSTER.
+            SIMBA 1, MUFASA, FLY HEADING 270, \textbf{BUSTER}.
         \end{minipage}
     \end{center}
 
@@ -164,7 +178,7 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, COMMIT NORTH GROUP.
+            SIMBA 1, \textbf{COMMIT} NORTH GROUP.
         \end{minipage}
     \end{center}
 
@@ -176,10 +190,16 @@
     \medskip
     \textbf{Example}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            MUFASA, SIMBA 1, DECLARE CONTACT BULLSEYE 240/20.
-            SIMBA 1, CONTACT HOSTILE, TYPE FULCRUM, MANUEVER HOT.
-        \end{minipage}
+        \begin{tabular}{>{\itshape}r l}
+            recipient & MUFASA, \\
+            who & SIMBA 1, \\
+            what & \textbf{DECLARE} CONTACT BULLSEYE 240/20. \\
+            response \\
+            recipient & SIMBA 1, \\
+            what & CONTACT HOSTILE, \\
+            & TYPE FULCRUM, \\
+            & MANUEVER HOT. \\
+        \end{tabular}
     \end{center}
 
     \blueitem[DEFENSIVE] 
@@ -189,7 +209,7 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, DEFENSIVE SA-6!
+            SIMBA 1, \textbf{DEFENSIVE} SA-6!
         \end{minipage}
     \end{center}
 
@@ -204,22 +224,7 @@
     \textbf{Example}
     \begin{center}
         \begin{minipage}{0.9\textwidth}
-            SIMBA 1, FOX 2 HIGH, TURNING LEFT, BANDIT.
-        \end{minipage}
-    \end{center}
-
-    \blueitem[FOX 3]
-    Indicates launch of active-radar missile,
-    followed by target information.
-
-    \medskip
-    \textbf{Example}
-    \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            SIMBA 1, FOX 3 LEAD GROUP BULLSEYE 175/37, 
-            TWENTY-FOUR THOUSAND,
-            TRACK NORTH, 
-            HOSTILE.
+            SIMBA 1, \textbf{FOX 2} HIGH, TURNING LEFT, BANDIT.
         \end{minipage}
     \end{center}
 
@@ -232,7 +237,7 @@
     \begin{center}
         \begin{tabular}{>{\itshape}r l}
             who & SIMBA 1, \\
-            what & FOX 3 \\
+            what & \textbf{FOX 3} \\
             target & LEAD GROUP BULLSEYE 175/37, \\
             & TWENTY-FOUR THOUSAND, \\
             & TRACK NORTH, \\
@@ -246,10 +251,15 @@
     \medskip
     \textbf{Example}
     \begin{center}
-        \begin{minipage}{0.9\textwidth}
-            MUFASA, SIMBA 1, DECLARE CONTACT BULLSEYE 240/20.
-            SIMBA 1, MUFASA, FURBALL, TWO HOSTILE, ONE FRIENDLY.
-        \end{minipage}
+        \begin{tabular}{>{\itshape}r l}
+            recipient & MUFASA, \\
+            sender & SIMBA 1, \\
+            what & DECLARE CONTACT BULLSEYE 240/20.\\
+            response \\
+            recipient & SIMBA 1, \\
+            what & \textbf{FURBALL}, \\
+            & TWO HOSTILE, ONE FRIENDLY.\\
+        \end{tabular}
     \end{center}
 
     \blueitem[GATE]

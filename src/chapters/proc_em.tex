@@ -28,16 +28,16 @@
 
             % coordinates
             \coordinate (td_des) at (0,0);
-            \coordinate (entrance) at (-10, 20);
-            \coordinate (high_key) at (10,20);
-            \coordinate (low_key) at (-10,10);
-            \coordinate (base_key) at (-22,4);
+            \coordinate (high_key) at (15,30);
+            \coordinate (inter_high_low) at (30,25);
+            \coordinate (low_key) at (-15,15);
+            \coordinate (base_key) at (-30,8);
     
             % runway
             \fill[]
             ($(td_des)+(-5,0)$) 
-            -- ($(td_des)+(30,0)$)
-            -- ($(td_des)+(30,-0.5)$)
+            -- ($(td_des)+(45,0)$)
+            -- ($(td_des)+(45,-0.5)$)
             -- ($(td_des)+(-5,-0.5)$)
             -- cycle;
 
@@ -51,15 +51,17 @@
             % approach
             \draw[->]
             (high_key)
-            .. controls ($(high_key)+(-10:20)$) and ($(low_key)+(10:20)$) ..
+            .. controls ($(high_key)+(-10:5)$) and ($(inter_high_low)+(90:4)$) ..
+            (inter_high_low)
+            .. controls ($(inter_high_low)+(-90:4)$) and ($(low_key)+(10:20)$) ..
             (low_key);
             \draw[->]
             (low_key)
-            .. controls ($(low_key)+(190:10)$) and ($(base_key)+(70:1)$) ..
+            .. controls ($(low_key)+(190:10)$) and ($(base_key)+(60:1)$) ..
             (base_key);
             \draw[->]
             (base_key)
-            .. controls ($(base_key)+(-60:5)$) and ($(td_des)+(177:5)$) ..
+            .. controls ($(base_key)+(-60:10)$) and ($(td_des)+(177:5)$) ..
             (td_des);
 
             \node[red, font=\small\bfseries, above] at (high_key) {A};
@@ -80,14 +82,14 @@
 
             % coordinates
             \coordinate (td_des) at (0,0);
-            \coordinate (high_key) at (10,0);
+            \coordinate (high_key) at (15,0);
 
             % runway
             \draw[thick]
             ($(td_des)+(-5,-2)$) 
             -- ($(td_des)+(-5,2)$) 
-            -- ($(td_des)+(30,2)$) 
-            -- ($(td_des)+(30,-2)$) 
+            -- ($(td_des)+(45,2)$) 
+            -- ($(td_des)+(45,-2)$) 
             -- cycle;
             \draw[thick]
             ($(td_des)+(-1,-1.33)$) -- ($(td_des)+(1,-1.33)$)
@@ -97,14 +99,14 @@
 
             \draw[->]
             (high_key) 
-            arc (90:-90:12)
-            -- ++(-20,0) node (low_key) {};
+            arc (90:-90:15)
+            -- ++(-30,0) node (low_key) {};
             \draw[->]
             (low_key)
-            arc(270:180:12) node (base_key) {};
+            arc(270:180:15) node (base_key) {};
             \draw[->]
             (base_key)
-            arc (180:90:12)
+            arc (180:90:15)
             -- (td_des);
 
             \node[red, font=\small\bfseries, above=2mm] at (high_key) {A};
@@ -112,7 +114,7 @@
             \node[red, font=\small\bfseries, left] at (base_key) {C};
             \node[red, font=\small\bfseries, above=2mm] at (td_des) {D};
 
-            \draw[<->, thin] (high_key) -- ++(0,-24) node[font=\small, pos=0.5] {1 nm};
+            \draw[<->, thin] (high_key) -- ++(0,-30) node[font=\small, pos=0.5] {1 nm};
             \draw[<->, thin] (base_key) -- (td_des) node[font=\small, pos=0.5, below right] {1.25 nm};
 
             \filldraw[red] (high_key) circle (2pt);

@@ -229,13 +229,118 @@
         \end{tikzpicture}
         \caption{top-down view}
     \end{subfigure}
-    \caption{Flameout landing pattern --- Overhead Approach}
+    \caption{Flameout landing pattern --- overhead approach}
     \label{fig:proc_em:landing:flameout:overhead}
 \end{figure}
 
 \clearpage
 
 \subsubsection{STRAIGHT-IN APPROACH}
+
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[figstyle]
+
+        % coordinates
+        \coordinate (td_des) at (0,0);
+        \coordinate (high_key) at (7.5,20);
+        \coordinate (inter_high_low) at (15,17.5);
+        \coordinate (low_key) at (-7.5,10);
+        \coordinate (base_key) at (-15,6);
+        \coordinate (final) at (170:8);
+        \coordinate (straightin_base) at ($(final)+(150:9)$);
+        \coordinate (straightin_a) at (-80,20);
+        \coordinate (straightin_b) at (-50,20);
+        % runway
+        \fill[]
+        ($(td_des)+(-5,0)$) 
+        -- ($(td_des)+(30,0)$)
+        -- ($(td_des)+(30,-0.5)$)
+        -- ($(td_des)+(-5,-0.5)$)
+        -- cycle;
+
+        \foreach \n in {5, 10, 15, 20} {
+            \draw[thin]
+            (\n,0) 
+            -- ++(90:0.5)
+            -- ++(0:3)
+            -- ++(-90:0.5)
+            -- cycle
+            (\n+0.25,0) -- ++(90:0.5)
+            (\n+2.75,0) -- ++(90:0.5);
+        }
+
+        \draw[thin]
+        (9,0)
+        -- ++(180:0.1)
+        -- ++(90:1)
+        -- ++(180:0.25)
+        -- ++(90:0.25)
+        -- ++(0:0.3)
+        -- ++(90:0.5)
+        -- ++(-90:0.5)
+        -- ++(0:0.3)
+        -- ++(-90:0.25)
+        -- ++(180:0.25)
+        -- ++(-90:1)
+        -- cycle;
+
+        % overhead
+        \draw[thin]
+        (high_key)
+        .. controls ($(high_key)+(0:3)$) and ($(inter_high_low)+(90:2)$) ..
+        (inter_high_low)
+        .. controls ($(inter_high_low)+(-90:4)$) and ($(low_key)+(10:10)$) ..
+        (low_key)
+        .. controls ($(low_key)+(190:5)$) and ($(base_key)+(90:2)$) ..
+        (base_key)
+        .. controls ($(base_key)+(-90:3)$) and ($(final)+(170:2.5)$) ..
+        (final) -- (td_des);
+
+        % fighter
+        \node[anchor=east] (fighter) at (straightin_a.west) {
+            \includegraphics[
+                width=7.5mm,
+            ]{diagrams/aircraft/silhouette_f16_side.pdf}
+        };
+
+        \draw[thin]
+        (straightin_a) -- (high_key) -- (30,20)
+        (-80,0) -- (td_des);
+            
+        \draw[->]
+        (straightin_a) -- (straightin_base) -- (final) -- (td_des)
+        (straightin_b) -- (straightin_base) -- (final) -- (td_des);
+
+        \draw[thin, dashed]
+        (-60,20) -- (td_des) node[font=\footnotesize, pos=0, above] {11$^\circ$}
+        (-40,20) -- (td_des) node[font=\footnotesize, pos=0, above] {17$^\circ$}
+        (straightin_a) -- (td_des)node[font=\footnotesize, pos=0.5, below] {8$^\circ$};
+
+
+        \draw[<->, thin]
+        (24,20) -- ++(0,-20) node[font=\small, pos=1, below] {7'000 ft};
+        
+        \draw[thin]
+        let \p1=(straightin_base) in 
+        (straightin_base) -- (10,\y1);
+        \draw[<->, thin]
+        let \p1=(straightin_base) in 
+        (3, \y1) -- (3,0) node[font=\small, pos=1, below] {2'000 ft};
+
+        \node[red, font=\small\bfseries, above] at (straightin_a) {A};
+        \node[red, font=\small\bfseries, above] at (straightin_b) {B};
+        \filldraw[red] (straightin_a) circle (2pt);
+        \filldraw[red] (straightin_b) circle (2pt);
+
+        \node[red, font=\footnotesize\bfseries, above, align=left, anchor=south west] at (high_key) {Overhead \\ Approach};
+        \filldraw[red] (high_key) circle (2pt);
+
+    \end{tikzpicture}
+    \caption{Flameout landing pattern --- straight-in approach}
+    \label{fig:proc_em:landing:flameout:straightin}
+\end{figure}
 
 \marginfigeometry
 

@@ -363,7 +363,7 @@
         (final) -- (td_des);
 
         % fighter
-        \node[anchor=east] (fighter) at (straightin_a.west) {
+        \node[anchor=south east] (fighter) at (straightin_a.west) {
             \includegraphics[
                 width=7.5mm,
             ]{diagrams/aircraft/silhouette_f16_side.pdf}
@@ -401,6 +401,7 @@
         \node[red, font=\small\bfseries, above] at (straightin_b) {B};
         \filldraw[red] (straightin_a) circle (2pt);
         \filldraw[red] (straightin_b) circle (2pt);
+        \filldraw[red] (td_des) circle (2pt);
         \path (-40,20) -- (high_key) node[red, font=\small\bfseries, pos=0.5, above] {C};
 
         \node[red, font=\footnotesize\bfseries, above, align=left, anchor=south west] at (high_key) {Overhead \\ Approach};

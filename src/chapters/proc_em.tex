@@ -1,4 +1,4 @@
-\chapter{EMERGENCY PROCEDURES}
+\chapter[EMERGENCY]{EMERGENCY PROCEDURES}
 \thumbtab{Em Proc}{1}
 \localtableofcontents
 \thispagestyle{plain}
@@ -67,7 +67,6 @@
             -- ++(-90:1)
             -- cycle;
             
-
             % fighter
             \node[anchor=east] (fighter) at (high_key.west) {
                 \includegraphics[
@@ -140,15 +139,15 @@
             -- (10, 5)
             -- ++(0, -1)
             -- ++(-150:4)
-            (9,2)
+            -- ++(2,0)
             -- ++(30:6)
-            -- (18,5)
+            -- ++(3,0)
             -- ++(-30:6)
-            (43,2)
+            -- ++(2,0)
+            -- ++(150:4)
+            -- ++(0,1)
             -- (43,5)
-            -- (22.5,5)
-            -- ++(0,-1)
-            -- ++(-30:4);
+            -- (43,2);
 
             \draw[->]
             (high_key) 
@@ -162,7 +161,7 @@
             arc (180:90:15)
             -- (td_des);
 
-            \node[red, font=\small\bfseries, left=] at (high_key) {A};
+            \node[red, font=\small\bfseries, below=2mm, anchor=north east]at (high_key) {A};
             \node[red, font=\small\bfseries, below] at (low_key) {B};
             \node[red, font=\small\bfseries, left] at (base_key) {C};
             \node[red, font=\small\bfseries, below=2mm] at (td_des) {D};

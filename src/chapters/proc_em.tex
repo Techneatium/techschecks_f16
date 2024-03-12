@@ -41,6 +41,33 @@
             -- ($(td_des)+(-5,-0.5)$)
             -- cycle;
 
+            \foreach \n in {5, 10, 15, 20, 25} {
+                \draw[thin]
+                (\n,0) 
+                -- ++(90:0.5)
+                -- ++(0:3)
+                -- ++(-90:0.5)
+                -- cycle
+                (\n+0.25,0) -- ++(90:0.5)
+                (\n+2.75,0) -- ++(90:0.5);
+            }
+
+            \draw[thin]
+            (9,0)
+            -- ++(180:0.1)
+            -- ++(90:1)
+            -- ++(180:0.25)
+            -- ++(90:0.25)
+            -- ++(0:0.3)
+            -- ++(90:0.5)
+            -- ++(-90:0.5)
+            -- ++(0:0.3)
+            -- ++(-90:0.25)
+            -- ++(180:0.25)
+            -- ++(-90:1)
+            -- cycle;
+            
+
             % fighter
             \node[anchor=east] (fighter) at (high_key.west) {
                 \includegraphics[
@@ -76,6 +103,8 @@
         \end{tikzpicture}
         \caption{side view}
     \end{subfigure}
+
+    \vspace{2em}
     \begin{subfigure}[t]{\linewidth}
         \centering
         \begin{tikzpicture}[figstyle]
@@ -97,6 +126,30 @@
             ($(td_des)+(-1,0.66)$) -- ($(td_des)+(1,0.66)$)
             ($(td_des)+(-1,1.33)$) -- ($(td_des)+(1,1.33)$);
 
+            \draw[thick]
+            (-5,2) 
+            -- (-5,7)
+            -- (4,7)
+            -- (4,10)
+            -- (29,10)
+            -- (29,7)
+            -- (45,7)
+            -- (45,2)
+            (-3,2)
+            -- (-3,5)
+            -- (10, 5)
+            -- ++(0, -1)
+            -- ++(-150:4)
+            (9,2)
+            -- ++(30:6)
+            -- (18,5)
+            -- ++(-30:6)
+            (43,2)
+            -- (43,5)
+            -- (22.5,5)
+            -- ++(0,-1)
+            -- ++(-30:4);
+
             \draw[->]
             (high_key) 
             arc (90:-90:15)
@@ -109,10 +162,10 @@
             arc (180:90:15)
             -- (td_des);
 
-            \node[red, font=\small\bfseries, above=2mm] at (high_key) {A};
+            \node[red, font=\small\bfseries, left=] at (high_key) {A};
             \node[red, font=\small\bfseries, below] at (low_key) {B};
             \node[red, font=\small\bfseries, left] at (base_key) {C};
-            \node[red, font=\small\bfseries, above=2mm] at (td_des) {D};
+            \node[red, font=\small\bfseries, below=2mm] at (td_des) {D};
 
             \draw[<->, thin] (high_key) -- ++(0,-30) node[font=\small, pos=0.5] {1 nm};
             \draw[<->, thin] (base_key) -- (td_des) node[font=\small, pos=0.5, below right] {1.25 nm};

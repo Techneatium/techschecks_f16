@@ -98,10 +98,11 @@
 
             % coordinates
             \coordinate (td_des) at (0,0);
-            \coordinate (high_key) at (15,30);
-            \coordinate (inter_high_low) at (30,25);
-            \coordinate (low_key) at (-15,15);
-            \coordinate (base_key) at (-30,8);
+            \coordinate (high_key) at (15,40);
+            \coordinate (inter_high_low) at (30,35);
+            \coordinate (low_key) at (-15,20);
+            \coordinate (base_key) at (-30,12);
+            \coordinate (final) at (170:15);
     
             % runway
             \fill[]
@@ -147,18 +148,18 @@
             % approach
             \draw[->]
             (high_key)
-            .. controls ($(high_key)+(-10:5)$) and ($(inter_high_low)+(90:4)$) ..
+            .. controls ($(high_key)+(0:6)$) and ($(inter_high_low)+(90:4)$) ..
             (inter_high_low)
-            .. controls ($(inter_high_low)+(-90:4)$) and ($(low_key)+(10:20)$) ..
+            .. controls ($(inter_high_low)+(-90:6)$) and ($(low_key)+(10:20)$) ..
             (low_key);
-            \draw[->]
+            \draw[-]
             (low_key)
-            .. controls ($(low_key)+(190:10)$) and ($(base_key)+(60:1)$) ..
+            .. controls ($(low_key)+(190:10)$) and ($(base_key)+(90:2)$) ..
             (base_key);
             \draw[->]
             (base_key)
-            .. controls ($(base_key)+(-60:10)$) and ($(td_des)+(177:5)$) ..
-            (td_des);
+            .. controls ($(base_key)+(-90:6)$) and ($(final)+(170:5)$) ..
+            (final) -- (td_des);
 
             \node[red, font=\small\bfseries, above] at (high_key) {A};
             \node[red, font=\small\bfseries, above] at (low_key) {B};

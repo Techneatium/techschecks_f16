@@ -24,14 +24,21 @@
     \blueitem[Approach \break Pattern]
     Reference \cref{fig:proc_em:landing:flameout:overhead}
 
-    \blueitem[AOA / Airspeed]
+    \blueitem[Optimal Airspeed]
+    \textbf{LG Up} --- 200 kts
+    
+    \medskip
+    \textbf{LG Down} --- 190 kts
+    
+    \bigskip
+    increase airspeed by 5 kts for every 1000 lbs of fuel / stores
+
+    \blueitem[Optimal AOA]
     \textbf{LG Up} --- 7 deg AOA achieves optimal airspeed
 
-    \blueitem[Glideslope] 
-    approx. 7nm per 5000 ft AGL 
-    
-    \medskip 
-    assuming 7 deg AOA and no stores
+    \blueitem[Glideslope] Maximum range glideslope
+    approx. 7nm per 5000 ft AGL with gear up,
+    7 deg AOA, no stores retained
 
     \blueitem[Bank Angle]
     \textbf{LG Up} --- 50 deg
@@ -62,7 +69,6 @@
 
     \bigskip
     \textbf{Altitude} --- {2'000 ft AGL minimum}
-    
 \end{tcoloritemize}
 
 \begin{figure}[htbp]
@@ -237,6 +243,57 @@
 
 \subsubsection{STRAIGHT-IN APPROACH}
 
+\begin{tcoloritemize}
+    \blueitem[Approach \break Pattern]
+    Reference \cref{fig:proc_em:landing:flameout:straightin}
+
+    \blueitem[Optimal Airspeed]
+    \textbf{LG Up} --- 200 kts
+    
+    \medskip
+    \textbf{LG Down} --- 190 kts
+    
+    \bigskip
+    increase airspeed by 5 kts for every 1000 lbs of fuel / stores
+
+    \blueitem[Optimal AOA]
+    \textbf{LG Up} --- 7 deg AOA achieves optimal airspeed
+
+    \blueitem[Glideslope] Maximum range glideslope
+    approx. 7nm per 5000 ft AGL with gear up,
+    7 deg AOA, no stores retained
+
+    \blueitem[Bank Angle]
+    \textbf{LG Up} --- 50 deg
+
+    \medskip
+    \textbf{LG Down} --- 55 deg
+
+    \bigskip
+    minimizes altitude loss in turns
+
+    \blueitem[Point A]
+    \textbf{Location} --- approx {1/3 down down the runway} from desired touchdown point
+
+    \bigskip
+    \textbf{Altitude} --- {7'000-10'000 ft AGL},
+    recommend 7'000 ft plus 500 ft for every 1'000 lbs of fuel/stores
+
+    \blueitem[Point B]
+    \textbf{Location} --- {1 nm abeam} point of rollout for final 
+
+    \bigskip
+    \textbf{Altitude} --- {3'000-5'000 ft AGL},
+    recommend 3'000 ft plus 250 ft for every 1'000 lbs of fuel/stores
+
+    \blueitem[Area C]
+    \textbf{Location} --- midpoint of final turn from downwind to final,
+    {1.25 nm from touchdown point}
+
+    \bigskip
+    \textbf{Altitude} --- {2'000 ft AGL minimum}
+\end{tcoloritemize}
+
 
 \begin{figure}[htbp]
     \centering
@@ -251,7 +308,9 @@
         \coordinate (final) at (170:8);
         \coordinate (straightin_base) at ($(final)+(150:9)$);
         \coordinate (straightin_a) at (-80,20);
+        \coordinate (straightin_b1) at (-60,20);
         \coordinate (straightin_b) at (-50,20);
+        \coordinate (straightin_b2) at (-40,20);
         % runway
         \fill[]
         ($(td_des)+(-5,0)$) 
@@ -314,13 +373,17 @@
         (straightin_b) -- (straightin_base) -- (final) -- (td_des);
 
         \draw[thin, dashed]
-        (-60,20) -- (td_des) node[font=\footnotesize, pos=0, above] {11$^\circ$}
-        (-40,20) -- (td_des) node[font=\footnotesize, pos=0, above] {17$^\circ$}
-        (straightin_a) -- (td_des)node[font=\footnotesize, pos=0.5, below] {8$^\circ$};
-
+        (straightin_b1) -- (td_des) node[font=\footnotesize, pos=0, above] {11$^\circ$}
+        (straightin_b2) -- (td_des) node[font=\footnotesize, pos=0, above] {17$^\circ$}
+        (straightin_a) -- (td_des)node[font=\footnotesize, pos=0.10, below] {8$^\circ$};
 
         \draw[<->, thin]
         (24,20) -- ++(0,-20) node[font=\small, pos=1, below] {7'000 ft};
+
+        \draw[thin]
+        (straightin_a) -- ++(0,-20) node[font=\small, pos=1, below] {8 nm}
+        (straightin_b1) -- ++(0,-20) node[font=\small, pos=1, below] {6 nm}
+        (straightin_b2) -- ++(0,-20) node[font=\small, pos=1, below] {4 nm};
         
         \draw[thin]
         let \p1=(straightin_base) in 
@@ -333,6 +396,7 @@
         \node[red, font=\small\bfseries, above] at (straightin_b) {B};
         \filldraw[red] (straightin_a) circle (2pt);
         \filldraw[red] (straightin_b) circle (2pt);
+        \path (-40,20) -- (high_key) node[red, font=\small\bfseries, pos=0.5, above] {C};
 
         \node[red, font=\footnotesize\bfseries, above, align=left, anchor=south west] at (high_key) {Overhead \\ Approach};
         \filldraw[red] (high_key) circle (2pt);

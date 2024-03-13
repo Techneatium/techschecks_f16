@@ -26,9 +26,107 @@
 
 \section{LANDING}
 
+\marginfigeometry
+
+\subsection{AIRSTART}
+
+\begin{checklistenumerate}
+    \blueitem[Throttle]\dotfill \textbf{OFF}, then \textbf{midrange}
+    \marnotebox{\small
+        If at low altitude, initiate a zoom climb and jettison stores (if required)
+    }
+    \begin{itemize}
+        \item monitor for signs of light-off
+        \item if RPM \& FTIT continue decay with RPM below 50\%, continue procedure
+    \end{itemize}
+    \blueitem[ENG CONT Switch]\dotfill \textbf{SEC}
+    \begin{itemize}
+        \item even if SEC caution light is illuminated
+    \end{itemize}
+    \blueitem[Airspeed] 
+    --- attain approximately 250 kts 
+    \marnotebox{\small
+        Above 30'000 ft MSL airspeeds in 
+        250-400 kts / 0.9 mach range increase probability of successful airstart
+
+        \bigskip
+        If glide range not a factor, consider maintaining 250 kts above 10'000 ft AGL
+    }
+
+    \medskip
+    With JFS RUN light on can reduce airspeed
+    \begin{itemize}
+        \item maximum range --- 200 kts
+        \item maximum endurance --- 170 kts
+        \item plus 5 kts per 1000 lbs of fuel / stores 
+    \end{itemize}
+    \blueitem[JFS Switch]\dotfill \textbf{START 2}\\
+    \hfill below 20'000 ft MSL and 400 kts
+    \blueitem[STORES]\dotfill \textbf{Jettison}\\
+    \hfill (if required)
+\end{checklistenumerate}
+
+\textbf{If RPM rolls back or hangs below in-flight idle (approx 70\%)
+and FTIT exceeds 935$^\circ$C}
+
+\begin{checklistenumerate}[resume]
+    \blueitem[Throttle]\dotfill \textbf{OFF},\\
+    allow FTIT to drop below 700$^\circ$C, 
+    befre advancing throttle to midrange
+    \blueitem[Airspeed] --- increase to 400 kts / 0.9 mach maximum
+\end{checklistenumerate}
+
+\textbf{If hung / hot start persists}
+
+\begin{checklistenumerate}[resume]
+    \blueitem[Throttle]\dotfill \textbf{OFF}
+    \blueitem[ENG CONT Switch]\dotfill \textbf{SEC} if in \textbf{PRI}\\
+    \hfill \textbf{PRI} if in \textbf{SEC}
+    \blueitem[Throttle]\dotfill \textbf{Midrange}
+\end{checklistenumerate}
+
 \clearpage
 
+\textbf{If engine does not respond normally after airstart is completed}
+
+\begin{checklistenumerate}[resume]
+    \blueitem[ENG CONT Switch]\dotfill \textbf{SEC}
+    \blueitem[Airspeed] --- 250 kts if thrust too low to sustain level flight
+    \blueitem[Throttle] --- Verify engine responds to throttle movement, set as desired
+\end{checklistenumerate}
+
+\textbf{%
+    If engine does not respond normally after airstart is completed in SEC, 
+    or thrust still insufficient to make safe landing
+}
+
+\begin{checklistenumerate}[resume]
+    \blueitem[ENG CONT Switch]\dotfill \textbf{PRI}
+    \blueitem[Refer to Flameout Landing] --- \Cref{subsec:proc_em:landing:flameout}
+\end{checklistenumerate}
+
+\textbf{If engine responds normally}
+
+\begin{checklistenumerate}[resume]
+    \blueitem[JFS Switch]\dotfill \textbf{OFF}
+    \blueitem[ELEC CAUTION RESET Button]\dotfill \textbf{Press}\\
+    Verify
+    \begin{itemize}
+        \item \textbf{MAIN GEN Light} --- \textbf{OFF}
+        \item \textbf{STBY GEN Light} --- \textbf{OFF}
+    \end{itemize}
+    \blueitem[EPU Switch]\dotfill \textbf{OFF}\\
+    \hfill then \textbf{NORM}
+    \blueitem[ADI] --- check for \textbf{OFF} / \textbf{AUX} flags,
+    indicates total INS failure
+    \blueitem[Land as soon as possible]
+\end{checklistenumerate}
+
+
+\marginfigrestore
+
 \subsection{FLAMEOUT LANDING}
+\label{subsec:proc_em:landing:flameout}
 
 \begin{tcoloritemize}
     \blueitem[Energy \break Management]

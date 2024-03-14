@@ -9,86 +9,87 @@
     \caption{AIM-120 AMRAAM}
 \end{figure}
 
-\begin{tcoloritemize}
-    \blueitem[AIM-120 \break AMRAAM]
-    \textbf{A}dvanced \textbf{M}edium \textbf{R}ange \textbf{A}ir-to-\textbf{A}ir \textbf{M}issile
-    --- long range, fire-and-forget, active-radar homing missile
+\paragraph{AIM-120 AMRAAM}
+\textbf{A}dvanced \textbf{M}edium \textbf{R}ange \textbf{A}ir-to-\textbf{A}ir \textbf{M}issile
+--- long range, fire-and-forget, active-radar homing missile
 
-    \begin{itemize}
-        \item \textbf{Guidance} --- Active Radar-Guided (\textbf{Fox 3})
-        \item \textbf{Range} --- max:  \textasciitilde30-40nm (high mach, alt)
-    \end{itemize}
-    \blueitem[Employment \break Types]
-    \begin{itemize}
-        \item \textbf{Maddog / Active Launch  (no radar)} \\
-        \hyperref[subsec:aim120:maddog]{see \Cref{subsec:aim120:maddog}}
-        \item \textbf{Single-target employment (STT lock or TWS/DTT bug)}
-        \hyperref[subsec:aim120:single]{see \Cref{subsec:aim120:single}}
-        \item \textbf{Multi-target employment (TWS/DTT bug)} \\
-        \hyperref[subsec:aim120:multi]{see \Cref{subsec:aim120:multi}}
-    \end{itemize}
-    \blueitem[Flight Profile]
-    Successful long-range weapon employment necessitates understanding of flight-profile and tactics
-    \begin{itemize}
-        \item \textbf{Mid-Course} --- Guided via \underline{datalink}, launching fighter should maintain radar contact with target
-        \item \textbf{Terminal Phase} --- Guided via \underline{internal radar}, launching fighter may break away
-    \end{itemize}
-    
-    \textbf{See \Cref{subsec:bvr} and \Cref{subsec:bvr:rangeconsideration}}
-    \blueitem[Select AIM-120]
-    Via A-A Master Mode
+\begin{itemize}
+    \item \textbf{Guidance} --- Active Radar-Guided (\textbf{Fox 3})
+    \item \textbf{Range} --- max:  \textasciitilde30-40nm (high mach, alt)
+\end{itemize}
 
-    \begin{enumerate}
-        \item \textbf{Master Mode} \dotfill \textbf{A-A}
-        \item \textbf{Operating Mode (SMS OSB 1)} \dotfill Verify \textbf{AAM}
-        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
-    \end{enumerate}
+\paragraph{Employment Types}
+\begin{itemize}
+    \item \textbf{Maddog / Active Launch  (no radar)} \\
+    \hyperref[subsec:aim120:maddog]{see \Cref{subsec:aim120:maddog}}
+    \item \textbf{Single-target employment (STT lock or TWS/DTT bug)}
+    \hyperref[subsec:aim120:single]{see \Cref{subsec:aim120:single}}
+    \item \textbf{Multi-target employment (TWS/DTT bug)} \\
+    \hyperref[subsec:aim120:multi]{see \Cref{subsec:aim120:multi}}
+\end{itemize}
 
-    Via Missile Override
+\paragraph{Flight Profile}
+Successful long-range weapon employment necessitates understanding of flight-profile and tactics
+\begin{itemize}
+    \item \textbf{Mid-Course} --- Guided via \underline{datalink}, launching fighter should maintain radar contact with target
+    \item \textbf{Terminal Phase} --- Guided via \underline{internal radar}, launching fighter may break away
+\end{itemize}
 
-    \begin{enumerate}
-        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{OVRD}
-        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C} 
-    \end{enumerate}
-    
-    Via Dogfight
+\textbf{See \Cref{subsec:bvr} and \Cref{subsec:bvr:rangeconsideration}}
 
-    \begin{enumerate}
-        \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
-        \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
-    \end{enumerate}
-    
-    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
-\end{tcoloritemize}
+\clearpage
+
+\paragraph{Select AIM-120}
+Via A-A Master Mode
+\begin{enumerate}
+    \item \textbf{Master Mode} \dotfill \textbf{A-A}
+    \item \textbf{Operating Mode (SMS OSB 1)} \dotfill Verify \textbf{AAM}
+    \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
+\end{enumerate}
+
+Via Missile Override
+\begin{enumerate}
+    \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{OVRD}
+    \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C} 
+\end{enumerate}
+
+Via Dogfight
+\begin{enumerate}
+    \item \textbf{DGFT/MSL OVRD} \dotfill \textbf{DGFT}
+    \item \textbf{Selected Weapon (SMS OSB 7)} \dotfill \textbf{120C}
+\end{enumerate}
+
+Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
 
 \subsubsection{SMS CONTROLS}
 \label{subsec:aim120:sms}
-\begin{tcoloritemize}
-    \blueitem[Selected Weapon]
-    \textbf{OSB 7} cycles through available A-A weapon types
-    
-    \medskip
-    Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
-    \blueitem[Selected Station]
-    \textbf{OSB 10 / 16} select/cycle availabel missile pylons
-    
-    \medskip
-    Selected station can also be cycled with \textbf{NWS/MSL Step depress (short)}
-    \blueitem[SLAVE / BORE]
-    \textbf{OSB 19} controls missile radar line-of-sight
+
+\paragraph{Selected Weapon}
+\textbf{OSB 7} cycles through available A-A weapon types
+
+\medskip
+Selected weapon can also be cycled with \textbf{NWS/MSL Step depress (long)}
+
+\paragraph{Selected Station}
+\textbf{OSB 10 / 16} select/cycle availabel missile pylons
+
+\medskip
+Selected station can also be cycled with \textbf{NWS/MSL Step depress (short)}
+
+\paragraph{SLAVE / BORE}
+\textbf{OSB 19} controls missile radar line-of-sight
+\begin{itemize}
+    \item \textbf{SLAVE} --- Missile LOS slaved to AC radar 
     \begin{itemize}
-        \item \textbf{SLAVE} --- Missile LOS slaved to AC radar 
-        \begin{itemize}
-            \item receives DL updates until within own radar limits
-        \end{itemize}
-        \item \textbf{BORE} --- Missile scans straight ahead
-        \begin{itemize}
-            \item tracks first detected target
-        \end{itemize}
+        \item receives DL updates until within own radar limits
     \end{itemize}
-    
-    Line-of-sight mode can also be cycled with \textbf{Cursor Enable Depress}
-\end{tcoloritemize}
+    \item \textbf{BORE} --- Missile scans straight ahead
+    \begin{itemize}
+        \item tracks first detected target
+    \end{itemize}
+\end{itemize}
+
+Line-of-sight mode can also be cycled with \textbf{Cursor Enable Depress}
 
 \begin{figure}[htbp]
     \centering
@@ -132,57 +133,58 @@
 \subsubsection{SYMBOLOGY}
 \label{subsec:aim120:symb}
 
-\begin{tcoloritemize}
-    \blueitem[Basic Radar Symbology] 
-    For beyond-visual-range radar usage and symbology \textbf{reference \Crefrange{subsec:crm}{subsec:tws}}
-    \blueitem[DLZ]
-    \textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
+\paragraph{Basic Radar Symbology} 
+For beyond-visual-range radar usage and symbology 
+\textbf{reference \Crefrange{subsec:crm}{subsec:tws}}
+
+\paragraph{DLZ}
+\textbf{D}ynamic \textbf{L}aunch \textbf{Z}one
+\begin{itemize}
+    \item \textbf{Displays target range \& missile performance information on HUD \& FCR Page with}
     \begin{itemize}
-        \item \textbf{Displays target range \& missile performance information on HUD \& FCR Page with}
-        \begin{itemize}
-            \item missile selected
-            \item radar track acquired
-        \end{itemize}
-        \item \textbf{R\textsubscript{aero} --- Aerodynamic range}
-        \begin{itemize}
-            \item \underline{maximum kinetic range}
-            \item assumes non-maneuvering target
-        \end{itemize}
-        \item \textbf{R\textsubscript{opt} --- Optimal}
-        \item \textbf{R\textsubscript{PI} --- Probability Intercept}
-        \item \textbf{R\textsubscript{TR} --- Turn-and-run range}
-        \begin{itemize}
-            \item maximum range assuming target turns cold at current velocity
-        \end{itemize}
-        \item \textbf{R\textsubscript{ACT} --- Active range}
-        \begin{itemize}
-            \item range at which AIM-120 will go active
-            \item not shown in \ref{fig:aa_weap:aim120:dlz}
-        \end{itemize}
-        \item \textbf{R\textsubscript{MIN} --- Minimum range}
-        \item \textbf{Countdown}
-        \begin{itemize}
-            \item \textbf{A} --- seconds until missile goes active
-            \item \textbf{T} --- seconds until predicted impact
-        \end{itemize}
+        \item missile selected
+        \item radar track acquired
     \end{itemize}
-    Reference \cref{fig:aa_weap:aim120:dlz}
-    \blueitem[ASC \& ASEC]
+    \item \textbf{R\textsubscript{aero} --- Aerodynamic range}
     \begin{itemize}
-        \item \textbf{Displays target lead cues to maximize missile performance on HUD \& FCR Page with}
-        \begin{itemize}
-            \item AIM-120 selected
-            \item radar track acquired
-        \end{itemize}
-        \item \textbf{Pilot should place ASC inside ASEC}
-        \item \textbf{ASC} --- \textbf{A}ttack \textbf{S}teering \textbf{C}ue
-        \item \textbf{ASEC} --- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle
-        \begin{itemize}
-            \item dynamically adjusts size based on target maneuvers
-            \item fixed size prior to target designation
-        \end{itemize}
+        \item \underline{maximum kinetic range}
+        \item assumes non-maneuvering target
     \end{itemize}
-\end{tcoloritemize}
+    \item \textbf{R\textsubscript{opt} --- Optimal}
+    \item \textbf{R\textsubscript{PI} --- Probability Intercept}
+    \item \textbf{R\textsubscript{TR} --- Turn-and-run range}
+    \begin{itemize}
+        \item maximum range assuming target turns cold at current velocity
+    \end{itemize}
+    \item \textbf{R\textsubscript{ACT} --- Active range}
+    \begin{itemize}
+        \item range at which AIM-120 will go active
+        \item not shown in \ref{fig:aa_weap:aim120:dlz}
+    \end{itemize}
+    \item \textbf{R\textsubscript{MIN} --- Minimum range}
+    \item \textbf{Countdown}
+    \begin{itemize}
+        \item \textbf{A} --- seconds until missile goes active
+        \item \textbf{T} --- seconds until predicted impact
+    \end{itemize}
+\end{itemize}
+Reference \cref{fig:aa_weap:aim120:dlz}
+
+\paragraph{ASC \& ASEC}
+\begin{itemize}
+    \item \textbf{Displays target lead cues to maximize missile performance on HUD \& FCR Page with}
+    \begin{itemize}
+        \item AIM-120 selected
+        \item radar track acquired
+    \end{itemize}
+    \item \textbf{Pilot should place ASC inside ASEC}
+    \item \textbf{ASC} --- \textbf{A}ttack \textbf{S}teering \textbf{C}ue
+    \item \textbf{ASEC} --- \textbf{A}llowable \textbf{S}teering \textbf{E}rror \textbf{C}ircle
+    \begin{itemize}
+        \item dynamically adjusts size based on target maneuvers
+        \item fixed size prior to target designation
+    \end{itemize}
+\end{itemize}
 
 % \clearpage
 
@@ -310,26 +312,28 @@
     \label{fig:aa_weap:aim120:asc_asec}
 \end{figure}
 
-\begin{tcoloritemize}
-    \blueitem[Designator Box] Box around target when within HUD view
-    \blueitem[TLL]
-    \textbf{T}arget \textbf{L}ocator \textbf{L}ine
-    
-    \begin{itemize}
-        \item \textbf{Extends from boresight cross towards target}
-        \item \textbf{Relative angle displayed next to boresight cross}
-        \item \textbf{Displayed when target is not within HUD field-of-view}
-    \end{itemize}
-    \blueitem[Missile Diamond] Indicates missile seeker line-of-sight
-    \blueitem[Post-Launch Symbology]
-    Bugged track symbology is modified to reflect missile launch \& status
+\paragraph{Designator Box} 
+Box around target when within HUD view
 
-    \begin{itemize}
-        \item \textbf{Post-launch} --- Thick ``tail'' is added
-        \item \textbf{Post-active} --- Tail begins to flash
-        \item \textbf{Post predicted impact} --- Red cross flashes over track
-    \end{itemize}
-\end{tcoloritemize}
+\paragraph{TLL}
+\textbf{T}arget \textbf{L}ocator \textbf{L}ine
+
+\begin{itemize}
+    \item \textbf{Extends from boresight cross towards target}
+    \item \textbf{Relative angle displayed next to boresight cross}
+    \item \textbf{Displayed when target is not within HUD field-of-view}
+\end{itemize}
+
+\paragraph{Missile Diamond} 
+Indicates missile seeker line-of-sight
+
+\paragraph{Post-Launch Symbology}
+Bugged track symbology is modified to reflect missile launch \& status
+\begin{itemize}
+    \item \textbf{Post-launch} --- Thick ``tail'' is added
+    \item \textbf{Post-active} --- Tail begins to flash
+    \item \textbf{Post predicted impact} --- Red cross flashes over track
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering

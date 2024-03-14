@@ -752,11 +752,20 @@
 	{0em} % sep
 	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
+% formatting of paragraph
+\titleformat{name=\paragraph}[wrap]% command
+	{{\color{color2}\titlerule}\bfseries}% format
+	{}% label
+	{0em}% sep
+	{\blue{#1}}% before-code
+	[]% after-code
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing{\section}{0pt}{5pt}{2pt}
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
 \titlespacing{\subsubsection}{0pt}{2pt}{2pt}
+\titlespacing{\paragraph}{40mm}{1.5em plus .1ex minus .2ex}{1em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOM COMMANDS / ENVIRONEMNTS

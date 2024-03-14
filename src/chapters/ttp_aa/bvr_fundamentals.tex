@@ -90,51 +90,54 @@
     % TODO: silhouettes?
 \end{figure}
 
-\begin{tcoloritemize}
-    \blueitem[AIM-120 \break Employment \break Profile]
-    \Cref{fig:ttp_aa:bvr_fundamentals:aim120profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
-    including the following phases
+\paragraph{AIM-120 Employment Profile}
+\Cref{fig:ttp_aa:bvr_fundamentals:aim120profile} shows the trajectories of fighter, bandit \& missile for a generic AIM-120 employment profile
+including the following phases
 
-    \begin{itemize}
-        \item \textbf{A --- Launch / Boost Phase}
-        \item \textbf{B --- Mid-Course Phase}
-        \item \textbf{C --- Acquisition}
-        \item \textbf{D --- Intercept}
-    \end{itemize}
-    \blueitem[Launch / Boost Phase]
-    \textbf{Boost}
+\begin{itemize}
+    \item \textbf{A --- Launch / Boost Phase}
+    \item \textbf{B --- Mid-Course Phase}
+    \item \textbf{C --- Acquisition}
+    \item \textbf{D --- Intercept}
+\end{itemize}
 
-    \begin{itemize}
-        \item motor only fires for initial seconds of flight 
-        \item after burnout missile \textbf{\underline{cannot gain energy}}
-    \end{itemize}
+\paragraph{Launch / Boost Phase} Initial phase of flight after weapons release
 
-    \textbf{Lofting} 
+\textbf{Boost}
 
-    \begin{itemize}
-        \item to reach longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
-        \item pilot can manually loft by raising the nose 20-30 deg prior to launch
-    \end{itemize}
-    \blueitem[Mid-Course Phase]
-    \textbf{Missile navigates using internal IMU}
+\begin{itemize}
+    \item motor only fires for initial seconds of flight 
+    \item after burnout missile \textbf{\underline{cannot gain energy}}
+\end{itemize}
 
-    \begin{itemize}
-        \item receives periodic datalink updates
-        \item will fly to last updated target position if DL lost
-    \end{itemize}
-    \blueitem[Acquisition \& MPRF ``Active'' Phase]
-    \textbf{Missile seeker activates once close to predicted target location}
-    \begin{itemize}
-        \item seeker in MPRF (medium pulse-repetition frequency) mode 
-        \item locks on to closest / ``best'' target
-    \end{itemize}
-    \blueitem[Terminal Phase \& Intercept]
-    \textbf{After missile seeker has acquired target}
-    \begin{itemize}
-        \item flies optimized PNG (proportional navigation) intercept trajectory
-        \item requires no further DL support, fighter can turn away from the bandit
-    \end{itemize}
-\end{tcoloritemize}
+\textbf{Lofting} 
+
+\begin{itemize}
+    \item to reach longer ranges missile ``lofts'' itself to conserve energy \& optimize trajectory
+    \item pilot can manually loft by raising the nose 20-30 deg prior to launch
+\end{itemize}
+
+\clearpage
+
+\paragraph{Mid-Course Phase}
+\textbf{Missile navigates using internal IMU}
+
+\begin{itemize}
+    \item receives periodic datalink updates
+    \item will fly to last updated target position if DL lost
+\end{itemize}
+\paragraph{Acquisition \& MPRF ``Active'' Phase}
+\textbf{Missile seeker activates once close to predicted target location}
+\begin{itemize}
+    \item seeker in MPRF (medium pulse-repetition frequency) mode 
+    \item locks on to closest / ``best'' target
+\end{itemize}
+\paragraph{Terminal Phase \& Intercept}
+\textbf{After missile seeker has acquired target}
+\begin{itemize}
+    \item flies optimized PNG (proportional navigation) intercept trajectory
+    \item requires no further DL support, fighter can turn away from the bandit
+\end{itemize}
 
 \cautionbox{
     \textbf{Do NOT employ AIM-120 without clear avenue-of-fire} 
@@ -145,94 +148,105 @@
 
 \subsection{RANGE CONSIDERATIONS}
 \label{sec:ttp_aa:bvr_fundamentals:rangeconsideration}
-\begin{tcoloritemize}
-    \blueitem[Range Definitions]
-    \textbf{Fighter-bandit distance} can be measured at different points during the timeline
 
-    \begin{itemize}
-        \item \textbf{R\textsubscript{Launch}} --- distance at launch
-        \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
-        \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
-    \end{itemize}
-    
-    These are also illustrated in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}.
-    \blueitem[Maximizing Launch Range / Energy]
-    \textbf{Why:}
-    \begin{itemize}
-        \item ability to launch at longer ranges forces bandit defensive
-        \item bandit may not be able to counter-launch
-        \item higher launch energy increases P\textsubscript{intercept} %probability of intercept
-    \end{itemize}
-    \textbf{How:}
-    \begin{itemize}
-        \item \textbf{high velocity} --- increases kinetic energy 
-        \item \textbf{high altitude} --- increases potential energy, reduces drag
-    \end{itemize}
-    \blueitem[Maximizing \break F-Pole Range]
-    \textbf{Why:}
-    \begin{itemize}
-        \item less likely to enter bandit launch envelope
-        \item more time/range to launch 2nd missile if necessary
-    \end{itemize}
-    \textbf{How:}
-    \begin{itemize}
-        \item \textbf{crank} --- turn 45-60 degrees away from bandit to reduce closure rate, maintain radar contact
-        \item \textbf{dive} --- reduces threat missile envelope
-    \end{itemize}
-    \blueitem[Flowing Cold]
-    \textbf{Why:}
-    \begin{itemize}
-        \item missile requires no support once active
-        \item defend against unknown missile launches
-        \item maximize F-pole range further
-    \end{itemize}
-    \textbf{How:}
-    \begin{itemize}
-        \item \textbf{turn} --- away from bandit / threat
-        \item \textbf{dive} --- if necessary, reduces threat missile envelope 
-    \end{itemize}
-    \blueitem[Effect of Bandit Maneuvers]
-    As evident in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}, 
-   \textbf{R\textsubscript{Launch}} is significantly greater than the distance travelled by the missile
-    \begin{itemize}
-        \item \textbf{DLZ calculated based off \underline{both} fighter \underline{and} bandit velocity/altitude}
-        \item bandit can significantly change missile envelope by reducing closure rate / altitude
-        \item post-launch bandit maneuvers can result in missile not having energy to intercept
-    \end{itemize}
-\end{tcoloritemize}
+\paragraph{Range Definitions}
+\textbf{Fighter-bandit distance} can be measured at different points during the timeline
+
+\begin{itemize}
+    \item \textbf{R\textsubscript{Launch}} --- distance at launch
+    \item \textbf{R\textsubscript{A-Pole}} --- distance when missile goes active
+    \item \textbf{R\textsubscript{F-Pole}} --- distance at impact
+\end{itemize}
+
+These are also illustrated in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}.
 
 \clearpage
 
+\paragraph{Maximizing Launch Range / Energy}
+Prior to launch the fighter should aim to maximize the launch range
+
+\textbf{Why:}
+\begin{itemize}
+    \item ability to launch at longer ranges forces bandit defensive
+    \item bandit may not be able to counter-launch
+    \item higher launch energy increases P\textsubscript{intercept} %probability of intercept
+\end{itemize}
+
+\textbf{How:}
+\begin{itemize}
+    \item \textbf{high velocity} --- increases kinetic energy 
+    \item \textbf{high altitude} --- increases potential energy, reduces drag
+\end{itemize}
+
+\paragraph{Maximizing F-Pole Range} 
+Additionally, post-launch the fighter should maneuver to maximize the F-pole range
+
+\textbf{Why:}
+\begin{itemize}
+    \item less likely to enter bandit launch envelope
+    \item more time/range to launch 2nd missile if necessary
+\end{itemize}
+
+\textbf{How:}
+\begin{itemize}
+    \item \textbf{crank} --- turn 45-60 degrees away from bandit to reduce closure rate, maintain radar contact
+    \item \textbf{dive} --- reduces threat missile envelope
+\end{itemize}
+
+\paragraph{Flowing Cold} (If necessary)
+
+\textbf{Why:}
+\begin{itemize}
+    \item missile requires no support once active
+    \item defend against unknown missile launches
+    \item maximize F-pole range further
+\end{itemize}
+\textbf{How:}
+\begin{itemize}
+    \item \textbf{turn} --- away from bandit / threat
+    \item \textbf{dive} --- if necessary, reduces threat missile envelope 
+\end{itemize}
+\paragraph{Effect of Bandit Maneuvers}
+As evident in \cref{fig:ttp_aa:bvr_fundamentals:aim120profile}, 
+\textbf{R\textsubscript{Launch}} is significantly greater than the distance travelled by the missile
+\begin{itemize}
+    \item \textbf{DLZ calculated based off \underline{both} fighter \underline{and} bandit velocity/altitude}
+    \item bandit can significantly change missile envelope by reducing closure rate / altitude
+    \item post-launch bandit maneuvers can result in missile not having energy to intercept
+\end{itemize}
+
+% \clearpage
+
 \subsection{FIGHTER MANEUVERS}
 
-\begin{tcoloritemize}
-    \blueitem[Crank]
-    Fighter turns \textbf{45-60 deg} away from threat 
+\paragraph{Crank}
+Fighter turns \textbf{45-60 deg} away from threat 
 
-    \begin{itemize}
-        \item reduces closure while maintaining radar track
-        \item typically used post-launch
-    \end{itemize}
-    
-    Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:crank}
-    \blueitem[Notch]
-    Fighter turns \textbf{70-110 deg} away from threat
+\begin{itemize}
+    \item reduces closure while maintaining radar track
+    \item typically used post-launch
+\end{itemize}
 
-    \begin{itemize}
-        \item minimizes relative velocity to break hostile pulse-doppler radar track
-        \item increases angular motion, forcing missile to maneuver and expend energy
-    \end{itemize}
-    
-    Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:notch}
-    \blueitem[Go Cold / Out]
-    Fighter turns \textbf{away} from threat
+Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:crank}
+\paragraph{Notch}
+Fighter turns \textbf{70-110 deg} away from threat
 
-    \begin{itemize}
-        \item used to kinematically defeat threat missiles
-    \end{itemize}
-    
-    Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:cold}
-\end{tcoloritemize}
+\begin{itemize}
+    \item minimizes relative velocity to break hostile pulse-doppler radar track
+    \item increases angular motion, forcing missile to maneuver and expend energy
+\end{itemize}
+
+Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:notch}
+\paragraph{Go Cold / Out}
+Fighter turns \textbf{away} from threat
+
+\begin{itemize}
+    \item used to kinematically defeat threat missiles
+\end{itemize}
+
+Reference \cref{fig:ttp_aa:bvr_fundamentals:fightermaneuver:cold}
+
+\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -345,31 +359,29 @@
 
 \subsection{TARGET ASPECT}
 
-\begin{tcoloritemize}
-    \blueitem[Target Aspect]
-    Angle between imaginary line connecting fighter-bandit and bandit heading
-    \blueitem[Hot]
-    \textbf{Target aspect --- 0-40 deg}
-    \begin{itemize}
-        \item offensive posture, maximizes closure
-    \end{itemize}
-    \blueitem[Flank]
-    \textbf{Target aspect --- 40-70 deg}
-    \begin{itemize}
-        \item minimizes closure while maintaining radar track
-    \end{itemize}
-    \blueitem[Beam]
-    \textbf{Target aspect --- 70-110 deg}
-    \begin{itemize}
-        \item defensive maneuver to break pulse-doppler radar track
-    \end{itemize}
-    \blueitem[Drag]
-    \textbf{Target aspect --- 110-180 deg}
-    \begin{itemize}
-        \item defense to kinematically defeat missile
-        \item often used in group tactics as ambush setup
-    \end{itemize}
-\end{tcoloritemize}
+\paragraph{Target Aspect}
+Angle between imaginary line connecting fighter-bandit and bandit heading
+\paragraph{Hot}
+\textbf{Target aspect --- 0-40 deg}
+\begin{itemize}
+    \item offensive posture, maximizes closure
+\end{itemize}
+\paragraph{Flank}
+\textbf{Target aspect --- 40-70 deg}
+\begin{itemize}
+    \item minimizes closure while maintaining radar track
+\end{itemize}
+\paragraph{Beam}
+\textbf{Target aspect --- 70-110 deg}
+\begin{itemize}
+    \item defensive maneuver to break pulse-doppler radar track
+\end{itemize}
+\paragraph{Drag}
+\textbf{Target aspect --- 110-180 deg}
+\begin{itemize}
+    \item defense to kinematically defeat missile
+    \item often used in group tactics as ambush setup
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering

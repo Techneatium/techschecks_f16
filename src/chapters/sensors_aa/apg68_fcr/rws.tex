@@ -1,24 +1,23 @@
 \subsection{RWS}
 \label{subsec:rws}
-\begin{tcoloritemize}
-    \blueitem[RWS]
-    \textbf{R}ange \textbf{W}hile \textbf{S}earch
 
+\paragraph{RWS}
+\textbf{R}ange \textbf{W}hile \textbf{S}earch
+
+\begin{itemize}
+    \item \textbf{Fast, Long(er)-Range Search}
     \begin{itemize}
-        \item \textbf{Fast, Long(er)-Range Search}
-        \begin{itemize}
-            \item radar scans selectable search volume
-            \item displays raw target position returns
-        \end{itemize}
-        \item \textbf{No track data} 
-        \begin{itemize}
-            \item exact target range, velocity, angle, etc.
-            \item but can transition to advanced modes
-        \end{itemize}
-        % (exact target range, velocity, angle, etc.)
-        % --- but can transition to advanced modes
+        \item radar scans selectable search volume
+        \item displays raw target position returns
     \end{itemize}
-\end{tcoloritemize}
+    \item \textbf{No track data} 
+    \begin{itemize}
+        \item exact target range, velocity, angle, etc.
+        \item but can transition to advanced modes
+    \end{itemize}
+    % (exact target range, velocity, angle, etc.)
+    % --- but can transition to advanced modes
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering
@@ -55,57 +54,56 @@
     \caption{RWS FCR mode symbology.}
 \end{figure}
 
-\begin{tcoloritemize}
-    \blueitem[SAM \break Submode]
-    \textbf{S}ituational \textbf{A}warness \textbf{M}ode
+\paragraph{SAM Submode}
+\textbf{S}ituational \textbf{A}warness \textbf{M}ode
 
+\begin{itemize}
+    \item \textbf{Target is ``Bugged''} (Pseudo-Track)
     \begin{itemize}
-        \item \textbf{Target is ``Bugged''} (Pseudo-Track)
-        \begin{itemize}
-            \item can guide AIM-120C (w/o STT Lock)
-            \item DLZ displayed if missile selected
-        \end{itemize}
-        \item \textbf{RWS search  continues}
-        \begin{itemize}
-            \item scan pauses on SAM target
-            \item FCR manages scan volume
-        \end{itemize}
+        \item can guide AIM-120C (w/o STT Lock)
+        \item DLZ displayed if missile selected
     \end{itemize}
-    \blueitem[DTT \break Submode]
-    \textbf{D}ual \textbf{T}arget \textbf{T}rack
+    \item \textbf{RWS search  continues}
+    \begin{itemize}
+        \item scan pauses on SAM target
+        \item FCR manages scan volume
+    \end{itemize}
+\end{itemize}
 
+\paragraph{DTT Submode}
+\textbf{D}ual \textbf{T}arget \textbf{T}rack
+
+\begin{itemize}
+    \item \textbf{2 Targets ``Bugged''} --- primary / secondary
     \begin{itemize}
-        \item \textbf{2 Targets ``Bugged''} --- primary / secondary
-        \begin{itemize}
-            \item can guide AIM-120C on \textbf{\underline{primary target}}
-            \item DLZ displayed if missile selected
-        \end{itemize}
-        \item \textbf{TMS Left --- swaps primary / secondary}
-        \item \textbf{RWS search  continues}
-        \begin{itemize}
-            \item scan pauses on both primary / secondary
-            \item FCR manages scan volume
-        \end{itemize}
-        \item \textbf{Within 10nm search pattern inhibited} --- radar only scans primary/secondary targets
-        \item \textbf{Once \underline{either} target within 3nm automatically transitions to STT}
+        \item can guide AIM-120C on \textbf{\underline{primary target}}
+        \item DLZ displayed if missile selected
     \end{itemize}
-    \blueitem[Spotlight]
-        
-    \textbf{Narrow scan centered on acquisition cursor}
+    \item \textbf{TMS Left --- swaps primary / secondary}
+    \item \textbf{RWS search  continues}
     \begin{itemize}
-        \item \textbf{Narrow scan}
-        \begin{itemize}
-            \item 4 bar elevation 
-            \item \pm10 deg azimuth
-        \end{itemize}
-        \item Useful to rapidly acquire radar returns from target at known position
-        \item \textbf{Activated by holding TMS Forward >1 sec}
-        \begin{itemize}
-            \item enters SAM submode if target detected under Acquisition Cursor
-            \item returns to previous search pattern if no target under Acquisition Cursor when released
-        \end{itemize}
+        \item scan pauses on both primary / secondary
+        \item FCR manages scan volume
     \end{itemize}
-\end{tcoloritemize}
+    \item \textbf{Within 10nm search pattern inhibited} --- radar only scans primary/secondary targets
+    \item \textbf{Once \underline{either} target within 3nm automatically transitions to STT}
+\end{itemize}
+
+\paragraph{Spotlight}
+\textbf{Narrow scan centered on acquisition cursor}
+\begin{itemize}
+    \item \textbf{Narrow scan}
+    \begin{itemize}
+        \item 4 bar elevation 
+        \item \pm10 deg azimuth
+    \end{itemize}
+    \item Useful to rapidly acquire radar returns from target at known position
+    \item \textbf{Activated by holding TMS Forward >1 sec}
+    \begin{itemize}
+        \item enters SAM submode if target detected under Acquisition Cursor
+        \item returns to previous search pattern if no target under Acquisition Cursor when released
+    \end{itemize}
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering

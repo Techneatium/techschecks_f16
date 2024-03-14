@@ -1,28 +1,28 @@
 \subsection{TWS}
 \label{subsec:tws}
-\begin{tcoloritemize}
-    \blueitem[TWS]
-    \textbf{T}rack \textbf{W}hile \textbf{S}can --- reference \cref{fig:sensors_aa:apg68:tws:search} for symbology
 
+\paragraph{TWS}
+\textbf{T}rack \textbf{W}hile \textbf{S}can --- reference \cref{fig:sensors_aa:apg68:tws:search} for symbology
+
+\begin{itemize}
+    \item \textbf{Multi-target tracking mode}
     \begin{itemize}
-        \item \textbf{Multi-target tracking mode}
-        \begin{itemize}
-            \item allows multi-target AIM-120 engagement
-            \item targets not locked --- \textbf{\underline{no RWR warning}}
-        \end{itemize}
-        \item \textbf{FCR builds trackfiles for each target}
-        \begin{itemize}
-            \item predicts target movement between scans
-            \item slow update rate --- target maneuvers can cause radar to lose track
-        \end{itemize}
-        \item \textbf{Trackfiles can be in several states}
-        \begin{itemize}
-            \item search / Track / System / Cursor / Bugged
-        \end{itemize}
+        \item allows multi-target AIM-120 engagement
+        \item targets not locked --- \textbf{\underline{no RWR warning}}
     \end{itemize}
-    
-    Reference \cref{subsec:sensorsaa:apg68:tws:trackfile} for trackfile explanation \& \cref{fig:sensorsaa:apg68:tws:trackfile} for trackfile symbology
-\end{tcoloritemize}
+    \item \textbf{FCR builds trackfiles for each target}
+    \begin{itemize}
+        \item predicts target movement between scans
+        \item slow update rate --- target maneuvers can cause radar to lose track
+    \end{itemize}
+    \item \textbf{Trackfiles can be in several states}
+    \begin{itemize}
+        \item search / Track / System / Cursor / Bugged
+    \end{itemize}
+\end{itemize}
+
+Reference \cref{subsec:sensorsaa:apg68:tws:trackfile,fig:sensorsaa:apg68:tws:trackfile} 
+for detailed trackfile explanation \& symbology respectively
 
 \begin{figure}[htbp]
     \centering
@@ -61,6 +61,8 @@
     \caption{Basic TWS search FCR page symbology.}
     \label{fig:sensors_aa:apg68:tws:search}
 \end{figure}
+
+\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -110,78 +112,79 @@
 
 \subsubsection{TRACKFILE STATES}
 \label{subsec:sensorsaa:apg68:tws:trackfile}
-\begin{tcoloritemize}
-    \blueitem[Search Target]
 
-    \textbf{Initial state for radar returns}
-    \begin{itemize}
-        \item not enough information to generate track
-        \item automatic transition to track after 1-2 radar sweeps
-        \item \textbf{Display} --- similar to RWS radar brick
-    \end{itemize}
+\paragraph{Search Target}
+\textbf{Initial state for radar returns}
+\begin{itemize}
+    \item not enough information to generate track
+    \item automatic transition to track after 1-2 radar sweeps
+    \item \textbf{Display} --- similar to RWS radar brick
+\end{itemize}
 
-    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}
-    \blueitem[Track Target]
-    
-    \textbf{FCR automatically correlates radar return data to form track files}
-    \begin{itemize}
-    \item tracks target velocity, angle, altitude etc.
-    \item \textbf{\underline{maximum of 10 trackfiles}}, lowest priority dropped if exceeded
-    \item can be manually transitioned to higher modes by pilot to prioritize
-    \end{itemize}
+Reference \cref{fig:sensorsaa:apg68:tws:trackfile:search}
 
-    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}
-    \blueitem[System Target]
-    
-    \textbf{Allows pilot to designate targets of interest}
-    \begin{itemize}
-        \item for monitoring
-        \item for future weapons employment
-        \item \textbf{no additional radar energy allocated to System Targets}
-    \end{itemize}
+\paragraph{Track Target}
+\textbf{FCR correlates radar returns to form track files}
+\begin{itemize}
+\item tracks target velocity, angle, altitude etc.
+\item \textbf{\underline{maximum of 10 trackfiles}}, lowest priority dropped if exceeded
+\item can be manually transitioned to higher modes by pilot to prioritize
+\end{itemize}
 
-    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}
-    \blueitem[Cursor Target]
-        
-    \textbf{Acquisition Cursor ``snaps'' to nearby System Targets} --- therefore named Cursor Targets
-    \begin{itemize}
-        \item \textbf{scan centered on Cursor Target}
-        \begin{itemize}
-            \item 3 bar elevation
-            \item $\pm$25 deg azimuth pattern 
-            \item reduces chance of losing track
-        \end{itemize}
-    \end{itemize}
+Reference \cref{fig:sensorsaa:apg68:tws:trackfile:track}
 
-    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}
-    \blueitem[Bugged Target]
-        
-    \textbf{Selected for weapons employment}
-    \begin{itemize}
-        \item can guide AIM-120C (w/o STT Lock)
-        \item DLZ displayed if missile selected
-        \item launched AIM-120 will continue to guide even if another target is bugged --- \textbf{\underline{allows for multi-target engagement}} 
-        \item \textbf{scan Centered on Bugged Target}
-        \begin{itemize}
-            \item 3 bar elevation
-            \item $\pm$25 deg azimuth pattern 
-            \item reduces chance of losing track
-        \end{itemize}
-        \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
-    \end{itemize}
+\paragraph{System Target}
+\textbf{Allows pilot to designate targets of interest}
+\begin{itemize}
+    \item for monitoring
+    \item for future weapons employment
+    \item \textbf{no additional radar energy allocated to System Targets}
+\end{itemize}
 
-    Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}
-    \blueitem[Spotlight] \textbf{Narrow scan centered on acquisition cursor}
+Reference \cref{fig:sensorsaa:apg68:tws:trackfile:system}
+
+\paragraph{Cursor Target}
+\textbf{Acquisition Cursor ``snaps'' to nearby System Targets} --- therefore named Cursor Targets
+\begin{itemize}
+    \item \textbf{scan centered on Cursor Target}
     \begin{itemize}
-        \item \textbf{narrow scan}
-        \begin{itemize}
-            \item 4 bar elevation 
-            \item \pm10 deg azimuth
-        \end{itemize}
-        \item allows pilot to override TWS scan priority
-        \item \textbf{activated by holding TMS Forward >1 sec}
+        \item 3 bar elevation
+        \item $\pm$25 deg azimuth pattern 
+        \item reduces chance of losing track
     \end{itemize}
-\end{tcoloritemize}
+\end{itemize}
+
+Reference \cref{fig:sensorsaa:apg68:tws:trackfile:cursor,fig:sensorsaa:apg68:tws:cursorsymb}
+
+\paragraph{Bugged Target}
+\textbf{Selected for weapons employment}
+\begin{itemize}
+    \item can guide AIM-120C (w/o STT Lock)
+    \item DLZ displayed if missile selected
+    \item launched AIM-120 will continue to guide even if another target is \\
+    bugged --- \textbf{\underline{allows for multi-target engagement}} 
+    \item \textbf{scan Centered on Bugged Target}
+    \begin{itemize}
+        \item 3 bar elevation
+        \item $\pm$25 deg azimuth pattern 
+        \item reduces chance of losing track
+    \end{itemize}
+    \item \textbf{TMS Right --- Cycles through System Targets in range order} (bugs closest if none bugged)
+\end{itemize}
+
+Reference \cref{fig:sensorsaa:apg68:tws:trackfile:bugged,fig:sensorsaa:apg68:tws:buggedsymb}
+
+\paragraph{Spotlight} 
+\textbf{Narrow scan centered on acquisition cursor}
+\begin{itemize}
+    \item \textbf{narrow scan}
+    \begin{itemize}
+        \item 4 bar elevation 
+        \item \pm10 deg azimuth
+    \end{itemize}
+    \item allows pilot to override TWS scan priority
+    \item \textbf{activated by holding TMS Forward >1 sec}
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering

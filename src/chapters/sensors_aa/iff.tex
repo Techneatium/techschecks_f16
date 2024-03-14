@@ -1,38 +1,37 @@
 \section{IFF --- WIP}
 \label{sec:iff}
 
-\begin{tcoloritemize}
-    \blueitem[IFF]
-    \textbf{I}dentify \textbf{F}riend or \textbf{F}oe
+\paragraph{IFF}
+\textbf{I}dentify \textbf{F}riend or \textbf{F}oe
+\begin{itemize}
+    \item \textbf{Unknown contacts can be ``interrogated'' to determine if friendly}
+    \item \textbf{Works via transponder system}
     \begin{itemize}
-        \item \textbf{Unknown contacts can be ``interrogated'' to determine if friendly}
-        \item \textbf{Works via transponder system}
-        \begin{itemize}
-            \item interrogater sends coded pulse
-            \item friendly transponder return matching coded pulse
-        \end{itemize}
-        \item \textbf{Controlled via dedicated IFF panel}
-        \begin{itemize}
-            \item must be powered on separately from FCR to function
-        \end{itemize}
-        \item \textbf{Friendly IFF replies displayed as green circles on FCR MFD}
+        \item interrogater sends coded pulse
+        \item friendly transponder return matching coded pulse
     \end{itemize}
-    \blueitem[Manual \break Interrogation]
-    Manual IFF interrogation can be initiated in 2 modes
+    \item \textbf{Controlled via dedicated IFF panel}
+    \begin{itemize}
+        \item must be powered on separately from FCR to function
+    \end{itemize}
+    \item \textbf{Friendly IFF replies displayed as green circles on FCR MFD}
+\end{itemize}
 
+\paragraph{Manual Interrogation}
+Manual IFF interrogation can be initiated in 2 modes
+
+\begin{itemize}
+    \item \textbf{Scan} --- Interrogates entire radar scan volume
     \begin{itemize}
-        \item \textbf{Scan} --- Interrogates entire radar scan volume
-        \begin{itemize}
-            \item Activated by pressing \textbf{TMS Left (short)}
-            \item \textbf{SCAN} appears next to \textbf{OSB 16} on FCR page
-        \end{itemize}
-        \item \textbf{LOS} (\textbf{L}ine \textbf{O}f \textbf{S}ight) --- Interrogates locked target or scan volume around acquisition cursor
-        \begin{itemize}
-            \item Actived by pressing \textbf{TMS Left (long)}
-            \item \textbf{LOS} appears next to \textbf{OSB 16} on FCR page
-        \end{itemize}
+        \item Activated by pressing \textbf{TMS Left (short)}
+        \item \textbf{SCAN} appears next to \textbf{OSB 16} on FCR page
     \end{itemize}
-\end{tcoloritemize}
+    \item \textbf{LOS} (\textbf{L}ine \textbf{O}f \textbf{S}ight) --- Interrogates locked target or scan volume around acquisition cursor
+    \begin{itemize}
+        \item Actived by pressing \textbf{TMS Left (long)}
+        \item \textbf{LOS} appears next to \textbf{OSB 16} on FCR page
+    \end{itemize}
+\end{itemize}
 
 \cautionbox{
     \textbf{Lack of IFF return does NOT indicate target is hostile} 

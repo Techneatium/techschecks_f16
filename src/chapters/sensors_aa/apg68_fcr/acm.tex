@@ -1,20 +1,20 @@
 \subsection{ACM}
 \label{subsec:acm}
-\begin{tcoloritemize}
-    \blueitem[ACM]
-    \textbf{A}ir \textbf{C}ombat \textbf{M}ode
 
+\paragraph{ACM}
+\textbf{A}ir \textbf{C}ombat \textbf{M}ode
+--- reference \cref{fig:acmoverview} for HOTAS logic overview
+
+\begin{itemize}
+    \item \textbf{Used to automatically lock targets while maneuvering}
+    \item \textbf{Sub-Modes}
     \begin{itemize}
-        \item \textbf{Used to automatically lock targets while maneuvering}
-        \item \textbf{Sub-Modes}
-        \begin{itemize}
-            \item \textbf{HUD Scan} --- 30x20 deg 
-            \item \textbf{BORE} --- Boresight (3x3 deg)
-            \item \textbf{Vertical Scan} --- 10x60 deg
-            \item \textbf{Slewable} --- WIP
-        \end{itemize}
+        \item \textbf{HUD Scan} --- 30x20 deg 
+        \item \textbf{BORE} --- Boresight (3x3 deg)
+        \item \textbf{Vertical Scan} --- 10x60 deg
+        \item \textbf{Slewable} --- WIP
     \end{itemize}
-\end{tcoloritemize}
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering
@@ -88,7 +88,7 @@
                 (\p1) -- (\x1-22.5mm,\y1) -- node[pos=0.5, left]{\scriptsize\textbf{Automatic}} (\x1-22.5mm,\y2);
                 
     \end{tikzpicture}
-    \caption{ACM Radar Modes Overview}
+    \caption{ACM radar modes and HOTAS logic overview}
     \label{fig:acmoverview}
 \end{figure}
 
@@ -295,65 +295,72 @@
     }
 \end{figure}
 
-\begin{tcoloritemize}
-    \blueitem[HUD Submode]
+\clearpage
+\subsubsection{SUBMODES}
+
+\paragraph{HUD Submode}
+\begin{itemize}
+    \item \textbf{30x20 deg scan} --- slightly larger than HUD
+    \item \textbf{Lock Range} --- 10 nm
+    \item \textbf{Selected with TMS Right} --- default mode upon ACM selection
+    \item \textbf{Default ACM mode} --- but in \textbf{NO RAD} (non-radiating) state
+    \item \textbf{Displays}
     \begin{itemize}
-        \item \textbf{30x20 deg scan} --- slightly larger than HUD
-        \item \textbf{Lock Range} --- 10 nm
-        \item \textbf{Selected with TMS Right} --- default mode upon ACM selection
-        \item \textbf{Default ACM mode} --- but in \textbf{NO RAD} (non-radiating) state
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} --- displays \textbf{ACM 20}
-            \item \textbf{HUD} --- no special symbology
-        \end{itemize}
+        \item \textbf{FCR Format} --- displays \textbf{ACM 20}
+        \item \textbf{HUD} --- no special symbology
     \end{itemize}
-    \blueitem[BORE Submode]
+\end{itemize}
+
+\paragraph{BORE Submode}
+\begin{itemize}
+    \item \textbf{Small, 1-beamwidth scan}
     \begin{itemize}
-        \item \textbf{Small, 1-beamwidth scan}
-        \begin{itemize}
-            \item centered 3 deg below gun cross
-            \item useful for precisely locking up target
-        \end{itemize}
-        \item \textbf{Lock Range} --- 20 nm
-        \item \textbf{Selected with TMS Forward}
-        \item \textbf{Scan slaves to HMD} (if equipped and powered)
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} --- displays \textbf{ACM BORE}
-            \item \textbf{HUD} --- Boresight Cross at center of radar scan zone
-            \item \textbf{HMD} --- Oval centered on HMD aiming cross
-        \end{itemize}
+        \item centered 3 deg below gun cross
+        \item useful for precisely locking up target
     \end{itemize}
-    \blueitem[Vertical \break Submode]
+    \item \textbf{Lock Range} --- 20 nm
+    \item \textbf{Selected with TMS Forward}
+    \item \textbf{Scan slaves to HMD} (if equipped and powered)
+    \item \textbf{Displays}
     \begin{itemize}
-        \item \textbf{10x60 deg scan}
-        \begin{itemize}
-            \item centered 23 deg above gun cross
-            \item useful during turning engagement to lock target ``across the circle''
-        \end{itemize}
-        \item \textbf{Lock Range} --- 10 nm
-        \item \textbf{Selected with TMS Aft}
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} --- displays \textbf{ACM 60}
-            \item \textbf{HUD} --- Vertical line
-        \end{itemize}
+        \item \textbf{FCR Format} --- displays \textbf{ACM BORE}
+        \item \textbf{HUD} --- Boresight Cross at center of radar scan zone
+        \item \textbf{HMD} --- Oval centered on HMD aiming cross
     \end{itemize}
-    \blueitem[Slewable \break Submode --- WIP]
+\end{itemize}
+
+\paragraph{Vertical Submode}
+\begin{itemize}
+    \item \textbf{10x60 deg scan}
     \begin{itemize}
-        \item \textbf{Scan} --- WIP
-        \item \textbf{Lock Range} --- WIP
-        \item \textbf{Slew} --- \textbf{CURSOR/ENABLE Control}
-        \item \textbf{Displays}
-        \begin{itemize}
-            \item \textbf{FCR Format} --- displays \textbf{ACM SLEW}
-            \item \textbf{HUD} --- WIP
-        \end{itemize}
+        \item centered 23 deg above gun cross
+        \item useful during turning engagement to lock target ``across the circle''
     \end{itemize}
-    \blueitem[NO RAD]
-    Upon selection of \textbf{ACM} or dropping target lock the radar is placed in non-radiating state
-\end{tcoloritemize}
+    \item \textbf{Lock Range} --- 10 nm
+    \item \textbf{Selected with TMS Aft}
+    \item \textbf{Displays}
+    \begin{itemize}
+        \item \textbf{FCR Format} --- displays \textbf{ACM 60}
+        \item \textbf{HUD} --- Vertical line
+    \end{itemize}
+\end{itemize}
+
+\clearpage
+
+\paragraph{Slewable Submode --- WIP}
+\begin{itemize}
+    \item \textbf{Scan} --- WIP
+    \item \textbf{Lock Range} --- WIP
+    \item \textbf{Slew} --- \textbf{CURSOR/ENABLE Control}
+    \item \textbf{Displays}
+    \begin{itemize}
+        \item \textbf{FCR Format} --- displays \textbf{ACM SLEW}
+        \item \textbf{HUD} --- WIP
+    \end{itemize}
+\end{itemize}
+
+\paragraph{NO RAD}
+Upon selection of \textbf{ACM} or dropping target lock the radar is placed in non-radiating state
 
 \marginfigeometry
 

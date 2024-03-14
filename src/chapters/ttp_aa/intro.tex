@@ -1,80 +1,78 @@
 \section{INTRODUCTION}
 \subsection{HOW TO WIN}
-\begin{tcoloritemize}
-    \blueitem[Goal]
-    The ultimate goal of any air-to-air engagement is to kill the enemy without being killed. 
 
-    \medskip
-    \textbf{Desired end-state:}
-    \begin{enumerate}[label=\bfseries(\arabic*)]
-        \item fighter aircraft undamaged, combat effective,
-        \label{subsec:ttp_aa:intro:howto:endstate:fighter}
-        \item bandits destroyed by fighter ordnance
-        \label{subsec:ttp_aa:intro:howto:endstate:bandit}
-    \end{enumerate}
+\paragraph{Goal}
+The ultimate goal of any air-to-air engagement is to kill the enemy without being killed. 
 
-    \blueitem[BVR Killchain]
-    We work backwards from the desired end-state 
-    to missile launch to define the killchain:
-    \begin{enumerate}[label=\textbf{(\alph*)}]
-        \item missile fuzes, bandit destroyed
-        \label{subsec:ttp_aa:intro:howto:killchain:fuzes}
-        \item terminal guidance to intercept
-        \label{subsec:ttp_aa:intro:howto:killchain:terminal}
-        \item missile seeker acquisition
-        \label{subsec:ttp_aa:intro:howto:killchain:acquired}
-        \item mid-course guidance to seeker basket
-        \label{subsec:ttp_aa:intro:howto:killchain:midcourse}
-        \item missile launch
-        \label{subsec:ttp_aa:intro:howto:killchain:launch}
-    \end{enumerate}
+\medskip
+\textbf{Desired end-state:}
+\begin{enumerate}[label=\bfseries(\arabic*)]
+    \item fighter aircraft undamaged, combat effective,
+    \label{subsec:ttp_aa:intro:howto:endstate:fighter}
+    \item bandits destroyed by fighter ordnance
+    \label{subsec:ttp_aa:intro:howto:endstate:bandit}
+\end{enumerate}
 
-    \blueitem[Probability of Kill]
-    Some steps in the killchain are probabalistic 
-    \ref{subsec:ttp_aa:intro:howto:killchain:fuzes},
-    \ref{subsec:ttp_aa:intro:howto:killchain:acquired}.
-    However, as it is impossible to perfectly predict bandit actions, 
-    we also treat 
-    \ref{subsec:ttp_aa:intro:howto:killchain:terminal},
-    \ref{subsec:ttp_aa:intro:howto:killchain:midcourse}
-    as probabalistic.
+\paragraph{BVR Killchain}
+We work backwards from the desired end-state 
+to missile launch to define the killchain:
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item missile fuzes, bandit destroyed
+    \label{subsec:ttp_aa:intro:howto:killchain:fuzes}
+    \item terminal guidance to intercept
+    \label{subsec:ttp_aa:intro:howto:killchain:terminal}
+    \item missile seeker acquisition
+    \label{subsec:ttp_aa:intro:howto:killchain:acquired}
+    \item mid-course guidance to seeker basket
+    \label{subsec:ttp_aa:intro:howto:killchain:midcourse}
+    \item missile launch
+    \label{subsec:ttp_aa:intro:howto:killchain:launch}
+\end{enumerate}
 
-    \medskip
-    The probability of kill, P\textsubscript{K}, is the combined chance of all events in the killchain occuring successfully.
+\paragraph{Probability of Kill}
+Some steps in the killchain are probabalistic 
+\ref{subsec:ttp_aa:intro:howto:killchain:fuzes},
+\ref{subsec:ttp_aa:intro:howto:killchain:acquired}.
+However, as it is impossible to perfectly predict bandit actions, 
+we also treat 
+\ref{subsec:ttp_aa:intro:howto:killchain:terminal},
+\ref{subsec:ttp_aa:intro:howto:killchain:midcourse}
+as probabalistic.
 
-    \blueitem[Devising Tactics]
-    To achieve \ref{subsec:ttp_aa:intro:howto:endstate:bandit},
-    we maximize P\textsubscript{K} through the figher-effected links in the killchain
-    \ref{subsec:ttp_aa:intro:howto:killchain:midcourse},
-    \ref{subsec:ttp_aa:intro:howto:killchain:launch}.
+\medskip
+The probability of kill, P\textsubscript{K}, is the combined chance of all events in the killchain occuring successfully.
 
-    \medskip
-    Simultaneously, we must ensure that our tactics minimize bandit P\textsubscript{K}, 
-    ensuring \ref{subsec:ttp_aa:intro:howto:endstate:fighter}.
-\end{tcoloritemize}
+\paragraph{Devising Tactics}
+To achieve \ref{subsec:ttp_aa:intro:howto:endstate:bandit},
+we maximize P\textsubscript{K} through the figher-effected links in the killchain
+\ref{subsec:ttp_aa:intro:howto:killchain:midcourse},
+\ref{subsec:ttp_aa:intro:howto:killchain:launch}.
+
+\medskip
+Simultaneously, we must ensure that our tactics minimize bandit P\textsubscript{K}, 
+ensuring \ref{subsec:ttp_aa:intro:howto:endstate:fighter}.
 
 \clearpage
 
 \subsection{OVERVIEW}
-\begin{tcoloritemize}
-    \blueitem[Fundamentals] 
-    In \cref{sec:ttp_aa:bvr_fundamentals}, 
-    we examine the fundamentals of BVR engagements, 
-    explaining the typical flight profile of an active radar missile,
-    define the ranges which are relevant for tactical employment,
-    as well as how the fighter and bandit can each effect these ranges
 
-    \blueitem[Intercept \break Timelines]
-    In \cref{sec:ttp_aa:timelines}, 
-    we then discuss basic intercept timelines, 
-    defining how to prosecute individual contacts while leveraging the capabilities of the AIM-120
+\paragraph{Fundamentals} 
+In \cref{sec:ttp_aa:bvr_fundamentals}, 
+we examine the fundamentals of BVR engagements, 
+explaining the typical flight profile of an active radar missile,
+define the ranges which are relevant for tactical employment,
+as well as how the fighter and bandit can each effect these ranges
 
-    \blueitem[Element Tactics]
-    \Cref{sec:ttp_aa:tactics_element} expands upon the previous material, 
-    explaining how to make use of a two-ship or element.
+\paragraph{Intercept \break Timelines}
+In \cref{sec:ttp_aa:timelines}, 
+we then discuss basic intercept timelines, 
+defining how to prosecute individual contacts while leveraging the capabilities of the AIM-120
 
-    \blueitem[Four-Ship \break Tactics]
-    \Cref{sec:ttp_aa:tactics_4ship} shows several example tactics for larger flights, nominally four-ships
-\end{tcoloritemize}
+\paragraph{Element Tactics}
+\Cref{sec:ttp_aa:tactics_element} expands upon the previous material, 
+explaining how to make use of a two-ship or element.
+
+\paragraph{Four-Ship \break Tactics}
+\Cref{sec:ttp_aa:tactics_4ship} shows several example tactics for larger flights, nominally four-ships
 
 \clearpage

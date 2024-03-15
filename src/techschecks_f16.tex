@@ -48,22 +48,12 @@
 	chapters/part_weap,
 	chapters/weapons_ag,
 	chapters/weapons_aa,
+	chapters/part_ttp,
+	chapters/ttp_aa,
 	chapters/part_supp,
-	chapters/appendix,
+	chapters/supp_figures,
+	chapters/comm_brevity,
 }
-
-% \AddToHook{shipout/foreground}{
-%   \begin{tikzpicture}[remember picture,overlay]
-%     \node[
-% 		black!45,
-% 		rotate=60,
-% 		scale=5,
-% 		opacity=0.4, 
-% 		align=center,
-% 		font=\normalfont,
-% 	] at (current page.center) {Draft Release \\ Do not Distribute!}; 
-%   \end{tikzpicture}
-% }
 
 \color{color1} % set main font color for whole document
 \begin{document}
@@ -94,9 +84,14 @@
 	\include{chapters/weapons_ag}
 	\cyclechpcolor
 	\include{chapters/weapons_aa}
+	\include{chapters/part_ttp}
+	\cyclechpcolor
+	\include{chapters/ttp_aa}
+	\appendix
 	\include{chapters/part_supp}
 	\cyclechpcolor
-	\include{chapters/appendix}
+	\include{chapters/supp_figures}
+	\include{chapters/comm_brevity}
 
 	\iftoggle{print}{
 		\pagestyle{superempty}

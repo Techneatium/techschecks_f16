@@ -1,27 +1,23 @@
 \subsection{CRM}
 \label{subsec:crm}
 
-\begin{tcoloritemize}
-    \blueitem{CRM}{
-        \textbf{C}ombined \textbf{R}adar \textbf{M}ode --- Combines A-A search submodes:
+\paragraph{CRM}
+\textbf{C}ombined \textbf{R}adar \textbf{M}ode --- Combines A-A search submodes:
 
-        \begin{itemize}
-            \item \textbf{RWS} --- \textbf{R}ange \textbf{W}hile \textbf{S}earch,
-            see \Cref{subsec:rws}
-            \item \textbf{TWS} --- \textbf{T}rack \textbf{W}hile \textbf{S}can,
-            see \Cref{subsec:tws}
-        \end{itemize}
+\begin{itemize}
+    \item \textbf{RWS} --- \textbf{R}ange \textbf{W}hile \textbf{S}earch,
+    see \Cref{subsec:rws}
+    \item \textbf{TWS} --- \textbf{T}rack \textbf{W}hile \textbf{S}can,
+    see \Cref{subsec:tws}
+\end{itemize}
 
-        Selected by default on FCR start-up. 
-        
-        Reference \cref{fig:crmoverview}
-    }
-    \blueitem{Change CRM \break Submode}{
-    \begin{itemize}
-        \item \textbf{OSB 2} \dotfill \textbf{Press}
-        \item Or \textbf{TMS} \dotfill \textbf{Right Long}
-    \end{itemize}}
-\end{tcoloritemize}
+Selected by default on FCR start-up. Reference \cref{fig:crmoverview}
+
+\paragraph{Change CRM Submode}
+\begin{itemize}
+    \item \textbf{OSB 2} --- \textbf{Press}
+    \item Or \textbf{TMS} --- \textbf{Right Long}
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering
@@ -150,45 +146,44 @@
 
 \subsubsection{A-A SEARCH SCAN PATTERN}
 
-\begin{tcoloritemize}
-    \blueitem{Radar Gimbal Limits}{
-    APG-68 is mechanically scanned on 2 axis gimbal
+\paragraph{Radar Gimbal Limits}
+APG-68 is mechanically scanned on 2 axis gimbal
+\begin{itemize}
+    \item \textbf{Azimuth} --- \pm60 deg (120 deg coverage)
+    \item \textbf{Vertical} --- \pm60 deg (120 deg coverage)
+\end{itemize}
 
+\paragraph{Azimuth Scan Pattern}
+Horizontal scan volume controlled by selecting limits of gimbal azimuth
+\begin{itemize}
+    \item \textbf{Azimuth search patterns}
     \begin{itemize}
-        \item \textbf{Azimuth} --- \pm60 deg (120 deg coverage)
-        \item \textbf{Vertical} --- \pm60 deg (120 deg coverage)
-    \end{itemize}}
-    \blueitem{Azimuth Scan Pattern}{
-    Horizontal scan volume controlled by selecting limits of gimbal azimuth
-    \begin{itemize}
-        \item \textbf{Azimuth search patterns}
-        \begin{itemize}
-            \item \textbf{A6} --- \pm60 deg
-            \item \textbf{A3} --- \pm30 deg (centered on cursor)
-            \item \textbf{A1} --- \pm10 deg (centered on cursor)
-        \end{itemize}
-        \item \textbf{Cycled via}
-        \begin{itemize}
-            \item \textbf{OSB 18} cycles available azimuth patterns
-            \item walking cursor off side of FCR display in RWS cycles A6/A3
-        \end{itemize}
-        \item \textbf{TWS \& DTT modes use a special \pm25 deg, \\ 
-        3 bar scan pattern}
-        \begin{itemize}
-            \item \textbf{A2} --- \pm25 deg (centered on cursor / target)
-        \end{itemize}
+        \item \textbf{A6} --- \pm60 deg
+        \item \textbf{A3} --- \pm30 deg (centered on cursor)
+        \item \textbf{A1} --- \pm10 deg (centered on cursor)
     \end{itemize}
-    Reference \cref{fig:sensors_aa:apg68:crm:azscan} for graphical representation
-    }
-    \blueitem{Bar Scan Pattern}{
-    Elevation scan volume controlled by selecting number of ``bars'' (horizontal sweeps)
+    \item \textbf{Cycled via}
     \begin{itemize}
-        \item \textbf{B4} / \textbf{B2} / \textbf{B1} --- cycled via \textbf{OSB 17}
-        \item \textbf{B3} --- selected by TWS \& DTT modes
+        \item \textbf{OSB 18} cycles available azimuth patterns
+        \item walking cursor off side of FCR display in RWS cycles A6/A3
     \end{itemize}
-    Reference \cref{fig:sensors_aa:apg68:crm:barscan} for graphical representation
-    }
-\end{tcoloritemize}
+    \item \textbf{TWS \& DTT modes use a special \pm25 deg,
+    3 bar scan pattern}
+    \begin{itemize}
+        \item \textbf{A2} --- \pm25 deg (centered on cursor / target)
+    \end{itemize}
+\end{itemize}
+
+Reference \cref{fig:sensors_aa:apg68:crm:azscan} for graphical representation
+
+\paragraph{Bar Scan Pattern}
+Elevation scan volume controlled by selecting number of ``bars'' (horizontal sweeps)
+\begin{itemize}
+    \item \textbf{B4} / \textbf{B2} / \textbf{B1} --- cycled via \textbf{OSB 17}
+    \item \textbf{B3} --- selected by TWS \& DTT modes
+\end{itemize}
+
+Reference \cref{fig:sensors_aa:apg68:crm:barscan} for graphical representation
 
 \begin{figure}[htbp]
     \centering
@@ -359,49 +354,58 @@
 
 \subsubsection{MFD CONTROLS}
 
-\begin{tcoloritemize}
-    \blueitem{Radar Mode}{
-    \textbf{OSB 1} opens page allowing selection of radar mode
-
+\paragraph{Radar Mode}
+\textbf{OSB 1} opens page allowing selection of radar mode
+\begin{itemize}
+    \item \textbf{Left Side (OSB 19-20)} --- A-A Modes
     \begin{itemize}
-        \item \textbf{Left Side (OSB 19-20)} --- A-A Modes
-        \begin{itemize}
-            \item CRM --- see \cref{subsec:crm}
-            \item ACM --- see \cref{subsec:acm}
-        \end{itemize}
-        \item \textbf{Right Side (OSB 6-9)} --- A-G Modes
-        \begin{itemize}
-            \item see \cref{sec:fcr-ag}
-        \end{itemize}
-        \item \textbf{STBY (OSB 10)} --- places FCR in standby
-    \end{itemize}}
-    \blueitem{Field of View}{
-    \textbf{OSB 3} cycles field of view
-
-    \begin{itemize}
-        \item \textbf{EXP} --- expanded field of view
-        \item \textbf{NORM} --- normal field of view
+        \item CRM --- see \cref{subsec:crm}
+        \item ACM --- see \cref{subsec:acm}
     \end{itemize}
-
-    HOTAS \textbf{EXPAND/FOV} switch also cycles FOV}
-    \blueitem{Override}{Pressing \textbf{OVRD (OSB 4)}  places FCR in standby}
-    \blueitem{FCR Control}{\textbf{CNTL (OSB 5)} opens FCR control page}
-    \blueitem{Datalink Mode}{\textbf{OSB 6} cycles datalink operating mode (WIP)}
-    \blueitem{Declutter}{\textbf{DCLT (OSB 11)} opens FCR declutter page, allowing pilot to deselect symbology elements}
-    \blueitem{Elevation Bar \break Select}{\textbf{OSB 17} cycles elevation bar search pattern}
-    \blueitem{Azimuth Select}{
-    \textbf{OSB 18} cycles azimuth search pattern}
-    \blueitem{Range Select}{
-    \textbf{OSB 19-20} adjusts FCR display range scale
-    
+    \item \textbf{Right Side (OSB 6-9)} --- A-G Modes
     \begin{itemize}
-        \item \textbf{Can be cycled by ``walking'' cursor off top/bottom of display}
+        \item see \cref{sec:fcr-ag}
     \end{itemize}
-    }
-\end{tcoloritemize}
+    \item \textbf{STBY (OSB 10)} --- places FCR in standby
+\end{itemize}
 
-\notebox{
-    \textbf{Azimuth and range can also be cycled by ``walking'' acquisition cursor of side of FCR display}
+\paragraph{Field of View}
+\textbf{OSB 3} cycles field of view
+
+\begin{itemize}
+    \item \textbf{EXP} --- expanded field of view
+    \item \textbf{NORM} --- normal field of view
+\end{itemize}
+
+HOTAS \textbf{EXPAND/FOV} switch also cycles FOV
+
+\paragraph{Override} 
+Pressing \textbf{OVRD (OSB 4)}  places FCR in standby
+
+\paragraph{FCR Control} 
+\textbf{CNTL (OSB 5)} opens FCR control page
+
+\paragraph{Datalink Mode} 
+\textbf{OSB 6} cycles datalink operating mode (WIP)
+
+\paragraph{Declutter} 
+\textbf{DCLT (OSB 11)} opens FCR declutter page,
+allowing pilot to deselect symbology elements
+
+\paragraph{Elevation Bar Select} 
+\textbf{OSB 17} cycles elevation bar search pattern
+
+\paragraph{Azimuth Select}
+\textbf{OSB 18} cycles azimuth search pattern
+\paragraph{Range Select}
+\textbf{OSB 19-20} adjusts FCR display range scale
+
+\begin{itemize}
+    \item \textbf{Can be cycled by ``walking'' cursor off top/bottom of display}
+\end{itemize}
+
+\notebox{\small
+    Azimuth and range can also be cycled by ``walking'' acquisition cursor off the side and top/bottom of FCR display respectively
 }
 
 \begin{figure}[htbp]

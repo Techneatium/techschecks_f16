@@ -272,6 +272,8 @@
 }{}{}{}
 \DTMsetstyle{yymmdd} % set new style as default
 
+\RequirePackage{amsmath} % math stuff (non-numbered align env, etc.)
+
 \RequirePackage{caption} % allows proper captions for non-float figures
 \RequirePackage{subcaption} % used for subfigures
 \RequirePackage{marginfix} % patches marginpar to prevent page overflow
@@ -752,11 +754,20 @@
 	{0em} % sep
 	{\colorbox{color1}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 
+% formatting of paragraph
+\titleformat{name=\paragraph}[wrap]% command
+	{{\color{color2}\titlerule}\bfseries}% format
+	{}% label
+	{0em}% sep
+	{\blue{#1}}% before-code
+	[]% after-code
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing{\section}{0pt}{5pt}{2pt}
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
 \titlespacing{\subsubsection}{0pt}{2pt}{2pt}
+\titlespacing{\paragraph}{40mm}{1.5em plus .1ex minus .2ex}{1em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOM COMMANDS / ENVIRONEMNTS
@@ -798,7 +809,7 @@
 	\end{tcolorbox}
 }
 
-\newcommand{\warningbox}[1]{
+\newcommand{\cautionbox}[1]{
 	\begin{tcolorbox}[
 		enhanced,
 		colback=white,
@@ -813,7 +824,7 @@
 		sharp corners,
 		drop shadow=color1!100,
 		},
-		title=\large WARNING
+		title=\large CAUTION
 	]
 		{#1}
 	\end{tcolorbox}
@@ -847,7 +858,7 @@
 	}
 }
 
-\newcommand{\marwarningbox}[1]{
+\newcommand{\marcautionbox}[1]{
 	\marginpar{
 		\begin{tcolorbox}[
 			enhanced,
@@ -868,7 +879,7 @@
 			sharp corners,
 			drop shadow=color1!100,
 			},
-			title=\large WARNING
+			title=\large CAUTION
 		]
 			{#1}
 		\end{tcolorbox}

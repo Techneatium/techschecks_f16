@@ -272,6 +272,8 @@
 }{}{}{}
 \DTMsetstyle{yymmdd} % set new style as default
 
+\RequirePackage{amsmath} % math stuff (non-numbered align env, etc.)
+
 \RequirePackage{caption} % allows proper captions for non-float figures
 \RequirePackage{subcaption} % used for subfigures
 \RequirePackage{marginfix} % patches marginpar to prevent page overflow

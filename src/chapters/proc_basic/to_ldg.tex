@@ -164,7 +164,9 @@
 \label{subsec:proc_basic:to_ldg:ldg}
 
 \begin{checklistenumerate}
-    \blueitem[Approach] Align aircraft with runway
+    \blueitem[Approach]
+    \label{subsec:proc_basic:to_ldg:ldg:approach}
+    Align aircraft with runway
     \marginpar{
         \captionsetup{type=figure}
         \centering
@@ -208,14 +210,14 @@
             (touchdown) -- (rollout);
 
             % nodes
-            \node[right] at (approach) {\textbf{1.}};
-            \node[right] at (break) {\textbf{2.}};
-            \node[left] at (downwind) {\textbf{3.}};
-            \node[left] at (base) {\textbf{4.}};
-            \node[below] at (final) {\textbf{5.}};
-            \node[left] at (shortfinal) {\textbf{6.}};
-            \node[left=2mm] at (touchdown) {\textbf{7.}};
-            \node[left=2mm] at (rollout) {\textbf{8.}};
+            \node[right] at (approach) {\ref{subsec:proc_basic:to_ldg:ldg:approach}};
+            \node[right] at (break) {\ref{subsec:proc_basic:to_ldg:ldg:overhead}};
+            \node[left] at (downwind) {\ref{subsec:proc_basic:to_ldg:ldg:downwind}};
+            \node[left] at (base) {\ref{subsec:proc_basic:to_ldg:ldg:base}};
+            \node[below] at (final) {\ref{subsec:proc_basic:to_ldg:ldg:final}};
+            \node[left] at (shortfinal) {\ref{subsec:proc_basic:to_ldg:ldg:shortfinal}};
+            \node[left=2mm] at (touchdown) {\ref{subsec:proc_basic:to_ldg:ldg:touchdown}};
+            \node[left=2mm] at (rollout) {\ref{subsec:proc_basic:to_ldg:ldg:roll}};
 
         \end{tikzpicture}
         \caption{Overhead pattern}
@@ -230,7 +232,10 @@
         \item \textbf{Altitude} --- \textbf{1500 ft AGL}
         \item \textbf{Airspeed} --- \textbf{300 kts CAS}
     \end{itemize}
-    \blueitem[Overhead Break] Break left/right over desired touchdown point, \textbf{\underline{maintain level turn}}
+    \blueitem[Overhead Break]
+    \label{subsec:proc_basic:to_ldg:ldg:overhead}
+    Break left/right over desired touchdown point,
+    \textbf{\underline{maintain level turn}}
 
     \begin{itemize}
         \item \textbf{Speedbrakes} --- \textbf{As Required}
@@ -238,20 +243,28 @@
         \item \textbf{Bank} --- \textbf{70 deg}
         \item \textbf{Break} --- \textbf{1\% of airspeed in G}
     \end{itemize}
-    \blueitem[Downwind Leg] Roll out on opposite heading of runway, max 13 deg AoA
+    \blueitem[Downwind Leg]
+    \label{subsec:proc_basic:to_ldg:ldg:downwind}
+    Roll out on opposite heading of runway, max 13 deg AoA
 
     \begin{itemize}
         \item \textbf{Altitude} --- \textbf{1500 ft AGL}
         \item \textbf{Airspeed} --- \textbf{200-220 kts CAS}
         \item \textbf{Gear} --- \textbf{Down}
     \end{itemize}
-    \blueitem[Base Turn] Initiate abeam of desired touchdown point (wingtip at end of runway)
+
+    \blueitem[Base Turn]
+    \label{subsec:proc_basic:to_ldg:ldg:base}
+    Initiate abeam of desired touchdown point (wingtip at end of runway)
 
     \begin{itemize}
         \item \textbf{Attitude} --- \textbf{8-10 deg nose low}
         \item \textbf{AoA} --- \textbf{< 13 deg}
     \end{itemize}
-    \blueitem[Final Turn] Use throttle to maintain AoA, stick to maintain attitude, goal is to roll wings-level at
+
+    \blueitem[Final Turn]
+    \label{subsec:proc_basic:to_ldg:ldg:final}
+    Use throttle to maintain AoA, stick to maintain attitude, goal is to roll wings-level at
 
     \begin{itemize}
         \item \textbf{1 mile} from desired touchdown point
@@ -264,7 +277,9 @@
 \clearpage
 
 \begin{checklistenumerate}[resume]
-    \blueitem[Short Final] Once over runway
+    \blueitem[Short Final]
+    \label{subsec:proc_basic:to_ldg:ldg:shortfinal}
+    Once over runway
     
     \marginpar{
         \captionsetup{type=figure}
@@ -309,14 +324,14 @@
             (touchdown) -- (rollout);
 
             % nodes
-            \node[right] at (approach) {\textbf{1.}};
-            \node[right] at (break) {\textbf{2.}};
-            \node[left] at (downwind) {\textbf{3.}};
-            \node[left] at (base) {\textbf{4.}};
-            \node[below] at (final) {\textbf{5.}};
-            \node[left] at (shortfinal) {\textbf{6.}};
-            \node[left=2mm] at (touchdown) {\textbf{7.}};
-            \node[left=2mm] at (rollout) {\textbf{8.}};
+            \node[right] at (approach) {\ref{subsec:proc_basic:to_ldg:ldg:approach}};
+            \node[right] at (break) {\ref{subsec:proc_basic:to_ldg:ldg:overhead}};
+            \node[left] at (downwind) {\ref{subsec:proc_basic:to_ldg:ldg:downwind}};
+            \node[left] at (base) {\ref{subsec:proc_basic:to_ldg:ldg:base}};
+            \node[below] at (final) {\ref{subsec:proc_basic:to_ldg:ldg:final}};
+            \node[left] at (shortfinal) {\ref{subsec:proc_basic:to_ldg:ldg:shortfinal}};
+            \node[left=2mm] at (touchdown) {\ref{subsec:proc_basic:to_ldg:ldg:touchdown}};
+            \node[left=2mm] at (rollout) {\ref{subsec:proc_basic:to_ldg:ldg:roll}};
 
         \end{tikzpicture}
         \caption{Overhead pattern (duplicated)}
@@ -329,8 +344,12 @@
         \item \textbf{Throttle} --- \textbf{Idle}
         \item \textbf{AoA} --- \textbf{< 13 deg}
     \end{itemize}
+
     \blueitem[Touchdown]
-    \blueitem[Landing Roll] Maintain nose-high position for aerobraking until 100 kts
+    \label{subsec:proc_basic:to_ldg:ldg:touchdown}
+    \blueitem[Landing Roll]
+    \label{subsec:proc_basic:to_ldg:ldg:roll}
+    Maintain nose-high position for aerobraking until 100 kts
     \begin{itemize}
         \item \textbf{AoA} --- \textbf{< 13 deg}
         \item \textbf{Speedbrakes} --- \textbf{Open}
